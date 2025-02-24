@@ -67,7 +67,7 @@ const DAPSize: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="w-[774.80314961px] pl-[566.92913386px] mt-[45.7952755906px] text-[11px]">
         <p>
-        {data[1]?.[CR_PartnerName] || 'Test Cashier'}
+        {data[1]?.[CR_PartnerName]}
         </p>
       </div>
     </div>
