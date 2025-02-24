@@ -65,6 +65,12 @@ const HondaDESSize: React.FC<PrintPageProps> = ({ data }) => {
           {data[1]?.[CR_Memo] || <span className="opacity-0">No data</span>}
         </p>
       </div>
+      
+      <div className="w-[769.13385827px] pl-[566.92913386px] mt-[45.7952755906px] text-[11px]">
+        <p>
+        {data[1]?.[CR_PartnerName]}
+        </p>
+      </div>
     </div>
   );
 };
