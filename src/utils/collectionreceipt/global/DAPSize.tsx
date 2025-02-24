@@ -65,6 +65,11 @@ const DAPSize: React.FC<PrintPageProps> = ({ data }) => {
           {data[1]?.[CR_Memo] || <span className="opacity-0">No data</span>}
         </p>
       </div>
+      <div className="w-[170.07874016px] pl-[566.92913386px] mt-[19.7952755906px]">
+        <p>
+          {data[1]?.[CR_Memo] || <span className="opacity-0">No data</span>}
+        </p>
+      </div>
     </div>
   );
 };
