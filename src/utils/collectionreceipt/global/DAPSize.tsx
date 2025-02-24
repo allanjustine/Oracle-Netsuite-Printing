@@ -14,19 +14,19 @@ const DAPSize: React.FC<PrintPageProps> = ({ data }) => {
   const CR_PartnerName = 9;
 
   return (
-    <div className="text-xs w-[774.80314961px] h-[404.40944882px]">
-      <div className="flex mt-[113.38582677px]">
+    <div className="text-xs w-[774.80314961px] h-[404.40944882px] ml-[10px]">
+      <div className="flex mt-[108.38582677px]">
         <p className="pl-[604.72440945px] w-[143.62204724px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex justify-between  mt-[19.7952755906px]">
-        <div className="w-[555.59055118px]">
+        <div className="w-[559.37007874px]">
           <p className="pl-[302.36220472px]">
             {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
           </p>
         </div>
-        <div className="w-[143.62204724px]">
+        <div className="w-[215.43307087px]">
           <p className="pl-[45.354330709px]">
             {data[1]?.[CR_TIN] || <span className="opacity-0">No data</span>}
           </p>
@@ -53,7 +53,7 @@ const DAPSize: React.FC<PrintPageProps> = ({ data }) => {
           </p>
         </div>
         <div className="w-[102.04724409px]">
-          <p className="pl-[45.354330709px]">
+          <p className="pl-[46.354330709px]">
             {data[1]?.[CR_AmountInFigures] || (
               <span className="opacity-0">No data</span>
             )}
@@ -65,9 +65,9 @@ const DAPSize: React.FC<PrintPageProps> = ({ data }) => {
           {data[1]?.[CR_Memo] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="w-[170.07874016px] pl-[566.92913386px] mt-[19.7952755906px]">
+      <div className="w-[774.80314961px] pl-[566.92913386px] mt-[45.7952755906px] text-[11px]">
         <p>
-          {data[1]?.[CR_Memo] || <span className="opacity-0">No data</span>}
+        {data[1]?.[CR_PartnerName] || 'Test Cashier'}
         </p>
       </div>
     </div>
