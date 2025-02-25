@@ -9,7 +9,7 @@ const LuzonSize: React.FC<PrintPageProps> = ({ data }) => {
   const CR_BusinessStyle = 4;
   const CR_AmountInFigures = 5;
   const CR_AmountInWords = 6;
-  const CR_Memo = "ahsdfjkhasdkjfhasjkdhf kjasdhf hasdf hasjkdhf jashdf kjhasdkf ";
+  const CR_Memo = 7;
   const CR_FormOfPayment = 8;
   const CR_PartnerName = 9;
 
@@ -40,7 +40,7 @@ const LuzonSize: React.FC<PrintPageProps> = ({ data }) => {
       <div className="flex mt-[11.8267716539px]">
         <p className="ml-[279.12598425px]">
           {data[1]?.[CR_BusinessStyle] || (
-            <span className="opacity-1">No data</span>
+            <span className="opacity-0">No data</span>
           )}
         </p>
       </div>
@@ -62,18 +62,18 @@ const LuzonSize: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="w-[551.81102362px] pl-[309.92125984px] mt-[8.8267716539px]">
         <p>
-          {CR_Memo.substring(0, 40) || <span className="opacity-0">No data</span>}
+          {data[1]?.[CR_Memo].substring(0, 40) || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="w-[551.81102362px] pl-[207.87401575px] mt-[9.8267716539px]">
         <p>
-          {CR_Memo.substring(40) || <span className="opacity-0">No data</span>}
+          {data[1]?.[CR_Memo].substring(40) || <span className="opacity-0">No data</span>}
         </p>
       </div>
       
       <div className="w-[577.88976378px] pl-[445.98425197px] mt-[6.7952755906px] text-[11px]">
         <p>
-        {data[1]?.[CR_PartnerName] || "Test Cashier"}
+        {data[1]?.[CR_PartnerName] || ""}
         </p>
       </div>
     </div>
