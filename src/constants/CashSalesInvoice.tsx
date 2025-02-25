@@ -20,6 +20,7 @@ import Size9Sales from "@/utils/salesinvoice/size9";
 import HdSiSize from "@/utils/salesinvoice/global/HdSiSize";
 import HdCsiSizes from "@/utils/salesinvoice/global/HdCsiSize";
 import SmctCsiSize from "@/utils/salesinvoice/global/SmctCsiSize";
+import SmctSiSize from "@/utils/salesinvoice/global/SmctSiSize";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -258,6 +259,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   ];
 
   const DSMSISizeData = ["DIGOS", "TACU", "TOMAS"];
+
   const dsmCsiSizeData = [
     "BALA",
     "CALIN",
@@ -272,7 +274,9 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   ];
 
   const hdSiSizeData = ["AURH", "CAMH", "GENT", "OROH", "TANH"];
+
   const hdCsiSizeData = ["ALAH", "DSML", "PARD3", "INIT", "MARH", "VETH"];
+
   const smctCsiSizeData = [
     "ANTI",
     "BAYB",
@@ -284,7 +288,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "TALI",
     "VALEN",
   ];
-  const smctSiSizeData = ["BANTA", "GUIN", "MADRI", "CARMO", "ANTI", "TRINI2"];
+
+  const smctSiSizeData = ["BANTA", "GUIN", "MADRI", "CARMO", "ANTI", "TRINI2", "ALLEN"];
 
   // if (size1.some((branch) => branch === user?.branchCode)) {
   //   return <Size1Sales data={data} />;
@@ -320,6 +325,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     return <HdCsiSizes data={data} />;
   } else if (smctCsiSizeData.some((branch) => branch === user?.branchCode)) {
     return <SmctCsiSize data={data} />;
+  } else if (smctSiSizeData.some((branch) => branch === user?.branchCode)) {
+    return <SmctSiSize data={data} />;
   } else {
     return (
       <div className="text-center flex items-center justify-center h-screen font-bold text-lg">

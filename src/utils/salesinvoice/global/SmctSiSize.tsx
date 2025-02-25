@@ -33,8 +33,8 @@ const SmctSiSize: React.FC<PrintPageProps> = ({ data }) => {
   const unitPrice = 26;
 
   return (
-    <div className="text-xs h-[755.90551181px] w-[578.26771654px]">
-      <div className="flex h-[21.165354331px] mt-[117.7244094521px]">
+    <div className="text-xs h-[785.76377953px] w-[582.80314961px]">
+      <div className="flex h-[21.165354331px] mt-[109.7244094521px]">
         <p className="w-[377.95275591px] pl-[94.488188976px]">
           {data[1]?.[mainLineName] || "No data"}
         </p>
@@ -92,62 +92,62 @@ const SmctSiSize: React.FC<PrintPageProps> = ({ data }) => {
         <table className="border-collapse w-full">
           <tbody>
             <tr className="text-[10px]">
-              <td className="h-[18.275590551px] w-[145.50393701px]"></td>
-              <td className="h-[18.275590551px] w-[176.52755906px]">
+              <td className="h-[18.275590551px] w-[124.72440945px]"></td>
+              <td className="h-[18.275590551px] w-[179.90551181px] pl-[7.342622px]">
                 {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
               </td>
-              <td className="h-[18.275590551px] w-[129.25984252px]"></td>
-              <td className="h-[18.275590551px] w-[98.645669291px] text-center">
+              <td className="h-[18.275590551px] w-[128.50393701px]"></td>
+              <td className="h-[18.275590551px] w-[98.267716535px] text-center">
                 {FormattedSumTotal(data, totalSalesVatInclusive, 16)}
               </td>
             </tr>
             <tr className="text-[10px]">
-              <td className="h-[18.275590551px] w-[145.50393701px]"></td>
-              <td className="h-[18.275590551px] w-[176.52755906px]">0.00</td>
-              <td className="h-[18.275590551px] w-[129.25984252px]"></td>
-              <td className="h-[18.275590551px] w-[98.645669291px] text-center">
+              <td className="h-[18.275590551px] w-[124.72440945px]"></td>
+              <td className="h-[18.275590551px] w-[179.90551181px] pl-[7.342622px]">0.00</td>
+              <td className="h-[18.275590551px] w-[128.50393701px]"></td>
+              <td className="h-[18.275590551px] w-[98.267716535px] text-center">
                 {FormattedSumTotal(data, vatAmount2, 16)}
               </td>
             </tr>
             <tr className="text-[10px]">
-              <td className="h-[18.275590551px] w-[145.50393701px]"></td>
-              <td className="h-[18.275590551px] w-[176.52755906px]">
+              <td className="h-[18.275590551px] w-[124.72440945px]"></td>
+              <td className="h-[18.275590551px] w-[179.90551181px] pl-[7.342622px]">
                 {FormattedSumTotal(data, rateInclusiveVat, 16)}
               </td>
-              <td className="h-[18.275590551px] w-[129.25984252px]"></td>
-              <td className="h-[18.275590551px] w-[98.645669291px] text-center">
+              <td className="h-[18.275590551px] w-[128.50393701px]"></td>
+              <td className="h-[18.275590551px] w-[98.267716535px] text-center">
                 {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
               </td>
             </tr>
             <tr className="text-[10px]">
-              <td className="h-[18.275590551px] w-[145.50393701px]"></td>
-              <td className="h-[18.275590551px] w-[176.52755906px]">
+              <td className="h-[18.275590551px] w-[124.72440945px]"></td>
+              <td className="h-[18.275590551px] w-[179.90551181px] pl-[7.342622px]">
                 {FormattedSumTotal(data, vatAmount, 16)}
               </td>
-              <td className="h-[18.275590551px] w-[129.25984252px]"></td>
-              <td className="h-[18.275590551px] w-[98.645669291px] text-center"></td>
+              <td className="h-[18.275590551px] w-[128.50393701px]"></td>
+              <td className="h-[18.275590551px] w-[98.267716535px] text-center"></td>
             </tr>
             <tr className="text-[10px]">
-              <td className="h-[18.275590551px] w-[145.50393701px]"></td>
-              <td className="h-[18.275590551px] w-[176.52755906px]"></td>
-              <td className="h-[18.275590551px] w-[129.25984252px]"></td>
-              <td className="h-[18.275590551px] w-[98.645669291px] text-center">
+              <td className="h-[18.275590551px] w-[124.72440945px]"></td>
+              <td className="h-[18.275590551px] w-[179.90551181px] pl-[7.342622px]"></td>
+              <td className="h-[18.275590551px] w-[128.50393701px]"></td>
+              <td className="h-[18.275590551px] w-[98.267716535px] text-center">
                 {FormattedSumTotal(data, vatAmount2, 16)}
               </td>
             </tr>
             <tr className="text-[10px]">
-              <td className="h-[18.275590551px] w-[145.50393701px]"></td>
-              <td className="h-[18.275590551px] w-[176.52755906px]"></td>
-              <td className="h-[18.275590551px] w-[129.25984252px]"></td>
-              <td className="h-[18.275590551px] w-[98.645669291px] text-center">
+              <td className="h-[18.275590551px] w-[124.72440945px]"></td>
+              <td className="h-[18.275590551px] w-[179.90551181px] pl-[7.342622px]"></td>
+              <td className="h-[18.275590551px] w-[128.50393701px]"></td>
+              <td className="h-[18.275590551px] w-[98.267716535px] text-center">
                 {FormattedSumTotal(data, vatAmount3, 16)}
               </td>
             </tr>
             <tr className="text-[10px]">
-              <td className="h-[18.275590551px] w-[145.50393701px]"></td>
-              <td className="h-[18.275590551px] w-[176.52755906px]"></td>
-              <td className="h-[18.275590551px] w-[129.25984252px]"></td>
-              <td className="h-[18.275590551px] w-[98.645669291px] text-center">
+              <td className="h-[18.275590551px] w-[124.72440945px]"></td>
+              <td className="h-[18.275590551px] w-[179.90551181px] pl-[7.342622px]"></td>
+              <td className="h-[18.275590551px] w-[128.50393701px]"></td>
+              <td className="h-[18.275590551px] w-[98.267716535px] text-center">
                 {FormattedSumTotal(data, totalSalesVatInclusive, 16)}
               </td>
             </tr>
