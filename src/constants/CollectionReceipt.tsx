@@ -8,6 +8,7 @@ import Size3Collection from "@/utils/collectionreceipt/size3";
 import Size4Collection from "@/utils/collectionreceipt/size4";
 import HondaDESSize from "@/utils/collectionreceipt/global/HondaDESSize";
 import DAPSize from "@/utils/collectionreceipt/global/DAPSize";
+import SmctCrSize from "@/utils/collectionreceipt/global/SmctCrSize";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -130,7 +131,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "SINDA",
     "SMCT",
     "VETH",
-    "VILLA2"
+    "VILLA2",
   ];
 
   const DAPSizeData = [
@@ -160,7 +161,44 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "OZAD",
     "PUTD",
     "SANM",
-    "VITA"
+    "VITA",
+  ];
+
+  const SmctCrSizeData = [
+    "ALEN",
+    "BANTA",
+    "BAYB",
+    "CALAP",
+    "CALI",
+    "CARMB",
+    "CATAR",
+    "FAMY",
+    "GUIN",
+    "JAGN",
+    "BOHK",
+    "LOAY",
+    "MADRI",
+    "MALA",
+    "MANG",
+    "NAIC",
+    "PAGS",
+    "SALA",
+    "SANJ",
+    "SANP",
+    "SANT2",
+    "SILA",
+    "AKLA",
+    "ANTIP",
+    "CALAP2",
+    "BINAN",
+    "LIPA",
+    "SROS",
+    "TALI2",
+    "TANZ",
+    "TANZ2",
+    "TRINI2",
+    "VALEN",
+    "YATI",
   ];
 
   // if (size1.some((branch) => branch === user?.branchCode)) {
@@ -180,6 +218,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     return <HondaDESSize data={data} />;
   } else if (DAPSizeData.some((branch) => branch === user?.branchCode)) {
     return <DAPSize data={data} />;
+  } else if (SmctCrSizeData.some((branch) => branch === user?.branchCode)) {
+    return <SmctCrSize data={data} />;
   } else {
     return (
       <div className="text-center flex items-center justify-center h-screen font-bold text-lg">

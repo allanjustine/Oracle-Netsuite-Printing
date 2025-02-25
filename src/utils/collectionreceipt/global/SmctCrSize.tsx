@@ -14,8 +14,8 @@ const SmctCrSize: React.FC<PrintPageProps> = ({ data }) => {
   const CR_PartnerName = 9;
 
   return (
-    <div className="text-xs w-[769.13385827px] h-[396.8503937px]">
-      <div className="flex mt-[100.1732283431px]">
+    <div className="text-xs w-[752.12598425px] h-[389.29133858px]">
+      <div className="flex mt-[93.1732283431px]">
         <p className="pl-[604.72440945px] w-[143.62204724px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
@@ -68,7 +68,7 @@ const SmctCrSize: React.FC<PrintPageProps> = ({ data }) => {
       
       <div className="w-[769.13385827px] pl-[566.92913386px] mt-[45.7952755906px] text-[11px]">
         <p>
-        {data[1]?.[CR_PartnerName]}
+        {data[1]?.[CR_PartnerName] || ""}
         </p>
       </div>
     </div>
