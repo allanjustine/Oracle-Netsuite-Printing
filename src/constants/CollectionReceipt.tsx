@@ -9,6 +9,7 @@ import Size4Collection from "@/utils/collectionreceipt/size4";
 import HondaDESSize from "@/utils/collectionreceipt/global/HondaDESSize";
 import DAPSize from "@/utils/collectionreceipt/global/DAPSize";
 import SmctCrSize from "@/utils/collectionreceipt/global/SmctCrSize";
+import DsmCrSize from "@/utils/collectionreceipt/global/DsmCrSize";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -164,7 +165,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "VITA",
   ];
 
-  const SmctCrSizeData = [
+  const smctCrSizeData = [
     "ALEN",
     "BANTA",
     "BAYB",
@@ -201,6 +202,66 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "YATI",
   ];
 
+  const dsmCrSizeData = [
+    "AURO",
+    "BALA",
+    "BOGO",
+    "BULU",
+    "CALIN",
+    "CAMBARO",
+    "CARMC2",
+    "CARMCDO",
+    "CARS",
+    "CATAR2",
+    "CATM",
+    "CERI",
+    "COMPO",
+    "CONSO",
+    "DIGOS",
+    "DONC",
+    "CARCAR",
+    "DSMAO",
+    "DSMB",
+    "DSMBL",
+    "DSMBN",
+    "DSMCA",
+    "DSMCN",
+    "DSMCA",
+    "DSMCN",
+    "DSMD",
+    "DSMD2",
+    "DSMK",
+    "DSMLN",
+    "DSMPO",
+    "DSMSB",
+    "DSMSO",
+    "DSMT2",
+    "DSMTA",
+    "DSMV",
+    "ELSA",
+    "ILIG",
+    "ILOI",
+    "JIMEDSM",
+    "KABA2",
+    "KATI",
+    "LABA",
+    "LAPU",
+    "MARA",
+    "MATI",
+    "MEDE",
+    "REMI",
+    "RIZA",
+    "SARG",
+    "SLIL",
+    "TACU",
+    "TAGUM",
+    "TOMAS",
+    "TORI",
+    "TUBU",
+    "VILLA",
+    "DSMBL",
+  ];
+
   // if (size1.some((branch) => branch === user?.branchCode)) {
   //   return <Size1Collection data={data} />;
   // } else if (size2.some((branch) => branch === user?.branchCode)) {
@@ -218,8 +279,10 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     return <HondaDESSize data={data} />;
   } else if (DAPSizeData.some((branch) => branch === user?.branchCode)) {
     return <DAPSize data={data} />;
-  } else if (SmctCrSizeData.some((branch) => branch === user?.branchCode)) {
+  } else if (smctCrSizeData.some((branch) => branch === user?.branchCode)) {
     return <SmctCrSize data={data} />;
+  } else if (dsmCrSizeData.some((branch) => branch === user?.branchCode)) {
+    return <DsmCrSize data={data} />;
   } else {
     return (
       <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
