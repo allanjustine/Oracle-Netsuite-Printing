@@ -92,22 +92,22 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   // const size4 = ["SANP", "FAMY", "LAPU", "ANTIP", "SROS", "UBAY", "NAIC"];
 
   const luzonSizeData = [
-    "ANTIP",
-    "BINAN",
+    // "ANTIP",
+    // "BINAN",
     "CARMO",
     "DASMA",
-    "FAMY",
-    "LIPA",
-    "NAIC",
-    "PAGS",
-    "SANJ",
-    "SANM",
-    "SANP",
-    "SILA",
+    // "FAMY",
+    // "LIPA",
+    // "NAIC",
+    // "PAGS",
+    // "SANJ",
+    // "SANM",
+    // "SANP",
+    // "SILA",
     "SLAS",
-    "SROS",
+    // "SROS",
     "TANH",
-    "TANZ",
+    // "TANZ",
   ];
 
   const HondaDESSizeData = [
