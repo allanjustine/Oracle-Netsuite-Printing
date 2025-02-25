@@ -36,28 +36,28 @@ const SmctSiSize: React.FC<PrintPageProps> = ({ data }) => {
     <div className="text-xs h-[785.76377953px] w-[582.80314961px]">
       <div className="flex h-[21.165354331px] mt-[109.7244094521px]">
         <p className="w-[377.95275591px] pl-[94.488188976px]">
-          {data[1]?.[mainLineName] || "No data"}
+          {data[1]?.[mainLineName] || ""}
         </p>
         <p className="w-[219.21259843px] pl-[62px]">
-          {data[1]?.[date] || "No data"}
+          {data[1]?.[date] || ""}
         </p>
       </div>
       <div className="flex h-[21.165354331px]">
         <p className="w-[377.95275591px] pl-[94.488188976px]">
-          {data[1]?.[tinNumber] || "No data"}
+          {data[1]?.[tinNumber] || ""}
         </p>
         <p className="w-[219.21259843px] pl-[62px]">
-          {data[1]?.[terms] || "No data"}
+          {data[1]?.[terms] || ""}
         </p>
       </div>
       <div className="flex h-[21.165354331]">
         <p className={`w-full pl-[94.488188976px] ${data[1]?.[billingAddress]?.length > 90 ? 'text-[9px]' : ''}`}>
-          {data[1]?.[billingAddress] || "No data"}
+          {data[1]?.[billingAddress] || ""}
         </p>
       </div>
       <div className="flex h-[21.165354331px]">
         <p className="w-[377.95275591px] pl-[129px]">
-          {data[1]?.[businessStyle] || "No data"}
+          {data[1]?.[businessStyle] || ""}
         </p>
         <p className="w-[219.21259843px] pl-[87px]"></p>
       </div>
@@ -157,7 +157,7 @@ const SmctSiSize: React.FC<PrintPageProps> = ({ data }) => {
       <div className="mx-[30.236220472px]">
         <div className="mt-[22.566929134px] ml-[392.31496063px]">
           <p className="text-[10px] text-center">
-            {data[1]?.[cashier] || "Test Cashier"}
+            {data[1]?.[cashier] || ""}
           </p>
         </div>
       </div>
