@@ -66,10 +66,10 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
           {data[1]?.[cardHolderSignatures] || ""}
         </p>
       </div>
-      <div className="mx-[37.795275591px] mt-[26.456692913px] h-[64.251968504px]">
+      <div className="mx-[37.795275591px] mt-[26.456692913px] h-[313.32283465px]">
         <table className="border-collapse w-full">
           <tbody>
-            {data.slice(1, 4).map((row, index) => (
+            {data.slice(1, 17).map((row, index) => (
               <tr key={index} className="text-[10px] text-center">
                 <td className="w-[74.24071991px]">{row[quantity]}</td>
                 <td className="w-[53.831271091px] h-[19.275590551px]">
@@ -102,7 +102,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
               <td className={`w-[309.70528684px] h-[19.275590551px]`}></td>
               <td className="w-[163.81552306px] h-[19.275590551px]"></td>
               <td className="w-[114.30371204px] h-[19.275590551px]">
-                {FormattedSumTotal(data, totalSalesVatInclusive, 3)}
+                {FormattedSumTotal(data, totalSalesVatInclusive, 16)}
               </td>
             </tr>
             <tr className="text-[10px] text-center">
@@ -111,7 +111,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
               <td className={`w-[309.70528684px] h-[19.275590551px]`}></td>
               <td className="w-[163.81552306px] h-[19.275590551px]"></td>
               <td className="w-[114.30371204px] h-[19.275590551px]">
-                {FormattedSumTotal(data, vatAmount2, 3)}
+                {FormattedSumTotal(data, vatAmount2, 16)}
               </td>
             </tr>
           </tbody>
@@ -123,43 +123,43 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
             <tr className="text-[10px]">
               <td className="h-[19.275590551px] w-[336.62632171px]"></td>
               <td className="h-[19.275590551px] w-[101.83127109px]">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 3)}
+                {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
               </td>
               <td className="h-[19.275590551px] w-[163.81552306px]"></td>
               <td className="h-[19.275590551px] w-[114.30371204px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 3)}
+                {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
               </td>
             </tr>
             <tr className="text-[10px]">
               <td className="h-[19.275590551px] w-[336.62632171px]"></td>
               <td className="h-[19.275590551px] w-[101.83127109px]">
-                {/* {FormattedSumTotal(data, rateInclusiveVat, 3)} VAT EXEMPT SALES */}
+                {/* {FormattedSumTotal(data, rateInclusiveVat, 16)} VAT EXEMPT SALES */}
                 0.00
               </td>
               <td className="h-[19.275590551px] w-[163.81552306px]"></td>
               <td className="h-[19.275590551px] w-[114.30371204px] text-center">
-                {/* {FormattedSumTotal(data, totalSalesVatInclusive2, 3)} LESS: SC/PWD DISCOUNT */}
+                {/* {FormattedSumTotal(data, totalSalesVatInclusive2, 16)} LESS: SC/PWD DISCOUNT */}
                 0.00
               </td>
             </tr>
             <tr className="text-[10px]">
               <td className="h-[19.275590551px] w-[336.62632171px]"></td>
               <td className="h-[19.275590551px] w-[101.83127109px]">
-                {FormattedSumTotal(data, rateInclusiveVat, 3)}
+                {FormattedSumTotal(data, rateInclusiveVat, 16)}
               </td>
               <td className="h-[19.275590551px] w-[163.81552306px]"></td>
               <td className="h-[19.275590551px] w-[114.30371204px] text-center">
-                {FormattedSumTotal(data, vatAmount2, 3)}
+                {FormattedSumTotal(data, vatAmount2, 16)}
               </td>
             </tr>
             <tr className="text-[10px]">
               <td className="h-[19.275590551px] w-[336.62632171px]"></td>
               <td className="h-[19.275590551px] w-[101.83127109px]">
-                {FormattedSumTotal(data, vatAmount, 3)}
+                {FormattedSumTotal(data, vatAmount, 16)}
               </td>
               <td className="h-[19.275590551px] w-[163.81552306px]"></td>
               <td className="h-[19.275590551px] w-[114.30371204px] text-center">
-                {FormattedSumTotal(data, vatAmount3, 3)}
+                {FormattedSumTotal(data, vatAmount3, 16)}
               </td>
             </tr>
             <tr className="text-[10px]">
@@ -167,7 +167,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
               <td className="h-[19.275590551px] w-[101.83127109px]"></td>
               <td className="h-[19.275590551px] w-[163.81552306px]"></td>
               <td className="h-[19.275590551px] w-[114.30371204px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive, 3)}
+                {FormattedSumTotal(data, totalSalesVatInclusive, 16)}
               </td>
             </tr>
           </tbody>

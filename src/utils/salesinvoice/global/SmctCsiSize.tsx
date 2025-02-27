@@ -162,7 +162,7 @@ const SmctCsiSize = ({ data }: any) => {
       <div className="mx-[30.236220472px]">
         <div className="mt-[24.456692914px] ml-[332.976377952px]">
           <p className="text-[10px] text-center">
-            {data[1]?.[cashier] || "Test Cashier"}
+            {data[1]?.[cashier] || ""}
           </p>
         </div>
       </div>

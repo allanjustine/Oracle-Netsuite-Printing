@@ -157,7 +157,7 @@ const HdSiSize: React.FC<PrintPageProps> = ({ data }) => {
       <div className="mx-[30.236220472px]">
         <div className="mt-[22.566929134px] ml-[392.31496063px]">
           <p className="text-[10px] text-center">
-            {data[1]?.[cashier] || "Test Cashier"}
+            {data[1]?.[cashier] || ""}
           </p>
         </div>
       </div>
