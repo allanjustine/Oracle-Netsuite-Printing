@@ -90,6 +90,32 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
                 </td>
               </tr>
             ))}
+            <tr className="text-[10px] text-center">
+              <td className="w-[74.24071991px]"></td>
+              <td className="w-[53.831271091px] h-[19.275590551px]"></td>
+              <td
+                className={`w-[309.70528684px] h-[19.275590551px] ${
+                  data[1]?.[serialNumber]?.length > 41 ? "text-[7px]" : ""
+                }`}
+              >
+                {data[1]?.[serialNumber]}
+              </td>
+              <td className="w-[163.81552306px] h-[19.275590551px]"></td>
+              <td className="w-[114.30371204px] h-[19.275590551px]"></td>
+            </tr>
+            <tr className="text-[10px] text-center">
+              <td className="w-[74.24071991px]"></td>
+              <td className="w-[53.831271091px] h-[19.275590551px]"></td>
+              <td
+                className={`w-[309.70528684px] h-[19.275590551px] ${
+                  data[1]?.[chassisNumber]?.length > 41 ? "text-[7px]" : ""
+                }`}
+              >
+                {data[1]?.[chassisNumber]}
+              </td>
+              <td className="w-[163.81552306px] h-[19.275590551px]"></td>
+              <td className="w-[114.30371204px] h-[19.275590551px]"></td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -175,9 +201,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="mx-[37.795275591px]">
         <div className="mt-[18px] ml-[392.31496063px]">
-          <p className="text-[10px] text-center">
-            {data[1]?.[cashier] || ""}
-          </p>
+          <p className="text-[10px] text-center">{data[1]?.[cashier] || ""}</p>
         </div>
       </div>
     </div>
