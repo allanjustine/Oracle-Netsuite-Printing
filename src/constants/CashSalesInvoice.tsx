@@ -25,6 +25,7 @@ import HDAurora from "@/utils/salesinvoice/global/hd/HDAurora";
 import DapLabason from "@/utils/salesinvoice/global/dap/DapLabason";
 import Antipolo from "@/utils/salesinvoice/global/smct/Antipolo";
 import DsmCarmenCebu from "@/utils/salesinvoice/global/dsm/DsmCarmenCebu";
+import MandaueMulti from "@/utils/salesinvoice/global/dsm/MandaueMulti";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -345,6 +346,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     return <Antipolo data={data} />;
   } else if ("CARMC2" === user?.branchCode) {
     return <DsmCarmenCebu data={data} />;
+  } else if ("MAND" === user?.branchCode) {
+    return <MandaueMulti data={data} />;
   } else {
     return (
       <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
