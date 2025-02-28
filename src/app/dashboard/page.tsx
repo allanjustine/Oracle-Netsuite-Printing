@@ -13,7 +13,7 @@ import {
 import { read, utils, readFile } from "xlsx";
 import PrintPage from "../print/page";
 import ReactDOM from "react-dom/client";
-import { FaXmark } from "react-icons/fa6";
+import { FaRotate, FaXmark } from "react-icons/fa6";
 import { FormatFileSize } from "@/utils/SizeFormat/FormatFileSize";
 import DragAndDropComponent from "@/components/DragAndDropComponent";
 import FormattedNumber from "@/utils/FormattedNumber";
@@ -228,7 +228,7 @@ export default function Page() {
       );
 
       setExcelData(stringData);
-      
+
       if (stringData[0]?.length <= 10) {
         setIsPrintCr(true);
       } else {
@@ -316,7 +316,15 @@ export default function Page() {
                   </>
                 ) : (
                   <>
-                    <FaUpload size={20} color="#fff" /> Upload File
+                    {excelData.length > 0 ? (
+                      <>
+                        <FaRotate size={20} color="#fff" /> Re-Upload
+                      </>
+                    ) : (
+                      <>
+                        <FaUpload size={20} color="#fff" /> Upload
+                      </>
+                    )}
                   </>
                 )}
               </button>
