@@ -281,7 +281,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const hdCsiSizeData = ["ALAH", "DSML", "PARD3", "INIT", "MARH", "VETH"];
 
   const smctCsiSizeData = [
-    "ANTI",
     "BAYB",
     "MANG",
     "SAGBA",
