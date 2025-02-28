@@ -21,6 +21,7 @@ import HdSiSize from "@/utils/salesinvoice/global/HdSiSize";
 import HdCsiSizes from "@/utils/salesinvoice/global/HdCsiSize";
 import SmctCsiSize from "@/utils/salesinvoice/global/SmctCsiSize";
 import SmctSiSize from "@/utils/salesinvoice/global/SmctSiSize";
+import HDAurora from "@/utils/salesinvoice/global/hd/HDAurora";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -273,7 +274,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "MAND2",
   ];
 
-  const hdSiSizeData = ["AURH", "CAMH", "GENT", "OROH", "TANH"];
+  const hdSiSizeData = ["CAMH", "GENT", "OROH", "TANH"];
 
   const hdCsiSizeData = ["ALAH", "DSML", "PARD3", "INIT", "MARH", "VETH"];
 
@@ -327,6 +328,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     return <SmctCsiSize data={data} />;
   } else if (smctSiSizeData.some((branch) => branch === user?.branchCode)) {
     return <SmctSiSize data={data} />;
+  } else if ("AURH" === user?.branchCode) {
+    return <HDAurora data={data} />;
   } else {
     return (
       <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
