@@ -22,6 +22,8 @@ import HdCsiSizes from "@/utils/salesinvoice/global/HdCsiSize";
 import SmctCsiSize from "@/utils/salesinvoice/global/SmctCsiSize";
 import SmctSiSize from "@/utils/salesinvoice/global/SmctSiSize";
 import HDAurora from "@/utils/salesinvoice/global/hd/HDAurora";
+import DapLabason from "@/utils/salesinvoice/global/dap/DapLabason";
+import Antipolo from "@/utils/salesinvoice/global/smct/Antipolo";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -207,7 +209,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   // ];
 
   const luzonSizeData = [
-    "ANTIP",
     "BINAN",
     // "CARMO",
     "DASMA",
@@ -234,7 +235,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "CALD",
     "CAMD",
     "KABD",
-    "LABD",
     "MARD",
     "RIZD",
     "SANM",
@@ -290,7 +290,15 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "VALEN",
   ];
 
-  const smctSiSizeData = ["BANTA", "GUIN", "MADRI", "CARMO", "ANTI", "TRINI2", "ALLEN"];
+  const smctSiSizeData = [
+    "BANTA",
+    "GUIN",
+    "MADRI",
+    "CARMO",
+    "ANTI",
+    "TRINI2",
+    "ALLEN",
+  ];
 
   // if (size1.some((branch) => branch === user?.branchCode)) {
   //   return <Size1Sales data={data} />;
@@ -330,6 +338,10 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     return <SmctSiSize data={data} />;
   } else if ("AURH" === user?.branchCode) {
     return <HDAurora data={data} />;
+  } else if ("LABD" === user?.branchCode) {
+    return <DapLabason data={data} />;
+  } else if ("ANTIP" === user?.branchCode) {
+    return <Antipolo data={data} />;
   } else {
     return (
       <div className="text-center flex items-center justify-center h-screen font-bold text-lg">

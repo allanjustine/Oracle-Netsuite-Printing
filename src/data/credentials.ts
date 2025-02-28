@@ -769,6 +769,12 @@ export const data = [
         branchName: "Suzuki Auto Bohol",
         password: "Smct123456",
       },
+      {
+        id: 71,
+        branchCode: "NABU",
+        branchName: "DSM Nabunturan",
+        password: "Smct123456",
+      }
     ],
   },
   {
@@ -1137,7 +1143,7 @@ export const data = [
         branchCode: "VITA",
         branchName: "DAP Vitali",
         password: "Smct123456",
-      },
+      }
     ]
   }
 ];
