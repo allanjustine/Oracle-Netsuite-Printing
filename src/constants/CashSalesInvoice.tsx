@@ -23,6 +23,7 @@ import SmctCsiSize from "@/utils/salesinvoice/global/SmctCsiSize";
 import SmctSiSize from "@/utils/salesinvoice/global/SmctSiSize";
 import DapLabason from "@/utils/salesinvoice/global/dap/DapLabason";
 import Antipolo from "@/utils/salesinvoice/global/smct/Antipolo";
+import DsmCarmenCebu from "@/utils/salesinvoice/dsm/DsmCarmenCebu";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -339,6 +340,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     return <DapLabason data={data} />;
   } else if ("ANTIP" === user?.branchCode) {
     return <Antipolo data={data} />;
+  } else if ("CARMC2" === user?.branchCode) {
+    return <DsmCarmenCebu data={data} />;
   } else {
     return (
       <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
