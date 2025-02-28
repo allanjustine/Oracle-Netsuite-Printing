@@ -24,7 +24,7 @@ import SmctSiSize from "@/utils/salesinvoice/global/SmctSiSize";
 import HDAurora from "@/utils/salesinvoice/global/hd/HDAurora";
 import DapLabason from "@/utils/salesinvoice/global/dap/DapLabason";
 import Antipolo from "@/utils/salesinvoice/global/smct/Antipolo";
-import DsmCarmenCebu from "@/utils/salesinvoice/dsm/DsmCarmentCebu";
+import DsmCarmenCebu from "@/utils/salesinvoice/global/dsm/DsmCarmenCebu";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
