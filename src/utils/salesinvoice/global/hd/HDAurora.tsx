@@ -31,7 +31,6 @@ const HDAurora = ({ data }: any) => {
   const tinNumber = 24;
   const cashier = 25;
   const unitPrice = 26;
-  const businessAddress = 28;
 
   return (
     <div className="text-xs h-[767.24409449px] w-[608.50393701px]">
@@ -52,7 +51,7 @@ const HDAurora = ({ data }: any) => {
       </div>
       <div className="w-full h-[19.409448819px] mt-[2.677165354px]">
         <p className="w-[377.95275591px] pl-[188.97637795px]">
-          {data[1]?.[businessAddress] || ""}
+          {data[1]?.[billingAddress] || ""}
         </p>
       </div>
       <div className="mx-[34.015748031px] mt-[30.236220472px] h-[226.77165354px]">
@@ -84,7 +83,9 @@ const HDAurora = ({ data }: any) => {
                   data[1]?.[serialNumber]?.length > 41 ? "text-[7px]" : ""
                 }`}
               >
-                {data[1]?.[serialNumber]}
+                {data[1]?.[serialNumber] && (
+                  <>Engine #: {data[1]?.[serialNumber]}</>
+                )}
               </td>
               <td className="w-[75.5905511811px] h-[19.275590551px]"></td>
               <td className="w-[83.149606299px] h-[19.275590551px]"></td>
@@ -96,7 +97,9 @@ const HDAurora = ({ data }: any) => {
                   data[1]?.[chassisNumber]?.length > 41 ? "text-[7px]" : ""
                 }`}
               >
-                {data[1]?.[chassisNumber]}
+                {data[1]?.[chassisNumber] && (
+                  <>Chassis #: {data[1]?.[chassisNumber]}</>
+                )}
               </td>
               <td className="w-[75.5905511811px] h-[19.275590551px]"></td>
               <td className="w-[83.149606299px] h-[19.275590551px]"></td>

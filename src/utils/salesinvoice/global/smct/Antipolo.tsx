@@ -31,7 +31,6 @@ const Antipolo = ({ data }: any) => {
   const tinNumber = 24;
   const cashier = 25;
   const unitPrice = 26;
-  const businessAddress = 28;
 
   return (
     <div className="text-xs h-[767.24409449px] w-[610.39370079px]">
@@ -50,7 +49,7 @@ const Antipolo = ({ data }: any) => {
           {data[1]?.[tinNumber] || <span className="opacity-0">No Data</span>}
         </p>
         <p className="w-[389.29133858px] flex items-center h-[24.566929134px] ml-[151.18110236px]">
-          {data[1]?.[businessAddress] || (
+          {data[1]?.[billingAddress] || (
             <span className="opacity-0">No Data</span>
           )}
         </p>
@@ -82,7 +81,9 @@ const Antipolo = ({ data }: any) => {
                   data[1]?.[serialNumber]?.length > 41 ? "text-[7px]" : ""
                 }`}
               >
-                {data[1]?.[serialNumber]}
+                {data[1]?.[serialNumber] && (
+                  <>Engine #: {data[1]?.[serialNumber]}</>
+                )}
               </td>
               <td className="w-[75.968503937px]"></td>
               <td className="w-[83.48976378px] h-[18.897637795px]"></td>
@@ -94,7 +95,9 @@ const Antipolo = ({ data }: any) => {
                   data[1]?.[chassisNumber]?.length > 41 ? "text-[7px]" : ""
                 }`}
               >
-                {data[1]?.[chassisNumber]}
+                {data[1]?.[chassisNumber] && (
+                  <>Chassis #: {data[1]?.[chassisNumber]}</>
+                )}
               </td>
               <td className="w-[75.968503937px]"></td>
               <td className="w-[83.48976378px] h-[18.897637795px]"></td>
@@ -179,7 +182,9 @@ const Antipolo = ({ data }: any) => {
       </div>
       <div className="w-[610.39370079px]">
         <div className="mt-[15.897637795px] ml-[192.75590551px] w-[154.96062992px]">
-          <p className="text-[10px] text-center">{data[1]?.[cashier] || "Test Cashier"}</p>
+          <p className="text-[10px] text-center">
+            {data[1]?.[cashier] || "Test Cashier"}
+          </p>
         </div>
       </div>
     </div>

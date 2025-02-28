@@ -31,7 +31,6 @@ const DsmCarmenCebu = ({ data }: any) => {
   const tinNumber = 24;
   const cashier = 25;
   const unitPrice = 26;
-  const businessAddress = 28;
 
   return (
     <div className="text-xs h-[714.33070866px] w-[549.92125984px]">
@@ -50,7 +49,7 @@ const DsmCarmenCebu = ({ data }: any) => {
           {data[1]?.[tinNumber] || <span className="opacity-0">No Data</span>}
         </p>
         <p className="w-[359.43307087px] flex items-center h-[22.8031496px] ml-[132.28346457px]">
-          {data[1]?.[businessAddress] || (
+          {data[1]?.[billingAddress] || (
             <span className="opacity-0">No Data</span>
           )}
         </p>
@@ -82,7 +81,9 @@ const DsmCarmenCebu = ({ data }: any) => {
                   data[1]?.[serialNumber]?.length > 41 ? "text-[7px]" : ""
                 }`}
               >
-                {data[1]?.[serialNumber]}
+                {data[1]?.[serialNumber] && (
+                  <>Engine #: {data[1]?.[serialNumber]}</>
+                )}
               </td>
               <td className="w-[71.05511811px]"></td>
               <td className="w-[77.480314961px] h-[18.897637795px]"></td>
@@ -94,7 +95,9 @@ const DsmCarmenCebu = ({ data }: any) => {
                   data[1]?.[chassisNumber]?.length > 41 ? "text-[7px]" : ""
                 }`}
               >
-                {data[1]?.[chassisNumber]}
+                {data[1]?.[chassisNumber] && (
+                  <>Chassis #: {data[1]?.[chassisNumber]}</>
+                )}
               </td>
               <td className="w-[71.05511811px]"></td>
               <td className="w-[77.480314961px] h-[18.897637795px]"></td>
@@ -179,7 +182,9 @@ const DsmCarmenCebu = ({ data }: any) => {
       </div>
       <div className="w-[548.03149606px]">
         <div className="mt-[15.897637795px] ml-[183.30708661px] w-[142.86614173px]">
-          <p className="text-[10px] text-center">{data[1]?.[cashier] || "Test Cashier"}</p>
+          <p className="text-[10px] text-center">
+            {data[1]?.[cashier] || "Test Cashier"}
+          </p>
         </div>
       </div>
     </div>
