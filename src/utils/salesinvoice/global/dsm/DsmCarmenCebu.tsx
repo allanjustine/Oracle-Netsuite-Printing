@@ -35,7 +35,7 @@ const DsmCarmenCebu = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[714.33070866px] w-[549.92125984px]">
-      <div className="flex items-center h-[28.346456693px] mx-[26.456692913px] ml-[292.91338583px] mt-[144.37795276px]">
+      <div className="flex items-center h-[28.346456693px] mx-[26.456692913px] ml-[292.91338583px] mt-[135.37795276px]">
         <p className="w-[230.5511811px] ml-[83.905511811px]">
           {data[1]?.[date] || ""}
         </p>
