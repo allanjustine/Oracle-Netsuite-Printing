@@ -49,8 +49,8 @@ const HDAurora = ({ data }: any) => {
           {data[1]?.[tinNumber] || ""}
         </p>
       </div>
-      <div className="w-full h-[19.409448819px] mt-[2.677165354px]">
-        <p className="w-[377.95275591px] pl-[188.97637795px]">
+      <div className="w-[608.50393701px] h-[19.409448819px] mt-[2.677165354px]">
+        <p className="w-[434.64566929px] ml-[188.97637795px]">
           {data[1]?.[billingAddress] || ""}
         </p>
       </div>
