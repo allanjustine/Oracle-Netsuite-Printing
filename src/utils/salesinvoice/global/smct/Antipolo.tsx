@@ -40,15 +40,19 @@ const Antipolo = ({ data }: any) => {
         </p>
       </div>
       <div className="mt-[17.007874016px] mx-[37.795275591px] h-[73.700787402px] w-[534.80314961px]">
-        <p className="w-[389.29133858px] flex items-center h-[24.566929134px] ml-[151.18110236px]">
+        <p className="w-[389.29133858px] flex items-center h-[24.566929134px] ml-[154.96062992px]">
           {data[1]?.[mainLineName] || (
             <span className="opacity-0">No Data</span>
           )}
         </p>
-        <p className="w-[389.29133858px] flex items-center h-[24.566929134px] ml-[151.18110236px]">
+        <p className="w-[389.29133858px] flex items-center h-[24.566929134px] ml-[154.96062992px]">
           {data[1]?.[tinNumber] || <span className="opacity-0">No Data</span>}
         </p>
-        <p className="w-[389.29133858px] flex items-center h-[24.566929134px] ml-[151.18110236px]">
+        <p
+          className={`${
+            data[1]?.[billingAddress].length > 65 ? "text-[9px]" : ""
+          } w-[389.29133858px] flex items-center h-[24.566929134px] ml-[154.96062992px]`}
+        >
           {data[1]?.[billingAddress] || (
             <span className="opacity-0">No Data</span>
           )}
@@ -183,7 +187,7 @@ const Antipolo = ({ data }: any) => {
       <div className="w-[610.39370079px]">
         <div className="mt-[15.897637795px] ml-[192.75590551px] w-[154.96062992px]">
           <p className="text-[10px] text-center">
-            {data[1]?.[cashier] || "Test Cashier"}
+            {data[1]?.[cashier] || ""}
           </p>
         </div>
       </div>
