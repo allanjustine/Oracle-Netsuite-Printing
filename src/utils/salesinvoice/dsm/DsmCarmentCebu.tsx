@@ -3,7 +3,7 @@ import { PrintPageProps } from "@/types/types";
 import FormattedNumber from "@/utils/FormattedNumber";
 import FormattedSumTotal from "@/utils/FormattedSumTotal";
 
-const Antipolo = ({ data }: any) => {
+const DsmCarmenCebu = ({ data }: any) => {
   const mainLineName = 0;
   const date = 1;
   const taxNumber = 2;
@@ -186,4 +186,4 @@ const Antipolo = ({ data }: any) => {
   );
 };
 
-export default Antipolo;
+export default DsmCarmenCebu;
