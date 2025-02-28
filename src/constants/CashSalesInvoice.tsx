@@ -271,6 +271,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "JIMEDSM",
     "LABA",
     "MAND2",
+    "MAND",
   ];
 
   const hdSiSizeData = ["AURH", "CAMH", "GENT", "OROH", "TANH"];
