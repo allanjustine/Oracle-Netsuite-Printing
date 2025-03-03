@@ -10,6 +10,10 @@ import HondaDESSize from "@/utils/collectionreceipt/global/HondaDESSize";
 import DAPSize from "@/utils/collectionreceipt/global/DAPSize";
 import SmctCrSize from "@/utils/collectionreceipt/global/SmctCrSize";
 import DsmCrSize from "@/utils/collectionreceipt/global/DsmCrSize";
+import DAPBalingasag from "@/utils/collectionreceipt/global/dap/DAPBalingasag";
+import DAPIligan from "@/utils/collectionreceipt/global/dap/DAPIligan";
+import DAPTubod from "@/utils/collectionreceipt/global/dap/DAPTubod";
+import DSMBayugan from "@/utils/collectionreceipt/global/dsm/new/fdl/DSMBayugan";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -147,7 +151,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DAPI",
     "DIPD",
     "DIPD2",
-    "ILID",
     "INIT2",
     "JIME",
     "KABD",
@@ -283,6 +286,14 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     return <SmctCrSize data={data} />;
   } else if (dsmCrSizeData.some((branch) => branch === user?.branchCode)) {
     return <DsmCrSize data={data} />;
+  } else if ("BALD" === user?.branchCode) {
+    return <DAPBalingasag data={data} />;
+  } else if ("ILID" === user?.branchCode) {
+    return <DAPIligan data={data} />;
+  } else if ("TUBOD" === user?.branchCode) {
+    return <DAPTubod data={data} />;
+  } else if ("BAYU" === user?.branchCode) {
+    return <DSMBayugan data={data} />;
   } else {
     return (
       <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
