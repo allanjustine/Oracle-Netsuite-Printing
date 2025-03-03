@@ -16,7 +16,7 @@ import DAPTubod from "@/utils/collectionreceipt/global/dap/DAPTubod";
 import DSMBayugan from "@/utils/collectionreceipt/global/dsm/new/fdl/DSMBayugan";
 import Consolacion from "@/utils/official-receipt/global/fdl/old/dsm/Consolacion";
 import Argao from "@/utils/official-receipt/global/fdl/old/dsm/Argao";
-import Alano from "@/utils/collectionreceipt/global/dap/Alano";
+import Alano from "@/utils/collectionreceipt/global/fdl/new/Alano";
 // import Argao from "@/utils/collectionreceipt/global/dsm/new/fdl/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
