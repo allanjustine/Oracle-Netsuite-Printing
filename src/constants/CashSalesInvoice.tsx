@@ -21,11 +21,17 @@ import HdSiSize from "@/utils/salesinvoice/global/HdSiSize";
 import HdCsiSizes from "@/utils/salesinvoice/global/HdCsiSize";
 import SmctCsiSize from "@/utils/salesinvoice/global/SmctCsiSize";
 import SmctSiSize from "@/utils/salesinvoice/global/SmctSiSize";
-import HDAurora from "@/utils/salesinvoice/global/hd/HDAurora";
+import HDAurora from "@/utils/salesinvoice/global/hd/new/HDAurora";
 import DapLabason from "@/utils/salesinvoice/global/dap/DapLabason";
-import Antipolo from "@/utils/salesinvoice/global/smct/Antipolo";
-import DsmCarmenCebu from "@/utils/salesinvoice/global/dsm/DsmCarmenCebu";
-import MandaueMulti from "@/utils/salesinvoice/global/dsm/MandaueMulti";
+import Antipolo from "@/utils/salesinvoice/global/smct/new/Antipolo";
+import MandaueMulti from "@/utils/salesinvoice/global/dsm/NEW/obbus/MandaueMulti";
+import HDBuug from "@/utils/salesinvoice/global/hd/new/HDBuug";
+import HDBalamban from "@/utils/salesinvoice/global/hd/new/HDBalamban";
+import DSMDanao from "@/utils/salesinvoice/global/dsm/NEW/obbus/DSMDanao";
+import DsmCarmenCebu2 from "@/utils/salesinvoice/global/dsm/NEW/obbus/DsmCarmenCebu2";
+import DAPBalingasag from "@/utils/salesinvoice/global/dap/DAPBalingasag";
+import DAPIligan from "@/utils/salesinvoice/global/dap/DAPIligan";
+import DSMBayugan from "@/utils/salesinvoice/global/dsm/NEW/fdl/DSMBayugan";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -249,7 +255,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const dapCsiSizeData = [
     "BUUD",
     "DIPD",
-    "ILID",
     "JIME",
     "LILD",
     "MANO",
@@ -339,14 +344,26 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     return <SmctSiSize data={data} />;
   } else if ("AURH" === user?.branchCode) {
     return <HDAurora data={data} />;
+  } else if ("BUUH" === user?.branchCode) {
+    return <HDBuug data={data} />;
+  } else if ("DANAO" === user?.branchCode) {
+    return <DSMDanao data={data} />;
+  } else if ("BALAM" === user?.branchCode) {
+    return <HDBalamban data={data} />;
   } else if ("LABD" === user?.branchCode) {
     return <DapLabason data={data} />;
   } else if ("ANTIP" === user?.branchCode) {
     return <Antipolo data={data} />;
   } else if ("CARMC2" === user?.branchCode) {
-    return <DsmCarmenCebu data={data} />;
+    return <DsmCarmenCebu2 data={data} />;
   } else if ("MAND" === user?.branchCode) {
     return <MandaueMulti data={data} />;
+  } else if ("BALD" === user?.branchCode) {
+    return <DAPBalingasag data={data} />;
+  } else if ("ILID" === user?.branchCode) {
+    return <DAPIligan data={data} />;
+  } else if ("BAYU" === user?.branchCode) {
+    return <DSMBayugan data={data} />;
   } else {
     return (
       <div className="text-center flex items-center justify-center h-screen font-bold text-lg">

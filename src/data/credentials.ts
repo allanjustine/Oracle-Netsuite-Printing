@@ -774,6 +774,12 @@ export const data = [
         branchCode: "NABU",
         branchName: "DSM Nabunturan",
         password: "Smct123456",
+      },
+      {
+        id: 72,
+        branchCode: "BAYU",
+        branchName: "DSM Bayugan",
+        password: "Smct123456",
       }
     ],
   },
