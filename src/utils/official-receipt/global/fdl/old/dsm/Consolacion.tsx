@@ -11,63 +11,71 @@ const Consolacion = ({ data }: any) => {
   const CR_Memo = 7;
   const CR_FormOfPayment = 8;
   const CR_PartnerName = 9;
+  const memo = "asd asdashdjasbdjkasjd aoshduo uhsadu hasdujas db oiasdh asdu oiasdhfuasd fhasdf uashf asd"
 
   return (
-    <div className="text-xs w-[774.80314961px] h-[404.40944882px] ml-[10px]">
-      <div className="flex mt-[108.38582677px]">
-        <p className="pl-[604.72440945px] w-[143.62204724px]">
+    <div className="text-xs w-[778.58267717px] h-[396.8503937px] ml-[10px]">
+      <div className="flex mt-[119.38582677px]">
+        <p className="pl-[604.72440945px] w-[151.18110236px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex justify-between  mt-[19.7952755906px]">
-        <div className="w-[559.37007874px]">
-          <p className="pl-[302.36220472px]">
+        <div className="w-[566.92913386px]">
+          <p className="pl-[317.48031496px]">
             {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
           </p>
         </div>
-        <div className="w-[215.43307087px]">
-          <p className="pl-[45.354330709px]">
+        <div className="w-[137.95275591px]">
+          <p className="pl-[41.57480315px]">
             {data[1]?.[CR_TIN] || <span className="opacity-0">No data</span>}
           </p>
         </div>
       </div>
       <div className="flex mt-[9.8267716539px]">
-        <p className="pl-[294.80314961px]">
+        <p className="pl-[302.36220472px]">
           {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex mt-[6.8267716539px]">
-        <p className="ml-[287.24409449px]">
+        <p className="ml-[302.36220472px]">
           {data[1]?.[CR_BusinessStyle] || (
             <span className="opacity-0">No data</span>
           )}
         </p>
       </div>
-      <div className="flex w-full mt-[3.8267716539px]">
-        <div className="w-[595.27559055px]">
-          <p className="pl-[222.99212598px]">
-            {data[1]?.[CR_AmountInWords] || (
-              <span className="opacity-0">No data</span>
-            )}
-          </p>
-        </div>
-        <div className="w-[102.04724409px]">
-          <p className="pl-[46.354330709px]">
+      <div className="flex mt-[3.8267716539px]">
+        <p className="ml-[226.77165354px]">
+          {data[1]?.[CR_AmountInWords] || (
+            <span className="opacity-0">No data</span>
+          )}
+        </p>
+      </div>
+      <div className="flex w-full mt-[6.8267716539px]">
+        <div className="w-[325.03937008px]">
+          <p className="ml-[245.66929134px]">
             {data[1]?.[CR_AmountInFigures] || (
               <span className="opacity-0">No data</span>
             )}
           </p>
         </div>
+        <div className="w-[274.01574803px] ml-[132.28346457px]">
+          <p>
+            {memo.substring(0, 45) || (
+              <span className="opacity-0">No data</span>
+            )}
+          </p>
+        </div>
       </div>
-      <div className="w-[521.57480315px] pl-[340.15748031px] mt-[6.8267716539px]">
-        <p>
-          {data[1]?.[CR_Memo] || <span className="opacity-0">No data</span>}
-        </p>
-      </div>
-      <div className="w-[774.80314961px] pl-[566.92913386px] mt-[45.7952755906px] text-[11px]">
-        <p>
-        {data[1]?.[CR_PartnerName]}
-        </p>
+      <div className="ml-[226.77165354px] mt-[4.1811023622]">
+          <p>
+            {memo.substring(45) || (
+              <span className="opacity-0">No data</span>
+            )}
+          </p>
+        </div>
+      <div className="w-[718.11023622px] pl-[566.92913386px] mt-[30.7952755906px]">
+        <p>{data[1]?.[CR_PartnerName] || <span className="opacity-1">Allan J. Santos</span>}</p>
       </div>
     </div>
   );
