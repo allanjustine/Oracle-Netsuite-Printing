@@ -32,6 +32,9 @@ import DsmCarmenCebu2 from "@/utils/salesinvoice/global/dsm/NEW/obbus/DsmCarmenC
 import DAPBalingasag from "@/utils/salesinvoice/global/dap/DAPBalingasag";
 import DAPIligan from "@/utils/salesinvoice/global/dap/DAPIligan";
 import DSMBayugan from "@/utils/salesinvoice/global/dsm/NEW/fdl/DSMBayugan";
+import DSMNorzagaray from "@/utils/salesinvoice/global/dsm/NEW/fdl/DSMNorzagaray";
+import DSMCambaro from "@/utils/salesinvoice/global/dsm/NEW/fdl/DSMCambaro";
+import Binan from "@/utils/salesinvoice/global/smct/Binan";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -364,6 +367,12 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     return <DAPIligan data={data} />;
   } else if ("BAYU" === user?.branchCode) {
     return <DSMBayugan data={data} />;
+  } else if ("NORZA" === user?.branchCode) {
+    return <DSMNorzagaray data={data} />;
+  } else if ("DSMA" === user?.branchCode) {
+    return <DSMCambaro data={data} />;
+  } else if ("BINAN" === user?.branchCode) {
+    return <Binan data={data} />;
   } else {
     return (
       <div className="text-center flex items-center justify-center h-screen font-bold text-lg">

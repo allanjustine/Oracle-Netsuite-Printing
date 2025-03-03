@@ -1,6 +1,6 @@
 "use client";
 
-const Consolacion = ({ data }: any) => {
+const DSMCambaro = ({ data }: any) => {
   const CR_Date = 0;
   const CR_Name = 1;
   const CR_TIN = 2;
@@ -81,4 +81,4 @@ const Consolacion = ({ data }: any) => {
   );
 };
 
-export default Consolacion;
+export default DSMCambaro;
