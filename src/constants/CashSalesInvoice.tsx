@@ -36,6 +36,7 @@ import Consolacion from "@/utils/salesinvoice/global/obbus/old/dsm/Consolacion";
 import Argao from "@/utils/salesinvoice/global/obbus/old/dsm/Argao";
 import Balangasan from "@/utils/salesinvoice/global/obbus/old/dsm/Balangasan";
 import Cambaro from "@/utils/salesinvoice/global/fdl/new/dsm/Cambaro";
+import CarmenCdo from "@/utils/salesinvoice/global/fdl/old/dsm/CarmenCdo";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -374,6 +375,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     return <Balangasan data={data} />;
   } else if ("DSMA" === user?.branchCode) {
     return <Cambaro data={data} />;
+  } else if ("CARMCDO" === user?.branchCode) {
+    return <CarmenCdo data={data} />;
   } else {
     return (
       <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
