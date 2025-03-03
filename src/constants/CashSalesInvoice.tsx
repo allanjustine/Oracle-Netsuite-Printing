@@ -32,6 +32,7 @@ import DsmCarmenCebu2 from "@/utils/salesinvoice/global/dsm/NEW/obbus/DsmCarmenC
 import DAPBalingasag from "@/utils/salesinvoice/global/dap/DAPBalingasag";
 import DAPIligan from "@/utils/salesinvoice/global/dap/DAPIligan";
 import DSMBayugan from "@/utils/salesinvoice/global/dsm/NEW/fdl/DSMBayugan";
+import Consolacion from "@/utils/salesinvoice/global/obbus/old/dsm/Consolacion";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -364,6 +365,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     return <DAPIligan data={data} />;
   } else if ("BAYU" === user?.branchCode) {
     return <DSMBayugan data={data} />;
+  } else if ("DSMP" === user?.branchCode) {
+    return <Consolacion data={data} />;
   } else {
     return (
       <div className="text-center flex items-center justify-center h-screen font-bold text-lg">

@@ -92,7 +92,9 @@ const SmctCsiSize = ({ data }: any) => {
                   data[1]?.[serialNumber]?.length > 41 ? "text-[7px]" : ""
                 }`}
               >
-                {data[1]?.[serialNumber]}
+                {data[1]?.[serialNumber] && (
+                  <>Engine #: {data[1]?.[serialNumber]}</>
+                )}
               </td>
               <td className="w-[163.81552306px] h-[19.275590551px]"></td>
               <td className="w-[114.30371204px] h-[19.275590551px]"></td>
@@ -105,7 +107,9 @@ const SmctCsiSize = ({ data }: any) => {
                   data[1]?.[chassisNumber]?.length > 41 ? "text-[7px]" : ""
                 }`}
               >
-                {data[1]?.[chassisNumber]}
+                {data[1]?.[chassisNumber] && (
+                  <>Chassis #: {data[1]?.[chassisNumber]}</>
+                )}
               </td>
               <td className="w-[163.81552306px] h-[19.275590551px]"></td>
               <td className="w-[114.30371204px] h-[19.275590551px]"></td>

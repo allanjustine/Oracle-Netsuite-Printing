@@ -1,9 +1,8 @@
 "use client";
-import { PrintPageProps } from "@/types/types";
 import FormattedNumber from "@/utils/FormattedNumber";
 import FormattedSumTotal from "@/utils/FormattedSumTotal";
 
-const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
+const Consolacion = ({ data }: any) => {
   const mainLineName = 0;
   const date = 1;
   const taxNumber = 2;
@@ -33,7 +32,7 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
   const unitPrice = 26;
 
   return (
-    <div className="text-xs h-[510.23622047px] w-[778.58267717px]">
+    <div className="text-xs h-[795.59055118px] w-[778.58267717px]">
       <div className="flex h-[18.141732283px] mt-[91.488188976px]">
         <p className="w-[461.1023622px] pl-[132.28346457px]">
           {data[1]?.[mainLineName] || ""}
@@ -46,30 +45,24 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
         <p className="w-[461.1023622px] pl-[132.28346457px]">
           {data[1]?.[tinNumber] || ""}
         </p>
-        <p className="w-[132.28346457px] pl-[151.18110236px]">
-          {data[1]?.[terms] || ""}
-        </p>
+        <p className="w-[132.28346457px] pl-[151.18110236px]"></p>
       </div>
       <div className="flex h-[37.795275591px]">
         <p className="w-[461.1023622px] pl-[132.28346457px]">
           {data[1]?.[billingAddress] || ""}
         </p>
-        <p className="w-[132.28346457px] pl-[151.18110236px]">
-          {data[1]?.[oscaPwdIdNo] || ""}
-        </p>
+        <p className="w-[132.28346457px] pl-[151.18110236px]"></p>
       </div>
       <div className="flex h-[18.141732283px]">
         <p className="w-[461.1023622px] pl-[132.28346457px]">
           {data[1]?.[businessStyle] || ""}
         </p>
-        <p className="w-[132.28346457px] pl-[151.18110236px]">
-          {data[1]?.[cardHolderSignatures] || ""}
-        </p>
+        <p className="w-[132.28346457px] pl-[151.18110236px]"></p>
       </div>
       <div className="mx-[37.795275591px] mt-[17.0078740154px] h-[91.086614173px]">
         <table className="border-collapse w-full">
           <tbody>
-            {data.slice(1, 6).map((row, index) => (
+            {data.slice(1, 6).map((row: any, index: any) => (
               <tr key={index} className="text-[10px] text-center">
                 <td className="w-[75.590551181px]">{row[quantity]}</td>
                 <td className="w-[75.590551181px] h-[18.141732283px]">
@@ -205,12 +198,11 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="mx-[32.125984252px]">
         <div className="mt-[30.236220472px] ml-[480px]">
-          <p className="text-[10px] text-center">
-            {data[1]?.[cashier] || ""}
-          </p>
+          <p className="text-[10px] text-center">{data[1]?.[cashier] || ""}</p>
         </div>
       </div>
     </div>
   );
 };
-export default DSMSISize;
+
+export default Consolacion;
