@@ -14,40 +14,45 @@ const DSMBayugan = ({ data }: any) => {
   const CR_Memo = 7;
   const CR_FormOfPayment = 8;
   const CR_PartnerName = 9;
+  const test =
+    "asdjfkajdfkajsdfjaklsdfjaklsdjfkl;asjdfkl;asjdgkasdklf vlkadfkla dfkahs dkfasdl fjasd; fajd;f jasd;f jasd;lfj";
 
   return (
     <div className="text-xs h-[400.62992126px] w-[767.24409449px]">
-      <div className="w-full mt-[94.488188976px]">
-        <p className="w-[120.94488189px] pl-[642.51968504px]">
-          {data[1]?.[CR_Date] || ""}
+      <div className="w-[120.94488189px] flex items-center mt-[83.9291338579px] ml-[602.83464567px] h-[21.921259843px]">
+        <p className="text-[10px] ml-[11.338582677px]">
+          {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="w-full h-[19.409448819px] mt-[15.677165354px]">
-        <p className="w-[548.03149606px] pl-[170.07874016px]">
-          {data[1]?.[CR_Name] || ""}
+      <div className="h-[61.984251969px] mt-[37.039370079px] ml-[164.40944882px]">
+        <p className="w-[563.1496063px] ml-[11.338582677px] h-[20.409448819px] flex items-center">
+          {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
+        </p>
+        <p className="w-[563.1496063px] ml-[11.338582677px] h-[20.409448819px] flex items-center">
+          {data[1]?.[CR_TIN] || <span className="opacity-0">No data</span>}
+        </p>
+        <p className="w-[563.1496063px] ml-[11.338582677px] h-[20.409448819px] flex items-center">
+          {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="w-full h-[19.409448819px] mt-[2.677165354px]">
-        <p className="w-[548.03149606px] pl-[170.07874016px]">
-          {data[1]?.[CR_TIN] || ""}
-        </p>
-      </div>
-      <div className="w-[608.50393701px] h-[19.409448819px] mt-[2.677165354px]">
-        <p className="w-[434.64566929px] ml-[170.07874016px]">
-          {data[1]?.[CR_Address] || ""}
-        </p>
-      </div>
-      <div className="flex mx-[22.677165354px] mt-[15.8267716539px]">
-        <div className="w-[782.36220472px]">
-          <p className="w-[419.52755906px] ml-[347.71653543px]">
-            {data[1]?.[CR_Memo].substring(0, 70) || (
+      <div className="flex w-[699.59055118px] ml-[24.566929134px] mt-[34.37007874px]">
+        <div className="flex flex-col items-center w-[608.50393701px]">
+          <p className="w-[491.33858268px] h-[23.433070866px] ml-[88.818897638px]">
+            {data[1]?.[CR_Memo].substring(0, 92) || (
+              <span className="opacity-0">No data</span>
+            )}
+          </p>
+          <p className="w-[574.48818898px] ml-[11.338582677px] h-[23.433070866px]">
+            {data[1]?.[CR_Memo].substring(92) || (
               <span className="opacity-0">No data</span>
             )}
           </p>
         </div>
-        <div className="mt-[15.456692914px] ml-[20px] w-[340.15748031px]">
-          <p className="text-[10px] text-center">
-            {data[1]?.[CR_AmountInFigures] || "Allan J. Dela Cruz"}
+        <div className="w-[120.56692913px]">
+          <p className="text-[10px] text-center h-[23.433070866px] ml-[7.5590551181px]">
+            {data[1]?.[CR_AmountInFigures] || (
+              <span className="opacity-0">No data</span>
+            )}
           </p>
         </div>
       </div>
