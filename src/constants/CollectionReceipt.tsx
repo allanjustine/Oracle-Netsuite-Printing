@@ -16,7 +16,8 @@ import DAPTubod from "@/utils/collectionreceipt/global/dap/DAPTubod";
 import DSMBayugan from "@/utils/collectionreceipt/global/dsm/new/fdl/DSMBayugan";
 import Consolacion from "@/utils/official-receipt/global/fdl/old/dsm/Consolacion";
 import Argao from "@/utils/official-receipt/global/fdl/old/dsm/Argao";
-import Alano from "@/utils/collectionreceipt/global/fdl/new/Alano";
+import Alano from "@/utils/collectionreceipt/global/fdl/new/dsm/Alano";
+import Balangasan from "@/utils/collectionreceipt/global/obbus/old/dsm/Balangasan";
 // import Argao from "@/utils/collectionreceipt/global/dsm/new/fdl/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -210,7 +211,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const dsmCrSizeData = [
     "AURO",
-    "BALA",
     "BOGO",
     "BULU",
     "CALIN",
@@ -302,6 +302,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     return <Argao data={data} />;
   } else if ("ALAD" === user?.branchCode) {
     return <Alano data={data} />;
+  } else if ("BALA" === user?.branchCode) {
+    return <Balangasan data={data} />;
   } else {
     return (
       <div className="text-center flex items-center justify-center h-screen font-bold text-lg">

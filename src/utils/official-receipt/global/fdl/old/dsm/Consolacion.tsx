@@ -11,7 +11,6 @@ const Consolacion = ({ data }: any) => {
   const CR_Memo = 7;
   const CR_FormOfPayment = 8;
   const CR_PartnerName = 9;
-  const memo = "asd asdashdjasbdjkasjd aoshduo uhsadu hasdujas db oiasdh asdu oiasdhfuasd fhasdf uashf asd"
 
   return (
     <div className="text-xs w-[778.58267717px] h-[396.8503937px] ml-[10px]">
@@ -61,21 +60,25 @@ const Consolacion = ({ data }: any) => {
         </div>
         <div className="w-[274.01574803px] ml-[132.28346457px]">
           <p>
-            {memo.substring(0, 45) || (
+            {data[1]?.[CR_Memo].substring(0, 45) || (
               <span className="opacity-0">No data</span>
             )}
           </p>
         </div>
       </div>
       <div className="ml-[226.77165354px] mt-[4.1811023622]">
-          <p>
-            {memo.substring(45) || (
-              <span className="opacity-0">No data</span>
-            )}
-          </p>
-        </div>
+        <p>
+          {data[1]?.[CR_Memo].substring(45) || (
+            <span className="opacity-0">No data</span>
+          )}
+        </p>
+      </div>
       <div className="w-[718.11023622px] pl-[566.92913386px] mt-[30.7952755906px]">
-        <p>{data[1]?.[CR_PartnerName] || <span className="opacity-1">Allan J. Santos</span>}</p>
+        <p>
+          {data[1]?.[CR_PartnerName] || (
+            <span className="opacity-1">Allan J. Santos</span>
+          )}
+        </p>
       </div>
     </div>
   );
