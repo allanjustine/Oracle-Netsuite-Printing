@@ -14,6 +14,7 @@ import DAPBalingasag from "@/utils/collectionreceipt/global/dap/DAPBalingasag";
 import DAPIligan from "@/utils/collectionreceipt/global/dap/DAPIligan";
 import DAPTubod from "@/utils/collectionreceipt/global/dap/DAPTubod";
 import DSMBayugan from "@/utils/collectionreceipt/global/dsm/new/fdl/DSMBayugan";
+import Consolacion from "@/utils/official-receipt/global/fdl/old/dsm/Consolacion";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -294,6 +295,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     return <DAPTubod data={data} />;
   } else if ("BAYU" === user?.branchCode) {
     return <DSMBayugan data={data} />;
+  } else if ("DSMP" === user?.branchCode) {
+    return <Consolacion data={data} />;
   } else {
     return (
       <div className="text-center flex items-center justify-center h-screen font-bold text-lg">

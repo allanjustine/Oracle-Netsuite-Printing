@@ -1,5 +1,5 @@
 import { useAuth } from "@/context/authcontext";
-import Consolacion from "@/utils/official-receipt/global/dsm/Consolacion";
+import Consolacion from "@/utils/official-receipt/global/fdl/old/dsm/Consolacion";
 
 export function OfficialReceipt({ data }: any) {
   const { user } = useAuth();
