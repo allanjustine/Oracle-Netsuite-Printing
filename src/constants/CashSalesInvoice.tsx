@@ -33,6 +33,7 @@ import DAPBalingasag from "@/utils/salesinvoice/global/dap/DAPBalingasag";
 import DAPIligan from "@/utils/salesinvoice/global/dap/DAPIligan";
 import DSMBayugan from "@/utils/salesinvoice/global/dsm/NEW/fdl/DSMBayugan";
 import Consolacion from "@/utils/salesinvoice/global/obbus/old/dsm/Consolacion";
+import Argao from "@/utils/salesinvoice/global/obbus/old/dsm/Argao";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -273,7 +274,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "BALA",
     "CALIN",
     "CERI",
-    "DSMAO",
     "DSMM",
     "DSMT2",
     "ILOI",
@@ -367,6 +367,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     return <DSMBayugan data={data} />;
   } else if ("DSMP" === user?.branchCode) {
     return <Consolacion data={data} />;
+  } else if ("DSMAO" === user?.branchCode) {
+    return <Argao data={data} />;
   } else {
     return (
       <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
