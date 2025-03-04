@@ -35,6 +35,15 @@ import DSMBayugan from "@/utils/salesinvoice/global/dsm/NEW/fdl/DSMBayugan";
 import DSMNorzagaray from "@/utils/salesinvoice/global/dsm/NEW/fdl/DSMNorzagaray";
 import DSMCambaro from "@/utils/salesinvoice/global/dsm/NEW/fdl/DSMCambaro";
 import Binan from "@/utils/salesinvoice/global/smct/Binan";
+import Consolacion from "@/utils/salesinvoice/global/obbus/old/dsm/Consolacion";
+import HDCamino from "@/utils/salesinvoice/global/hd/new/HDCamino";
+import HDCarmenCebu from "@/utils/salesinvoice/global/hd/new/HDCarmenCebu";
+import HDDipolog from "@/utils/salesinvoice/global/hd/old-fdlz/HDDipolog";
+import HDIpil from "@/utils/salesinvoice/global/hd/old-fdlz/HDIpil";
+import Argao from "@/utils/salesinvoice/global/obbus/old/dsm/Argao";
+import Balangasan from "@/utils/salesinvoice/global/obbus/old/dsm/Balangasan";
+import Cambaro from "@/utils/salesinvoice/global/fdl/new/dsm/Cambaro";
+import CarmenCdo from "@/utils/salesinvoice/global/fdl/old/dsm/CarmenCdo";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -272,10 +281,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const DSMSISizeData = ["DIGOS", "TACU", "TOMAS"];
 
   const dsmCsiSizeData = [
-    "BALA",
     "CALIN",
     "CERI",
-    "DSMAO",
     "DSMM",
     "DSMT2",
     "ILOI",
@@ -373,6 +380,24 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     return <DSMCambaro data={data} />;
   } else if ("BINAN" === user?.branchCode) {
     return <Binan data={data} />;
+  } else if ("DSMP" === user?.branchCode) {
+    return <Consolacion data={data} />;
+  } else if ("CAMH" === user?.branchCode) {
+    return <HDCamino data={data} />;
+  } else if ("CARMC" === user?.branchCode) {
+    return <HDCarmenCebu data={data} />;
+  } else if ("SDIP" === user?.branchCode) {
+    return <HDDipolog data={data} />;
+  } else if ("IPIH" === user?.branchCode) {
+    return <HDIpil data={data} />;
+  } else if ("DSMAO" === user?.branchCode) {
+    return <Argao data={data} />;
+  } else if ("BALA" === user?.branchCode) {
+    return <Balangasan data={data} />;
+  } else if ("DSMA" === user?.branchCode) {
+    return <Cambaro data={data} />;
+  } else if ("CARMCDO" === user?.branchCode) {
+    return <CarmenCdo data={data} />;
   } else {
     return (
       <div className="text-center flex items-center justify-center h-screen font-bold text-lg">

@@ -3,7 +3,7 @@ import { PrintPageProps } from "@/types/types";
 import FormattedNumber from "@/utils/FormattedNumber";
 import FormattedSumTotal from "@/utils/FormattedSumTotal";
 
-const DapCsiSize = ({ data }: any) => {
+const HDDipolog = ({ data }: any) => {
   const mainLineName = 0;
   const date = 1;
   const taxNumber = 2;
@@ -33,41 +33,41 @@ const DapCsiSize = ({ data }: any) => {
   const unitPrice = 26;
 
   return (
-    <div className="text-xs h-[793.7007874px] w-[608.50393701px]">
-      <div className="flex h-[19.409448819px] mt-[113.0078740201px]">
-        <p className="w-[391.18110236px] pl-[105.82677165px]">
+    <div className="text-xs h-[771.02362205px] w-[593.38582677px]">
+      <div className="flex h-[19.409448819px] mt-[118.6771653587px]">
+        <p className="w-[376.06299213px] pl-[94.488188976px]">
           {data[1]?.[mainLineName] || ""}
         </p>
-        <p className="w-[218.83464567px] pl-[60.472440945px]">
+        <p className="w-[219.21259843px] pl-[60.472440945px]">
           {data[1]?.[date] || ""}
         </p>
       </div>
       <div className="flex h-[19.409448819px]">
-        <p className="w-[391.18110236px] pl-[105.82677165px]">
+        <p className="w-[376.06299213px] pl-[94.488188976px]">
           {data[1]?.[tinNumber] || ""}
         </p>
-        <p className="w-[218.83464567px] pl-[60.472440945px]">
+        <p className="w-[219.21259843px] pl-[60.472440945px]">
           {data[1]?.[terms] || ""}
         </p>
       </div>
       <div className="flex h-[38.818897638px]">
-        <div className="w-[391.18110236px] pl-[105.82677165px]">
-          <p className="h-[19.409448819px]">{data[1]?.[billingAddress].substring(0, 52) || ""}</p>
-          <p className="h-[19.409448819px]">{data[1]?.[billingAddress].substring(52) || ""}</p>
+        <div className="w-[376.06299213px] pl-[94.488188976px]">
+          <p className="h-[19.409448819px]">{data[1]?.[billingAddress].substring(0, 43) || ""}</p>
+          <p className="h-[19.409448819px]">{data[1]?.[billingAddress].substring(43) || ""}</p>
         </div>
-        <p className="w-[218.83464567px] pl-[136.06299213px]">
+        <p className="w-[219.21259843px] pl-[136.06299213px]">
           {data[1]?.[oscaPwdIdNo] || ""}
         </p>
       </div>
       <div className="flex h-[19.409448819px]">
-        <p className="w-[391.18110236px] pl-[137.95275591px]">
+        <p className="w-[376.06299213px] pl-[137.95275591px]">
           {data[1]?.[businessStyle] || ""}
         </p>
-        <p className="w-[218.83464567px] pl-[113.38582677px]">
+        <p className="w-[219.21259843px] pl-[113.38582677px]">
           {data[1]?.[cardHolderSignatures] || ""}
         </p>
       </div>
-      <div className="mx-[34.393700787px] mt-[29.102362205px] h-[321.25984252px]">
+      <div className="mx-[34.393700787px] mt-[23.4330708664px] h-[314.07874016px]">
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
@@ -124,7 +124,7 @@ const DapCsiSize = ({ data }: any) => {
           </tbody>
         </table>
       </div>
-      <div className="mx-[34.393700787px] h-[139.84251969px]">
+      <div className="mx-[34.393700787px] h-[126.99212598px]">
         <table className="border-collapse w-full">
           <tbody>
             <tr className="text-[10px]">
@@ -208,4 +208,4 @@ const DapCsiSize = ({ data }: any) => {
   );
 };
 
-export default DapCsiSize;
+export default HDDipolog;

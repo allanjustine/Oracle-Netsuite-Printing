@@ -19,6 +19,7 @@ import DragAndDropComponent from "@/components/DragAndDropComponent";
 import FormattedNumber from "@/utils/FormattedNumber";
 import Papa from "papaparse";
 import TextLoading from "@/components/loaders/TextLoading";
+import BackToTop from "@/components/buttons/BackToTop";
 
 export default function Page() {
   const { user } = useAuth();
@@ -37,6 +38,8 @@ export default function Page() {
     {}
   );
   const [progress, setProgress] = useState(0);
+  const [isPrintCr, setIsPrintCr] = useState(false);
+  const [backToTop, setBackToTop] = useState(false);
 
   // const internalIdColumnIndex = 0;
   const mainLineName = 0;
@@ -77,7 +80,6 @@ export default function Page() {
   const CR_Memo = 7;
   const CR_FormOfPayment = 8;
   const CR_PartnerName = 9;
-  const [isPrintCr, setIsPrintCr] = useState(false);
 
   // const billingAddress1 = 2;
   // const billingAddress2 = 3;
@@ -90,6 +92,30 @@ export default function Page() {
   // const amountTax = 17;
   // const netTax = 18;
   // const transactionTotal = 19;
+
+  useEffect(() => {
+    const handleBackToTop = () => {
+      if (window.scrollY > 400) {
+        setBackToTop(true);
+      } else {
+        setBackToTop(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleBackToTop);
+
+    return () => {
+      window.removeEventListener("scroll", handleBackToTop);
+    };
+  }, []);
+
+  const handleBackToTop = () => {
+    const options: any = {
+      top: 0,
+      behavior: "smooth",
+    };
+    window.scrollTo(options);
+  };
 
   const handlePrint = (componentType: string) => {
     const printWindow = window.open("", "_blank");
@@ -703,6 +729,7 @@ export default function Page() {
           </div>
         )}
       </div>
+      <BackToTop backToTop={backToTop} handleBackToTop={handleBackToTop} />
     </PrivateRoute>
   );
 }

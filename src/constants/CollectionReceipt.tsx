@@ -19,6 +19,12 @@ import DSMNorzagaray from "@/utils/collectionreceipt/global/dsm/new/fdl/DSMNorza
 import DSMCambaro from "@/utils/official-receipt/global/fdl/old/dsm/DSMCambaro";
 import DAPSanMiguel from "@/utils/collectionreceipt/global/dap/new/DAPSanMiguel";
 import Binan from "@/utils/collectionreceipt/global/smct/Binan";
+import Argao from "@/utils/official-receipt/global/fdl/old/dsm/Argao";
+import Alano from "@/utils/collectionreceipt/global/fdl/new/dsm/Alano";
+import Balangasan from "@/utils/collectionreceipt/global/obbus/old/dsm/Balangasan";
+import Cambaro from "@/utils/official-receipt/global/fdl/old/dsm/Cambaro";
+import CarmenCdo from "@/utils/collectionreceipt/global/obbus/old/dsm/CarmenCdo";
+// import Argao from "@/utils/collectionreceipt/global/dsm/new/fdl/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -145,7 +151,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   ];
 
   const DAPSizeData = [
-    "ALAD",
     "AURD",
     "BUUD",
     "CALD",
@@ -211,13 +216,11 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const dsmCrSizeData = [
     "AURO",
-    "BALA",
     "BOGO",
     "BULU",
     "CALIN",
     "CAMBARO",
     "CARMC2",
-    "CARMCDO",
     "CARS",
     "CATAR2",
     "CATM",
@@ -227,7 +230,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DIGOS",
     "DONC",
     "CARCAR",
-    "DSMAO",
     "DSMB",
     "DSMBL",
     "DSMBN",
@@ -308,6 +310,16 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     return <DAPSanMiguel data={data} />;
   } else if ("BINAN" === user?.branchCode) {
     return <Binan data={data} />;
+  } else if ("DSMAO" === user?.branchCode) {
+    return <Argao data={data} />;
+  } else if ("ALAD" === user?.branchCode) {
+    return <Alano data={data} />;
+  } else if ("BALA" === user?.branchCode) {
+    return <Balangasan data={data} />;
+  } else if ("DSMA" === user?.branchCode) {
+    return <Cambaro data={data} />;
+  } else if ("CARMCDO" === user?.branchCode) {
+    return <CarmenCdo data={data} />;
   } else {
     return (
       <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
