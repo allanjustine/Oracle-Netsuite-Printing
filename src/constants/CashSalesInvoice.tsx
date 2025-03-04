@@ -45,6 +45,7 @@ import Cambaro from "@/utils/salesinvoice/global/fdl/new/dsm/Cambaro";
 import CarmenCdo from "@/utils/salesinvoice/global/fdl/old/dsm/CarmenCdo";
 import HeadOffice from "@/utils/salesinvoice/global/fdl/new/hd/HeadOffice";
 import Sagbayan from "@/utils/salesinvoice/global/fdl/old/smct/Sagbayan";
+import MandaueY3s from "@/utils/salesinvoice/global/obbus/new/dsm/MandaueY3s";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -104,7 +105,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "ILOI",
     "JIMEDSM",
     "LABA",
-    "MAND2",
   ];
 
   const hdSiSizeData = ["CAMH", "GENT", "OROH", "TANH"];
@@ -166,6 +166,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <DsmCarmenCebu2 data={data} />;
     case "MAND" === user?.branchCode:
       return <MandaueMulti data={data} />;
+    case "MAND2" === user?.branchCode:
+      return <MandaueY3s data={data} />;
     case "BALD" === user?.branchCode:
       return <DAPBalingasag data={data} />;
     case "ILID" === user?.branchCode:
