@@ -38,7 +38,7 @@ import Consolacion from "@/utils/salesinvoice/global/obbus/old/dsm/Consolacion";
 import HDCamino from "@/utils/salesinvoice/global/fdl/new/hd/HDCamino";
 import HDCarmenCebu from "@/utils/salesinvoice/global/fdl/new/hd/HDCarmenCebu";
 import HDDipolog from "@/utils/salesinvoice/global/fdl/old/hd/HDDipolog";
-import HDIpil from "@/utils/salesinvoice/global/fdl/old/hd/HDIpil";
+import HDIpil from "@/utils/salesinvoice/global/fdl/old/smct/SmctHdIpilWingShop";
 import Argao from "@/utils/salesinvoice/global/obbus/old/dsm/Argao";
 import Balangasan from "@/utils/salesinvoice/global/obbus/old/dsm/Balangasan";
 import Cambaro from "@/utils/salesinvoice/global/fdl/new/dsm/Cambaro";
@@ -46,6 +46,9 @@ import CarmenCdo from "@/utils/salesinvoice/global/fdl/old/dsm/CarmenCdo";
 import HeadOffice from "@/utils/salesinvoice/global/fdl/new/hd/HeadOffice";
 import Sagbayan from "@/utils/salesinvoice/global/fdl/old/smct/Sagbayan";
 import MandaueY3s from "@/utils/salesinvoice/global/obbus/new/dsm/MandaueY3s";
+import SmctHdIpilWingShop from "@/utils/salesinvoice/global/fdl/old/smct/SmctHdIpilWingShop";
+import Ipil from "@/utils/salesinvoice/global/fdl/old/hd/Ipil";
+import Allen from "@/utils/salesinvoice/global/fdl/old/smct/Allen";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -186,8 +189,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <HDCarmenCebu data={data} />;
     case "SDIP" === user?.branchCode:
       return <HDDipolog data={data} />;
-    case "IPIH" === user?.branchCode:
-      return <HDIpil data={data} />;
+    case "SMCT" === user?.branchCode:
+      return <SmctHdIpilWingShop data={data} />;
     case "DSMAO" === user?.branchCode:
       return <Argao data={data} />;
     case "BALA" === user?.branchCode:
@@ -200,6 +203,10 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <HeadOffice data={data} />;
     case "SAGBA" === user?.branchCode:
       return <Sagbayan data={data} />;
+    case "IPIH" === user?.branchCode:
+      return <Ipil data={data} />;
+    case "ALEN" === user?.branchCode:
+      return <Allen data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
