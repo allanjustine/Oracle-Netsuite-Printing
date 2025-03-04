@@ -49,6 +49,7 @@ import MandaueY3s from "@/utils/salesinvoice/global/obbus/new/dsm/MandaueY3s";
 import SmctHdIpilWingShop from "@/utils/salesinvoice/global/fdl/old/smct/SmctHdIpilWingShop";
 import Ipil from "@/utils/salesinvoice/global/fdl/old/hd/Ipil";
 import Allen from "@/utils/salesinvoice/global/fdl/old/smct/Allen";
+import Sucabon from "@/utils/salesinvoice/global/fdl/old/dap/Sucabon";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -94,7 +95,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "MOLD2",
     "OROD",
     "OZAD",
-    "SUCD",
     "BONI",
   ];
 
@@ -207,6 +207,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Ipil data={data} />;
     case "ALEN" === user?.branchCode:
       return <Allen data={data} />;
+    case "SUCD" === user?.branchCode:
+      return <Sucabon data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
