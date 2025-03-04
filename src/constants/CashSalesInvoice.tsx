@@ -44,6 +44,7 @@ import Argao from "@/utils/salesinvoice/global/obbus/old/dsm/Argao";
 import Balangasan from "@/utils/salesinvoice/global/obbus/old/dsm/Balangasan";
 import Cambaro from "@/utils/salesinvoice/global/fdl/new/dsm/Cambaro";
 import CarmenCdo from "@/utils/salesinvoice/global/fdl/old/dsm/CarmenCdo";
+import HeadOffice from "@/utils/salesinvoice/global/fdl/new/hd/HeadOffice";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -196,6 +197,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Cambaro data={data} />;
     case "CARMCDO" === user?.branchCode:
       return <CarmenCdo data={data} />;
+    case "HO" === user?.branchCode:
+      return <HeadOffice data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
