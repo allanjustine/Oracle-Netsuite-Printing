@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { AuthProvider } from "@/context/authcontext";
+import { ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
   title: {
@@ -21,6 +22,7 @@ export default function RootLayout({
         <AuthProvider>
         {children}
         </AuthProvider>
+        <ToastContainer />
       </body>
     </html>
   );

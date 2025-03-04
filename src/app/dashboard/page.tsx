@@ -3,10 +3,12 @@ import PrivateRoute from "@/components/privateroutes";
 import { useAuth } from "@/context/authcontext";
 import React, { use, useEffect, useRef, useState } from "react";
 import {
+  FaCheckDouble,
   FaCircleNotch,
   FaMinus,
   FaPlus,
   FaPrint,
+  FaSpinner,
   FaTrashAlt,
   FaUpload,
 } from "react-icons/fa";
@@ -20,6 +22,10 @@ import FormattedNumber from "@/utils/FormattedNumber";
 import Papa from "papaparse";
 import TextLoading from "@/components/loaders/TextLoading";
 import BackToTop from "@/components/buttons/BackToTop";
+import api from "@/lib/axios";
+import { PrintData } from "@/utils/constants";
+import { PrintDataType } from "@/types/PrintData";
+import { Bounce, toast } from "react-toastify";
 
 export default function Page() {
   const { user } = useAuth();
@@ -40,6 +46,8 @@ export default function Page() {
   const [progress, setProgress] = useState(0);
   const [isPrintCr, setIsPrintCr] = useState(false);
   const [backToTop, setBackToTop] = useState(false);
+  const [formInput, setFormInput] = useState<PrintDataType>(PrintData);
+  const [isPrintLoading, setIsPrintLoading] = useState(false);
 
   // const internalIdColumnIndex = 0;
   const mainLineName = 0;
@@ -108,6 +116,17 @@ export default function Page() {
       window.removeEventListener("scroll", handleBackToTop);
     };
   }, []);
+
+  useEffect(() => {
+    if (user || excelData || isPrintCr) {
+      setFormInput(() => ({
+        external_id: isPrintCr
+          ? excelData[1]?.[CR_Name]
+          : excelData[1]?.[mainLineName] ?? '',
+        print_by: `${user?.branchCode}-${user?.branchName}`,
+      }));
+    }
+  }, [user, excelData, isPrintCr]);
 
   const handleBackToTop = () => {
     const options: any = {
@@ -276,6 +295,7 @@ export default function Page() {
     }
     setIsFileUploaded(false);
     setProgress(0);
+    setFormInput(PrintData);
   };
   const handleCancelUpload = () => {
     setExcelData([]);
@@ -286,6 +306,7 @@ export default function Page() {
     setIsFileUploaded(false);
     setIsLoading(false);
     setProgress(0);
+    setFormInput(PrintData);
   };
 
   const handleUploadFile = () => fileInputRef.current?.click();
@@ -295,6 +316,51 @@ export default function Page() {
       ...isHideTable,
       [rowIndex]: !isHideTable[rowIndex],
     }));
+  };
+
+  const handlePrintCount = async () => {
+    setIsPrintLoading(true);
+    try {
+      const response = await api.post("/print-receipt-count", formInput);
+      if (response.status === 201) {
+        toast.success(response.data.message, {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          transition: Bounce,
+        });
+      }
+    } catch (error: any) {
+      console.error(error);
+      if (error.response.status === 400) {
+        toast.error(error.response.data.message, {
+          position: "top-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          transition: Bounce,
+        });
+      }
+    } finally {
+      setIsPrintLoading(false);
+      setExcelData([]);
+      setFileInfo({ name: "", size: "" });
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
+      setIsFileUploaded(false);
+      setProgress(0);
+      setFormInput(PrintData);
+    }
   };
 
   return (
@@ -328,6 +394,7 @@ export default function Page() {
             <div className="flex gap-2">
               <button
                 type="button"
+                disabled={isLoading}
                 onClick={handleUploadFile}
                 className="p-2 flex gap-2 items-center bg-blue-500/80 text-white hover:bg-blue-600/80 hover:translate-x-1 hover:-translate-y-1 transition-all duration-300 ease-in-out rounded-md"
               >
@@ -373,6 +440,29 @@ export default function Page() {
                       <FaTrashAlt size={20} color="#fff" /> Remove
                     </button>
                   )}
+              {!isLoading && excelData.length > 0 && (
+                <button
+                  type="button"
+                  disabled={isPrintLoading}
+                  onClick={handlePrintCount}
+                  className="p-2 hidden opacity-0 cursor-not-allowed gap-2 items-center bg-blue-500/80 text-white hover:bg-blue-600/80 hover:translate-x-1 hover:-translate-y-1 transition-all duration-300 ease-in-out rounded-md"
+                >
+                  {isPrintLoading ? (
+                    <>
+                      <FaSpinner
+                        className="animate-spin"
+                        size={20}
+                        color="#fff"
+                      />{" "}
+                      Please wait...
+                    </>
+                  ) : (
+                    <>
+                      <FaCheckDouble size={20} color="#fff" /> Done Print
+                    </>
+                  )}
+                </button>
+              )}
             </div>
             {fileInfo.name && !isLoading && (
               <div className="mt-2">
