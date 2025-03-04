@@ -19,6 +19,7 @@ import Argao from "@/utils/official-receipt/global/fdl/old/dsm/Argao";
 import Alano from "@/utils/collectionreceipt/global/fdl/new/dsm/Alano";
 import Balangasan from "@/utils/collectionreceipt/global/obbus/old/dsm/Balangasan";
 import Cambaro from "@/utils/official-receipt/global/fdl/old/dsm/Cambaro";
+import CarmenCdo from "@/utils/collectionreceipt/global/obbus/old/dsm/CarmenCdo";
 // import Argao from "@/utils/collectionreceipt/global/dsm/new/fdl/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -217,7 +218,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "CALIN",
     "CAMBARO",
     "CARMC2",
-    "CARMCDO",
     "CARS",
     "CATAR2",
     "CATM",
@@ -307,6 +307,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     return <Balangasan data={data} />;
   } else if ("DSMA" === user?.branchCode) {
     return <Cambaro data={data} />;
+  } else if ("CARMCDO" === user?.branchCode) {
+    return <CarmenCdo data={data} />;
   } else {
     return (
       <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
