@@ -16,7 +16,6 @@ import DAPTubod from "@/utils/collectionreceipt/global/fdl/old/dap/DAPTubod";
 import DSMBayugan from "@/utils/collectionreceipt/global/fdl/new/dsm/DSMBayugan";
 import Consolacion from "@/utils/official-receipt/global/fdl/old/dsm/Consolacion";
 import DSMNorzagaray from "@/utils/collectionreceipt/global/fdl/new/dsm/DSMNorzagaray";
-import DSMCambaro from "@/utils/official-receipt/global/fdl/old/dsm/DSMCambaro";
 import DAPSanMiguel from "@/utils/collectionreceipt/global/fdl/new/dap/DAPSanMiguel";
 import Binan from "@/utils/collectionreceipt/global/fdl/old/smct/Binan";
 import Argao from "@/utils/official-receipt/global/fdl/old/dsm/Argao";
@@ -124,7 +123,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "BOGO",
     "BULU",
     "CALIN",
-    "CAMBARO",
     "CARMC2",
     "CARS",
     "CATAR2",
@@ -199,8 +197,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <Consolacion data={data} />;
     case "NORZA" === user?.branchCode:
       return <DSMNorzagaray data={data} />;
-    case "DSMA" === user?.branchCode:
-      return <DSMCambaro data={data} />;
     case "SANM" === user?.branchCode:
       return <DAPSanMiguel data={data} />;
     case "BINAN" === user?.branchCode:

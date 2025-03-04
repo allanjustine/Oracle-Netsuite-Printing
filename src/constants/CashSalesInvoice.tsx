@@ -33,7 +33,6 @@ import DAPBalingasag from "@/utils/salesinvoice/global/fdl/old/dap/DAPBalingasag
 import DAPIligan from "@/utils/salesinvoice/global/fdl/old/dap/DAPIligan";
 import DSMBayugan from "@/utils/salesinvoice/global/fdl/new/dsm/DSMBayugan";
 import DSMNorzagaray from "@/utils/salesinvoice/global/fdl/new/dsm/DSMNorzagaray";
-import DSMCambaro from "@/utils/salesinvoice/global/fdl/new/dsm/DSMCambaro";
 import Binan from "@/utils/salesinvoice/global/fdl/old/smct/Binan";
 import Consolacion from "@/utils/salesinvoice/global/obbus/old/dsm/Consolacion";
 import HDCamino from "@/utils/salesinvoice/global/fdl/new/hd/HDCamino";
@@ -175,8 +174,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <DSMBayugan data={data} />;
     case "NORZA" === user?.branchCode:
       return <DSMNorzagaray data={data} />;
-    case "DSMA" === user?.branchCode:
-      return <DSMCambaro data={data} />;
     case "BINAN" === user?.branchCode:
       return <Binan data={data} />;
     case "DSMP" === user?.branchCode:
