@@ -1,4 +1,4 @@
-import { FormatFileSize } from "@/utils/SizeFormat/FormatFileSize";
+import { FormatFileSize } from "@/utils/size-format/FormatFileSize";
 import { useState } from "react";
 import * as XLSX from "xlsx";
 

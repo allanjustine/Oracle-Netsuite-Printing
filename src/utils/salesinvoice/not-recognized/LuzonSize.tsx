@@ -1,7 +1,7 @@
 "use client";
 import { PrintPageProps } from "@/types/types";
-import FormattedNumber from "../FormattedNumber";
-import FormattedSumTotal from "../FormattedSumTotal";
+import FormattedNumber from "../../FormattedNumber";
+import FormattedSumTotal from "../../FormattedSumTotal";
 
 const LuzonSize: React.FC<PrintPageProps> = ({ data }) => {
   const mainLineName = 0;

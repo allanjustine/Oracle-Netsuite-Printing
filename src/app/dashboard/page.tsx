@@ -14,7 +14,7 @@ import { read, utils, readFile } from "xlsx";
 import PrintPage from "../print/page";
 import ReactDOM from "react-dom/client";
 import { FaRotate, FaXmark } from "react-icons/fa6";
-import { FormatFileSize } from "@/utils/SizeFormat/FormatFileSize";
+import { FormatFileSize } from "@/utils/size-format/FormatFileSize";
 import DragAndDropComponent from "@/components/DragAndDropComponent";
 import FormattedNumber from "@/utils/FormattedNumber";
 import Papa from "papaparse";

@@ -1,45 +1,45 @@
 import { useAuth } from "@/context/authcontext";
 import { PrintPageProps } from "@/types/types";
-import DAP1Size from "@/utils/salesinvoice/global/DAP1Size";
-import DSMSISize from "@/utils/salesinvoice/global/DSMSISize";
-import DapCsiSize from "@/utils/salesinvoice/global/DapCsiSize";
-import DsmCsiSize from "@/utils/salesinvoice/global/DsmCsiSize";
-import HondaDesSize from "@/utils/salesinvoice/global/HdSiSize";
-import LuzonSize from "@/utils/salesinvoice/LuzonSize";
-import Size1Sales from "@/utils/salesinvoice/size1";
-import Size1SalesOld from "@/utils/salesinvoice/size1-old";
-import Size2Sales from "@/utils/salesinvoice/size2";
-import Size2SalesOld from "@/utils/salesinvoice/size2-old";
-import Size3Sales from "@/utils/salesinvoice/size3";
-import Size4Sales from "@/utils/salesinvoice/size4";
-import Size5Sales from "@/utils/salesinvoice/size5";
-import Size6Sales from "@/utils/salesinvoice/size6";
-import Size7Sales from "@/utils/salesinvoice/size7";
-import Size8Sales from "@/utils/salesinvoice/size8";
-import Size9Sales from "@/utils/salesinvoice/size9";
-import HdSiSize from "@/utils/salesinvoice/global/HdSiSize";
-import HdCsiSizes from "@/utils/salesinvoice/global/HdCsiSize";
-import SmctCsiSize from "@/utils/salesinvoice/global/SmctCsiSize";
-import SmctSiSize from "@/utils/salesinvoice/global/SmctSiSize";
-import HDAurora from "@/utils/salesinvoice/global/hd/new/HDAurora";
-import DapLabason from "@/utils/salesinvoice/global/dap/DapLabason";
-import Antipolo from "@/utils/salesinvoice/global/smct/new/Antipolo";
-import MandaueMulti from "@/utils/salesinvoice/global/dsm/NEW/obbus/MandaueMulti";
-import HDBuug from "@/utils/salesinvoice/global/hd/new/HDBuug";
-import HDBalamban from "@/utils/salesinvoice/global/hd/new/HDBalamban";
-import DSMDanao from "@/utils/salesinvoice/global/dsm/NEW/obbus/DSMDanao";
-import DsmCarmenCebu2 from "@/utils/salesinvoice/global/dsm/NEW/obbus/DsmCarmenCebu2";
-import DAPBalingasag from "@/utils/salesinvoice/global/dap/DAPBalingasag";
-import DAPIligan from "@/utils/salesinvoice/global/dap/DAPIligan";
-import DSMBayugan from "@/utils/salesinvoice/global/dsm/NEW/fdl/DSMBayugan";
-import DSMNorzagaray from "@/utils/salesinvoice/global/dsm/NEW/fdl/DSMNorzagaray";
-import DSMCambaro from "@/utils/salesinvoice/global/dsm/NEW/fdl/DSMCambaro";
-import Binan from "@/utils/salesinvoice/global/smct/Binan";
+import DAP1Size from "@/utils/salesinvoice/not-recognized/si-csi-sizes/DAP1Size";
+import DSMSISize from "@/utils/salesinvoice/not-recognized/si-csi-sizes/DSMSISize";
+import DapCsiSize from "@/utils/salesinvoice/not-recognized/si-csi-sizes/DapCsiSize";
+import DsmCsiSize from "@/utils/salesinvoice/not-recognized/si-csi-sizes/DsmCsiSize";
+import HondaDesSize from "@/utils/salesinvoice/not-recognized/si-csi-sizes/HdSiSize";
+import LuzonSize from "@/utils/salesinvoice/not-recognized/LuzonSize";
+import Size1Sales from "@/utils/salesinvoice/not-recognized/size1";
+import Size1SalesOld from "@/utils/salesinvoice/not-recognized/size1-old";
+import Size2Sales from "@/utils/salesinvoice/not-recognized/size2";
+import Size2SalesOld from "@/utils/salesinvoice/not-recognized/size2-old";
+import Size3Sales from "@/utils/salesinvoice/not-recognized/size3";
+import Size4Sales from "@/utils/salesinvoice/not-recognized/size4";
+import Size5Sales from "@/utils/salesinvoice/not-recognized/size5";
+import Size6Sales from "@/utils/salesinvoice/not-recognized/size6";
+import Size7Sales from "@/utils/salesinvoice/not-recognized/size7";
+import Size8Sales from "@/utils/salesinvoice/not-recognized/size8";
+import Size9Sales from "@/utils/salesinvoice/not-recognized/size9";
+import HdSiSize from "@/utils/salesinvoice/not-recognized/si-csi-sizes/HdSiSize";
+import HdCsiSizes from "@/utils/salesinvoice/not-recognized/si-csi-sizes/HdCsiSize";
+import SmctCsiSize from "@/utils/salesinvoice/not-recognized/si-csi-sizes/SmctCsiSize";
+import SmctSiSize from "@/utils/salesinvoice/not-recognized/si-csi-sizes/SmctSiSize";
+import HDAurora from "@/utils/salesinvoice/global/fdl/new/hd/HDAurora";
+import DapLabason from "@/utils/salesinvoice/global/fdl/old/dap/DapLabason";
+import Antipolo from "@/utils/salesinvoice/global/fdl/new/smct/Antipolo";
+import MandaueMulti from "@/utils/salesinvoice/global/obbus/new/dsm/MandaueMulti";
+import HDBuug from "@/utils/salesinvoice/global/fdl/new/hd/HDBuug";
+import HDBalamban from "@/utils/salesinvoice/global/fdl/new/hd/HDBalamban";
+import DSMDanao from "@/utils/salesinvoice/global/obbus/new/dsm/DSMDanao";
+import DsmCarmenCebu2 from "@/utils/salesinvoice/global/obbus/new/dsm/DsmCarmenCebu2";
+import DAPBalingasag from "@/utils/salesinvoice/global/fdl/old/dap/DAPBalingasag";
+import DAPIligan from "@/utils/salesinvoice/global/fdl/old/dap/DAPIligan";
+import DSMBayugan from "@/utils/salesinvoice/global/fdl/new/dsm/DSMBayugan";
+import DSMNorzagaray from "@/utils/salesinvoice/global/fdl/new/dsm/DSMNorzagaray";
+import DSMCambaro from "@/utils/salesinvoice/global/fdl/new/dsm/DSMCambaro";
+import Binan from "@/utils/salesinvoice/global/fdl/old/smct/Binan";
 import Consolacion from "@/utils/salesinvoice/global/obbus/old/dsm/Consolacion";
-import HDCamino from "@/utils/salesinvoice/global/hd/new/HDCamino";
-import HDCarmenCebu from "@/utils/salesinvoice/global/hd/new/HDCarmenCebu";
-import HDDipolog from "@/utils/salesinvoice/global/hd/old-fdlz/HDDipolog";
-import HDIpil from "@/utils/salesinvoice/global/hd/old-fdlz/HDIpil";
+import HDCamino from "@/utils/salesinvoice/global/fdl/new/hd/HDCamino";
+import HDCarmenCebu from "@/utils/salesinvoice/global/fdl/new/hd/HDCarmenCebu";
+import HDDipolog from "@/utils/salesinvoice/global/fdl/old/hd/HDDipolog";
+import HDIpil from "@/utils/salesinvoice/global/fdl/old/hd/HDIpil";
 import Argao from "@/utils/salesinvoice/global/obbus/old/dsm/Argao";
 import Balangasan from "@/utils/salesinvoice/global/obbus/old/dsm/Balangasan";
 import Cambaro from "@/utils/salesinvoice/global/fdl/new/dsm/Cambaro";
@@ -48,203 +48,18 @@ import CarmenCdo from "@/utils/salesinvoice/global/fdl/old/dsm/CarmenCdo";
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
 
-  // const size1 = [
-  //   "DSMC",
-  //   "GUSA",
-  //   "ILOI",
-  //   "CALIN",
-  //   "OZAD",
-  //   "INAB",
-  //   "VITA",
-  //   "MEDE",
-  //   "SAGBA",
-  //   "DSMDN",
-  //   "CARMCDO",
-  //   "BAYB",
-  //   "FAMY",
-  //   "DSMAO",
-  //   "VILLA2",
-  //   "GUIN2",
-  //   "DSMA",
-  //   "BUUH",
-  //   "DIPD2",
-  //   "SALA",
-  //   "OROH2",
-  //   "CALAP2",
-  //   "DIPD",
-  //   "LAPU",
-  //   "VALEN",
-  //   "JAGN",
-  //   "IPIH",
-  //   "DSMSO",
-  //   "CARMC",
-  //   "DATH",
-  //   "BONI",
-  //   "SANP",
-  //   "OROH",
-  //   "SINDA",
-  //   "LILD",
-  //   "BOGO",
-  //   "MALA",
-  //   "SMCT",
-  //   "TUBU",
-  //   "CATM",
-  //   "CARMB",
-  //   "INIT",
-  //   "TANZ",
-  //   "SDIP",
-  //   "CARS",
-  //   "DAAN",
-  //   "ALIC",
-  //   "CATAR",
-  //   "ALAH",
-  //   "UBAY",
-  //   "REMI",
-  //   "MANO",
-  //   "TUBI",
-  //   "MARH",
-  //   "YATI",
-  //   "TORI",
-  //   "DSML",
-  //   "MANG",
-  //   "BOHK",
-  //   "LIPA",
-  //   "DSMCN",
-  //   "TALI",
-  //   "DSMD",
-  //   "ILID",
-  //   "PARD3",
-  //   "DSMT2",
-  //   "BALAM",
-  //   "CERI",
-  //   "CALA",
-  //   "BUUD",
-  //   "DSMK",
-  //   "VETH",
-  //   "CATAR",
-  //   "NUND2",
-  //   "MOLD2",
-  //   "REMI2",
-  //   "CARC2",
-  //   "OROD",
-  //   "SILA",
-  //   "BULU",
-  //   "TRINI",
-  //   "OZAH",
-  //   "LOAY",
-  //   "SLAP",
-  //   "DSMCA",
-  //   "MARA2",
-  //   "DSMD2",
-  //   "SUCD",
-  //   "ALEN",
-  //   "ILIG",
-  //   "JIME",
-  //   "PARD",
-  //   "SROS",
-  //   "DSMTA",
-  // ];
-  // const size2 = [
-  //   "MOLS",
-  //   "ALAD",
-  //   "SLIL",
-  //   "BANTA",
-  //   "KATI",
-  //   "SANM",
-  //   "ANTI",
-  //   "MARD",
-  //   "TRINI2",
-  //   "ELSA",
-  //   "DASMA",
-  //   "CARMO",
-  //   "DSMBN",
-  //   "IMED",
-  //   "MARA",
-  //   "CALD",
-  //   "SIND",
-  //   "MADRI",
-  //   "DSMTG",
-  //   "KABD",
-  //   "VILLA",
-  //   "DSMV",
-  //   "DSMB",
-  //   "CAMD",
-  //   "MOLD",
-  //   "AURD",
-  //   "SARG",
-  //   "KABA2",
-  //   "TUBOD",
-  //   "DIGOS",
-  //   "VILLA",
-  //   "LABD",
-  //   "GUIN",
-  //   "RIZD",
-  //   "BALD",
-  //   "IPID",
-  //   "KABA",
-  //   "MONKA",
-  // ];
-  // const size3 = [
-  //   "DSMPO",
-  //   "CARC",
-  //   "MATI",
-  //   "DSMBL",
-  //   "LABA",
-  //   "COMPO",
-  //   "TACU",
-  //   "CALI",
-  //   "DSMLN",
-  //   "DSMP",
-  //   "PARD2",
-  // ];
-  // const size4 = ["PAGS", "ANTIP", "NAIC"];
-  // const size5 = ["BALA", "DSMDM", "JIMEDSM"];
-  // const size6 = ["BINAN", "SANJ", "DSMM", "AKLA", "DONC", "CALIN2"];
-  // const size7 = ["DSMT", "AURO"];
-  // const size8 = [
-  //   "AURH",
-  //   "GENT",
-  //   "SANT2",
-  //   "CAMH",
-  //   "CALAP",
-  //   "PUTD",
-  //   "TALI2",
-  //   "TANH",
-  //   "INIT2",
-  //   "TANZ2",
-  //   "MOLH",
-  //   "TANZ3",
-  // ];
-  // const size9 = [
-  //   "BOLOD",
-  //   "MING",
-  //   "RIZA",
-  //   "DSMSB",
-  //   "DANAO",
-  //   "TOMAS",
-  //   "CARMC2",
-  //   "CATAR2",
-  //   "MAND2",
-  //   "MAND",
-  // ];
-
   const luzonSizeData = [
     "BINAN",
-    // "CARMO",
     "DASMA",
     "FAMY",
-    // "GENT",
     "LIPA",
     "NAIC",
     "PAGS",
     "SANJ",
     "SANM",
-    // "SANP",
     "SILA",
     "SLAS",
     "SROS",
-    // "TANH",
-    // "TANZ",
     "TANZ2",
     "TANZ3",
   ];
@@ -316,94 +131,77 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "ALLEN",
   ];
 
-  // if (size1.some((branch) => branch === user?.branchCode)) {
-  //   return <Size1Sales data={data} />;
-  // } else if (size2.some((branch) => branch === user?.branchCode)) {
-  //   return <Size2Sales data={data} />;
-  // } else if (size3.some((branch) => branch === user?.branchCode)) {
-  //   return <Size3Sales data={data} />;
-  // } else if (size4.some((branch) => branch === user?.branchCode)) {
-  //   return <Size4Sales data={data} />;
-  // } else if (size5.some((branch) => branch === user?.branchCode)) {
-  //   return <Size5Sales data={data} />;
-  // } else if (size6.some((branch) => branch === user?.branchCode)) {
-  //   return <Size6Sales data={data} />;
-  // } else if (size7.some((branch) => branch === user?.branchCode)) {
-  //   return <Size7Sales data={data} />;
-  // } else if (size8.some((branch) => branch === user?.branchCode)) {
-  //   return <Size8Sales data={data} />;
-  // } else if (size9.some((branch) => branch === user?.branchCode)) {
-  //   return <Size9Sales data={data} />;
-  if (luzonSizeData.some((branch) => branch === user?.branchCode)) {
-    return <LuzonSize data={data} />;
-  } else if (DAP1SizeData.some((branch) => branch === user?.branchCode)) {
-    return <DAP1Size data={data} />;
-  } else if (dapCsiSizeData.some((branch) => branch === user?.branchCode)) {
-    return <DapCsiSize data={data} />;
-  } else if (DSMSISizeData.some((branch) => branch === user?.branchCode)) {
-    return <DSMSISize data={data} />;
-  } else if (dsmCsiSizeData.some((branch) => branch === user?.branchCode)) {
-    return <DsmCsiSize data={data} />;
-  } else if (hdSiSizeData.some((branch) => branch === user?.branchCode)) {
-    return <HdSiSize data={data} />;
-  } else if (hdCsiSizeData.some((branch) => branch === user?.branchCode)) {
-    return <HdCsiSizes data={data} />;
-  } else if (smctCsiSizeData.some((branch) => branch === user?.branchCode)) {
-    return <SmctCsiSize data={data} />;
-  } else if (smctSiSizeData.some((branch) => branch === user?.branchCode)) {
-    return <SmctSiSize data={data} />;
-  } else if ("AURH" === user?.branchCode) {
-    return <HDAurora data={data} />;
-  } else if ("BUUH" === user?.branchCode) {
-    return <HDBuug data={data} />;
-  } else if ("DANAO" === user?.branchCode) {
-    return <DSMDanao data={data} />;
-  } else if ("BALAM" === user?.branchCode) {
-    return <HDBalamban data={data} />;
-  } else if ("LABD" === user?.branchCode) {
-    return <DapLabason data={data} />;
-  } else if ("ANTIP" === user?.branchCode) {
-    return <Antipolo data={data} />;
-  } else if ("CARMC2" === user?.branchCode) {
-    return <DsmCarmenCebu2 data={data} />;
-  } else if ("MAND" === user?.branchCode) {
-    return <MandaueMulti data={data} />;
-  } else if ("BALD" === user?.branchCode) {
-    return <DAPBalingasag data={data} />;
-  } else if ("ILID" === user?.branchCode) {
-    return <DAPIligan data={data} />;
-  } else if ("BAYU" === user?.branchCode) {
-    return <DSMBayugan data={data} />;
-  } else if ("NORZA" === user?.branchCode) {
-    return <DSMNorzagaray data={data} />;
-  } else if ("DSMA" === user?.branchCode) {
-    return <DSMCambaro data={data} />;
-  } else if ("BINAN" === user?.branchCode) {
-    return <Binan data={data} />;
-  } else if ("DSMP" === user?.branchCode) {
-    return <Consolacion data={data} />;
-  } else if ("CAMH" === user?.branchCode) {
-    return <HDCamino data={data} />;
-  } else if ("CARMC" === user?.branchCode) {
-    return <HDCarmenCebu data={data} />;
-  } else if ("SDIP" === user?.branchCode) {
-    return <HDDipolog data={data} />;
-  } else if ("IPIH" === user?.branchCode) {
-    return <HDIpil data={data} />;
-  } else if ("DSMAO" === user?.branchCode) {
-    return <Argao data={data} />;
-  } else if ("BALA" === user?.branchCode) {
-    return <Balangasan data={data} />;
-  } else if ("DSMA" === user?.branchCode) {
-    return <Cambaro data={data} />;
-  } else if ("CARMCDO" === user?.branchCode) {
-    return <CarmenCdo data={data} />;
-  } else {
-    return (
-      <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
-        Sorry, This page is temporary unavailable on your branch
-      </div>
-    );
+  switch (true) {
+    case luzonSizeData.some((branch) => branch === user?.branchCode):
+      return <LuzonSize data={data} />;
+    case DAP1SizeData.some((branch) => branch === user?.branchCode):
+      return <DAP1Size data={data} />;
+    case dapCsiSizeData.some((branch) => branch === user?.branchCode):
+      return <DapCsiSize data={data} />;
+    case DSMSISizeData.some((branch) => branch === user?.branchCode):
+      return <DSMSISize data={data} />;
+    case dsmCsiSizeData.some((branch) => branch === user?.branchCode):
+      return <DsmCsiSize data={data} />;
+    case hdSiSizeData.some((branch) => branch === user?.branchCode):
+      return <HdSiSize data={data} />;
+    case hdCsiSizeData.some((branch) => branch === user?.branchCode):
+      return <HdCsiSizes data={data} />;
+    case smctCsiSizeData.some((branch) => branch === user?.branchCode):
+      return <SmctCsiSize data={data} />;
+    case smctSiSizeData.some((branch) => branch === user?.branchCode):
+      return <SmctSiSize data={data} />;
+    case "AURH" === user?.branchCode:
+      return <HDAurora data={data} />;
+    case "BUUH" === user?.branchCode:
+      return <HDBuug data={data} />;
+    case "DANAO" === user?.branchCode:
+      return <DSMDanao data={data} />;
+    case "BALAM" === user?.branchCode:
+      return <HDBalamban data={data} />;
+    case "LABD" === user?.branchCode:
+      return <DapLabason data={data} />;
+    case "ANTIP" === user?.branchCode:
+      return <Antipolo data={data} />;
+    case "CARMC2" === user?.branchCode:
+      return <DsmCarmenCebu2 data={data} />;
+    case "MAND" === user?.branchCode:
+      return <MandaueMulti data={data} />;
+    case "BALD" === user?.branchCode:
+      return <DAPBalingasag data={data} />;
+    case "ILID" === user?.branchCode:
+      return <DAPIligan data={data} />;
+    case "BAYU" === user?.branchCode:
+      return <DSMBayugan data={data} />;
+    case "NORZA" === user?.branchCode:
+      return <DSMNorzagaray data={data} />;
+    case "DSMA" === user?.branchCode:
+      return <DSMCambaro data={data} />;
+    case "BINAN" === user?.branchCode:
+      return <Binan data={data} />;
+    case "DSMP" === user?.branchCode:
+      return <Consolacion data={data} />;
+    case "CAMH" === user?.branchCode:
+      return <HDCamino data={data} />;
+    case "CARMC" === user?.branchCode:
+      return <HDCarmenCebu data={data} />;
+    case "SDIP" === user?.branchCode:
+      return <HDDipolog data={data} />;
+    case "IPIH" === user?.branchCode:
+      return <HDIpil data={data} />;
+    case "DSMAO" === user?.branchCode:
+      return <Argao data={data} />;
+    case "BALA" === user?.branchCode:
+      return <Balangasan data={data} />;
+    case "DSMA" === user?.branchCode:
+      return <Cambaro data={data} />;
+    case "CARMCDO" === user?.branchCode:
+      return <CarmenCdo data={data} />;
+    default:
+      return (
+        <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
+          Sorry, This page is temporary unavailable on your branch
+        </div>
+      );
   }
 };
 
