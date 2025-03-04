@@ -109,8 +109,6 @@ export default function Page() {
     };
   }, []);
 
-  console.log(backToTop);
-
   const handleBackToTop = () => {
     const options: any = {
       top: 0,

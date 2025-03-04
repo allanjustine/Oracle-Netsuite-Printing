@@ -3,7 +3,7 @@ import { PrintPageProps } from "@/types/types";
 import FormattedNumber from "@/utils/FormattedNumber";
 import FormattedSumTotal from "@/utils/FormattedSumTotal";
 
-const DSMBayugan = ({ data }: any) => {
+const Alano = ({ data }: any) => {
   const CR_Date = 0;
   const CR_Name = 1;
   const CR_TIN = 2;
@@ -55,12 +55,14 @@ const DSMBayugan = ({ data }: any) => {
         </div>
       </div>
       <div className="ml-[275.90551181px] text-center mt-[19.566929134px]">
-            <p className="w-[166.2992126px]">
-              {data[1]?.[CR_PartnerName] || <span className="opacity-0">Test Cashier</span>}
-            </p>
+        <p className="w-[166.2992126px]">
+          {data[1]?.[CR_PartnerName] || (
+            <span className="opacity-0">Test Cashier</span>
+          )}
+        </p>
       </div>
     </div>
   );
 };
 
-export default DSMBayugan;
+export default Alano;

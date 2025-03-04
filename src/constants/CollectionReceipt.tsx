@@ -15,6 +15,11 @@ import DAPIligan from "@/utils/collectionreceipt/global/dap/DAPIligan";
 import DAPTubod from "@/utils/collectionreceipt/global/dap/DAPTubod";
 import DSMBayugan from "@/utils/collectionreceipt/global/dsm/new/fdl/DSMBayugan";
 import Consolacion from "@/utils/official-receipt/global/fdl/old/dsm/Consolacion";
+import Argao from "@/utils/official-receipt/global/fdl/old/dsm/Argao";
+import Alano from "@/utils/collectionreceipt/global/fdl/new/dsm/Alano";
+import Balangasan from "@/utils/collectionreceipt/global/obbus/old/dsm/Balangasan";
+import Cambaro from "@/utils/official-receipt/global/fdl/old/dsm/Cambaro";
+// import Argao from "@/utils/collectionreceipt/global/dsm/new/fdl/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -141,7 +146,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   ];
 
   const DAPSizeData = [
-    "ALAD",
     "AURD",
     "BUUD",
     "CALD",
@@ -208,7 +212,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const dsmCrSizeData = [
     "AURO",
-    "BALA",
     "BOGO",
     "BULU",
     "CALIN",
@@ -224,7 +227,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DIGOS",
     "DONC",
     "CARCAR",
-    "DSMAO",
     "DSMB",
     "DSMBL",
     "DSMBN",
@@ -297,6 +299,14 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     return <DSMBayugan data={data} />;
   } else if ("DSMP" === user?.branchCode) {
     return <Consolacion data={data} />;
+  } else if ("DSMAO" === user?.branchCode) {
+    return <Argao data={data} />;
+  } else if ("ALAD" === user?.branchCode) {
+    return <Alano data={data} />;
+  } else if ("BALA" === user?.branchCode) {
+    return <Balangasan data={data} />;
+  } else if ("DSMA" === user?.branchCode) {
+    return <Cambaro data={data} />;
   } else {
     return (
       <div className="text-center flex items-center justify-center h-screen font-bold text-lg">

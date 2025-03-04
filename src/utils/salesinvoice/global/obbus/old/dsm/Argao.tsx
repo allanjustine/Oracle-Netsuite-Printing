@@ -2,7 +2,7 @@
 import FormattedNumber from "@/utils/FormattedNumber";
 import FormattedSumTotal from "@/utils/FormattedSumTotal";
 
-const Consolacion = ({ data }: any) => {
+const Argao = ({ data }: any) => {
   const mainLineName = 0;
   const date = 1;
   const taxNumber = 2;
@@ -206,4 +206,4 @@ const Consolacion = ({ data }: any) => {
   );
 };
 
-export default Consolacion;
+export default Argao;
