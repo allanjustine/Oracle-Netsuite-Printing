@@ -15,6 +15,10 @@ import DAPIligan from "@/utils/collectionreceipt/global/dap/DAPIligan";
 import DAPTubod from "@/utils/collectionreceipt/global/dap/DAPTubod";
 import DSMBayugan from "@/utils/collectionreceipt/global/dsm/new/fdl/DSMBayugan";
 import Consolacion from "@/utils/official-receipt/global/fdl/old/dsm/Consolacion";
+import DSMNorzagaray from "@/utils/collectionreceipt/global/dsm/new/fdl/DSMNorzagaray";
+import DSMCambaro from "@/utils/official-receipt/global/fdl/old/dsm/DSMCambaro";
+import DAPSanMiguel from "@/utils/collectionreceipt/global/dap/new/DAPSanMiguel";
+import Binan from "@/utils/collectionreceipt/global/smct/Binan";
 import Argao from "@/utils/official-receipt/global/fdl/old/dsm/Argao";
 import Alano from "@/utils/collectionreceipt/global/fdl/new/dsm/Alano";
 import Balangasan from "@/utils/collectionreceipt/global/obbus/old/dsm/Balangasan";
@@ -170,7 +174,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "OROD",
     "OZAD",
     "PUTD",
-    "SANM",
     "VITA",
   ];
 
@@ -299,6 +302,14 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     return <DSMBayugan data={data} />;
   } else if ("DSMP" === user?.branchCode) {
     return <Consolacion data={data} />;
+  } else if ("NORZA" === user?.branchCode) {
+    return <DSMNorzagaray data={data} />;
+  } else if ("DSMA" === user?.branchCode) {
+    return <DSMCambaro data={data} />;
+  } else if ("SANM" === user?.branchCode) {
+    return <DAPSanMiguel data={data} />;
+  } else if ("BINAN" === user?.branchCode) {
+    return <Binan data={data} />;
   } else if ("DSMAO" === user?.branchCode) {
     return <Argao data={data} />;
   } else if ("ALAD" === user?.branchCode) {
