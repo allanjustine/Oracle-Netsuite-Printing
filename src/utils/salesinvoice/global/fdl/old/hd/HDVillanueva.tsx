@@ -3,7 +3,7 @@ import { PrintPageProps } from "@/types/types";
 import FormattedNumber from "@/utils/FormattedNumber";
 import FormattedSumTotal from "@/utils/FormattedSumTotal";
 
-const HdDipolog: React.FC<PrintPageProps> = ({ data }) => {
+const HDVillanueva: React.FC<PrintPageProps> = ({ data }) => {
   const mainLineName = 0;
   const date = 1;
   const taxNumber = 2;
@@ -195,4 +195,4 @@ const HdDipolog: React.FC<PrintPageProps> = ({ data }) => {
   );
 };
 
-export default HdDipolog;
+export default HDVillanueva;
