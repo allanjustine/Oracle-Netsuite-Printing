@@ -26,6 +26,7 @@ import CarmenCdo from "@/utils/collectionreceipt/global/obbus/old/dsm/CarmenCdo"
 import Ipil from "@/utils/official-receipt/global/fdl/old/hd/Ipil";
 import Sucabon from "@/utils/collectionreceipt/global/fdl/new/dap/Sucabon";
 import MandaueMulti from "@/utils/official-receipt/global/ubbos/old/dsm/MandaueMulti";
+import HDGeneralTrias from "@/utils/collectionreceipt/global/fdl/new/hd/HDGeneralTrias";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -42,7 +43,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "CARMC",
     "DATH",
     "DSML",
-    "GENT",
     "GUSA",
     "PARD3",
     "TRINI",
@@ -220,6 +220,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <Sucabon data={data} />;
     case "MAND" === user?.branchCode:
       return <MandaueMulti data={data} />;
+    case "GENT" === user?.branchCode:
+      return <HDGeneralTrias data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
