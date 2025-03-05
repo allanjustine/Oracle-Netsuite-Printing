@@ -184,7 +184,7 @@ const DSMBayugan = ({ data }: any) => {
       </div>
       <div className="mx-[34.393700787px]">
         <div className="mt-[15.456692914px] ml-[20px] w-[340.15748031px]">
-          <p className="text-[10px] text-center">{data[1]?.[cashier] || "Allan J. Dela Cruz"}</p>
+          <p className="text-[10px] text-center">{data[1]?.[cashier] || ""}</p>
         </div>
       </div>
     </div>

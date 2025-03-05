@@ -76,7 +76,7 @@ const Cambaro = ({ data }: any) => {
       <div className="w-[718.11023622px] pl-[566.92913386px] mt-[30.7952755906px]">
         <p>
           {data[1]?.[CR_PartnerName] || (
-            <span className="opacity-1">Allan J. Santos</span>
+            <span className="opacity-0">No Data</span>
           )}
         </p>
       </div>
