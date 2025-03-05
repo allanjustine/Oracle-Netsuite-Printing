@@ -53,6 +53,7 @@ import Sucabon from "@/utils/salesinvoice/global/fdl/old/dap/Sucabon";
 import HDVillanueva from "@/utils/salesinvoice/global/fdl/old/hd/HDVillanueva";
 import Maranding from "@/utils/salesinvoice/global/fdl/old/dap/Maranding";
 import HDGeneralTrias from "@/utils/salesinvoice/global/fdl/new/hd/HDGeneralTrias";
+import HDSindangan from "@/utils/salesinvoice/global/fdl/old/hd/HDSindangan";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -217,6 +218,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Maranding data={data} />;
     case "GENT" === user?.branchCode:
       return <HDGeneralTrias data={data} />;
+    case "SINDA" === user?.branchCode:
+      return <HDSindangan data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
