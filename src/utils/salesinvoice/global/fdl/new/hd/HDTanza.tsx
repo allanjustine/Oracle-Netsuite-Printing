@@ -2,7 +2,7 @@
 import FormattedNumber from "@/utils/FormattedNumber";
 import FormattedSumTotal from "@/utils/FormattedSumTotal";
 
-const HDCamino = ({ data }: any) => {
+const HDTanza = ({ data }: any) => {
   const mainLineName = 0;
   const date = 1;
   const taxNumber = 2;
@@ -190,4 +190,4 @@ const HDCamino = ({ data }: any) => {
   );
 };
 
-export default HDCamino;
+export default HDTanza;
