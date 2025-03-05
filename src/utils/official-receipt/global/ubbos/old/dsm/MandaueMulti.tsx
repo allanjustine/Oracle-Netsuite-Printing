@@ -32,19 +32,19 @@ const MandaueMulti = ({ data }: any) => {
         </div>
       </div>
       <div className="flex mt-[9.8267716539px]">
-        <p className="pl-[302.36220472px]">
+        <p className="ml-[312.36220472px]">
           {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex mt-[6.8267716539px]">
-        <p className="ml-[302.36220472px]">
+        <p className="ml-[307.36220472px]">
           {data[1]?.[CR_BusinessStyle] || (
             <span className="opacity-0">No data</span>
           )}
         </p>
       </div>
       <div className="flex mt-[3.8267716539px]">
-        <p className="ml-[235.77165354px]">
+        <p className="ml-[245.77165354px]">
           {data[1]?.[CR_AmountInWords] || (
             <span className="opacity-0">No data</span>
           )}
@@ -52,13 +52,13 @@ const MandaueMulti = ({ data }: any) => {
       </div>
       <div className="flex w-full mt-[6.8267716539px]">
         <div className="w-[325.03937008px]">
-          <p className="ml-[249.66929134px]">
+          <p className="ml-[254.66929134px]">
             {data[1]?.[CR_AmountInFigures] || (
               <span className="opacity-0">No data</span>
             )}
           </p>
         </div>
-        <div className="w-[274.01574803px] ml-[144.28346457px]">
+        <div className="w-[274.01574803px] ml-[158.28346457px]">
           <p>
             {data[1]?.[CR_Memo].substring(0, 45) || (
               <span className="opacity-0">No data</span>
@@ -66,7 +66,7 @@ const MandaueMulti = ({ data }: any) => {
           </p>
         </div>
       </div>
-      <div className="ml-[232.77165354px] mt-[4.1811023622]">
+      <div className="ml-[245.77165354px] mt-[4.1811023622]">
         <p>
           {data[1]?.[CR_Memo].substring(45) || (
             <span className="opacity-0">No data</span>
