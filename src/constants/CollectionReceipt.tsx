@@ -29,6 +29,7 @@ import MandaueMulti from "@/utils/official-receipt/global/ubbos/old/dsm/MandaueM
 import HDGeneralTrias from "@/utils/collectionreceipt/global/fdl/new/hd/HDGeneralTrias";
 import HDSindangan from "@/utils/collectionreceipt/global/fdl/old/hd/HDSindangan";
 import Cerilles from "@/utils/official-receipt/global/ubbos/old/dsm/Cerilles";
+import Calape2 from "@/utils/official-receipt/global/fdl/old/smct/Calape2";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -227,6 +228,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <HDSindangan data={data} />;
     case "CERI" === user?.branchCode:
       return <Cerilles data={data} />;
+    case "CALAP2" === user?.branchCode:
+      return <Calape2 data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">

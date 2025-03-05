@@ -55,6 +55,7 @@ import Maranding from "@/utils/salesinvoice/global/fdl/old/dap/Maranding";
 import HDGeneralTrias from "@/utils/salesinvoice/global/fdl/new/hd/HDGeneralTrias";
 import HDSindangan from "@/utils/salesinvoice/global/fdl/old/hd/HDSindangan";
 import Cerilles from "@/utils/salesinvoice/global/obbus/old/dsm/Cerilles";
+import Calape2 from "@/utils/salesinvoice/global/fdl/old/smct/Calape2";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -222,6 +223,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <HDSindangan data={data} />;
     case "CERI" === user?.branchCode:
       return <Cerilles data={data} />;
+    case "CALAP2" === user?.branchCode:
+      return <Calape2 data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
