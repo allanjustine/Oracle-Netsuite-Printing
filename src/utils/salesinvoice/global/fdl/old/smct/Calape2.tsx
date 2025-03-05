@@ -1,9 +1,9 @@
 "use client";
-import { PrintPageProps } from "@/types/types";
+
 import FormattedNumber from "@/utils/FormattedNumber";
 import FormattedSumTotal from "@/utils/FormattedSumTotal";
 
-const Ipil = ({ data }: any) => {
+const Calape2 = ({ data }: any) => {
   const mainLineName = 0;
   const date = 1;
   const taxNumber = 2;
@@ -36,18 +36,18 @@ const Ipil = ({ data }: any) => {
     <div className="text-xs h-[745.32283465px] w-[589.60629921px]">
       <div className="flex h-[20.787401575px] mt-[111.1181102406px]">
         <p className="w-[374.17322835px] pl-[98.267716535px]">
-          {data[1]?.[mainLineName] || <span className="opacity-0">No Data</span>}
+          {data[1]?.[mainLineName] || "Test"}
         </p>
         <p className="w-[215.43307087px] pl-[56.692913386px]">
-          {data[1]?.[date] || <span className="opacity-0">No Data</span>}
+          {data[1]?.[date] || "Test"}
         </p>
       </div>
       <div className="flex h-[20.787401575px]">
         <p className="w-[374.17322835px] pl-[98.267716535px]">
-          {data[1]?.[tinNumber] || <span className="opacity-0">No Data</span>}
+          {data[1]?.[tinNumber] || "Test"}
         </p>
         <p className="w-[215.43307087px] pl-[56.692913386px]">
-          {data[1]?.[terms] || <span className="opacity-0">No Data</span>}
+          {data[1]?.[terms] || "Test"}
         </p>
       </div>
       <div className="flex h-[20.787401575px]">
@@ -57,7 +57,7 @@ const Ipil = ({ data }: any) => {
       </div>
       <div className="flex h-[20.787401575px]">
         <p className="w-[563.1496063px] pl-[132.28346457px]">
-          {data[1]?.[businessStyle] || <span className="opacity-0">No Data</span>}
+          {data[1]?.[businessStyle] || "Test"}
         </p>
       </div>
       <div className="mx-[30.236220472px] mt-[23.4330708664px] h-[309.16535433px]">
@@ -200,4 +200,4 @@ const Ipil = ({ data }: any) => {
   );
 };
 
-export default Ipil;
+export default Calape2;

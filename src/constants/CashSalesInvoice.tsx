@@ -58,6 +58,7 @@ import HDToledo from "@/utils/salesinvoice/global/fdl/old/hd/HDToledo";
 import HDTanza from "@/utils/salesinvoice/global/fdl/new/hd/HDTanza";
 
 import Cerilles from "@/utils/salesinvoice/global/obbus/old/dsm/Cerilles";
+import Calape2 from "@/utils/salesinvoice/global/fdl/old/smct/Calape2";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -229,6 +230,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <HDTanza data={data} />;
     case "CERI" === user?.branchCode:
       return <Cerilles data={data} />;
+    case "CALAP2" === user?.branchCode:
+      return <Calape2 data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
