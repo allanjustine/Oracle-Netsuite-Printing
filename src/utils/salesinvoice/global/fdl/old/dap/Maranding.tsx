@@ -3,7 +3,7 @@ import { PrintPageProps } from "@/types/types";
 import FormattedNumber from "@/utils/FormattedNumber";
 import FormattedSumTotal from "@/utils/FormattedSumTotal";
 
-const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
+const Maranding: React.FC<PrintPageProps> = ({ data }) => {
   const mainLineName = 0;
   const date = 1;
   const taxNumber = 2;
@@ -211,4 +211,4 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
     </div>
   );
 };
-export default DAP1Size;
+export default Maranding;

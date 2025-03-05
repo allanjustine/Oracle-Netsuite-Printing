@@ -50,6 +50,7 @@ import SmctHdIpilWingShop from "@/utils/salesinvoice/global/fdl/old/smct/SmctHdI
 import Ipil from "@/utils/salesinvoice/global/fdl/old/hd/Ipil";
 import Allen from "@/utils/salesinvoice/global/fdl/old/smct/Allen";
 import Sucabon from "@/utils/salesinvoice/global/fdl/old/dap/Sucabon";
+import Maranding from "@/utils/salesinvoice/global/fdl/old/dap/Maranding";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -76,7 +77,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "CALD",
     "CAMD",
     "KABD",
-    "MARD",
     "RIZD",
     "SANM",
     "IMED",
@@ -209,6 +209,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Allen data={data} />;
     case "SUCD" === user?.branchCode:
       return <Sucabon data={data} />;
+    case "MARD" === user?.branchCode:
+      return <Maranding data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
