@@ -54,6 +54,9 @@ import HDVillanueva from "@/utils/salesinvoice/global/fdl/old/hd/HDVillanueva";
 import Maranding from "@/utils/salesinvoice/global/fdl/old/dap/Maranding";
 import HDGeneralTrias from "@/utils/salesinvoice/global/fdl/new/hd/HDGeneralTrias";
 import HDSindangan from "@/utils/salesinvoice/global/fdl/old/hd/HDSindangan";
+import HDToledo from "@/utils/salesinvoice/global/fdl/old/hd/HDToledo";
+import HDTanza from "@/utils/salesinvoice/global/fdl/new/hd/HDTanza";
+
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -113,9 +116,9 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "LABA",
   ];
 
-  const hdSiSizeData = ["OROH", "TANH"];
+  const hdSiSizeData = ["OROH",];
 
-  const hdCsiSizeData = ["ALAH", "DSML", "PARD3", "INIT", "MARH", "VETH"];
+  const hdCsiSizeData = ["ALAH", "PARD3", "INIT", "MARH", "VETH"];
 
   const smctCsiSizeData = [
     "BAYB",
@@ -220,6 +223,10 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <HDGeneralTrias data={data} />;
     case "SINDA" === user?.branchCode:
       return <HDSindangan data={data} />;
+    case "DSML" === user?.branchCode:
+      return <HDToledo data={data} />;
+    case "TANH" === user?.branchCode:
+      return <HDTanza data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
