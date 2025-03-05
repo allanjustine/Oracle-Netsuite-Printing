@@ -30,7 +30,7 @@ import HDGeneralTrias from "@/utils/collectionreceipt/global/fdl/new/hd/HDGenera
 import HDSindangan from "@/utils/collectionreceipt/global/fdl/old/hd/HDSindangan";
 import Cerilles from "@/utils/official-receipt/global/ubbos/old/dsm/Cerilles";
 import Calape2 from "@/utils/official-receipt/global/fdl/old/smct/Calape2";
-import CarmenCebu2 from "@/utils/official-receipt/global/fdl/old/dsm/CarmenCebu2";
+import CarmenCebu2 from "@/utils/official-receipt/global/ajd/old/dsm/CarmenCebu2";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
