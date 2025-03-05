@@ -74,8 +74,13 @@ export default function DragAndDropComponent({
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
     >
+      <div className="flex flex-col gap-2">
       <div className="text-blue-400 text-lg font-medium" id="message">
         Drag and drop an Excel file here
+      </div>
+      <div className="text-gray-300 text-sm">
+        .xlsx, .xlsm, .xltx, .xltm
+      </div>
       </div>
       <div className="mt-2 text-gray-500 text-sm" id="file-info" />
       <div className="mt-2 text-red-500 text-sm" id="error-message" />
