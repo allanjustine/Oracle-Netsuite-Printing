@@ -1,25 +1,23 @@
 "use client";
 import PrivateRoute from "@/components/privateroutes";
 import { useAuth } from "@/context/authcontext";
-import React, { use, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   FaCheckDouble,
   FaCircleNotch,
   FaMinus,
   FaPlus,
   FaPrint,
-  FaSpinner,
   FaTrashAlt,
   FaUpload,
 } from "react-icons/fa";
-import { read, utils, readFile } from "xlsx";
+import { read, utils } from "xlsx";
 import PrintPage from "../print/page";
 import ReactDOM from "react-dom/client";
 import { FaRotate, FaXmark } from "react-icons/fa6";
 import { FormatFileSize } from "@/utils/size-format/FormatFileSize";
 import DragAndDropComponent from "@/components/DragAndDropComponent";
 import FormattedNumber from "@/utils/FormattedNumber";
-import Papa from "papaparse";
 import TextLoading from "@/components/loaders/TextLoading";
 import BackToTop from "@/components/buttons/BackToTop";
 import api from "@/lib/axios";
@@ -445,11 +443,11 @@ export default function Page() {
                   type="button"
                   disabled={isPrintLoading}
                   onClick={handlePrintCount}
-                  className="p-2 hidden opacity-0 cursor-not-allowed gap-2 items-center bg-blue-500/80 text-white hover:bg-blue-600/80 hover:translate-x-1 hover:-translate-y-1 transition-all duration-300 ease-in-out rounded-md"
+                  className="p-2 hidden cursor-not-allowed gap-2 items-center bg-blue-500/80 text-white hover:bg-blue-600/80 hover:translate-x-1 hover:-translate-y-1 transition-all duration-300 ease-in-out rounded-md"
                 >
                   {isPrintLoading ? (
                     <>
-                      <FaSpinner
+                      <FaCircleNotch
                         className="animate-spin"
                         size={20}
                         color="#fff"

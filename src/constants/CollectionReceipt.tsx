@@ -28,6 +28,7 @@ import Sucabon from "@/utils/collectionreceipt/global/fdl/new/dap/Sucabon";
 import MandaueMulti from "@/utils/official-receipt/global/ubbos/old/dsm/MandaueMulti";
 import HDGeneralTrias from "@/utils/collectionreceipt/global/fdl/new/hd/HDGeneralTrias";
 import HDSindangan from "@/utils/collectionreceipt/global/fdl/old/hd/HDSindangan";
+import Cerilles from "@/utils/official-receipt/global/ubbos/old/dsm/Cerilles";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -131,7 +132,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "CARS",
     "CATAR2",
     "CATM",
-    "CERI",
     "COMPO",
     "CONSO",
     "DIGOS",
@@ -225,6 +225,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <HDGeneralTrias data={data} />;
     case "SINDA" === user?.branchCode:
       return <HDSindangan data={data} />;
+    case "CERI" === user?.branchCode:
+      return <Cerilles data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">

@@ -1,6 +1,6 @@
 "use client";
 
-const MandaueMulti = ({ data }: any) => {
+const Cerilles = ({ data }: any) => {
   const CR_Date = 0;
   const CR_Name = 1;
   const CR_TIN = 2;
@@ -84,4 +84,4 @@ const MandaueMulti = ({ data }: any) => {
   );
 };
 
-export default MandaueMulti;
+export default Cerilles;
