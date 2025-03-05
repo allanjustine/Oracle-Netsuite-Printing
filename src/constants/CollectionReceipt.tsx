@@ -25,6 +25,7 @@ import Cambaro from "@/utils/official-receipt/global/fdl/old/dsm/Cambaro";
 import CarmenCdo from "@/utils/collectionreceipt/global/obbus/old/dsm/CarmenCdo";
 import Ipil from "@/utils/official-receipt/global/fdl/old/hd/Ipil";
 import Sucabon from "@/utils/collectionreceipt/global/fdl/new/dap/Sucabon";
+import MandaueMulti from "@/utils/official-receipt/global/ubbos/old/dsm/MandaueMulti";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -217,6 +218,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <Ipil data={data} />;
     case "SUCD" === user?.branchCode:
       return <Sucabon data={data} />;
+    case "MAND" === user?.branchCode:
+      return <MandaueMulti data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
