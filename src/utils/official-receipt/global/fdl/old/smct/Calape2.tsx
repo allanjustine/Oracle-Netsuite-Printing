@@ -1,6 +1,6 @@
 "use client";
 
-const Argao = ({ data }: any) => {
+const Calape2 = ({ data }: any) => {
   const CR_Date = 0;
   const CR_Name = 1;
   const CR_TIN = 2;
@@ -84,4 +84,4 @@ const Argao = ({ data }: any) => {
   );
 };
 
-export default Argao;
+export default Calape2;

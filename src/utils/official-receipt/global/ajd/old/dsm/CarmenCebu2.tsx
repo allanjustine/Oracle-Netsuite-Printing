@@ -1,6 +1,6 @@
 "use client";
 
-const Argao = ({ data }: any) => {
+const CarmenCebu2 = ({ data }: any) => {
   const CR_Date = 0;
   const CR_Name = 1;
   const CR_TIN = 2;
@@ -14,67 +14,60 @@ const Argao = ({ data }: any) => {
 
   return (
     <div className="text-xs w-[778.58267717px] h-[396.8503937px] ml-[10px]">
-      <div className="flex mt-[119.38582677px]">
-        <p className="pl-[604.72440945px] w-[151.18110236px]">
+      <div className="flex mt-[96.708661417px]">
+        <p className="ml-[491.33858268px] w-[102.04724409px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex justify-between  mt-[19.7952755906px]">
-        <div className="w-[566.92913386px]">
-          <p className="pl-[317.48031496px]">
+      <div className="flex w-[778.58267717px] mt-[13.7952755906px]">
+        <div className="w-[461.1023622px]">
+          <p className="ml-[313.7007874px] text-[10px]">
             {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
           </p>
         </div>
-        <div className="w-[137.95275591px]">
-          <p className="pl-[41.57480315px]">
+        <div className="w-[156.47244094px]">
+          <p className="ml-[56.692913386px]">
             {data[1]?.[CR_TIN] || <span className="opacity-0">No data</span>}
           </p>
         </div>
       </div>
-      <div className="flex mt-[9.8267716539px]">
-        <p className="pl-[302.36220472px]">
+      <div className="flex ml-[302.36220472px] mt-[9.8267716539px]">
+        <p className="w-[211.65354331px] text-[10px]">
           {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex mt-[6.8267716539px]">
-        <p className="ml-[302.36220472px]">
+      <div className="flex text-[10px] ml-[317.48031496px] mt-[6.8267716539px]">
+        <p className="w-[207.87401575px]">
           {data[1]?.[CR_BusinessStyle] || (
             <span className="opacity-0">No data</span>
           )}
         </p>
       </div>
-      <div className="flex mt-[3.8267716539px]">
-        <p className="ml-[226.77165354px]">
+      <div className="flex ml-[226.77165354px] mt-[3.8267716539px]">
+        <p className="w-[328.81889764px]">
           {data[1]?.[CR_AmountInWords] || (
             <span className="opacity-0">No data</span>
           )}
         </p>
       </div>
-      <div className="flex w-full mt-[6.8267716539px]">
+      <div className="flex w-[778.58267717px] mt-[6.8267716539px]">
         <div className="w-[325.03937008px]">
-          <p className="ml-[245.66929134px]">
+          <p className="ml-[234.33070866px]">
             {data[1]?.[CR_AmountInFigures] || (
               <span className="opacity-0">No data</span>
             )}
           </p>
         </div>
-        <div className="w-[274.01574803px] ml-[132.28346457px]">
-          <p>
-            {data[1]?.[CR_Memo].substring(0, 45) || (
+        <div className="w-[292.91338583px]">
+          <p className="ml-[147.4015748px] text-[10px]">
+            {data[1]?.[CR_Memo] || (
               <span className="opacity-0">No data</span>
             )}
           </p>
         </div>
       </div>
-      <div className="ml-[226.77165354px] mt-[4.1811023622]">
-        <p>
-          {data[1]?.[CR_Memo].substring(45) || (
-            <span className="opacity-0">No data</span>
-          )}
-        </p>
-      </div>
-      <div className="w-[718.11023622px] pl-[566.92913386px] mt-[30.7952755906px]">
-        <p>
+      <div className="w-[188.97637795px] ml-[404.40944882px] mt-[52.913385827px]">
+        <p className="text-center">
           {data[1]?.[CR_PartnerName] || (
             <span className="opacity-0">No Data</span>
           )}
@@ -84,4 +77,4 @@ const Argao = ({ data }: any) => {
   );
 };
 
-export default Argao;
+export default CarmenCebu2;
