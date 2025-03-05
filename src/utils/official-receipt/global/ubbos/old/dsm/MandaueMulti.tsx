@@ -13,20 +13,20 @@ const MandaueMulti = ({ data }: any) => {
   const CR_PartnerName = 9;
 
   return (
-    <div className="text-xs w-[778.58267717px] h-[396.8503937px] ml-[10px]">
-      <div className="flex mt-[119.38582677px]">
-        <p className="pl-[604.72440945px] w-[151.18110236px]">
+    <div className="text-xs w-[801.25984252px] h-[408.18897638px] ml-[10px]">
+      <div className="flex mt-[96.38582677px]">
+        <p className="ml-[659.72440945px] w-[151.18110236px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex justify-between  mt-[19.7952755906px]">
+      <div className="flex justify-between  mt-[15.7952755906px]">
         <div className="w-[566.92913386px]">
-          <p className="pl-[317.48031496px]">
+          <p className="ml-[317.48031496px]">
             {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
           </p>
         </div>
         <div className="w-[137.95275591px]">
-          <p className="pl-[41.57480315px]">
+          <p className="pl-[12.57480315px]">
             {data[1]?.[CR_TIN] || <span className="opacity-0">No data</span>}
           </p>
         </div>
@@ -44,7 +44,7 @@ const MandaueMulti = ({ data }: any) => {
         </p>
       </div>
       <div className="flex mt-[3.8267716539px]">
-        <p className="ml-[226.77165354px]">
+        <p className="ml-[235.77165354px]">
           {data[1]?.[CR_AmountInWords] || (
             <span className="opacity-0">No data</span>
           )}
@@ -52,13 +52,13 @@ const MandaueMulti = ({ data }: any) => {
       </div>
       <div className="flex w-full mt-[6.8267716539px]">
         <div className="w-[325.03937008px]">
-          <p className="ml-[245.66929134px]">
+          <p className="ml-[249.66929134px]">
             {data[1]?.[CR_AmountInFigures] || (
               <span className="opacity-0">No data</span>
             )}
           </p>
         </div>
-        <div className="w-[274.01574803px] ml-[132.28346457px]">
+        <div className="w-[274.01574803px] ml-[144.28346457px]">
           <p>
             {data[1]?.[CR_Memo].substring(0, 45) || (
               <span className="opacity-0">No data</span>
@@ -66,14 +66,14 @@ const MandaueMulti = ({ data }: any) => {
           </p>
         </div>
       </div>
-      <div className="ml-[226.77165354px] mt-[4.1811023622]">
+      <div className="ml-[232.77165354px] mt-[4.1811023622]">
         <p>
           {data[1]?.[CR_Memo].substring(45) || (
             <span className="opacity-0">No data</span>
           )}
         </p>
       </div>
-      <div className="w-[718.11023622px] pl-[566.92913386px] mt-[30.7952755906px]">
+      <div className="w-[718.11023622px] pl-[566.92913386px] mt-[27.7952755906px]">
         <p>
           {data[1]?.[CR_PartnerName] || (
             <span className="opacity-0">No Data</span>
