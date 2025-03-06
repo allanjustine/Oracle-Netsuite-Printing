@@ -39,6 +39,7 @@ import HDCamino from "@/utils/official-receipt/global/fdl/old/hd/HDCamino";
 import HDOzamiz from "@/utils/official-receipt/global/fdl/old/hd/HDOzamiz";
 import HDVeterans from "@/utils/official-receipt/global/fdl/old/hd/HDVeterans";
 import HDToledo from "@/utils/official-receipt/global/fdl/old/hd/HDToledo";
+import HDAurora from "@/utils/official-receipt/global/fdl/old/hd/HDAurora";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -47,7 +48,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const luzonSizeData = ["CARMO", "DASMA", "SLAP", "TANH"];
 
   const HondaDESSizeData = [
-    "AURH",
+    //"AURH",
     "BALAM",
     "BUUH",
     "CALIN",
@@ -255,6 +256,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <HDToledo data={data} />; //OR
     case "DSMCA" === user?.branchCode:
       return <HDVeterans data={data} />; //OR
+    case "AURH" === user?.branchCode:
+      return <HDAurora data={data} />; //OR
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
