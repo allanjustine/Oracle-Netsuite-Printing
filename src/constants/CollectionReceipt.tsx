@@ -38,6 +38,8 @@ import HDMolave from "@/utils/collectionreceipt/global/fdl/old/hd/HDMolave";
 import HDCamino from "@/utils/official-receipt/global/fdl/old/hd/HDCamino";
 import HDOzamiz from "@/utils/official-receipt/global/fdl/old/hd/HDOzamiz";
 import HDVeterans from "@/utils/official-receipt/global/fdl/old/hd/HDVeterans";
+import Calamba from "@/utils/collectionreceipt/global/fdl/old/dsm/Calamba";
+import DaanBantayan2 from "@/utils/collectionreceipt/global/fdl/old/dsm/DaanBantayan2";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -251,7 +253,9 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     case "VETH" === user?.branchCode:
       return <HDVeterans data={data} />; //OR
     case "DSMCA" === user?.branchCode:
-      return <HDVeterans data={data} />; //OR
+      return <Calamba data={data} />;
+    case "DAAN" === user?.branchCode:
+      return <DaanBantayan2 data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
