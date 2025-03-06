@@ -44,6 +44,7 @@ import HDDatoc from "@/utils/collectionreceipt/global/fdl/old/hd/HDDatoc";
 import Calamba from "@/utils/collectionreceipt/global/fdl/old/dsm/Calamba";
 import DaanBantayan2 from "@/utils/collectionreceipt/global/fdl/old/dsm/DaanBantayan2";
 import HDPardo from "@/utils/collectionreceipt/global/fdl/old/hd/HDPardo";
+import HDMaranding from "@/utils/official-receipt/global/fdl/old/hd/HDMaranding";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -66,7 +67,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     //"SDIP",
     "INAB",
     "KABA",
-    "MARH",
+    //"MARH",
     "OROH",
     //"OROH2",
     //"SINDA",
@@ -268,6 +269,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <DaanBantayan2 data={data} />;
     case "PARD3" === user?.branchCode:
       return <HDPardo data={data} />;
+    case "MARH" === user?.branchCode:
+    return <HDMaranding data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">

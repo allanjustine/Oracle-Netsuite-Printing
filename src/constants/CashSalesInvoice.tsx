@@ -69,6 +69,7 @@ import HDDatoc from "@/utils/salesinvoice/global/fdl/old/hd/HDDatoc";
 import DaanBantayan2 from "@/utils/salesinvoice/global/fdl/old/dsm/DaanBantayan2";
 import HDCalamba from "@/utils/salesinvoice/global/fdl/old/hd/HDCalamba";
 import HDPardo from "@/utils/salesinvoice/global/fdl/old/hd/HDPardo";
+import HDMaranding from "@/utils/salesinvoice/global/fdl/old/hd/HDMaranding";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -262,6 +263,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <HDCalamba data={data} />;
     case "PARD3" === user?.branchCode:
       return <HDPardo data={data} />;
+    case "MARH" === user?.branchCode:
+      return <HDMaranding data={data} />;  //CSI
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
