@@ -64,6 +64,7 @@ import HDVeterans from "@/utils/salesinvoice/global/fdl/new/hd/HDVeterans";
 import HDMolave from "@/utils/salesinvoice/global/fdl/new/hd/HDMolave";
 import HDOroquieta2 from "@/utils/salesinvoice/global/fdl/old/hd/HDOroquieta2";
 import Dipolog2 from "@/utils/salesinvoice/global/fdl/old/dsm/Dipolog2";
+import Calamba from "@/utils/salesinvoice/global/fdl/new/dsm/Calamba";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -247,6 +248,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <HDMolave data={data} />;
     case "OROH2" === user?.branchCode:
       return <HDOroquieta2 data={data} />;
+    case "DSMCA" === user?.branchCode:
+      return <Calamba data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">

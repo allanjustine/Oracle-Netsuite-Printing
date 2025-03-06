@@ -147,9 +147,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DSMB",
     "DSMBL",
     "DSMBN",
-    "DSMCA",
     "DSMCN",
-    "DSMCA",
     "DSMCN",
     "DSMD",
     "DSMD2",
@@ -251,6 +249,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     case "OZAH" === user?.branchCode:
       return <HDOzamiz data={data} />;   //OR
     case "VETH" === user?.branchCode:
+      return <HDVeterans data={data} />; //OR
+    case "DSMCA" === user?.branchCode:
       return <HDVeterans data={data} />; //OR
     default:
       return (
