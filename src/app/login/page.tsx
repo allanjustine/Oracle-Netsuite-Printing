@@ -64,7 +64,7 @@ export default function Home() {
   const handleLoginApi = async (e: any) => {
     e.preventDefault();
     setIsLoading(true);
-    let credentials = {
+    const credentials = {
       branchCode,
       password,
     };

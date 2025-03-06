@@ -34,11 +34,17 @@ import Cerilles from "@/utils/official-receipt/global/ubbos/old/dsm/Cerilles";
 import Calape2 from "@/utils/official-receipt/global/fdl/old/smct/Calape2";
 import CarmenCebu2 from "@/utils/official-receipt/global/ajd/old/dsm/CarmenCebu2";
 import Tanza from "@/utils/collectionreceipt/global/fely/old/hd/Tanza";
+import HDMolave from "@/utils/official-receipt/global/fdl/old/hd/HDMolave";
 import Dipolog2 from "@/utils/official-receipt/global/fdl/old/dsm/Dipolog2";
-import HDMolave from "@/utils/collectionreceipt/global/fdl/old/hd/HDMolave";
 import HDCamino from "@/utils/official-receipt/global/fdl/old/hd/HDCamino";
 import HDOzamiz from "@/utils/official-receipt/global/fdl/old/hd/HDOzamiz";
 import HDVeterans from "@/utils/official-receipt/global/fdl/old/hd/HDVeterans";
+import HDToledo from "@/utils/official-receipt/global/fdl/old/hd/HDToledo";
+import HDAurora from "@/utils/official-receipt/global/fdl/old/hd/HDAurora";
+import HDDatoc from "@/utils/collectionreceipt/global/fdl/old/hd/HDDatoc";
+import Calamba from "@/utils/collectionreceipt/global/fdl/old/dsm/Calamba";
+import DaanBantayan2 from "@/utils/collectionreceipt/global/fdl/old/dsm/DaanBantayan2";
+import Labason from "@/utils/collectionreceipt/global/obbus/old/dsm/Labason";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -47,13 +53,13 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const luzonSizeData = ["CARMO", "DASMA", "SLAP"];
 
   const HondaDESSizeData = [
-    "AURH",
+    //"AURH",
     "BALAM",
     "BUUH",
     "CALIN",
     //"CAMH",
     //"CARMC",
-    "DATH",
+    //"DATH",
     //"DSML",
     "GUSA",
     "PARD3",
@@ -166,7 +172,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "JIMEDSM",
     "KABA2",
     "KATI",
-    "LABA",
     "LAPU",
     "MARA",
     "MATI",
@@ -246,15 +251,26 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     case "DIPD2" === user?.branchCode:
       return <Dipolog2 data={data} />;
     case "MOLH" === user?.branchCode:
-      return <HDMolave data={data} />;
+      return <HDMolave data={data} />;   //OR
     case "CAMH" === user?.branchCode:
       return <HDCamino data={data} />;   //OR
     case "OZAH" === user?.branchCode:
       return <HDOzamiz data={data} />;   //OR
     case "VETH" === user?.branchCode:
       return <HDVeterans data={data} />; //OR
+    case "DSML" === user?.branchCode:
+      return <HDToledo data={data} />; //OR
     case "DSMCA" === user?.branchCode:
       return <HDVeterans data={data} />; //OR
+    case "AURH" === user?.branchCode:
+      return <HDAurora data={data} />; //OR
+    case "DATH" === user?.branchCode:
+      return <HDDatoc data={data} />; //OR
+      return <Calamba data={data} />;
+    case "DAAN" === user?.branchCode:
+      return <DaanBantayan2 data={data} />;
+    case "LABA" === user?.branchCode:
+      return <Labason data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">

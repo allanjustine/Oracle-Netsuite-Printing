@@ -1,7 +1,7 @@
 "use client";
 import { PrintPageProps } from "@/types/types";
 
-const HDMolave: React.FC<PrintPageProps> = ({ data }) => {
+const HDDatoc: React.FC<PrintPageProps> = ({ data }) => {
   const CR_Date = 0;
   const CR_Name = 1;
   const CR_TIN = 2;
@@ -75,4 +75,4 @@ const HDMolave: React.FC<PrintPageProps> = ({ data }) => {
   );
 };
 
-export default HDMolave;
+export default HDDatoc;
