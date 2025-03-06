@@ -68,6 +68,8 @@ import Calamba from "@/utils/salesinvoice/global/fdl/new/dsm/Calamba";
 import HDDatoc from "@/utils/salesinvoice/global/fdl/old/hd/HDDatoc";
 import DaanBantayan2 from "@/utils/salesinvoice/global/fdl/old/dsm/DaanBantayan2";
 import Labason from "@/utils/salesinvoice/global/obbus/old/dsm/Labason";
+import Oroquieta from "@/utils/salesinvoice/global/fdl/old/hd/Oroquieta";
+import LapuLapu2 from "@/utils/salesinvoice/global/fdl/old/dsm/LapuLapu2";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -117,17 +119,9 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
 
   const DSMSISizeData = ["DIGOS", "TACU", "TOMAS"];
 
-  const dsmCsiSizeData = [
-    "CALIN",
-    "DSMM",
-    "DSMT2",
-    "ILOI",
-    "JIMEDSM",
-  ];
+  const dsmCsiSizeData = ["CALIN", "DSMM", "DSMT2", "ILOI", "JIMEDSM"];
 
-  const hdSiSizeData = ["OROH",];
-
-  const hdCsiSizeData = ["ALAH", "PARD3", "INIT", "MARH",];
+  const hdCsiSizeData = ["ALAH", "PARD3", "INIT", "MARH"];
 
   const smctCsiSizeData = [
     "BAYB",
@@ -160,8 +154,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <DSMSISize data={data} />;
     case dsmCsiSizeData.some((branch) => branch === user?.branchCode):
       return <DsmCsiSize data={data} />;
-    case hdSiSizeData.some((branch) => branch === user?.branchCode):
-      return <HdSiSize data={data} />;
     case hdCsiSizeData.some((branch) => branch === user?.branchCode):
       return <HdCsiSizes data={data} />;
     case smctCsiSizeData.some((branch) => branch === user?.branchCode):
@@ -233,7 +225,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     case "SINDA" === user?.branchCode:
       return <HDSindangan data={data} />;
     case "DSML" === user?.branchCode:
-      return <HDToledo data={data} />;  //CSI
+      return <HDToledo data={data} />; //CSI
     case "TANH" === user?.branchCode:
       return <HDTanza data={data} />;
     case "CERI" === user?.branchCode:
@@ -250,14 +242,18 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <HDMolave data={data} />;
     case "OROH2" === user?.branchCode:
       return <HDOroquieta2 data={data} />;
+    case "OROH" === user?.branchCode:
+      return <Oroquieta data={data} />;
     case "DSMCA" === user?.branchCode:
       return <Calamba data={data} />;
     case "DATH" === user?.branchCode:
-      return <HDDatoc data={data} />;  //CSI
+      return <HDDatoc data={data} />; //CSI
     case "DAAN" === user?.branchCode:
       return <DaanBantayan2 data={data} />;
     case "LABA" === user?.branchCode:
       return <Labason data={data} />;
+    case "LAPU" === user?.branchCode:
+      return <LapuLapu2 data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
