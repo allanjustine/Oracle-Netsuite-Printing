@@ -43,6 +43,7 @@ import HDAurora from "@/utils/official-receipt/global/fdl/old/hd/HDAurora";
 import HDDatoc from "@/utils/collectionreceipt/global/fdl/old/hd/HDDatoc";
 import Calamba from "@/utils/collectionreceipt/global/fdl/old/dsm/Calamba";
 import DaanBantayan2 from "@/utils/collectionreceipt/global/fdl/old/dsm/DaanBantayan2";
+import HDPardo from "@/utils/collectionreceipt/global/fdl/old/hd/HDPardo";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -60,7 +61,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     //"DATH",
     //"DSML",
     "GUSA",
-    "PARD3",
+    ///"PARD3",
     "TRINI",
     //"SDIP",
     "INAB",
@@ -257,15 +258,16 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <HDVeterans data={data} />; //OR
     case "DSML" === user?.branchCode:
       return <HDToledo data={data} />; //OR
-    case "DSMCA" === user?.branchCode:
-      return <HDVeterans data={data} />; //OR
     case "AURH" === user?.branchCode:
       return <HDAurora data={data} />; //OR
     case "DATH" === user?.branchCode:
       return <HDDatoc data={data} />; //OR
+    case "DSMCA" === user?.branchCode:
       return <Calamba data={data} />;
     case "DAAN" === user?.branchCode:
       return <DaanBantayan2 data={data} />;
+    case "PARD3" === user?.branchCode:
+      return <HDPardo data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">

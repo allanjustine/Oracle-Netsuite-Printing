@@ -68,6 +68,7 @@ import Calamba from "@/utils/salesinvoice/global/fdl/new/dsm/Calamba";
 import HDDatoc from "@/utils/salesinvoice/global/fdl/old/hd/HDDatoc";
 import DaanBantayan2 from "@/utils/salesinvoice/global/fdl/old/dsm/DaanBantayan2";
 import HDCalamba from "@/utils/salesinvoice/global/fdl/old/hd/HDCalamba";
+import HDPardo from "@/utils/salesinvoice/global/fdl/old/hd/HDPardo";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -259,6 +260,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <DaanBantayan2 data={data} />;
     case "CALA" === user?.branchCode:
       return <HDCalamba data={data} />;
+    case "PARD3" === user?.branchCode:
+      return <HDPardo data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
