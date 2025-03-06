@@ -1,5 +1,6 @@
 "use client";
 import { data } from "@/data/credentials";
+import { fetchProfile } from "@/lib/authSanctum";
 import { AuthContextType, Branch, User } from "@/types/types";
 import React, { createContext, useContext, useState, useEffect } from "react";
 
@@ -31,6 +32,18 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
         }
       }
     }
+    // const fetchProfileData = async () => {
+    //   try {
+    //     const response = await fetchProfile();
+    //     if (response.status === 200) {
+    //       console.log(response);
+    //     }
+    //   } catch (error) {
+    //     console.error(error);
+    //   }
+    // };
+
+    // fetchProfileData();
   }, []);
 
   const login = (foundUser: any, foundBranch: any) => {
