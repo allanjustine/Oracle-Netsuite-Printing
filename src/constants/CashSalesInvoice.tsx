@@ -61,6 +61,7 @@ import Cerilles from "@/utils/salesinvoice/global/obbus/old/dsm/Cerilles";
 import Calape2 from "@/utils/salesinvoice/global/fdl/old/smct/Calape2";
 import HDOzamiz from "@/utils/salesinvoice/global/fdl/old/hd/HDOzamiz";
 import HDVeterans from "@/utils/salesinvoice/global/fdl/new/hd/HDVeterans";
+import HDMolave from "@/utils/salesinvoice/global/fdl/new/hd/HDMolave";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -238,6 +239,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <HDOzamiz data={data} />;
     case "VETH" === user?.branchCode:
       return <HDVeterans data={data} />;
+    case "MOLH" === user?.branchCode:
+      return <HDMolave data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
