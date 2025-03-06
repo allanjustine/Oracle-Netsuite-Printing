@@ -45,6 +45,7 @@ import HDDatoc from "@/utils/collectionreceipt/global/fdl/old/hd/HDDatoc";
 import Calamba from "@/utils/collectionreceipt/global/fdl/old/dsm/Calamba";
 import DaanBantayan2 from "@/utils/collectionreceipt/global/fdl/old/dsm/DaanBantayan2";
 import Labason from "@/utils/collectionreceipt/global/obbus/old/dsm/Labason";
+import Remigio from "@/utils/official-receipt/global/fdl/old/dsm/Remigio";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -176,7 +177,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "MARA",
     "MATI",
     "MEDE",
-    "REMI",
     "RIZA",
     "SARG",
     "SLIL",
@@ -227,7 +227,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     case "CARMCDO" === user?.branchCode:
       return <CarmenCdo data={data} />;
     case "IPIH" === user?.branchCode:
-      return <Ipil data={data} />;      //OR
+      return <Ipil data={data} />; //OR
     case "SUCD" === user?.branchCode:
       return <Sucabon data={data} />;
     case "MAND" === user?.branchCode:
@@ -239,7 +239,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     case "SDIP" === user?.branchCode:
       return <HDDipolog data={data} />;
     case "CARMC" === user?.branchCode:
-    return <HDCarmenCebu data={data} />;
+      return <HDCarmenCebu data={data} />;
     case "CERI" === user?.branchCode:
       return <Cerilles data={data} />;
     case "CALAP2" === user?.branchCode:
@@ -253,9 +253,9 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     case "MOLH" === user?.branchCode:
       return <HDMolave data={data} />;   //OR
     case "CAMH" === user?.branchCode:
-      return <HDCamino data={data} />;   //OR
+      return <HDCamino data={data} />; //OR
     case "OZAH" === user?.branchCode:
-      return <HDOzamiz data={data} />;   //OR
+      return <HDOzamiz data={data} />; //OR
     case "VETH" === user?.branchCode:
       return <HDVeterans data={data} />; //OR
     case "DSML" === user?.branchCode:
@@ -271,6 +271,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <DaanBantayan2 data={data} />;
     case "LABA" === user?.branchCode:
       return <Labason data={data} />;
+    case "REMI" === user?.branchCode:
+      return <Remigio data={data} />; //OR
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
