@@ -20,7 +20,7 @@ import DragAndDropComponent from "@/components/DragAndDropComponent";
 import FormattedNumber from "@/utils/FormattedNumber";
 import TextLoading from "@/components/loaders/TextLoading";
 import BackToTop from "@/components/buttons/BackToTop";
-import api from "@/lib/axios";
+import api from "@/lib/axiosCall";
 import { PrintData } from "@/utils/constants";
 import { PrintDataType } from "@/types/PrintData";
 import { Bounce, toast } from "react-toastify";
