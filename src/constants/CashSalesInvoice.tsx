@@ -66,6 +66,7 @@ import HDOroquieta2 from "@/utils/salesinvoice/global/fdl/old/hd/HDOroquieta2";
 import Dipolog2 from "@/utils/salesinvoice/global/fdl/old/dsm/Dipolog2";
 import Calamba from "@/utils/salesinvoice/global/fdl/new/dsm/Calamba";
 import DaanBantayan2 from "@/utils/salesinvoice/global/fdl/old/dsm/DaanBantayan2";
+import Labason from "@/utils/salesinvoice/global/obbus/old/dsm/Labason";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -121,7 +122,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "DSMT2",
     "ILOI",
     "JIMEDSM",
-    "LABA",
   ];
 
   const hdSiSizeData = ["OROH",];
@@ -253,6 +253,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Calamba data={data} />;
     case "DAAN" === user?.branchCode:
       return <DaanBantayan2 data={data} />;
+    case "LABA" === user?.branchCode:
+      return <Labason data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">

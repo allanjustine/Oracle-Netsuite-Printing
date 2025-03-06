@@ -40,6 +40,7 @@ import HDOzamiz from "@/utils/official-receipt/global/fdl/old/hd/HDOzamiz";
 import HDVeterans from "@/utils/official-receipt/global/fdl/old/hd/HDVeterans";
 import Calamba from "@/utils/collectionreceipt/global/fdl/old/dsm/Calamba";
 import DaanBantayan2 from "@/utils/collectionreceipt/global/fdl/old/dsm/DaanBantayan2";
+import Labason from "@/utils/collectionreceipt/global/obbus/old/dsm/Labason";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -167,7 +168,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "JIMEDSM",
     "KABA2",
     "KATI",
-    "LABA",
     "LAPU",
     "MARA",
     "MATI",
@@ -256,6 +256,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <Calamba data={data} />;
     case "DAAN" === user?.branchCode:
       return <DaanBantayan2 data={data} />;
+    case "LABA" === user?.branchCode:
+      return <Labason data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
