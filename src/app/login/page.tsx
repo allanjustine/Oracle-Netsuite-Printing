@@ -7,6 +7,8 @@ import netsuite from "../../../public/netsuite-logo.png";
 import smct from "../../../public/smct_group.png";
 import { data } from "@/data/credentials";
 import AlertBox from "@/components/ui/AlertBox";
+import { login as loginApi, logout } from "@/lib/authSanctum";
+import { FaCircleNotch } from "react-icons/fa";
 
 export default function Home() {
   const { login, isAuthenticated } = useAuth();
@@ -18,6 +20,7 @@ export default function Home() {
     error: false,
     warning: false,
   });
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -58,6 +61,38 @@ export default function Home() {
     }
   };
 
+  const handleLoginApi = async (e: any) => {
+    e.preventDefault();
+    setIsLoading(true);
+    let credentials = {
+      branchCode,
+      password,
+    };
+
+    try {
+      const response = await loginApi(credentials);
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleLogout = async () => {
+    setIsLoading(true);
+
+    try {
+      const response = await logout();
+
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <>
       <form onSubmit={handleLogin} method="POST">
@@ -95,9 +130,10 @@ export default function Home() {
           </div>
           <button
             type="submit"
+            disabled={isLoading}
             className="bg-[#607799] text-white border px-3 py-1 rounded-md"
           >
-            Login
+            {isLoading ? <FaCircleNotch className="animate-spin" /> : "Login"}
           </button>
         </div>
       </form>
