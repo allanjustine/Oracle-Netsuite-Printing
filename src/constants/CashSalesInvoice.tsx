@@ -65,6 +65,7 @@ import HDMolave from "@/utils/salesinvoice/global/fdl/new/hd/HDMolave";
 import HDOroquieta2 from "@/utils/salesinvoice/global/fdl/old/hd/HDOroquieta2";
 import Dipolog2 from "@/utils/salesinvoice/global/fdl/old/dsm/Dipolog2";
 import Calamba from "@/utils/salesinvoice/global/fdl/new/dsm/Calamba";
+import HDDatoc from "@/utils/salesinvoice/global/fdl/old/hd/HDDatoc";
 import DaanBantayan2 from "@/utils/salesinvoice/global/fdl/old/dsm/DaanBantayan2";
 import Labason from "@/utils/salesinvoice/global/obbus/old/dsm/Labason";
 
@@ -232,7 +233,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     case "SINDA" === user?.branchCode:
       return <HDSindangan data={data} />;
     case "DSML" === user?.branchCode:
-      return <HDToledo data={data} />;
+      return <HDToledo data={data} />;  //CSI
     case "TANH" === user?.branchCode:
       return <HDTanza data={data} />;
     case "CERI" === user?.branchCode:
@@ -251,6 +252,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <HDOroquieta2 data={data} />;
     case "DSMCA" === user?.branchCode:
       return <Calamba data={data} />;
+    case "DATH" === user?.branchCode:
+      return <HDDatoc data={data} />;  //CSI
     case "DAAN" === user?.branchCode:
       return <DaanBantayan2 data={data} />;
     case "LABA" === user?.branchCode:
