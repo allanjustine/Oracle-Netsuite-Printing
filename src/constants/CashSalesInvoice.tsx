@@ -70,6 +70,7 @@ import DaanBantayan2 from "@/utils/salesinvoice/global/fdl/old/dsm/DaanBantayan2
 import Labason from "@/utils/salesinvoice/global/obbus/old/dsm/Labason";
 import Oroquieta from "@/utils/salesinvoice/global/fdl/old/hd/Oroquieta";
 import LapuLapu2 from "@/utils/salesinvoice/global/fdl/old/dsm/LapuLapu2";
+import Liloan from "@/utils/salesinvoice/global/obbus/old/dsm/Liloan";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -254,6 +255,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Labason data={data} />;
     case "LAPU" === user?.branchCode:
       return <LapuLapu2 data={data} />;
+    case "DSMLN" === user?.branchCode:
+      return <Liloan data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
