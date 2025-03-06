@@ -1,5 +1,5 @@
 "use client";
-import { PrintPageProps } from "@/types/types";
+
 import FormattedNumber from "@/utils/FormattedNumber";
 import FormattedSumTotal from "@/utils/FormattedSumTotal";
 
@@ -33,60 +33,59 @@ const Dipolog2 = ({ data }: any) => {
   const unitPrice = 26;
 
   return (
-    <div className="text-xs h-[771.02362205px] w-[593.38582677px]">
-      <div className="flex h-[19.409448819px] mt-[118.6771653587px]">
-        <p className="w-[376.06299213px] pl-[94.488188976px]">
-          {data[1]?.[mainLineName] || ""}
+    <div className="text-xs h-[745.32283465px] w-[589.60629921px]">
+      <div className="flex h-[20.787401575px] mt-[111.1181102406px]">
+        <p className="w-[374.17322835px] pl-[98.267716535px]">
+          {data[1]?.[mainLineName] || "Test"}
         </p>
-        <p className="w-[219.21259843px] pl-[60.472440945px]">
-          {data[1]?.[date] || ""}
-        </p>
-      </div>
-      <div className="flex h-[19.409448819px]">
-        <p className="w-[376.06299213px] pl-[94.488188976px]">
-          {data[1]?.[tinNumber] || ""}
-        </p>
-        <p className="w-[219.21259843px] pl-[60.472440945px]">
-          {data[1]?.[terms] || ""}
+        <p className="w-[215.43307087px] pl-[56.692913386px]">
+          {data[1]?.[date] || "Test"}
         </p>
       </div>
-      <div className="flex h-[38.818897638px]">
-        <div className="w-[376.06299213px] pl-[94.488188976px]">
-          <p className="h-[19.409448819px]">{data[1]?.[billingAddress].substring(0, 47) || ""}</p>
-          <p className="h-[19.409448819px]">{data[1]?.[billingAddress].substring(47) || ""}</p>
+      <div className="flex h-[20.787401575px]">
+        <p className="w-[374.17322835px] pl-[98.267716535px]">
+          {data[1]?.[tinNumber] || "Test"}
+        </p>
+        <p className="w-[215.43307087px] pl-[56.692913386px]">
+          {data[1]?.[terms] || "Test"}
+        </p>
+      </div>
+      <div className="flex h-[20.787401575px]">
+        <div className="w-[563.1496063px] pl-[98.267716535px]">
+          <p
+            className={`h-[20.787401575px] ${
+              data[1]?.[billingAddress].length > 85 ? "text-[10px]" : ""
+            }`}
+          >
+            {data[1]?.[billingAddress] || ""}
+          </p>
         </div>
-        <p className="w-[219.21259843px] pl-[136.06299213px]">
-          {data[1]?.[oscaPwdIdNo] || ""}
+      </div>
+      <div className="flex h-[20.787401575px]">
+        <p className="w-[563.1496063px] pl-[132.28346457px]">
+          {data[1]?.[businessStyle] || "Test"}
         </p>
       </div>
-      <div className="flex h-[19.409448819px]">
-        <p className="w-[376.06299213px] pl-[137.95275591px]">
-          {data[1]?.[businessStyle] || ""}
-        </p>
-        <p className="w-[219.21259843px] pl-[113.38582677px]">
-          {data[1]?.[cardHolderSignatures] || ""}
-        </p>
-      </div>
-      <div className="mx-[34.393700787px] mt-[23.4330708664px] h-[314.07874016px]">
+      <div className="mx-[30.236220472px] mt-[23.4330708664px] h-[309.16535433px]">
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
               <tr key={index} className="text-[10px] text-center">
-                <td className="w-[71.811023622px]">{row[quantity]}</td>
-                <td className="w-[62.362204724px] h-[19.275590551px]">
+                <td className="w-[69.165354331px]">{row[quantity]}</td>
+                <td className="w-[56.692913386px] h-[19.275590551px]">
                   {row[unitOfMeasurement]}
                 </td>
                 <td
-                  className={`w-[238.48818898px] h-[19.275590551px] ${
+                  className={`w-[230.5511811px] h-[19.275590551px] ${
                     row[articles]?.length > 41 ? "text-[7px]" : ""
                   }`}
                 >
                   {row[articles]}
                 </td>
-                <td className="w-[79.748031496px] h-[19.275590551px]">
+                <td className="w-[77.102362205px] h-[19.275590551px]">
                   {FormattedNumber(row[unitPrice])}
                 </td>
-                <td className="w-[102.38740157px] h-[19.275590551px]">
+                <td className="w-[98.267716535px] h-[19.275590551px]">
                   {FormattedNumber(row[totalAmount])}
                 </td>
               </tr>
@@ -124,84 +123,81 @@ const Dipolog2 = ({ data }: any) => {
           </tbody>
         </table>
       </div>
-      <div className="mx-[34.393700787px] h-[126.99212598px]">
+      <div className="mx-[30.236220472px] h-[134.17322835px]">
         <table className="border-collapse w-full">
           <tbody>
             <tr className="text-[10px]">
-              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
+              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
+              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]">
                 {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
               </td>
-              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-              <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+              <td className="h-[19.275590551px] w-[128.88188976px]"></td>
+              <td className="h-[19.275590551px] w-[98.645669291px] text-center">
                 {FormattedSumTotal(data, totalSalesVatInclusive, 16)}
               </td>
             </tr>
             <tr className="text-[10px]">
-              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
+              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
+              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]">
                 {/* {FormattedSumTotal(data, rateInclusiveVat, 16)} VAT EXEMPT SALES */}
                 0.00
               </td>
-              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-              <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+              <td className="h-[19.275590551px] w-[128.88188976px]"></td>
+              <td className="h-[19.275590551px] w-[98.645669291px] text-center">
                 {/* {FormattedSumTotal(data, totalSalesVatInclusive2, 16)} LESS: SC/PWD DISCOUNT */}
                 0.00
               </td>
             </tr>
             <tr className="text-[10px]">
-              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
+              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
+              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]">
                 {FormattedSumTotal(data, rateInclusiveVat, 16)}
               </td>
-              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-              <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+              <td className="h-[19.275590551px] w-[128.88188976px]"></td>
+              <td className="h-[19.275590551px] w-[98.645669291px] text-center">
                 {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
               </td>
             </tr>
             <tr className="text-[10px]">
-              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
+              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
+              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]">
                 {FormattedSumTotal(data, vatAmount, 16)}
               </td>
-              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-              <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+              <td className="h-[19.275590551px] w-[128.88188976px]"></td>
+              <td className="h-[19.275590551px] w-[98.645669291px] text-center">
                 {/* {FormattedSumTotal(data, totalSalesVatInclusive2, 16)} LESS: SC/PWD DISCOUNT */}
-                0.00
               </td>
             </tr>
             <tr className="text-[10px]">
-              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]"></td>
-              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-              <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
+              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]"></td>
+              <td className="h-[19.275590551px] w-[128.88188976px]"></td>
+              <td className="h-[19.275590551px] w-[98.645669291px] text-center">
                 {FormattedSumTotal(data, vatAmount2, 16)}
               </td>
             </tr>
             <tr className="text-[10px]">
-              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]"></td>
-              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-              <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
+              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]"></td>
+              <td className="h-[19.275590551px] w-[128.88188976px]"></td>
+              <td className="h-[19.275590551px] w-[98.645669291px] text-center">
                 {FormattedSumTotal(data, vatAmount3, 16)}
               </td>
             </tr>
             <tr className="text-[10px]">
-              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]"></td>
-              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-              <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
+              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]"></td>
+              <td className="h-[19.275590551px] w-[128.88188976px]"></td>
+              <td className="h-[19.275590551px] w-[98.645669291px] text-center">
                 {FormattedSumTotal(data, totalSalesVatInclusive, 16)}
               </td>
             </tr>
           </tbody>
         </table>
       </div>
-      <div className="mx-[34.393700787px]">
-        <div className="mt-[26.456692914px] ml-[332.976377952px]">
-          <p className="text-[10px] text-center">
-            {data[1]?.[cashier] || ""}
-          </p>
+      <div className="mx-[30.236220472px]">
+        <div className="mt-[24.456692914px] ml-[332.976377952px]">
+          <p className="text-[10px] text-center">{data[1]?.[cashier] || ""}</p>
         </div>
       </div>
     </div>
