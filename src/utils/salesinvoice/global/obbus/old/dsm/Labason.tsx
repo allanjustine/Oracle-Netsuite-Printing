@@ -199,7 +199,7 @@ const Labason = ({ data }: any) => {
       </div>
       <div className="mx-[32.125984252px]">
         <div className="mt-[11.136220472px] w-[196.53543307px] ml-[336.37795276px]">
-          <p className="text-[10px] text-center">{data[1]?.[cashier] || <span className="opacity-1">No Data</span>}</p>
+          <p className="text-[10px] text-center">{data[1]?.[cashier] || <span className="opacity-0">No Data</span>}</p>
         </div>
       </div>
     </div>
