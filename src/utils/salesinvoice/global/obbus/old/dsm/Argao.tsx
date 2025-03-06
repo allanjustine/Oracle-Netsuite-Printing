@@ -35,29 +35,31 @@ const Argao = ({ data }: any) => {
     <div className="text-xs h-[795.59055118px] w-[616.06299213px]">
       <div className="flex h-[15.458267717px] mt-[125.503937007px]">
         <p className="w-[402.51968504px] ml-[86.929133858px]">
-          {data[1]?.[mainLineName] || ""}
+          {data[1]?.[mainLineName] || <span className="opacity-0">No Data</span>}
         </p>
         <p className="w-[215.43307087px] ml-[41.57480315px]">
-          {data[1]?.[date] || ""}
-        </p>
+          {data[1]?.[date] || <span className="opacity-0">No Data</span>}
+        </p>              
       </div>
       <div className="flex h-[15.458267717px]">
         <p className="w-[402.51968504px] ml-[86.929133858px]">
-          {data[1]?.[tinNumber] || "No Data"}
+          {data[1]?.[tinNumber] || <span className="opacity-0">No Data</span>}
         </p>
-        <p className="w-[215.43307087px] ml-[41.57480315px]"></p>
+        <p className="w-[215.43307087px] ml-[41.57480315px]">
+          {data[1]?.[terms] || <span className="opacity-0">No Data</span>}
+        </p>
       </div>
       <div className="w-[402.51968504px] flex flex-col h-[32.503937008px]">
         <p className="ml-[86.929133858px] h-[16.251968504px]">
-          {data[1]?.[billingAddress].substring(0, 515) || ""}
+          {data[1]?.[billingAddress].substring(0, 55) || <span className="opacity-0">No Data</span>}
         </p>
         <p className="ml-[86.929133858px] h-[16.251968504px]">
-          {data[1]?.[billingAddress].substring(515) || ""}
+          {data[1]?.[billingAddress].substring(55) || <span className="opacity-0">No Data</span>}
         </p>
       </div>
       <div className="flex h-[15.458267717px]">
         <p className="w-[402.51968504px] ml-[113.38582677px]">
-          {data[1]?.[businessStyle] || "No Data"}
+          {data[1]?.[businessStyle] || <span className="opacity-0">No Data</span>}
         </p>
         <p className="w-[215.43307087px] ml-[41.57480315px]"></p>
       </div>
@@ -197,9 +199,7 @@ const Argao = ({ data }: any) => {
       </div>
       <div className="mx-[32.125984252px]">
         <div className="mt-[15.136220472px] w-[196.53543307px] ml-[336.37795276px]">
-          <p className="text-[10px] text-center">
-            {data[1]?.[cashier] || ""}
-          </p>
+          <p className="text-[10px] text-center">{data[1]?.[cashier] || <span className="opacity-0">No Data</span>}</p>
         </div>
       </div>
     </div>
