@@ -33,10 +33,11 @@ import HDCarmenCebu from "@/utils/collectionreceipt/global/fdl/old/hd/HDCarmenCe
 import Cerilles from "@/utils/official-receipt/global/ubbos/old/dsm/Cerilles";
 import Calape2 from "@/utils/official-receipt/global/fdl/old/smct/Calape2";
 import CarmenCebu2 from "@/utils/official-receipt/global/ajd/old/dsm/CarmenCebu2";
-import HDMolave from "@/utils/collectionreceipt/global/fdl/old/hd/HDMolave";
+import HDMolave from "@/utils/official-receipt/global/fdl/old/hd/HDMolave";
 import HDCamino from "@/utils/official-receipt/global/fdl/old/hd/HDCamino";
 import HDOzamiz from "@/utils/official-receipt/global/fdl/old/hd/HDOzamiz";
 import HDVeterans from "@/utils/official-receipt/global/fdl/old/hd/HDVeterans";
+import HDToledo from "@/utils/official-receipt/global/fdl/old/hd/HDToledo";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -243,13 +244,15 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     case "CARMC2" === user?.branchCode:
       return <CarmenCebu2 data={data} />;
     case "MOLH" === user?.branchCode:
-      return <HDMolave data={data} />;
+      return <HDMolave data={data} />;   //OR
     case "CAMH" === user?.branchCode:
       return <HDCamino data={data} />;   //OR
     case "OZAH" === user?.branchCode:
       return <HDOzamiz data={data} />;   //OR
     case "VETH" === user?.branchCode:
       return <HDVeterans data={data} />; //OR
+    case "DSML" === user?.branchCode:
+      return <HDToledo data={data} />; //OR
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
