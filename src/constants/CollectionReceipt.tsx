@@ -28,10 +28,16 @@ import Sucabon from "@/utils/collectionreceipt/global/fdl/new/dap/Sucabon";
 import MandaueMulti from "@/utils/official-receipt/global/ubbos/old/dsm/MandaueMulti";
 import HDGeneralTrias from "@/utils/collectionreceipt/global/fdl/new/hd/HDGeneralTrias";
 import HDSindangan from "@/utils/collectionreceipt/global/fdl/old/hd/HDSindangan";
+import HDDipolog from "@/utils/collectionreceipt/global/fdl/old/hd/HDDipolog";
+import HDCarmenCebu from "@/utils/collectionreceipt/global/fdl/old/hd/HDCarmenCebu";
 import Cerilles from "@/utils/official-receipt/global/ubbos/old/dsm/Cerilles";
 import Calape2 from "@/utils/official-receipt/global/fdl/old/smct/Calape2";
 import CarmenCebu2 from "@/utils/official-receipt/global/ajd/old/dsm/CarmenCebu2";
 import Dipolog2 from "@/utils/official-receipt/global/fdl/old/dsm/Dipolog2";
+import HDMolave from "@/utils/collectionreceipt/global/fdl/old/hd/HDMolave";
+import HDCamino from "@/utils/official-receipt/global/fdl/old/hd/HDCamino";
+import HDOzamiz from "@/utils/official-receipt/global/fdl/old/hd/HDOzamiz";
+import HDVeterans from "@/utils/official-receipt/global/fdl/old/hd/HDVeterans";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -44,22 +50,22 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "BALAM",
     "BUUH",
     "CALIN",
-    "CAMH",
-    "CARMC",
+    //"CAMH",
+    //"CARMC",
     "DATH",
     //"DSML",
     "GUSA",
     "PARD3",
     "TRINI",
-    "SDIP",
+    //"SDIP",
     "INAB",
     "KABA",
     "MARH",
     "OROH",
-    "OROH2",
+    //"OROH2",
     //"SINDA",
     "SMCT",
-    "VETH",
+    //"VETH",
     "VILLA2",
   ];
 
@@ -217,7 +223,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     case "CARMCDO" === user?.branchCode:
       return <CarmenCdo data={data} />;
     case "IPIH" === user?.branchCode:
-      return <Ipil data={data} />;
+      return <Ipil data={data} />;      //OR
     case "SUCD" === user?.branchCode:
       return <Sucabon data={data} />;
     case "MAND" === user?.branchCode:
@@ -226,6 +232,10 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <HDGeneralTrias data={data} />;
     case "SINDA" === user?.branchCode:
       return <HDSindangan data={data} />;
+    case "SDIP" === user?.branchCode:
+      return <HDDipolog data={data} />;
+    case "CARMC" === user?.branchCode:
+    return <HDCarmenCebu data={data} />;
     case "CERI" === user?.branchCode:
       return <Cerilles data={data} />;
     case "CALAP2" === user?.branchCode:
@@ -234,6 +244,14 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <CarmenCebu2 data={data} />;
     case "DIPD2" === user?.branchCode:
       return <Dipolog2 data={data} />;
+    case "MOLH" === user?.branchCode:
+      return <HDMolave data={data} />;
+    case "CAMH" === user?.branchCode:
+      return <HDCamino data={data} />;   //OR
+    case "OZAH" === user?.branchCode:
+      return <HDOzamiz data={data} />;   //OR
+    case "VETH" === user?.branchCode:
+      return <HDVeterans data={data} />; //OR
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
