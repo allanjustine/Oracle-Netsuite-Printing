@@ -31,6 +31,7 @@ import HDSindangan from "@/utils/collectionreceipt/global/fdl/old/hd/HDSindangan
 import Cerilles from "@/utils/official-receipt/global/ubbos/old/dsm/Cerilles";
 import Calape2 from "@/utils/official-receipt/global/fdl/old/smct/Calape2";
 import CarmenCebu2 from "@/utils/official-receipt/global/ajd/old/dsm/CarmenCebu2";
+import Dipolog2 from "@/utils/official-receipt/global/fdl/old/dsm/Dipolog2";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -72,7 +73,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "SIND",
     "DAPI",
     "DIPD",
-    "DIPD2",
     "INIT2",
     "JIME",
     "KABD",
@@ -232,6 +232,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <Calape2 data={data} />;
     case "CARMC2" === user?.branchCode:
       return <CarmenCebu2 data={data} />;
+    case "DIPD2" === user?.branchCode:
+      return <Dipolog2 data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">

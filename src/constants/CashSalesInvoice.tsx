@@ -232,6 +232,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Cerilles data={data} />;
     case "CALAP2" === user?.branchCode:
       return <Calape2 data={data} />;
+    case "DIPD2" === user?.branchCode:
+      return <Calape2 data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
