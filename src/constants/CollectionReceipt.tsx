@@ -53,6 +53,7 @@ import Liloan from "@/utils/official-receipt/global/ubbos/old/dsm/Liloan";
 import MandaueY3s from "@/utils/official-receipt/global/ubbos/old/dsm/MandaueY3s";
 import HDOroquieta from "@/utils/collectionreceipt/global/fdl/old/hd/HDOroquieta";
 import HDCalinog from "@/utils/collectionreceipt/global/fdl/old/hd/HDCalinog";
+import HDOroquieta2 from "@/utils/official-receipt/global/fdl/old/hd/HDOroquieta2";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -291,6 +292,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <HDOroquieta data={data} />;
     case "CALIN2" === user?.branchCode:
       return <HDCalinog data={data} />;
+    case "OROH2" === user?.branchCode:
+      return <HDOroquieta2 data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
