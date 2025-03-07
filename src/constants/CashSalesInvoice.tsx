@@ -75,6 +75,7 @@ import HDBalamban from "@/utils/salesinvoice/global/fdl/old/hd/HDBalamban";
 import Oroquieta from "@/utils/salesinvoice/global/fdl/old/hd/Oroquieta";
 import LapuLapu2 from "@/utils/salesinvoice/global/fdl/old/dsm/LapuLapu2";
 import Liloan from "@/utils/salesinvoice/global/obbus/old/dsm/Liloan";
+import HDCalinog from "@/utils/salesinvoice/global/fdl/old/hd/HDCalinog";
 import LapuLapu from "@/utils/salesinvoice/global/fdl/old/dsm/LapuLapu";
 import Nabunturan from "@/utils/salesinvoice/global/fdl/new/dsm/Nabunturan";
 import SuzukiOsamiz from "@/utils/salesinvoice/global/fdl/new/dsm/SuzukiOsamiz";
@@ -272,6 +273,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <LapuLapu2 data={data} />;
     case "DSMLN" === user?.branchCode:
       return <Liloan data={data} />;
+    case "CALIN2" === user?.branchCode:
+      return <HDCalinog data={data} />;
     case "SLAP" === user?.branchCode:
       return <LapuLapu data={data} />;
     case "NABU" === user?.branchCode:

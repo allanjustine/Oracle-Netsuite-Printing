@@ -51,6 +51,9 @@ import Remigio from "@/utils/official-receipt/global/fdl/old/dsm/Remigio";
 import LapuLapu2 from "@/utils/official-receipt/global/fdl/old/dsm/LapuLapu2";
 import Liloan from "@/utils/official-receipt/global/ubbos/old/dsm/Liloan";
 import MandaueY3s from "@/utils/official-receipt/global/ubbos/old/dsm/MandaueY3s";
+import HDOroquieta from "@/utils/collectionreceipt/global/fdl/old/hd/HDOroquieta";
+import HDCalinog from "@/utils/collectionreceipt/global/fdl/old/hd/HDCalinog";
+import HDOroquieta2 from "@/utils/official-receipt/global/fdl/old/hd/HDOroquieta2";
 import LapuLapu from "@/utils/official-receipt/global/fdl/old/dsm/LapuLapu";
 import Nabunturan from "@/utils/collectionreceipt/global/fdl/new/dsm/Nabunturan";
 import SuzukiOsamiz from "@/utils/official-receipt/global/ubbos/old/dsm/SuzukiOsamiz";
@@ -65,7 +68,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     //"AURH",
     "BALAM",
     "BUUH",
-    "CALIN",
+    //"CALIN",
     //"CAMH",
     //"CARMC",
     //"DATH",
@@ -77,8 +80,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "INAB",
     "KABA",
     //"MARH",
-    "OROH",
-    "OROH2",
     //"SINDA",
     "SMCT",
     //"VETH",
@@ -289,6 +290,12 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <Liloan data={data} />;
     case "MAND2" === user?.branchCode:
       return <MandaueY3s data={data} />;
+    case "OROH" === user?.branchCode:
+      return <HDOroquieta data={data} />;
+    case "CALIN2" === user?.branchCode:
+      return <HDCalinog data={data} />;
+    case "OROH2" === user?.branchCode:
+      return <HDOroquieta2 data={data} />;
     case "NABU" === user?.branchCode:
       return <Nabunturan data={data} />;
     case "DSMSO" === user?.branchCode:
