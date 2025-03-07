@@ -45,6 +45,10 @@ import Calamba from "@/utils/collectionreceipt/global/fdl/old/dsm/Calamba";
 import DaanBantayan2 from "@/utils/collectionreceipt/global/fdl/old/dsm/DaanBantayan2";
 import HDPardo from "@/utils/collectionreceipt/global/fdl/old/hd/HDPardo";
 import HDMaranding from "@/utils/official-receipt/global/fdl/old/hd/HDMaranding";
+import Labason from "@/utils/collectionreceipt/global/obbus/old/dsm/Labason";
+import LapuLapu2 from "@/utils/official-receipt/global/fdl/old/dsm/LapuLapu2";
+import Liloan from "@/utils/official-receipt/global/ubbos/old/dsm/Liloan";
+import MandaueY3s from "@/utils/official-receipt/global/ubbos/old/dsm/MandaueY3s";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -159,7 +163,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DSMD",
     "DSMD2",
     "DSMK",
-    "DSMLN",
     "DSMPO",
     "DSMSB",
     "DSMSO",
@@ -172,8 +175,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "JIMEDSM",
     "KABA2",
     "KATI",
-    "LABA",
-    "LAPU",
     "MARA",
     "MATI",
     "MEDE",
@@ -270,7 +271,15 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     case "PARD3" === user?.branchCode:
       return <HDPardo data={data} />;
     case "MARH" === user?.branchCode:
-    return <HDMaranding data={data} />;
+      return <HDMaranding data={data} />;
+    case "LABA" === user?.branchCode:
+      return <Labason data={data} />;
+    case "LAPU" === user?.branchCode:
+      return <LapuLapu2 data={data} />;
+    case "DSMLN" === user?.branchCode:
+      return <Liloan data={data} />;
+    case "MAND2" === user?.branchCode:
+      return <MandaueY3s data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
