@@ -108,20 +108,24 @@ const SuzukiOsamiz = ({ data }: any) => {
               <td className="w-[83.48976378px] h-[18.897637795px]"></td>
               <td className="w-[105.4488189px] h-[18.897637795px]"></td>
             </tr>
-            <tr className="text-[10px] text-center">
-              <td
-                className={`w-[268.72440945px] h-[18.897637795px] ${
-                  data[1]?.[conductionSticker]?.length > 41 ? "text-[7px]" : ""
-                }`}
-              >
-                {data[1]?.[conductionSticker] && (
-                  <>Conduction Sticker #: {data[1]?.[conductionSticker]}</>
-                )}
-              </td>
-              <td className="w-[75.968503937px]"></td>
-              <td className="w-[83.48976378px] h-[18.897637795px]"></td>
-              <td className="w-[105.4488189px] h-[18.897637795px]"></td>
-            </tr>
+            {data[1]?.[conductionSticker] && (
+              <tr className="text-[10px] text-center">
+                <td
+                  className={`w-[268.72440945px] h-[18.897637795px] ${
+                    data[1]?.[conductionSticker]?.length > 41
+                      ? "text-[7px]"
+                      : ""
+                  }`}
+                >
+                  {data[1]?.[conductionSticker] && (
+                    <>Conduction Sticker #: {data[1]?.[conductionSticker]}</>
+                  )}
+                </td>
+                <td className="w-[75.968503937px]"></td>
+                <td className="w-[83.48976378px] h-[18.897637795px]"></td>
+                <td className="w-[105.4488189px] h-[18.897637795px]"></td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>

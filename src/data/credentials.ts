@@ -370,7 +370,7 @@ export const data = [
       {
         id: 5,
         branchCode: "BULU",
-        branchName: "DSM Buluan 2",
+        branchName: "DSM Bulua 2",
         password: "Smct123456",
       },
       {
