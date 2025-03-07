@@ -43,6 +43,8 @@ import HDAurora from "@/utils/official-receipt/global/fdl/old/hd/HDAurora";
 import HDDatoc from "@/utils/collectionreceipt/global/fdl/old/hd/HDDatoc";
 import Calamba from "@/utils/collectionreceipt/global/fdl/old/dsm/Calamba";
 import DaanBantayan2 from "@/utils/collectionreceipt/global/fdl/old/dsm/DaanBantayan2";
+import HDPardo from "@/utils/collectionreceipt/global/fdl/old/hd/HDPardo";
+import HDMaranding from "@/utils/official-receipt/global/fdl/old/hd/HDMaranding";
 import Labason from "@/utils/collectionreceipt/global/obbus/old/dsm/Labason";
 import LapuLapu2 from "@/utils/official-receipt/global/fdl/old/dsm/LapuLapu2";
 import Liloan from "@/utils/official-receipt/global/ubbos/old/dsm/Liloan";
@@ -64,12 +66,12 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     //"DATH",
     //"DSML",
     "GUSA",
-    "PARD3",
+    ///"PARD3",
     "TRINI",
     //"SDIP",
     "INAB",
     "KABA",
-    "MARH",
+    //"MARH",
     "OROH",
     //"OROH2",
     //"SINDA",
@@ -258,15 +260,18 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <HDVeterans data={data} />; //OR
     case "DSML" === user?.branchCode:
       return <HDToledo data={data} />; //OR
-    case "DSMCA" === user?.branchCode:
-      return <HDVeterans data={data} />; //OR
     case "AURH" === user?.branchCode:
       return <HDAurora data={data} />; //OR
     case "DATH" === user?.branchCode:
       return <HDDatoc data={data} />; //OR
+    case "DSMCA" === user?.branchCode:
       return <Calamba data={data} />;
     case "DAAN" === user?.branchCode:
       return <DaanBantayan2 data={data} />;
+    case "PARD3" === user?.branchCode:
+      return <HDPardo data={data} />;
+    case "MARH" === user?.branchCode:
+      return <HDMaranding data={data} />;
     case "LABA" === user?.branchCode:
       return <Labason data={data} />;
     case "LAPU" === user?.branchCode:
