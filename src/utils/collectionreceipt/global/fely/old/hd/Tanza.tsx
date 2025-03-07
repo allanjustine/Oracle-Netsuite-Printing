@@ -1,6 +1,6 @@
 "use client";
 
-const MandaueMulti = ({ data }: any) => {
+const Tanza = ({ data }: any) => {
   const CR_Date = 0;
   const CR_Name = 1;
   const CR_TIN = 2;
@@ -13,70 +13,70 @@ const MandaueMulti = ({ data }: any) => {
   const CR_PartnerName = 9;
 
   return (
-    <div className="text-xs w-[801.25984252px] h-[408.18897638px] ml-[10px]">
-      <div className="flex mt-[115.38582677px]">
-        <p className="ml-[659.72440945px] w-[151.18110236px]">
+    <div className="text-xs w-[812.5984252px] h-[415.7480315px]">
+      <div className="flex mt-[119.38582677px]">
+        <p className="pl-[680.31496063px] w-[120.94488189px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex justify-between  mt-[19.7952755906px]">
-        <div className="w-[566.92913386px]">
-          <p className="ml-[317.48031496px]">
+      <div className="flex justify-between mt-[19.7952755906px]">
+        <div className="w-[604.72440945px]">
+          <p className="pl-[340.15748031px]">
             {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
           </p>
         </div>
-        <div className="w-[137.95275591px]">
-          <p className="pl-[12.57480315px]">
+        <div className="w-[151.18110236px]">
+          <p className="pl-[37.7952755906px]">
             {data[1]?.[CR_TIN] || <span className="opacity-0">No data</span>}
           </p>
         </div>
       </div>
-      <div className="flex mt-[9.8267716539px]">
-        <p className="ml-[312.36220472px]">
+      <div className="flex mt-[4.8267716539px]">
+        <p className="pl-[340.15748031px]">
           {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex mt-[6.8267716539px]">
-        <p className="ml-[307.36220472px]">
+      <div className="flex mt-[4.8267716539px]">
+        <p className="ml-[340.15748031px]">
           {data[1]?.[CR_BusinessStyle] || (
             <span className="opacity-0">No data</span>
           )}
         </p>
       </div>
-      <div className="flex mt-[3.8267716539px]">
-        <p className="ml-[245.77165354px]">
+      <div className="flex mt-[2.8267716539px]">
+        <p className="ml-[272.12598425px]">
           {data[1]?.[CR_AmountInWords] || (
             <span className="opacity-0">No data</span>
           )}
         </p>
       </div>
       <div className="flex w-full mt-[6.8267716539px]">
-        <div className="w-[325.03937008px]">
-          <p className="ml-[254.66929134px]">
+        <div className="w-[385.51181102px]">
+          <p className="ml-[283.46456693px]">
             {data[1]?.[CR_AmountInFigures] || (
               <span className="opacity-0">No data</span>
             )}
           </p>
         </div>
-        <div className="w-[274.01574803px] ml-[158.28346457px]">
+        <div className="w-[294.80314961px] ml-[113.38582677px]">
           <p>
-            {data[1]?.[CR_Memo].substring(0, 45) || (
+            {data[1]?.[CR_Memo].substring(0, 50) || (
               <span className="opacity-0">No data</span>
             )}
           </p>
         </div>
       </div>
-      <div className="ml-[245.77165354px] mt-[4.1811023622]">
+      <div className="ml-[272.12598425px] mt-[4.1811023622]">
         <p>
-          {data[1]?.[CR_Memo].substring(45) || (
+          {data[1]?.[CR_Memo].substring(50) || (
             <span className="opacity-0">No data</span>
           )}
         </p>
       </div>
-      <div className="w-[718.11023622px] pl-[566.92913386px] mt-[27.7952755906px]">
+      <div className="w-[718.11023622px] pl-[566.92913386px] mt-[30.7952755906px]">
         <p>
           {data[1]?.[CR_PartnerName] || (
-            <span className="opacity-0">No Data</span>
+            <span className="opacity-0">No data</span>
           )}
         </p>
       </div>
@@ -84,4 +84,4 @@ const MandaueMulti = ({ data }: any) => {
   );
 };
 
-export default MandaueMulti;
+export default Tanza;

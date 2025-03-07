@@ -33,6 +33,7 @@ import HDCarmenCebu from "@/utils/collectionreceipt/global/fdl/old/hd/HDCarmenCe
 import Cerilles from "@/utils/official-receipt/global/ubbos/old/dsm/Cerilles";
 import Calape2 from "@/utils/official-receipt/global/fdl/old/smct/Calape2";
 import CarmenCebu2 from "@/utils/official-receipt/global/ajd/old/dsm/CarmenCebu2";
+import Tanza from "@/utils/collectionreceipt/global/fely/old/hd/Tanza";
 import HDMolave from "@/utils/official-receipt/global/fdl/old/hd/HDMolave";
 import Dipolog2 from "@/utils/official-receipt/global/fdl/old/dsm/Dipolog2";
 import HDCamino from "@/utils/official-receipt/global/fdl/old/hd/HDCamino";
@@ -46,6 +47,7 @@ import DaanBantayan2 from "@/utils/collectionreceipt/global/fdl/old/dsm/DaanBant
 import HDPardo from "@/utils/collectionreceipt/global/fdl/old/hd/HDPardo";
 import HDMaranding from "@/utils/official-receipt/global/fdl/old/hd/HDMaranding";
 import Labason from "@/utils/collectionreceipt/global/obbus/old/dsm/Labason";
+import Remigio from "@/utils/official-receipt/global/fdl/old/dsm/Remigio";
 import LapuLapu2 from "@/utils/official-receipt/global/fdl/old/dsm/LapuLapu2";
 import Liloan from "@/utils/official-receipt/global/ubbos/old/dsm/Liloan";
 import MandaueY3s from "@/utils/official-receipt/global/ubbos/old/dsm/MandaueY3s";
@@ -54,7 +56,7 @@ import MandaueY3s from "@/utils/official-receipt/global/ubbos/old/dsm/MandaueY3s
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
 
-  const luzonSizeData = ["CARMO", "DASMA", "SLAP", "TANH"];
+  const luzonSizeData = ["CARMO", "DASMA", "SLAP"];
 
   const HondaDESSizeData = [
     //"AURH",
@@ -178,7 +180,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "MARA",
     "MATI",
     "MEDE",
-    "REMI",
     "RIZA",
     "SARG",
     "SLIL",
@@ -229,7 +230,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     case "CARMCDO" === user?.branchCode:
       return <CarmenCdo data={data} />;
     case "IPIH" === user?.branchCode:
-      return <Ipil data={data} />;      //OR
+      return <Ipil data={data} />; //OR
     case "SUCD" === user?.branchCode:
       return <Sucabon data={data} />;
     case "MAND" === user?.branchCode:
@@ -241,21 +242,23 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     case "SDIP" === user?.branchCode:
       return <HDDipolog data={data} />;
     case "CARMC" === user?.branchCode:
-    return <HDCarmenCebu data={data} />;
+      return <HDCarmenCebu data={data} />;
     case "CERI" === user?.branchCode:
       return <Cerilles data={data} />;
     case "CALAP2" === user?.branchCode:
       return <Calape2 data={data} />;
     case "CARMC2" === user?.branchCode:
       return <CarmenCebu2 data={data} />;
+    case "TANH" === user?.branchCode:
+      return <Tanza data={data} />;
     case "DIPD2" === user?.branchCode:
       return <Dipolog2 data={data} />;
     case "MOLH" === user?.branchCode:
       return <HDMolave data={data} />;   //OR
     case "CAMH" === user?.branchCode:
-      return <HDCamino data={data} />;   //OR
+      return <HDCamino data={data} />; //OR
     case "OZAH" === user?.branchCode:
-      return <HDOzamiz data={data} />;   //OR
+      return <HDOzamiz data={data} />; //OR
     case "VETH" === user?.branchCode:
       return <HDVeterans data={data} />; //OR
     case "DSML" === user?.branchCode:
@@ -274,6 +277,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <HDMaranding data={data} />;
     case "LABA" === user?.branchCode:
       return <Labason data={data} />;
+    case "REMI" === user?.branchCode:
+      return <Remigio data={data} />; //OR
     case "LAPU" === user?.branchCode:
       return <LapuLapu2 data={data} />;
     case "DSMLN" === user?.branchCode:

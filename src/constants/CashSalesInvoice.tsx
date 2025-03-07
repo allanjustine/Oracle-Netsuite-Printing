@@ -26,7 +26,6 @@ import DapLabason from "@/utils/salesinvoice/global/fdl/old/dap/DapLabason";
 import Antipolo from "@/utils/salesinvoice/global/fdl/new/smct/Antipolo";
 import MandaueMulti from "@/utils/salesinvoice/global/obbus/new/dsm/MandaueMulti";
 import HDBuug from "@/utils/salesinvoice/global/fdl/new/hd/HDBuug";
-import HDBalamban from "@/utils/salesinvoice/global/fdl/new/hd/HDBalamban";
 import DSMDanao from "@/utils/salesinvoice/global/obbus/new/dsm/DSMDanao";
 import DsmCarmenCebu2 from "@/utils/salesinvoice/global/obbus/new/dsm/DsmCarmenCebu2";
 import DAPBalingasag from "@/utils/salesinvoice/global/fdl/old/dap/DAPBalingasag";
@@ -71,6 +70,8 @@ import HDCalamba from "@/utils/salesinvoice/global/fdl/old/hd/HDCalamba";
 import HDPardo from "@/utils/salesinvoice/global/fdl/old/hd/HDPardo";
 import HDMaranding from "@/utils/salesinvoice/global/fdl/old/hd/HDMaranding";
 import Labason from "@/utils/salesinvoice/global/obbus/old/dsm/Labason";
+import Remigio from "@/utils/salesinvoice/global/obbus/old/dsm/Remigio";
+import HDBalamban from "@/utils/salesinvoice/global/fdl/old/hd/HDBalamban";
 import Oroquieta from "@/utils/salesinvoice/global/fdl/old/hd/Oroquieta";
 import LapuLapu2 from "@/utils/salesinvoice/global/fdl/old/dsm/LapuLapu2";
 import Liloan from "@/utils/salesinvoice/global/obbus/old/dsm/Liloan";
@@ -124,6 +125,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const DSMSISizeData = ["DIGOS", "TACU", "TOMAS"];
 
   const dsmCsiSizeData = ["CALIN", "DSMM", "DSMT2", "ILOI", "JIMEDSM"];
+
+  const hdSiSizeData = ["OROH"];
 
   const hdCsiSizeData = ["ALAH", "PARD3", "INIT", "MARH"];
 
@@ -262,6 +265,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <HDMaranding data={data} />;  //CSI
     case "LABA" === user?.branchCode:
       return <Labason data={data} />;
+    case "REMI" === user?.branchCode:
+      return <Remigio data={data} />;
     case "LAPU" === user?.branchCode:
       return <LapuLapu2 data={data} />;
     case "DSMLN" === user?.branchCode:
