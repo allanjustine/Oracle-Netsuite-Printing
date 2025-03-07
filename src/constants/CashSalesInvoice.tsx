@@ -75,6 +75,7 @@ import HDBalamban from "@/utils/salesinvoice/global/fdl/old/hd/HDBalamban";
 import Oroquieta from "@/utils/salesinvoice/global/fdl/old/hd/Oroquieta";
 import LapuLapu2 from "@/utils/salesinvoice/global/fdl/old/dsm/LapuLapu2";
 import Liloan from "@/utils/salesinvoice/global/obbus/old/dsm/Liloan";
+import HDCalinog from "@/utils/salesinvoice/global/fdl/old/hd/HDCalinog";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -269,6 +270,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <LapuLapu2 data={data} />;
     case "DSMLN" === user?.branchCode:
       return <Liloan data={data} />;
+    case "CALIN2" === user?.branchCode:
+      return <HDCalinog data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
