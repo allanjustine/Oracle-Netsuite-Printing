@@ -79,7 +79,7 @@ export default function DragAndDropComponent({
         Drag and drop an Excel file here
       </div>
       <div className="text-gray-300 text-sm">
-        .xlsx, .xlsm, .xltx, .xltm
+        .xlsx, .xlsm, .xltx, .xltm, .csv
       </div>
       </div>
       <div className="mt-2 text-gray-500 text-sm" id="file-info" />

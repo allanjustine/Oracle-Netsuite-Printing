@@ -51,12 +51,13 @@ import Remigio from "@/utils/official-receipt/global/fdl/old/dsm/Remigio";
 import LapuLapu2 from "@/utils/official-receipt/global/fdl/old/dsm/LapuLapu2";
 import Liloan from "@/utils/official-receipt/global/ubbos/old/dsm/Liloan";
 import MandaueY3s from "@/utils/official-receipt/global/ubbos/old/dsm/MandaueY3s";
+import LapuLapu from "@/utils/official-receipt/global/fdl/old/dsm/LapuLapu";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
 
-  const luzonSizeData = ["CARMO", "DASMA", "SLAP"];
+  const luzonSizeData = ["CARMO", "DASMA"];
 
   const HondaDESSizeData = [
     //"AURH",
@@ -281,6 +282,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <Remigio data={data} />; //OR
     case "LAPU" === user?.branchCode:
       return <LapuLapu2 data={data} />;
+    case "SLAP" === user?.branchCode:
+      return <LapuLapu data={data} />;
     case "DSMLN" === user?.branchCode:
       return <Liloan data={data} />;
     case "MAND2" === user?.branchCode:
