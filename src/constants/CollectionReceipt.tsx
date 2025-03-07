@@ -52,6 +52,7 @@ import LapuLapu2 from "@/utils/official-receipt/global/fdl/old/dsm/LapuLapu2";
 import Liloan from "@/utils/official-receipt/global/ubbos/old/dsm/Liloan";
 import MandaueY3s from "@/utils/official-receipt/global/ubbos/old/dsm/MandaueY3s";
 import LapuLapu from "@/utils/official-receipt/global/fdl/old/dsm/LapuLapu";
+import Nabunturan from "@/utils/collectionreceipt/global/fdl/new/dsm/Nabunturan";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -288,6 +289,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <Liloan data={data} />;
     case "MAND2" === user?.branchCode:
       return <MandaueY3s data={data} />;
+    case "NABU" === user?.branchCode:
+      return <Nabunturan data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
