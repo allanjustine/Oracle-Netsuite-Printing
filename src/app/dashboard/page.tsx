@@ -116,11 +116,26 @@ export default function Page() {
   }, []);
 
   useEffect(() => {
+    if (isLoading) {
+      const handleBeforeUnload = (event: BeforeUnloadEvent) => {
+        event.preventDefault();
+        event.returnValue = ""
+      };
+
+      window.addEventListener("beforeunload", handleBeforeUnload);
+
+      return () => {
+        window.removeEventListener("beforeunload", handleBeforeUnload);
+      };
+    }
+  }, [isLoading]);
+
+  useEffect(() => {
     if (user || excelData || isPrintCr) {
       setFormInput(() => ({
         external_id: isPrintCr
           ? excelData[1]?.[CR_Name]
-          : excelData[1]?.[mainLineName] ?? '',
+          : excelData[1]?.[mainLineName] ?? "",
         print_by: `${user?.branchCode}-${user?.branchName}`,
       }));
     }
@@ -227,8 +242,10 @@ export default function Page() {
       timeout = setTimeout(() => {
         setIsLoading(false);
         clearInterval(interval);
+        setProgress(100);
       }, 2500);
     }
+
     return () => {
       clearInterval(interval);
       clearTimeout(timeout);
