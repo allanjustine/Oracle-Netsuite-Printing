@@ -54,12 +54,15 @@ import MandaueY3s from "@/utils/official-receipt/global/ubbos/old/dsm/MandaueY3s
 import HDOroquieta from "@/utils/collectionreceipt/global/fdl/old/hd/HDOroquieta";
 import HDCalinog from "@/utils/collectionreceipt/global/fdl/old/hd/HDCalinog";
 import HDOroquieta2 from "@/utils/official-receipt/global/fdl/old/hd/HDOroquieta2";
+import LapuLapu from "@/utils/official-receipt/global/fdl/old/dsm/LapuLapu";
+import Nabunturan from "@/utils/collectionreceipt/global/fdl/new/dsm/Nabunturan";
+import SuzukiOsamiz from "@/utils/official-receipt/global/ubbos/old/dsm/SuzukiOsamiz";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
 
-  const luzonSizeData = ["CARMO", "DASMA", "SLAP"];
+  const luzonSizeData = ["CARMO", "DASMA"];
 
   const HondaDESSizeData = [
     //"AURH",
@@ -77,8 +80,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "INAB",
     "KABA",
     //"MARH",
-    //"OROH",
-    "OROH2",
     //"SINDA",
     "SMCT",
     //"VETH",
@@ -170,7 +171,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DSMK",
     "DSMPO",
     "DSMSB",
-    "DSMSO",
     "DSMT2",
     "DSMTA",
     "DSMV",
@@ -284,6 +284,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <Remigio data={data} />; //OR
     case "LAPU" === user?.branchCode:
       return <LapuLapu2 data={data} />;
+    case "SLAP" === user?.branchCode:
+      return <LapuLapu data={data} />;
     case "DSMLN" === user?.branchCode:
       return <Liloan data={data} />;
     case "MAND2" === user?.branchCode:
@@ -294,6 +296,10 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <HDCalinog data={data} />;
     case "OROH2" === user?.branchCode:
       return <HDOroquieta2 data={data} />;
+    case "NABU" === user?.branchCode:
+      return <Nabunturan data={data} />;
+    case "DSMSO" === user?.branchCode:
+      return <SuzukiOsamiz data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
