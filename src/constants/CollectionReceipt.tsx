@@ -59,6 +59,7 @@ import Nabunturan from "@/utils/collectionreceipt/global/fdl/new/dsm/Nabunturan"
 import SuzukiOsamiz from "@/utils/official-receipt/global/ubbos/old/dsm/SuzukiOsamiz";
 import HDInitao from "@/utils/official-receipt/global/fdl/old/hd/HDInitao";
 import HDCalamba from "@/utils/official-receipt/global/fdl/old/hd/HDCalamba";
+import Bulua2 from "@/utils/collectionreceipt/global/fdl/old/dsm/Bulua2";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -153,7 +154,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const dsmCrSizeData = [
     "AURO",
     "BOGO",
-    "BULU",
     "CALIN",
     "CARS",
     "CATAR2",
@@ -306,6 +306,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <HDInitao data={data} />;   //OR
     case "CALA" === user?.branchCode:
       return <HDCalamba data={data} />;  //OR
+    case "BULU" === user?.branchCode:
+      return <Bulua2 data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
