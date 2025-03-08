@@ -36,35 +36,35 @@ const LapuLapu = ({ data }: any) => {
     <div className="text-xs h-[793.7007874px] w-[608.50393701px]">
       <div className="flex h-[19.409448819px] mt-[110.0078740201px]">
         <p className="w-[391.18110236px] pl-[105.82677165px]">
-          {data[1]?.[mainLineName] || "No Data"}
+          {data[1]?.[mainLineName] || ""}
         </p>
         <p className="w-[218.83464567px] pl-[60.472440945px]">
-          {data[1]?.[date] || "No Data"}
+          {data[1]?.[date] || ""}
         </p>
       </div>
       <div className="flex h-[19.409448819px]">
         <p className="w-[391.18110236px] pl-[105.82677165px]">
-          {data[1]?.[tinNumber] || "No Data"}
+          {data[1]?.[tinNumber] || ""}
         </p>
         <p className="w-[218.83464567px] pl-[60.472440945px]">
-          {data[1]?.[terms] || "No Data"}
+          {data[1]?.[terms] || ""}
         </p>
       </div>
       <div className="flex h-[38.818897638px]">
         <div className="w-[391.18110236px] pl-[105.82677165px]">
-          <p className="h-[19.409448819px]">{data[1]?.[billingAddress].substring(0, 48) || "No Data"}</p>
-          <p className="h-[19.409448819px]">{data[1]?.[billingAddress].substring(48) || "No Data"}</p>
+          <p className="h-[19.409448819px]">{data[1]?.[billingAddress].substring(0, 48) || ""}</p>
+          <p className="h-[19.409448819px]">{data[1]?.[billingAddress].substring(48) || ""}</p>
         </div>
         <p className="w-[218.83464567px] pl-[136.06299213px]">
-          {data[1]?.[oscaPwdIdNo] || "No Data"}
+          {data[1]?.[oscaPwdIdNo] || ""}
         </p>
       </div>
       <div className="flex h-[19.409448819px]">
         <p className="w-[391.18110236px] pl-[137.95275591px]">
-          {data[1]?.[businessStyle] || "No Data"}
+          {data[1]?.[businessStyle] || ""}
         </p>
         <p className="w-[218.83464567px] pl-[113.38582677px]">
-          {data[1]?.[cardHolderSignatures] || "No Data"}
+          {data[1]?.[cardHolderSignatures] || ""}
         </p>
       </div>
       <div className="mx-[27.212598425px] mt-[24.102362205px] h-[321.25984252px]">
@@ -200,7 +200,7 @@ const LapuLapu = ({ data }: any) => {
       <div className="mx-[27.212598425px]">
         <div className="mt-[26.456692914px] ml-[332.976377952px]">
           <p className="text-[10px] text-center">
-            {data[1]?.[cashier] || "No Data"}
+            {data[1]?.[cashier] || ""}
           </p>
         </div>
       </div>
