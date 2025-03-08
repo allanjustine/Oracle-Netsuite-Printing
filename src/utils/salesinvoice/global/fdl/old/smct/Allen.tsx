@@ -36,18 +36,18 @@ const Allen = ({ data }: any) => {
     <div className="text-xs h-[745.32283465px] w-[589.60629921px]">
       <div className="flex h-[20.787401575px] mt-[111.1181102406px]">
         <p className="w-[374.17322835px] pl-[98.267716535px]">
-          {data[1]?.[mainLineName] || "Test"}
+          {data[1]?.[mainLineName] || ""}
         </p>
         <p className="w-[215.43307087px] pl-[56.692913386px]">
-          {data[1]?.[date] || "Test"}
+          {data[1]?.[date] || ""}
         </p>
       </div>
       <div className="flex h-[20.787401575px]">
         <p className="w-[374.17322835px] pl-[98.267716535px]">
-          {data[1]?.[tinNumber] || "Test"}
+          {data[1]?.[tinNumber] || ""}
         </p>
         <p className="w-[215.43307087px] pl-[56.692913386px]">
-          {data[1]?.[terms] || "Test"}
+          {data[1]?.[terms] || ""}
         </p>
       </div>
       <div className="flex h-[20.787401575px]">
@@ -57,7 +57,7 @@ const Allen = ({ data }: any) => {
       </div>
       <div className="flex h-[20.787401575px]">
         <p className="w-[563.1496063px] pl-[132.28346457px]">
-          {data[1]?.[businessStyle] || "Test"}
+          {data[1]?.[businessStyle] || ""}
         </p>
       </div>
       <div className="mx-[30.236220472px] mt-[23.4330708664px] h-[309.16535433px]">
