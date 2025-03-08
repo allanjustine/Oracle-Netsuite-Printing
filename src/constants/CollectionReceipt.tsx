@@ -60,6 +60,7 @@ import SuzukiOsamiz from "@/utils/official-receipt/global/ubbos/old/dsm/SuzukiOs
 import HDInitao from "@/utils/official-receipt/global/fdl/old/hd/HDInitao";
 import HDCalamba from "@/utils/official-receipt/global/fdl/old/hd/HDCalamba";
 import Bulua2 from "@/utils/collectionreceipt/global/fdl/old/dsm/Bulua2";
+import Aurora from "@/utils/collectionreceipt/global/obbus/old/dsm/Aurora";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -152,7 +153,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   ];
 
   const dsmCrSizeData = [
-    "AURO",
     "BOGO",
     "CALIN",
     "CARS",
@@ -308,10 +308,12 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <HDCalamba data={data} />;  //OR
     case "BULU" === user?.branchCode:
       return <Bulua2 data={data} />;
+    case "AURO" === user?.branchCode:
+      return <Aurora data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
-          Sorry, This page is temporary unavailable on your branch
+          Sorry, This printing page is temporary unavailable on your branch. Please contact dev team for more information.
         </div>
       );
   }
