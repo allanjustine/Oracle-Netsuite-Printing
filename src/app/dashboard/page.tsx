@@ -119,7 +119,7 @@ export default function Page() {
     if (isLoading) {
       const handleBeforeUnload = (event: BeforeUnloadEvent) => {
         event.preventDefault();
-        event.returnValue = ""
+        event.returnValue = "";
       };
 
       window.addEventListener("beforeunload", handleBeforeUnload);
@@ -197,14 +197,34 @@ export default function Page() {
       };
     }
   };
+  
+  const isCrOrMessageError =
+    "You uploaded Cash Sales Invoice/Sales Invoice you can't print Collection Receipt/Official Receipt.";
+  const isCsiSiMessageError =
+    "You uploaded Collection Receipt/Official Receipt you can't print Cash Sales Invoice/Sales Invoice.";
+
+  const handleErrorPrint = (title: string) => {
+    toast.info(title, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Bounce,
+    });
+  };
+
   const printOptions = [
     {
       label: "Collection Receipt",
-      action: () => handlePrint("Collection Receipt"),
+      action: () => isPrintCr ? handlePrint("Collection Receipt") : handleErrorPrint(isCrOrMessageError),
     },
     {
       label: "Cash Sales Invoice",
-      action: () => handlePrint("Cash Sales Invoice"),
+      action: () => !isPrintCr ? handlePrint("Cash Sales Invoice") : handleErrorPrint(isCsiSiMessageError),
     },
   ];
 
