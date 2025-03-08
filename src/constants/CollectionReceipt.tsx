@@ -59,6 +59,7 @@ import Nabunturan from "@/utils/collectionreceipt/global/fdl/new/dsm/Nabunturan"
 import SuzukiOsamiz from "@/utils/official-receipt/global/ubbos/old/dsm/SuzukiOsamiz";
 import HDInitao from "@/utils/official-receipt/global/fdl/old/hd/HDInitao";
 import HDCalamba from "@/utils/official-receipt/global/fdl/old/hd/HDCalamba";
+import HDBuug from "@/utils/official-receipt/global/fdl/old/hd/HDBuug";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -69,7 +70,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const HondaDESSizeData = [
     //"AURH",
     "BALAM",
-    "BUUH",
+   //"BUUH",
     //"CALIN",
     //"CAMH",
     //"CARMC",
@@ -306,6 +307,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <HDInitao data={data} />;   //OR
     case "CALA" === user?.branchCode:
       return <HDCalamba data={data} />;  //OR
+    case "BUUH" === user?.branchCode:
+      return <HDBuug data={data} />;  //OR
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
