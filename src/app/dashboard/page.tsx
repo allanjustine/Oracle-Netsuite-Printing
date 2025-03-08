@@ -47,9 +47,9 @@ export default function Page() {
   const [formInput, setFormInput] = useState<PrintDataType>(PrintData);
   const [isPrintLoading, setIsPrintLoading] = useState(false);
   const isCrOrMessageError =
-    "You uploaded Cash Sales Invoice/Sales Invoice you can't print Collection Receipt/Official Receipt.";
+    "You uploaded a Cash Sales Invoice/Sales Invoice, so you can't print a Collection Receipt/Official Receipt.";
   const isCsiSiMessageError =
-    "You uploaded Collection Receipt/Official Receipt you can't print Cash Sales Invoice/Sales Invoice.";
+    "You uploaded a Collection Receipt/Official Receipt, so you can't print a Cash Sales Invoice/Sales Invoice.";
 
   // const internalIdColumnIndex = 0;
   const mainLineName = 0;
