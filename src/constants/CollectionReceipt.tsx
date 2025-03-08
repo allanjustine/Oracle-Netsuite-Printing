@@ -62,6 +62,7 @@ import HDCalamba from "@/utils/official-receipt/global/fdl/old/hd/HDCalamba";
 import HDBuug from "@/utils/official-receipt/global/fdl/old/hd/HDBuug";
 import Bulua2 from "@/utils/collectionreceipt/global/fdl/old/dsm/Bulua2";
 import Aurora from "@/utils/collectionreceipt/global/obbus/old/dsm/Aurora";
+import HDGusa from "@/utils/official-receipt/global/fdl/old/hd/HDGusa";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -313,6 +314,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <Bulua2 data={data} />;
     case "AURO" === user?.branchCode:
       return <Aurora data={data} />;
+    case "GUSA" === user?.branchCode:
+      return <HDGusa data={data} />;  //OR
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
