@@ -43,7 +43,7 @@ const Consolacion = ({ data }: any) => {
       </div>
       <div className="flex h-[15.458267717px]">
         <p className="w-[402.51968504px] ml-[86.929133858px]">
-          {data[1]?.[tinNumber] || "No Data"}
+          {data[1]?.[tinNumber] || ""}
         </p>
         <p className="w-[215.43307087px] ml-[41.57480315px]"></p>
       </div>
@@ -57,7 +57,7 @@ const Consolacion = ({ data }: any) => {
       </div>
       <div className="flex h-[15.458267717px]">
         <p className="w-[402.51968504px] ml-[113.38582677px]">
-          {data[1]?.[businessStyle] || "No Data"}
+          {data[1]?.[businessStyle] || ""}
         </p>
         <p className="w-[215.43307087px] ml-[41.57480315px]"></p>
       </div>
