@@ -80,6 +80,7 @@ import LapuLapu from "@/utils/salesinvoice/global/fdl/old/dsm/LapuLapu";
 import Nabunturan from "@/utils/salesinvoice/global/fdl/new/dsm/Nabunturan";
 import SuzukiOsamiz from "@/utils/salesinvoice/global/fdl/new/dsm/SuzukiOsamiz";
 import HDInitao from "@/utils/salesinvoice/global/fdl/old/hd/HDInitao";
+import Bulua2 from "@/utils/salesinvoice/global/fdl/old/dsm/Bulua2";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -265,7 +266,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     case "PARD3" === user?.branchCode:
       return <HDPardo data={data} />;
     case "MARH" === user?.branchCode:
-      return <HDMaranding data={data} />;  //CSI
+      return <HDMaranding data={data} />; //CSI
     case "LABA" === user?.branchCode:
       return <Labason data={data} />;
     case "REMI" === user?.branchCode:
@@ -284,10 +285,12 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <SuzukiOsamiz data={data} />;
     case "INIT" === user?.branchCode:
       return <HDInitao data={data} />;   //CSI
+    case "BULU" === user?.branchCode:
+      return <Bulua2 data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
-          Sorry, This page is temporary unavailable on your branch
+          Sorry, This printing page is temporary unavailable on your branch. Please contact dev team for more information.
         </div>
       );
   }
