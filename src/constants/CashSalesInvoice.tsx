@@ -83,6 +83,7 @@ import HDInitao from "@/utils/salesinvoice/global/fdl/old/hd/HDInitao";
 import Bulua2 from "@/utils/salesinvoice/global/fdl/old/dsm/Bulua2";
 import Aurora from "@/utils/salesinvoice/global/obbus/old/dsm/Aurora";
 import HDGusa from "@/utils/salesinvoice/global/fdl/new/hd/HDGusa";
+import Bulua from "@/utils/salesinvoice/global/obbus/old/dsm/Bulua";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -293,6 +294,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Aurora data={data} />;
     case "GUSA" === user?.branchCode:
       return <HDGusa data={data} />;
+    case "DSMBL" === user?.branchCode:
+      return <Bulua data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
