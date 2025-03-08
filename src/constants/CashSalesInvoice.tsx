@@ -79,6 +79,7 @@ import HDCalinog from "@/utils/salesinvoice/global/fdl/old/hd/HDCalinog";
 import LapuLapu from "@/utils/salesinvoice/global/fdl/old/dsm/LapuLapu";
 import Nabunturan from "@/utils/salesinvoice/global/fdl/new/dsm/Nabunturan";
 import SuzukiOsamiz from "@/utils/salesinvoice/global/fdl/new/dsm/SuzukiOsamiz";
+import HDInitao from "@/utils/salesinvoice/global/fdl/old/hd/HDInitao";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -130,7 +131,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
 
   const dsmCsiSizeData = ["CALIN", "DSMM", "DSMT2", "ILOI", "JIMEDSM"];
 
-  const hdCsiSizeData = ["ALAH", "PARD3", "INIT", "MARH"];
+  const hdCsiSizeData = ["ALAH"];
 
   const smctCsiSizeData = [
     "BAYB",
@@ -281,6 +282,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Nabunturan data={data} />;
     case "DSMSO" === user?.branchCode:
       return <SuzukiOsamiz data={data} />;
+    case "INIT" === user?.branchCode:
+      return <HDInitao data={data} />;   //CSI
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
