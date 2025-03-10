@@ -38,27 +38,27 @@ const FelyOldCsiSize: React.FC<PrintPageProps> = ({ data }) => {
       <div className="mx-[30.614173228px] w-[684.09448819px] flex space-x-20 mt-[100px]">
         <div className="w-[419.90551181px] pr-[11.716535433px]">
           <p className="w-full text-[10px] h-[19.275590551px] ml-[120px]">
-            {data[1]?.[mainLineName] || "No Data"}
+            {data[1]?.[mainLineName] || ""}
           </p>
           <p className="w-full text-[10px] h-[19.275590551px] ml-[120px]">
-            {data[1]?.[tinNumber] || "No Data"}
+            {data[1]?.[tinNumber] || ""}
           </p>
           <p className="text-[10px] h-[38.551181102px] ml-[120px] w-fit leading-[19.275590551px]">
-            {data[1]?.[billingAddress] || "No Data"}
+            {data[1]?.[billingAddress] || ""}
           </p>
           <p className="w-full text-[10px] h-[19.275590551px] ml-[120px]">
-            {data[1]?.[businessStyle] || "No Data"}
+            {data[1]?.[businessStyle] || ""}
           </p>
         </div>
         <div className="w-[264.56692913px]">
           <p className="w-full text-[10px] h-[19.275590551px] ml-[160px]">
-            {data[1]?.[date] || "No Data"}
+            {data[1]?.[date] || ""}
           </p>
           <p className="w-full text-[10px] h-[19.275590551px] ml-[160px]">
-            {data[1]?.[terms] || "No Data"}
+            {data[1]?.[terms] || ""}
           </p>
           <p className="w-full text-[10px] h-[19.275590551px] ml-[160px]">
-            {data[1]?.[oscaPwdIdNo] || "No Data"}
+            {data[1]?.[oscaPwdIdNo] || ""}
           </p>
         </div>
       </div>
@@ -87,6 +87,36 @@ const FelyOldCsiSize: React.FC<PrintPageProps> = ({ data }) => {
                   </td>
                 </tr>
               ))}
+              <tr className="text-[10px] text-center">
+                <td className="w-[75.212598425px]"></td>
+                <td className="w-[75.968503937px] h-[18.822047244px]"></td>
+                <td
+                  className={`w-[242.64566929px] h-[18.822047244px] ${
+                    data[1]?.[serialNumber]?.length > 41 ? "text-[7px]" : ""
+                  }`}
+                >
+                  {data[1]?.[serialNumber] && (
+                    <>Engine #: {data[1]?.[serialNumber]}</>
+                  )}
+                </td>
+                <td className="w-[158.36220472px] h-[18.822047244px]"></td>
+                <td className="w-[131.90551181px] h-[18.822047244px]"></td>
+              </tr>
+              <tr className="text-[10px] text-center">
+                <td className="w-[75.212598425px]"></td>
+                <td className="w-[75.968503937px] h-[18.822047244px]"></td>
+                <td
+                  className={`w-[242.64566929px] h-[18.822047244px] ${
+                    data[1]?.[chassisNumber]?.length > 41 ? "text-[7px]" : ""
+                  }`}
+                >
+                  {data[1]?.[chassisNumber] && (
+                    <>Chassis #: {data[1]?.[chassisNumber]}</>
+                  )}
+                </td>
+                <td className="w-[158.36220472px] h-[18.822047244px]"></td>
+                <td className="w-[131.90551181px] h-[18.822047244px]"></td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -99,7 +129,7 @@ const FelyOldCsiSize: React.FC<PrintPageProps> = ({ data }) => {
                 <td className="h-[18.822047244px] w-[117.16535433px]"></td>
                 <td className="h-[18.822047244px] w-[158.36220472px]"></td>
                 <td className="h-[18.822047244px] w-[131.90551181px] text-center">
-                  {FormattedSumTotal(data, totalSalesVatInclusive, 5) || "0.00"}
+                  {FormattedSumTotal(data, totalSalesVatInclusive, 3) || "0.00"}
                 </td>
               </tr>
               <tr className="text-[10px] text-center">
@@ -108,40 +138,38 @@ const FelyOldCsiSize: React.FC<PrintPageProps> = ({ data }) => {
                 <td className="h-[18.822047244px] w-[117.16535433px]"></td>
                 <td className="h-[18.822047244px] w-[158.36220472px]"></td>
                 <td className="h-[18.822047244px] w-[131.90551181px] text-center">
-                  {FormattedSumTotal(data, vatAmount, 5) || "0.00"}
-                </td>
-              </tr>
-              <tr className="text-[10px] text-center">
-                <td className="h-[18.822047244px] w-[165.92125984px]"></td>
-                <td className="h-[18.822047244px] w-[117.16535433px]"></td>
-                <td className="h-[18.822047244px] w-[117.16535433px]">
-                  {/* {data[1]?.[vatAmount] || "0.00"} */}
-                </td>
-                <td className="h-[18.822047244px] w-[158.36220472px]"></td>
-                <td className="h-[18.822047244px] w-[131.90551181px] text-center">
-                  {FormattedSumTotal(data, totalSalesVatExclusive, 5) || "0.00"}
+                  {FormattedSumTotal(data, vatAmount2, 3) || "0.00"}
                 </td>
               </tr>
               <tr className="text-[10px] text-center">
                 <td className="h-[18.822047244px] w-[165.92125984px]"></td>
                 <td className="h-[18.822047244px] w-[117.16535433px]"></td>
                 <td className="h-[18.822047244px] w-[117.16535433px]">
-                  {/* {data[1]?.[vatAmount] || "0.00"} */}
+                  {FormattedSumTotal(data, totalSalesVatInclusive2, 3)}
                 </td>
                 <td className="h-[18.822047244px] w-[158.36220472px]"></td>
                 <td className="h-[18.822047244px] w-[131.90551181px] text-center">
-                  {/* {data[1]?.[totalSalesVatInclusive2] || "0.00"} */}
+                  {FormattedSumTotal(data, totalSalesVatInclusive2, 3)}
+                </td>
+              </tr>
+              <tr className="text-[10px] text-center">
+                <td className="h-[18.822047244px] w-[165.92125984px]"></td>
+                <td className="h-[18.822047244px] w-[117.16535433px]"></td>
+                <td className="h-[18.822047244px] w-[117.16535433px]">0.00</td>
+                <td className="h-[18.822047244px] w-[158.36220472px]"></td>
+                <td className="h-[18.822047244px] w-[131.90551181px] text-center">
+                  0.00
                 </td>
               </tr>
               <tr className="text-[10px] text-center">
                 <td className="h-[18.822047244px] w-[165.92125984px]"></td>
                 <td className="h-[18.822047244px] w-[117.16535433px]"></td>
                 <td className="h-[18.822047244px] w-[117.16535433px]">
-                  {/* {data[1]?.[vatAmount2] || "0.00"} */}
+                  {FormattedSumTotal(data, rateInclusiveVat, 3)}
                 </td>
                 <td className="h-[18.822047244px] w-[158.36220472px]"></td>
                 <td className="h-[18.822047244px] w-[131.90551181px] text-center">
-                  {FormattedSumTotal(data, totalSalesVatExclusive2, 5) ||
+                  {FormattedSumTotal(data, totalSalesVatExclusive2, 3) ||
                     "0.00"}
                 </td>
               </tr>
@@ -149,11 +177,11 @@ const FelyOldCsiSize: React.FC<PrintPageProps> = ({ data }) => {
                 <td className="h-[18.822047244px] w-[165.92125984px]"></td>
                 <td className="h-[18.822047244px] w-[117.16535433px]"></td>
                 <td className="h-[18.822047244px] w-[117.16535433px]">
-                  {/* {data[1]?.[vatAmount2] || "0.00"} */}
+                  {FormattedSumTotal(data, vatAmount, 3)}
                 </td>
                 <td className="h-[18.822047244px] w-[158.36220472px]"></td>
                 <td className="h-[18.822047244px] w-[131.90551181px] text-center">
-                  {FormattedSumTotal(data, vatAmount2, 5) || "0.00"}
+                  {FormattedSumTotal(data, vatAmount2, 3) || "0.00"}
                 </td>
               </tr>
             </tbody>
@@ -165,8 +193,7 @@ const FelyOldCsiSize: React.FC<PrintPageProps> = ({ data }) => {
               <tr className="text-[10px] text-center">
                 <td className="h-[18.822047244px] w-[560.40944881px]"></td>
                 <td className="h-[18.822047244px] w-[131.90551181px] text-center">
-                  {FormattedSumTotal(data, totalSalesVatInclusive, 5) ||
-                    "0.00"}
+                  {FormattedSumTotal(data, totalSalesVatInclusive, 5) || "0.00"}
                 </td>
               </tr>
             </tbody>

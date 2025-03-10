@@ -156,8 +156,7 @@ const ObbusOldCsiSize = ({ data }: any) => {
               </td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
               <td className="h-[22.11023622px] w-[96.755905512px] text-center">
-                {/* {FormattedSumTotal(data, totalSalesVatInclusive2, 5)} LESS: WITH HOLDING TAX */}
-                0.00
+                {FormattedSumTotal(data, totalSalesVatInclusive2, 5)}
               </td>
             </tr>
             <tr className="text-[10px]">
@@ -165,7 +164,8 @@ const ObbusOldCsiSize = ({ data }: any) => {
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3"></td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
               <td className="h-[22.11023622px] w-[96.755905512px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 15)}
+                {/* {FormattedSumTotal(data, totalSalesVatInclusive2, 5)} LESS: WITH HOLDING TAX */}
+                0.00
               </td>
             </tr>
             <tr className="text-[10px]">
