@@ -98,7 +98,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     ///"PARD3",
     "TRINI",
     //"SDIP",
-    "INAB",
     "KABA",
     //"MARH",
     //"SINDA",
