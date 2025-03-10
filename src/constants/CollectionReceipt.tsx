@@ -75,6 +75,7 @@ import MandaueY3s from "@/utils/official-receipt/global/obbus/old/dsm/MandaueY3s
 import HDBalamban from "@/utils/official-receipt/global/fdl/old/hd/HDBalamban";
 import DSMAurora from "@/utils/official-receipt/global/fdl/old/dsm/DSMAurora";
 import FelyOldOrSize from "@/utils/official-receipt/global/fely/old/FelyOldOrSize";
+import BjvOldCrSize from "@/utils/collectionreceipt/global/bjv/old/BjvOldCrSize";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -133,12 +134,11 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   ];
 
   const smctCrSizeData = [
-   // "ALEN",
+    // "ALEN",
     "BANTA",
     "BAYB",
     "CALAP",
     "CALI",
-    "CATAR",
     "FAMY",
     "GUIN",
     "JAGN",
@@ -150,13 +150,13 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "NAIC",
     //"PAGS",
     "SALA",
-   // "SANJ",
+    // "SANJ",
     "SANP",
     "SANT2",
     "SILA",
     "AKLA",
     "CALAP2",
-   // "LIPA",
+    // "LIPA",
     "SROS",
     "TALI2",
     "TANZ",
@@ -200,7 +200,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "MEDE",
     "RIZA",
     "SARG",
-   // "SLIL",
+    // "SLIL",
     "TACU",
     "TAGUM",
     "TOMAS",
@@ -210,9 +210,9 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   ];
 
   //FDL
-  const fdlCrNewSizeData = ["TANH","TANZ2"];
+  const fdlCrNewSizeData = ["TANH", "TANZ2"];
 
-  const fdlCrOldSizeData = ["CARMB","CATAR","SANJ","LIPA","ALEN","GUIN2"];
+  const fdlCrOldSizeData = ["CARMB", "CATAR", "SANJ", "LIPA", "ALEN", "GUIN2"];
 
   const fdlOrNewSizeData = [];
 
@@ -248,7 +248,10 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   // BJV
   const bjvCrNewSizeData = [];
 
-  const bjvCrOldSizeData = ["UBAY","INAB"];
+  const bjvCrOldSizeData = [
+    // "UBAY",
+    "INAB",
+  ];
 
   const bjvOrNewSizeData = [];
 
@@ -282,6 +285,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     // BJV OR - CR CASES
     case bjvOrOldSizeData.some((branch) => branch === user?.branchCode):
       return <BjvOldOrSize data={data} />;
+    case bjvCrOldSizeData.some((branch) => branch === user?.branchCode):
+      return <BjvOldCrSize data={data} />;
 
     case luzonSizeData.some((branch) => branch === user?.branchCode):
       return <LuzonSize data={data} />;
