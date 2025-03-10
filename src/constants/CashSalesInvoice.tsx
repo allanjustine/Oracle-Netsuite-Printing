@@ -93,6 +93,7 @@ import ObbusOldCsiSize from "@/utils/salesinvoice/global/obbus/old/ObbusOldCsiSi
 import DSMAurora from "@/utils/salesinvoice/global/obbus/old/dsm/DSMAurora";
 import FelyOldCsiSize from "@/utils/salesinvoice/global/fely/old/FelyOldCsiSize";
 import FelyOldSiSize from "@/utils/salesinvoice/global/fely/old/FelyOldSiSize";
+import BjvOldCsiSize from "@/utils/salesinvoice/global/bjv/old/BjvOldCsiSize";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -220,11 +221,15 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     case obbusSiOldSizeData.some((branch) => branch === user?.branchCode):
       return <ObbusOldSiSize data={data} />;
 
-    //FELY CASES
+    // FELY CASES
     case felyCsiOldSizeData.some((branch) => branch === user?.branchCode):
       return <FelyOldCsiSize data={data} />;
     case felySiOldSizeData.some((branch) => branch === user?.branchCode):
       return <FelyOldSiSize data={data} />;
+
+    // BJV CASES
+    case bjvCSiOldSizeData.some((branch) => branch === user?.branchCode):
+      return <BjvOldCsiSize data={data} />;
 
     case luzonSizeData.some((branch) => branch === user?.branchCode):
       return <LuzonSize data={data} />;
