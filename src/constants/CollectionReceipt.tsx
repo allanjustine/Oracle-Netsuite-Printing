@@ -69,7 +69,7 @@ import FdlOldCrSize from "@/utils/collectionreceipt/global/fdl/old/FdlOldCrSize"
 import FdlOldOrSize from "@/utils/official-receipt/global/fdl/old/FdlOldOrSize";
 import ObbusOldCrSize from "@/utils/collectionreceipt/global/obbus/ObbusOldCrSize";
 import ObbusOldOrSize from "@/utils/official-receipt/global/ubbos/ObbusOldOrSize";
-import FelyOldCrSize from "@/utils/collectionreceipt/global/fely/FelyOldCrSize";
+import FelyOldCrSize from "@/utils/collectionreceipt/global/fely/old/FelyOldCrSize";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
