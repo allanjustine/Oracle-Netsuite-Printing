@@ -99,7 +99,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
 
   const luzonSizeData = [
-    "BINAN",
     "DASMA",
     "FAMY",
     "LIPA",
