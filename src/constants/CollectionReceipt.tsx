@@ -74,6 +74,7 @@ import Liloan from "@/utils/official-receipt/global/obbus/old/dsm/Liloan";
 import MandaueY3s from "@/utils/official-receipt/global/obbus/old/dsm/MandaueY3s";
 import HDBalamban from "@/utils/official-receipt/global/fdl/old/hd/HDBalamban";
 import DSMAurora from "@/utils/official-receipt/global/fdl/old/dsm/DSMAurora";
+import FelyOldOrSize from "@/utils/official-receipt/global/fely/old/FelyOldOrSize";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -155,7 +156,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "SANT2",
     "SILA",
     "AKLA",
-   // "ANTIP",
     "CALAP2",
    // "LIPA",
     "SROS",
@@ -275,6 +275,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     // FELY OR - CR CASES
     case felyCrOldSizeData.some((branch) => branch === user?.branchCode):
       return <FelyOldCrSize data={data} />;
+    case felyOrOldSizeData.some((branch) => branch === user?.branchCode):
+      return <FelyOldOrSize data={data} />;
 
     // AJD OR - CR CASES
     case ajdOrOldSizeData.some((branch) => branch === user?.branchCode):
