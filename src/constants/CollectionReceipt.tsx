@@ -112,21 +112,16 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "CALD",
     "CAMD",
     "IMED",
-    "IPID",
     "SIND",
     "DAPI",
     "DIPD",
     "INIT2",
-    "JIME",
     "KABD",
     "LABD",
     "LILD",
     "MANO",
     "MARA2",
     "MARD",
-    "MOLD",
-    "NUND2",
-    "OROD",
     "OZAD",
     "PUTD",
     "VITA",
@@ -208,9 +203,9 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   ];
 
   //FDL
-  const fdlCrNewSizeData = ["TANH", "TANZ2"];
+  const fdlCrNewSizeData = ["TANH", "TANZ2", "JIME", "IPID", "OROD"];
 
-  const fdlCrOldSizeData = ["CARMB", "CATAR", "SANJ", "LIPA", "ALEN", "GUIN2", "MALA"];
+  const fdlCrOldSizeData = ["CARMB", "CATAR", "SANJ", "LIPA", "ALEN", "GUIN2", "MALA", "BALI", "MOLD", "MOLD2", "NUND2"];
 
   const fdlOrNewSizeData = [];
 
