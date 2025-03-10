@@ -70,6 +70,7 @@ import FdlOldOrSize from "@/utils/official-receipt/global/fdl/old/FdlOldOrSize";
 import ObbusOldCrSize from "@/utils/collectionreceipt/global/obbus/ObbusOldCrSize";
 import ObbusOldOrSize from "@/utils/official-receipt/global/ubbos/ObbusOldOrSize";
 import FelyOldCrSize from "@/utils/collectionreceipt/global/fely/old/FelyOldCrSize";
+import AjdOldOrSize from "@/utils/official-receipt/global/ajd/old/AjdOldOrSize";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -238,7 +239,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const ajdOrNewSizeData = [];
 
-  const ajdOrOldSizeData = [];
+  const ajdOrOldSizeData = [""];
 
   // BJV
   const bjvCrNewSizeData = [];
@@ -267,6 +268,10 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     // FELY OR - CR CASES
     case felyCrOldSizeData.some((branch) => branch === user?.branchCode):
       return <FelyOldCrSize data={data} />;
+
+    // AJD OR - CR CASES
+    case ajdOrOldSizeData.some((branch) => branch === user?.branchCode):
+      return <AjdOldOrSize data={data} />;
 
     case luzonSizeData.some((branch) => branch === user?.branchCode):
       return <LuzonSize data={data} />;
