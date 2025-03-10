@@ -90,6 +90,7 @@ import FdlNewSiSize from "@/utils/salesinvoice/global/fdl/new/FdlNewSiSize";
 import ObbusNewSiSize from "@/utils/salesinvoice/global/obbus/new/ObbusNewSiSize";
 import ObbusOldSiSize from "@/utils/salesinvoice/global/obbus/old/ObbusOldSiSize";
 import ObbusOldCsiSize from "@/utils/salesinvoice/global/obbus/old/ObbusOldCsiSize";
+import DSMAurora from "@/utils/salesinvoice/global/obbus/old/dsm/DSMAurora";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -363,6 +364,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <HDGusa data={data} />;
     case "DSMBL" === user?.branchCode:
       return <Bulua data={data} />;
+    case "AURO" === user?.branchCode:
+      return <DSMAurora data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">

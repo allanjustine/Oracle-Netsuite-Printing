@@ -33,7 +33,7 @@ const HDBalamban = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[771.02362205px] w-[593.38582677px]">
-      <div className="flex h-[19.409448819px] mt-[118.6771653587px]">
+      <div className="flex h-[19.409448819px] mt-[125.6771653587px]">
         <p className="w-[376.06299213px] pl-[94.488188976px]">
           {data[1]?.[mainLineName] || ""}
         </p>
@@ -66,7 +66,7 @@ const HDBalamban = ({ data }: any) => {
           {data[1]?.[cardHolderSignatures] || ""}
         </p>
       </div>
-      <div className="mx-[34.393700787px] mt-[23.4330708664px] h-[314.07874016px]">
+      <div className="mx-[34.393700787px] mt-[10.4330708664px] h-[314.07874016px]">
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
