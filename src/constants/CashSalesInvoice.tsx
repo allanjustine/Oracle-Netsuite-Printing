@@ -111,7 +111,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "TANZ3",
   ];
 
-  const DAP1SizeData = [
+  const LandscapeSiSizeData = [
     "ALAD",
     "AURD",
     "CALD",
@@ -243,7 +243,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
 
     case luzonSizeData.some((branch) => branch === user?.branchCode):
       return <LuzonSize data={data} />;
-    case DAP1SizeData.some((branch) => branch === user?.branchCode):
+    case LandscapeSiSizeData.some((branch) => branch === user?.branchCode):
       return <DAP1Size data={data} />;
     case dapCsiSizeData.some((branch) => branch === user?.branchCode):
       return <DapCsiSize data={data} />;
