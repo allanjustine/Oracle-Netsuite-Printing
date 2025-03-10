@@ -84,6 +84,12 @@ import Bulua2 from "@/utils/salesinvoice/global/fdl/old/dsm/Bulua2";
 import Aurora from "@/utils/salesinvoice/global/obbus/old/dsm/Aurora";
 import HDGusa from "@/utils/salesinvoice/global/fdl/new/hd/HDGusa";
 import Bulua from "@/utils/salesinvoice/global/obbus/old/dsm/Bulua";
+import FdlOldCsiSize from "@/utils/salesinvoice/global/fdl/old/FdlOldCsiSize";
+import FdlOldSiSize from "@/utils/salesinvoice/global/fdl/old/FdlOldSiSize";
+import FdlNewSiSize from "@/utils/salesinvoice/global/fdl/new/FdlNewSiSize";
+import ObbusNewSiSize from "@/utils/salesinvoice/global/obbus/new/ObbusNewSiSize";
+import ObbusOldSiSize from "@/utils/salesinvoice/global/obbus/old/ObbusOldSiSize";
+import ObbusOldCsiSize from "@/utils/salesinvoice/global/obbus/old/ObbusOldCsiSize";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -157,7 +163,68 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "ALLEN",
   ];
 
+  //FDL
+  const fdlCsiNewSizeData = [];
+
+  const fdlCsiOldSizeData = [""];
+
+  const fdlSiNewSizeData = [""];
+
+  const fdlSiOldSizeData = [""];
+
+  // OBBUS
+  const obbusCsiNewSizeData = [];
+
+  const obbusCsiOldSizeData = [""];
+
+  const obbusSiNewSizeData = [""];
+
+  const obbusSiOldSizeData = [""];
+
+  //FELY
+  const felyCsiNewSizeData = [];
+
+  const felyCSiOldSizeData = [];
+
+  const felySiNewSizeData = [];
+
+  const felySiOldSizeData = [];
+
+  // AJD
+  const ajdCsiNewSizeData = [];
+
+  const ajdCSiOldSizeData = [];
+
+  const ajdSiNewSizeData = [];
+
+  const ajdSiOldSizeData = [];
+
+  // BJV
+  const bjvCsiNewSizeData = [];
+
+  const bjvCSiOldSizeData = [];
+
+  const bjvSiNewSizeData = [];
+
+  const bjvSiOldSizeData = [];
+
   switch (true) {
+    // FDL CASES
+    case fdlSiNewSizeData.some((branch) => branch === user?.branchCode):
+      return <FdlNewSiSize data={data} />;
+    case fdlCsiOldSizeData.some((branch) => branch === user?.branchCode):
+      return <FdlOldCsiSize data={data} />;
+    case fdlSiOldSizeData.some((branch) => branch === user?.branchCode):
+      return <FdlOldSiSize data={data} />;
+
+    // OBBUS CASES
+    case obbusSiNewSizeData.some((branch) => branch === user?.branchCode):
+      return <ObbusNewSiSize data={data} />;
+    case obbusCsiOldSizeData.some((branch) => branch === user?.branchCode):
+      return <ObbusOldCsiSize data={data} />;
+    case obbusSiOldSizeData.some((branch) => branch === user?.branchCode):
+      return <ObbusOldSiSize data={data} />;
+
     case luzonSizeData.some((branch) => branch === user?.branchCode):
       return <LuzonSize data={data} />;
     case DAP1SizeData.some((branch) => branch === user?.branchCode):
@@ -287,7 +354,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     case "DSMSO" === user?.branchCode:
       return <SuzukiOsamiz data={data} />;
     case "INIT" === user?.branchCode:
-      return <HDInitao data={data} />;   //CSI
+      return <HDInitao data={data} />; //CSI
     case "BULU" === user?.branchCode:
       return <Bulua2 data={data} />;
     case "AURO" === user?.branchCode:
@@ -299,7 +366,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
-          Sorry, This printing page is temporary unavailable on your branch. Please contact dev team for more information.
+          Sorry, This printing page is temporary unavailable on your branch.
+          Please contact dev team for more information.
         </div>
       );
   }
