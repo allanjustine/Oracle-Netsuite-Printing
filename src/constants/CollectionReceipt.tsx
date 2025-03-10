@@ -25,12 +25,12 @@ import Cambaro from "@/utils/official-receipt/global/fdl/old/dsm/Cambaro";
 import CarmenCdo from "@/utils/collectionreceipt/global/obbus/old/dsm/CarmenCdo";
 import Ipil from "@/utils/official-receipt/global/fdl/old/hd/Ipil";
 import Sucabon from "@/utils/collectionreceipt/global/fdl/new/dap/Sucabon";
-import MandaueMulti from "@/utils/official-receipt/global/ubbos/old/dsm/MandaueMulti";
+import MandaueMulti from "@/utils/official-receipt/global/obbus/old/dsm/MandaueMulti";
 import HDGeneralTrias from "@/utils/collectionreceipt/global/fdl/new/hd/HDGeneralTrias";
 import HDSindangan from "@/utils/collectionreceipt/global/fdl/old/hd/HDSindangan";
 import HDDipolog from "@/utils/collectionreceipt/global/fdl/old/hd/HDDipolog";
 import HDCarmenCebu from "@/utils/collectionreceipt/global/fdl/old/hd/HDCarmenCebu";
-import Cerilles from "@/utils/official-receipt/global/ubbos/old/dsm/Cerilles";
+import Cerilles from "@/utils/official-receipt/global/obbus/old/dsm/Cerilles";
 import Calape2 from "@/utils/official-receipt/global/fdl/old/smct/Calape2";
 import CarmenCebu2 from "@/utils/official-receipt/global/ajd/old/dsm/CarmenCebu2";
 import Tanza from "@/utils/collectionreceipt/global/fely/old/hd/Tanza";
@@ -49,29 +49,31 @@ import HDMaranding from "@/utils/official-receipt/global/fdl/old/hd/HDMaranding"
 import Labason from "@/utils/collectionreceipt/global/obbus/old/dsm/Labason";
 import Remigio from "@/utils/official-receipt/global/fdl/old/dsm/Remigio";
 import LapuLapu2 from "@/utils/official-receipt/global/fdl/old/dsm/LapuLapu2";
-import Liloan from "@/utils/official-receipt/global/ubbos/old/dsm/Liloan";
-import MandaueY3s from "@/utils/official-receipt/global/ubbos/old/dsm/MandaueY3s";
 import HDOroquieta from "@/utils/collectionreceipt/global/fdl/old/hd/HDOroquieta";
 import HDCalinog from "@/utils/collectionreceipt/global/fdl/old/hd/HDCalinog";
 import HDOroquieta2 from "@/utils/official-receipt/global/fdl/old/hd/HDOroquieta2";
 import LapuLapu from "@/utils/official-receipt/global/fdl/old/dsm/LapuLapu";
 import Nabunturan from "@/utils/collectionreceipt/global/fdl/new/dsm/Nabunturan";
-import SuzukiOsamiz from "@/utils/official-receipt/global/ubbos/old/dsm/SuzukiOsamiz";
+import SuzukiOsamiz from "@/utils/official-receipt/global/obbus/old/dsm/SuzukiOsamiz";
 import HDInitao from "@/utils/official-receipt/global/fdl/old/hd/HDInitao";
 import HDCalamba from "@/utils/official-receipt/global/fdl/old/hd/HDCalamba";
 import HDBuug from "@/utils/official-receipt/global/fdl/old/hd/HDBuug";
 import Bulua2 from "@/utils/collectionreceipt/global/fdl/old/dsm/Bulua2";
 import Aurora from "@/utils/collectionreceipt/global/obbus/old/dsm/Aurora";
 import HDGusa from "@/utils/official-receipt/global/fdl/old/hd/HDGusa";
-import Bulua from "@/utils/official-receipt/global/ubbos/old/dsm/Bulua";
+import Bulua from "@/utils/official-receipt/global/obbus/old/dsm/Bulua";
 import FdlNewCrSize from "@/utils/collectionreceipt/global/fdl/new/FdlNewCrSize";
 import FdlOldCrSize from "@/utils/collectionreceipt/global/fdl/old/FdlOldCrSize";
 import FdlOldOrSize from "@/utils/official-receipt/global/fdl/old/FdlOldOrSize";
 import ObbusOldCrSize from "@/utils/collectionreceipt/global/obbus/ObbusOldCrSize";
-import ObbusOldOrSize from "@/utils/official-receipt/global/ubbos/ObbusOldOrSize";
+import ObbusOldOrSize from "@/utils/official-receipt/global/obbus/ObbusOldOrSize";
 import FelyOldCrSize from "@/utils/collectionreceipt/global/fely/old/FelyOldCrSize";
 import AjdOldOrSize from "@/utils/official-receipt/global/ajd/old/AjdOldOrSize";
 import BjvOldOrSize from "@/utils/official-receipt/global/bjv/old/BjvOldOrSize";
+import Liloan from "@/utils/official-receipt/global/obbus/old/dsm/Liloan";
+import MandaueY3s from "@/utils/official-receipt/global/obbus/old/dsm/MandaueY3s";
+import HDBalamban from "@/utils/official-receipt/global/fdl/old/hd/HDBalamban";
+import DSMAurora from "@/utils/official-receipt/global/fdl/old/dsm/DSMAurora";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -84,6 +86,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "BALAM",
     //"BUUH",
     //"CALIN",
+    "BUUH",
+    "CALIN",
     //"CAMH",
     //"CARMC",
     //"DATH",
@@ -394,6 +398,10 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <HDGusa data={data} />; //OR
     case "DSMBL" === user?.branchCode:
       return <Bulua data={data} />; //OR
+    case "BALAM" === user?.branchCode:
+      return <HDBalamban data={data} />; //OR
+    case "AURO" === user?.branchCode:
+      return <DSMAurora data={data} />; //OR
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
