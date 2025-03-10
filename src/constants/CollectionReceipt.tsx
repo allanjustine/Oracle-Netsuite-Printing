@@ -64,6 +64,11 @@ import Bulua2 from "@/utils/collectionreceipt/global/fdl/old/dsm/Bulua2";
 import Aurora from "@/utils/collectionreceipt/global/obbus/old/dsm/Aurora";
 import HDGusa from "@/utils/official-receipt/global/fdl/old/hd/HDGusa";
 import Bulua from "@/utils/official-receipt/global/ubbos/old/dsm/Bulua";
+import FdlNewCrSize from "@/utils/collectionreceipt/global/fdl/new/FdlNewCrSize";
+import FdlOldCrSize from "@/utils/collectionreceipt/global/fdl/old/FdlOldCrSize";
+import FdlOldOrSize from "@/utils/official-receipt/global/fdl/old/FdlOldOrSize";
+import ObbusOldCrSize from "@/utils/collectionreceipt/global/obbus/ObbusOldCrSize";
+import ObbusOldOrSize from "@/utils/official-receipt/global/ubbos/ObbusOldOrSize";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -74,7 +79,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const HondaDESSizeData = [
     //"AURH",
     "BALAM",
-   //"BUUH",
+    //"BUUH",
     //"CALIN",
     //"CAMH",
     //"CARMC",
@@ -198,7 +203,66 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "VILLA",
   ];
 
+  //FDL
+  const fdlCrNewSizeData = [""];
+
+  const fdlCrOldSizeData = [""];
+
+  const fdlOrNewSizeData = [];
+
+  const fdlOrOldSizeData = [""];
+
+  // OBBUS
+  const obbusCrNewSizeData = [];
+
+  const obbusCrOldSizeData = [""];
+
+  const obbusOrNewSizeData = [];
+
+  const obbusOrOldSizeData = [""];
+
+  //FELY
+  const felyCrNewSizeData = [];
+
+  const felyCrOldSizeData = [];
+
+  const felyOrNewSizeData = [];
+
+  const felyOrOldSizeData = [];
+
+  // AJD
+  const ajdCrNewSizeData = [];
+
+  const ajdCrOldSizeData = [];
+
+  const ajdOrNewSizeData = [];
+
+  const ajdOrOldSizeData = [];
+
+  // BJV
+  const bjvCrNewSizeData = [];
+
+  const bjvCrOldSizeData = [];
+
+  const bjvOrNewSizeData = [];
+
+  const bjvOrOldSizeData = [];
+
   switch (true) {
+    // FDL OR - CR CASES
+    case fdlCrNewSizeData.some((branch) => branch === user?.branchCode):
+      return <FdlNewCrSize data={data} />;
+    case fdlCrOldSizeData.some((branch) => branch === user?.branchCode):
+      return <FdlOldCrSize data={data} />;
+    case fdlOrOldSizeData.some((branch) => branch === user?.branchCode):
+      return <FdlOldOrSize data={data} />;
+
+    // OBBUS OR - CR CASES
+    case obbusCrOldSizeData.some((branch) => branch === user?.branchCode):
+      return <ObbusOldCrSize data={data} />;
+    case obbusOrOldSizeData.some((branch) => branch === user?.branchCode):
+      return <ObbusOldOrSize data={data} />;
+
     case luzonSizeData.some((branch) => branch === user?.branchCode):
       return <LuzonSize data={data} />;
     case HondaDESSizeData.some((branch) => branch === user?.branchCode):
@@ -260,7 +324,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     case "DIPD2" === user?.branchCode:
       return <Dipolog2 data={data} />;
     case "MOLH" === user?.branchCode:
-      return <HDMolave data={data} />;   //OR
+      return <HDMolave data={data} />; //OR
     case "CAMH" === user?.branchCode:
       return <HDCamino data={data} />; //OR
     case "OZAH" === user?.branchCode:
@@ -304,23 +368,24 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     case "DSMSO" === user?.branchCode:
       return <SuzukiOsamiz data={data} />;
     case "INIT" === user?.branchCode:
-      return <HDInitao data={data} />;   //OR
+      return <HDInitao data={data} />; //OR
     case "CALA" === user?.branchCode:
-      return <HDCalamba data={data} />;  //OR
+      return <HDCalamba data={data} />; //OR
     case "BUUH" === user?.branchCode:
-      return <HDBuug data={data} />;  //OR
+      return <HDBuug data={data} />; //OR
     case "BULU" === user?.branchCode:
       return <Bulua2 data={data} />;
     case "AURO" === user?.branchCode:
       return <Aurora data={data} />;
     case "GUSA" === user?.branchCode:
-      return <HDGusa data={data} />;  //OR
+      return <HDGusa data={data} />; //OR
     case "DSMBL" === user?.branchCode:
-      return <Bulua data={data} />;  //OR
+      return <Bulua data={data} />; //OR
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
-          Sorry, This printing page is temporary unavailable on your branch. Please contact dev team for more information.
+          Sorry, This printing page is temporary unavailable on your branch.
+          Please contact dev team for more information.
         </div>
       );
   }
