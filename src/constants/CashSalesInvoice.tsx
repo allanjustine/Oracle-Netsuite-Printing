@@ -91,6 +91,8 @@ import ObbusNewSiSize from "@/utils/salesinvoice/global/obbus/new/ObbusNewSiSize
 import ObbusOldSiSize from "@/utils/salesinvoice/global/obbus/old/ObbusOldSiSize";
 import ObbusOldCsiSize from "@/utils/salesinvoice/global/obbus/old/ObbusOldCsiSize";
 import DSMAurora from "@/utils/salesinvoice/global/obbus/old/dsm/DSMAurora";
+import FelyOldCsiSize from "@/utils/salesinvoice/global/fely/old/FelyOldCsiSize";
+import FelyOldSiSize from "@/utils/salesinvoice/global/fely/old/FelyOldSiSize";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -101,7 +103,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "FAMY",
     "LIPA",
     "NAIC",
-    "PAGS",
     "SANJ",
     "SANM",
     "SILA",
@@ -154,15 +155,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "VALEN",
   ];
 
-  const smctSiSizeData = [
-    "BANTA",
-    "GUIN",
-    "MADRI",
-    "CARMO",
-    "ANTI",
-    "TRINI2",
-    "ALLEN",
-  ];
+  const smctSiSizeData = ["BANTA", "GUIN", "MADRI", "ANTI", "TRINI2"];
 
   //FDL
   const fdlCsiNewSizeData = [];
@@ -185,11 +178,11 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   //FELY
   const felyCsiNewSizeData = [];
 
-  const felyCSiOldSizeData = [];
+  const felyCsiOldSizeData = ["PAGS"];
 
   const felySiNewSizeData = [];
 
-  const felySiOldSizeData = [];
+  const felySiOldSizeData = ["CARMO"];
 
   // AJD
   const ajdCsiNewSizeData = [];
@@ -225,6 +218,12 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <ObbusOldCsiSize data={data} />;
     case obbusSiOldSizeData.some((branch) => branch === user?.branchCode):
       return <ObbusOldSiSize data={data} />;
+
+    //FELY CASES
+    case felyCsiOldSizeData.some((branch) => branch === user?.branchCode):
+      return <FelyOldCsiSize data={data} />;
+    case felySiOldSizeData.some((branch) => branch === user?.branchCode):
+      return <FelyOldSiSize data={data} />;
 
     case luzonSizeData.some((branch) => branch === user?.branchCode):
       return <LuzonSize data={data} />;
