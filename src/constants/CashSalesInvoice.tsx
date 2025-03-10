@@ -313,7 +313,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Cerilles data={data} />;
     case "CALAP2" === user?.branchCode:
       return <Calape2 data={data} />;
-    case "DIPD2" === user?.branchCode:
+    case "DSMD2" === user?.branchCode:
       return <Dipolog2 data={data} />;
     case "OZAH" === user?.branchCode:
       return <HDOzamiz data={data} />;
