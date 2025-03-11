@@ -183,7 +183,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   // OBBUS
   const obbusCsiNewSizeData = [];
 
-  const obbusCsiOldSizeData = ["UBAY", "BOGO", "CALIN"];
+  const obbusCsiOldSizeData = ["UBAY", "BOGO", "CALIN", "COMPO"];
 
   const obbusSiNewSizeData = [""];
 
@@ -192,9 +192,9 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   //FELY
   const felyCsiNewSizeData = [];
 
-  const felyCsiOldSizeData = ["LIPA","FAMY"];
+  const felyCsiOldSizeData = ["LIPA", "FAMY"];
 
-  const felyLandscapeCsiOldSizeData = ["PAGS", "NAIC","DASMA"];
+  const felyLandscapeCsiOldSizeData = ["PAGS", "NAIC", "DASMA"];
 
   const felySiNewSizeData = [];
 
@@ -212,7 +212,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   // BJV
   const bjvCsiNewSizeData = [];
 
-  const bjvCSiOldSizeData = ["INAB", "CARMB","LOAY","JAGN"];
+  const bjvCSiOldSizeData = ["INAB", "CARMB", "LOAY", "JAGN"];
 
   const bjvSiNewSizeData = [];
 
