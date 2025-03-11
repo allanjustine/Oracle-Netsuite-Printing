@@ -99,7 +99,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     ///"PARD3",
    // "TRINI",
     //"SDIP",
-    "KABA",
+   // "KABA",
     //"MARH",
     //"SINDA",
     "SMCT",
@@ -185,6 +185,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "TRINI",
     "CALD",
     "INIT2",
+    "KABA",
   ];
 
   const fdlCrOldSizeData = [
