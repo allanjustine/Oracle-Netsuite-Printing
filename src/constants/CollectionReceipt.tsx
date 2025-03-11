@@ -83,7 +83,7 @@ import ObbusNewCrSize from "@/utils/collectionreceipt/global/obbus/new/ObbusNewC
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
 
-  const luzonSizeData = ["CARMO", "DASMA"];
+  const luzonSizeData = [""];
 
   const HondaDESSizeData = [
     //"AURH",
@@ -128,33 +128,17 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   ];
 
   const smctCrSizeData = [
-    // "ALEN",
     "BANTA",
-    "BAYB",
     "CALAP",
     "CALI",
-    "FAMY",
-    "GUIN",
-    "JAGN",
     "BOHK",
-    "LOAY",
     "MADRI",
-    "MANG",
-    "NAIC",
-    //"PAGS",
     "SALA",
-    // "SANJ",
-    "SANT2",
     "SILA",
-    "AKLA",
     "CALAP2",
-    // "LIPA",
     "SROS",
     "TALI2",
-    "TANZ",
-    //"TANZ2",
     "TRINI2",
-    "VALEN",
     "YATI",
   ];
 
@@ -187,7 +171,13 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   ];
 
   //FDL
-  const fdlCrNewSizeData = ["TANH", "TANZ2", "JIME", "IPID", "OROD"];
+  const fdlCrNewSizeData = ["TANH", "TANZ2", "JIME", "IPID", "OROD","SANT2",];
+  
+  const fdlCrOldSizeData = ["CARMB", "CATAR", "SANJ", "LIPA", "ALEN", "GUIN2", "MALA", "MOLD", "MOLD2", "LILD","BAYB",,"LOAY","MANG","VALEN","TALI"];
+
+  const fdlOrNewSizeData = [];
+
+  const fdlOrOldSizeData = ["PAGS", "NUND2","AKLA","CARS","TUBI"];
 
   const fdlCrOldSizeData = [
     "CARMB",
@@ -209,6 +199,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const fdlOrOldSizeData = ["PAGS", "NUND2", "DSMD", "REMI2"];
 
+
   // OBBUS
   const obbusCrNewSizeData = ["DANAO", "TOMAS"];
 
@@ -229,11 +220,11 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   //FELY
   const felyCrNewSizeData = [];
 
-  const felyCrOldSizeData = [""];
+  const felyCrOldSizeData = ["NAIC",];
 
   const felyOrNewSizeData = [];
 
-  const felyOrOldSizeData = ["ANTIP", "SANP"];
+  const felyOrOldSizeData = ["ANTIP", "SANP","TANZ","FAMY","DASMA","CARMO"];
 
   // AJD
   const ajdCrNewSizeData = [];
@@ -259,7 +250,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const bjvOrNewSizeData = [];
 
-  const bjvOrOldSizeData = ["UBAY"];
+  const bjvOrOldSizeData = ["UBAY","JAGN","GUIN"];
 
   switch (true) {
     // FDL OR - CR CASES
