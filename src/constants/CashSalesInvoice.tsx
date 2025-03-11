@@ -124,6 +124,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "ELSA",
     "KATI",
     "DSMTG",
+    "VILLA ",
   ];
 
   const dapCsiSizeData = [
@@ -174,6 +175,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "ILIG",
     "KABA2",
     "PARD",
+    "TUBU",
   ];
 
   const fdlSiNewSizeData = [
