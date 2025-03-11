@@ -208,9 +208,9 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   //FELY
   const felyCsiNewSizeData = [];
 
-  const felyCsiOldSizeData = ["LIPA", "FAMY"];
+  const felyCsiOldSizeData = ["LIPA", "FAMY", "DASMA"];
 
-  const felyLandscapeCsiOldSizeData = ["PAGS", "NAIC", "DASMA"];
+  const felyLandscapeCsiOldSizeData = ["PAGS", "NAIC"];
 
   const felySiNewSizeData = [];
 
