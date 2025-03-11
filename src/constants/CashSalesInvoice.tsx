@@ -121,7 +121,9 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "SLIL",
     "MADRI",
     "BALI",
-    "DSMBN"
+    "DSMBN",
+    "ELSA",
+    "KATI",
   ];
 
   const dapCsiSizeData = [
@@ -139,16 +141,11 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
 
   const DSMSISizeData = ["DIGOS", "TACU", "TOMAS"];
 
-  const dsmCsiSizeData = ["DSMM", "DSMT2", "ILOI", "JIMEDSM"];
+  const dsmCsiSizeData = ["DSMM", "DSMT2", "ILOI"];
 
   const hdCsiSizeData = ["ALAH"];
 
-  const smctCsiSizeData = [
-    "BAYB",
-    "SALA",
-    "TALI",
-    "VALEN",
-  ];
+  const smctCsiSizeData = ["BAYB", "SALA", "TALI", "VALEN"];
 
   const smctSiSizeData = ["BANTA", "GUIN", "ANTI", "TRINI2"];
 
@@ -174,27 +171,43 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "TALI",
     "TUBI",
     "VALEN",
+    "ILIG",
+    "KABA2",
+    "PARD",
   ];
 
-  const fdlSiNewSizeData = ["GUIN2", "TANZ2","SANT2"];
+  const fdlSiNewSizeData = [
+    "GUIN2",
+    "TANZ2",
+    "SANT2",
+    //  "DSMD2"
+  ];
 
-  const fdlSiOldSizeData = ["CATAR", "NUND2","TANZ"];
+  const fdlSiOldSizeData = ["CATAR", "NUND2", "TANZ"];
 
   // OBBUS
   const obbusCsiNewSizeData = [];
 
-  const obbusCsiOldSizeData = ["UBAY", "BOGO", "CALIN"];
+  const obbusCsiOldSizeData = [
+    "UBAY",
+    "BOGO",
+    "CALIN",
+    "COMPO",
+    "JIMEDSM",
+    "DSMK",
+    "DSMPO",
+  ];
 
-  const obbusSiNewSizeData = [""];
+  const obbusSiNewSizeData = ["DSMD", "RIZA"];
 
   const obbusSiOldSizeData = [""];
 
   //FELY
   const felyCsiNewSizeData = [];
 
-  const felyCsiOldSizeData = ["LIPA","FAMY"];
+  const felyCsiOldSizeData = ["LIPA", "FAMY"];
 
-  const felyLandscapeCsiOldSizeData = ["PAGS", "NAIC","DASMA"];
+  const felyLandscapeCsiOldSizeData = ["PAGS", "NAIC", "DASMA"];
 
   const felySiNewSizeData = [];
 
@@ -212,7 +225,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   // BJV
   const bjvCsiNewSizeData = [];
 
-  const bjvCSiOldSizeData = ["INAB", "CARMB","LOAY","JAGN"];
+  const bjvCSiOldSizeData = ["INAB", "CARMB", "LOAY", "JAGN"];
 
   const bjvSiNewSizeData = [];
 
