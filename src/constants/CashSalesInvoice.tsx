@@ -111,7 +111,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "TANZ3",
   ];
 
-  const LandscapeSiSizeData = [
+  const landscapeSiSizeData = [
     "ALAD",
     "AURD",
     "CALD",
@@ -126,6 +126,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "SLIL",
     "MADRI",
     "BALI",
+    "DSMBN"
   ];
 
   const dapCsiSizeData = [
@@ -143,7 +144,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
 
   const DSMSISizeData = ["DIGOS", "TACU", "TOMAS"];
 
-  const dsmCsiSizeData = ["CALIN", "DSMM", "DSMT2", "ILOI", "JIMEDSM"];
+  const dsmCsiSizeData = ["DSMM", "DSMT2", "ILOI", "JIMEDSM"];
 
   const hdCsiSizeData = ["ALAH"];
 
@@ -151,7 +152,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "BAYB",
     "MANG",
     "SALA",
-    "SANP",
     "AKLA",
     "TALI",
     "VALEN",
@@ -172,7 +172,9 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "OROD",
     "SUCD",
     "TUBOD",
-    "SANP"
+    "SANP",
+    // "DSMBN",
+    "DSMC"
   ];
 
   const fdlSiNewSizeData = ["GUIN2", "TANZ2"];
@@ -182,7 +184,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   // OBBUS
   const obbusCsiNewSizeData = [];
 
-  const obbusCsiOldSizeData = ["UBAY"];
+  const obbusCsiOldSizeData = ["UBAY", "BOGO", "CALIN"];
 
   const obbusSiNewSizeData = [""];
 
@@ -244,7 +246,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
 
     case luzonSizeData.some((branch) => branch === user?.branchCode):
       return <LuzonSize data={data} />;
-    case LandscapeSiSizeData.some((branch) => branch === user?.branchCode):
+    case landscapeSiSizeData.some((branch) => branch === user?.branchCode):
       return <DAP1Size data={data} />;
     case dapCsiSizeData.some((branch) => branch === user?.branchCode):
       return <DapCsiSize data={data} />;

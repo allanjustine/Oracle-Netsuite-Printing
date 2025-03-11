@@ -76,6 +76,7 @@ import HDBalamban from "@/utils/official-receipt/global/fdl/old/hd/HDBalamban";
 import DSMAurora from "@/utils/official-receipt/global/fdl/old/dsm/DSMAurora";
 import FelyOldOrSize from "@/utils/official-receipt/global/fely/old/FelyOldOrSize";
 import BjvOldCrSize from "@/utils/collectionreceipt/global/bjv/old/BjvOldCrSize";
+import CelroseOldCrSize from "@/utils/collectionreceipt/global/celrose/old/CelroseOldCrSize";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -143,7 +144,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     //"PAGS",
     "SALA",
     // "SANJ",
-    "SANP",
     "SANT2",
     "SILA",
     "AKLA",
@@ -159,7 +159,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   ];
 
   const dsmCrSizeData = [
-    "BOGO",
     "CALIN",
     "CARS",
     "CATAR2",
@@ -213,11 +212,11 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   // OBBUS
   const obbusCrNewSizeData = [];
 
-  const obbusCrOldSizeData = [""];
+  const obbusCrOldSizeData = ["DSMBN"];
 
   const obbusOrNewSizeData = [];
 
-  const obbusOrOldSizeData = ["SLIL"];
+  const obbusOrOldSizeData = ["SLIL", "BOGO", "DSMC"];
 
   //FELY
   const felyCrNewSizeData = [];
@@ -243,6 +242,13 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const bjvCrOldSizeData = [
     // "UBAY",
     "INAB",
+  ];
+
+  // CELROSE
+  const celroseCrNewSizeData = [];
+
+  const celroseCrOldSizeData = [
+    "CALIN",
   ];
 
   const bjvOrNewSizeData = [];
@@ -279,6 +285,10 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <BjvOldOrSize data={data} />;
     case bjvCrOldSizeData.some((branch) => branch === user?.branchCode):
       return <BjvOldCrSize data={data} />;
+
+    // CELROSE OR - CR CASES
+    case celroseCrOldSizeData.some((branch) => branch === user?.branchCode):
+      return <CelroseOldCrSize data={data} />;
 
     case luzonSizeData.some((branch) => branch === user?.branchCode):
       return <LuzonSize data={data} />;
