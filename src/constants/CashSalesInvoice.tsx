@@ -129,7 +129,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
 
   const dapCsiSizeData = ["BUUD", "DIPD", "JIME", "MANO", "MARA2", "OZAD"];
 
-  const DSMSISizeData = ["DIGOS"];
+  const DSMSISizeData = [""];
 
   const dsmCsiSizeData = ["DSMM", "ILOI"];
 
@@ -218,7 +218,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
 
   const felySiNewSizeData = [];
 
-  const felySiOldSizeData = ["CARMO"];
+  const felySiOldSizeData = ["CARMO", "DIGOS"];
 
   // AJD
   const ajdCsiNewSizeData = [];
