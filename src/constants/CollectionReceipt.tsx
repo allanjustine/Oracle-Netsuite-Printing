@@ -139,7 +139,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const dsmCrSizeData = [
     "CARS",
     "CATAR2",
-    "CATM",
     "CONSO",
     "DONC",
     "CARCAR",
