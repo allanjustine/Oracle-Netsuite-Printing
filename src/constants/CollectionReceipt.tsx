@@ -153,7 +153,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DSMB",
     "DSMCN",
     "DSMSB",
-    "DSMT2",
     "DSMTA",
     "DSMV",
     "ILOI",
@@ -163,7 +162,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "MEDE",
     "SARG",
     // "SLIL",
-    "TACU",
     "TAGUM",
     "TORI",
     "TUBU",
@@ -209,7 +207,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   // OBBUS
   const obbusCrNewSizeData = ["DANAO", "TOMAS"];
 
-  const obbusCrOldSizeData = ["DSMBN", "ELSA", "ILIG", "DSMPO"];
+  const obbusCrOldSizeData = ["DSMBN", "ELSA", "ILIG", "DSMPO", "TACU"];
 
   const obbusOrNewSizeData = [];
 
@@ -221,6 +219,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "JIMEDSM",
     "DSMK",
     "RIZA",
+    "DSMT",
+    "DSMT2",
   ];
 
   //FELY
