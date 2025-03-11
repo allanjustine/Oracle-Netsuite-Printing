@@ -77,6 +77,7 @@ import DSMAurora from "@/utils/official-receipt/global/fdl/old/dsm/DSMAurora";
 import FelyOldOrSize from "@/utils/official-receipt/global/fely/old/FelyOldOrSize";
 import BjvOldCrSize from "@/utils/collectionreceipt/global/bjv/old/BjvOldCrSize";
 import CelroseOldCrSize from "@/utils/collectionreceipt/global/celrose/old/CelroseOldCrSize";
+import ObbusNewCrSize from "@/utils/collectionreceipt/global/obbus/new/ObbusNewCrSize";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -205,7 +206,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const fdlOrOldSizeData = ["PAGS", "NUND2"];
 
   // OBBUS
-  const obbusCrNewSizeData = [];
+  const obbusCrNewSizeData = ["DANAO"];
 
   const obbusCrOldSizeData = ["DSMBN"];
 
@@ -264,6 +265,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <ObbusOldCrSize data={data} />;
     case obbusOrOldSizeData.some((branch) => branch === user?.branchCode):
       return <ObbusOldOrSize data={data} />;
+    case obbusCrNewSizeData.some((branch) => branch === user?.branchCode):
+      return <ObbusNewCrSize data={data} />;
 
     // FELY OR - CR CASES
     case felyCrOldSizeData.some((branch) => branch === user?.branchCode):
