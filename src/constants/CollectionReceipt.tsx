@@ -90,21 +90,21 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     //"BALAM",
     //"BUUH",
     //"CALIN",
-   // "BUUH",
+    // "BUUH",
     //"CAMH",
     //"CARMC",
     //"DATH",
     //"DSML",
-   // "GUSA",
+    // "GUSA",
     ///"PARD3",
-   // "TRINI",
+    // "TRINI",
     //"SDIP",
-   // "KABA",
+    // "KABA",
     //"MARH",
     //"SINDA",
     "SMCT",
     //"VETH",
-   // "VILLA2",
+    // "VILLA2",
   ];
 
   const DAPSizeData = [
@@ -146,12 +146,9 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DSMCN",
     "DSMSB",
     "DSMTA",
-    "DSMV",
     "ILOI",
     "KATI",
     "MARA",
-    "MATI",
-    "MEDE",
     "SARG",
     // "SLIL",
     "TAGUM",
@@ -167,6 +164,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "OROD",
     "SANT2",
     "TANZ3",
+    "MONKA",
   ];
 
   const fdlOrOldSizeData = [
@@ -184,7 +182,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "CALD",
     "INIT2",
     "KABA",
-    "CATM"
+    "CATM",
   ];
 
   const fdlCrOldSizeData = [
@@ -214,12 +212,13 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "MARD",
     "RIZD",
     "VITA",
+    "DSMV",
   ];
 
   const fdlOrNewSizeData = [];
 
   // OBBUS
-  const obbusCrNewSizeData = ["DANAO", "TOMAS", "DIGOS"];
+  const obbusCrNewSizeData = ["DANAO", "TOMAS", "DIGOS", "CATAR2"];
 
   const obbusCrOldSizeData = [
     "DSMBN",
@@ -228,6 +227,9 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DSMPO",
     "TACU",
     "VILLA",
+    "MATI",
+    "TORI",
+    "MEDE",
   ];
 
   const obbusOrNewSizeData = [];
@@ -242,6 +244,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "RIZA",
     "DSMT",
     "DSMT2",
+    "DSMM",
   ];
 
   //FELY

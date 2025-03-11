@@ -131,7 +131,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
 
   const DSMSISizeData = [""];
 
-  const dsmCsiSizeData = ["DSMM", "ILOI"];
+  const dsmCsiSizeData = ["ILOI"];
 
   const hdCsiSizeData = [""];
 
@@ -165,7 +165,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "KABA2",
     "PARD",
     "TUBU",
-    "ALAH"
+    "ALAH",
+    "DSMV",
   ];
 
   const fdlSiNewSizeData = [
@@ -178,6 +179,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "INIT2",
     "KABA",
     "CATM",
+    "MONKA",
   ];
 
   const fdlSiOldSizeData = [
@@ -203,9 +205,13 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "DSMPO",
     "REMI2",
     "DSMT",
+    "MATI",
+    "DSMM",
+    "TORI",
+    "MEDE",
   ];
 
-  const obbusSiNewSizeData = ["DSMD", "RIZA", "TOMAS"];
+  const obbusSiNewSizeData = ["DSMD", "RIZA", "TOMAS", "CATAR2"];
 
   const obbusSiOldSizeData = ["TACU"];
 
@@ -232,7 +238,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   // BJV
   const bjvCsiNewSizeData = [];
 
-  const bjvCSiOldSizeData = ["INAB", "CARMB", "LOAY", "JAGN","TRINI"];
+  const bjvCSiOldSizeData = ["INAB", "CARMB", "LOAY", "JAGN", "TRINI"];
 
   const bjvSiNewSizeData = [];
 
