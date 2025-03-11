@@ -208,7 +208,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   //FELY
   const felyCsiNewSizeData = [];
 
-  const felyCsiOldSizeData = ["LIPA", "FAMY", "DASMA"];
+  const felyCsiOldSizeData = ["FAMY", "DASMA"];
 
   const felyLandscapeCsiOldSizeData = ["PAGS", "NAIC"];
 
@@ -379,6 +379,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Remigio data={data} />;
     case "LAPU" === user?.branchCode:
       return <LapuLapu2 data={data} />;
+    case "LIPA" === user?.branchCode:
+      return <LapuLapu2 data={data} />; // TEMP NO TAG-IYA
     case "DSMLN" === user?.branchCode:
       return <Liloan data={data} />;
     case "CALIN2" === user?.branchCode:
