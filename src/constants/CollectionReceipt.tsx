@@ -168,22 +168,15 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "CARCAR",
     "DSMB",
     "DSMCN",
-    "DSMK",
-    "DSMPO",
     "DSMSB",
     "DSMT2",
     "DSMTA",
     "DSMV",
-    "ELSA",
-    "ILIG",
     "ILOI",
-    "JIMEDSM",
-    "KABA2",
     "KATI",
     "MARA",
     "MATI",
     "MEDE",
-    "RIZA",
     "SARG",
     // "SLIL",
     "TACU",
@@ -209,6 +202,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "MOLD2",
     "LILD",
     // "DSMD2",
+    "KABA2",
+    "KATI",
   ];
 
   const fdlOrNewSizeData = [];
@@ -218,11 +213,19 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   // OBBUS
   const obbusCrNewSizeData = ["DANAO"];
 
-  const obbusCrOldSizeData = ["DSMBN"];
+  const obbusCrOldSizeData = ["DSMBN", "ELSA", "ILIG", "DSMPO"];
 
   const obbusOrNewSizeData = [];
 
-  const obbusOrOldSizeData = ["SLIL", "BOGO", "DSMC", "COMPO"];
+  const obbusOrOldSizeData = [
+    "SLIL",
+    "BOGO",
+    "DSMC",
+    "COMPO",
+    "JIMEDSM",
+    "DSMK",
+    "RIZA",
+  ];
 
   //FELY
   const felyCrNewSizeData = [];
@@ -240,7 +243,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const ajdOrNewSizeData = [];
 
-  const ajdOrOldSizeData = [""];
+  const ajdOrOldSizeData = ["PARD"];
 
   // BJV
   const bjvCrNewSizeData = [];
