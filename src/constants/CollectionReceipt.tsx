@@ -226,7 +226,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const felyOrNewSizeData = [];
 
-  const felyOrOldSizeData = ["ANTIP"];
+  const felyOrOldSizeData = ["ANTIP", "SANP"];
 
   // AJD
   const ajdCrNewSizeData = [];
