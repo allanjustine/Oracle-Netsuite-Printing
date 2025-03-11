@@ -99,15 +99,10 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
 
   const luzonSizeData = [
-    "DASMA",
-    "FAMY",
-    "NAIC",
-    "PAGS",
-    //"SANJ",
+    //"PAGS",
     "SILA",
     "SLAS",
     "SROS",
-    //"TANZ2",
     "TANZ3",
   ];
 
@@ -149,12 +144,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
 
   const smctCsiSizeData = [
     "BAYB",
-    "MANG",
     "SALA",
-    "SANP",
-    "AKLA",
-    "TALI",
-    "VALEN",
   ];
 
   const smctSiSizeData = ["BANTA", "GUIN", "ANTI", "TRINI2"];
@@ -172,12 +162,19 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "OROD",
     "SUCD",
     "TUBOD",
+    "AKLA",
+    "CARS",
+    "MANG",
+    "SANP",
+    "TALI",
+    "TUBI",
+    "VALEN",
     "SANP"
   ];
 
-  const fdlSiNewSizeData = ["GUIN2", "TANZ2"];
+  const fdlSiNewSizeData = ["GUIN2", "TANZ2","SANT2"];
 
-  const fdlSiOldSizeData = ["CATAR", "NUND2"];
+  const fdlSiOldSizeData = ["CATAR", "NUND2","TANZ"];
 
   // OBBUS
   const obbusCsiNewSizeData = [];
@@ -191,7 +188,9 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   //FELY
   const felyCsiNewSizeData = [];
 
-  const felyCsiOldSizeData = ["PAGS", "LIPA"];
+  const felyCsiOldSizeData = ["LIPA","FAMY"];
+
+  const felyLandscapeCsiOldSizeData = ["PAGS", "NAIC","DASMA"];
 
   const felySiNewSizeData = [];
 
@@ -209,7 +208,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   // BJV
   const bjvCsiNewSizeData = [];
 
-  const bjvCSiOldSizeData = ["INAB", "CARMB"];
+  const bjvCSiOldSizeData = ["INAB", "CARMB","LOAY","JAGN"];
 
   const bjvSiNewSizeData = [];
 
