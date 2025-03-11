@@ -99,7 +99,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
 
   const luzonSizeData = [
-    "PAGS",
+    //"PAGS",
     "SILA",
     "SLAS",
     "SROS",
@@ -168,7 +168,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "SANP",
     "TALI",
     "TUBI",
-    "VALEN"
+    "VALEN",
+    "SANP"
   ];
 
   const fdlSiNewSizeData = ["GUIN2", "TANZ2","SANT2"];
