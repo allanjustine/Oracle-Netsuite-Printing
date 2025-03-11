@@ -104,7 +104,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     //"SINDA",
     "SMCT",
     //"VETH",
-    // "VILLA2",
   ];
 
   const DAPSizeData = [
