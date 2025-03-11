@@ -165,20 +165,23 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     // "SLIL",
     "TACU",
     "TAGUM",
-    "TOMAS",
     "TORI",
     "TUBU",
     "VILLA",
   ];
 
   //FDL
-  const fdlCrNewSizeData = ["TANH", "TANZ2", "JIME", "IPID", "OROD","SANT2",];
-  
-  const fdlCrOldSizeData = ["CARMB", "CATAR", "SANJ", "LIPA", "ALEN", "GUIN2", "MALA", "MOLD", "MOLD2", "LILD","BAYB",,"LOAY","MANG","VALEN","TALI"];
+  const fdlCrNewSizeData = ["TANH", "TANZ2", "JIME", "IPID", "OROD", "SANT2"];
 
-  const fdlOrNewSizeData = [];
-
-  const fdlOrOldSizeData = ["PAGS", "NUND2","AKLA","CARS","TUBI"];
+  const fdlOrOldSizeData = [
+    "PAGS",
+    "NUND2",
+    "AKLA",
+    "CARS",
+    "TUBI",
+    "DSMD",
+    "REMI2",
+  ];
 
   const fdlCrOldSizeData = ["CARMB", "CATAR", "SANJ", "LIPA", "ALEN", "GUIN2", "MALA", "MOLD", "MOLD2", "LILD","BAYB",,"LOAY","MANG","VALEN","TALI"];
 
@@ -199,15 +202,17 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     // "DSMD2",
     "KABA2",
     "KATI",
+    "BAYB",
+    "LOAY",
+    "MANG",
+    "VALEN",
+    "TALI",
   ];
 
   const fdlOrNewSizeData = [];
 
-  const fdlOrOldSizeData = ["PAGS", "NUND2", "DSMD", "REMI2"];
-
-
   // OBBUS
-  const obbusCrNewSizeData = ["DANAO"];
+  const obbusCrNewSizeData = ["DANAO", "TOMAS"];
 
   const obbusCrOldSizeData = ["DSMBN", "ELSA", "ILIG", "DSMPO"];
 
@@ -226,11 +231,11 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   //FELY
   const felyCrNewSizeData = [];
 
-  const felyCrOldSizeData = ["NAIC",];
+  const felyCrOldSizeData = ["NAIC"];
 
   const felyOrNewSizeData = [];
 
-  const felyOrOldSizeData = ["ANTIP", "SANP","TANZ","FAMY","DASMA","CARMO"];
+  const felyOrOldSizeData = ["ANTIP", "SANP", "TANZ", "FAMY", "DASMA", "CARMO"];
 
   // AJD
   const ajdCrNewSizeData = [];
@@ -256,7 +261,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const bjvOrNewSizeData = [];
 
-  const bjvOrOldSizeData = ["UBAY","JAGN","GUIN"];
+  const bjvOrOldSizeData = ["UBAY", "JAGN", "GUIN"];
 
   switch (true) {
     // FDL OR - CR CASES
