@@ -786,6 +786,12 @@ export const data = [
         branchCode: "NORZA",
         branchName: "DSM Norzagaray",
         password: "Smct123456",
+      },
+      {
+        id: 74,
+        branchCode: "TANZ3",
+        branchName: "DSM Tanza 3",
+        password: "Smct123456",
       }
     ],
   },
