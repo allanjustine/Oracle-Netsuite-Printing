@@ -203,7 +203,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const fdlOrNewSizeData = [];
 
-  const fdlOrOldSizeData = ["PAGS", "NUND2", "DSMD"];
+  const fdlOrOldSizeData = ["PAGS", "NUND2", "DSMD", "REMI2"];
 
 
   // OBBUS
