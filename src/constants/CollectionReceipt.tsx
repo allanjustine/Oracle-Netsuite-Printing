@@ -168,8 +168,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "CARCAR",
     "DSMB",
     "DSMCN",
-    "DSMD",
-    "DSMD2",
     "DSMK",
     "DSMPO",
     "DSMSB",
@@ -199,11 +197,23 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   //FDL
   const fdlCrNewSizeData = ["TANH", "TANZ2", "JIME", "IPID", "OROD"];
 
-  const fdlCrOldSizeData = ["CARMB", "CATAR", "SANJ", "LIPA", "ALEN", "GUIN2", "MALA", "MOLD", "MOLD2", "LILD"];
+  const fdlCrOldSizeData = [
+    "CARMB",
+    "CATAR",
+    "SANJ",
+    "LIPA",
+    "ALEN",
+    "GUIN2",
+    "MALA",
+    "MOLD",
+    "MOLD2",
+    "LILD",
+    // "DSMD2",
+  ];
 
   const fdlOrNewSizeData = [];
 
-  const fdlOrOldSizeData = ["PAGS", "NUND2"];
+  const fdlOrOldSizeData = ["PAGS", "NUND2", "DSMD"];
 
   // OBBUS
   const obbusCrNewSizeData = ["DANAO"];
@@ -243,9 +253,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   // CELROSE
   const celroseCrNewSizeData = [];
 
-  const celroseCrOldSizeData = [
-    "CALIN",
-  ];
+  const celroseCrOldSizeData = ["CALIN"];
 
   const bjvOrNewSizeData = [];
 
