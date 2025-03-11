@@ -186,6 +186,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "CALD",
     "INIT2",
     "KABA",
+    "CATM"
   ];
 
   const fdlCrOldSizeData = [
