@@ -108,8 +108,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   ];
 
   const DAPSizeData = [
-    "AURD",
-    "BUUD",
     "CAMD",
     "IMED",
     "SIND",
@@ -164,6 +162,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "OROD",
     "SANT2",
     "TANZ3",
+    "AURD",
     "MONKA",
   ];
 
@@ -183,6 +182,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "INIT2",
     "KABA",
     "CATM",
+    "BUUD"
   ];
 
   const fdlCrOldSizeData = [
@@ -212,6 +212,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "MARD",
     "RIZD",
     "VITA",
+    "DIPD2",
     "DSMV",
   ];
 
