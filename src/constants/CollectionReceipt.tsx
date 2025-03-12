@@ -127,7 +127,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "CALAP2",
     "SROS",
     "TALI2",
-    "YATI",
   ];
 
   const dsmCrSizeData = [
@@ -212,6 +211,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DSMV",
     "MOLS",
     "DSMTA",
+    "YATI",
   ];
 
   const fdlOrNewSizeData = [];
