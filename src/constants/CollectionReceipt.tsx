@@ -245,6 +245,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DSMT",
     "DSMT2",
     "DSMM",
+    "SARG",
   ];
 
   //FELY
