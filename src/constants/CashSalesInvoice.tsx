@@ -94,6 +94,7 @@ import DSMAurora from "@/utils/salesinvoice/global/obbus/old/dsm/DSMAurora";
 import FelyOldCsiSize from "@/utils/salesinvoice/global/fely/old/FelyOldCsiSize";
 import FelyOldSiSize from "@/utils/salesinvoice/global/fely/old/FelyOldSiSize";
 import BjvOldCsiSize from "@/utils/salesinvoice/global/bjv/old/BjvOldCsiSize";
+import SMCTAlano from "@/utils/salesinvoice/global/fdl/old/smct/SMCTAlano";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -428,6 +429,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Bulua data={data} />;
     case "AURO" === user?.branchCode:
       return <DSMAurora data={data} />;
+    case "SALA" === user?.branchCode:
+      return <SMCTAlano data={data} />;  //CSI
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
