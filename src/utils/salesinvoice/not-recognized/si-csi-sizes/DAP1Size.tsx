@@ -34,7 +34,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
 
   return (
     <div className="text-xs h-[506.45669291px] w-[767.24409449px]">
-      <div className="flex h-[17.007874016px] mt-[105.448818896px]">
+      <div className="flex h-[17.007874016px] mt-[124.34645669px]">
         <p className="w-[528.66141732px] pl-[147.4015748px]">
           {data[1]?.[mainLineName] || ""}
         </p>
@@ -76,7 +76,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
                   {row[unitOfMeasurement]}
                 </td>
                 <td
-                  className={`w-[309.70528684px] h-[19.275590551px] ${
+                  className={`w-[309.70528684px] h-[19.275590551px] text-start ${
                     row[articles]?.length > 41 ? "text-[7px]" : ""
                   }`}
                 >
@@ -94,7 +94,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
               <td className="w-[74.24071991px]"></td>
               <td className="w-[53.831271091px] h-[19.275590551px]"></td>
               <td
-                className={`w-[309.70528684px] h-[19.275590551px] ${
+                className={`w-[309.70528684px] h-[19.275590551px] text-start ${
                   data[1]?.[serialNumber]?.length > 41 ? "text-[7px]" : ""
                 }`}
               >
@@ -109,7 +109,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
               <td className="w-[74.24071991px]"></td>
               <td className="w-[53.831271091px] h-[19.275590551px]"></td>
               <td
-                className={`w-[309.70528684px] h-[19.275590551px] ${
+                className={`w-[309.70528684px] h-[19.275590551px] text-start ${
                   data[1]?.[chassisNumber]?.length > 41 ? "text-[7px]" : ""
                 }`}
               >
@@ -152,7 +152,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
           <tbody>
             <tr className="text-[10px]">
               <td className="h-[19.275590551px] w-[336.62632171px]"></td>
-              <td className="h-[19.275590551px] w-[101.83127109px]">
+              <td className="h-[19.275590551px] w-[101.83127109px] pl-5">
                 {FormattedSumTotal(data, totalSalesVatInclusive2, 3)}
               </td>
               <td className="h-[19.275590551px] w-[163.81552306px]"></td>
@@ -162,7 +162,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
             </tr>
             <tr className="text-[10px]">
               <td className="h-[19.275590551px] w-[336.62632171px]"></td>
-              <td className="h-[19.275590551px] w-[101.83127109px]">
+              <td className="h-[19.275590551px] w-[101.83127109px] pl-5">
                 {/* {FormattedSumTotal(data, rateInclusiveVat, 3)} VAT EXEMPT SALES */}
                 0.00
               </td>
@@ -174,7 +174,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
             </tr>
             <tr className="text-[10px]">
               <td className="h-[19.275590551px] w-[336.62632171px]"></td>
-              <td className="h-[19.275590551px] w-[101.83127109px]">
+              <td className="h-[19.275590551px] w-[101.83127109px] pl-5">
                 {FormattedSumTotal(data, rateInclusiveVat, 3)}
               </td>
               <td className="h-[19.275590551px] w-[163.81552306px]"></td>
@@ -184,7 +184,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
             </tr>
             <tr className="text-[10px]">
               <td className="h-[19.275590551px] w-[336.62632171px]"></td>
-              <td className="h-[19.275590551px] w-[101.83127109px]">
+              <td className="h-[19.275590551px] w-[101.83127109px] pl-5">
                 {FormattedSumTotal(data, vatAmount, 3)}
               </td>
               <td className="h-[19.275590551px] w-[163.81552306px]"></td>
