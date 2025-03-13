@@ -855,6 +855,7 @@ export default function Page() {
               setIsFileUploaded={setIsFileUploaded}
               handleUploadFile={handleUploadFile}
               setIsLoading={setIsLoading}
+              setIsPrintCr={setIsPrintCr}
             />
           </div>
         )}
