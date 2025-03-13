@@ -33,7 +33,7 @@ const FdlOldCsiSize = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[793.7007874px] w-[608.50393701px]">
-      <div className="flex h-[19.409448819px] mt-[110.0078740201px]">
+      <div className="flex h-[19.409448819px] mt-[18.0078740201px]">
         <p className="w-[391.18110236px] pl-[95.82677165px]">
           {data[1]?.[mainLineName] || ""}
         </p>
@@ -66,7 +66,7 @@ const FdlOldCsiSize = ({ data }: any) => {
           {data[1]?.[cardHolderSignatures] || ""}
         </p>
       </div>
-      <div className="mx-[27.212598425px] mt-[24.102362205px] h-[308.03149606px]">
+      <div className="mx-[27.212598425px] mt-[24.102362205px] h-[316.03149606px]">
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
@@ -76,7 +76,7 @@ const FdlOldCsiSize = ({ data }: any) => {
                   {row[unitOfMeasurement]}
                 </td>
                 <td
-                  className={`w-[238.48818898px] h-[18.897637795px] pl-2 ${
+                  className={`w-[238.48818898px] h-[18.897637795px] pl-2 text-start ${
                     row[articles]?.length > 41 ? "text-[7px]" : ""
                   }`}
                 >
@@ -94,7 +94,7 @@ const FdlOldCsiSize = ({ data }: any) => {
               <td className="w-[74.24071991px]"></td>
               <td className="w-[53.831271091px] h-[18.897637795px]"></td>
               <td
-                className={`w-[309.70528684px] h-[18.897637795px] ${
+                className={`w-[238.48818898px] h-[18.897637795px] pl-2 text-start ${
                   data[1]?.[serialNumber]?.length > 41 ? "text-[7px]" : ""
                 }`}
               >
@@ -109,7 +109,7 @@ const FdlOldCsiSize = ({ data }: any) => {
               <td className="w-[74.24071991px]"></td>
               <td className="w-[53.831271091px] h-[18.897637795px]"></td>
               <td
-                className={`w-[309.70528684px] h-[18.897637795px] ${
+                className={`w-[238.48818898px] h-[18.897637795px] pl-2 text-start ${
                   data[1]?.[chassisNumber]?.length > 41 ? "text-[7px]" : ""
                 }`}
               >
