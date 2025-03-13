@@ -33,7 +33,7 @@ const ObbusNewSiSize = ({ data }: any) => {
   const unitPrice = 26;
 
   return (
-    <div className="text-xs h-[714.33070866px] w-[549.92125984px]">
+    <div className="text-xs h-[714.33070866px] w-[549.92125984px] ml-[18.897637795px]">
       <div className="flex items-center h-[28.346456693px] mx-[26.456692913px] ml-[301.91338583px] mt-[130.37795276px]">
         <p className="w-[230.5511811px] ml-[83.905511811px]">
           {data[1]?.[date] || ""}
@@ -64,7 +64,7 @@ const ObbusNewSiSize = ({ data }: any) => {
             {data.slice(1, 13).map((row: any, index: number) => (
               <tr key={index} className="text-[10px] text-center">
                 <td
-                  className={`w-[249.4488189px] h-[18.141732283px] ${
+                  className={`w-[249.4488189px] h-[18.141732283px] text-start ${
                     row[articles]?.length > 41 ? "text-[7px]" : ""
                   }`}
                 >
@@ -81,7 +81,7 @@ const ObbusNewSiSize = ({ data }: any) => {
             ))}
             <tr className="text-[10px] text-center">
               <td
-                className={`w-[249.4488189px] h-[18.141732283px] ${
+                className={`w-[249.4488189px] h-[18.141732283px] text-start ${
                   data[1]?.[serialNumber]?.length > 41 ? "text-[7px]" : ""
                 }`}
               >
@@ -95,7 +95,7 @@ const ObbusNewSiSize = ({ data }: any) => {
             </tr>
             <tr className="text-[10px] text-center">
               <td
-                className={`w-[249.4488189px] h-[18.141732283px] ${
+                className={`w-[249.4488189px] h-[18.141732283px] text-start ${
                   data[1]?.[chassisNumber]?.length > 41 ? "text-[7px]" : ""
                 }`}
               >
