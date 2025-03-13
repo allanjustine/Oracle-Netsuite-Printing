@@ -34,7 +34,7 @@ const Oroquieta = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[771.02362205px] w-[593.38582677px]">
-      <div className="flex h-[19.409448819px] mt-[130.23622048px]"> { /* mt-118.6771653587 */}
+      <div className="flex h-[19.409448819px] mt-[128.23622048px]"> { /* mt-118.6771653587 */}
         <p className="w-[376.06299213px] pl-[94.488188976px]">
           {data[1]?.[mainLineName] || ""}
         </p>
@@ -77,7 +77,7 @@ const Oroquieta = ({ data }: any) => {
                   {row[unitOfMeasurement]}
                 </td>
                 <td
-                  className={`w-[238.48818898px] h-[19.275590551px] ${
+                  className={`w-[238.48818898px] h-[19.275590551px] text-start ${
                     row[articles]?.length > 41 ? "text-[7px]" : ""
                   }`}
                 >
@@ -95,7 +95,7 @@ const Oroquieta = ({ data }: any) => {
               <td className="w-[74.24071991px]"></td>
               <td className="w-[53.831271091px] h-[19.275590551px]"></td>
               <td
-                className={`w-[309.70528684px] h-[19.275590551px] ${
+                className={`w-[238.48818898px] h-[19.275590551px] text-start ${
                   data[1]?.[serialNumber]?.length > 41 ? "text-[7px]" : ""
                 }`}
               >
@@ -110,7 +110,7 @@ const Oroquieta = ({ data }: any) => {
               <td className="w-[74.24071991px]"></td>
               <td className="w-[53.831271091px] h-[19.275590551px]"></td>
               <td
-                className={`w-[309.70528684px] h-[19.275590551px] ${
+                className={`w-[238.48818898px] h-[19.275590551px] text-start ${
                   data[1]?.[chassisNumber]?.length > 41 ? "text-[7px]" : ""
                 }`}
               >
