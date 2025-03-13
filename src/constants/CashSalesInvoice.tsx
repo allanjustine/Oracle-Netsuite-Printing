@@ -95,6 +95,7 @@ import FelyOldCsiSize from "@/utils/salesinvoice/global/fely/old/FelyOldCsiSize"
 import FelyOldSiSize from "@/utils/salesinvoice/global/fely/old/FelyOldSiSize";
 import BjvOldCsiSize from "@/utils/salesinvoice/global/bjv/old/BjvOldCsiSize";
 import SMCTAlano from "@/utils/salesinvoice/global/fdl/old/smct/SMCTAlano";
+import DAPOzamiz from "@/utils/salesinvoice/global/fdl/old/dap/DAPOzamiz";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -133,7 +134,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "SARG",
   ];
 
-  const dapCsiSizeData = ["DIPD", "JIME", "MANO", "MARA2", "OZAD"];
+  const dapCsiSizeData = ["DIPD", "JIME", "MANO", "MARA2",];
 
   const DSMSISizeData = [""];
 
@@ -431,6 +432,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <DSMAurora data={data} />;
     case "SALA" === user?.branchCode:
       return <SMCTAlano data={data} />;  //CSI
+    case "OZAD" === user?.branchCode:
+      return <DAPOzamiz data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
