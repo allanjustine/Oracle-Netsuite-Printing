@@ -38,7 +38,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
         <p className="w-[528.66141732px] pl-[147.4015748px]">
           {data[1]?.[mainLineName] || ""}
         </p>
-        <p className="w-[284.50393701px] pl-[117.16535433px]">
+        <p className="w-[284.50393701px] pl-[127.16535433px]">
           {data[1]?.[date] || ""}
         </p>
       </div>
