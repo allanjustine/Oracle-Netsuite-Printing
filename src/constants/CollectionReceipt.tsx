@@ -129,7 +129,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DSMB",
     "DSMCN",
     "DSMSB",
-    "ILOI",
     "KATI",
     "MARA",
     "SARG",
