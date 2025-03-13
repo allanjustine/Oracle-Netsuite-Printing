@@ -81,7 +81,7 @@ const Cerilles = ({ data }: any) => {
                   {row[unitOfMeasurement]}
                 </td>
                 <td
-                  className={`w-[285.73228346px] h-[22.11023622px] ${
+                  className={`w-[285.73228346px] h-[22.11023622px] text-start ${
                     row[articles]?.length > 41 ? "text-[7px]" : ""
                   }`}
                 >
@@ -99,7 +99,7 @@ const Cerilles = ({ data }: any) => {
               <td className="w-[74.24071991px]"></td>
               <td className="w-[53.831271091px] h-[19.275590551px]"></td>
               <td
-                className={`w-[309.70528684px] h-[19.275590551px] ${
+                className={`w-[285.73228346px] h-[22.11023622px] text-start ${
                   data[1]?.[serialNumber]?.length > 41 ? "text-[7px]" : ""
                 }`}
               >
@@ -114,7 +114,7 @@ const Cerilles = ({ data }: any) => {
               <td className="w-[74.24071991px]"></td>
               <td className="w-[53.831271091px] h-[19.275590551px]"></td>
               <td
-                className={`w-[309.70528684px] h-[19.275590551px] ${
+                className={`w-[285.73228346px] h-[22.11023622px] text-start ${
                   data[1]?.[chassisNumber]?.length > 41 ? "text-[7px]" : ""
                 }`}
               >
