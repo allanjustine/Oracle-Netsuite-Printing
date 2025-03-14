@@ -36,7 +36,7 @@ const DapLabason: React.FC<PrintPageProps> = ({ data }) => {
     <div className="text-xs h-[506.45669291px] w-[767.24409449px]">
       <div className="flex h-[17.007874016px] mt-[105.448818896px]">
         <p className="w-[528.66141732px] pl-[147.4015748px]">
-          {data[1]?.[mainLineName] || ""}
+          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
         </p>
         <p className="w-[284.50393701px] pl-[117.16535433px]">
           {data[1]?.[date] || ""}
@@ -206,7 +206,7 @@ const DapLabason: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="mx-[37.795275591px]">
         <div className="mt-[18px] ml-[392.31496063px]">
-          <p className="text-xs text-center">{data[1]?.[cashier] || ""}</p>
+          <p className="text-xs text-center">{data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}</p>
         </div>
       </div>
     </div>

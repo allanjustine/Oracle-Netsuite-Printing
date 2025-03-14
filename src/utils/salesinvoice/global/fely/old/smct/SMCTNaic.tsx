@@ -37,7 +37,7 @@ const SMCTNaic: React.FC<PrintPageProps> = ({ data }) => {
       <div className="mx-[41.952755906px] w-[684.09448819px] flex space-x-20 mt-[117.16535433px]">
         <div className="w-[415.7480315px] pr-[11.716535433px]">
           <p className="w-full text-[10px] h-[19.275590551px] ml-[120px]">
-            {data[1]?.[mainLineName] || ""}
+            {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
           </p>
           <p className="w-full text-[10px] h-[19.275590551px] ml-[120px]">
             <span className="opacity-0">No Data</span>
@@ -202,7 +202,7 @@ const SMCTNaic: React.FC<PrintPageProps> = ({ data }) => {
 
       <div>
         <div className="mt-[19px] pl-[431.1023622px]">
-          <p className="text-[10px] text-center">{data[1]?.[cashier] || ""}</p>
+          <p className="text-[10px] text-center">{data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}</p>
         </div>
       </div>
     </div>

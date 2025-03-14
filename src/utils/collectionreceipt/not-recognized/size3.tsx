@@ -26,10 +26,10 @@ const Size3Collection: React.FC<PrintPageProps> = ({ data }) => {
   return (
     <div className="text-sm w-[718px] h-[359px] p-[19px] border-2">
       <div className="mt-[113px]">
-        <p className="ml-[144px] text-xs">{data[1]?.[mainLineName]}</p>
+        <p className="ml-[144px] text-xs">{data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ")}</p>
       </div>
       <div className="ml-[144px]">
-        <p>{data[1]?.[mainLineName]}</p>
+        <p>{data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ")}</p>
         <p>Tin number 0123758</p>
         <p>{data[1]?.[billingAddress]}</p>
       </div>

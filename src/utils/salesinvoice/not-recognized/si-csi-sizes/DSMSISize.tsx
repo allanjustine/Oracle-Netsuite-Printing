@@ -36,7 +36,7 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
     <div className="text-xs h-[510.23622047px] w-[778.58267717px]">
       <div className="flex h-[18.141732283px] mt-[91.488188976px]">
         <p className="w-[461.1023622px] pl-[132.28346457px]">
-          {data[1]?.[mainLineName] || ""}
+          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
         </p>
         <p className="w-[132.28346457px] pl-[151.18110236px]">
           {data[1]?.[date] || ""}
@@ -205,7 +205,7 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
       <div className="mx-[32.125984252px]">
         <div className="mt-[30.236220472px] ml-[480px]">
           <p className="text-xs text-center">
-            {data[1]?.[cashier] || ""}
+            {data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
           </p>
         </div>
       </div>

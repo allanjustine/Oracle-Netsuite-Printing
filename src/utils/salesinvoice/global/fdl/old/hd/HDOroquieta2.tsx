@@ -36,7 +36,7 @@ const HDOroquieta2: React.FC<PrintPageProps> = ({ data }) => {
     <div className="text-xs h-[755.90551181px] w-[578.26771654px]">
       <div className="flex h-[21.165354331px] mt-[117.7244094521px]">
         <p className="w-[377.95275591px] pl-[94.488188976px]">
-          {data[1]?.[mainLineName] || <span className="opacity-0">No Data</span>}
+          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || <span className="opacity-0">No Data</span>}
         </p>
         <p className="w-[219.21259843px] pl-[62px]">
           {data[1]?.[date] || <span className="opacity-0">No Data</span>}
@@ -187,7 +187,7 @@ const HDOroquieta2: React.FC<PrintPageProps> = ({ data }) => {
       <div className="mx-[30.236220472px]">
         <div className="mt-[22.566929134px] ml-[392.31496063px]">
           <p className="text-xs text-center">
-            {data[1]?.[cashier] || ""}
+            {data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
           </p>
         </div>
       </div>

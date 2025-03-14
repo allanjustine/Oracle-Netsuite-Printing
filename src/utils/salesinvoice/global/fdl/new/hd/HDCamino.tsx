@@ -40,7 +40,7 @@ const HDCamino = ({ data }: any) => {
       </div>
       <div className="w-full h-[19.409448819px] mt-[11.677165354px]">
         <p className="w-[377.95275591px] pl-[188.97637795px]">
-          {data[1]?.[mainLineName] || ""}
+          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
         </p>
       </div>
       <div className="w-full h-[19.409448819px] mt-[2.677165354px]">
@@ -184,7 +184,7 @@ const HDCamino = ({ data }: any) => {
       </div>
       <div className="mx-[34.393700787px]">
         <div className="mt-[15.456692914px] ml-[7.5px] w-[340.15748031px]">
-          <p className="text-xs text-center">{data[1]?.[cashier] || ""}</p>
+          <p className="text-xs text-center">{data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}</p>
         </div>
       </div>
     </div>

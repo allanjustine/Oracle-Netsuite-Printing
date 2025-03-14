@@ -41,7 +41,7 @@ const ObbusNewCsiSize = ({ data }: any) => {
       </div>
       <div className="mt-[15.874015748px] mx-[28.346456693px] h-[68.409448819px] w-[493.22834646px]">
         <p className="w-[359.43307087px] flex items-center h-[22.8031496px] ml-[143.62204724px]">
-          {data[1]?.[mainLineName] || (
+          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || (
             <span className="opacity-0">No Data</span>
           )}
         </p>
@@ -187,7 +187,7 @@ const ObbusNewCsiSize = ({ data }: any) => {
       <div className="w-[548.03149606px]">
         <div className="mt-[15.897637795px] ml-[183.30708661px] w-[142.86614173px]">
           <p className="text-xs text-center">
-            {data[1]?.[cashier] || ""}
+            {data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
           </p>
         </div>
       </div>

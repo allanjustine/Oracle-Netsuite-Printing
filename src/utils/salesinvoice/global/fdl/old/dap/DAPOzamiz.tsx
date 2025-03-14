@@ -36,7 +36,7 @@ const DAPOzamiz = ({ data }: any) => {
     <div className="text-xs h-[793.7007874px] w-[608.50393701px]">
       <div className="flex h-[19.409448819px] mt-[90.330708665px]">
         <p className="w-[391.18110236px] pl-[105.82677165px]">
-          {data[1]?.[mainLineName] || ""}
+          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
         </p>
         <p className="w-[218.83464567px] pl-[60.472440945px]">
           {data[1]?.[date] || ""}
@@ -201,7 +201,7 @@ const DAPOzamiz = ({ data }: any) => {
       <div className="mx-[34.393700787px]">
         <div className="mt-[26.456692914px] ml-[332.976377952px]">
           <p className="text-xs text-center">
-            {data[1]?.[cashier] || ""}
+            {data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
           </p>
         </div>
       </div>

@@ -40,7 +40,7 @@ const FdlNewSiSize = ({ data }: any) => {
       </div>
       <div className="mt-[17.007874016px] mx-[37.795275591px] h-[73.700787402px] w-[534.80314961px]">
         <p className="w-[389.29133858px] flex items-center h-[24.566929134px] ml-[154.96062992px]">
-          {data[1]?.[mainLineName] || (
+          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || (
             <span className="opacity-0">No Data</span>
           )}
         </p>
@@ -186,7 +186,7 @@ const FdlNewSiSize = ({ data }: any) => {
       <div className="w-[610.39370079px]">
         <div className="mt-[15.897637795px] ml-[192.75590551px] w-[154.96062992px]">
           <p className="text-xs text-center">
-            {data[1]?.[cashier] || ""}
+            {data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
           </p>
         </div>
       </div>

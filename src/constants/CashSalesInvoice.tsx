@@ -128,7 +128,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "ELSA",
     "KATI",
     "DSMTG",
-    "VILLA ",
+    "VILLA",
     "MARD",
     "TRINI2",
     "MOLS",

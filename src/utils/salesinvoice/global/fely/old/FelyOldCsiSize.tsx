@@ -38,7 +38,7 @@ const FelyOldCsiSize: React.FC<PrintPageProps> = ({ data }) => {
       <div className="mx-[30.614173228px] w-[684.09448819px] flex space-x-20 mt-[100px]">
         <div className="w-[419.90551181px] pr-[11.716535433px]">
           <p className="w-full text-xs h-[19.275590551px] ml-[120px]">
-            {data[1]?.[mainLineName] || ""}
+            {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
           </p>
           <p className="w-full text-xs h-[19.275590551px] ml-[120px]">
             
@@ -204,7 +204,7 @@ const FelyOldCsiSize: React.FC<PrintPageProps> = ({ data }) => {
 
       <div>
         <div className="mt-[19px] pl-[431.1023622px]">
-          <p className="text-xs text-center">{data[1]?.[cashier] || ""}</p>
+          <p className="text-xs text-center">{data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}</p>
         </div>
       </div>
     </div>
