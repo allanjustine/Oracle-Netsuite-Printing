@@ -81,7 +81,7 @@ const Allen = ({ data }: any) => {
                   {/* {FormattedNumber(row[unitPrice])} */}
                 </td>
                 <td className="w-[98.267716535px] h-[19.275590551px]">
-                  {FormattedNumber(row[totalAmount])}
+                  {FormattedNumber(row[rateInclusiveOfTax])}
                 </td>
               </tr>
             ))}

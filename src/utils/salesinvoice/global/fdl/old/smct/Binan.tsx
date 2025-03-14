@@ -82,7 +82,7 @@ const Binan: React.FC<PrintPageProps> = ({ data }) => {
                   {/* {FormattedNumber(row[unitPrice])} */}
                 </td>
                 <td className="w-[101.66929134px] h-[18.275590551px]">
-                  {FormattedNumber(row[totalAmount])}
+                  {FormattedNumber(row[rateInclusiveOfTax])}
                 </td>
               </tr>
             ))}

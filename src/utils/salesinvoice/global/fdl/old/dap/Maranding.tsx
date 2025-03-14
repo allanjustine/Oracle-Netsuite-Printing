@@ -87,7 +87,7 @@ const Maranding: React.FC<PrintPageProps> = ({ data }) => {
                   {/* {FormattedNumber(row[unitPrice])} */}
                 </td>
                 <td className="w-[114.30371204px] h-[19.275590551px]">
-                  {FormattedNumber(row[totalAmount])}
+                  {FormattedNumber(row[rateInclusiveOfTax])}
                 </td>
               </tr>
             ))}
