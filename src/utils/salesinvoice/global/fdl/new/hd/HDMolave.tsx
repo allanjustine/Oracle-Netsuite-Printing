@@ -58,10 +58,10 @@ const HDMolave = ({ data }: any) => {
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 13).map((row: any, index: number) => (
-              <tr key={index} className="text-[10px] text-center">
+              <tr key={index} className="text-xs text-center">
                 <td
                   className={`w-[268.34645669px] ${
-                    row[articles]?.length > 41 ? "text-[7px]" : ""
+                    row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >
                   {row[articles]}
@@ -77,10 +77,10 @@ const HDMolave = ({ data }: any) => {
                 </td>
               </tr>
             ))}
-            <tr className="text-[10px] text-center">
+            <tr className="text-xs text-center">
               <td
                 className={`w-[268.34645669px] ${
-                  data[1]?.[serialNumber]?.length > 41 ? "text-[7px]" : ""
+                  data[1]?.[serialNumber]?.length > 41 ? "text-[10px]" : ""
                 }`}
               >
                 {data[1]?.[serialNumber] && (
@@ -91,10 +91,10 @@ const HDMolave = ({ data }: any) => {
               <td className="w-[83.149606299px] h-[19.275590551px]"></td>
               <td className="w-[105.82677165px] h-[19.275590551px]"></td>
             </tr>
-            <tr className="text-[10px] text-center">
+            <tr className="text-xs text-center">
               <td
                 className={`w-[268.34645669px] ${
-                  data[1]?.[chassisNumber]?.length > 41 ? "text-[7px]" : ""
+                  data[1]?.[chassisNumber]?.length > 41 ? "text-[10px]" : ""
                 }`}
               >
                 {data[1]?.[chassisNumber] && (
@@ -111,7 +111,7 @@ const HDMolave = ({ data }: any) => {
       <div className="mx-[34.393700787px] h-[126.99212598px]">
         <table className="border-collapse w-full">
           <tbody>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
               <td className="h-[19.275590551px] w-[185.57480315px] pl-[65.338582677px]">
                 {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
@@ -121,7 +121,7 @@ const HDMolave = ({ data }: any) => {
                 {FormattedSumTotal(data, totalSalesVatInclusive, 16)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
               <td className="h-[19.275590551px] w-[185.57480315px] pl-[65.338582677px]">
                 {/* {FormattedSumTotal(data, rateInclusiveVat, 16)} VAT EXEMPT SALES */}
@@ -133,7 +133,7 @@ const HDMolave = ({ data }: any) => {
                 0.00
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
               <td className="h-[19.275590551px] w-[185.57480315px] pl-[65.338582677px]">
                 {FormattedSumTotal(data, rateInclusiveVat, 16)}
@@ -143,7 +143,7 @@ const HDMolave = ({ data }: any) => {
                 {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
               <td className="h-[19.275590551px] w-[185.57480315px] pl-[65.338582677px]">
                 {FormattedSumTotal(data, vatAmount, 16)}
@@ -154,7 +154,7 @@ const HDMolave = ({ data }: any) => {
                 0.00
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
               <td className="h-[19.275590551px] w-[185.57480315px] pl-[65.338582677px]"></td>
               <td className="h-[19.275590551px] w-[132.66141732px]"></td>
@@ -162,7 +162,7 @@ const HDMolave = ({ data }: any) => {
                 {FormattedSumTotal(data, vatAmount2, 16)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
               <td className="h-[19.275590551px] w-[185.57480315px] pl-[65.338582677px]"></td>
               <td className="h-[19.275590551px] w-[132.66141732px]"></td>
@@ -171,7 +171,7 @@ const HDMolave = ({ data }: any) => {
                 0.00
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
               <td className="h-[19.275590551px] w-[185.57480315px] pl-[65.338582677px]"></td>
               <td className="h-[19.275590551px] w-[132.66141732px]"></td>
@@ -184,7 +184,7 @@ const HDMolave = ({ data }: any) => {
       </div>
       <div className="mx-[34.393700787px]">
         <div className="mt-[15.456692914px] ml-[7.5px] w-[340.15748031px]">
-          <p className="text-[10px] text-center">{data[1]?.[cashier] || ""}</p>
+          <p className="text-xs text-center">{data[1]?.[cashier] || ""}</p>
         </div>
       </div>
     </div>

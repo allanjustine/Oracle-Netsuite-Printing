@@ -66,14 +66,14 @@ const Consolacion = ({ data }: any) => {
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 16).map((row: any, index: any) => (
-              <tr key={index} className="text-[10px] text-center">
+              <tr key={index} className="text-xs text-center">
                 <td className="w-[53.291338583px]">{row[quantity]}</td>
                 <td className="w-[49.133858268px] h-[22.11023622px]">
                   {row[unitOfMeasurement]}
                 </td>
                 <td
                   className={`w-[285.73228346px] h-[22.11023622px] ${
-                    row[articles]?.length > 41 ? "text-[7px]" : ""
+                    row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >
                   {row[articles]}
@@ -86,12 +86,12 @@ const Consolacion = ({ data }: any) => {
                 </td>
               </tr>
             ))}
-            <tr className="text-[10px] text-center">
+            <tr className="text-xs text-center">
               <td className="w-[74.24071991px]"></td>
               <td className="w-[53.831271091px] h-[19.275590551px]"></td>
               <td
                 className={`w-[309.70528684px] h-[19.275590551px] ${
-                  data[1]?.[serialNumber]?.length > 41 ? "text-[7px]" : ""
+                  data[1]?.[serialNumber]?.length > 41 ? "text-[10px]" : ""
                 }`}
               >
                 {data[1]?.[serialNumber] && (
@@ -101,12 +101,12 @@ const Consolacion = ({ data }: any) => {
               <td className="w-[163.81552306px] h-[19.275590551px]"></td>
               <td className="w-[114.30371204px] h-[19.275590551px]"></td>
             </tr>
-            <tr className="text-[10px] text-center">
+            <tr className="text-xs text-center">
               <td className="w-[74.24071991px]"></td>
               <td className="w-[53.831271091px] h-[19.275590551px]"></td>
               <td
                 className={`w-[309.70528684px] h-[19.275590551px] ${
-                  data[1]?.[chassisNumber]?.length > 41 ? "text-[7px]" : ""
+                  data[1]?.[chassisNumber]?.length > 41 ? "text-[10px]" : ""
                 }`}
               >
                 {data[1]?.[chassisNumber] && (
@@ -122,7 +122,7 @@ const Consolacion = ({ data }: any) => {
       <div className="mx-[25.700787402px] h-[170.07874016px]">
         <table className="border-collapse w-full">
           <tbody>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3">
                 {FormattedSumTotal(data, totalSalesVatInclusive2, 15)}
@@ -130,7 +130,7 @@ const Consolacion = ({ data }: any) => {
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
               <td className="h-[22.11023622px] w-[96.755905512px] text-center"></td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3">
                 0.00
@@ -140,7 +140,7 @@ const Consolacion = ({ data }: any) => {
                 {FormattedSumTotal(data, totalSalesVatInclusive, 15)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3">
                 {FormattedSumTotal(data, rateInclusiveVat, 15)}
@@ -150,7 +150,7 @@ const Consolacion = ({ data }: any) => {
                 {FormattedSumTotal(data, vatAmount2, 15)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3">
                 {FormattedSumTotal(data, vatAmount, 15)}
@@ -161,7 +161,7 @@ const Consolacion = ({ data }: any) => {
                 0.00
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3"></td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
@@ -169,7 +169,7 @@ const Consolacion = ({ data }: any) => {
                 {FormattedSumTotal(data, totalSalesVatInclusive2, 15)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3"></td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
@@ -177,7 +177,7 @@ const Consolacion = ({ data }: any) => {
                 {FormattedSumTotal(data, vatAmount2, 15)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3"></td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
@@ -185,7 +185,7 @@ const Consolacion = ({ data }: any) => {
                 {FormattedSumTotal(data, vatAmount3, 15)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3"></td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
@@ -198,7 +198,7 @@ const Consolacion = ({ data }: any) => {
       </div>
       <div className="mx-[32.125984252px]">
         <div className="mt-[15.136220472px] w-[196.53543307px] ml-[336.37795276px]">
-          <p className="text-[10px] text-center">
+          <p className="text-xs text-center">
             {data[1]?.[cashier] || ""}
           </p>
         </div>

@@ -20,7 +20,7 @@ const DSMNorzagaray = ({ data }: any) => {
   return (
     <div className="text-xs h-[400.62992126px] w-[767.24409449px]">
       <div className="w-[120.94488189px] flex items-center mt-[83.9291338579px] ml-[602.83464567px] h-[21.921259843px]">
-        <p className="text-[10px] ml-[11.338582677px]">
+        <p className="text-xs ml-[11.338582677px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
@@ -49,7 +49,7 @@ const DSMNorzagaray = ({ data }: any) => {
           </p>
         </div>
         <div className="w-[120.56692913px]">
-          <p className="text-[10px] text-center h-[23.433070866px] ml-[7.5590551181px]">
+          <p className="text-xs text-center h-[23.433070866px] ml-[7.5590551181px]">
             {data[1]?.[CR_AmountInFigures] || (
               <span className="opacity-0">No data</span>
             )}

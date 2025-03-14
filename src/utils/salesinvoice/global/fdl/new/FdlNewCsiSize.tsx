@@ -61,10 +61,10 @@ const FdlNewCsiSize = ({ data }: any) => {
         <table className="border-collapse">
           <tbody>
             {data.slice(1, 13).map((row: any, index: number) => (
-              <tr key={index} className="text-[10px] text-center">
+              <tr key={index} className="text-xs text-center">
                 <td
                   className={`w-[268.72440945px] h-[18.897637795px] ${
-                    row[articles]?.length > 41 ? "text-[7px]" : ""
+                    row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >
                   {row[articles]}
@@ -78,10 +78,10 @@ const FdlNewCsiSize = ({ data }: any) => {
                 </td>
               </tr>
             ))}
-            <tr className="text-[10px] text-center">
+            <tr className="text-xs text-center">
               <td
                 className={`w-[268.72440945px] h-[18.897637795px] ${
-                  data[1]?.[serialNumber]?.length > 41 ? "text-[7px]" : ""
+                  data[1]?.[serialNumber]?.length > 41 ? "text-[10px]" : ""
                 }`}
               >
                 {data[1]?.[serialNumber] && (
@@ -92,10 +92,10 @@ const FdlNewCsiSize = ({ data }: any) => {
               <td className="w-[83.48976378px] h-[18.897637795px]"></td>
               <td className="w-[105.4488189px] h-[18.897637795px]"></td>
             </tr>
-            <tr className="text-[10px] text-center">
+            <tr className="text-xs text-center">
               <td
                 className={`w-[268.72440945px] h-[18.897637795px] ${
-                  data[1]?.[chassisNumber]?.length > 41 ? "text-[7px]" : ""
+                  data[1]?.[chassisNumber]?.length > 41 ? "text-[10px]" : ""
                 }`}
               >
                 {data[1]?.[chassisNumber] && (
@@ -112,7 +112,7 @@ const FdlNewCsiSize = ({ data }: any) => {
       <div className="mx-[37.795275591px] h-[132.28346457px]">
         <table className="border-collapse w-full">
           <tbody>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.897637795px] w-[162.51968504px]"></td>
               <td className="h-[18.897637795px] w-[106.96062992px] pl-[11.338582677px]">
                 {FormattedSumTotal(data, totalSalesVatInclusive2, 12)}
@@ -122,7 +122,7 @@ const FdlNewCsiSize = ({ data }: any) => {
                 {FormattedSumTotal(data, totalSalesVatInclusive, 12)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.897637795px] w-[162.51968504px]"></td>
               <td className="h-[18.897637795px] w-[106.96062992px] pl-[11.338582677px]">
                 {FormattedSumTotal(data, vatAmount, 12)}
@@ -133,7 +133,7 @@ const FdlNewCsiSize = ({ data }: any) => {
                 0.00
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.897637795px] w-[162.51968504px]"></td>
               <td className="h-[18.897637795px] w-[106.96062992px] pl-[11.338582677px]">
                 {FormattedSumTotal(data, rateInclusiveVat, 12)}
@@ -143,7 +143,7 @@ const FdlNewCsiSize = ({ data }: any) => {
                 {FormattedSumTotal(data, totalSalesVatInclusive2, 12)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.897637795px] w-[162.51968504px]"></td>
               <td className="h-[18.897637795px] w-[106.96062992px] pl-[11.338582677px]">
                 {/* {FormattedSumTotal(data, rateInclusiveVat, 12)} VAT EXEMPT SALES */}
@@ -155,7 +155,7 @@ const FdlNewCsiSize = ({ data }: any) => {
                 0.00
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.897637795px] w-[162.51968504px]"></td>
               <td className="h-[18.897637795px] w-[106.96062992px] pl-[11.338582677px]"></td>
               <td className="h-[18.897637795px] w-[159.11811024px]"></td>
@@ -163,7 +163,7 @@ const FdlNewCsiSize = ({ data }: any) => {
                 {FormattedSumTotal(data, vatAmount2, 12)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.897637795px] w-[162.51968504px]"></td>
               <td className="h-[18.897637795px] w-[106.96062992px] pl-[11.338582677px]"></td>
               <td className="h-[18.897637795px] w-[159.11811024px]"></td>
@@ -172,7 +172,7 @@ const FdlNewCsiSize = ({ data }: any) => {
                 0.00
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.897637795px] w-[162.51968504px]"></td>
               <td className="h-[18.897637795px] w-[106.96062992px] pl-[11.338582677px]"></td>
               <td className="h-[18.897637795px] w-[159.11811024px]"></td>
@@ -185,7 +185,7 @@ const FdlNewCsiSize = ({ data }: any) => {
       </div>
       <div className="w-[610.39370079px]">
         <div className="mt-[15.897637795px] ml-[192.75590551px] w-[154.96062992px]">
-          <p className="text-[10px] text-center">
+          <p className="text-xs text-center">
             {data[1]?.[cashier] || ""}
           </p>
         </div>

@@ -45,12 +45,12 @@ const Size1SalesOld: React.FC<PrintPageProps> = ({ data }) => {
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 11).map((row, index) => (
-              <tr key={index} className="text-[10px] text-center">
+              <tr key={index} className="text-xs text-center">
                 <td className="w-[72px] h-[19px]">{row[10]}</td>
                 <td className="w-[53px] h-[19px]">{row[11]}</td>
                 <td
                   className={`w-[238.1px] h-[19px] ${
-                    row[9]?.length > 41 ? "text-[7px]" : ""
+                    row[9]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >
                   {row[9]}
@@ -65,43 +65,43 @@ const Size1SalesOld: React.FC<PrintPageProps> = ({ data }) => {
       <div className="mx-[26.4px] h-[136px]">
         <table className="border-collapse w-full">
           <tbody>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[19px] w-[125px]"></td>
               <td className="h-[19px] w-[181.4px]">PHP0.00</td>
               <td className="h-[19px] w-[136.1px]"></td>
               <td className="h-[19px] w-[98.3px]">PHP142,857.14</td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[19px] w-[125px]"></td>
               <td className="h-[19px] w-[181.4px]">PHP0.00</td>
               <td className="h-[19px] w-[136.1px]"></td>
               <td className="h-[19px] w-[98.3px]">17,142.86</td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[19px] w-[125px]"></td>
               <td className="h-[19px] w-[181.4px]">PHP0.00</td>
               <td className="h-[19px] w-[136.1px]"></td>
               <td className="h-[19px] w-[98.3px]"></td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[19px] w-[125px]"></td>
               <td className="h-[19px] w-[181.4px]">PHP17,142.86</td>
               <td className="h-[19px] w-[136.1px]"></td>
               <td className="h-[19px] w-[98.3px]"></td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[19px] w-[125px]"></td>
               <td className="h-[19px] w-[181.4px]"></td>
               <td className="h-[19px] w-[136.1px]"></td>
               <td className="h-[19px] w-[98.3px]">PHP160,000.00</td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[19px] w-[125px]"></td>
               <td className="h-[19px] w-[181.4px]"></td>
               <td className="h-[19px] w-[136.1px]"></td>
               <td className="h-[19px] w-[98.3px]"></td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[19px] w-[125px]"></td>
               <td className="h-[19px] w-[181.4px]"></td>
               <td className="h-[19px] w-[136.1px]"></td>

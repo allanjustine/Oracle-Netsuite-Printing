@@ -33,7 +33,7 @@ const LuzonSize: React.FC<PrintPageProps> = ({ data }) => {
         </div>
       </div>
       <div className="flex mt-[9.8267716539px]">
-        <p className={`${data[1]?.[CR_Address].length > 28 ? 'text-[10px]' : ''} ml-[272.12598425px] w-[204.09448819px]`}>
+        <p className={`${data[1]?.[CR_Address].length > 28 ? 'text-xs' : ''} ml-[272.12598425px] w-[204.09448819px]`}>
           {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
         </p>
       </div>

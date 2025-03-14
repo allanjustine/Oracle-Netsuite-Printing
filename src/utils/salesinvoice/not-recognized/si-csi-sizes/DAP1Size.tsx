@@ -75,7 +75,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
                 </td>
                 <td
                   className={`w-[309.70528684px] h-[19.275590551px] text-start ${
-                    row[articles]?.length > 41 ? "text-[10px]" : ""
+                    row[articles]?.length > 41 ? "text-xs" : ""
                   }`}
                 >
                   {row[articles]}
@@ -94,7 +94,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
                 <td className="w-[53.831271091px] h-[19.275590551px]"></td>
                 <td
                   className={`w-[309.70528684px] h-[19.275590551px] text-start ${
-                    data[1]?.[serialNumber]?.length > 25 ? "text-[10px]" : ""
+                    data[1]?.[serialNumber]?.length > 25 ? "text-xs" : ""
                   }`}
                 >
                   {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
@@ -113,7 +113,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
                 <td className="w-[53.831271091px] h-[19.275590551px]"></td>
                 <td
                   className={`w-[309.70528684px] h-[19.275590551px] text-start ${
-                    data[1]?.[chassisNumber]?.length > 25 ? "text-[10px]" : ""
+                    data[1]?.[chassisNumber]?.length > 25 ? "text-xs" : ""
                   }`}
                 >
                   {data[1]?.[chassisNumber] && (
@@ -131,7 +131,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
                 <td
                   className={`w-[309.70528684px] h-[19.275590551px] text-start ${
                     data[1]?.[conductionSticker]?.length > 25
-                      ? "text-[10px]"
+                      ? "text-xs"
                       : ""
                   }`}
                 >
@@ -149,7 +149,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
                 <td className="w-[53.831271091px] h-[19.275590551px]"></td>
                 <td
                   className={`w-[309.70528684px] h-[19.275590551px] text-start ${
-                    data[1]?.[color]?.length > 25 ? "text-[10px]" : ""
+                    data[1]?.[color]?.length > 25 ? "text-xs" : ""
                   }`}
                 >
                   {data[1]?.[color] && <>Color: {data[1]?.[color]}</>}

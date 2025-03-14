@@ -48,7 +48,7 @@ const Size6Sales: React.FC<PrintPageProps> = ({ data }) => {
               <tr key={index} className="text-xs text-center">
                 <td
                   className={`w-[253.22px] ${
-                    row[9]?.length > 46 ? "text-[7px]" : ""
+                    row[9]?.length > 46 ? "text-[10px]" : ""
                   }`}
                 >
                   {row[9]}

@@ -72,7 +72,7 @@ const ObbusOldCsiSize = ({ data }: any) => {
                 </td>
                 <td
                   className={`w-[285.73228346px] h-[22.11023622px] text-start ${
-                    row[articles]?.length > 41 ? "text-[10px]" : ""
+                    row[articles]?.length > 41 ? "text-xs" : ""
                   }`}
                 >
                   {row[articles]}
@@ -91,7 +91,7 @@ const ObbusOldCsiSize = ({ data }: any) => {
                 <td className="w-[49.133858268px] h-[22.11023622px]"></td>
                 <td
                   className={`w-[285.73228346px] h-[22.11023622px] text-start ${
-                    data[1]?.[serialNumber]?.length > 30 ? "text-[10px]" : ""
+                    data[1]?.[serialNumber]?.length > 30 ? "text-xs" : ""
                   }`}
                 >
                   {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
@@ -110,7 +110,7 @@ const ObbusOldCsiSize = ({ data }: any) => {
                 <td className="w-[49.133858268px] h-[22.11023622px]"></td>
                 <td
                   className={`w-[285.73228346px] h-[22.11023622px] text-start ${
-                    data[1]?.[chassisNumber]?.length > 30 ? "text-[10px]" : ""
+                    data[1]?.[chassisNumber]?.length > 30 ? "text-xs" : ""
                   }`}
                 >
                   {data[1]?.[chassisNumber] && (
@@ -128,7 +128,7 @@ const ObbusOldCsiSize = ({ data }: any) => {
                 <td
                   className={`w-[285.73228346px] h-[22.11023622px] text-start ${
                     data[1]?.[conductionSticker]?.length > 30
-                      ? "text-[10px]"
+                      ? "text-xs"
                       : ""
                   }`}
                 >
@@ -146,7 +146,7 @@ const ObbusOldCsiSize = ({ data }: any) => {
                 <td className="w-[49.133858268px] h-[22.11023622px]"></td>
                 <td
                   className={`w-[285.73228346px] h-[22.11023622px] text-start ${
-                    data[1]?.[color]?.length > 30 ? "text-[10px]" : ""
+                    data[1]?.[color]?.length > 30 ? "text-xs" : ""
                   }`}
                 >
                   {data[1]?.[color] && <>Color: {data[1]?.[color]}</>}
@@ -161,7 +161,7 @@ const ObbusOldCsiSize = ({ data }: any) => {
       <div className="mx-[25.700787402px] h-[170.07874016px]">
         <table className="border-collapse w-full">
           <tbody>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3">
                 {FormattedSumTotal(data, totalSalesVatExclusive2, 15)}
@@ -169,7 +169,7 @@ const ObbusOldCsiSize = ({ data }: any) => {
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
               <td className="h-[22.11023622px] w-[96.755905512px] text-center"></td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3">
                 0.00
@@ -179,7 +179,7 @@ const ObbusOldCsiSize = ({ data }: any) => {
                 {FormattedSumTotal(data, totalSalesVatInclusive, 15)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3">
                 0.00
@@ -189,7 +189,7 @@ const ObbusOldCsiSize = ({ data }: any) => {
                 {FormattedSumTotal(data, vatAmount2, 15)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3">
                 {FormattedSumTotal(data, vatAmount, 15)}
@@ -199,7 +199,7 @@ const ObbusOldCsiSize = ({ data }: any) => {
                 {FormattedSumTotal(data, totalSalesVatExclusive2, 5)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3"></td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
@@ -207,7 +207,7 @@ const ObbusOldCsiSize = ({ data }: any) => {
                 0.00
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3"></td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
@@ -215,7 +215,7 @@ const ObbusOldCsiSize = ({ data }: any) => {
                 {FormattedSumTotal(data, totalSalesVatExclusive, 15)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3"></td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
@@ -223,7 +223,7 @@ const ObbusOldCsiSize = ({ data }: any) => {
                 {FormattedSumTotal(data, vatAmount3, 15)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3"></td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
@@ -236,7 +236,7 @@ const ObbusOldCsiSize = ({ data }: any) => {
       </div>
       <div className="mx-[32.125984252px]">
         <div className="mt-[15.136220472px] w-[196.53543307px] ml-[336.37795276px]">
-          <p className="text-[10px] text-center">{data[1]?.[cashier] || ""}</p>
+          <p className="text-xs text-center">{data[1]?.[cashier] || ""}</p>
         </div>
       </div>
     </div>
