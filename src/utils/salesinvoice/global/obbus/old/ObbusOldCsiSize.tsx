@@ -33,7 +33,7 @@ const ObbusOldCsiSize = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[795.59055118px] w-[616.06299213px]">
-      <div className="flex h-[15.458267717px] mt-[135.503937007px]">
+      <div className="flex h-[15.458267717px] mt-[131.503937007px]">
         <p className="w-[402.51968504px] ml-[86.929133858px]">
           {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
         </p>
