@@ -135,9 +135,10 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "DASMA",
     "GUIN",
     "SARG",
+    "DSMB",
   ];
 
-  const dapCsiSizeData = ["DIPD", "JIME", "MANO", "MARA2",];
+  const dapCsiSizeData = ["DIPD", "JIME", "MANO", "MARA2"];
 
   const DSMSISizeData = [""];
 
@@ -255,7 +256,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   // BJV
   const bjvCsiNewSizeData = [];
 
-  const bjvCSiOldSizeData = ["INAB", "CARMB", "LOAY", "JAGN", "TRINI","ALIC"];
+  const bjvCSiOldSizeData = ["INAB", "CARMB", "LOAY", "JAGN", "TRINI", "ALIC"];
 
   const bjvSiNewSizeData = [];
 
@@ -431,15 +432,15 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     case "AURO" === user?.branchCode:
       return <DSMAurora data={data} />;
     case "SALA" === user?.branchCode:
-      return <SMCTAlano data={data} />;  //CSI
+      return <SMCTAlano data={data} />; //CSI
     case "OZAD" === user?.branchCode:
       return <DAPOzamiz data={data} />;
     case "NAIC" === user?.branchCode:
-      return <SMCTNaic data={data} />;   //CSI LANDSCAPE
+      return <SMCTNaic data={data} />; //CSI LANDSCAPE
     case "SROS" === user?.branchCode:
       return <SMCTRosario data={data} />;
     case "PAGS" === user?.branchCode:
-    return <SMCTPagsanjan data={data} />;   //CSI LANDSCAPE
+      return <SMCTPagsanjan data={data} />; //CSI LANDSCAPE
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
