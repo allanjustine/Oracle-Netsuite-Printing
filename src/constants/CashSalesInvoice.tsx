@@ -135,7 +135,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "DASMA",
     "GUIN",
     "SARG",
-    "ANTI"
+    "ANTI",
     "DSMB",
   ];
 
