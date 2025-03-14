@@ -96,7 +96,7 @@ import FelyOldSiSize from "@/utils/salesinvoice/global/fely/old/FelyOldSiSize";
 import BjvOldCsiSize from "@/utils/salesinvoice/global/bjv/old/BjvOldCsiSize";
 import SMCTAlano from "@/utils/salesinvoice/global/fdl/old/smct/SMCTAlano";
 import DAPOzamiz from "@/utils/salesinvoice/global/fdl/old/dap/DAPOzamiz";
-import SMCTNaic from "@/utils/salesinvoice/global/fdl/old/smct/SMCTNaic";
+import SMCTNaic from "@/utils/salesinvoice/global/obbus/old/smct/SMCTNaic";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
