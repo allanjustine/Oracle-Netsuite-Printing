@@ -34,7 +34,7 @@ const BjvOldCrSize: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="flex mt-[6.8267716539px]">
         <p className="pl-[313.7007874px]">
-          {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
+          {data[1]?.[CR_Address]?.replace(/<br>/g, " ") || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex mt-[3.8267716539px]">
