@@ -78,6 +78,7 @@ import FelyOldOrSize from "@/utils/official-receipt/global/fely/old/FelyOldOrSiz
 import BjvOldCrSize from "@/utils/collectionreceipt/global/bjv/old/BjvOldCrSize";
 import CelroseOldCrSize from "@/utils/collectionreceipt/global/celrose/old/CelroseOldCrSize";
 import ObbusNewCrSize from "@/utils/collectionreceipt/global/obbus/new/ObbusNewCrSize";
+import HDInabanga from "@/utils/collectionreceipt/global/bjv/old/HDInabanga";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -260,7 +261,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const bjvCrOldSizeData = [
     // "UBAY",
-    "INAB",
+    "",
   ];
 
   // CELROSE
@@ -429,6 +430,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <HDBalamban data={data} />; //OR
     case "AURO" === user?.branchCode:
       return <DSMAurora data={data} />; //OR
+    case "INAB" === user?.branchCode:
+      return <HDInabanga data={data} />; //OR
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">

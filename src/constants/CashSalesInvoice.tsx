@@ -99,6 +99,7 @@ import DAPOzamiz from "@/utils/salesinvoice/global/fdl/old/dap/DAPOzamiz";
 import SMCTNaic from "@/utils/salesinvoice/global/fely/old/smct/SMCTNaic";
 import SMCTRosario from "@/utils/salesinvoice/global/fely/old/smct/SMCTRosario";
 import SMCTPagsanjan from "@/utils/salesinvoice/global/fely/old/smct/SMCTPagsanjan";
+import HDInabanga from "@/utils/salesinvoice/global/bjv/old/hd/HDInabanga";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -257,7 +258,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   // BJV
   const bjvCsiNewSizeData = [];
 
-  const bjvCSiOldSizeData = ["INAB", "CARMB", "LOAY", "JAGN", "TRINI", "ALIC"];
+  const bjvCSiOldSizeData = ["CARMB", "LOAY", "JAGN", "TRINI", "ALIC"];
 
   const bjvSiNewSizeData = [];
 
@@ -444,6 +445,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTRosario data={data} />;
     case "PAGS" === user?.branchCode:
       return <SMCTPagsanjan data={data} />; //CSI LANDSCAPE
+    case "INAB" === user?.branchCode:
+      return <HDInabanga data={data} />; //CSI LANDSCAPE
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
