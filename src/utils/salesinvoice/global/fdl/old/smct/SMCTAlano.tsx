@@ -36,7 +36,7 @@ const SMCTAlano = ({ data }: any) => {
     <div className="text-xs h-[745.32283465px] w-[589.60629921px]">
       <div className="flex h-[20.787401575px] mt-[111.1181102406px]">
         <p className="w-[374.17322835px] pl-[98.267716535px]">
-          {data[1]?.[mainLineName] || <span className="opacity-0">No data</span>}
+          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || <span className="opacity-0">No data</span>}
         </p>
         <p className="w-[215.43307087px] pl-[56.692913386px]">
           {data[1]?.[date] || <span className="opacity-0">No data</span>}
@@ -192,7 +192,7 @@ const SMCTAlano = ({ data }: any) => {
       <div className="mx-[30.236220472px]">
         <div className="mt-[24.456692914px] ml-[332.976377952px]">
           <p className="text-xs text-center">
-            {data[1]?.[cashier] || ""}
+            {data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
           </p>
         </div>
       </div>

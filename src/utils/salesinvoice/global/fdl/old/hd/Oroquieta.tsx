@@ -36,7 +36,7 @@ const Oroquieta = ({ data }: any) => {
     <div className="text-xs h-[771.02362205px] w-[593.38582677px]">
       <div className="flex h-[19.409448819px] mt-[128.23622048px]"> { /* mt-118.6771653587 */}
         <p className="w-[376.06299213px] pl-[94.488188976px]">
-          {data[1]?.[mainLineName] || ""}
+          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
         </p>
         <p className="w-[219.21259843px] pl-[60.472440945px]">
           {data[1]?.[date] || ""}
@@ -201,7 +201,7 @@ const Oroquieta = ({ data }: any) => {
       <div className="mx-[34.393700787px]">
         <div className="mt-[26.456692914px] ml-[332.976377952px]">
           <p className="text-xs text-center">
-            {data[1]?.[cashier] || ""}
+            {data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
           </p>
         </div>
       </div>

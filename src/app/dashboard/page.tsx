@@ -314,7 +314,7 @@ export default function Page() {
 
       setExcelData(stringData);
 
-      if (stringData[0]?.length <= 10) {
+      if (stringData[0]?.length <= 11) {
         setIsPrintCr(true);
       } else {
         setIsPrintCr(false);
@@ -568,7 +568,7 @@ export default function Page() {
           <div className="text-blue-500 flex justify-center items-center h-32">
             <FaCircleNotch size={50} className="animate-spin" />
           </div>
-        ) : excelData && excelData[0]?.length > 10 ? (
+        ) : excelData && excelData[0]?.length > 11 ? (
           excelData.slice(1).map((row, rowIndex, array) => (
             <div key={rowIndex} className="relative">
               <button
@@ -600,7 +600,7 @@ export default function Page() {
                   <div className="flex flex-col">
                     <p>Mainline Name</p>
                     <p className="font-semibold">
-                      {row[mainLineName] || "N/A"}
+                      {row[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || "N/A"}
                     </p>
                   </div>
                   <div className="flex flex-col">
@@ -615,7 +615,7 @@ export default function Page() {
                   </div>
                   <div className="flex flex-col">
                     <p>Cashier</p>
-                    <p className="font-semibold">{row[cashier] || "N/A"}</p>
+                    <p className="font-semibold">{row[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || "N/A"}</p>
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
@@ -758,7 +758,7 @@ export default function Page() {
               />
             </div>
           ))
-        ) : excelData && excelData[0]?.length === 10 ? (
+        ) : excelData && excelData[0]?.length === 11 ? (
           excelData.slice(1).map((row, rowIndex, array) => (
             <div key={rowIndex} className="relative">
               <button
