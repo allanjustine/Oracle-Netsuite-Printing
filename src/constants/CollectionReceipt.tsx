@@ -85,26 +85,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const luzonSizeData = [""];
 
-  const HondaDESSizeData = [
-    //"AURH",
-    //"BALAM",
-    //"BUUH",
-    //"CALIN",
-    // "BUUH",
-    //"CAMH",
-    //"CARMC",
-    //"DATH",
-    //"DSML",
-    // "GUSA",
-    ///"PARD3",
-    // "TRINI",
-    //"SDIP",
-    // "KABA",
-    //"MARH",
-    //"SINDA",
-    "SMCT",
-    //"VETH",
-  ];
+  const HondaDESSizeData = [""];
 
   const DAPSizeData = [
     "CAMD",
@@ -208,6 +189,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "BANTA",
     "CALAP",
     "SALA",
+    "SMCT",
   ];
 
   const fdlOrNewSizeData = [];
