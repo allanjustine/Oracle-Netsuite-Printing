@@ -265,7 +265,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const ajdOrNewSizeData = [];
 
-  const ajdOrOldSizeData = ["PARD"];
+  const ajdOrOldSizeData = ["PARD", "MARA"];
 
   // BJV
   const bjvCrNewSizeData = [];

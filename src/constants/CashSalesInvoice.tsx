@@ -100,6 +100,7 @@ import SMCTNaic from "@/utils/salesinvoice/global/fely/old/smct/SMCTNaic";
 import SMCTRosario from "@/utils/salesinvoice/global/fely/old/smct/SMCTRosario";
 import SMCTPagsanjan from "@/utils/salesinvoice/global/fely/old/smct/SMCTPagsanjan";
 import HDInabanga from "@/utils/salesinvoice/global/bjv/old/hd/HDInabanga";
+import SMCTGuindulman1 from "@/utils/salesinvoice/global/bjv/old/smct/SMCTGuindulman1";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -134,7 +135,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "TRINI2",
     "MOLS",
     "DASMA",
-    "GUIN",
     "SARG",
     "ANTI",
     "DSMB",
@@ -186,6 +186,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "YATI",
     "MARA2",
     "DONC",
+    "MARA",
   ];
 
   const fdlSiNewSizeData = [
@@ -459,6 +460,9 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTPagsanjan data={data} />; //CSI LANDSCAPE
     case "INAB" === user?.branchCode:
       return <HDInabanga data={data} />; //CSI LANDSCAPE
+    case "GUIN" === user?.branchCode:
+      return <SMCTGuindulman1 data={data} />; 
+    
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
