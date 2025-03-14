@@ -67,7 +67,7 @@ const LuzonSize: React.FC<PrintPageProps> = ({ data }) => {
             <tbody>
               {data.slice(1, 6).map((row, index) => (
                 <tr key={index} className="text-xs text-center">
-                  <td className="w-[75.212598425px]">{row[quantity].replace(/.0$/, "")}</td>
+                  <td className="w-[75.212598425px]">{row[quantity]?.replace(/.0$/, "")}</td>
                   <td className="w-[75.968503937px] h-[18.822047244px]">
                     {row[unitOfMeasurement]}
                   </td>

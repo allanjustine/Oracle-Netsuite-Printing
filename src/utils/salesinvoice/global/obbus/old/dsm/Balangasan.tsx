@@ -76,7 +76,7 @@ const Balangasan = ({ data }: any) => {
           <tbody>
             {data.slice(1, 16).map((row: any, index: any) => (
               <tr key={index} className="text-xs text-center">
-                <td className="w-[53.291338583px]">{row[quantity].replace(/.0$/, "")}</td>
+                <td className="w-[53.291338583px]">{row[quantity]?.replace(/.0$/, "")}</td>
                 <td className="w-[49.133858268px] h-[22.11023622px]">
                   {row[unitOfMeasurement]}
                 </td>

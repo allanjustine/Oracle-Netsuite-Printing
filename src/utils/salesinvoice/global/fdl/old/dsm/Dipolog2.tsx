@@ -72,7 +72,7 @@ const Dipolog2 = ({ data }: any) => {
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
               <tr key={index} className="text-xs text-center">
-                <td className="w-[69.165354331px]">{row[quantity].replace(/.0$/, "")}</td>
+                <td className="w-[69.165354331px]">{row[quantity]?.replace(/.0$/, "")}</td>
                 <td className="w-[56.692913386px] h-[19.275590551px]">
                   {row[unitOfMeasurement]}
                 </td>

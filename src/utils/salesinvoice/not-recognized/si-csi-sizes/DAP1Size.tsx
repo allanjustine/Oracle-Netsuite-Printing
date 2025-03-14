@@ -34,7 +34,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
 
   return (
     <div className="text-sm h-[506.45669291px] w-[767.24409449px]">
-      <div className="flex h-[17.007874016px] mt-[124.34645669px]">
+      <div className="flex h-[17.007874016px] mt-[119.34645669px]">
         <p className="w-[528.66141732px] pl-[147.4015748px]">
           {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
         </p>
@@ -69,7 +69,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
           <tbody>
             {data.slice(1, 4).map((row, index) => (
               <tr key={index} className="text-sm text-center">
-                <td className="w-[74.24071991px]">{row[quantity].replace(/.0$/, "")}</td>
+                <td className="w-[74.24071991px]">{row[quantity]?.replace(/.0$/, "")}</td>
                 <td className="w-[53.831271091px] h-[19.275590551px]">
                   {row[unitOfMeasurement]}
                 </td>

@@ -645,7 +645,7 @@ export default function Page() {
                   </div>
                   <div className="flex flex-col">
                     <p>Quantity</p>
-                    <p className="font-semibold">{row[quantity].replace(/.0$/, "") || "N/A"}</p>
+                    <p className="font-semibold">{row[quantity]?.replace(/.0$/, "") || "N/A"}</p>
                   </div>
                   <div className="flex flex-col">
                     <p>Unit of Measurement</p>
