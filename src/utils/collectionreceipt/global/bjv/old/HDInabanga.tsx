@@ -14,7 +14,7 @@ const HDInabanga: React.FC<PrintPageProps> = ({ data }) => {
   const CR_PartnerName = 9;
 
   return (
-    <div className="text-xs w-[812.5984252px] h-[425.19685039px]">
+    <div className="text-xs w-[818.26771654px] h-[425.19685039px]">
       <div className="flex mt-[95.1732283431px]">
         <p className="pl-[620.07874016px] w-[143.62204724px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
