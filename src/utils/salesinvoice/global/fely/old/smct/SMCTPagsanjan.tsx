@@ -3,7 +3,7 @@ import { PrintPageProps } from "@/types/types";
 import FormattedNumber from "@/utils/FormattedNumber";
 import FormattedSumTotal from "@/utils/FormattedSumTotal";
 
-const SMCTNaic: React.FC<PrintPageProps> = ({ data }) => {
+const SMCTPagsanjan: React.FC<PrintPageProps> = ({ data }) => {
   const mainLineName = 0;
   const date = 1;
   const taxNumber = 2;
@@ -209,4 +209,4 @@ const SMCTNaic: React.FC<PrintPageProps> = ({ data }) => {
   );
 };
 
-export default SMCTNaic;
+export default SMCTPagsanjan;
