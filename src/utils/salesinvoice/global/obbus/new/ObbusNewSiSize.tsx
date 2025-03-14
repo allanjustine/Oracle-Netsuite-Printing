@@ -70,7 +70,7 @@ const ObbusNewSiSize = ({ data }: any) => {
                 >
                   {row[articles]}
                 </td>
-                <td className="w-[71.05511811px]">{row[quantity]}</td>
+                <td className="w-[71.05511811px]">{row[quantity].replace(/.0$/, "")}</td>
                 <td className="w-[77.480314961px] h-[18.141732283px]">
                   {/* {FormattedNumber(row[unitPrice])} */}
                 </td>

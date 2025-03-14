@@ -72,7 +72,7 @@ const HDInitao = ({ data }: any) => {
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
               <tr key={index} className="text-xs text-center">
-                <td className="w-[71.811023622px]">{row[quantity]}</td>
+                <td className="w-[71.811023622px]">{row[quantity].replace(/.0$/, "")}</td>
                 <td className="w-[62.362204724px] h-[19.275590551px]">
                   {row[unitOfMeasurement]}
                 </td>

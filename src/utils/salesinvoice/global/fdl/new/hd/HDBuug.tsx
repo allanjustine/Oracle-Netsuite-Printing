@@ -68,7 +68,7 @@ const HDBuug = ({ data }: any) => {
                   {row[articles]}
                 </td>
                 <td className="w-[75.5905511811px] h-[19.275590551px]">
-                  {row[quantity]}
+                  {row[quantity].replace(/.0$/, "")}
                 </td>
                 <td className="w-[83.149606299px] h-[19.275590551px]">
                   {/* {FormattedNumber(row[unitPrice])} */}

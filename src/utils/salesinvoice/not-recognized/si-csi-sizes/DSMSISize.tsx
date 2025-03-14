@@ -70,7 +70,7 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
           <tbody>
             {data.slice(1, 6).map((row, index) => (
               <tr key={index} className="text-xs text-center">
-                <td className="w-[75.590551181px]">{row[quantity]}</td>
+                <td className="w-[75.590551181px]">{row[quantity].replace(/.0$/, "")}</td>
                 <td className="w-[75.590551181px] h-[18.141732283px]">
                   {row[unitOfMeasurement]}
                 </td>
