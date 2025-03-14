@@ -210,6 +210,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "TORI",
     "MEDE",
     "CALI",
+    "DONC",
   ];
 
   const obbusOrNewSizeData = [];
