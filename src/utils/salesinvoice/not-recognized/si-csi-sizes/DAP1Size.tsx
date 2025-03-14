@@ -69,7 +69,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
           <tbody>
             {data.slice(1, 4).map((row, index) => (
               <tr key={index} className="text-sm text-center">
-                <td className="w-[74.24071991px]">{row[quantity].replace(/.0$/, "")}</td>
+                <td className="w-[74.24071991px]">{row[quantity]?.replace(/.0$/, "")}</td>
                 <td className="w-[53.831271091px] h-[19.275590551px]">
                   {row[unitOfMeasurement]}
                 </td>

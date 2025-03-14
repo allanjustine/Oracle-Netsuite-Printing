@@ -66,7 +66,7 @@ const HDVillanueva: React.FC<PrintPageProps> = ({ data }) => {
           <tbody>
             {data.slice(1, 17).map((row, index) => (
               <tr key={index} className="text-xs text-center">
-                <td className="w-[71.433070866px]">{row[quantity].replace(/.0$/, "")}</td>
+                <td className="w-[71.433070866px]">{row[quantity]?.replace(/.0$/, "")}</td>
                 <td className="w-[56.31496063px] h-[18.275590551px]">
                   {row[unitOfMeasurement]}
                 </td>

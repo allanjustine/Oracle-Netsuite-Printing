@@ -72,7 +72,7 @@ const FdlOldCsiSize = ({ data }: any) => {
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
               <tr key={index} className="text-xs text-center">
-                <td className="w-[71.811023622px]">{row[quantity].replace(/.0$/, "")}</td>
+                <td className="w-[71.811023622px]">{row[quantity]?.replace(/.0$/, "")}</td>
                 <td className="w-[58.582677165px] h-[18.897637795px] pl-4">
                   {row[unitOfMeasurement]}
                 </td>
