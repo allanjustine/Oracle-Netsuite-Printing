@@ -13,7 +13,7 @@ const BjvOldOrSize = ({ data }: any) => {
   const CR_PartnerName = 9;
 
   return (
-    <div className="text-xs w-[755.90551181px] h-[404.03149606px] ml-[10px]">
+    <div className="text-xs w-[755.90551181px] h-[404.03149606px] ml-[18px]">
       <div className="flex mt-[82.488188976px]">
         <p className="ml-[585.82677165px] w-[147.4015748px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
@@ -33,7 +33,7 @@ const BjvOldOrSize = ({ data }: any) => {
       </div>
       <div className="flex ml-[302.36220472px] mt-[9.8267716539px]">
         <p className="w-[362.83464567px] text-[11px]">
-          {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
+          {data[1]?.[CR_Address]?.replace(/<br>/g, " ") || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex mt-[6.8267716539px] w-[755.90551181px]">
