@@ -98,6 +98,7 @@ import SMCTAlano from "@/utils/salesinvoice/global/fdl/old/smct/SMCTAlano";
 import DAPOzamiz from "@/utils/salesinvoice/global/fdl/old/dap/DAPOzamiz";
 import SMCTNaic from "@/utils/salesinvoice/global/fely/old/smct/SMCTNaic";
 import SMCTRosario from "@/utils/salesinvoice/global/fely/old/smct/SMCTRosario";
+import SMCTPagsanjan from "@/utils/salesinvoice/global/fely/old/smct/SMCTPagsanjan";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -238,8 +239,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const felyCsiNewSizeData = [];
 
   const felyCsiOldSizeData = ["FAMY", "SILA"];
-
-  const felyLandscapeCsiOldSizeData = ["PAGS"];
 
   const felySiNewSizeData = [];
 
@@ -440,6 +439,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTNaic data={data} />;   //CSI LANDSCAPE
     case "SROS" === user?.branchCode:
       return <SMCTRosario data={data} />;
+    case "PAGS" === user?.branchCode:
+    return <SMCTPagsanjan data={data} />;   //CSI LANDSCAPE
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
