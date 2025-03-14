@@ -33,7 +33,7 @@ const FdlOldCsiSize = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[793.7007874px] w-[608.50393701px]">
-      <div className="flex h-[19.409448819px] mt-[18.0078740201px]">
+      <div className="flex h-[19.409448819px] mt-[118.0078740201px]">
         <p className="w-[391.18110236px] pl-[95.82677165px]">
           {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
         </p>
