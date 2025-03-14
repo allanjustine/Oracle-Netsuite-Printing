@@ -43,7 +43,6 @@ const Bulua = ({ data }: any) => {
       </div>
       <div className="flex h-[15.458267717px]">
         <p className="w-[402.51968504px] ml-[86.929133858px]">
-          
           <span className="opacity-0">No Data</span>
         </p>
         <p className="w-[215.43307087px] ml-[41.57480315px]"></p>
@@ -86,36 +85,74 @@ const Bulua = ({ data }: any) => {
                 </td>
               </tr>
             ))}
-            <tr className="text-xs text-center">
-              <td className="w-[74.24071991px]"></td>
-              <td className="w-[53.831271091px] h-[19.275590551px]"></td>
-              <td
-                className={`w-[309.70528684px] h-[19.275590551px] ${
-                  data[1]?.[serialNumber]?.length > 41 ? "text-[10px]" : ""
-                }`}
-              >
-                {data[1]?.[serialNumber] && (
-                  <>Engine #: {data[1]?.[serialNumber]}</>
-                )}
-              </td>
-              <td className="w-[163.81552306px] h-[19.275590551px]"></td>
-              <td className="w-[114.30371204px] h-[19.275590551px]"></td>
-            </tr>
-            <tr className="text-xs text-center">
-              <td className="w-[74.24071991px]"></td>
-              <td className="w-[53.831271091px] h-[19.275590551px]"></td>
-              <td
-                className={`w-[309.70528684px] h-[19.275590551px] ${
-                  data[1]?.[chassisNumber]?.length > 41 ? "text-[10px]" : ""
-                }`}
-              >
-                {data[1]?.[chassisNumber] && (
-                  <>Chassis #: {data[1]?.[chassisNumber]}</>
-                )}
-              </td>
-              <td className="w-[163.81552306px] h-[19.275590551px]"></td>
-              <td className="w-[114.30371204px] h-[19.275590551px]"></td>
-            </tr>
+            {data[1]?.[serialNumber] && (
+              <tr className="text-xs text-center">
+                <td className="w-[53.291338583px]"></td>
+                <td className="w-[49.133858268px] h-[22.11023622px]"></td>
+                <td
+                  className={`w-[285.73228346px] h-[22.11023622px] text-start ${
+                    data[1]?.[serialNumber]?.length > 30 ? "text-xs" : ""
+                  }`}
+                >
+                  {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
+                    <>Engine #: {data[1]?.[serialNumber]}</>
+                  ) : (
+                    <>Serial #: {data[1]?.[serialNumber]}</>
+                  )}
+                </td>
+                <td className="w-[72.188976378px] h-[22.11023622px]"></td>
+                <td className="w-[95.244094488px] h-[22.11023622px]"></td>
+              </tr>
+            )}
+            {data[1]?.[chassisNumber] && (
+              <tr className="text-xs text-center">
+                <td className="w-[53.291338583px]"></td>
+                <td className="w-[49.133858268px] h-[22.11023622px]"></td>
+                <td
+                  className={`w-[285.73228346px] h-[22.11023622px] text-start ${
+                    data[1]?.[chassisNumber]?.length > 30 ? "text-xs" : ""
+                  }`}
+                >
+                  {data[1]?.[chassisNumber] && (
+                    <>Chassis #: {data[1]?.[chassisNumber]}</>
+                  )}
+                </td>
+                <td className="w-[72.188976378px] h-[22.11023622px]"></td>
+                <td className="w-[95.244094488px] h-[22.11023622px]"></td>
+              </tr>
+            )}
+            {data?.[1]?.[conductionSticker] && (
+              <tr className="text-xs text-center">
+                <td className="w-[53.291338583px]"></td>
+                <td className="w-[49.133858268px] h-[22.11023622px]"></td>
+                <td
+                  className={`w-[285.73228346px] h-[22.11023622px] text-start ${
+                    data[1]?.[conductionSticker]?.length > 30 ? "text-xs" : ""
+                  }`}
+                >
+                  {data[1]?.[conductionSticker] && (
+                    <>Conduction Sticker: {data[1]?.[conductionSticker]}</>
+                  )}
+                </td>
+                <td className="w-[72.188976378px] h-[22.11023622px]"></td>
+                <td className="w-[95.244094488px] h-[22.11023622px]"></td>
+              </tr>
+            )}
+            {data?.[1]?.[color] && (
+              <tr className="text-xs text-center">
+                <td className="w-[53.291338583px]"></td>
+                <td className="w-[49.133858268px] h-[22.11023622px]"></td>
+                <td
+                  className={`w-[285.73228346px] h-[22.11023622px] text-start ${
+                    data[1]?.[color]?.length > 30 ? "text-xs" : ""
+                  }`}
+                >
+                  {data[1]?.[color] && <>Color: {data[1]?.[color]}</>}
+                </td>
+                <td className="w-[72.188976378px] h-[22.11023622px]"></td>
+                <td className="w-[95.244094488px] h-[22.11023622px]"></td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>
@@ -125,7 +162,7 @@ const Bulua = ({ data }: any) => {
             <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 15)}
+                {FormattedSumTotal(data, totalSalesVatExclusive2, 15)}
               </td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
               <td className="h-[22.11023622px] w-[96.755905512px] text-center"></td>
@@ -143,7 +180,7 @@ const Bulua = ({ data }: any) => {
             <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3">
-                {FormattedSumTotal(data, rateInclusiveVat, 15)}
+                0.00
               </td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
               <td className="h-[22.11023622px] w-[96.755905512px] text-center">
@@ -157,7 +194,14 @@ const Bulua = ({ data }: any) => {
               </td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
               <td className="h-[22.11023622px] w-[96.755905512px] text-center">
-                {/* {FormattedSumTotal(data, totalSalesVatInclusive2, 5)} LESS: WITH HOLDING TAX */}
+                {FormattedSumTotal(data, totalSalesVatExclusive2, 5)}
+              </td>
+            </tr>
+            <tr className="text-xs">
+              <td className="h-[22.11023622px] w-[102.42519685px]"></td>
+              <td className="h-[22.11023622px] w-[216.18897638px] pl-3"></td>
+              <td className="h-[22.11023622px] w-[140.5984252px]"></td>
+              <td className="h-[22.11023622px] w-[96.755905512px] text-center">
                 0.00
               </td>
             </tr>
@@ -166,15 +210,7 @@ const Bulua = ({ data }: any) => {
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3"></td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
               <td className="h-[22.11023622px] w-[96.755905512px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 15)}
-              </td>
-            </tr>
-            <tr className="text-xs">
-              <td className="h-[22.11023622px] w-[102.42519685px]"></td>
-              <td className="h-[22.11023622px] w-[216.18897638px] pl-3"></td>
-              <td className="h-[22.11023622px] w-[140.5984252px]"></td>
-              <td className="h-[22.11023622px] w-[96.755905512px] text-center">
-                {FormattedSumTotal(data, vatAmount2, 15)}
+                {FormattedSumTotal(data, totalSalesVatExclusive, 15)}
               </td>
             </tr>
             <tr className="text-xs">
@@ -198,9 +234,7 @@ const Bulua = ({ data }: any) => {
       </div>
       <div className="mx-[32.125984252px]">
         <div className="mt-[15.136220472px] w-[196.53543307px] ml-[336.37795276px]">
-          <p className="text-xs text-center">
-            {data[1]?.[cashier] || ""}
-          </p>
+          <p className="text-xs text-center">{data[1]?.[cashier] || ""}</p>
         </div>
       </div>
     </div>

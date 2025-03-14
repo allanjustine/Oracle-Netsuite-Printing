@@ -38,26 +38,26 @@ const LuzonSize: React.FC<PrintPageProps> = ({ data }) => {
       <div className="mx-[30.614173228px] w-[684.09448819px] flex space-x-20 mt-[100px]">
         <div className="w-[419.90551181px] pr-[11.716535433px]">
           <p className="w-full text-xs h-[19.275590551px] ml-[120px]">
-            {data[1]?.[mainLineName] || "No Data"}
+            {data[1]?.[mainLineName] || ""}
           </p>
           <p className="w-full text-xs h-[19.275590551px] ml-[120px]">
           </p>
           <p className="text-xs h-[38.551181102px] ml-[120px] w-fit leading-[19.275590551px]">
-            {data[1]?.[billingAddress] || "No Data"}
+            {data[1]?.[billingAddress] || ""}
           </p>
           <p className="w-full text-xs h-[19.275590551px] ml-[120px]">
-            {data[1]?.[businessStyle] || "No Data"}
+            {data[1]?.[businessStyle] || ""}
           </p>
         </div>
         <div className="w-[264.56692913px]">
           <p className="w-full text-xs h-[19.275590551px] ml-[160px]">
-            {data[1]?.[date] || "No Data"}
+            {data[1]?.[date] || ""}
           </p>
           <p className="w-full text-xs h-[19.275590551px] ml-[160px]">
-            {data[1]?.[terms] || "No Data"}
+            {data[1]?.[terms] || ""}
           </p>
           <p className="w-full text-xs h-[19.275590551px] ml-[160px]">
-            {data[1]?.[oscaPwdIdNo] || "No Data"}
+            {data[1]?.[oscaPwdIdNo] || ""}
           </p>
         </div>
       </div>
