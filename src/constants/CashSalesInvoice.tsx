@@ -437,6 +437,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <DAPOzamiz data={data} />;
     case "NAIC" === user?.branchCode:
       return <SMCTNaic data={data} />;   //CSI LANDSCAPE
+    case "SROS" === user?.branchCode:
+      return <SMCTRosario data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
