@@ -72,7 +72,7 @@ const ObbusOldCsiSize = ({ data }: any) => {
                 </td>
                 <td
                   className={`w-[285.73228346px] h-[22.11023622px] text-start ${
-                    row[articles]?.length > 41 ? "text-xs" : ""
+                    row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >
                   {row[articles]}

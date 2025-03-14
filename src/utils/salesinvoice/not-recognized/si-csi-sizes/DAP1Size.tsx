@@ -75,7 +75,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
                 </td>
                 <td
                   className={`w-[309.70528684px] h-[19.275590551px] text-start ${
-                    row[articles]?.length > 41 ? "text-xs" : ""
+                    row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >
                   {row[articles]}
