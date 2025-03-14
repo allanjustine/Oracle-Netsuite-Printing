@@ -227,6 +227,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DSMM",
     "SARG",
     "ILOI",
+    "DSMDM",
   ];
 
   //FELY
@@ -267,7 +268,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   // CELROSE
   const celroseCrNewSizeData = [];
 
-  const celroseCrOldSizeData = ["CALIN","ANTI"];
+  const celroseCrOldSizeData = ["CALIN", "ANTI"];
 
   const bjvOrNewSizeData = [];
 

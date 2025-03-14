@@ -758,7 +758,7 @@ export default function Page() {
               />
             </div>
           ))
-        ) : excelData && excelData[0]?.length === 11 ? (
+        ) : excelData && excelData[0]?.length <= 11 ? (
           excelData.slice(1).map((row, rowIndex, array) => (
             <div key={rowIndex} className="relative">
               <button
