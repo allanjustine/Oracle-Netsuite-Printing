@@ -41,12 +41,13 @@ const ObbusNewCsiSize = ({ data }: any) => {
       </div>
       <div className="mt-[15.874015748px] mx-[28.346456693px] h-[68.409448819px] w-[493.22834646px]">
         <p className="w-[359.43307087px] flex items-center h-[22.8031496px] ml-[143.62204724px]">
-          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || (
-            <span className="opacity-0">No Data</span>
-          )}
+          {data[1]?.[mainLineName]
+            ?.replace(/Ã/g, "Ñ")
+            .replace(/Ã‘/g, "Ñ")
+            .replace(/Ã±/g, "ñ") || <span className="opacity-0">No Data</span>}
         </p>
         <p className="w-[359.43307087px] flex items-center h-[22.8031496px] ml-[143.62204724px]">
-           <span className="opacity-0">No Data</span>
+          <span className="opacity-0">No Data</span>
         </p>
         <p
           className={`${
@@ -70,7 +71,9 @@ const ObbusNewCsiSize = ({ data }: any) => {
                 >
                   {row[articles]}
                 </td>
-                <td className="w-[71.05511811px]">{row[quantity]?.replace(/.0$/, "")}</td>
+                <td className="w-[71.05511811px]">
+                  {row[quantity]?.replace(/.0$/, "")}
+                </td>
                 <td className="w-[77.480314961px] h-[18.141732283px]">
                   {/* {FormattedNumber(row[unitPrice])} */}
                 </td>
@@ -79,34 +82,72 @@ const ObbusNewCsiSize = ({ data }: any) => {
                 </td>
               </tr>
             ))}
-            <tr className="text-xs text-center">
-              <td
-                className={`w-[249.4488189px] h-[18.141732283px] ${
-                  data[1]?.[serialNumber]?.length > 41 ? "text-[10px]" : ""
-                }`}
-              >
-                {data[1]?.[serialNumber] && (
-                  <>Engine #: {data[1]?.[serialNumber]}</>
-                )}
-              </td>
-              <td className="w-[71.05511811px]"></td>
-              <td className="w-[77.480314961px] h-[18.141732283px]"></td>
-              <td className="w-[96.377952756px] h-[18.141732283px]"></td>
-            </tr>
-            <tr className="text-xs text-center">
-              <td
-                className={`w-[249.4488189px] h-[18.141732283px] ${
-                  data[1]?.[chassisNumber]?.length > 41 ? "text-[10px]" : ""
-                }`}
-              >
-                {data[1]?.[chassisNumber] && (
-                  <>Chassis #: {data[1]?.[chassisNumber]}</>
-                )}
-              </td>
-              <td className="w-[71.05511811px]"></td>
-              <td className="w-[77.480314961px] h-[18.141732283px]"></td>
-              <td className="w-[96.377952756px] h-[18.141732283px]"></td>
-            </tr>
+            {data[1]?.[serialNumber] && (
+              <tr className="text-xs text-center">
+                <td
+                  className={`w-[249.4488189px] h-[18.141732283px] ${
+                    data[1]?.[serialNumber]?.length > 41 ? "text-[10px]" : ""
+                  }`}
+                >
+                  {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
+                    <>Engine #: {data[1]?.[serialNumber]}</>
+                  ) : (
+                    <>Serial #: {data[1]?.[serialNumber]}</>
+                  )}
+                </td>
+                <td className="w-[71.05511811px]"></td>
+                <td className="w-[77.480314961px] h-[18.141732283px]"></td>
+                <td className="w-[96.377952756px] h-[18.141732283px]"></td>
+              </tr>
+            )}
+            {data[1]?.[chassisNumber] && (
+              <tr className="text-xs text-center">
+                <td
+                  className={`w-[249.4488189px] h-[18.141732283px] ${
+                    data[1]?.[chassisNumber]?.length > 41 ? "text-[10px]" : ""
+                  }`}
+                >
+                  {data[1]?.[chassisNumber] && (
+                    <>Chassis #: {data[1]?.[chassisNumber]}</>
+                  )}
+                </td>
+                <td className="w-[71.05511811px]"></td>
+                <td className="w-[77.480314961px] h-[18.141732283px]"></td>
+                <td className="w-[96.377952756px] h-[18.141732283px]"></td>
+              </tr>
+            )}
+            {data[1]?.[conductionSticker] && (
+              <tr className="text-xs text-center">
+                <td
+                  className={`w-[249.4488189px] h-[18.141732283px] ${
+                    data[1]?.[conductionSticker]?.length > 41
+                      ? "text-[10px]"
+                      : ""
+                  }`}
+                >
+                  {data[1]?.[conductionSticker] && (
+                    <>Conduction Sticker: {data[1]?.[conductionSticker]}</>
+                  )}
+                </td>
+                <td className="w-[71.05511811px]"></td>
+                <td className="w-[77.480314961px] h-[18.141732283px]"></td>
+                <td className="w-[96.377952756px] h-[18.141732283px]"></td>
+              </tr>
+            )}
+            {data[1]?.[color] && (
+              <tr className="text-xs text-center">
+                <td
+                  className={`w-[249.4488189px] h-[18.141732283px] ${
+                    data[1]?.[color]?.length > 41 ? "text-[10px]" : ""
+                  }`}
+                >
+                  {data[1]?.[color] && <>Color: {data[1]?.[color]}</>}
+                </td>
+                <td className="w-[71.05511811px]"></td>
+                <td className="w-[77.480314961px] h-[18.141732283px]"></td>
+                <td className="w-[96.377952756px] h-[18.141732283px]"></td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>
@@ -187,7 +228,10 @@ const ObbusNewCsiSize = ({ data }: any) => {
       <div className="w-[548.03149606px]">
         <div className="mt-[15.897637795px] ml-[183.30708661px] w-[142.86614173px]">
           <p className="text-xs text-center">
-            {data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
+            {data[1]?.[cashier]
+              ?.replace(/Ã/g, "Ñ")
+              .replace(/Ã‘/g, "Ñ")
+              .replace(/Ã±/g, "ñ") || ""}
           </p>
         </div>
       </div>

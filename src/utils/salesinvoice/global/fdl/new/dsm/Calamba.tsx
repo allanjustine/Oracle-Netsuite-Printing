@@ -85,9 +85,11 @@ const Calamba = ({ data }: any) => {
                   data[1]?.[serialNumber]?.length > 41 ? "text-[10px]" : ""
                 }`}
               >
-                {data[1]?.[serialNumber] && (
-                  <>Engine #: {data[1]?.[serialNumber]}</>
-                )}
+                {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
+                    <>Engine #: {data[1]?.[serialNumber]}</>
+                  ) : (
+                    <>Serial #: {data[1]?.[serialNumber]}</>
+                  )}
               </td>
               <td className="w-[75.968503937px]"></td>
               <td className="w-[83.48976378px] h-[18.897637795px]"></td>
