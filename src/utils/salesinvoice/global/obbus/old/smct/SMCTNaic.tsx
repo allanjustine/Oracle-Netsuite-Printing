@@ -28,20 +28,19 @@ const SMCTNaic: React.FC<PrintPageProps> = ({ data }) => {
   const serialNumber = 21;
   const chassisNumber = 22;
   const conductionSticker = 23;
-  const tinNumber = 24;
-  const cashier = 25;
-  const unitPrice = 26;
-  const totalAmountDue = 27;
+  const rateInclusiveOfTax = 24;
+  const color = 25;
+  const cashier = 26;
 
   return (
-    <div className="text-[10px] h-[638.74015748px] w-[774.80314961px]">    
-    <div className="mx-[41.952755906px] w-[684.09448819px] flex space-x-20 mt-[117.16535433px]">
-       <div className="w-[415.7480315px] pr-[11.716535433px]">
+    <div className="text-[10px] h-[638.74015748px] w-[774.80314961px]">
+      <div className="mx-[41.952755906px] w-[684.09448819px] flex space-x-20 mt-[117.16535433px]">
+        <div className="w-[415.7480315px] pr-[11.716535433px]">
           <p className="w-full text-[10px] h-[19.275590551px] ml-[120px]">
             {data[1]?.[mainLineName] || ""}
           </p>
           <p className="w-full text-[10px] h-[19.275590551px] ml-[120px]">
-            {data[1]?.[tinNumber] || ""}
+            <span className="opacity-0">No Data</span>
           </p>
           <p className="text-[10px] h-[38.551181102px] ml-[120px] w-fit leading-[19.275590551px]">
             {data[1]?.[billingAddress] || ""}
@@ -80,10 +79,10 @@ const SMCTNaic: React.FC<PrintPageProps> = ({ data }) => {
                     {row[articles]}
                   </td>
                   <td className="w-[158.36220472px] h-[18.822047244px]">
-                    {FormattedNumber(row[totalAmount]) || "0.00"}
+                    {/* {FormattedNumber(row[unitPrice])} */}
                   </td>
                   <td className="w-[131.90551181px] h-[18.822047244px]">
-                    {FormattedNumber(row[totalAmount]) || "0.00"}
+                    {FormattedNumber(row[rateInclusiveOfTax]) || "0.00"}
                   </td>
                 </tr>
               ))}
