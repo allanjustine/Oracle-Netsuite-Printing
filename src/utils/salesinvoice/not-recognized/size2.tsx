@@ -45,12 +45,12 @@ const Size2Sales: React.FC<PrintPageProps> = ({ data }) => {
     //     <table className="border-collapse w-full h-auto">
     //       <tbody>
     //         {data.slice(1, 11).map((row, index) => (
-    //           <tr key={index} className="text-[10px] text-center">
+    //           <tr key={index} className="text-xs text-center">
     //             <td className="w-[75.59px] h-[20.3px]">{row[10]}</td>
     //             <td className="w-[56.69px] h-[20.3px]">{row[11]}</td>
     //             <td
     //               className={`w-[238.11px] h-[20.3px] ${
-    //                 row[9]?.length > 41 ? "text-[7px]" : ""
+    //                 row[9]?.length > 41 ? "text-[10px]" : ""
     //               }`}
     //             >
     //               {row[9]}
@@ -59,7 +59,7 @@ const Size2Sales: React.FC<PrintPageProps> = ({ data }) => {
     //             <td className="w-[102.047px] h-[20.3px]">{row[15]}</td>
     //           </tr>
     //         ))}
-    //         <tr className="text-[10px] text-center">
+    //         <tr className="text-xs text-center">
     //           <td className="w-[75.59px] h-[20.3px]">1</td>
     //           <td className="w-[56.69px] h-[20.3px]">Unit</td>
     //           <td className={`w-[238.11px] h-[20.3px]`}>
@@ -68,7 +68,7 @@ const Size2Sales: React.FC<PrintPageProps> = ({ data }) => {
     //           <td className="w-[79.37px] h-[20.3px]">1000</td>
     //           <td className="w-[102.047px] h-[20.3px]">1000</td>
     //         </tr>
-    //         <tr className="text-[10px] text-center">
+    //         <tr className="text-xs text-center">
     //           <td className="w-[75.59px] h-[20.3px]">1</td>
     //           <td className="w-[56.69px] h-[20.3px]">Unit</td>
     //           <td className={`w-[238.11px] h-[20.3px]`}>
@@ -77,7 +77,7 @@ const Size2Sales: React.FC<PrintPageProps> = ({ data }) => {
     //           <td className="w-[79.37px] h-[20.3px]">1000</td>
     //           <td className="w-[102.047px] h-[20.3px]">1000</td>
     //         </tr>
-    //         <tr className="text-[10px] text-center">
+    //         <tr className="text-xs text-center">
     //           <td className="w-[75.59px] h-[20.3px]">1</td>
     //           <td className="w-[56.69px] h-[20.3px]">Unit</td>
     //           <td className={`w-[238.11px] h-[20.3px]`}>
@@ -86,7 +86,7 @@ const Size2Sales: React.FC<PrintPageProps> = ({ data }) => {
     //           <td className="w-[79.37px] h-[20.3px]">1000</td>
     //           <td className="w-[102.047px] h-[20.3px]">1000</td>
     //         </tr>
-    //         <tr className="text-[10px] text-center">
+    //         <tr className="text-xs text-center">
     //           <td className="w-[75.59px] h-[20.3px]">1</td>
     //           <td className="w-[56.69px] h-[20.3px]">Unit</td>
     //           <td className={`w-[238.11px] h-[20.3px]`}>
@@ -95,7 +95,7 @@ const Size2Sales: React.FC<PrintPageProps> = ({ data }) => {
     //           <td className="w-[79.37px] h-[20.3px]">1000</td>
     //           <td className="w-[102.047px] h-[20.3px]">1000</td>
     //         </tr>
-    //         <tr className="text-[10px] text-center">
+    //         <tr className="text-xs text-center">
     //           <td className="w-[75.59px] h-[20.3px]">1</td>
     //           <td className="w-[56.69px] h-[20.3px]">Unit</td>
     //           <td className={`w-[238.11px] h-[20.3px]`}>
@@ -104,7 +104,7 @@ const Size2Sales: React.FC<PrintPageProps> = ({ data }) => {
     //           <td className="w-[79.37px] h-[20.3px]">1000</td>
     //           <td className="w-[102.047px] h-[20.3px]">1000</td>
     //         </tr>
-    //         <tr className="text-[10px] text-center">
+    //         <tr className="text-xs text-center">
     //           <td className="w-[75.59px] h-[20.3px]">1</td>
     //           <td className="w-[56.69px] h-[20.3px]">Unit</td>
     //           <td className={`w-[238.11px] h-[20.3px]`}>
@@ -113,7 +113,7 @@ const Size2Sales: React.FC<PrintPageProps> = ({ data }) => {
     //           <td className="w-[79.37px] h-[20.3px]">1000</td>
     //           <td className="w-[102.047px] h-[20.3px]">1000</td>
     //         </tr>
-    //         <tr className="text-[10px] text-center">
+    //         <tr className="text-xs text-center">
     //           <td className="w-[75.59px] h-[20.3px]">1</td>
     //           <td className="w-[56.69px] h-[20.3px]">Unit</td>
     //           <td className={`w-[238.11px] h-[20.3px]`}>
@@ -122,7 +122,7 @@ const Size2Sales: React.FC<PrintPageProps> = ({ data }) => {
     //           <td className="w-[79.37px] h-[20.3px]">1000</td>
     //           <td className="w-[102.047px] h-[20.3px]">1000</td>
     //         </tr>
-    //         <tr className="text-[10px] text-center">
+    //         <tr className="text-xs text-center">
     //           <td className="w-[75.59px] h-[20.3px]">1</td>
     //           <td className="w-[56.69px] h-[20.3px]">Unit</td>
     //           <td className={`w-[238.11px] h-[20.3px]`}>
@@ -137,43 +137,43 @@ const Size2Sales: React.FC<PrintPageProps> = ({ data }) => {
     //   <div className="mx-[26.4px] h-[143.622px] border">
     //     <table className="border-collapse w-full">
     //       <tbody>
-    //         <tr className="text-[10px]">
+    //         <tr className="text-xs">
     //           <td className="h-[20.3px] w-[132.28px]"></td>
     //           <td className="h-[20.3px] w-[185.2px]">PHP0.00</td>
     //           <td className="h-[20.3px] w-[132.28px]"></td>
     //           <td className="h-[20.3px] w-[102.047px] text-center">PHP142,857.14</td>
     //         </tr>
-    //         <tr className="text-[10px]">
+    //         <tr className="text-xs">
     //           <td className="h-[20.3px] w-[132.28px]"></td>
     //           <td className="h-[20.3px] w-[185.2px]">PHP0.00</td>
     //           <td className="h-[20.3px] w-[132.28px]"></td>
     //           <td className="h-[20.3px] w-[102.047px] text-center">17,142.86</td>
     //         </tr>
-    //         <tr className="text-[10px]">
+    //         <tr className="text-xs">
     //           <td className="h-[20.3px] w-[132.28px]"></td>
     //           <td className="h-[20.3px] w-[185.2px]">PHP0.00</td>
     //           <td className="h-[20.3px] w-[132.28px]"></td>
     //           <td className="h-[20.3px] w-[102.047px] text-center"></td>
     //         </tr>
-    //         <tr className="text-[10px]">
+    //         <tr className="text-xs">
     //           <td className="h-[20.3px] w-[132.28px]"></td>
     //           <td className="h-[20.3px] w-[185.2px]">PHP17,142.86</td>
     //           <td className="h-[20.3px] w-[132.28px]"></td>
     //           <td className="h-[20.3px] w-[102.047px] text-center"></td>
     //         </tr>
-    //         <tr className="text-[10px]">
+    //         <tr className="text-xs">
     //           <td className="h-[20.3px] w-[132.28px]"></td>
     //           <td className="h-[20.3px] w-[185.2px]"></td>
     //           <td className="h-[20.3px] w-[132.28px]"></td>
     //           <td className="h-[20.3px] w-[102.047px] text-center">PHP160,000.00</td>
     //         </tr>
-    //         <tr className="text-[10px]">
+    //         <tr className="text-xs">
     //           <td className="h-[20.3px] w-[132.28px]"></td>
     //           <td className="h-[20.3px] w-[185.2px]"></td>
     //           <td className="h-[20.3px] w-[132.28px]"></td>
     //           <td className="h-[20.3px] w-[102.047px] text-center">PHP160,000.00</td>
     //         </tr>
-    //         <tr className="text-[10px]">
+    //         <tr className="text-xs">
     //           <td className="h-[20.3px] w-[132.28px]"></td>
     //           <td className="h-[20.3px] w-[185.2px]"></td>
     //           <td className="h-[20.3px] w-[132.28px]"></td>
@@ -204,12 +204,12 @@ const Size2Sales: React.FC<PrintPageProps> = ({ data }) => {
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 4).map((row, index) => (
-              <tr key={index} className="text-[10px] text-center">
+              <tr key={index} className="text-xs text-center">
                 <td className="w-[68px] h-[22.7px]">{row[10]}</td>
                 <td className="w-[49.1px] h-[22.7px]">{row[11]}</td>
                 <td
                   className={`w-[313.7px] h-[22.7px] ${
-                    row[9]?.length > 41 ? "text-[7px]" : ""
+                    row[9]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >
                   {row[9]}
@@ -224,14 +224,14 @@ const Size2Sales: React.FC<PrintPageProps> = ({ data }) => {
       <div className="mx-[37.8px] border h-[41.6px]">
         <table className="border-collapse w-full">
           <tbody>
-            <tr className="text-[10px] text-center">
+            <tr className="text-xs text-center">
               <td className="w-[68px] h-[22.7px]"></td>
               <td className="w-[49.1px] h-[22.7px]"></td>
               <td className={`w-[313.7px] h-[22.7px]`}></td>
               <td className="w-[158.7px] h-[22.7px]"></td>
               <td className="w-[109.6px] h-[22.7px]">PHP100.00</td>
             </tr>
-            <tr className="text-[10px] text-center">
+            <tr className="text-xs text-center">
               <td className="w-[68px] h-[22.7px]"></td>
               <td className="w-[49.1px] h-[22.7px]"></td>
               <td className={`w-[313.7px] h-[22.7px]`}></td>
@@ -244,7 +244,7 @@ const Size2Sales: React.FC<PrintPageProps> = ({ data }) => {
       <div className="mx-[37.8px] h-[109.9px] border">
         <table className="border-collapse w-full">
           <tbody>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[22.7px] w-[196.5px]"></td>
               <td className="h-[22.7px] w-[124.7px]"></td>
               <td className="h-[22.7px] w-[90.7px]">PHP0.00</td>
@@ -253,7 +253,7 @@ const Size2Sales: React.FC<PrintPageProps> = ({ data }) => {
                 PHP142,857.14
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[22.7px] w-[196.5px]"></td>
               <td className="h-[22.7px] w-[124.7px]"></td>
               <td className="h-[22.7px] w-[90.7px]">PHP0.00</td>
@@ -262,7 +262,7 @@ const Size2Sales: React.FC<PrintPageProps> = ({ data }) => {
                 PHP142,857.14
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[22.7px] w-[196.5px]"></td>
               <td className="h-[22.7px] w-[124.7px]"></td>
               <td className="h-[22.7px] w-[90.7px]">PHP0.00</td>
@@ -271,7 +271,7 @@ const Size2Sales: React.FC<PrintPageProps> = ({ data }) => {
                 PHP142,857.14
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[22.7px] w-[196.5px]"></td>
               <td className="h-[22.7px] w-[124.7px]"></td>
               <td className="h-[22.7px] w-[90.7px]">PHP0.00</td>
@@ -280,7 +280,7 @@ const Size2Sales: React.FC<PrintPageProps> = ({ data }) => {
                 PHP142,857.14
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[22.7px]" colSpan={4}></td>
               <td className="h-[22.7px] w-[109.6px] text-center">
                 PHP426,857.14

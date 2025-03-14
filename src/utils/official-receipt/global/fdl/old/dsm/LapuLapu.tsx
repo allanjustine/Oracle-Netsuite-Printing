@@ -37,7 +37,7 @@ const LapuLapu = ({ data }: any) => {
         </p>
       </div>
       <div className="flex mt-[4.8267716539px] w-[790.2992126px]">
-        <p className="ml-[294.80314961px] w-[381.73228346px] text-[10px]">
+        <p className="ml-[294.80314961px] w-[381.73228346px] text-xs">
           {data[1]?.[CR_BusinessStyle] || (
             <span className="opacity-0">No data</span>
           )}

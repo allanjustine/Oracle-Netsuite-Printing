@@ -76,9 +76,9 @@ export default function Page() {
   const serialNumber = 21;
   const chassisNumber = 22;
   const conductionSticker = 23;
-  const tinNumber = 24;
-  const cashier = 25;
-  const unitPrice = 26;
+  const rateInclusiveOfTax = 24;
+  const color = 25;
+  const cashier = 26;
 
   const CR_Date = 0;
   const CR_Name = 1;
@@ -610,8 +610,8 @@ export default function Page() {
                     </p>
                   </div>
                   <div className="flex flex-col">
-                    <p>Tin Number</p>
-                    <p className="font-semibold">{row[tinNumber] || "N/A"}</p>
+                    <p>Color</p>
+                    <p className="font-semibold">{row[color] || "N/A"}</p>
                   </div>
                   <div className="flex flex-col">
                     <p>Cashier</p>
@@ -680,7 +680,13 @@ export default function Page() {
                   <div className="flex flex-col">
                     <p>Unit Price</p>
                     <p className="font-semibold">
-                      {FormattedNumber(row[totalAmount]) || "0.00"}
+                      {/* {FormattedNumber(row[totalAmount]) || "0.00"} */}
+                    </p>
+                  </div>
+                  <div className="flex flex-col">
+                    <p>Amount</p>
+                    <p className="font-semibold">
+                      {FormattedNumber(row[rateInclusiveOfTax]) || "0.00"}
                     </p>
                   </div>
                 </div>
@@ -855,6 +861,7 @@ export default function Page() {
               setIsFileUploaded={setIsFileUploaded}
               handleUploadFile={handleUploadFile}
               setIsLoading={setIsLoading}
+              setIsPrintCr={setIsPrintCr}
             />
           </div>
         )}

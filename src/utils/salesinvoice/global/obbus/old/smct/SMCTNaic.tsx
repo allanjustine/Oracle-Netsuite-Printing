@@ -3,7 +3,7 @@ import { PrintPageProps } from "@/types/types";
 import FormattedNumber from "@/utils/FormattedNumber";
 import FormattedSumTotal from "@/utils/FormattedSumTotal";
 
-const FelyOldSiSize: React.FC<PrintPageProps> = ({ data }) => {
+const SMCTNaic: React.FC<PrintPageProps> = ({ data }) => {
   const mainLineName = 0;
   const date = 1;
   const taxNumber = 2;
@@ -31,69 +31,67 @@ const FelyOldSiSize: React.FC<PrintPageProps> = ({ data }) => {
   const rateInclusiveOfTax = 24;
   const color = 25;
   const cashier = 26;
-  const totalAmountDue = 27;
 
   return (
-    <div className="text-xs h-[506.83464567px] w-[741.16535433px]">
-      <div className="mx-[30.614173228px] w-[684.09448819px] flex space-x-20 mt-[100px]">
-        <div className="w-[419.90551181px] pr-[11.716535433px]">
-          <p className="w-full text-xs h-[19.275590551px] ml-[120px]">
+    <div className="text-[10px] h-[638.74015748px] w-[774.80314961px]">
+      <div className="mx-[41.952755906px] w-[684.09448819px] flex space-x-20 mt-[117.16535433px]">
+        <div className="w-[415.7480315px] pr-[11.716535433px]">
+          <p className="w-full text-[10px] h-[19.275590551px] ml-[120px]">
             {data[1]?.[mainLineName] || ""}
           </p>
-          <p className="w-full text-xs h-[19.275590551px] ml-[120px]">
-            
-          <span className="opacity-0">No Data</span>
+          <p className="w-full text-[10px] h-[19.275590551px] ml-[120px]">
+            <span className="opacity-0">No Data</span>
           </p>
-          <p className="text-xs h-[38.551181102px] ml-[120px] w-fit leading-[19.275590551px]">
+          <p className="text-[10px] h-[38.551181102px] ml-[120px] w-fit leading-[19.275590551px]">
             {data[1]?.[billingAddress] || ""}
           </p>
-          <p className="w-full text-xs h-[19.275590551px] ml-[120px]">
+          <p className="w-full text-[10px] h-[19.275590551px] ml-[120px]">
             {data[1]?.[businessStyle] || ""}
           </p>
         </div>
         <div className="w-[264.56692913px]">
-          <p className="w-full text-xs h-[19.275590551px] ml-[160px]">
+          <p className="w-full text-[10px] h-[19.275590551px] ml-[160px]">
             {data[1]?.[date] || ""}
           </p>
-          <p className="w-full text-xs h-[19.275590551px] ml-[160px]">
+          <p className="w-full text-[10px] h-[19.275590551px] ml-[160px]">
             {data[1]?.[terms] || ""}
           </p>
-          <p className="w-full text-xs h-[19.275590551px] ml-[160px]">
+          <p className="w-full text-[10px] h-[19.275590551px] ml-[160px]">
             {data[1]?.[oscaPwdIdNo] || ""}
           </p>
         </div>
       </div>
-      <div className="mx-[30.614173228px]">
-        <div className="mt-[22.488188976px] w-[741.16535433px] h-[91.086614173px]">
+      <div className="mx-[41.952755906px]">
+        <div className="mt-[22.488188976px] w-[714.33070866px] h-[200.31496063px]">
           <table className="border-collapse w-full">
             <tbody>
-              {data.slice(1, 4).map((row, index) => (
-                <tr key={index} className="text-xs text-center">
+              {data.slice(1, 12).map((row, index) => (
+                <tr key={index} className="text-[10px] text-center">
                   <td className="w-[75.212598425px]">{row[quantity]}</td>
                   <td className="w-[75.968503937px] h-[18.822047244px]">
                     {row[unitOfMeasurement]}
                   </td>
                   <td
                     className={`w-[242.64566929px] h-[18.822047244px] ${
-                      row[articles]?.length > 41 ? "text-[10px]" : ""
+                      row[articles]?.length > 41 ? "text-[7px]" : ""
                     }`}
                   >
                     {row[articles]}
                   </td>
                   <td className="w-[158.36220472px] h-[18.822047244px]">
-                    {FormattedNumber(row[totalAmount]) || "0.00"}
+                    {/* {FormattedNumber(row[unitPrice])} */}
                   </td>
                   <td className="w-[131.90551181px] h-[18.822047244px]">
-                    {FormattedNumber(row[totalAmount]) || "0.00"}
+                    {FormattedNumber(row[rateInclusiveOfTax]) || "0.00"}
                   </td>
                 </tr>
               ))}
-              <tr className="text-xs text-center">
+              <tr className="text-[10px] text-center">
                 <td className="w-[75.212598425px]"></td>
                 <td className="w-[75.968503937px] h-[18.822047244px]"></td>
                 <td
                   className={`w-[242.64566929px] h-[18.822047244px] ${
-                    data[1]?.[serialNumber]?.length > 41 ? "text-[10px]" : ""
+                    data[1]?.[serialNumber]?.length > 41 ? "text-[7px]" : ""
                   }`}
                 >
                   {data[1]?.[serialNumber] && (
@@ -103,12 +101,12 @@ const FelyOldSiSize: React.FC<PrintPageProps> = ({ data }) => {
                 <td className="w-[158.36220472px] h-[18.822047244px]"></td>
                 <td className="w-[131.90551181px] h-[18.822047244px]"></td>
               </tr>
-              <tr className="text-xs text-center">
+              <tr className="text-[10px] text-center">
                 <td className="w-[75.212598425px]"></td>
                 <td className="w-[75.968503937px] h-[18.822047244px]"></td>
                 <td
                   className={`w-[242.64566929px] h-[18.822047244px] ${
-                    data[1]?.[chassisNumber]?.length > 41 ? "text-[10px]" : ""
+                    data[1]?.[chassisNumber]?.length > 41 ? "text-[7px]" : ""
                   }`}
                 >
                   {data[1]?.[chassisNumber] && (
@@ -121,10 +119,10 @@ const FelyOldSiSize: React.FC<PrintPageProps> = ({ data }) => {
             </tbody>
           </table>
         </div>
-        <div className="h-[113.461417326px] w-[741.16535433px] mt-[7px]">
+        <div className="h-[109.60629921px] w-[741.16535433px] mt-[7px]">
           <table className="border-collapse w-full">
             <tbody>
-              <tr className="text-xs text-center">
+              <tr className="text-[10px] text-center">
                 <td className="h-[18.822047244px] w-[165.92125984px]"></td>
                 <td className="h-[18.822047244px] w-[117.16535433px]"></td>
                 <td className="h-[18.822047244px] w-[117.16535433px]"></td>
@@ -133,7 +131,7 @@ const FelyOldSiSize: React.FC<PrintPageProps> = ({ data }) => {
                   {FormattedSumTotal(data, totalSalesVatInclusive, 3) || "0.00"}
                 </td>
               </tr>
-              <tr className="text-xs text-center">
+              <tr className="text-[10px] text-center">
                 <td className="h-[18.822047244px] w-[165.92125984px]"></td>
                 <td className="h-[18.822047244px] w-[117.16535433px]"></td>
                 <td className="h-[18.822047244px] w-[117.16535433px]"></td>
@@ -142,7 +140,7 @@ const FelyOldSiSize: React.FC<PrintPageProps> = ({ data }) => {
                   {FormattedSumTotal(data, vatAmount2, 3) || "0.00"}
                 </td>
               </tr>
-              <tr className="text-xs text-center">
+              <tr className="text-[10px] text-center">
                 <td className="h-[18.822047244px] w-[165.92125984px]"></td>
                 <td className="h-[18.822047244px] w-[117.16535433px]"></td>
                 <td className="h-[18.822047244px] w-[117.16535433px]">
@@ -153,7 +151,7 @@ const FelyOldSiSize: React.FC<PrintPageProps> = ({ data }) => {
                   {FormattedSumTotal(data, totalSalesVatInclusive2, 3)}
                 </td>
               </tr>
-              <tr className="text-xs text-center">
+              <tr className="text-[10px] text-center">
                 <td className="h-[18.822047244px] w-[165.92125984px]"></td>
                 <td className="h-[18.822047244px] w-[117.16535433px]"></td>
                 <td className="h-[18.822047244px] w-[117.16535433px]">0.00</td>
@@ -162,7 +160,7 @@ const FelyOldSiSize: React.FC<PrintPageProps> = ({ data }) => {
                   0.00
                 </td>
               </tr>
-              <tr className="text-xs text-center">
+              <tr className="text-[10px] text-center">
                 <td className="h-[18.822047244px] w-[165.92125984px]"></td>
                 <td className="h-[18.822047244px] w-[117.16535433px]"></td>
                 <td className="h-[18.822047244px] w-[117.16535433px]">
@@ -174,7 +172,7 @@ const FelyOldSiSize: React.FC<PrintPageProps> = ({ data }) => {
                     "0.00"}
                 </td>
               </tr>
-              <tr className="text-xs text-center">
+              <tr className="text-[10px] text-center">
                 <td className="h-[18.822047244px] w-[165.92125984px]"></td>
                 <td className="h-[18.822047244px] w-[117.16535433px]"></td>
                 <td className="h-[18.822047244px] w-[117.16535433px]">
@@ -191,10 +189,10 @@ const FelyOldSiSize: React.FC<PrintPageProps> = ({ data }) => {
         <div className="h-[18.822047244px] w-[741.16535433px]">
           <table className="border-collapse w-full">
             <tbody>
-              <tr className="text-xs text-center">
+              <tr className="text-[10px] text-center">
                 <td className="h-[18.822047244px] w-[560.40944881px]"></td>
                 <td className="h-[18.822047244px] w-[131.90551181px] text-center">
-                  {FormattedSumTotal(data, totalSalesVatInclusive, 3) || "0.00"}
+                  {FormattedSumTotal(data, totalSalesVatInclusive, 5) || "0.00"}
                 </td>
               </tr>
             </tbody>
@@ -204,11 +202,11 @@ const FelyOldSiSize: React.FC<PrintPageProps> = ({ data }) => {
 
       <div>
         <div className="mt-[19px] pl-[431.1023622px]">
-          <p className="text-xs text-center">{data[1]?.[cashier] || ""}</p>
+          <p className="text-[10px] text-center">{data[1]?.[cashier] || ""}</p>
         </div>
       </div>
     </div>
   );
 };
 
-export default FelyOldSiSize;
+export default SMCTNaic;

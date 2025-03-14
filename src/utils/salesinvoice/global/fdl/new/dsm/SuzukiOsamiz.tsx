@@ -29,9 +29,9 @@ const SuzukiOsamiz = ({ data }: any) => {
   const serialNumber = 21;
   const chassisNumber = 22;
   const conductionSticker = 23;
-  const tinNumber = 24;
-  const cashier = 25;
-  const unitPrice = 26;
+  const rateInclusiveOfTax = 24;
+  const color = 25;
+  const cashier = 26;
 
   return (
     <div className="text-xs h-[767.24409449px] w-[610.39370079px]">
@@ -47,7 +47,7 @@ const SuzukiOsamiz = ({ data }: any) => {
           )}
         </p>
         <p className="w-[389.29133858px] flex items-center h-[24.566929134px] ml-[154.96062992px]">
-          {data[1]?.[tinNumber] || <span className="opacity-0">No Data</span>}
+           <span className="opacity-0">No Data</span>
         </p>
         <p
           className={`${
@@ -63,27 +63,27 @@ const SuzukiOsamiz = ({ data }: any) => {
         <table className="border-collapse">
           <tbody>
             {data.slice(1, 13).map((row: any, index: number) => (
-              <tr key={index} className="text-[10px] text-center">
+              <tr key={index} className="text-xs text-center">
                 <td
-                  className={`w-[268.72440945px] h-[18.897637795px] ${
-                    row[articles]?.length > 41 ? "text-[7px]" : ""
+                  className={`w-[268.72440945px] h-[18.897637795px] text-start ${
+                    row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >
                   {row[articles]}
                 </td>
                 <td className="w-[75.968503937px]">{row[quantity]}</td>
                 <td className="w-[83.48976378px] h-[18.897637795px]">
-                  {FormattedNumber(row[unitPrice])}
+                  {/* {FormattedNumber(row[unitPrice])} */}
                 </td>
                 <td className="w-[105.4488189px] h-[18.897637795px]">
                   {FormattedNumber(row[totalAmount])}
                 </td>
               </tr>
             ))}
-            <tr className="text-[10px] text-center">
+            <tr className="text-xs text-center">
               <td
                 className={`w-[268.72440945px] h-[18.897637795px] ${
-                  data[1]?.[serialNumber]?.length > 41 ? "text-[7px]" : ""
+                  data[1]?.[serialNumber]?.length > 41 ? "text-[10px]" : ""
                 }`}
               >
                 {data[1]?.[serialNumber] && (
@@ -94,10 +94,10 @@ const SuzukiOsamiz = ({ data }: any) => {
               <td className="w-[83.48976378px] h-[18.897637795px]"></td>
               <td className="w-[105.4488189px] h-[18.897637795px]"></td>
             </tr>
-            <tr className="text-[10px] text-center">
+            <tr className="text-xs text-center">
               <td
                 className={`w-[268.72440945px] h-[18.897637795px] ${
-                  data[1]?.[chassisNumber]?.length > 41 ? "text-[7px]" : ""
+                  data[1]?.[chassisNumber]?.length > 41 ? "text-[10px]" : ""
                 }`}
               >
                 {data[1]?.[chassisNumber] && (
@@ -109,11 +109,11 @@ const SuzukiOsamiz = ({ data }: any) => {
               <td className="w-[105.4488189px] h-[18.897637795px]"></td>
             </tr>
             {data[1]?.[conductionSticker] && (
-              <tr className="text-[10px] text-center">
+              <tr className="text-xs text-center">
                 <td
                   className={`w-[268.72440945px] h-[18.897637795px] ${
                     data[1]?.[conductionSticker]?.length > 41
-                      ? "text-[7px]"
+                      ? "text-[10px]"
                       : ""
                   }`}
                 >
@@ -132,7 +132,7 @@ const SuzukiOsamiz = ({ data }: any) => {
       <div className="mx-[37.795275591px] h-[132.28346457px]">
         <table className="border-collapse w-full">
           <tbody>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.897637795px] w-[162.51968504px]"></td>
               <td className="h-[18.897637795px] w-[106.96062992px] pl-[11.338582677px]">
                 {FormattedSumTotal(data, totalSalesVatInclusive2, 12)}
@@ -142,7 +142,7 @@ const SuzukiOsamiz = ({ data }: any) => {
                 {FormattedSumTotal(data, totalSalesVatInclusive, 12)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.897637795px] w-[162.51968504px]"></td>
               <td className="h-[18.897637795px] w-[106.96062992px] pl-[11.338582677px]">
                 {FormattedSumTotal(data, vatAmount, 12)}
@@ -153,7 +153,7 @@ const SuzukiOsamiz = ({ data }: any) => {
                 0.00
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.897637795px] w-[162.51968504px]"></td>
               <td className="h-[18.897637795px] w-[106.96062992px] pl-[11.338582677px]">
                 {FormattedSumTotal(data, rateInclusiveVat, 12)}
@@ -163,7 +163,7 @@ const SuzukiOsamiz = ({ data }: any) => {
                 {FormattedSumTotal(data, totalSalesVatInclusive2, 12)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.897637795px] w-[162.51968504px]"></td>
               <td className="h-[18.897637795px] w-[106.96062992px] pl-[11.338582677px]">
                 {/* {FormattedSumTotal(data, rateInclusiveVat, 12)} VAT EXEMPT SALES */}
@@ -175,7 +175,7 @@ const SuzukiOsamiz = ({ data }: any) => {
                 0.00
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.897637795px] w-[162.51968504px]"></td>
               <td className="h-[18.897637795px] w-[106.96062992px] pl-[11.338582677px]"></td>
               <td className="h-[18.897637795px] w-[159.11811024px]"></td>
@@ -183,7 +183,7 @@ const SuzukiOsamiz = ({ data }: any) => {
                 {FormattedSumTotal(data, vatAmount2, 12)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.897637795px] w-[162.51968504px]"></td>
               <td className="h-[18.897637795px] w-[106.96062992px] pl-[11.338582677px]"></td>
               <td className="h-[18.897637795px] w-[159.11811024px]"></td>
@@ -192,7 +192,7 @@ const SuzukiOsamiz = ({ data }: any) => {
                 0.00
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.897637795px] w-[162.51968504px]"></td>
               <td className="h-[18.897637795px] w-[106.96062992px] pl-[11.338582677px]"></td>
               <td className="h-[18.897637795px] w-[159.11811024px]"></td>
@@ -205,7 +205,7 @@ const SuzukiOsamiz = ({ data }: any) => {
       </div>
       <div className="w-[610.39370079px]">
         <div className="mt-[15.897637795px] ml-[192.75590551px] w-[154.96062992px]">
-          <p className="text-[10px] text-center">{data[1]?.[cashier] || ""}</p>
+          <p className="text-xs text-center">{data[1]?.[cashier] || ""}</p>
         </div>
       </div>
     </div>

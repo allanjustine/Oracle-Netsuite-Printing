@@ -85,26 +85,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const luzonSizeData = [""];
 
-  const HondaDESSizeData = [
-    //"AURH",
-    //"BALAM",
-    //"BUUH",
-    //"CALIN",
-    // "BUUH",
-    //"CAMH",
-    //"CARMC",
-    //"DATH",
-    //"DSML",
-    // "GUSA",
-    ///"PARD3",
-    // "TRINI",
-    //"SDIP",
-    // "KABA",
-    //"MARH",
-    //"SINDA",
-    "SMCT",
-    //"VETH",
-  ];
+  const HondaDESSizeData = [""];
 
   const DAPSizeData = [
     "IMED",
@@ -117,13 +98,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "PUTD",
   ];
 
-  const smctCrSizeData = [
-    "CALAP",
-    "BOHK",
-    "SALA",
-    "CALAP2",
-    "SROS",
-  ];
+  const smctCrSizeData = ["BOHK"];
 
   const dsmCrSizeData = [
     "CARS",
@@ -134,7 +109,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DSMB",
     "DSMCN",
     "DSMSB",
-    "ILOI",
     "KATI",
     "MARA",
     "SARG",
@@ -157,6 +131,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "RIZD",
     "TALI2",
     "MADRI",
+    "ALIC",
+    "SAGBA"
   ];
 
   const fdlOrOldSizeData = [
@@ -212,6 +188,9 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DSMTA",
     "YATI",
     "BANTA",
+    "CALAP",
+    "SALA",
+    "SMCT",
   ];
 
   const fdlOrNewSizeData = [];
@@ -246,6 +225,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DSMT2",
     "DSMM",
     "SARG",
+    "ILOI",
   ];
 
   //FELY
@@ -263,6 +243,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DASMA",
     "CARMO",
     "SILA",
+    "SROS",
   ];
 
   // AJD

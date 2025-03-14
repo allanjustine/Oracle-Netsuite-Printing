@@ -28,9 +28,9 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
   const serialNumber = 21;
   const chassisNumber = 22;
   const conductionSticker = 23;
-  const tinNumber = 24;
-  const cashier = 25;
-  const unitPrice = 26;
+  const rateInclusiveOfTax = 24;
+  const color = 25;
+  const cashier = 26;
 
   return (
     <div className="text-xs h-[510.23622047px] w-[778.58267717px]">
@@ -44,7 +44,6 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="flex h-[18.141732283px]">
         <p className="w-[461.1023622px] pl-[132.28346457px]">
-          {data[1]?.[tinNumber] || ""}
         </p>
         <p className="w-[132.28346457px] pl-[151.18110236px]">
           {data[1]?.[terms] || ""}
@@ -70,32 +69,32 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 6).map((row, index) => (
-              <tr key={index} className="text-[10px] text-center">
+              <tr key={index} className="text-xs text-center">
                 <td className="w-[75.590551181px]">{row[quantity]}</td>
                 <td className="w-[75.590551181px] h-[18.141732283px]">
                   {row[unitOfMeasurement]}
                 </td>
                 <td
-                  className={`w-[230.5511811px] h-[18.141732283px] ${
-                    row[articles]?.length > 41 ? "text-[7px]" : ""
+                  className={`w-[230.5511811px] h-[18.141732283px] text-start ${
+                    row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >
                   {row[articles]}
                 </td>
                 <td className="w-[164.40944882px] h-[18.141732283px]">
-                  {FormattedNumber(row[unitPrice])}
+                  {/* {FormattedNumber(row[unitPrice])} */}
                 </td>
                 <td className="w-[137.95275591px] h-[18.141732283px]">
-                  {FormattedNumber(row[totalAmount])}
+                  {FormattedNumber(row[rateInclusiveOfTax])}
                 </td>
               </tr>
             ))}
-            <tr className="text-[10px] text-center">
+            <tr className="text-xs text-center">
               <td className="w-[74.24071991px]"></td>
               <td className="w-[53.831271091px] h-[19.275590551px]"></td>
               <td
                 className={`w-[309.70528684px] h-[19.275590551px] ${
-                  data[1]?.[serialNumber]?.length > 41 ? "text-[7px]" : ""
+                  data[1]?.[serialNumber]?.length > 41 ? "text-[10px]" : ""
                 }`}
               >
                 {data[1]?.[serialNumber] && (
@@ -105,12 +104,12 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
               <td className="w-[163.81552306px] h-[19.275590551px]"></td>
               <td className="w-[114.30371204px] h-[19.275590551px]"></td>
             </tr>
-            <tr className="text-[10px] text-center">
+            <tr className="text-xs text-center">
               <td className="w-[74.24071991px]"></td>
               <td className="w-[53.831271091px] h-[19.275590551px]"></td>
               <td
                 className={`w-[309.70528684px] h-[19.275590551px] ${
-                  data[1]?.[chassisNumber]?.length > 41 ? "text-[7px]" : ""
+                  data[1]?.[chassisNumber]?.length > 41 ? "text-[10px]" : ""
                 }`}
               >
                 {data[1]?.[chassisNumber] && (
@@ -126,7 +125,7 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
       <div className="mx-[37.795275591px] h-[37.795275591px]">
         <table className="border-collapse w-full">
           <tbody>
-            <tr className="text-[10px] text-center">
+            <tr className="text-xs text-center">
               <td className="w-[75.590551181px]"></td>
               <td className="w-[75.590551181px] h-[18.141732283px]"></td>
               <td className={`w-[230.5511811px] h-[18.141732283px]`}></td>
@@ -135,7 +134,7 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
                 {FormattedSumTotal(data, totalSalesVatInclusive, 5)}
               </td>
             </tr>
-            <tr className="text-[10px] text-center">
+            <tr className="text-xs text-center">
               <td className="w-[75.590551181px]"></td>
               <td className="w-[75.590551181px] h-[18.141732283px]"></td>
               <td className={`w-[230.5511811px] h-[18.141732283px]`}></td>
@@ -150,7 +149,7 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
       <div className="mx-[37.795275591px] h-[89.196850394px]">
         <table className="border-collapse w-full">
           <tbody>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.141732283px] w-[289.13385827px]"></td>
               <td className="h-[18.141732283px] w-[117.16535433px]">
                 {FormattedSumTotal(data, totalSalesVatInclusive2, 5)}
@@ -160,7 +159,7 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
                 {FormattedSumTotal(data, totalSalesVatInclusive2, 5)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.141732283px] w-[289.13385827px]"></td>
               <td className="h-[18.141732283px] w-[117.16535433px]">
                 {/* {FormattedSumTotal(data, rateInclusiveVat, 5)} VAT EXEMPT SALES */}
@@ -172,7 +171,7 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
                 0.00
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.141732283px] w-[289.13385827px]"></td>
               <td className="h-[18.141732283px] w-[117.16535433px]">
                 {FormattedSumTotal(data, rateInclusiveVat, 5)}
@@ -182,7 +181,7 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
                 {FormattedSumTotal(data, vatAmount2, 5)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.141732283px] w-[289.13385827px]"></td>
               <td className="h-[18.141732283px] w-[117.16535433px]">
                 {FormattedSumTotal(data, vatAmount, 5)}
@@ -192,7 +191,7 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
                 {FormattedSumTotal(data, vatAmount3, 5)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.141732283px] w-[289.13385827px]"></td>
               <td className="h-[18.141732283px] w-[117.16535433px]"></td>
               <td className="h-[18.141732283px] w-[162.51968504px]"></td>
@@ -205,7 +204,7 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="mx-[32.125984252px]">
         <div className="mt-[30.236220472px] ml-[480px]">
-          <p className="text-[10px] text-center">
+          <p className="text-xs text-center">
             {data[1]?.[cashier] || ""}
           </p>
         </div>

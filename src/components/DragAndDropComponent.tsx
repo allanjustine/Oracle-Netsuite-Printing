@@ -1,13 +1,14 @@
 import { FormatFileSize } from "@/utils/size-format/FormatFileSize";
 import { useState } from "react";
-import * as XLSX from "xlsx";
+import { read, utils } from "xlsx";
 
 export default function DragAndDropComponent({
   setFileInfo,
   setExcelData,
   setIsFileUploaded,
   handleUploadFile,
-  setIsLoading
+  setIsLoading,
+  setIsPrintCr,
 }: any) {
   const [isOnDragOver, setIsDragOver] = useState(false);
 
@@ -36,14 +37,17 @@ export default function DragAndDropComponent({
 
     const reader = new FileReader();
     reader.onload = (event) => {
-      const data = event.target?.result;
+      const data = event.target?.result as string;
 
-      const workbook = XLSX.read(data, { type: "binary" });
+      const workbook = read(data, { type: "array" });
 
-      const worksheet = workbook.Sheets[workbook.SheetNames[0]];
+      const worksheetName = workbook.SheetNames[0];
 
-      const jsonData: any[] = XLSX.utils.sheet_to_json(worksheet, {
+      const worksheet = workbook.Sheets[worksheetName];
+
+      const jsonData: any[] = utils.sheet_to_json(worksheet, {
         header: 1,
+        raw: false,
       });
 
       const stringData = jsonData.map((row) =>
@@ -53,15 +57,18 @@ export default function DragAndDropComponent({
       );
 
       setExcelData(stringData);
+
+      if (stringData[0]?.length <= 10) {
+        setIsPrintCr(true);
+      } else {
+        setIsPrintCr(false);
+      }
     };
 
     setIsFileUploaded(true);
-    reader.readAsBinaryString(file);
-    setIsLoading(true);
+    reader.readAsArrayBuffer(file);
 
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 4000);
+    setIsLoading(true);
   };
   return (
     <div
@@ -75,12 +82,12 @@ export default function DragAndDropComponent({
       onDragLeave={handleDragLeave}
     >
       <div className="flex flex-col gap-2">
-      <div className="text-blue-400 text-lg font-medium" id="message">
-        Drag and drop an Excel file here
-      </div>
-      <div className="text-gray-300 text-sm">
-        .xlsx, .xlsm, .xltx, .xltm, .csv
-      </div>
+        <div className="text-blue-400 text-lg font-medium" id="message">
+          Drag and drop an Excel file here
+        </div>
+        <div className="text-gray-300 text-sm">
+          .xlsx, .xlsm, .xltx, .xltm, .csv
+        </div>
       </div>
       <div className="mt-2 text-gray-500 text-sm" id="file-info" />
       <div className="mt-2 text-red-500 text-sm" id="error-message" />

@@ -21,7 +21,7 @@ const CarmenCebu2 = ({ data }: any) => {
       </div>
       <div className="flex w-[778.58267717px] mt-[13.7952755906px]">
         <div className="w-[461.1023622px]">
-          <p className="ml-[313.7007874px] text-[10px]">
+          <p className="ml-[313.7007874px] text-xs">
             {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
           </p>
         </div>
@@ -32,11 +32,11 @@ const CarmenCebu2 = ({ data }: any) => {
         </div>
       </div>
       <div className="flex ml-[302.36220472px] mt-[9.8267716539px]">
-        <p className="w-[211.65354331px] text-[10px]">
+        <p className="w-[211.65354331px] text-xs">
           {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex text-[10px] ml-[317.48031496px] mt-[6.8267716539px]">
+      <div className="flex text-xs ml-[317.48031496px] mt-[6.8267716539px]">
         <p className="w-[207.87401575px]">
           {data[1]?.[CR_BusinessStyle] || (
             <span className="opacity-0">No data</span>
@@ -59,7 +59,7 @@ const CarmenCebu2 = ({ data }: any) => {
           </p>
         </div>
         <div className="w-[292.91338583px]">
-          <p className="ml-[147.4015748px] text-[10px]">
+          <p className="ml-[147.4015748px] text-xs">
             {data[1]?.[CR_Memo] || (
               <span className="opacity-0">No data</span>
             )}
