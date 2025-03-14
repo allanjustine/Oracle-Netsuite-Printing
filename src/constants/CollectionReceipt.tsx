@@ -192,12 +192,20 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "SALA",
     "SMCT",
     "DSMB",
+    "BOHK",
   ];
 
   const fdlOrNewSizeData = [];
 
   // OBBUS
-  const obbusCrNewSizeData = ["DANAO", "TOMAS", "DIGOS", "CATAR2", "BOLOD"];
+  const obbusCrNewSizeData = [
+    "DANAO",
+    "TOMAS",
+    "DIGOS",
+    "CATAR2",
+    "BOLOD",
+    "MING",
+  ];
 
   const obbusCrOldSizeData = [
     "DSMBN",

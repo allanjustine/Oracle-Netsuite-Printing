@@ -91,7 +91,7 @@ const Remegio = ({ data }: any) => {
                 <td className="w-[49.133858268px] h-[22.11023622px]"></td>
                 <td
                   className={`w-[285.73228346px] h-[22.11023622px] text-start ${
-                    data[1]?.[serialNumber]?.length > 30 ? "text-xs" : ""
+                    data[1]?.[serialNumber]?.length > 20 ? "text-[10px]" : ""
                   }`}
                 >
                   {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
@@ -110,7 +110,7 @@ const Remegio = ({ data }: any) => {
                 <td className="w-[49.133858268px] h-[22.11023622px]"></td>
                 <td
                   className={`w-[285.73228346px] h-[22.11023622px] text-start ${
-                    data[1]?.[chassisNumber]?.length > 30 ? "text-xs" : ""
+                    data[1]?.[chassisNumber]?.length > 20 ? "text-[10px]" : ""
                   }`}
                 >
                   {data[1]?.[chassisNumber] && (
@@ -127,7 +127,7 @@ const Remegio = ({ data }: any) => {
                 <td className="w-[49.133858268px] h-[22.11023622px]"></td>
                 <td
                   className={`w-[285.73228346px] h-[22.11023622px] text-start ${
-                    data[1]?.[conductionSticker]?.length > 30 ? "text-xs" : ""
+                    data[1]?.[conductionSticker]?.length > 20 ? "text-[10px]" : ""
                   }`}
                 >
                   {data[1]?.[conductionSticker] && (
@@ -144,7 +144,7 @@ const Remegio = ({ data }: any) => {
                 <td className="w-[49.133858268px] h-[22.11023622px]"></td>
                 <td
                   className={`w-[285.73228346px] h-[22.11023622px] text-start ${
-                    data[1]?.[color]?.length > 30 ? "text-xs" : ""
+                    data[1]?.[color]?.length > 20 ? "text-[10px]" : ""
                   }`}
                 >
                   {data[1]?.[color] && <>Color: {data[1]?.[color]}</>}

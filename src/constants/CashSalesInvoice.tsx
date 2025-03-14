@@ -212,6 +212,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "BONI",
     "VITA",
     "BAYB",
+    "BOHK",
   ];
 
   // OBBUS
