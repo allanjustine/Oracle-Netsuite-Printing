@@ -239,7 +239,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   //FELY
   const felyCsiNewSizeData = [];
 
-  const felyCsiOldSizeData = ["FAMY", "SILA"];
+  const felyCsiOldSizeData = ["SILA"];
 
   const felySiNewSizeData = [];
 
@@ -409,6 +409,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     case "LAPU" === user?.branchCode:
       return <LapuLapu2 data={data} />;
     case "LIPA" === user?.branchCode:
+      return <LapuLapu2 data={data} />; // TEMP NO TAG-IYA
+    case "FAMY" === user?.branchCode:
       return <LapuLapu2 data={data} />; // TEMP NO TAG-IYA
     case "DSMLN" === user?.branchCode:
       return <Liloan data={data} />;
