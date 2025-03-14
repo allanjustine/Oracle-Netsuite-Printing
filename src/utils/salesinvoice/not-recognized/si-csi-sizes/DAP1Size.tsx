@@ -33,7 +33,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
   const unitPrice = 26;
 
   return (
-    <div className="text-xs h-[506.45669291px] w-[767.24409449px]">
+    <div className="text-sm h-[506.45669291px] w-[767.24409449px]">
       <div className="flex h-[17.007874016px] mt-[124.34645669px]">
         <p className="w-[528.66141732px] pl-[147.4015748px]">
           {data[1]?.[mainLineName] || ""}
@@ -70,14 +70,14 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 4).map((row, index) => (
-              <tr key={index} className="text-[10px] text-center">
+              <tr key={index} className="text-sm text-center">
                 <td className="w-[74.24071991px]">{row[quantity]}</td>
                 <td className="w-[53.831271091px] h-[19.275590551px]">
                   {row[unitOfMeasurement]}
                 </td>
                 <td
                   className={`w-[309.70528684px] h-[19.275590551px] text-start ${
-                    row[articles]?.length > 41 ? "text-[7px]" : ""
+                    row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >
                   {row[articles]}
@@ -90,12 +90,12 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
                 </td>
               </tr>
             ))}
-            <tr className="text-[10px] text-center">
+            <tr className="text-sm text-center">
               <td className="w-[74.24071991px]"></td>
               <td className="w-[53.831271091px] h-[19.275590551px]"></td>
               <td
                 className={`w-[309.70528684px] h-[19.275590551px] text-start ${
-                  data[1]?.[serialNumber]?.length > 41 ? "text-[7px]" : ""
+                  data[1]?.[serialNumber]?.length > 41 ? "text-[10px]" : ""
                 }`}
               >
                 {data[1]?.[serialNumber] && (
@@ -105,12 +105,12 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
               <td className="w-[163.81552306px] h-[19.275590551px]"></td>
               <td className="w-[114.30371204px] h-[19.275590551px]"></td>
             </tr>
-            <tr className="text-[10px] text-center">
+            <tr className="text-sm text-center">
               <td className="w-[74.24071991px]"></td>
               <td className="w-[53.831271091px] h-[19.275590551px]"></td>
               <td
                 className={`w-[309.70528684px] h-[19.275590551px] text-start ${
-                  data[1]?.[chassisNumber]?.length > 41 ? "text-[7px]" : ""
+                  data[1]?.[chassisNumber]?.length > 41 ? "text-[10px]" : ""
                 }`}
               >
                 {data[1]?.[chassisNumber] && (
@@ -126,7 +126,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
       <div className="mx-[37.795275591px] h-[41.952755906px]">
         <table className="border-collapse w-full">
           <tbody>
-            <tr className="text-[10px] text-center">
+            <tr className="text-sm text-center">
               <td className="w-[74.24071991px]"></td>
               <td className="w-[53.831271091px] h-[19.275590551px]"></td>
               <td className={`w-[309.70528684px] h-[19.275590551px]`}></td>
@@ -135,7 +135,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
                 {FormattedSumTotal(data, totalSalesVatInclusive, 3)}
               </td>
             </tr>
-            <tr className="text-[10px] text-center">
+            <tr className="text-sm text-center">
               <td className="w-[74.24071991px]"></td>
               <td className="w-[53.831271091px] h-[19.275590551px]"></td>
               <td className={`w-[309.70528684px] h-[19.275590551px]`}></td>
@@ -150,7 +150,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
       <div className="mx-[37.795275591px] h-[97px]">
         <table className="border-collapse w-full">
           <tbody>
-            <tr className="text-[10px]">
+            <tr className="text-sm">
               <td className="h-[19.275590551px] w-[336.62632171px]"></td>
               <td className="h-[19.275590551px] w-[101.83127109px] pl-5">
                 {FormattedSumTotal(data, totalSalesVatInclusive2, 3)}
@@ -160,7 +160,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
                 {FormattedSumTotal(data, totalSalesVatInclusive2, 3)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-sm">
               <td className="h-[19.275590551px] w-[336.62632171px]"></td>
               <td className="h-[19.275590551px] w-[101.83127109px] pl-5">
                 {/* {FormattedSumTotal(data, rateInclusiveVat, 3)} VAT EXEMPT SALES */}
@@ -172,7 +172,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
                 0.00
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-sm">
               <td className="h-[19.275590551px] w-[336.62632171px]"></td>
               <td className="h-[19.275590551px] w-[101.83127109px] pl-5">
                 {FormattedSumTotal(data, rateInclusiveVat, 3)}
@@ -182,7 +182,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
                 {FormattedSumTotal(data, vatAmount2, 3)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-sm">
               <td className="h-[19.275590551px] w-[336.62632171px]"></td>
               <td className="h-[19.275590551px] w-[101.83127109px] pl-5">
                 {FormattedSumTotal(data, vatAmount, 3)}
@@ -192,7 +192,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
                 {FormattedSumTotal(data, vatAmount3, 3)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-sm">
               <td className="h-[19.275590551px] w-[336.62632171px]"></td>
               <td className="h-[19.275590551px] w-[101.83127109px]"></td>
               <td className="h-[19.275590551px] w-[163.81552306px]"></td>
@@ -205,7 +205,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="mx-[37.795275591px]">
         <div className="mt-[18px] ml-[392.31496063px]">
-          <p className="text-[10px] text-center">{data[1]?.[cashier] || ""}</p>
+          <p className="text-sm text-center">{data[1]?.[cashier] || ""}</p>
         </div>
       </div>
     </div>
