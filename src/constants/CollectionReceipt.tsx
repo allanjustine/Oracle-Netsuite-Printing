@@ -153,7 +153,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "CATM",
     "TRINI2",
     "BUUD",
-    "CAMD"
+    "CAMD",
+    "PARD2"
   ];
 
   const fdlCrOldSizeData = [
