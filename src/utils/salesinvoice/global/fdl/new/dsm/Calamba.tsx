@@ -64,7 +64,7 @@ const Calamba = ({ data }: any) => {
             {data.slice(1, 13).map((row: any, index: number) => (
               <tr key={index} className="text-xs text-center">
                 <td
-                  className={`w-[268.72440945px] h-[18.897637795px] ${
+                  className={`w-[268.72440945px] h-[18.897637795px] text-start ${
                     row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >

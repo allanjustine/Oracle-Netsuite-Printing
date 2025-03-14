@@ -75,7 +75,7 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
                   {row[unitOfMeasurement]}
                 </td>
                 <td
-                  className={`w-[230.5511811px] h-[18.141732283px] ${
+                  className={`w-[230.5511811px] h-[18.141732283px] text-start ${
                     row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >

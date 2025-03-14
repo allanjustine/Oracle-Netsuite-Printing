@@ -71,7 +71,7 @@ const Liloan = ({ data }: any) => {
                   {row[unitOfMeasurement]}
                 </td>
                 <td
-                  className={`w-[285.73228346px] h-[22.11023622px] ${
+                  className={`w-[285.73228346px] h-[22.11023622px] text-start ${
                     row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >

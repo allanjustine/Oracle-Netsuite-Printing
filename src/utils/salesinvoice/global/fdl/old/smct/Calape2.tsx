@@ -44,7 +44,7 @@ const Calape2 = ({ data }: any) => {
       </div>
       <div className="flex h-[20.787401575px]">
         <p className="w-[374.17322835px] pl-[98.267716535px]">
-          {data[1]?.[tinNumber] || "Test"}
+           <span className="opacity-0">No Data</span>
         </p>
         <p className="w-[215.43307087px] pl-[56.692913386px]">
           {data[1]?.[terms] || "Test"}
@@ -70,7 +70,7 @@ const Calape2 = ({ data }: any) => {
                   {row[unitOfMeasurement]}
                 </td>
                 <td
-                  className={`w-[230.5511811px] h-[19.275590551px] ${
+                  className={`w-[230.5511811px] h-[19.275590551px] text-start ${
                     row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >

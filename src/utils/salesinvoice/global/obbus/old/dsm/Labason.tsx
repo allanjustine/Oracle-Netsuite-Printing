@@ -73,7 +73,7 @@ const Labason = ({ data }: any) => {
                   {row[unitOfMeasurement]}
                 </td>
                 <td
-                  className={`w-[285.73228346px] h-[21.165354331px] ${
+                  className={`w-[285.73228346px] h-[21.165354331px] text-start ${
                     row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >

@@ -78,7 +78,7 @@ const DAPOzamiz = ({ data }: any) => {
                   {row[unitOfMeasurement]}
                 </td>
                 <td
-                  className={`w-[238.48818898px] h-[19.275590551px] text-start ${
+                  className={`w-[238.48818898px] h-[19.275590551px] text-start text-start ${
                     row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >

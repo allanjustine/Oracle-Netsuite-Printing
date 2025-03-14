@@ -70,7 +70,7 @@ const SmctSiSize: React.FC<PrintPageProps> = ({ data }) => {
                   {row[unitOfMeasurement]}
                 </td>
                 <td
-                  className={`w-[231.30708661px] h-[18.275590551px] ${
+                  className={`w-[231.30708661px] h-[18.275590551px] text-start ${
                     row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >

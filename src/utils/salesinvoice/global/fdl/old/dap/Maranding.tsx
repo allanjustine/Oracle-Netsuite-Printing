@@ -77,7 +77,7 @@ const Maranding: React.FC<PrintPageProps> = ({ data }) => {
                   {row[unitOfMeasurement]}
                 </td>
                 <td
-                  className={`w-[309.70528684px] h-[19.275590551px] ${
+                  className={`w-[309.70528684px] h-[19.275590551px] text-start ${
                     row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >

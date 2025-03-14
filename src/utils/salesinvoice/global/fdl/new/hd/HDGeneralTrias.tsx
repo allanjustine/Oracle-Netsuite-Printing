@@ -60,7 +60,7 @@ const HDGeneralTrias = ({ data }: any) => {
             {data.slice(1, 13).map((row: any, index: number) => (
               <tr key={index} className="text-xs text-center">
                 <td
-                  className={`w-[268.34645669px] ${
+                  className={`w-[268.34645669px] text-start ${
                     row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >

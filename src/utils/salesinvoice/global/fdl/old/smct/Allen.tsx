@@ -71,7 +71,7 @@ const Allen = ({ data }: any) => {
                   {row[unitOfMeasurement]}
                 </td>
                 <td
-                  className={`w-[230.5511811px] h-[19.275590551px] ${
+                  className={`w-[230.5511811px] h-[19.275590551px] text-start ${
                     row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >

@@ -78,7 +78,7 @@ const Bulua2 = ({ data }: any) => {
                   {row[unitOfMeasurement]}
                 </td>
                 <td
-                  className={`w-[238.48818898px] h-[18.897637795px] pl-2 ${
+                  className={`w-[238.48818898px] h-[18.897637795px] pl-2 text-start ${
                     row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >
