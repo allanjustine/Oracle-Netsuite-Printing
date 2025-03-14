@@ -97,6 +97,7 @@ import BjvOldCsiSize from "@/utils/salesinvoice/global/bjv/old/BjvOldCsiSize";
 import SMCTAlano from "@/utils/salesinvoice/global/fdl/old/smct/SMCTAlano";
 import DAPOzamiz from "@/utils/salesinvoice/global/fdl/old/dap/DAPOzamiz";
 import SMCTNaic from "@/utils/salesinvoice/global/fely/old/smct/SMCTNaic";
+import SMCTRosario from "@/utils/salesinvoice/global/fely/old/smct/SMCTRosario";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
