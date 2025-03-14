@@ -27,9 +27,9 @@ const HDVeterans = ({ data }: any) => {
   const serialNumber = 21;
   const chassisNumber = 22;
   const conductionSticker = 23;
-  const tinNumber = 24;
-  const cashier = 25;
-  const unitPrice = 26;
+  const rateInclusiveOfTax = 24;
+  const color = 25;
+  const cashier = 26;
 
   return (
     <div className="text-xs h-[767.24409449px] w-[608.50393701px]">
@@ -45,7 +45,8 @@ const HDVeterans = ({ data }: any) => {
       </div>
       <div className="w-full h-[19.409448819px] mt-[2.677165354px]">
         <p className="w-[377.95275591px] pl-[188.97637795px]">
-          {data[1]?.[tinNumber] || ""}
+          
+          <span className="opacity-0">No Data</span>
         </p>
       </div>
       <div className="w-[608.50393701px] h-[19.409448819px] mt-[2.677165354px]">
@@ -69,7 +70,7 @@ const HDVeterans = ({ data }: any) => {
                   {row[quantity]}
                 </td>
                 <td className="w-[83.149606299px] h-[19.275590551px]">
-                  {FormattedNumber(row[unitPrice])}
+                  {/* {FormattedNumber(row[unitPrice])} */}
                 </td>
                 <td className="w-[105.82677165px] h-[19.275590551px]">
                   {FormattedNumber(row[totalAmount])}

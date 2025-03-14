@@ -28,9 +28,9 @@ const DsmCsiSize = ({ data }: any) => {
   const serialNumber = 21;
   const chassisNumber = 22;
   const conductionSticker = 23;
-  const tinNumber = 24;
-  const cashier = 25;
-  const unitPrice = 26;
+  const rateInclusiveOfTax = 24;
+  const color = 25;
+  const cashier = 26;
 
   return (
     <div className="text-xs h-[741.54330709px] w-[581.66929134px]">
@@ -44,7 +44,6 @@ const DsmCsiSize = ({ data }: any) => {
       </div>
       <div className="flex items-center h-[20.677165354px]">
         <p className="w-[362.83464567px] pl-[86.929133858px]">
-          {data[1]?.[tinNumber] || ""}
         </p>
         <p className="w-[214.67716535px] pl-[56.692913386px]">
           {data[1]?.[terms] || ""}
@@ -75,10 +74,10 @@ const DsmCsiSize = ({ data }: any) => {
                   {row[articles]}
                 </td>
                 <td className="w-[79.748031496px] h-[19.275590551px]">
-                  {FormattedNumber(row[unitPrice])}
+                  {/* {FormattedNumber(row[unitPrice])} */}
                 </td>
                 <td className="w-[102.38740157px] h-[19.275590551px]">
-                  {FormattedNumber(row[totalAmount])}
+                  {FormattedNumber(row[rateInclusiveOfTax])}
                 </td>
               </tr>
             ))}
@@ -121,11 +120,11 @@ const DsmCsiSize = ({ data }: any) => {
             <tr className="text-[10px]">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
               <td className="h-[19.275590551px] w-[175.37007874px] pl-[11.338582677px]">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
+                {FormattedSumTotal(data, totalSalesVatExclusive2, 16)}
               </td>
               <td className="h-[19.275590551px] w-[132.66141732px]"></td>
               <td className="h-[19.275590551px] w-[102.04724409px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive, 16)}
+                {FormattedSumTotal(data, totalSalesVatExclusive, 16)}
               </td>
             </tr>
             <tr className="text-[10px]">
@@ -143,7 +142,7 @@ const DsmCsiSize = ({ data }: any) => {
             <tr className="text-[10px]">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
               <td className="h-[19.275590551px] w-[175.37007874px] pl-[11.338582677px]">
-                {FormattedSumTotal(data, rateInclusiveVat, 16)}
+                0.00
               </td>
               <td className="h-[19.275590551px] w-[132.66141732px]"></td>
               <td className="h-[19.275590551px] w-[102.04724409px] text-center">

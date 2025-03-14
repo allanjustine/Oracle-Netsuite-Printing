@@ -28,9 +28,9 @@ const Bulua2 = ({ data }: any) => {
   const serialNumber = 21;
   const chassisNumber = 22;
   const conductionSticker = 23;
-  const tinNumber = 24;
-  const cashier = 25;
-  const unitPrice = 26;
+  const rateInclusiveOfTax = 24;
+  const color = 25;
+  const cashier = 26;
 
   return (
     <div className="text-xs h-[793.7007874px] w-[608.50393701px]">
@@ -44,7 +44,8 @@ const Bulua2 = ({ data }: any) => {
       </div>
       <div className="flex h-[19.409448819px]">
         <p className="w-[391.18110236px] pl-[95.82677165px]">
-          {data[1]?.[tinNumber] || ""}
+          
+          <span className="opacity-0">No Data</span>
         </p>
         <p className="w-[218.83464567px] pl-[50.472440945px]">
           {data[1]?.[terms] || ""}
@@ -84,7 +85,7 @@ const Bulua2 = ({ data }: any) => {
                   {row[articles]}
                 </td>
                 <td className="w-[79.748031496px] h-[18.897637795px]">
-                  {FormattedNumber(row[unitPrice])}
+                  {/* {FormattedNumber(row[unitPrice])} */}
                 </td>
                 <td className="w-[102.38740157px] h-[18.897637795px]">
                   {FormattedNumber(row[totalAmount])}

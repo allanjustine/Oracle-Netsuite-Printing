@@ -27,9 +27,9 @@ const Labason = ({ data }: any) => {
   const serialNumber = 21;
   const chassisNumber = 22;
   const conductionSticker = 23;
-  const tinNumber = 24;
-  const cashier = 25;
-  const unitPrice = 26;
+  const rateInclusiveOfTax = 24;
+  const color = 25;
+  const cashier = 26;
 
   return (
     <div className="text-xs h-[795.59055118px] w-[616.06299213px]">
@@ -43,7 +43,7 @@ const Labason = ({ data }: any) => {
       </div>
       <div className="flex h-[15.458267717px]">
         <p className="w-[402.51968504px] ml-[86.929133858px]">
-          {data[1]?.[tinNumber] || <span className="opacity-0">No Data</span>}
+           <span className="opacity-0">No Data</span>
         </p>
         <p className="w-[215.43307087px] ml-[41.57480315px]">
           {data[1]?.[terms] || <span className="opacity-0">No Data</span>}
@@ -80,7 +80,7 @@ const Labason = ({ data }: any) => {
                   {row[articles]}
                 </td>
                 <td className="w-[72.188976378px] h-[21.165354331px]">
-                  {FormattedNumber(row[unitPrice])}
+                  {/* {FormattedNumber(row[unitPrice])} */}
                 </td>
                 <td className="w-[95.244094488px] h-[21.165354331px]">
                   {FormattedNumber(row[totalAmount])}

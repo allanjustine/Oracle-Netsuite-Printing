@@ -28,9 +28,9 @@ const HDVillanueva: React.FC<PrintPageProps> = ({ data }) => {
   const serialNumber = 21;
   const chassisNumber = 22;
   const conductionSticker = 23;
-  const tinNumber = 24;
-  const cashier = 25;
-  const unitPrice = 26;
+  const rateInclusiveOfTax = 24;
+  const color = 25;
+  const cashier = 26;
 
   return (
     <div className="text-xs h-[755.90551181px] w-[578.26771654px]">
@@ -44,7 +44,7 @@ const HDVillanueva: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="flex h-[21.165354331px]">
         <p className="w-[377.95275591px] pl-[94.488188976px]">
-          {data[1]?.[tinNumber] || <span className="opacity-0">No Data</span>}
+           <span className="opacity-0">No Data</span>
         </p>
         <p className="w-[219.21259843px] pl-[62px]">
           {data[1]?.[terms] || <span className="opacity-0">No Data</span>}
@@ -78,7 +78,7 @@ const HDVillanueva: React.FC<PrintPageProps> = ({ data }) => {
                   {row[articles]}
                 </td>
                 <td className="w-[79.37007874px] h-[18.275590551px]">
-                  {FormattedNumber(row[unitPrice])}
+                  {/* {FormattedNumber(row[unitPrice])} */}
                 </td>
                 <td className="w-[101.66929134px] h-[18.275590551px]">
                   {FormattedNumber(row[totalAmount])}

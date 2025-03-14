@@ -28,9 +28,9 @@ const DsmCarmenCebu2 = ({ data }: any) => {
   const serialNumber = 21;
   const chassisNumber = 22;
   const conductionSticker = 23;
-  const tinNumber = 24;
-  const cashier = 25;
-  const unitPrice = 26;
+  const rateInclusiveOfTax = 24;
+  const color = 25;
+  const cashier = 26;
 
   return (
     <div className="text-xs h-[714.33070866px] w-[549.92125984px]">
@@ -46,7 +46,7 @@ const DsmCarmenCebu2 = ({ data }: any) => {
           )}
         </p>
         <p className="w-[359.43307087px] flex items-center h-[22.8031496px] ml-[143.62204724px]">
-          {data[1]?.[tinNumber] || <span className="opacity-0">No Data</span>}
+           <span className="opacity-0">No Data</span>
         </p>
         <p
           className={`${
@@ -72,7 +72,7 @@ const DsmCarmenCebu2 = ({ data }: any) => {
                 </td>
                 <td className="w-[71.05511811px]">{row[quantity]}</td>
                 <td className="w-[77.480314961px] h-[18.141732283px]">
-                  {FormattedNumber(row[unitPrice])}
+                  {/* {FormattedNumber(row[unitPrice])} */}
                 </td>
                 <td className="w-[96.377952756px] h-[18.141732283px]">
                   {FormattedNumber(row[totalAmount])}

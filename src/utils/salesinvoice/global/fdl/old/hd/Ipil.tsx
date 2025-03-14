@@ -28,9 +28,9 @@ const Ipil = ({ data }: any) => {
   const serialNumber = 21;
   const chassisNumber = 22;
   const conductionSticker = 23;
-  const tinNumber = 24;
-  const cashier = 25;
-  const unitPrice = 26;
+  const rateInclusiveOfTax = 24;
+  const color = 25;
+  const cashier = 26;
 
   return (
     <div className="text-xs h-[745.32283465px] w-[589.60629921px]">
@@ -44,7 +44,7 @@ const Ipil = ({ data }: any) => {
       </div>
       <div className="flex h-[20.787401575px]">
         <p className="w-[374.17322835px] pl-[98.267716535px]">
-          {data[1]?.[tinNumber] || <span className="opacity-0">No Data</span>}
+           <span className="opacity-0">No Data</span>
         </p>
         <p className="w-[215.43307087px] pl-[56.692913386px]">
           {data[1]?.[terms] || <span className="opacity-0">No Data</span>}
@@ -77,7 +77,7 @@ const Ipil = ({ data }: any) => {
                   {row[articles]}
                 </td>
                 <td className="w-[77.102362205px] h-[19.275590551px]">
-                  {FormattedNumber(row[unitPrice])}
+                  {/* {FormattedNumber(row[unitPrice])} */}
                 </td>
                 <td className="w-[98.267716535px] h-[19.275590551px]">
                   {FormattedNumber(row[totalAmount])}

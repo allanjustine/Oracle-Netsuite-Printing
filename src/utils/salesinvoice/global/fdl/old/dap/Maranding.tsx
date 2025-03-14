@@ -28,9 +28,9 @@ const Maranding: React.FC<PrintPageProps> = ({ data }) => {
   const serialNumber = 21;
   const chassisNumber = 22;
   const conductionSticker = 23;
-  const tinNumber = 24;
-  const cashier = 25;
-  const unitPrice = 26;
+  const rateInclusiveOfTax = 24;
+  const color = 25;
+  const cashier = 26;
 
   return (
     <div className="text-xs h-[506.45669291px] w-[767.24409449px]">
@@ -44,7 +44,8 @@ const Maranding: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="flex h-[17.007874016px]">
         <p className="w-[528.66141732px] pl-[147.4015748px]">
-          {data[1]?.[tinNumber] || ""}
+          
+          <span className="opacity-0">No Data</span>
         </p>
         <p className="w-[284.50393701px] pl-[117.16535433px]">
           {data[1]?.[terms] || ""}
@@ -83,7 +84,7 @@ const Maranding: React.FC<PrintPageProps> = ({ data }) => {
                   {row[articles]}
                 </td>
                 <td className="w-[163.81552306px] h-[19.275590551px]">
-                  {FormattedNumber(row[unitPrice])}
+                  {/* {FormattedNumber(row[unitPrice])} */}
                 </td>
                 <td className="w-[114.30371204px] h-[19.275590551px]">
                   {FormattedNumber(row[totalAmount])}

@@ -28,9 +28,9 @@ const FelyOldCsiSize: React.FC<PrintPageProps> = ({ data }) => {
   const serialNumber = 21;
   const chassisNumber = 22;
   const conductionSticker = 23;
-  const tinNumber = 24;
-  const cashier = 25;
-  const unitPrice = 26;
+  const rateInclusiveOfTax = 24;
+  const color = 25;
+  const cashier = 26;
   const totalAmountDue = 27;
 
   return (
@@ -41,7 +41,8 @@ const FelyOldCsiSize: React.FC<PrintPageProps> = ({ data }) => {
             {data[1]?.[mainLineName] || ""}
           </p>
           <p className="w-full text-[10px] h-[19.275590551px] ml-[120px]">
-            {data[1]?.[tinNumber] || ""}
+            
+          <span className="opacity-0">No Data</span>
           </p>
           <p className="text-[10px] h-[38.551181102px] ml-[120px] w-fit leading-[19.275590551px]">
             {data[1]?.[billingAddress] || ""}

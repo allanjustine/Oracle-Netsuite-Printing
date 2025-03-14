@@ -28,9 +28,9 @@ const DapCsiSize = ({ data }: any) => {
   const serialNumber = 21;
   const chassisNumber = 22;
   const conductionSticker = 23;
-  const tinNumber = 24;
-  const cashier = 25;
-  const unitPrice = 26;
+  const rateInclusiveOfTax = 24;
+  const color = 25;
+  const cashier = 26;
 
   return (
     <div className="text-xs h-[793.7007874px] w-[608.50393701px]">
@@ -44,7 +44,6 @@ const DapCsiSize = ({ data }: any) => {
       </div>
       <div className="flex h-[19.409448819px]">
         <p className="w-[391.18110236px] pl-[105.82677165px]">
-          {data[1]?.[tinNumber] || ""}
         </p>
         <p className="w-[218.83464567px] pl-[60.472440945px]">
           {data[1]?.[terms] || ""}
@@ -77,50 +76,90 @@ const DapCsiSize = ({ data }: any) => {
                   {row[unitOfMeasurement]}
                 </td>
                 <td
-                  className={`w-[238.48818898px] h-[19.275590551px] ${
+                  className={`w-[238.48818898px] h-[19.275590551px] text-start ${
                     row[articles]?.length > 41 ? "text-[7px]" : ""
                   }`}
                 >
                   {row[articles]}
                 </td>
                 <td className="w-[79.748031496px] h-[19.275590551px]">
-                  {FormattedNumber(row[unitPrice])}
+                  {/* {FormattedNumber(row[unitPrice])} */}
                 </td>
                 <td className="w-[102.38740157px] h-[19.275590551px]">
-                  {FormattedNumber(row[totalAmount])}
+                  {FormattedNumber(row[rateInclusiveOfTax])}
                 </td>
               </tr>
             ))}
-            <tr className="text-[10px] text-center">
-              <td className="w-[74.24071991px]"></td>
-              <td className="w-[53.831271091px] h-[19.275590551px]"></td>
-              <td
-                className={`w-[309.70528684px] h-[19.275590551px] ${
-                  data[1]?.[serialNumber]?.length > 41 ? "text-[7px]" : ""
-                }`}
-              >
-                {data[1]?.[serialNumber] && (
-                  <>Engine #: {data[1]?.[serialNumber]}</>
-                )}
-              </td>
-              <td className="w-[163.81552306px] h-[19.275590551px]"></td>
-              <td className="w-[114.30371204px] h-[19.275590551px]"></td>
-            </tr>
-            <tr className="text-[10px] text-center">
-              <td className="w-[74.24071991px]"></td>
-              <td className="w-[53.831271091px] h-[19.275590551px]"></td>
-              <td
-                className={`w-[309.70528684px] h-[19.275590551px] ${
-                  data[1]?.[chassisNumber]?.length > 41 ? "text-[7px]" : ""
-                }`}
-              >
-                {data[1]?.[chassisNumber] && (
-                  <>Chassis #: {data[1]?.[chassisNumber]}</>
-                )}
-              </td>
-              <td className="w-[163.81552306px] h-[19.275590551px]"></td>
-              <td className="w-[114.30371204px] h-[19.275590551px]"></td>
-            </tr>
+            {data[1]?.[serialNumber] && (
+              <tr className="text-sm text-center">
+                <td className="w-[71.811023622px]"></td>
+                <td className="w-[62.362204724px] h-[19.275590551px]"></td>
+                <td
+                  className={`w-[238.48818898px] h-[19.275590551px] text-start ${
+                    data[1]?.[serialNumber]?.length > 25 ? "text-[10px]" : ""
+                  }`}
+                >
+                  {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
+                    <>Engine #: {data[1]?.[serialNumber]}</>
+                  ) : (
+                    <>Serial #: {data[1]?.[serialNumber]}</>
+                  )}
+                </td>
+                <td className="w-[79.748031496px] h-[19.275590551px]"></td>
+                <td className="w-[102.38740157px] h-[19.275590551px]"></td>
+              </tr>
+            )}
+            {data[1]?.[chassisNumber] && (
+              <tr className="text-sm text-center">
+                <td className="w-[71.811023622px]"></td>
+                <td className="w-[62.362204724px] h-[19.275590551px]"></td>
+                <td
+                  className={`w-[238.48818898px] h-[19.275590551px] text-start ${
+                    data[1]?.[chassisNumber]?.length > 25 ? "text-[10px]" : ""
+                  }`}
+                >
+                  {data[1]?.[chassisNumber] && (
+                    <>Chassis #: {data[1]?.[chassisNumber]}</>
+                  )}
+                </td>
+                <td className="w-[79.748031496px] h-[19.275590551px]"></td>
+                <td className="w-[102.38740157px] h-[19.275590551px]"></td>
+              </tr>
+            )}
+            {data?.[1]?.[conductionSticker] && (
+              <tr className="text-sm text-center">
+                <td className="w-[71.811023622px]"></td>
+                <td className="w-[62.362204724px] h-[19.275590551px]"></td>
+                <td
+                  className={`w-[238.48818898px] h-[19.275590551px] text-start ${
+                    data[1]?.[conductionSticker]?.length > 25
+                      ? "text-[10px]"
+                      : ""
+                  }`}
+                >
+                  {data[1]?.[conductionSticker] && (
+                    <>Conduction Sticker: {data[1]?.[conductionSticker]}</>
+                  )}
+                </td>
+                <td className="w-[79.748031496px] h-[19.275590551px]"></td>
+                <td className="w-[102.38740157px] h-[19.275590551px]"></td>
+              </tr>
+            )}
+            {data?.[1]?.[color] && (
+              <tr className="text-sm text-center">
+                <td className="w-[71.811023622px]"></td>
+                <td className="w-[62.362204724px] h-[19.275590551px]"></td>
+                <td
+                  className={`w-[238.48818898px] h-[19.275590551px] text-start ${
+                    data[1]?.[color]?.length > 25 ? "text-[10px]" : ""
+                  }`}
+                >
+                  {data[1]?.[color] && <>Color: {data[1]?.[color]}</>}
+                </td>
+                <td className="w-[79.748031496px] h-[19.275590551px]"></td>
+                <td className="w-[102.38740157px] h-[19.275590551px]"></td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>
@@ -130,11 +169,11 @@ const DapCsiSize = ({ data }: any) => {
             <tr className="text-[10px]">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
               <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
+                {FormattedSumTotal(data, totalSalesVatExclusive2, 16)}
               </td>
               <td className="h-[19.275590551px] w-[132.66141732px]"></td>
               <td className="h-[19.275590551px] w-[102.04724409px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive, 16)}
+                {FormattedSumTotal(data, totalSalesVatExclusive, 16)}
               </td>
             </tr>
             <tr className="text-[10px]">
@@ -152,11 +191,11 @@ const DapCsiSize = ({ data }: any) => {
             <tr className="text-[10px]">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
               <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
-                {FormattedSumTotal(data, rateInclusiveVat, 16)}
+                0.00
               </td>
               <td className="h-[19.275590551px] w-[132.66141732px]"></td>
               <td className="h-[19.275590551px] w-[102.04724409px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
+                {FormattedSumTotal(data, totalSalesVatExclusive, 16)}
               </td>
             </tr>
             <tr className="text-[10px]">
@@ -175,7 +214,7 @@ const DapCsiSize = ({ data }: any) => {
               <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]"></td>
               <td className="h-[19.275590551px] w-[132.66141732px]"></td>
               <td className="h-[19.275590551px] w-[102.04724409px] text-center">
-                {FormattedSumTotal(data, vatAmount2, 16)}
+                {FormattedSumTotal(data, totalSalesVatExclusive, 16)}
               </td>
             </tr>
             <tr className="text-[10px]">

@@ -28,9 +28,9 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
   const serialNumber = 21;
   const chassisNumber = 22;
   const conductionSticker = 23;
-  const tinNumber = 24;
-  const cashier = 25;
-  const unitPrice = 26;
+  const rateInclusiveOfTax = 24;
+  const color = 25;
+  const cashier = 26;
 
   return (
     <div className="text-sm h-[506.45669291px] w-[767.24409449px]">
@@ -43,9 +43,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
         </p>
       </div>
       <div className="flex h-[17.007874016px]">
-        <p className="w-[528.66141732px] pl-[147.4015748px]">
-          {data[1]?.[tinNumber] || ""}
-        </p>
+        <p className="w-[528.66141732px] pl-[147.4015748px]"></p>
         <p className="w-[284.50393701px] pl-[117.16535433px]">
           {data[1]?.[terms] || ""}
         </p>
@@ -83,43 +81,83 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
                   {row[articles]}
                 </td>
                 <td className="w-[163.81552306px] h-[19.275590551px]">
-                  {FormattedNumber(row[unitPrice])}
+                  {/* {FormattedNumber(row[unitPrice])} */}
                 </td>
                 <td className="w-[114.30371204px] h-[19.275590551px]">
-                  {FormattedNumber(row[totalAmount])}
+                  {FormattedNumber(row[rateInclusiveOfTax])}
                 </td>
               </tr>
             ))}
-            <tr className="text-sm text-center">
-              <td className="w-[74.24071991px]"></td>
-              <td className="w-[53.831271091px] h-[19.275590551px]"></td>
-              <td
-                className={`w-[309.70528684px] h-[19.275590551px] text-start ${
-                  data[1]?.[serialNumber]?.length > 41 ? "text-[10px]" : ""
-                }`}
-              >
-                {data[1]?.[serialNumber] && (
-                  <>Engine #: {data[1]?.[serialNumber]}</>
-                )}
-              </td>
-              <td className="w-[163.81552306px] h-[19.275590551px]"></td>
-              <td className="w-[114.30371204px] h-[19.275590551px]"></td>
-            </tr>
-            <tr className="text-sm text-center">
-              <td className="w-[74.24071991px]"></td>
-              <td className="w-[53.831271091px] h-[19.275590551px]"></td>
-              <td
-                className={`w-[309.70528684px] h-[19.275590551px] text-start ${
-                  data[1]?.[chassisNumber]?.length > 41 ? "text-[10px]" : ""
-                }`}
-              >
-                {data[1]?.[chassisNumber] && (
-                  <>Chassis #: {data[1]?.[chassisNumber]}</>
-                )}
-              </td>
-              <td className="w-[163.81552306px] h-[19.275590551px]"></td>
-              <td className="w-[114.30371204px] h-[19.275590551px]"></td>
-            </tr>
+            {data[1]?.[serialNumber] && (
+              <tr className="text-sm text-center">
+                <td className="w-[74.24071991px]"></td>
+                <td className="w-[53.831271091px] h-[19.275590551px]"></td>
+                <td
+                  className={`w-[309.70528684px] h-[19.275590551px] text-start ${
+                    data[1]?.[serialNumber]?.length > 25 ? "text-[10px]" : ""
+                  }`}
+                >
+                  {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
+                    <>Engine #: {data[1]?.[serialNumber]}</>
+                  ) : (
+                    <>Serial #: {data[1]?.[serialNumber]}</>
+                  )}
+                </td>
+                <td className="w-[163.81552306px] h-[19.275590551px]"></td>
+                <td className="w-[114.30371204px] h-[19.275590551px]"></td>
+              </tr>
+            )}
+            {data[1]?.[chassisNumber] && (
+              <tr className="text-sm text-center">
+                <td className="w-[74.24071991px]"></td>
+                <td className="w-[53.831271091px] h-[19.275590551px]"></td>
+                <td
+                  className={`w-[309.70528684px] h-[19.275590551px] text-start ${
+                    data[1]?.[chassisNumber]?.length > 25 ? "text-[10px]" : ""
+                  }`}
+                >
+                  {data[1]?.[chassisNumber] && (
+                    <>Chassis #: {data[1]?.[chassisNumber]}</>
+                  )}
+                </td>
+                <td className="w-[163.81552306px] h-[19.275590551px]"></td>
+                <td className="w-[114.30371204px] h-[19.275590551px]"></td>
+              </tr>
+            )}
+            {data?.[1]?.[conductionSticker] && (
+              <tr className="text-sm text-center">
+                <td className="w-[74.24071991px]"></td>
+                <td className="w-[53.831271091px] h-[19.275590551px]"></td>
+                <td
+                  className={`w-[309.70528684px] h-[19.275590551px] text-start ${
+                    data[1]?.[conductionSticker]?.length > 25
+                      ? "text-[10px]"
+                      : ""
+                  }`}
+                >
+                  {data[1]?.[conductionSticker] && (
+                    <>Conduction Sticker: {data[1]?.[conductionSticker]}</>
+                  )}
+                </td>
+                <td className="w-[163.81552306px] h-[19.275590551px]"></td>
+                <td className="w-[114.30371204px] h-[19.275590551px]"></td>
+              </tr>
+            )}
+            {data?.[1]?.[color] && (
+              <tr className="text-sm text-center">
+                <td className="w-[74.24071991px]"></td>
+                <td className="w-[53.831271091px] h-[19.275590551px]"></td>
+                <td
+                  className={`w-[309.70528684px] h-[19.275590551px] text-start ${
+                    data[1]?.[color]?.length > 25 ? "text-[10px]" : ""
+                  }`}
+                >
+                  {data[1]?.[color] && <>Color: {data[1]?.[color]}</>}
+                </td>
+                <td className="w-[163.81552306px] h-[19.275590551px]"></td>
+                <td className="w-[114.30371204px] h-[19.275590551px]"></td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>
@@ -153,11 +191,11 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
             <tr className="text-sm">
               <td className="h-[19.275590551px] w-[336.62632171px]"></td>
               <td className="h-[19.275590551px] w-[101.83127109px] pl-5">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 3)}
+                {FormattedSumTotal(data, totalSalesVatExclusive2, 3)}
               </td>
               <td className="h-[19.275590551px] w-[163.81552306px]"></td>
               <td className="h-[19.275590551px] w-[114.30371204px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 3)}
+                {FormattedSumTotal(data, totalSalesVatExclusive2, 3)}
               </td>
             </tr>
             <tr className="text-sm">
@@ -175,11 +213,11 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
             <tr className="text-sm">
               <td className="h-[19.275590551px] w-[336.62632171px]"></td>
               <td className="h-[19.275590551px] w-[101.83127109px] pl-5">
-                {FormattedSumTotal(data, rateInclusiveVat, 3)}
+                0.00
               </td>
               <td className="h-[19.275590551px] w-[163.81552306px]"></td>
               <td className="h-[19.275590551px] w-[114.30371204px] text-center">
-                {FormattedSumTotal(data, vatAmount2, 3)}
+                {FormattedSumTotal(data, totalSalesVatExclusive, 3)}
               </td>
             </tr>
             <tr className="text-sm">

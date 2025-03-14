@@ -28,9 +28,9 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
   const serialNumber = 21;
   const chassisNumber = 22;
   const conductionSticker = 23;
-  const tinNumber = 24;
-  const cashier = 25;
-  const unitPrice = 26;
+  const rateInclusiveOfTax = 24;
+  const color = 25;
+  const cashier = 26;
 
   return (
     <div className="text-xs h-[510.23622047px] w-[778.58267717px]">
@@ -44,7 +44,6 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="flex h-[18.141732283px]">
         <p className="w-[461.1023622px] pl-[132.28346457px]">
-          {data[1]?.[tinNumber] || ""}
         </p>
         <p className="w-[132.28346457px] pl-[151.18110236px]">
           {data[1]?.[terms] || ""}
@@ -83,10 +82,10 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
                   {row[articles]}
                 </td>
                 <td className="w-[164.40944882px] h-[18.141732283px]">
-                  {FormattedNumber(row[unitPrice])}
+                  {/* {FormattedNumber(row[unitPrice])} */}
                 </td>
                 <td className="w-[137.95275591px] h-[18.141732283px]">
-                  {FormattedNumber(row[totalAmount])}
+                  {FormattedNumber(row[rateInclusiveOfTax])}
                 </td>
               </tr>
             ))}

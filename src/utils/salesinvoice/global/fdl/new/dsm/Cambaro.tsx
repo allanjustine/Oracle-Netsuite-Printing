@@ -28,9 +28,9 @@ const Cambaro = ({ data }: any) => {
   const serialNumber = 21;
   const chassisNumber = 22;
   const conductionSticker = 23;
-  const tinNumber = 24;
-  const cashier = 25;
-  const unitPrice = 26;
+  const rateInclusiveOfTax = 24;
+  const color = 25;
+  const cashier = 26;
 
   return (
     <div className="text-xs h-[767.24409449px] w-[610.39370079px]">
@@ -46,7 +46,7 @@ const Cambaro = ({ data }: any) => {
           )}
         </p>
         <p className="w-[389.29133858px] flex items-center h-[24.566929134px] ml-[154.96062992px]">
-          {data[1]?.[tinNumber] || <span className="opacity-0">No Data</span>}
+           <span className="opacity-0">No Data</span>
         </p>
         <p
           className={`${
@@ -72,7 +72,7 @@ const Cambaro = ({ data }: any) => {
                 </td>
                 <td className="w-[75.968503937px]">{row[quantity]}</td>
                 <td className="w-[83.48976378px] h-[18.897637795px]">
-                  {FormattedNumber(row[unitPrice])}
+                  {/* {FormattedNumber(row[unitPrice])} */}
                 </td>
                 <td className="w-[105.4488189px] h-[18.897637795px]">
                   {FormattedNumber(row[totalAmount])}
