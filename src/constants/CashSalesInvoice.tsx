@@ -96,15 +96,16 @@ import FelyOldSiSize from "@/utils/salesinvoice/global/fely/old/FelyOldSiSize";
 import BjvOldCsiSize from "@/utils/salesinvoice/global/bjv/old/BjvOldCsiSize";
 import SMCTAlano from "@/utils/salesinvoice/global/fdl/old/smct/SMCTAlano";
 import DAPOzamiz from "@/utils/salesinvoice/global/fdl/old/dap/DAPOzamiz";
+import SMCTNaic from "@/utils/salesinvoice/global/fdl/old/smct/SMCTNaic";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
 
   const luzonSizeData = [
     //"PAGS",
-    "SILA",
+    //"SILA",
     "SLAS",
-    "SROS",
+    //"SROS",
   ];
 
   const landscapeSiSizeData = [
@@ -237,7 +238,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
 
   const felyCsiOldSizeData = ["FAMY", "SILA"];
 
-  const felyLandscapeCsiOldSizeData = ["PAGS", "NAIC"];
+  const felyLandscapeCsiOldSizeData = ["PAGS"];
 
   const felySiNewSizeData = [];
 
@@ -434,6 +435,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTAlano data={data} />;  //CSI
     case "OZAD" === user?.branchCode:
       return <DAPOzamiz data={data} />;
+    case "NAIC" === user?.branchCode:
+      return <SMCTNaic data={data} />;   //CSI LANDSCAPE
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
