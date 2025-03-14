@@ -236,7 +236,14 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "DSMDM",
   ];
 
-  const obbusSiNewSizeData = ["DSMD", "RIZA", "TOMAS", "CATAR2", "BOLOD"];
+  const obbusSiNewSizeData = [
+    "DSMD",
+    "RIZA",
+    "TOMAS",
+    "CATAR2",
+    "BOLOD",
+    "MING",
+  ];
 
   const obbusSiOldSizeData = ["TACU"];
 
