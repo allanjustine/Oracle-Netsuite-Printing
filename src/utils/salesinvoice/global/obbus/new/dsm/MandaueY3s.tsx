@@ -62,15 +62,15 @@ const MandaueY3s = ({ data }: any) => {
         <table className="border-collapse">
           <tbody>
             {data.slice(1, 13).map((row: any, index: number) => (
-              <tr key={index} className="text-[10px] text-center">
+              <tr key={index} className="text-xs text-center">
                 <td
-                  className={`w-[249.4488189px] h-[18.141732283px] ${
-                    row[articles]?.length > 41 ? "text-[7px]" : ""
+                  className={`w-[249.4488189px] h-[18.141732283px] text-start ${
+                    row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >
                   {row[articles]}
                 </td>
-                <td className="w-[71.05511811px]">{row[quantity]}</td>
+                <td className="w-[71.05511811px]">{row[quantity].replace(/.0$/, "")}</td>
                 <td className="w-[77.480314961px] h-[18.141732283px]">
                   {/* {FormattedNumber(row[unitPrice])} */}
                 </td>
@@ -79,10 +79,10 @@ const MandaueY3s = ({ data }: any) => {
                 </td>
               </tr>
             ))}
-            <tr className="text-[10px] text-center">
+            <tr className="text-xs text-center">
               <td
                 className={`w-[249.4488189px] h-[18.141732283px] ${
-                  data[1]?.[serialNumber]?.length > 41 ? "text-[7px]" : ""
+                  data[1]?.[serialNumber]?.length > 41 ? "text-[10px]" : ""
                 }`}
               >
                 {data[1]?.[serialNumber] && (
@@ -93,10 +93,10 @@ const MandaueY3s = ({ data }: any) => {
               <td className="w-[77.480314961px] h-[18.141732283px]"></td>
               <td className="w-[96.377952756px] h-[18.141732283px]"></td>
             </tr>
-            <tr className="text-[10px] text-center">
+            <tr className="text-xs text-center">
               <td
                 className={`w-[249.4488189px] h-[18.141732283px] ${
-                  data[1]?.[chassisNumber]?.length > 41 ? "text-[7px]" : ""
+                  data[1]?.[chassisNumber]?.length > 41 ? "text-[10px]" : ""
                 }`}
               >
                 {data[1]?.[chassisNumber] && (
@@ -113,7 +113,7 @@ const MandaueY3s = ({ data }: any) => {
       <div className="mx-[28.346456693px] h-[124.72440945px]">
         <table className="border-collapse w-full">
           <tbody>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.141732283px] w-[151.18110236px]"></td>
               <td className="h-[18.141732283px] w-[98.267716535px] pl-[11.338582677px]">
                 {FormattedSumTotal(data, totalSalesVatInclusive2, 12)}
@@ -123,7 +123,7 @@ const MandaueY3s = ({ data }: any) => {
                 {FormattedSumTotal(data, totalSalesVatInclusive, 12)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.141732283px] w-[151.18110236px]"></td>
               <td className="h-[18.141732283px] w-[98.267716535px] pl-[11.338582677px]">
                 {FormattedSumTotal(data, vatAmount, 12)}
@@ -134,7 +134,7 @@ const MandaueY3s = ({ data }: any) => {
                 0.00
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.141732283px] w-[151.18110236px]"></td>
               <td className="h-[18.141732283px] w-[98.267716535px] pl-[11.338582677px]">
                 {FormattedSumTotal(data, rateInclusiveVat, 12)}
@@ -144,7 +144,7 @@ const MandaueY3s = ({ data }: any) => {
                 {FormattedSumTotal(data, totalSalesVatInclusive2, 12)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.141732283px] w-[151.18110236px]"></td>
               <td className="h-[18.141732283px] w-[98.267716535px] pl-[11.338582677px]">
                 {/* {FormattedSumTotal(data, rateInclusiveVat, 12)} VAT EXEMPT SALES */}
@@ -156,7 +156,7 @@ const MandaueY3s = ({ data }: any) => {
                 0.00
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.141732283px] w-[151.18110236px]"></td>
               <td className="h-[18.141732283px] w-[98.267716535px] pl-[11.338582677px]"></td>
               <td className="h-[18.141732283px] w-[147.4015748px]"></td>
@@ -164,7 +164,7 @@ const MandaueY3s = ({ data }: any) => {
                 {FormattedSumTotal(data, vatAmount2, 12)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.141732283px] w-[151.18110236px]"></td>
               <td className="h-[18.141732283px] w-[98.267716535px] pl-[11.338582677px]"></td>
               <td className="h-[18.141732283px] w-[147.4015748px]"></td>
@@ -173,7 +173,7 @@ const MandaueY3s = ({ data }: any) => {
                 0.00
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.141732283px] w-[151.18110236px]"></td>
               <td className="h-[18.141732283px] w-[98.267716535px] pl-[11.338582677px]"></td>
               <td className="h-[18.141732283px] w-[147.4015748px]"></td>
@@ -186,7 +186,7 @@ const MandaueY3s = ({ data }: any) => {
       </div>
       <div className="w-[548.03149606px]">
         <div className="mt-[15.897637795px] ml-[183.30708661px] w-[142.86614173px]">
-          <p className="text-[10px] text-center">
+          <p className="text-xs text-center">
             {data[1]?.[cashier] || ""}
           </p>
         </div>

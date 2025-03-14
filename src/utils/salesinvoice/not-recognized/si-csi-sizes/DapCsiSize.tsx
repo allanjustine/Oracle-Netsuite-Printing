@@ -70,14 +70,14 @@ const DapCsiSize = ({ data }: any) => {
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
-              <tr key={index} className="text-[10px] text-center">
-                <td className="w-[71.811023622px]">{row[quantity]}</td>
+              <tr key={index} className="text-xs text-center">
+                <td className="w-[71.811023622px]">{row[quantity].replace(/.0$/, "")}</td>
                 <td className="w-[62.362204724px] h-[19.275590551px]">
                   {row[unitOfMeasurement]}
                 </td>
                 <td
                   className={`w-[238.48818898px] h-[19.275590551px] text-start ${
-                    row[articles]?.length > 41 ? "text-[7px]" : ""
+                    row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >
                   {row[articles]}
@@ -96,7 +96,7 @@ const DapCsiSize = ({ data }: any) => {
                 <td className="w-[62.362204724px] h-[19.275590551px]"></td>
                 <td
                   className={`w-[238.48818898px] h-[19.275590551px] text-start ${
-                    data[1]?.[serialNumber]?.length > 25 ? "text-[10px]" : ""
+                    data[1]?.[serialNumber]?.length > 25 ? "text-xs" : ""
                   }`}
                 >
                   {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
@@ -115,7 +115,7 @@ const DapCsiSize = ({ data }: any) => {
                 <td className="w-[62.362204724px] h-[19.275590551px]"></td>
                 <td
                   className={`w-[238.48818898px] h-[19.275590551px] text-start ${
-                    data[1]?.[chassisNumber]?.length > 25 ? "text-[10px]" : ""
+                    data[1]?.[chassisNumber]?.length > 25 ? "text-xs" : ""
                   }`}
                 >
                   {data[1]?.[chassisNumber] && (
@@ -133,7 +133,7 @@ const DapCsiSize = ({ data }: any) => {
                 <td
                   className={`w-[238.48818898px] h-[19.275590551px] text-start ${
                     data[1]?.[conductionSticker]?.length > 25
-                      ? "text-[10px]"
+                      ? "text-xs"
                       : ""
                   }`}
                 >
@@ -151,7 +151,7 @@ const DapCsiSize = ({ data }: any) => {
                 <td className="w-[62.362204724px] h-[19.275590551px]"></td>
                 <td
                   className={`w-[238.48818898px] h-[19.275590551px] text-start ${
-                    data[1]?.[color]?.length > 25 ? "text-[10px]" : ""
+                    data[1]?.[color]?.length > 25 ? "text-xs" : ""
                   }`}
                 >
                   {data[1]?.[color] && <>Color: {data[1]?.[color]}</>}
@@ -166,7 +166,7 @@ const DapCsiSize = ({ data }: any) => {
       <div className="mx-[34.393700787px] h-[139.84251969px]">
         <table className="border-collapse w-full">
           <tbody>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
               <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
                 {FormattedSumTotal(data, totalSalesVatExclusive2, 16)}
@@ -176,7 +176,7 @@ const DapCsiSize = ({ data }: any) => {
                 {FormattedSumTotal(data, totalSalesVatExclusive, 16)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
               <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
                 {/* {FormattedSumTotal(data, rateInclusiveVat, 16)} VAT EXEMPT SALES */}
@@ -188,7 +188,7 @@ const DapCsiSize = ({ data }: any) => {
                 0.00
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
               <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
                 0.00
@@ -198,7 +198,7 @@ const DapCsiSize = ({ data }: any) => {
                 {FormattedSumTotal(data, totalSalesVatExclusive, 16)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
               <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
                 {FormattedSumTotal(data, vatAmount, 16)}
@@ -209,7 +209,7 @@ const DapCsiSize = ({ data }: any) => {
                 0.00
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
               <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]"></td>
               <td className="h-[19.275590551px] w-[132.66141732px]"></td>
@@ -217,7 +217,7 @@ const DapCsiSize = ({ data }: any) => {
                 {FormattedSumTotal(data, totalSalesVatExclusive, 16)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
               <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]"></td>
               <td className="h-[19.275590551px] w-[132.66141732px]"></td>
@@ -225,7 +225,7 @@ const DapCsiSize = ({ data }: any) => {
                 {FormattedSumTotal(data, vatAmount3, 16)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
               <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]"></td>
               <td className="h-[19.275590551px] w-[132.66141732px]"></td>
@@ -238,7 +238,7 @@ const DapCsiSize = ({ data }: any) => {
       </div>
       <div className="mx-[34.393700787px]">
         <div className="mt-[26.456692914px] ml-[332.976377952px]">
-          <p className="text-[10px] text-center">
+          <p className="text-xs text-center">
             {data[1]?.[cashier] || ""}
           </p>
         </div>

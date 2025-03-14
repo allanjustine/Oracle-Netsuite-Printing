@@ -66,14 +66,14 @@ const Binan: React.FC<PrintPageProps> = ({ data }) => {
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 17).map((row, index) => (
-              <tr key={index} className="text-[10px] text-center">
-                <td className="w-[71.433070866px]">{row[quantity]}</td>
+              <tr key={index} className="text-xs text-center">
+                <td className="w-[71.433070866px]">{row[quantity].replace(/.0$/, "")}</td>
                 <td className="w-[56.31496063px] h-[18.275590551px]">
                   {row[unitOfMeasurement]}
                 </td>
                 <td
-                  className={`w-[231.30708661px] h-[18.275590551px] ${
-                    row[articles]?.length > 41 ? "text-[7px]" : ""
+                  className={`w-[231.30708661px] h-[18.275590551px] text-start ${
+                    row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >
                   {row[articles]}
@@ -86,12 +86,12 @@ const Binan: React.FC<PrintPageProps> = ({ data }) => {
                 </td>
               </tr>
             ))}
-            <tr className="text-[10px] text-center">
+            <tr className="text-xs text-center">
               <td className="w-[74.24071991px]"></td>
               <td className="w-[53.831271091px] h-[19.275590551px]"></td>
               <td
                 className={`w-[309.70528684px] h-[19.275590551px] ${
-                  data[1]?.[serialNumber]?.length > 41 ? "text-[7px]" : ""
+                  data[1]?.[serialNumber]?.length > 41 ? "text-[10px]" : ""
                 }`}
               >
                 {data[1]?.[serialNumber]}
@@ -99,12 +99,12 @@ const Binan: React.FC<PrintPageProps> = ({ data }) => {
               <td className="w-[163.81552306px] h-[19.275590551px]"></td>
               <td className="w-[114.30371204px] h-[19.275590551px]"></td>
             </tr>
-            <tr className="text-[10px] text-center">
+            <tr className="text-xs text-center">
               <td className="w-[74.24071991px]"></td>
               <td className="w-[53.831271091px] h-[19.275590551px]"></td>
               <td
                 className={`w-[309.70528684px] h-[19.275590551px] ${
-                  data[1]?.[chassisNumber]?.length > 41 ? "text-[7px]" : ""
+                  data[1]?.[chassisNumber]?.length > 41 ? "text-[10px]" : ""
                 }`}
               >
                 {data[1]?.[chassisNumber]}
@@ -118,7 +118,7 @@ const Binan: React.FC<PrintPageProps> = ({ data }) => {
       <div className="mx-[30.236220472px] h-[135.68503937px]">
         <table className="border-collapse w-full">
           <tbody>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.275590551px] w-[124.72440945px]"></td>
               <td className="h-[18.275590551px] w-[179.90551181px] pl-[7.342622px]">
                 {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
@@ -128,7 +128,7 @@ const Binan: React.FC<PrintPageProps> = ({ data }) => {
                 {FormattedSumTotal(data, totalSalesVatInclusive, 16)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.275590551px] w-[124.72440945px]"></td>
               <td className="h-[18.275590551px] w-[179.90551181px] pl-[7.342622px]">0.00</td>
               <td className="h-[18.275590551px] w-[128.50393701px]"></td>
@@ -136,7 +136,7 @@ const Binan: React.FC<PrintPageProps> = ({ data }) => {
                 {FormattedSumTotal(data, vatAmount2, 16)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.275590551px] w-[124.72440945px]"></td>
               <td className="h-[18.275590551px] w-[179.90551181px] pl-[7.342622px]">
                 {FormattedSumTotal(data, rateInclusiveVat, 16)}
@@ -146,7 +146,7 @@ const Binan: React.FC<PrintPageProps> = ({ data }) => {
                 {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.275590551px] w-[124.72440945px]"></td>
               <td className="h-[18.275590551px] w-[179.90551181px] pl-[7.342622px]">
                 {FormattedSumTotal(data, vatAmount, 16)}
@@ -154,7 +154,7 @@ const Binan: React.FC<PrintPageProps> = ({ data }) => {
               <td className="h-[18.275590551px] w-[128.50393701px]"></td>
               <td className="h-[18.275590551px] w-[98.267716535px] text-center"></td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.275590551px] w-[124.72440945px]"></td>
               <td className="h-[18.275590551px] w-[179.90551181px] pl-[7.342622px]"></td>
               <td className="h-[18.275590551px] w-[128.50393701px]"></td>
@@ -162,7 +162,7 @@ const Binan: React.FC<PrintPageProps> = ({ data }) => {
                 {FormattedSumTotal(data, vatAmount2, 16)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.275590551px] w-[124.72440945px]"></td>
               <td className="h-[18.275590551px] w-[179.90551181px] pl-[7.342622px]"></td>
               <td className="h-[18.275590551px] w-[128.50393701px]"></td>
@@ -170,7 +170,7 @@ const Binan: React.FC<PrintPageProps> = ({ data }) => {
                 {FormattedSumTotal(data, vatAmount3, 16)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.275590551px] w-[124.72440945px]"></td>
               <td className="h-[18.275590551px] w-[179.90551181px] pl-[7.342622px]"></td>
               <td className="h-[18.275590551px] w-[128.50393701px]"></td>
@@ -183,7 +183,7 @@ const Binan: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="mx-[30.236220472px]">
         <div className="mt-[22.566929134px] ml-[392.31496063px]">
-          <p className="text-[10px] text-center">
+          <p className="text-xs text-center">
             {data[1]?.[cashier] || ""}
           </p>
         </div>

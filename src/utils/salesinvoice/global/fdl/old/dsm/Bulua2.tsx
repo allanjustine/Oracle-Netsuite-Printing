@@ -72,14 +72,14 @@ const Bulua2 = ({ data }: any) => {
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
-              <tr key={index} className="text-[10px] text-center">
-                <td className="w-[71.811023622px]">{row[quantity]}</td>
+              <tr key={index} className="text-xs text-center">
+                <td className="w-[71.811023622px]">{row[quantity].replace(/.0$/, "")}</td>
                 <td className="w-[58.582677165px] h-[18.897637795px] pl-4">
                   {row[unitOfMeasurement]}
                 </td>
                 <td
-                  className={`w-[238.48818898px] h-[18.897637795px] pl-2 ${
-                    row[articles]?.length > 41 ? "text-[7px]" : ""
+                  className={`w-[238.48818898px] h-[18.897637795px] pl-2 text-start ${
+                    row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >
                   {row[articles]}
@@ -92,12 +92,12 @@ const Bulua2 = ({ data }: any) => {
                 </td>
               </tr>
             ))}
-            <tr className="text-[10px] text-center">
+            <tr className="text-xs text-center">
               <td className="w-[74.24071991px]"></td>
               <td className="w-[53.831271091px] h-[18.897637795px]"></td>
               <td
                 className={`w-[309.70528684px] h-[18.897637795px] ${
-                  data[1]?.[serialNumber]?.length > 41 ? "text-[7px]" : ""
+                  data[1]?.[serialNumber]?.length > 41 ? "text-[10px]" : ""
                 }`}
               >
                 {data[1]?.[serialNumber] && (
@@ -107,12 +107,12 @@ const Bulua2 = ({ data }: any) => {
               <td className="w-[163.81552306px] h-[18.897637795px]"></td>
               <td className="w-[114.30371204px] h-[18.897637795px]"></td>
             </tr>
-            <tr className="text-[10px] text-center">
+            <tr className="text-xs text-center">
               <td className="w-[74.24071991px]"></td>
               <td className="w-[53.831271091px] h-[18.897637795px]"></td>
               <td
                 className={`w-[309.70528684px] h-[18.897637795px] ${
-                  data[1]?.[chassisNumber]?.length > 41 ? "text-[7px]" : ""
+                  data[1]?.[chassisNumber]?.length > 41 ? "text-[10px]" : ""
                 }`}
               >
                 {data[1]?.[chassisNumber] && (
@@ -128,7 +128,7 @@ const Bulua2 = ({ data }: any) => {
       <div className="mx-[27.212598425px] h-[130.01574803px]">
         <table className="border-collapse w-full">
           <tbody>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.897637795px] w-[131.90551181px]"></td>
               <td className="h-[18.897637795px] w-[185.57480315px] pl-[11.338582677px]">
                 {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
@@ -138,7 +138,7 @@ const Bulua2 = ({ data }: any) => {
                 {FormattedSumTotal(data, totalSalesVatInclusive, 16)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.897637795px] w-[131.90551181px]"></td>
               <td className="h-[18.897637795px] w-[185.57480315px] pl-[11.338582677px]">
                 {/* {FormattedSumTotal(data, rateInclusiveVat, 16)} VAT EXEMPT SALES */}
@@ -150,7 +150,7 @@ const Bulua2 = ({ data }: any) => {
                 0.00
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.897637795px] w-[131.90551181px]"></td>
               <td className="h-[18.897637795px] w-[185.57480315px] pl-[11.338582677px]">
                 {FormattedSumTotal(data, rateInclusiveVat, 16)}
@@ -160,7 +160,7 @@ const Bulua2 = ({ data }: any) => {
                 {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.897637795px] w-[131.90551181px]"></td>
               <td className="h-[18.897637795px] w-[185.57480315px] pl-[11.338582677px]">
                 {FormattedSumTotal(data, vatAmount, 16)}
@@ -171,7 +171,7 @@ const Bulua2 = ({ data }: any) => {
                 0.00
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.897637795px] w-[131.90551181px]"></td>
               <td className="h-[18.897637795px] w-[185.57480315px] pl-[11.338582677px]"></td>
               <td className="h-[18.897637795px] w-[132.66141732px]"></td>
@@ -179,7 +179,7 @@ const Bulua2 = ({ data }: any) => {
                 {FormattedSumTotal(data, vatAmount2, 16)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.897637795px] w-[131.90551181px]"></td>
               <td className="h-[18.897637795px] w-[185.57480315px] pl-[11.338582677px]"></td>
               <td className="h-[18.897637795px] w-[132.66141732px]"></td>
@@ -187,7 +187,7 @@ const Bulua2 = ({ data }: any) => {
                 {FormattedSumTotal(data, vatAmount3, 16)}
               </td>
             </tr>
-            <tr className="text-[10px]">
+            <tr className="text-xs">
               <td className="h-[18.897637795px] w-[131.90551181px]"></td>
               <td className="h-[18.897637795px] w-[185.57480315px] pl-[11.338582677px]"></td>
               <td className="h-[18.897637795px] w-[132.66141732px]"></td>
@@ -200,7 +200,7 @@ const Bulua2 = ({ data }: any) => {
       </div>
       <div className="mx-[27.212598425px]">
         <div className="mt-[20.456692914px] ml-[332.976377952px]">
-          <p className="text-[10px] text-center">
+          <p className="text-xs text-center">
             {data[1]?.[cashier] || ""}
           </p>
         </div>

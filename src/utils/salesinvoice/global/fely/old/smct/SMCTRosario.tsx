@@ -27,9 +27,9 @@ const SMCTRosario = ({ data }: any) => {
   const serialNumber = 21;
   const chassisNumber = 22;
   const conductionSticker = 23;
-  const tinNumber = 24;
-  const cashier = 25;
-  const unitPrice = 26;
+  const rateInclusiveOfTax = 24;
+  const color = 25;
+  const cashier = 26;
 
   return (
     <div className="text-xs h-[771.02362205px] w-[593.38582677px]">
@@ -43,7 +43,7 @@ const SMCTRosario = ({ data }: any) => {
       </div>
       <div className="flex h-[19.409448819px]">
         <p className="w-[376.06299213px] pl-[94.488188976px]">
-          {data[1]?.[tinNumber] || ""}
+        <span className="opacity-0">No Data</span>
         </p>
         <p className="w-[219.21259843px] pl-[60.472440945px]">
           {data[1]?.[terms] || ""}
@@ -71,22 +71,22 @@ const SMCTRosario = ({ data }: any) => {
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
               <tr key={index} className="text-[10px] text-center">
-                <td className="w-[71.811023622px]">{row[quantity]}</td>
+                <td className="w-[71.811023622px]">{row[quantity].replace(/.0$/, "")}</td>
                 <td className="w-[62.362204724px] h-[19.275590551px]">
                   {row[unitOfMeasurement]}
                 </td>
                 <td
-                  className={`w-[238.48818898px] h-[19.275590551px] ${
+                  className={`w-[238.48818898px] h-[19.275590551px] text-start ${
                     row[articles]?.length > 41 ? "text-[7px]" : ""
                   }`}
                 >
                   {row[articles]}
                 </td>
                 <td className="w-[79.748031496px] h-[19.275590551px]">
-                  {FormattedNumber(row[unitPrice])}
+                  {/* {FormattedNumber(row[unitPrice])} */}
                 </td>
                 <td className="w-[102.38740157px] h-[19.275590551px]">
-                  {FormattedNumber(row[totalAmount])}
+                  {FormattedNumber(row[rateInclusiveOfTax])}
                 </td>
               </tr>
             ))}
