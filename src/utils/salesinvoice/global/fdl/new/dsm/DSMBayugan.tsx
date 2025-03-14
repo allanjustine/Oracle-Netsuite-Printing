@@ -41,7 +41,7 @@ const DSMBayugan = ({ data }: any) => {
       </div>
       <div className="w-full h-[19.409448819px] mt-[15.677165354px]">
         <p className="w-[377.95275591px] pl-[188.97637795px]">
-          {data[1]?.[mainLineName] || ""}
+          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
         </p>
       </div>
       <div className="w-full h-[19.409448819px] mt-[2.677165354px]">
@@ -68,13 +68,13 @@ const DSMBayugan = ({ data }: any) => {
                   {row[articles]}
                 </td>
                 <td className="w-[75.5905511811px] h-[19.275590551px]">
-                  {row[quantity]}
+                  {row[quantity]?.replace(/.0$/, "")}
                 </td>
                 <td className="w-[83.149606299px] h-[19.275590551px]">
                   {/* {FormattedNumber(row[unitPrice])} */}
                 </td>
                 <td className="w-[105.82677165px] h-[19.275590551px]">
-                  {FormattedNumber(row[totalAmount])}
+                  {FormattedNumber(row[rateInclusiveOfTax])}
                 </td>
               </tr>
             ))}
@@ -84,9 +84,11 @@ const DSMBayugan = ({ data }: any) => {
                   data[1]?.[serialNumber]?.length > 41 ? "text-[10px]" : ""
                 }`}
               >
-                {data[1]?.[serialNumber] && (
-                  <>Engine #: {data[1]?.[serialNumber]}</>
-                )}
+                {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
+                    <>Engine #: {data[1]?.[serialNumber]}</>
+                  ) : (
+                    <>Serial #: {data[1]?.[serialNumber]}</>
+                  )}
               </td>
               <td className="w-[75.5905511811px] h-[19.275590551px]"></td>
               <td className="w-[83.149606299px] h-[19.275590551px]"></td>
@@ -185,7 +187,7 @@ const DSMBayugan = ({ data }: any) => {
       </div>
       <div className="mx-[34.393700787px]">
         <div className="mt-[15.456692914px] ml-[20px] w-[340.15748031px]">
-          <p className="text-xs text-center">{data[1]?.[cashier] || ""}</p>
+          <p className="text-xs text-center">{data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}</p>
         </div>
       </div>
     </div>

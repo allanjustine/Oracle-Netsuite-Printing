@@ -1,8 +1,9 @@
 "use client";
+import { PrintPageProps } from "@/types/types";
 import FormattedNumber from "@/utils/FormattedNumber";
 import FormattedSumTotal from "@/utils/FormattedSumTotal";
 
-const HDTanza = ({ data }: any) => {
+const HDInabanga = ({ data }: any) => {
   const mainLineName = 0;
   const date = 1;
   const taxNumber = 2;
@@ -32,70 +33,85 @@ const HDTanza = ({ data }: any) => {
   const cashier = 26;
 
   return (
-    <div className="text-xs h-[767.24409449px] w-[608.50393701px]">
-      <div className="w-full h-[30.236220472px] mt-[167.62992126px]">
-        <p className="w-[158.74015748px] pl-[415.7480315px]">
+    <div className="text-xs h-[771.02362205px] w-[593.38582677px]">
+      <div className="flex h-[19.409448819px] mt-[137.57480315px]">
+        <p className="w-[376.06299213px] pl-[94.488188976px]">
+          {data[1]?.[mainLineName] || ""}
+        </p>
+        <p className="w-[219.21259843px] pl-[60.472440945px]">
           {data[1]?.[date] || ""}
         </p>
       </div>
-      <div className="w-full h-[19.409448819px] mt-[11.677165354px]">
-        <p className="w-[377.95275591px] pl-[188.97637795px]">
-          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
-        </p>
-      </div>
-      <div className="w-full h-[19.409448819px] mt-[2.677165354px]">
-        <p className="w-[377.95275591px] pl-[188.97637795px]">
+      <div className="flex h-[19.409448819px]">
+        <p className="w-[376.06299213px] pl-[94.488188976px]">
           
           <span className="opacity-0">No Data</span>
         </p>
-      </div>
-      <div className="w-[608.50393701px] h-[19.409448819px] mt-[2.677165354px]">
-        <p className="w-[434.64566929px] ml-[188.97637795px]">
-          {data[1]?.[billingAddress] || ""}
+        <p className="w-[219.21259843px] pl-[60.472440945px]">
+          {data[1]?.[terms] || ""}
         </p>
       </div>
-      <div className="mx-[34.015748031px] mt-[30.236220472px] h-[226.77165354px]">
+      <div className="flex h-[38.818897638px]">
+        <div className="w-[376.06299213px] pl-[94.488188976px]">
+          <p className="h-[19.409448819px]">{data[1]?.[billingAddress].substring(0, 47) || ""}</p>
+          <p className="h-[19.409448819px]">{data[1]?.[billingAddress].substring(47) || ""}</p>
+        </div>
+        <p className="w-[219.21259843px] pl-[136.06299213px]">
+          {data[1]?.[oscaPwdIdNo] || ""}
+        </p>
+      </div>
+      <div className="flex h-[19.409448819px]">
+        <p className="w-[376.06299213px] pl-[137.95275591px]">
+          {data[1]?.[businessStyle] || ""}
+        </p>
+        <p className="w-[219.21259843px] pl-[113.38582677px]">
+          {data[1]?.[cardHolderSignatures] || ""}
+        </p>
+      </div>
+      <div className="mx-[34.393700787px] mt-[23.4330708664px] h-[314.07874016px]">
         <table className="border-collapse w-full">
           <tbody>
-            {data.slice(1, 13).map((row: any, index: number) => (
+            {data.slice(1, 17).map((row: any, index: number) => (
               <tr key={index} className="text-xs text-center">
+                <td className="w-[71.811023622px]">{row[quantity].replace(/.0$/, "")}</td>
+                <td className="w-[62.362204724px] h-[19.275590551px]">
+                  {row[unitOfMeasurement]}
+                </td>
                 <td
-                  className={`w-[268.34645669px] text-start ${
+                  className={`w-[238.48818898px] h-[19.275590551px] text-start ${
                     row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >
                   {row[articles]}
                 </td>
-                <td className="w-[75.5905511811px] h-[19.275590551px]">
-                  {row[quantity]?.replace(/.0$/, "")}
-                </td>
-                <td className="w-[83.149606299px] h-[19.275590551px]">
+                <td className="w-[79.748031496px] h-[19.275590551px]">
                   {/* {FormattedNumber(row[unitPrice])} */}
                 </td>
-                <td className="w-[105.82677165px] h-[19.275590551px]">
+                <td className="w-[102.38740157px] h-[19.275590551px]">
                   {FormattedNumber(row[rateInclusiveOfTax])}
                 </td>
               </tr>
             ))}
             <tr className="text-xs text-center">
+              <td className="w-[74.24071991px]"></td>
+              <td className="w-[53.831271091px] h-[19.275590551px]"></td>
               <td
-                className={`w-[268.34645669px] ${
+                className={`w-[309.70528684px] h-[19.275590551px] ${
                   data[1]?.[serialNumber]?.length > 41 ? "text-[10px]" : ""
                 }`}
               >
-                {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
-                    <>Engine #: {data[1]?.[serialNumber]}</>
-                  ) : (
-                    <>Serial #: {data[1]?.[serialNumber]}</>
-                  )}
+                {data[1]?.[serialNumber] && (
+                  <>Engine #: {data[1]?.[serialNumber]}</>
+                )}
               </td>
-              <td className="w-[75.5905511811px] h-[19.275590551px]"></td>
-              <td className="w-[83.149606299px] h-[19.275590551px]"></td>
-              <td className="w-[105.82677165px] h-[19.275590551px]"></td>
+              <td className="w-[163.81552306px] h-[19.275590551px]"></td>
+              <td className="w-[114.30371204px] h-[19.275590551px]"></td>
             </tr>
             <tr className="text-xs text-center">
+              <td className="w-[74.24071991px]"></td>
+              <td className="w-[53.831271091px] h-[19.275590551px]"></td>
               <td
-                className={`w-[268.34645669px] ${
+                className={`w-[309.70528684px] h-[19.275590551px] ${
                   data[1]?.[chassisNumber]?.length > 41 ? "text-[10px]" : ""
                 }`}
               >
@@ -103,9 +119,8 @@ const HDTanza = ({ data }: any) => {
                   <>Chassis #: {data[1]?.[chassisNumber]}</>
                 )}
               </td>
-              <td className="w-[75.5905511811px] h-[19.275590551px]"></td>
-              <td className="w-[83.149606299px] h-[19.275590551px]"></td>
-              <td className="w-[105.82677165px] h-[19.275590551px]"></td>
+              <td className="w-[163.81552306px] h-[19.275590551px]"></td>
+              <td className="w-[114.30371204px] h-[19.275590551px]"></td>
             </tr>
           </tbody>
         </table>
@@ -115,7 +130,7 @@ const HDTanza = ({ data }: any) => {
           <tbody>
             <tr className="text-xs">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[65.338582677px]">
+              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
                 {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
               </td>
               <td className="h-[19.275590551px] w-[132.66141732px]"></td>
@@ -125,7 +140,7 @@ const HDTanza = ({ data }: any) => {
             </tr>
             <tr className="text-xs">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[65.338582677px]">
+              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
                 {/* {FormattedSumTotal(data, rateInclusiveVat, 16)} VAT EXEMPT SALES */}
                 0.00
               </td>
@@ -137,7 +152,7 @@ const HDTanza = ({ data }: any) => {
             </tr>
             <tr className="text-xs">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[65.338582677px]">
+              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
                 {FormattedSumTotal(data, rateInclusiveVat, 16)}
               </td>
               <td className="h-[19.275590551px] w-[132.66141732px]"></td>
@@ -147,7 +162,7 @@ const HDTanza = ({ data }: any) => {
             </tr>
             <tr className="text-xs">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[65.338582677px]">
+              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
                 {FormattedSumTotal(data, vatAmount, 16)}
               </td>
               <td className="h-[19.275590551px] w-[132.66141732px]"></td>
@@ -158,7 +173,7 @@ const HDTanza = ({ data }: any) => {
             </tr>
             <tr className="text-xs">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[65.338582677px]"></td>
+              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]"></td>
               <td className="h-[19.275590551px] w-[132.66141732px]"></td>
               <td className="h-[19.275590551px] w-[102.04724409px] text-center">
                 {FormattedSumTotal(data, vatAmount2, 16)}
@@ -166,16 +181,15 @@ const HDTanza = ({ data }: any) => {
             </tr>
             <tr className="text-xs">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[65.338582677px]"></td>
+              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]"></td>
               <td className="h-[19.275590551px] w-[132.66141732px]"></td>
               <td className="h-[19.275590551px] w-[102.04724409px] text-center">
-                {/* {FormattedSumTotal(data, vatAmount3, 16)} */}
-                0.00
+                {FormattedSumTotal(data, vatAmount3, 16)}
               </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[65.338582677px]"></td>
+              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]"></td>
               <td className="h-[19.275590551px] w-[132.66141732px]"></td>
               <td className="h-[19.275590551px] w-[102.04724409px] text-center">
                 {FormattedSumTotal(data, totalSalesVatInclusive, 16)}
@@ -185,12 +199,14 @@ const HDTanza = ({ data }: any) => {
         </table>
       </div>
       <div className="mx-[34.393700787px]">
-        <div className="mt-[15.456692914px] ml-[7.5px] w-[340.15748031px]">
-          <p className="text-xs text-center">{data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}</p>
+        <div className="mt-[26.456692914px] ml-[332.976377952px]">
+          <p className="text-xs text-center">
+            {data[1]?.[cashier] || ""}
+          </p>
         </div>
       </div>
     </div>
   );
 };
 
-export default HDTanza;
+export default HDInabanga;

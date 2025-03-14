@@ -33,9 +33,9 @@ const FdlOldCsiSize = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[793.7007874px] w-[608.50393701px]">
-      <div className="flex h-[19.409448819px] mt-[18.0078740201px]">
+      <div className="flex h-[19.409448819px] mt-[118.0078740201px]">
         <p className="w-[391.18110236px] pl-[95.82677165px]">
-          {data[1]?.[mainLineName] || ""}
+          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
         </p>
         <p className="w-[218.83464567px] pl-[50.472440945px]">
           {data[1]?.[date] || ""}
@@ -72,12 +72,12 @@ const FdlOldCsiSize = ({ data }: any) => {
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
               <tr key={index} className="text-xs text-center">
-                <td className="w-[71.811023622px]">{row[quantity]}</td>
+                <td className="w-[71.811023622px]">{row[quantity]?.replace(/.0$/, "")}</td>
                 <td className="w-[58.582677165px] h-[18.897637795px] pl-4">
                   {row[unitOfMeasurement]}
                 </td>
                 <td
-                  className={`w-[238.48818898px] h-[18.897637795px] pl-2 text-start text-start ${
+                  className={`w-[238.48818898px] h-[18.897637795px] pl-2 text-start ${
                     row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >
@@ -87,7 +87,7 @@ const FdlOldCsiSize = ({ data }: any) => {
                   {/* {FormattedNumber(row[unitPrice])} */}
                 </td>
                 <td className="w-[102.38740157px] h-[18.897637795px]">
-                  {FormattedNumber(row[totalAmount])}
+                  {FormattedNumber(row[rateInclusiveOfTax])}
                 </td>
               </tr>
             ))}
@@ -99,9 +99,11 @@ const FdlOldCsiSize = ({ data }: any) => {
                   data[1]?.[serialNumber]?.length > 41 ? "text-[10px]" : ""
                 }`}
               >
-                {data[1]?.[serialNumber] && (
-                  <>Engine #: {data[1]?.[serialNumber]}</>
-                )}
+                {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
+                    <>Engine #: {data[1]?.[serialNumber]}</>
+                  ) : (
+                    <>Serial #: {data[1]?.[serialNumber]}</>
+                  )}
               </td>
               <td className="w-[163.81552306px] h-[18.897637795px]"></td>
               <td className="w-[114.30371204px] h-[18.897637795px]"></td>
@@ -200,7 +202,7 @@ const FdlOldCsiSize = ({ data }: any) => {
       <div className="mx-[27.212598425px]">
         <div className="mt-[20.456692914px] ml-[332.976377952px]">
           <p className="text-xs text-center">
-            {data[1]?.[cashier] || ""}
+            {data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
           </p>
         </div>
       </div>

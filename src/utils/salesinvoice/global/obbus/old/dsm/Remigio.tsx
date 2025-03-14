@@ -35,7 +35,7 @@ const Remegio = ({ data }: any) => {
     <div className="text-xs h-[795.59055118px] w-[616.06299213px]">
       <div className="flex h-[15.458267717px] mt-[148.503937007px]">
         <p className="w-[402.51968504px] ml-[86.929133858px]">
-          {data[1]?.[mainLineName] || ""}
+          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
         </p>
         <p className="w-[215.43307087px] ml-[41.57480315px]">
           {data[1]?.[date] || ""}
@@ -66,7 +66,7 @@ const Remegio = ({ data }: any) => {
           <tbody>
             {data.slice(1, 16).map((row: any, index: any) => (
               <tr key={index} className="text-xs text-center">
-                <td className="w-[53.291338583px]">{row[quantity]}</td>
+                <td className="w-[53.291338583px]">{row[quantity]?.replace(/.0$/, "")}</td>
                 <td className="w-[49.133858268px] h-[22.11023622px]">
                   {row[unitOfMeasurement]}
                 </td>
@@ -81,7 +81,7 @@ const Remegio = ({ data }: any) => {
                   {/* {FormattedNumber(row[unitPrice])} */}
                 </td>
                 <td className="w-[95.244094488px] h-[22.11023622px]">
-                  {FormattedNumber(row[totalAmount])}
+                  {FormattedNumber(row[rateInclusiveOfTax])}
                 </td>
               </tr>
             ))}
@@ -91,7 +91,7 @@ const Remegio = ({ data }: any) => {
                 <td className="w-[49.133858268px] h-[22.11023622px]"></td>
                 <td
                   className={`w-[285.73228346px] h-[22.11023622px] text-start ${
-                    data[1]?.[serialNumber]?.length > 30 ? "text-xs" : ""
+                    data[1]?.[serialNumber]?.length > 20 ? "text-[10px]" : ""
                   }`}
                 >
                   {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
@@ -110,7 +110,7 @@ const Remegio = ({ data }: any) => {
                 <td className="w-[49.133858268px] h-[22.11023622px]"></td>
                 <td
                   className={`w-[285.73228346px] h-[22.11023622px] text-start ${
-                    data[1]?.[chassisNumber]?.length > 30 ? "text-xs" : ""
+                    data[1]?.[chassisNumber]?.length > 20 ? "text-[10px]" : ""
                   }`}
                 >
                   {data[1]?.[chassisNumber] && (
@@ -127,9 +127,7 @@ const Remegio = ({ data }: any) => {
                 <td className="w-[49.133858268px] h-[22.11023622px]"></td>
                 <td
                   className={`w-[285.73228346px] h-[22.11023622px] text-start ${
-                    data[1]?.[conductionSticker]?.length > 30
-                      ? "text-xs"
-                      : ""
+                    data[1]?.[conductionSticker]?.length > 20 ? "text-[10px]" : ""
                   }`}
                 >
                   {data[1]?.[conductionSticker] && (
@@ -146,7 +144,7 @@ const Remegio = ({ data }: any) => {
                 <td className="w-[49.133858268px] h-[22.11023622px]"></td>
                 <td
                   className={`w-[285.73228346px] h-[22.11023622px] text-start ${
-                    data[1]?.[color]?.length > 30 ? "text-xs" : ""
+                    data[1]?.[color]?.length > 20 ? "text-[10px]" : ""
                   }`}
                 >
                   {data[1]?.[color] && <>Color: {data[1]?.[color]}</>}
@@ -163,15 +161,15 @@ const Remegio = ({ data }: any) => {
           <tbody>
             <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
-              <td className="h-[22.11023622px] w-[216.18897638px] pl-20">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 15)}
+              <td className="h-[22.11023622px] w-[216.18897638px] pl-3">
+                {FormattedSumTotal(data, totalSalesVatExclusive2, 15)}
               </td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
               <td className="h-[22.11023622px] w-[96.755905512px] text-center"></td>
             </tr>
             <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
-              <td className="h-[22.11023622px] w-[216.18897638px] pl-20">
+              <td className="h-[22.11023622px] w-[216.18897638px] pl-3">
                 0.00
               </td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
@@ -181,8 +179,8 @@ const Remegio = ({ data }: any) => {
             </tr>
             <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
-              <td className="h-[22.11023622px] w-[216.18897638px] pl-20">
-                {FormattedSumTotal(data, rateInclusiveVat, 15)}
+              <td className="h-[22.11023622px] w-[216.18897638px] pl-3">
+                0.00
               </td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
               <td className="h-[22.11023622px] w-[96.755905512px] text-center">
@@ -191,34 +189,33 @@ const Remegio = ({ data }: any) => {
             </tr>
             <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
-              <td className="h-[22.11023622px] w-[216.18897638px] pl-20">
+              <td className="h-[22.11023622px] w-[216.18897638px] pl-3">
                 {FormattedSumTotal(data, vatAmount, 15)}
               </td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
               <td className="h-[22.11023622px] w-[96.755905512px] text-center">
-                {/* {FormattedSumTotal(data, totalSalesVatInclusive2, 5)} LESS: WITH HOLDING TAX */}
+                {FormattedSumTotal(data, totalSalesVatExclusive2, 5)}
+              </td>
+            </tr>
+            <tr className="text-xs">
+              <td className="h-[22.11023622px] w-[102.42519685px]"></td>
+              <td className="h-[22.11023622px] w-[216.18897638px] pl-3"></td>
+              <td className="h-[22.11023622px] w-[140.5984252px]"></td>
+              <td className="h-[22.11023622px] w-[96.755905512px] text-center">
                 0.00
               </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
-              <td className="h-[22.11023622px] w-[216.18897638px] pl-20"></td>
+              <td className="h-[22.11023622px] w-[216.18897638px] pl-3"></td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
               <td className="h-[22.11023622px] w-[96.755905512px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 15)}
+                {FormattedSumTotal(data, totalSalesVatExclusive, 15)}
               </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
-              <td className="h-[22.11023622px] w-[216.18897638px] pl-20"></td>
-              <td className="h-[22.11023622px] w-[140.5984252px]"></td>
-              <td className="h-[22.11023622px] w-[96.755905512px] text-center">
-                {FormattedSumTotal(data, vatAmount2, 15)}
-              </td>
-            </tr>
-            <tr className="text-xs">
-              <td className="h-[22.11023622px] w-[102.42519685px]"></td>
-              <td className="h-[22.11023622px] w-[216.18897638px] pl-20"></td>
+              <td className="h-[22.11023622px] w-[216.18897638px] pl-3"></td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
               <td className="h-[22.11023622px] w-[96.755905512px] text-center">
                 {FormattedSumTotal(data, vatAmount3, 15)}
@@ -226,7 +223,7 @@ const Remegio = ({ data }: any) => {
             </tr>
             <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
-              <td className="h-[22.11023622px] w-[216.18897638px] pl-20"></td>
+              <td className="h-[22.11023622px] w-[216.18897638px] pl-3"></td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
               <td className="h-[22.11023622px] w-[96.755905512px] text-center">
                 {FormattedSumTotal(data, totalSalesVatInclusive, 15)}
@@ -237,7 +234,7 @@ const Remegio = ({ data }: any) => {
       </div>
       <div className="mx-[32.125984252px]">
         <div className="mt-[15.136220472px] w-[196.53543307px] ml-[336.37795276px]">
-          <p className="text-xs text-center">{data[1]?.[cashier] || ""}</p>
+          <p className="text-xs text-center">{data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}</p>
         </div>
       </div>
     </div>

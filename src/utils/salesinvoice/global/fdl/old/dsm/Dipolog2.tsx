@@ -36,7 +36,7 @@ const Dipolog2 = ({ data }: any) => {
     <div className="text-xs h-[745.32283465px] w-[589.60629921px]">
       <div className="flex h-[20.787401575px] mt-[111.1181102406px]">
         <p className="w-[374.17322835px] pl-[98.267716535px]">
-          {data[1]?.[mainLineName] || ""}
+          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
         </p>
         <p className="w-[215.43307087px] pl-[56.692913386px]">
           {data[1]?.[date] || ""}
@@ -72,7 +72,7 @@ const Dipolog2 = ({ data }: any) => {
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
               <tr key={index} className="text-xs text-center">
-                <td className="w-[69.165354331px]">{row[quantity]}</td>
+                <td className="w-[69.165354331px]">{row[quantity]?.replace(/.0$/, "")}</td>
                 <td className="w-[56.692913386px] h-[19.275590551px]">
                   {row[unitOfMeasurement]}
                 </td>
@@ -87,7 +87,7 @@ const Dipolog2 = ({ data }: any) => {
                   {/* {FormattedNumber(row[unitPrice])} */}
                 </td>
                 <td className="w-[98.267716535px] h-[19.275590551px]">
-                  {FormattedNumber(row[totalAmount])}
+                  {FormattedNumber(row[rateInclusiveOfTax])}
                 </td>
               </tr>
             ))}
@@ -99,9 +99,11 @@ const Dipolog2 = ({ data }: any) => {
                   data[1]?.[serialNumber]?.length > 41 ? "text-[10px]" : ""
                 }`}
               >
-                {data[1]?.[serialNumber] && (
-                  <>Engine #: {data[1]?.[serialNumber]}</>
-                )}
+                {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
+                    <>Engine #: {data[1]?.[serialNumber]}</>
+                  ) : (
+                    <>Serial #: {data[1]?.[serialNumber]}</>
+                  )}
               </td>
               <td className="w-[163.81552306px] h-[19.275590551px]"></td>
               <td className="w-[114.30371204px] h-[19.275590551px]"></td>
@@ -198,7 +200,7 @@ const Dipolog2 = ({ data }: any) => {
       </div>
       <div className="mx-[30.236220472px]">
         <div className="mt-[24.456692914px] ml-[332.976377952px]">
-          <p className="text-xs text-center">{data[1]?.[cashier] || ""}</p>
+          <p className="text-xs text-center">{data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}</p>
         </div>
       </div>
     </div>

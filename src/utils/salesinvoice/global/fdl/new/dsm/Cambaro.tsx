@@ -41,7 +41,7 @@ const Cambaro = ({ data }: any) => {
       </div>
       <div className="mt-[17.007874016px] mx-[37.795275591px] h-[73.700787402px] w-[534.80314961px]">
         <p className="w-[389.29133858px] flex items-center h-[24.566929134px] ml-[154.96062992px]">
-          {data[1]?.[mainLineName] || (
+          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || (
             <span className="opacity-0">No Data</span>
           )}
         </p>
@@ -70,12 +70,12 @@ const Cambaro = ({ data }: any) => {
                 >
                   {row[articles]}
                 </td>
-                <td className="w-[75.968503937px]">{row[quantity]}</td>
+                <td className="w-[75.968503937px]">{row[quantity]?.replace(/.0$/, "")}</td>
                 <td className="w-[83.48976378px] h-[18.897637795px]">
                   {/* {FormattedNumber(row[unitPrice])} */}
                 </td>
                 <td className="w-[105.4488189px] h-[18.897637795px]">
-                  {FormattedNumber(row[totalAmount])}
+                  {FormattedNumber(row[rateInclusiveOfTax])}
                 </td>
               </tr>
             ))}
@@ -85,9 +85,11 @@ const Cambaro = ({ data }: any) => {
                   data[1]?.[serialNumber]?.length > 41 ? "text-[10px]" : ""
                 }`}
               >
-                {data[1]?.[serialNumber] && (
-                  <>Engine #: {data[1]?.[serialNumber]}</>
-                )}
+                {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
+                    <>Engine #: {data[1]?.[serialNumber]}</>
+                  ) : (
+                    <>Serial #: {data[1]?.[serialNumber]}</>
+                  )}
               </td>
               <td className="w-[75.968503937px]"></td>
               <td className="w-[83.48976378px] h-[18.897637795px]"></td>
@@ -187,7 +189,7 @@ const Cambaro = ({ data }: any) => {
       <div className="w-[610.39370079px]">
         <div className="mt-[15.897637795px] ml-[192.75590551px] w-[154.96062992px]">
           <p className="text-xs text-center">
-            {data[1]?.[cashier] || ""}
+            {data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
           </p>
         </div>
       </div>

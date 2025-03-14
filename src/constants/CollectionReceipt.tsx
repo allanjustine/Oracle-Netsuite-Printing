@@ -78,6 +78,7 @@ import FelyOldOrSize from "@/utils/official-receipt/global/fely/old/FelyOldOrSiz
 import BjvOldCrSize from "@/utils/collectionreceipt/global/bjv/old/BjvOldCrSize";
 import CelroseOldCrSize from "@/utils/collectionreceipt/global/celrose/old/CelroseOldCrSize";
 import ObbusNewCrSize from "@/utils/collectionreceipt/global/obbus/new/ObbusNewCrSize";
+import HDInabanga from "@/utils/collectionreceipt/global/bjv/old/HDInabanga";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -106,7 +107,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "CONSO",
     "DONC",
     "CARCAR",
-    "DSMB",
     "DSMCN",
     "DSMSB",
     "KATI",
@@ -132,7 +132,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "TALI2",
     "MADRI",
     "ALIC",
-    "SAGBA"
+    "SAGBA",
   ];
 
   const fdlOrOldSizeData = [
@@ -154,7 +154,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "TRINI2",
     "BUUD",
     "CAMD",
-    "PARD2"
+    "PARD2",
+    "BOHK",
   ];
 
   const fdlCrOldSizeData = [
@@ -192,12 +193,20 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "CALAP",
     "SALA",
     "SMCT",
+    "DSMB",
   ];
 
   const fdlOrNewSizeData = [];
 
   // OBBUS
-  const obbusCrNewSizeData = ["DANAO", "TOMAS", "DIGOS", "CATAR2", "BOLOD"];
+  const obbusCrNewSizeData = [
+    "DANAO",
+    "TOMAS",
+    "DIGOS",
+    "CATAR2",
+    "BOLOD",
+    "MING",
+  ];
 
   const obbusCrOldSizeData = [
     "DSMBN",
@@ -210,6 +219,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "TORI",
     "MEDE",
     "CALI",
+    "DONC",
   ];
 
   const obbusOrNewSizeData = [];
@@ -227,6 +237,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DSMM",
     "SARG",
     "ILOI",
+    "DSMDM",
   ];
 
   //FELY
@@ -261,13 +272,13 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const bjvCrOldSizeData = [
     // "UBAY",
-    "INAB",
+    "",
   ];
 
   // CELROSE
   const celroseCrNewSizeData = [];
 
-  const celroseCrOldSizeData = ["CALIN"];
+  const celroseCrOldSizeData = ["CALIN", "ANTI"];
 
   const bjvOrNewSizeData = [];
 
@@ -430,6 +441,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <HDBalamban data={data} />; //OR
     case "AURO" === user?.branchCode:
       return <DSMAurora data={data} />; //OR
+    case "INAB" === user?.branchCode:
+      return <HDInabanga data={data} />; //OR
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">

@@ -34,9 +34,9 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
 
   return (
     <div className="text-sm h-[506.45669291px] w-[767.24409449px]">
-      <div className="flex h-[17.007874016px] mt-[124.34645669px]">
+      <div className="flex h-[17.007874016px] mt-[100.4488189px]">
         <p className="w-[528.66141732px] pl-[147.4015748px]">
-          {data[1]?.[mainLineName] || ""}
+          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
         </p>
         <p className="w-[284.50393701px] pl-[127.16535433px]">
           {data[1]?.[date] || ""}
@@ -69,13 +69,13 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
           <tbody>
             {data.slice(1, 4).map((row, index) => (
               <tr key={index} className="text-sm text-center">
-                <td className="w-[74.24071991px]">{row[quantity]}</td>
+                <td className="w-[74.24071991px]">{row[quantity]?.replace(/.0$/, "")}</td>
                 <td className="w-[53.831271091px] h-[19.275590551px]">
                   {row[unitOfMeasurement]}
                 </td>
                 <td
-                  className={`w-[309.70528684px] h-[19.275590551px] text-start text-start ${
-                    row[articles]?.length > 41 ? "text-xs" : ""
+                  className={`w-[309.70528684px] h-[19.275590551px] text-start ${
+                    row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >
                   {row[articles]}
@@ -243,7 +243,7 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="mx-[37.795275591px]">
         <div className="mt-[18px] ml-[392.31496063px]">
-          <p className="text-sm text-center">{data[1]?.[cashier] || ""}</p>
+          <p className="text-sm text-center">{data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}</p>
         </div>
       </div>
     </div>
