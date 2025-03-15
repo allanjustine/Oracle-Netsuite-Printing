@@ -75,10 +75,10 @@ const DSMDanao = ({ data }: any) => {
                   {row[quantity]?.replace(/.0$/, "")}
                 </td>
                 <td className="w-[77.480314961px] h-[18.141732283px]">
-                  {/* {FormattedNumber(row[unitPrice])} */}
+                  {FormattedNumber(row[rateInclusiveVat])}
                 </td>
                 <td className="w-[96.377952756px] h-[18.141732283px]">
-                  {FormattedNumber(row[rateInclusiveOfTax])}
+                  {FormattedNumber(row[totalSalesVatInclusive2])}
                 </td>
               </tr>
             ))}

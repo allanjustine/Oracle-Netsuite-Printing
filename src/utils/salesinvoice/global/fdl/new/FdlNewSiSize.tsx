@@ -71,10 +71,10 @@ const FdlNewSiSize = ({ data }: any) => {
                 </td>
                 <td className="w-[75.968503937px]">{row[quantity]?.replace(/.0$/, "")}</td>
                 <td className="w-[83.48976378px] h-[18.897637795px]">
-                  {/* {FormattedNumber(row[unitPrice])} */}
+                  {FormattedNumber(row[rateInclusiveVat])}
                 </td>
                 <td className="w-[105.4488189px] h-[18.897637795px]">
-                  {FormattedNumber(row[rateInclusiveOfTax])}
+                  {FormattedNumber(row[totalSalesVatInclusive2])}
                 </td>
               </tr>
             ))}

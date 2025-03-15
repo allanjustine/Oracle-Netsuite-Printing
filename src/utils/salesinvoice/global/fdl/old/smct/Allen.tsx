@@ -78,10 +78,10 @@ const Allen = ({ data }: any) => {
                   {row[articles]}
                 </td>
                 <td className="w-[77.102362205px] h-[19.275590551px]">
-                  {/* {FormattedNumber(row[unitPrice])} */}
+                  {FormattedNumber(row[rateInclusiveVat])}
                 </td>
                 <td className="w-[98.267716535px] h-[19.275590551px]">
-                  {FormattedNumber(row[rateInclusiveOfTax])}
+                  {FormattedNumber(row[totalSalesVatInclusive2])}
                 </td>
               </tr>
             ))}

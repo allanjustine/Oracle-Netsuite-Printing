@@ -88,10 +88,10 @@ const Labason = ({ data }: any) => {
                   {row[articles]}
                 </td>
                 <td className="w-[72.188976378px] h-[21.165354331px]">
-                  {/* {FormattedNumber(row[unitPrice])} */}
+                  {FormattedNumber(row[rateInclusiveVat])}
                 </td>
                 <td className="w-[95.244094488px] h-[21.165354331px]">
-                  {FormattedNumber(row[rateInclusiveOfTax])}
+                  {FormattedNumber(row[totalSalesVatInclusive2])}
                 </td>
               </tr>
             ))}
