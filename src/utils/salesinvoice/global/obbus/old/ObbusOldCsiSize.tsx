@@ -47,11 +47,11 @@ const ObbusOldCsiSize = ({ data }: any) => {
         </p>
         <p className="w-[215.43307087px] ml-[41.57480315px]"></p>
       </div>
-      <div className="w-[402.51968504px] flex flex-col h-[32.503937008px]">
+      <div className="w-[402.51968504px] flex flex-col h-[32.503937008px] mt=[11.338582677px]">
         <p className="ml-[86.929133858px] h-[16.251968504px]">
           {data[1]?.[billingAddress].substring(0, 515) || ""}
         </p>
-        <p className="ml-[86.929133858px] h-[16.251968504px]">
+        <p className="ml-[36.929133858px] h-[16.251968504px]">
           {data[1]?.[billingAddress].substring(515) || ""}
         </p>
       </div>
@@ -158,7 +158,7 @@ const ObbusOldCsiSize = ({ data }: any) => {
           </tbody>
         </table>
       </div>
-      <div className="mx-[25.700787402px] h-[170.07874016px]">
+      <div className="mx-[25.700787402px] h-[170.07874016px] mt-[-30.236220472px]">
         <table className="border-collapse w-full">
           <tbody>
             <tr className="text-xs">
