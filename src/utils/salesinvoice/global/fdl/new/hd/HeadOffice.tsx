@@ -70,10 +70,10 @@ const HeadOffice = ({ data }: any) => {
                   {row[quantity]?.replace(/.0$/, "")}
                 </td>
                 <td className="w-[83.149606299px] h-[19.275590551px]">
-                  {/* {FormattedNumber(row[unitPrice])} */}
+                  {FormattedNumber(row[rateInclusiveVat])}
                 </td>
                 <td className="w-[105.82677165px] h-[19.275590551px]">
-                  {FormattedNumber(row[rateInclusiveOfTax])}
+                  {FormattedNumber(row[totalSalesVatInclusive2])}
                 </td>
               </tr>
             ))}

@@ -85,10 +85,10 @@ const LapuLapu2 = ({ data }: any) => {
                   {row[articles]}
                 </td>
                 <td className="w-[79.748031496px] h-[19.275590551px]">
-                  {/* {FormattedNumber(row[unitPrice])} */}
+                  {FormattedNumber(row[rateInclusiveVat])}
                 </td>
                 <td className="w-[102.38740157px] h-[19.275590551px]">
-                  {FormattedNumber(row[rateInclusiveOfTax])}
+                  {FormattedNumber(row[totalSalesVatInclusive2])}
                 </td>
               </tr>
             ))}

@@ -81,10 +81,10 @@ const FelyOldSiSize: React.FC<PrintPageProps> = ({ data }) => {
                     {row[articles]}
                   </td>
                   <td className="w-[158.36220472px] h-[18.822047244px]">
-                    {FormattedNumber(row[totalAmount]) || "0.00"}
+                    {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                   </td>
                   <td className="w-[131.90551181px] h-[18.822047244px]">
-                    {FormattedNumber(row[totalAmount]) || "0.00"}
+                    {FormattedNumber(row[totalSalesVatInclusive2]) || "0.00"}
                   </td>
                 </tr>
               ))}

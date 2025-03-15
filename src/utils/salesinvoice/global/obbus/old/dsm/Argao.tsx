@@ -88,10 +88,10 @@ const Argao = ({ data }: any) => {
                   {row[articles]}
                 </td>
                 <td className="w-[72.188976378px] h-[22.11023622px]">
-                  {/* {FormattedNumber(row[unitPrice])} */}
+                  {FormattedNumber(row[rateInclusiveVat])}
                 </td>
                 <td className="w-[95.244094488px] h-[22.11023622px]">
-                  {FormattedNumber(row[rateInclusiveOfTax])}
+                  {FormattedNumber(row[totalSalesVatInclusive2])}
                 </td>
               </tr>
             ))}
