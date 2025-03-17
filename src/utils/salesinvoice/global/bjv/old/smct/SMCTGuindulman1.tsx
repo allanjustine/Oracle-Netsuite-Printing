@@ -113,7 +113,7 @@ const SMCTGuindulman1: React.FC<PrintPageProps> = ({ data }) => {
 
   return (
     <div className="text-sm h-[506.45669291px] w-[767.24409449px]">
-      <div className="flex h-[17.007874016px] mt-[75.590551181px]">
+      <div className="flex h-[17.007874016px] mt-[56.692913386px]">
         <p className="w-[528.66141732px] pl-[147.4015748px]">
           {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
         </p>
