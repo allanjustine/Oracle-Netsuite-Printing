@@ -170,7 +170,7 @@ const Labason = ({ data }: any) => {
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[95.244094488px] h-[21.165354331px]">
-                  {FormattedNumber(row[totalSalesVatInclusive2]) || "0.00"}
+                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) || "0.00"}
                 </td>
               </tr>
             ))}

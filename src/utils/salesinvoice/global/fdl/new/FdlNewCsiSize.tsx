@@ -153,7 +153,7 @@ const FdlNewCsiSize = ({ data }: any) => {
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[105.4488189px] h-[18.897637795px]">
-                  {FormattedNumber(row[rateInclusiveOfTax])}
+                  {FormattedNumber(row[quantity] * row[rateInclusiveVat])}
                 </td>
               </tr>
             ))}

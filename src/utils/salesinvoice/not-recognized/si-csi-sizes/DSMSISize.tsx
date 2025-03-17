@@ -164,7 +164,7 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[137.95275591px] h-[18.141732283px]">
-                  {FormattedNumber(row[totalSalesVatInclusive2]) || "0.00"}
+                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) || "0.00"}
                 </td>
               </tr>
             ))}

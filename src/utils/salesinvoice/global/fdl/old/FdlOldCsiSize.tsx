@@ -174,7 +174,7 @@ const FdlOldCsiSize = ({ data }: any) => {
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[102.38740157px] h-[18.897637795px]">
-                  {FormattedNumber(row[totalSalesVatInclusive2]) || "0.00"}
+                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) || "0.00"}
                 </td>
               </tr>
             ))}

@@ -154,7 +154,7 @@ const Calamba = ({ data }: any) => {
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[105.4488189px] h-[18.897637795px]">
-                  {FormattedNumber(row[totalSalesVatInclusive2]) || "0.00"}
+                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) || "0.00"}
                 </td>
               </tr>
             ))}

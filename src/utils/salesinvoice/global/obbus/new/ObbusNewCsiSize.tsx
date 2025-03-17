@@ -157,7 +157,7 @@ const ObbusNewCsiSize = ({ data }: any) => {
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[96.377952756px] h-[18.141732283px]">
-                  {FormattedNumber(row[totalSalesVatInclusive2])}
+                  {FormattedNumber(row[quantity] * row[rateInclusiveVat])}
                 </td>
               </tr>
             ))}

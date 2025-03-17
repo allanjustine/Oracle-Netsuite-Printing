@@ -166,7 +166,7 @@ const SMCTNaic: React.FC<PrintPageProps> = ({ data }) => {
                     {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                   </td>
                   <td className="w-[131.90551181px] h-[18.822047244px]">
-                    {FormattedNumber(row[totalSalesVatInclusive2]) || "0.00"}
+                    {FormattedNumber(row[quantity] * row[rateInclusiveVat]) || "0.00"}
                   </td>
                 </tr>
               ))}

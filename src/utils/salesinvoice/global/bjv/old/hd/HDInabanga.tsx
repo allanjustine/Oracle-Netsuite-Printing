@@ -167,7 +167,7 @@ const HDInabanga = ({ data }: any) => {
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[102.38740157px] h-[19.275590551px]">
-                  {FormattedNumber(row[totalSalesVatInclusive2]) || "0.00"}
+                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) || "0.00"}
                 </td>
               </tr>
             ))}

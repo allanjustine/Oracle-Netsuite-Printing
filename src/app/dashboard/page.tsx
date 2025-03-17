@@ -688,7 +688,7 @@ export default function Page() {
                   <div className="flex flex-col">
                     <p>Amount</p>
                     <p className="font-semibold">
-                      {FormattedNumber(row[rateInclusiveOfTax]) || "0.00"}
+                      {FormattedNumber(row[quantity] * row[rateInclusiveVat]) || "0.00"}
                     </p>
                   </div>
                 </div>
