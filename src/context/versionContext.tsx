@@ -47,14 +47,15 @@ export const VersionProvider = ({ children }: any) => {
           );
           setIsOutDated(true);
           setIsAbnormalVersion(false);
-        }
-
-        if (Number(version) < Number(lsAppVersion)) {
+        } else if (Number(version) < Number(lsAppVersion)) {
           console.error(
             `Version is abnormal! New Version: ${version}, Current Version: ${lsAppVersion}`
           );
           setIsAbnormalVersion(true);
           setIsOutDated(false);
+        } else {
+          setIsOutDated(false);
+          setIsAbnormalVersion(false);
         }
       } catch (error) {
         console.error(error);
@@ -66,7 +67,15 @@ export const VersionProvider = ({ children }: any) => {
 
   return (
     <VersionContext.Provider
-      value={{ version, updateVersion, isOutDated, setIsOutDated, oldVersion, setIsAbnormalVersion, isAbnormalVersion }}
+      value={{
+        version,
+        updateVersion,
+        isOutDated,
+        setIsOutDated,
+        oldVersion,
+        setIsAbnormalVersion,
+        isAbnormalVersion,
+      }}
     >
       {children}
     </VersionContext.Provider>

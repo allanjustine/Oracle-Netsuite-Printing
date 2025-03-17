@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from "react";
 import {
   FaCheckDouble,
   FaCircleNotch,
+  FaExclamationTriangle,
   FaMinus,
   FaPlus,
   FaPrint,
@@ -14,7 +15,7 @@ import {
 import { read, utils } from "xlsx";
 import PrintPage from "../print/page";
 import ReactDOM from "react-dom/client";
-import { FaRotate, FaX, FaXmark } from "react-icons/fa6";
+import { FaCircleXmark, FaRotate, FaX, FaXmark } from "react-icons/fa6";
 import { FormatFileSize } from "@/utils/size-format/FormatFileSize";
 import DragAndDropComponent from "@/components/DragAndDropComponent";
 import FormattedNumber from "@/utils/FormattedNumber";
@@ -424,6 +425,7 @@ export default function Page() {
         <div className={`p-2 text-white fixed top-0 w-full h-auto z-50 ${isAbnormalVersion ? "bg-yellow-500" : "bg-red-500"}`}>
           <div className="flex justify-between items-center">
             <div className="flex space-x-3 items-center">
+              {isAbnormalVersion ? <FaExclamationTriangle className="text-2xl" /> : <FaCircleXmark className="text-2xl" />}
               <p className="text-sm">
                 {isAbnormalVersion
                   ? "Ops! You are using an abnormal version of Oracle NetSuite Printing"
