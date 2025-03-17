@@ -1,7 +1,12 @@
 "use client";
 import { PrintPageProps } from "@/types/types";
+import FormattedAmountDue from "@/utils/FormattedAmountDue";
+import FormattedLessWithHoldingTax from "@/utils/FormattedLessWithHoldingTax";
 import FormattedNumber from "@/utils/FormattedNumber";
 import FormattedSumTotal from "@/utils/FormattedSumTotal";
+import FormattedSumTotalLessVat from "@/utils/FormattedSumTotalLessVat";
+import FormattedSumTotalMinusLessVat from "@/utils/FormattedSumTotalMinusLessVat";
+import FormattedTotalAmountDue from "@/utils/FormattedTotalAmountDue";
 
 const SmctCsiSize = ({ data }: any) => {
   const mainLineName = 0;
@@ -31,7 +36,80 @@ const SmctCsiSize = ({ data }: any) => {
   const rateInclusiveOfTax = 24;
   const color = 25;
   const cashier = 26;
-  const totalAmountDue = 27;
+  const refNumber = 27;
+  const lessWithHoldingTax = 28;
+
+  // Vatable Sales
+  const vatableSalesFn = FormattedSumTotalMinusLessVat(
+    FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
+
+  // Total Sales Vat Inclusive
+  const totalSalesVatInclusiveFn = FormattedSumTotal(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Less Vat
+  const lessVatFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Amount Net Of Vat
+  const amountNetOfVatFn = FormattedSumTotalMinusLessVat(
+    FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
+
+  // Vat Amount
+  const vatAmountFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Less With Holding Tax
+  const lessWithHoldingTaxFn = FormattedLessWithHoldingTax(
+    data,
+    lessWithHoldingTax,
+    16
+  );
+
+  // Amount Due
+  const amountDueFn = FormattedAmountDue(
+    FormattedSumTotalMinusLessVat(
+      FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+      FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+    ),
+    FormattedLessWithHoldingTax(data, lessWithHoldingTax, 16)
+  );
+
+  // Add Vat
+  const addVatFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Total Amount Due
+  const totalAmountDueFn = FormattedTotalAmountDue(
+    FormattedAmountDue(
+      FormattedSumTotalMinusLessVat(
+        FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+        FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+      ),
+      FormattedLessWithHoldingTax(data, lessWithHoldingTax, 16)
+    ),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
 
   return (
     <div className="text-xs h-[745.32283465px] w-[589.60629921px]">
@@ -125,51 +203,41 @@ const SmctCsiSize = ({ data }: any) => {
             <tr className="text-xs">
               <td className="h-[19.275590551px] w-[126.61417323px]"></td>
               <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
+                {vatableSalesFn}
               </td>
               <td className="h-[19.275590551px] w-[128.88188976px]"></td>
               <td className="h-[19.275590551px] w-[98.645669291px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive, 16)}
+                {totalSalesVatInclusiveFn}
               </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[19.275590551px] w-[126.61417323px]"></td>
               <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]">
-                {/* {FormattedSumTotal(data, rateInclusiveVat, 16)} VAT EXEMPT SALES */}
                 0.00
               </td>
               <td className="h-[19.275590551px] w-[128.88188976px]"></td>
               <td className="h-[19.275590551px] w-[98.645669291px] text-center">
-                {/* {FormattedSumTotal(data, totalSalesVatInclusive2, 16)} LESS: SC/PWD DISCOUNT */}
+                {lessVatFn}
+              </td>
+            </tr>
+            <tr className="text-xs">
+              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
+              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]">
                 0.00
               </td>
-            </tr>
-            <tr className="text-xs">
-              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
-              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]">
-                {FormattedSumTotal(data, rateInclusiveVat, 16)}
-              </td>
               <td className="h-[19.275590551px] w-[128.88188976px]"></td>
               <td className="h-[19.275590551px] w-[98.645669291px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
+                {amountNetOfVatFn}
               </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[19.275590551px] w-[126.61417323px]"></td>
               <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]">
-                {FormattedSumTotal(data, vatAmount, 16)}
+                {vatAmountFn}
               </td>
               <td className="h-[19.275590551px] w-[128.88188976px]"></td>
               <td className="h-[19.275590551px] w-[98.645669291px] text-center">
-                {/* {FormattedSumTotal(data, totalSalesVatInclusive2, 16)} LESS: SC/PWD DISCOUNT */}
-              </td>
-            </tr>
-            <tr className="text-xs">
-              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
-              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]"></td>
-              <td className="h-[19.275590551px] w-[128.88188976px]"></td>
-              <td className="h-[19.275590551px] w-[98.645669291px] text-center">
-                {FormattedSumTotal(data, vatAmount2, 16)}
+                
               </td>
             </tr>
             <tr className="text-xs">
@@ -177,7 +245,7 @@ const SmctCsiSize = ({ data }: any) => {
               <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]"></td>
               <td className="h-[19.275590551px] w-[128.88188976px]"></td>
               <td className="h-[19.275590551px] w-[98.645669291px] text-center">
-                {FormattedSumTotal(data, vatAmount3, 16)}
+                {amountDueFn}
               </td>
             </tr>
             <tr className="text-xs">
@@ -185,7 +253,15 @@ const SmctCsiSize = ({ data }: any) => {
               <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]"></td>
               <td className="h-[19.275590551px] w-[128.88188976px]"></td>
               <td className="h-[19.275590551px] w-[98.645669291px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive, 16)}
+                {addVatFn}
+              </td>
+            </tr>
+            <tr className="text-xs">
+              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
+              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]"></td>
+              <td className="h-[19.275590551px] w-[128.88188976px]"></td>
+              <td className="h-[19.275590551px] w-[98.645669291px] text-center">
+                {totalAmountDueFn}
               </td>
             </tr>
           </tbody>

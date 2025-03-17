@@ -1,7 +1,12 @@
 "use client";
 import { PrintPageProps } from "@/types/types";
+import FormattedAmountDue from "@/utils/FormattedAmountDue";
+import FormattedLessWithHoldingTax from "@/utils/FormattedLessWithHoldingTax";
 import FormattedNumber from "@/utils/FormattedNumber";
 import FormattedSumTotal from "@/utils/FormattedSumTotal";
+import FormattedSumTotalLessVat from "@/utils/FormattedSumTotalLessVat";
+import FormattedSumTotalMinusLessVat from "@/utils/FormattedSumTotalMinusLessVat";
+import FormattedTotalAmountDue from "@/utils/FormattedTotalAmountDue";
 
 const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
   const mainLineName = 0;
@@ -31,7 +36,80 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
   const rateInclusiveOfTax = 24;
   const color = 25;
   const cashier = 26;
-  const totalAmountDue = 27;
+  const refNumber = 27;
+  const lessWithHoldingTax = 28;
+
+  // Vatable Sales
+  const vatableSalesFn = FormattedSumTotalMinusLessVat(
+    FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
+
+  // Total Sales Vat Inclusive
+  const totalSalesVatInclusiveFn = FormattedSumTotal(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Less Vat
+  const lessVatFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Amount Net Of Vat
+  const amountNetOfVatFn = FormattedSumTotalMinusLessVat(
+    FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
+
+  // Vat Amount
+  const vatAmountFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Less With Holding Tax
+  const lessWithHoldingTaxFn = FormattedLessWithHoldingTax(
+    data,
+    lessWithHoldingTax,
+    16
+  );
+
+  // Amount Due
+  const amountDueFn = FormattedAmountDue(
+    FormattedSumTotalMinusLessVat(
+      FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+      FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+    ),
+    FormattedLessWithHoldingTax(data, lessWithHoldingTax, 16)
+  );
+
+  // Add Vat
+  const addVatFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Total Amount Due
+  const totalAmountDueFn = FormattedTotalAmountDue(
+    FormattedAmountDue(
+      FormattedSumTotalMinusLessVat(
+        FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+        FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+      ),
+      FormattedLessWithHoldingTax(data, lessWithHoldingTax, 16)
+    ),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
 
   return (
     <div className="text-xs h-[510.23622047px] w-[778.58267717px]">
@@ -134,7 +212,7 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
               <td className={`w-[230.5511811px] h-[18.141732283px]`}></td>
               <td className="w-[164.40944882px] h-[18.141732283px]"></td>
               <td className="w-[137.95275591px] h-[18.141732283px]">
-                {FormattedSumTotal(data, totalSalesVatInclusive, 5)}
+                {totalSalesVatInclusiveFn}
               </td>
             </tr>
             <tr className="text-xs text-center">
@@ -143,7 +221,7 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
               <td className={`w-[230.5511811px] h-[18.141732283px]`}></td>
               <td className="w-[164.40944882px] h-[18.141732283px]"></td>
               <td className="w-[137.95275591px] h-[18.141732283px]">
-                {FormattedSumTotal(data, vatAmount2, 5)}
+                {lessVatFn}
               </td>
             </tr>
           </tbody>
@@ -155,43 +233,41 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
             <tr className="text-xs">
               <td className="h-[18.141732283px] w-[289.13385827px]"></td>
               <td className="h-[18.141732283px] w-[117.16535433px]">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 5)}
+                {vatableSalesFn}
               </td>
               <td className="h-[18.141732283px] w-[162.51968504px]"></td>
               <td className="h-[18.141732283px] w-[137.95275591px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 5)}
+                {amountNetOfVatFn}
               </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[18.141732283px] w-[289.13385827px]"></td>
               <td className="h-[18.141732283px] w-[117.16535433px]">
-                {/* {FormattedSumTotal(data, rateInclusiveVat, 5)} VAT EXEMPT SALES */}
                 0.00
               </td>
               <td className="h-[18.141732283px] w-[162.51968504px]"></td>
               <td className="h-[18.141732283px] w-[137.95275591px] text-center">
-                {/* {FormattedSumTotal(data, totalSalesVatInclusive2, 5)} LESS: SC/PWD DISCOUNT */}
+                {lessWithHoldingTaxFn}
+              </td>
+            </tr>
+            <tr className="text-xs">
+              <td className="h-[18.141732283px] w-[289.13385827px]"></td>
+              <td className="h-[18.141732283px] w-[117.16535433px]">
                 0.00
               </td>
-            </tr>
-            <tr className="text-xs">
-              <td className="h-[18.141732283px] w-[289.13385827px]"></td>
-              <td className="h-[18.141732283px] w-[117.16535433px]">
-                {FormattedSumTotal(data, rateInclusiveVat, 5)}
-              </td>
               <td className="h-[18.141732283px] w-[162.51968504px]"></td>
               <td className="h-[18.141732283px] w-[137.95275591px] text-center">
-                {FormattedSumTotal(data, vatAmount2, 5)}
+                {amountDueFn}
               </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[18.141732283px] w-[289.13385827px]"></td>
               <td className="h-[18.141732283px] w-[117.16535433px]">
-                {FormattedSumTotal(data, vatAmount, 5)}
+                {vatAmountFn}
               </td>
               <td className="h-[18.141732283px] w-[162.51968504px]"></td>
               <td className="h-[18.141732283px] w-[137.95275591px] text-center">
-                {FormattedSumTotal(data, vatAmount3, 5)}
+                {addVatFn}
               </td>
             </tr>
             <tr className="text-xs">
@@ -199,7 +275,7 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
               <td className="h-[18.141732283px] w-[117.16535433px]"></td>
               <td className="h-[18.141732283px] w-[162.51968504px]"></td>
               <td className="h-[18.141732283px] w-[137.95275591px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive, 5)}
+                {totalAmountDueFn}
               </td>
             </tr>
           </tbody>

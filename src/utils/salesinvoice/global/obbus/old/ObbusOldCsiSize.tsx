@@ -1,6 +1,11 @@
 "use client";
+import FormattedAmountDue from "@/utils/FormattedAmountDue";
+import FormattedLessWithHoldingTax from "@/utils/FormattedLessWithHoldingTax";
 import FormattedNumber from "@/utils/FormattedNumber";
 import FormattedSumTotal from "@/utils/FormattedSumTotal";
+import FormattedSumTotalLessVat from "@/utils/FormattedSumTotalLessVat";
+import FormattedSumTotalMinusLessVat from "@/utils/FormattedSumTotalMinusLessVat";
+import FormattedTotalAmountDue from "@/utils/FormattedTotalAmountDue";
 
 const ObbusOldCsiSize = ({ data }: any) => {
   const mainLineName = 0;
@@ -30,7 +35,80 @@ const ObbusOldCsiSize = ({ data }: any) => {
   const rateInclusiveOfTax = 24;
   const color = 25;
   const cashier = 26;
-  const totalAmountDue = 27;
+  const refNumber = 27;
+  const lessWithHoldingTax = 28;
+
+  // Vatable Sales
+  const vatableSalesFn = FormattedSumTotalMinusLessVat(
+    FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
+
+  // Total Sales Vat Inclusive
+  const totalSalesVatInclusiveFn = FormattedSumTotal(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Less Vat
+  const lessVatFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Amount Net Of Vat
+  const amountNetOfVatFn = FormattedSumTotalMinusLessVat(
+    FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
+
+  // Vat Amount
+  const vatAmountFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Less With Holding Tax
+  const lessWithHoldingTaxFn = FormattedLessWithHoldingTax(
+    data,
+    lessWithHoldingTax,
+    16
+  );
+
+  // Amount Due
+  const amountDueFn = FormattedAmountDue(
+    FormattedSumTotalMinusLessVat(
+      FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+      FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+    ),
+    FormattedLessWithHoldingTax(data, lessWithHoldingTax, 16)
+  );
+
+  // Add Vat
+  const addVatFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Total Amount Due
+  const totalAmountDueFn = FormattedTotalAmountDue(
+    FormattedAmountDue(
+      FormattedSumTotalMinusLessVat(
+        FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+        FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+      ),
+      FormattedLessWithHoldingTax(data, lessWithHoldingTax, 16)
+    ),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
 
   return (
     <div className="text-xs h-[795.59055118px] w-[616.06299213px]">
@@ -165,7 +243,7 @@ const ObbusOldCsiSize = ({ data }: any) => {
             <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3">
-                {FormattedSumTotal(data, totalSalesVatExclusive2, 15)}
+                {vatableSalesFn}
               </td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
               <td className="h-[22.11023622px] w-[96.755905512px] text-center"></td>
@@ -177,7 +255,7 @@ const ObbusOldCsiSize = ({ data }: any) => {
               </td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
               <td className="h-[22.11023622px] w-[96.755905512px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive, 15)}
+                {totalSalesVatInclusiveFn}
               </td>
             </tr>
             <tr className="text-xs">
@@ -187,25 +265,17 @@ const ObbusOldCsiSize = ({ data }: any) => {
               </td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
               <td className="h-[22.11023622px] w-[96.755905512px] text-center">
-                {FormattedSumTotal(data, vatAmount2, 15)}
+                {lessVatFn}
               </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3">
-                {FormattedSumTotal(data, vatAmount, 15)}
+                {vatAmountFn}
               </td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
               <td className="h-[22.11023622px] w-[96.755905512px] text-center">
-                {FormattedSumTotal(data, totalSalesVatExclusive2, 5)}
-              </td>
-            </tr>
-            <tr className="text-xs">
-              <td className="h-[22.11023622px] w-[102.42519685px]"></td>
-              <td className="h-[22.11023622px] w-[216.18897638px] pl-3"></td>
-              <td className="h-[22.11023622px] w-[140.5984252px]"></td>
-              <td className="h-[22.11023622px] w-[96.755905512px] text-center">
-                0.00
+                {amountNetOfVatFn}
               </td>
             </tr>
             <tr className="text-xs">
@@ -213,7 +283,7 @@ const ObbusOldCsiSize = ({ data }: any) => {
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3"></td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
               <td className="h-[22.11023622px] w-[96.755905512px] text-center">
-                {FormattedSumTotal(data, totalSalesVatExclusive, 15)}
+                {lessWithHoldingTaxFn}
               </td>
             </tr>
             <tr className="text-xs">
@@ -221,7 +291,7 @@ const ObbusOldCsiSize = ({ data }: any) => {
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3"></td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
               <td className="h-[22.11023622px] w-[96.755905512px] text-center">
-                {FormattedSumTotal(data, vatAmount3, 15)}
+                {amountDueFn}
               </td>
             </tr>
             <tr className="text-xs">
@@ -229,7 +299,15 @@ const ObbusOldCsiSize = ({ data }: any) => {
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3"></td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
               <td className="h-[22.11023622px] w-[96.755905512px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive, 15)}
+                {addVatFn}
+              </td>
+            </tr>
+            <tr className="text-xs">
+              <td className="h-[22.11023622px] w-[102.42519685px]"></td>
+              <td className="h-[22.11023622px] w-[216.18897638px] pl-3"></td>
+              <td className="h-[22.11023622px] w-[140.5984252px]"></td>
+              <td className="h-[22.11023622px] w-[96.755905512px] text-center">
+                {totalAmountDueFn}
               </td>
             </tr>
           </tbody>

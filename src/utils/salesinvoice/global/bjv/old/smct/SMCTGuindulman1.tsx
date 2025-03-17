@@ -1,7 +1,12 @@
 "use client";
 import { PrintPageProps } from "@/types/types";
+import FormattedAmountDue from "@/utils/FormattedAmountDue";
+import FormattedLessWithHoldingTax from "@/utils/FormattedLessWithHoldingTax";
 import FormattedNumber from "@/utils/FormattedNumber";
 import FormattedSumTotal from "@/utils/FormattedSumTotal";
+import FormattedSumTotalLessVat from "@/utils/FormattedSumTotalLessVat";
+import FormattedSumTotalMinusLessVat from "@/utils/FormattedSumTotalMinusLessVat";
+import FormattedTotalAmountDue from "@/utils/FormattedTotalAmountDue";
 
 const SMCTGuindulman1: React.FC<PrintPageProps> = ({ data }) => {
   const mainLineName = 0;
@@ -31,7 +36,80 @@ const SMCTGuindulman1: React.FC<PrintPageProps> = ({ data }) => {
   const rateInclusiveOfTax = 24;
   const color = 25;
   const cashier = 26;
-  const totalAmountDue = 27;
+  const refNumber = 27;
+  const lessWithHoldingTax = 28;
+
+  // Vatable Sales
+  const vatableSalesFn = FormattedSumTotalMinusLessVat(
+    FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
+
+  // Total Sales Vat Inclusive
+  const totalSalesVatInclusiveFn = FormattedSumTotal(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Less Vat
+  const lessVatFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Amount Net Of Vat
+  const amountNetOfVatFn = FormattedSumTotalMinusLessVat(
+    FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
+
+  // Vat Amount
+  const vatAmountFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Less With Holding Tax
+  const lessWithHoldingTaxFn = FormattedLessWithHoldingTax(
+    data,
+    lessWithHoldingTax,
+    16
+  );
+
+  // Amount Due
+  const amountDueFn = FormattedAmountDue(
+    FormattedSumTotalMinusLessVat(
+      FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+      FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+    ),
+    FormattedLessWithHoldingTax(data, lessWithHoldingTax, 16)
+  );
+
+  // Add Vat
+  const addVatFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Total Amount Due
+  const totalAmountDueFn = FormattedTotalAmountDue(
+    FormattedAmountDue(
+      FormattedSumTotalMinusLessVat(
+        FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+        FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+      ),
+      FormattedLessWithHoldingTax(data, lessWithHoldingTax, 16)
+    ),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
 
   return (
     <div className="text-sm h-[506.45669291px] w-[767.24409449px]">
@@ -171,7 +249,7 @@ const SMCTGuindulman1: React.FC<PrintPageProps> = ({ data }) => {
               <td className={`w-[309.70528684px] h-[19.275590551px]`}></td>
               <td className="w-[163.81552306px] h-[19.275590551px]"></td>
               <td className="w-[114.30371204px] h-[19.275590551px]">
-                {FormattedSumTotal(data, totalSalesVatInclusive, 3)}
+                {totalSalesVatInclusiveFn}
               </td>
             </tr>
             <tr className="text-sm text-center">
@@ -180,7 +258,7 @@ const SMCTGuindulman1: React.FC<PrintPageProps> = ({ data }) => {
               <td className={`w-[309.70528684px] h-[19.275590551px]`}></td>
               <td className="w-[163.81552306px] h-[19.275590551px]"></td>
               <td className="w-[114.30371204px] h-[19.275590551px]">
-                {FormattedSumTotal(data, vatAmount2, 3)}
+                {lessVatFn}
               </td>
             </tr>
           </tbody>
@@ -192,23 +270,11 @@ const SMCTGuindulman1: React.FC<PrintPageProps> = ({ data }) => {
             <tr className="text-sm">
               <td className="h-[19.275590551px] w-[336.62632171px]"></td>
               <td className="h-[19.275590551px] w-[101.83127109px] pl-5">
-                {FormattedSumTotal(data, totalSalesVatExclusive2, 3)}
+                {vatableSalesFn}
               </td>
               <td className="h-[19.275590551px] w-[163.81552306px]"></td>
               <td className="h-[19.275590551px] w-[114.30371204px] text-center">
-                {FormattedSumTotal(data, totalSalesVatExclusive2, 3)}
-              </td>
-            </tr>
-            <tr className="text-sm">
-              <td className="h-[19.275590551px] w-[336.62632171px]"></td>
-              <td className="h-[19.275590551px] w-[101.83127109px] pl-5">
-                {/* {FormattedSumTotal(data, rateInclusiveVat, 3)} VAT EXEMPT SALES */}
-                0.00
-              </td>
-              <td className="h-[19.275590551px] w-[163.81552306px]"></td>
-              <td className="h-[19.275590551px] w-[114.30371204px] text-center">
-                {/* {FormattedSumTotal(data, totalSalesVatInclusive2, 3)} LESS: SC/PWD DISCOUNT */}
-                0.00
+                {amountNetOfVatFn}
               </td>
             </tr>
             <tr className="text-sm">
@@ -218,17 +284,27 @@ const SMCTGuindulman1: React.FC<PrintPageProps> = ({ data }) => {
               </td>
               <td className="h-[19.275590551px] w-[163.81552306px]"></td>
               <td className="h-[19.275590551px] w-[114.30371204px] text-center">
-                {FormattedSumTotal(data, totalSalesVatExclusive, 3)}
+                {lessWithHoldingTaxFn}
               </td>
             </tr>
             <tr className="text-sm">
               <td className="h-[19.275590551px] w-[336.62632171px]"></td>
               <td className="h-[19.275590551px] w-[101.83127109px] pl-5">
-                {FormattedSumTotal(data, vatAmount, 3)}
+                0.00
               </td>
               <td className="h-[19.275590551px] w-[163.81552306px]"></td>
               <td className="h-[19.275590551px] w-[114.30371204px] text-center">
-                {FormattedSumTotal(data, vatAmount3, 3)}
+                {amountDueFn}
+              </td>
+            </tr>
+            <tr className="text-sm">
+              <td className="h-[19.275590551px] w-[336.62632171px]"></td>
+              <td className="h-[19.275590551px] w-[101.83127109px] pl-5">
+                {vatAmountFn}
+              </td>
+              <td className="h-[19.275590551px] w-[163.81552306px]"></td>
+              <td className="h-[19.275590551px] w-[114.30371204px] text-center">
+                {addVatFn}
               </td>
             </tr>
             <tr className="text-sm">
@@ -236,7 +312,7 @@ const SMCTGuindulman1: React.FC<PrintPageProps> = ({ data }) => {
               <td className="h-[19.275590551px] w-[101.83127109px]"></td>
               <td className="h-[19.275590551px] w-[163.81552306px]"></td>
               <td className="h-[19.275590551px] w-[114.30371204px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive, 3)}
+                {totalAmountDueFn}
               </td>
             </tr>
           </tbody>

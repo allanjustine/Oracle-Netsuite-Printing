@@ -1,7 +1,12 @@
 "use client";
 import { PrintPageProps } from "@/types/types";
+import FormattedAmountDue from "@/utils/FormattedAmountDue";
+import FormattedLessWithHoldingTax from "@/utils/FormattedLessWithHoldingTax";
 import FormattedNumber from "@/utils/FormattedNumber";
 import FormattedSumTotal from "@/utils/FormattedSumTotal";
+import FormattedSumTotalLessVat from "@/utils/FormattedSumTotalLessVat";
+import FormattedSumTotalMinusLessVat from "@/utils/FormattedSumTotalMinusLessVat";
+import FormattedTotalAmountDue from "@/utils/FormattedTotalAmountDue";
 
 const DAPBalingasag: React.FC<PrintPageProps> = ({ data }) => {
   const mainLineName = 0;
@@ -31,13 +36,89 @@ const DAPBalingasag: React.FC<PrintPageProps> = ({ data }) => {
   const rateInclusiveOfTax = 24;
   const color = 25;
   const cashier = 26;
-  const totalAmountDue = 27;
+  const refNumber = 27;
+  const lessWithHoldingTax = 28;
+
+  // Vatable Sales
+  const vatableSalesFn = FormattedSumTotalMinusLessVat(
+    FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
+
+  // Total Sales Vat Inclusive
+  const totalSalesVatInclusiveFn = FormattedSumTotal(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Less Vat
+  const lessVatFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Amount Net Of Vat
+  const amountNetOfVatFn = FormattedSumTotalMinusLessVat(
+    FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
+
+  // Vat Amount
+  const vatAmountFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Less With Holding Tax
+  const lessWithHoldingTaxFn = FormattedLessWithHoldingTax(
+    data,
+    lessWithHoldingTax,
+    16
+  );
+
+  // Amount Due
+  const amountDueFn = FormattedAmountDue(
+    FormattedSumTotalMinusLessVat(
+      FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+      FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+    ),
+    FormattedLessWithHoldingTax(data, lessWithHoldingTax, 16)
+  );
+
+  // Add Vat
+  const addVatFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Total Amount Due
+  const totalAmountDueFn = FormattedTotalAmountDue(
+    FormattedAmountDue(
+      FormattedSumTotalMinusLessVat(
+        FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+        FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+      ),
+      FormattedLessWithHoldingTax(data, lessWithHoldingTax, 16)
+    ),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
 
   return (
     <div className="text-xs h-[506.45669291px] w-[767.24409449px]">
       <div className="flex h-[17.007874016px] mt-[105.448818896px]">
         <p className="w-[528.66141732px] pl-[147.4015748px]">
-          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
+          {data[1]?.[mainLineName]
+            ?.replace(/Ã/g, "Ñ")
+            .replace(/Ã‘/g, "Ñ")
+            .replace(/Ã±/g, "ñ") || ""}
         </p>
         <p className="w-[284.50393701px] pl-[117.16535433px]">
           {data[1]?.[date] || ""}
@@ -45,7 +126,6 @@ const DAPBalingasag: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="flex h-[17.007874016px]">
         <p className="w-[528.66141732px] pl-[147.4015748px]">
-          
           <span className="opacity-0">No Data</span>
         </p>
         <p className="w-[284.50393701px] pl-[117.16535433px]">
@@ -73,7 +153,9 @@ const DAPBalingasag: React.FC<PrintPageProps> = ({ data }) => {
           <tbody>
             {data.slice(1, 4).map((row, index) => (
               <tr key={index} className="text-xs text-center">
-                <td className="w-[74.24071991px]">{row[quantity]?.replace(/.0$/, "")}</td>
+                <td className="w-[74.24071991px]">
+                  {row[quantity]?.replace(/.0$/, "")}
+                </td>
                 <td className="w-[53.831271091px] h-[19.275590551px]">
                   {row[unitOfMeasurement]}
                 </td>
@@ -101,10 +183,10 @@ const DAPBalingasag: React.FC<PrintPageProps> = ({ data }) => {
                 }`}
               >
                 {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
-                    <>Engine #: {data[1]?.[serialNumber]}</>
-                  ) : (
-                    <>Serial #: {data[1]?.[serialNumber]}</>
-                  )}
+                  <>Engine #: {data[1]?.[serialNumber]}</>
+                ) : (
+                  <>Serial #: {data[1]?.[serialNumber]}</>
+                )}
               </td>
               <td className="w-[163.81552306px] h-[19.275590551px]"></td>
               <td className="w-[114.30371204px] h-[19.275590551px]"></td>
@@ -136,7 +218,7 @@ const DAPBalingasag: React.FC<PrintPageProps> = ({ data }) => {
               <td className={`w-[309.70528684px] h-[19.275590551px]`}></td>
               <td className="w-[163.81552306px] h-[19.275590551px]"></td>
               <td className="w-[114.30371204px] h-[19.275590551px]">
-                {FormattedSumTotal(data, totalSalesVatInclusive, 3)}
+                {totalSalesVatInclusiveFn}
               </td>
             </tr>
             <tr className="text-xs text-center">
@@ -145,7 +227,7 @@ const DAPBalingasag: React.FC<PrintPageProps> = ({ data }) => {
               <td className={`w-[309.70528684px] h-[19.275590551px]`}></td>
               <td className="w-[163.81552306px] h-[19.275590551px]"></td>
               <td className="w-[114.30371204px] h-[19.275590551px]">
-                {FormattedSumTotal(data, vatAmount2, 3)}
+                {lessVatFn}
               </td>
             </tr>
           </tbody>
@@ -157,43 +239,37 @@ const DAPBalingasag: React.FC<PrintPageProps> = ({ data }) => {
             <tr className="text-xs">
               <td className="h-[19.275590551px] w-[336.62632171px]"></td>
               <td className="h-[19.275590551px] w-[101.83127109px]">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 3)}
+                {vatableSalesFn}
               </td>
               <td className="h-[19.275590551px] w-[163.81552306px]"></td>
               <td className="h-[19.275590551px] w-[114.30371204px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 3)}
+                {amountNetOfVatFn}
+              </td>
+            </tr>
+            <tr className="text-xs">
+              <td className="h-[19.275590551px] w-[336.62632171px]"></td>
+              <td className="h-[19.275590551px] w-[101.83127109px]">0.00</td>
+              <td className="h-[19.275590551px] w-[163.81552306px]"></td>
+              <td className="h-[19.275590551px] w-[114.30371204px] text-center">
+                {lessWithHoldingTaxFn}
+              </td>
+            </tr>
+            <tr className="text-xs">
+              <td className="h-[19.275590551px] w-[336.62632171px]"></td>
+              <td className="h-[19.275590551px] w-[101.83127109px]">0.00</td>
+              <td className="h-[19.275590551px] w-[163.81552306px]"></td>
+              <td className="h-[19.275590551px] w-[114.30371204px] text-center">
+                {amountDueFn}
               </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[19.275590551px] w-[336.62632171px]"></td>
               <td className="h-[19.275590551px] w-[101.83127109px]">
-                {/* {FormattedSumTotal(data, rateInclusiveVat, 3)} VAT EXEMPT SALES */}
-                0.00
+                {vatableSalesFn}
               </td>
               <td className="h-[19.275590551px] w-[163.81552306px]"></td>
               <td className="h-[19.275590551px] w-[114.30371204px] text-center">
-                {/* {FormattedSumTotal(data, totalSalesVatInclusive2, 3)} LESS: SC/PWD DISCOUNT */}
-                0.00
-              </td>
-            </tr>
-            <tr className="text-xs">
-              <td className="h-[19.275590551px] w-[336.62632171px]"></td>
-              <td className="h-[19.275590551px] w-[101.83127109px]">
-                {FormattedSumTotal(data, rateInclusiveVat, 3)}
-              </td>
-              <td className="h-[19.275590551px] w-[163.81552306px]"></td>
-              <td className="h-[19.275590551px] w-[114.30371204px] text-center">
-                {FormattedSumTotal(data, vatAmount2, 3)}
-              </td>
-            </tr>
-            <tr className="text-xs">
-              <td className="h-[19.275590551px] w-[336.62632171px]"></td>
-              <td className="h-[19.275590551px] w-[101.83127109px]">
-                {FormattedSumTotal(data, vatAmount, 3)}
-              </td>
-              <td className="h-[19.275590551px] w-[163.81552306px]"></td>
-              <td className="h-[19.275590551px] w-[114.30371204px] text-center">
-                {FormattedSumTotal(data, vatAmount3, 3)}
+                {addVatFn}
               </td>
             </tr>
             <tr className="text-xs">
@@ -201,7 +277,7 @@ const DAPBalingasag: React.FC<PrintPageProps> = ({ data }) => {
               <td className="h-[19.275590551px] w-[101.83127109px]"></td>
               <td className="h-[19.275590551px] w-[163.81552306px]"></td>
               <td className="h-[19.275590551px] w-[114.30371204px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive, 3)}
+                {totalAmountDueFn}
               </td>
             </tr>
           </tbody>
@@ -209,7 +285,12 @@ const DAPBalingasag: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="mx-[37.795275591px]">
         <div className="mt-[18px] ml-[392.31496063px]">
-          <p className="text-xs text-center">{data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}</p>
+          <p className="text-xs text-center">
+            {data[1]?.[cashier]
+              ?.replace(/Ã/g, "Ñ")
+              .replace(/Ã‘/g, "Ñ")
+              .replace(/Ã±/g, "ñ") || ""}
+          </p>
         </div>
       </div>
     </div>

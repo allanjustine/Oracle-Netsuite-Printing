@@ -1,6 +1,6 @@
 import FormattedNumber from "./FormattedNumber";
 
-export default function FormattedSumTotal(
+export default function FormattedSumTotalLessVat(
   data: any,
   value: any,
   range: any,
@@ -17,5 +17,5 @@ export default function FormattedSumTotal(
     );
   }, 0);
 
-  return FormattedNumber(sumOfTotalSalesVatInclusive);
+  return FormattedNumber((sumOfTotalSalesVatInclusive / 1.12) * 0.12);
 }

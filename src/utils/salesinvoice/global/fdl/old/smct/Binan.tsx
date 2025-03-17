@@ -1,7 +1,12 @@
 "use client";
 import { PrintPageProps } from "@/types/types";
+import FormattedAmountDue from "@/utils/FormattedAmountDue";
+import FormattedLessWithHoldingTax from "@/utils/FormattedLessWithHoldingTax";
 import FormattedNumber from "@/utils/FormattedNumber";
 import FormattedSumTotal from "@/utils/FormattedSumTotal";
+import FormattedSumTotalLessVat from "@/utils/FormattedSumTotalLessVat";
+import FormattedSumTotalMinusLessVat from "@/utils/FormattedSumTotalMinusLessVat";
+import FormattedTotalAmountDue from "@/utils/FormattedTotalAmountDue";
 
 const Binan: React.FC<PrintPageProps> = ({ data }) => {
   const mainLineName = 0;
@@ -31,29 +36,104 @@ const Binan: React.FC<PrintPageProps> = ({ data }) => {
   const rateInclusiveOfTax = 24;
   const color = 25;
   const cashier = 26;
-  const totalAmountDue = 27;
+  const refNumber = 27;
+  const lessWithHoldingTax = 28;
+
+  // Vatable Sales
+  const vatableSalesFn = FormattedSumTotalMinusLessVat(
+    FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
+
+  // Total Sales Vat Inclusive
+  const totalSalesVatInclusiveFn = FormattedSumTotal(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Less Vat
+  const lessVatFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Amount Net Of Vat
+  const amountNetOfVatFn = FormattedSumTotalMinusLessVat(
+    FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
+
+  // Vat Amount
+  const vatAmountFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Less With Holding Tax
+  const lessWithHoldingTaxFn = FormattedLessWithHoldingTax(
+    data,
+    lessWithHoldingTax,
+    16
+  );
+
+  // Amount Due
+  const amountDueFn = FormattedAmountDue(
+    FormattedSumTotalMinusLessVat(
+      FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+      FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+    ),
+    FormattedLessWithHoldingTax(data, lessWithHoldingTax, 16)
+  );
+
+  // Add Vat
+  const addVatFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Total Amount Due
+  const totalAmountDueFn = FormattedTotalAmountDue(
+    FormattedAmountDue(
+      FormattedSumTotalMinusLessVat(
+        FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+        FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+      ),
+      FormattedLessWithHoldingTax(data, lessWithHoldingTax, 16)
+    ),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
 
   return (
     <div className="text-xs h-[785.76377953px] w-[582.80314961px]">
       <div className="flex h-[21.165354331px] mt-[109.7244094521px]">
         <p className="w-[377.95275591px] pl-[94.488188976px]">
-          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
+          {data[1]?.[mainLineName]
+            ?.replace(/Ã/g, "Ñ")
+            .replace(/Ã‘/g, "Ñ")
+            .replace(/Ã±/g, "ñ") || ""}
         </p>
-        <p className="w-[219.21259843px] pl-[62px]">
-          {data[1]?.[date] || ""}
-        </p>
+        <p className="w-[219.21259843px] pl-[62px]">{data[1]?.[date] || ""}</p>
       </div>
       <div className="flex h-[21.165354331px]">
         <p className="w-[377.95275591px] pl-[94.488188976px]">
-          
           <span className="opacity-0">No Data</span>
         </p>
-        <p className="w-[219.21259843px] pl-[62px]">
-          {data[1]?.[terms] || ""}
-        </p>
+        <p className="w-[219.21259843px] pl-[62px]">{data[1]?.[terms] || ""}</p>
       </div>
       <div className="flex h-[21.165354331]">
-        <p className={`w-full pl-[94.488188976px] ${data[1]?.[billingAddress]?.length > 90 ? 'text-[9px]' : ''}`}>
+        <p
+          className={`w-full pl-[94.488188976px] ${
+            data[1]?.[billingAddress]?.length > 90 ? "text-[9px]" : ""
+          }`}
+        >
           {data[1]?.[billingAddress] || ""}
         </p>
       </div>
@@ -68,7 +148,9 @@ const Binan: React.FC<PrintPageProps> = ({ data }) => {
           <tbody>
             {data.slice(1, 17).map((row, index) => (
               <tr key={index} className="text-xs text-center">
-                <td className="w-[71.433070866px]">{row[quantity]?.replace(/.0$/, "")}</td>
+                <td className="w-[71.433070866px]">
+                  {row[quantity]?.replace(/.0$/, "")}
+                </td>
                 <td className="w-[56.31496063px] h-[18.275590551px]">
                   {row[unitOfMeasurement]}
                 </td>
@@ -120,63 +202,67 @@ const Binan: React.FC<PrintPageProps> = ({ data }) => {
         <table className="border-collapse w-full">
           <tbody>
             <tr className="text-xs">
-              <td className="h-[18.275590551px] w-[124.72440945px]"></td>
-              <td className="h-[18.275590551px] w-[179.90551181px] pl-[7.342622px]">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
+              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
+              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]">
+                {vatableSalesFn}
               </td>
-              <td className="h-[18.275590551px] w-[128.50393701px]"></td>
-              <td className="h-[18.275590551px] w-[98.267716535px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive, 16)}
-              </td>
-            </tr>
-            <tr className="text-xs">
-              <td className="h-[18.275590551px] w-[124.72440945px]"></td>
-              <td className="h-[18.275590551px] w-[179.90551181px] pl-[7.342622px]">0.00</td>
-              <td className="h-[18.275590551px] w-[128.50393701px]"></td>
-              <td className="h-[18.275590551px] w-[98.267716535px] text-center">
-                {FormattedSumTotal(data, vatAmount2, 16)}
+              <td className="h-[19.275590551px] w-[128.88188976px]"></td>
+              <td className="h-[19.275590551px] w-[98.645669291px] text-center">
+                {totalSalesVatInclusiveFn}
               </td>
             </tr>
             <tr className="text-xs">
-              <td className="h-[18.275590551px] w-[124.72440945px]"></td>
-              <td className="h-[18.275590551px] w-[179.90551181px] pl-[7.342622px]">
-                {FormattedSumTotal(data, rateInclusiveVat, 16)}
+              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
+              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]">
+                0.00
               </td>
-              <td className="h-[18.275590551px] w-[128.50393701px]"></td>
-              <td className="h-[18.275590551px] w-[98.267716535px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
-              </td>
-            </tr>
-            <tr className="text-xs">
-              <td className="h-[18.275590551px] w-[124.72440945px]"></td>
-              <td className="h-[18.275590551px] w-[179.90551181px] pl-[7.342622px]">
-                {FormattedSumTotal(data, vatAmount, 16)}
-              </td>
-              <td className="h-[18.275590551px] w-[128.50393701px]"></td>
-              <td className="h-[18.275590551px] w-[98.267716535px] text-center"></td>
-            </tr>
-            <tr className="text-xs">
-              <td className="h-[18.275590551px] w-[124.72440945px]"></td>
-              <td className="h-[18.275590551px] w-[179.90551181px] pl-[7.342622px]"></td>
-              <td className="h-[18.275590551px] w-[128.50393701px]"></td>
-              <td className="h-[18.275590551px] w-[98.267716535px] text-center">
-                {FormattedSumTotal(data, vatAmount2, 16)}
+              <td className="h-[19.275590551px] w-[128.88188976px]"></td>
+              <td className="h-[19.275590551px] w-[98.645669291px] text-center">
+                {lessVatFn}
               </td>
             </tr>
             <tr className="text-xs">
-              <td className="h-[18.275590551px] w-[124.72440945px]"></td>
-              <td className="h-[18.275590551px] w-[179.90551181px] pl-[7.342622px]"></td>
-              <td className="h-[18.275590551px] w-[128.50393701px]"></td>
-              <td className="h-[18.275590551px] w-[98.267716535px] text-center">
-                {FormattedSumTotal(data, vatAmount3, 16)}
+              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
+              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]">
+                0.00
+              </td>
+              <td className="h-[19.275590551px] w-[128.88188976px]"></td>
+              <td className="h-[19.275590551px] w-[98.645669291px] text-center">
+                {amountNetOfVatFn}
               </td>
             </tr>
             <tr className="text-xs">
-              <td className="h-[18.275590551px] w-[124.72440945px]"></td>
-              <td className="h-[18.275590551px] w-[179.90551181px] pl-[7.342622px]"></td>
-              <td className="h-[18.275590551px] w-[128.50393701px]"></td>
-              <td className="h-[18.275590551px] w-[98.267716535px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive, 16)}
+              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
+              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]">
+                {vatAmountFn}
+              </td>
+              <td className="h-[19.275590551px] w-[128.88188976px]"></td>
+              <td className="h-[19.275590551px] w-[98.645669291px] text-center">
+                {lessWithHoldingTaxFn}
+              </td>
+            </tr>
+            <tr className="text-xs">
+              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
+              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]"></td>
+              <td className="h-[19.275590551px] w-[128.88188976px]"></td>
+              <td className="h-[19.275590551px] w-[98.645669291px] text-center">
+                {amountDueFn}
+              </td>
+            </tr>
+            <tr className="text-xs">
+              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
+              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]"></td>
+              <td className="h-[19.275590551px] w-[128.88188976px]"></td>
+              <td className="h-[19.275590551px] w-[98.645669291px] text-center">
+                {addVatFn}
+              </td>
+            </tr>
+            <tr className="text-xs">
+              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
+              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]"></td>
+              <td className="h-[19.275590551px] w-[128.88188976px]"></td>
+              <td className="h-[19.275590551px] w-[98.645669291px] text-center">
+                {totalAmountDueFn}
               </td>
             </tr>
           </tbody>
@@ -185,7 +271,10 @@ const Binan: React.FC<PrintPageProps> = ({ data }) => {
       <div className="mx-[30.236220472px]">
         <div className="mt-[22.566929134px] ml-[392.31496063px]">
           <p className="text-xs text-center">
-            {data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
+            {data[1]?.[cashier]
+              ?.replace(/Ã/g, "Ñ")
+              .replace(/Ã‘/g, "Ñ")
+              .replace(/Ã±/g, "ñ") || ""}
           </p>
         </div>
       </div>

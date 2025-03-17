@@ -1,7 +1,12 @@
 "use client";
 import { PrintPageProps } from "@/types/types";
-import FormattedNumber from "../../FormattedNumber";
-import FormattedSumTotal from "../../FormattedSumTotal";
+import FormattedAmountDue from "@/utils/FormattedAmountDue";
+import FormattedLessWithHoldingTax from "@/utils/FormattedLessWithHoldingTax";
+import FormattedNumber from "@/utils/FormattedNumber";
+import FormattedSumTotal from "@/utils/FormattedSumTotal";
+import FormattedSumTotalLessVat from "@/utils/FormattedSumTotalLessVat";
+import FormattedSumTotalMinusLessVat from "@/utils/FormattedSumTotalMinusLessVat";
+import FormattedTotalAmountDue from "@/utils/FormattedTotalAmountDue";
 
 const LuzonSize: React.FC<PrintPageProps> = ({ data }) => {
   const mainLineName = 0;
@@ -31,17 +36,92 @@ const LuzonSize: React.FC<PrintPageProps> = ({ data }) => {
   const rateInclusiveOfTax = 24;
   const color = 25;
   const cashier = 26;
-  const totalAmountDue = 27;
+  const refNumber = 27;
+  const lessWithHoldingTax = 28;
+
+  // Vatable Sales
+  const vatableSalesFn = FormattedSumTotalMinusLessVat(
+    FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
+
+  // Total Sales Vat Inclusive
+  const totalSalesVatInclusiveFn = FormattedSumTotal(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Less Vat
+  const lessVatFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Amount Net Of Vat
+  const amountNetOfVatFn = FormattedSumTotalMinusLessVat(
+    FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
+
+  // Vat Amount
+  const vatAmountFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Less With Holding Tax
+  const lessWithHoldingTaxFn = FormattedLessWithHoldingTax(
+    data,
+    lessWithHoldingTax,
+    16
+  );
+
+  // Amount Due
+  const amountDueFn = FormattedAmountDue(
+    FormattedSumTotalMinusLessVat(
+      FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+      FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+    ),
+    FormattedLessWithHoldingTax(data, lessWithHoldingTax, 16)
+  );
+
+  // Add Vat
+  const addVatFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Total Amount Due
+  const totalAmountDueFn = FormattedTotalAmountDue(
+    FormattedAmountDue(
+      FormattedSumTotalMinusLessVat(
+        FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+        FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+      ),
+      FormattedLessWithHoldingTax(data, lessWithHoldingTax, 16)
+    ),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
 
   return (
     <div className="text-xs h-[506.83464567px] w-[741.16535433px]">
       <div className="mx-[30.614173228px] w-[684.09448819px] flex space-x-20 mt-[100px]">
         <div className="w-[419.90551181px] pr-[11.716535433px]">
           <p className="w-full text-xs h-[19.275590551px] ml-[120px]">
-            {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
+            {data[1]?.[mainLineName]
+              ?.replace(/Ã/g, "Ñ")
+              .replace(/Ã‘/g, "Ñ")
+              .replace(/Ã±/g, "ñ") || ""}
           </p>
-          <p className="w-full text-xs h-[19.275590551px] ml-[120px]">
-          </p>
+          <p className="w-full text-xs h-[19.275590551px] ml-[120px]"></p>
           <p className="text-xs h-[38.551181102px] ml-[120px] w-fit leading-[19.275590551px]">
             {data[1]?.[billingAddress] || ""}
           </p>
@@ -67,7 +147,9 @@ const LuzonSize: React.FC<PrintPageProps> = ({ data }) => {
             <tbody>
               {data.slice(1, 6).map((row, index) => (
                 <tr key={index} className="text-xs text-center">
-                  <td className="w-[75.212598425px]">{row[quantity]?.replace(/.0$/, "")}</td>
+                  <td className="w-[75.212598425px]">
+                    {row[quantity]?.replace(/.0$/, "")}
+                  </td>
                   <td className="w-[75.968503937px] h-[18.822047244px]">
                     {row[unitOfMeasurement]}
                   </td>
@@ -98,7 +180,7 @@ const LuzonSize: React.FC<PrintPageProps> = ({ data }) => {
                 <td className="h-[18.822047244px] w-[117.16535433px]"></td>
                 <td className="h-[18.822047244px] w-[158.36220472px]"></td>
                 <td className="h-[18.822047244px] w-[131.90551181px] text-center">
-                  {FormattedSumTotal(data, totalSalesVatInclusive, 5) || "0.00"}
+                  {totalSalesVatInclusiveFn}
                 </td>
               </tr>
               <tr className="text-xs text-center">
@@ -107,52 +189,47 @@ const LuzonSize: React.FC<PrintPageProps> = ({ data }) => {
                 <td className="h-[18.822047244px] w-[117.16535433px]"></td>
                 <td className="h-[18.822047244px] w-[158.36220472px]"></td>
                 <td className="h-[18.822047244px] w-[131.90551181px] text-center">
-                  {FormattedSumTotal(data, vatAmount, 5) || "0.00"}
-                </td>
-              </tr>
-              <tr className="text-xs text-center">
-                <td className="h-[18.822047244px] w-[165.92125984px]"></td>
-                <td className="h-[18.822047244px] w-[117.16535433px]"></td>
-                <td className="h-[18.822047244px] w-[117.16535433px]">
-                  {/* {data[1]?.[vatAmount] || "0.00"} */}
-                </td>
-                <td className="h-[18.822047244px] w-[158.36220472px]"></td>
-                <td className="h-[18.822047244px] w-[131.90551181px] text-center">
-                  {FormattedSumTotal(data, totalSalesVatExclusive, 5) || "0.00"}
+                  {lessVatFn}
                 </td>
               </tr>
               <tr className="text-xs text-center">
                 <td className="h-[18.822047244px] w-[165.92125984px]"></td>
                 <td className="h-[18.822047244px] w-[117.16535433px]"></td>
                 <td className="h-[18.822047244px] w-[117.16535433px]">
-                  {/* {data[1]?.[vatAmount] || "0.00"} */}
+                  {vatableSalesFn}
                 </td>
                 <td className="h-[18.822047244px] w-[158.36220472px]"></td>
                 <td className="h-[18.822047244px] w-[131.90551181px] text-center">
-                  {/* {data[1]?.[totalSalesVatInclusive2] || "0.00"} */}
+                  {amountNetOfVatFn}
+                </td>
+              </tr>
+              <tr className="text-xs text-center">
+                <td className="h-[18.822047244px] w-[165.92125984px]"></td>
+                <td className="h-[18.822047244px] w-[117.16535433px]"></td>
+                <td className="h-[18.822047244px] w-[117.16535433px]">0.00</td>
+                <td className="h-[18.822047244px] w-[158.36220472px]"></td>
+                <td className="h-[18.822047244px] w-[131.90551181px] text-center">
+                  {lessWithHoldingTaxFn}
+                </td>
+              </tr>
+              <tr className="text-xs text-center">
+                <td className="h-[18.822047244px] w-[165.92125984px]"></td>
+                <td className="h-[18.822047244px] w-[117.16535433px]"></td>
+                <td className="h-[18.822047244px] w-[117.16535433px]">0.00</td>
+                <td className="h-[18.822047244px] w-[158.36220472px]"></td>
+                <td className="h-[18.822047244px] w-[131.90551181px] text-center">
+                  {amountDueFn}
                 </td>
               </tr>
               <tr className="text-xs text-center">
                 <td className="h-[18.822047244px] w-[165.92125984px]"></td>
                 <td className="h-[18.822047244px] w-[117.16535433px]"></td>
                 <td className="h-[18.822047244px] w-[117.16535433px]">
-                  {/* {data[1]?.[vatAmount2] || "0.00"} */}
+                  {vatAmountFn}
                 </td>
                 <td className="h-[18.822047244px] w-[158.36220472px]"></td>
                 <td className="h-[18.822047244px] w-[131.90551181px] text-center">
-                  {FormattedSumTotal(data, totalSalesVatExclusive2, 5) ||
-                    "0.00"}
-                </td>
-              </tr>
-              <tr className="text-xs text-center">
-                <td className="h-[18.822047244px] w-[165.92125984px]"></td>
-                <td className="h-[18.822047244px] w-[117.16535433px]"></td>
-                <td className="h-[18.822047244px] w-[117.16535433px]">
-                  {/* {data[1]?.[vatAmount2] || "0.00"} */}
-                </td>
-                <td className="h-[18.822047244px] w-[158.36220472px]"></td>
-                <td className="h-[18.822047244px] w-[131.90551181px] text-center">
-                  {FormattedSumTotal(data, vatAmount2, 5) || "0.00"}
+                  {addVatFn}
                 </td>
               </tr>
             </tbody>
@@ -164,8 +241,7 @@ const LuzonSize: React.FC<PrintPageProps> = ({ data }) => {
               <tr className="text-xs text-center">
                 <td className="h-[18.822047244px] w-[560.40944881px]"></td>
                 <td className="h-[18.822047244px] w-[131.90551181px] text-center">
-                  {FormattedSumTotal(data, rateInclusiveOfTax, 5) ||
-                    "0.00"}
+                  {totalAmountDueFn}
                 </td>
               </tr>
             </tbody>
@@ -175,7 +251,12 @@ const LuzonSize: React.FC<PrintPageProps> = ({ data }) => {
 
       <div>
         <div className="mt-[19px] pl-[431.1023622px]">
-          <p className="text-xs text-center">{data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}</p>
+          <p className="text-xs text-center">
+            {data[1]?.[cashier]
+              ?.replace(/Ã/g, "Ñ")
+              .replace(/Ã‘/g, "Ñ")
+              .replace(/Ã±/g, "ñ") || ""}
+          </p>
         </div>
       </div>
     </div>

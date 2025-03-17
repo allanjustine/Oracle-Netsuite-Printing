@@ -1,6 +1,11 @@
 "use client";
+import FormattedAmountDue from "@/utils/FormattedAmountDue";
+import FormattedLessWithHoldingTax from "@/utils/FormattedLessWithHoldingTax";
 import FormattedNumber from "@/utils/FormattedNumber";
 import FormattedSumTotal from "@/utils/FormattedSumTotal";
+import FormattedSumTotalLessVat from "@/utils/FormattedSumTotalLessVat";
+import FormattedSumTotalMinusLessVat from "@/utils/FormattedSumTotalMinusLessVat";
+import FormattedTotalAmountDue from "@/utils/FormattedTotalAmountDue";
 
 const HDVeterans = ({ data }: any) => {
   const mainLineName = 0;
@@ -30,7 +35,80 @@ const HDVeterans = ({ data }: any) => {
   const rateInclusiveOfTax = 24;
   const color = 25;
   const cashier = 26;
-  const totalAmountDue = 27;
+  const refNumber = 27;
+  const lessWithHoldingTax = 28;
+
+  // Vatable Sales
+  const vatableSalesFn = FormattedSumTotalMinusLessVat(
+    FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
+
+  // Total Sales Vat Inclusive
+  const totalSalesVatInclusiveFn = FormattedSumTotal(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Less Vat
+  const lessVatFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Amount Net Of Vat
+  const amountNetOfVatFn = FormattedSumTotalMinusLessVat(
+    FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
+
+  // Vat Amount
+  const vatAmountFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Less With Holding Tax
+  const lessWithHoldingTaxFn = FormattedLessWithHoldingTax(
+    data,
+    lessWithHoldingTax,
+    16
+  );
+
+  // Amount Due
+  const amountDueFn = FormattedAmountDue(
+    FormattedSumTotalMinusLessVat(
+      FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+      FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+    ),
+    FormattedLessWithHoldingTax(data, lessWithHoldingTax, 16)
+  );
+
+  // Add Vat
+  const addVatFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Total Amount Due
+  const totalAmountDueFn = FormattedTotalAmountDue(
+    FormattedAmountDue(
+      FormattedSumTotalMinusLessVat(
+        FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+        FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+      ),
+      FormattedLessWithHoldingTax(data, lessWithHoldingTax, 16)
+    ),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
 
   return (
     <div className="text-xs h-[767.24409449px] w-[608.50393701px]">
@@ -117,44 +195,47 @@ const HDVeterans = ({ data }: any) => {
             <tr className="text-xs">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
               <td className="h-[19.275590551px] w-[185.57480315px] pl-[65.338582677px]">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
+                {vatableSalesFn}
               </td>
               <td className="h-[19.275590551px] w-[132.66141732px]"></td>
               <td className="h-[19.275590551px] w-[102.04724409px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive, 16)}
+                {totalSalesVatInclusiveFn}
               </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
               <td className="h-[19.275590551px] w-[185.57480315px] pl-[65.338582677px]">
-                {/* {FormattedSumTotal(data, rateInclusiveVat, 16)} VAT EXEMPT SALES */}
-                0.00
+                {vatAmountFn}
               </td>
               <td className="h-[19.275590551px] w-[132.66141732px]"></td>
               <td className="h-[19.275590551px] w-[102.04724409px] text-center">
-                {/* {FormattedSumTotal(data, totalSalesVatInclusive2, 16)} LESS: SC/PWD DISCOUNT */}
-                0.00
+                {lessVatFn}
               </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
               <td className="h-[19.275590551px] w-[185.57480315px] pl-[65.338582677px]">
-                {FormattedSumTotal(data, rateInclusiveVat, 16)}
+                0.00
               </td>
               <td className="h-[19.275590551px] w-[132.66141732px]"></td>
               <td className="h-[19.275590551px] w-[102.04724409px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
+                {amountNetOfVatFn}
               </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[19.275590551px] w-[131.90551181px]"></td>
               <td className="h-[19.275590551px] w-[185.57480315px] pl-[65.338582677px]">
-                {FormattedSumTotal(data, vatAmount, 16)}
+                0.00
               </td>
               <td className="h-[19.275590551px] w-[132.66141732px]"></td>
+              <td className="h-[19.275590551px] w-[102.04724409px] text-center"></td>
+            </tr>
+            <tr className="text-xs">
+              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
+              <td className="h-[19.275590551px] w-[185.57480315px] pl-[65.338582677px]"></td>
+              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
               <td className="h-[19.275590551px] w-[102.04724409px] text-center">
-                {/* {FormattedSumTotal(data, totalSalesVatInclusive2, 16)} LESS: SC/PWD DISCOUNT */}
-                0.00
+                {addVatFn}
               </td>
             </tr>
             <tr className="text-xs">
@@ -162,7 +243,7 @@ const HDVeterans = ({ data }: any) => {
               <td className="h-[19.275590551px] w-[185.57480315px] pl-[65.338582677px]"></td>
               <td className="h-[19.275590551px] w-[132.66141732px]"></td>
               <td className="h-[19.275590551px] w-[102.04724409px] text-center">
-                {FormattedSumTotal(data, vatAmount2, 16)}
+                {lessWithHoldingTaxFn}
               </td>
             </tr>
             <tr className="text-xs">
@@ -170,16 +251,7 @@ const HDVeterans = ({ data }: any) => {
               <td className="h-[19.275590551px] w-[185.57480315px] pl-[65.338582677px]"></td>
               <td className="h-[19.275590551px] w-[132.66141732px]"></td>
               <td className="h-[19.275590551px] w-[102.04724409px] text-center">
-                {/* {FormattedSumTotal(data, vatAmount3, 16)} */}
-                0.00
-              </td>
-            </tr>
-            <tr className="text-xs">
-              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[65.338582677px]"></td>
-              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-              <td className="h-[19.275590551px] w-[102.04724409px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive, 16)}
+                {totalAmountDueFn}
               </td>
             </tr>
           </tbody>

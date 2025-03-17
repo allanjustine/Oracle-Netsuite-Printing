@@ -58,7 +58,7 @@ export default function DragAndDropComponent({
 
       setExcelData(stringData);
 
-      if (stringData[0]?.length <= 10) {
+      if (stringData[0]?.length <= 11) {
         setIsPrintCr(true);
       } else {
         setIsPrintCr(false);

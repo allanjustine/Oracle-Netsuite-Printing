@@ -1,7 +1,12 @@
 "use client";
 
+import FormattedAmountDue from "@/utils/FormattedAmountDue";
+import FormattedLessWithHoldingTax from "@/utils/FormattedLessWithHoldingTax";
 import FormattedNumber from "@/utils/FormattedNumber";
 import FormattedSumTotal from "@/utils/FormattedSumTotal";
+import FormattedSumTotalLessVat from "@/utils/FormattedSumTotalLessVat";
+import FormattedSumTotalMinusLessVat from "@/utils/FormattedSumTotalMinusLessVat";
+import FormattedTotalAmountDue from "@/utils/FormattedTotalAmountDue";
 
 const Calape2 = ({ data }: any) => {
   const mainLineName = 0;
@@ -31,13 +36,89 @@ const Calape2 = ({ data }: any) => {
   const rateInclusiveOfTax = 24;
   const color = 25;
   const cashier = 26;
-  const totalAmountDue = 27;
+  const refNumber = 27;
+  const lessWithHoldingTax = 28;
+
+  // Vatable Sales
+  const vatableSalesFn = FormattedSumTotalMinusLessVat(
+    FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
+
+  // Total Sales Vat Inclusive
+  const totalSalesVatInclusiveFn = FormattedSumTotal(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Less Vat
+  const lessVatFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Amount Net Of Vat
+  const amountNetOfVatFn = FormattedSumTotalMinusLessVat(
+    FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
+
+  // Vat Amount
+  const vatAmountFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Less With Holding Tax
+  const lessWithHoldingTaxFn = FormattedLessWithHoldingTax(
+    data,
+    lessWithHoldingTax,
+    16
+  );
+
+  // Amount Due
+  const amountDueFn = FormattedAmountDue(
+    FormattedSumTotalMinusLessVat(
+      FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+      FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+    ),
+    FormattedLessWithHoldingTax(data, lessWithHoldingTax, 16)
+  );
+
+  // Add Vat
+  const addVatFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Total Amount Due
+  const totalAmountDueFn = FormattedTotalAmountDue(
+    FormattedAmountDue(
+      FormattedSumTotalMinusLessVat(
+        FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+        FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+      ),
+      FormattedLessWithHoldingTax(data, lessWithHoldingTax, 16)
+    ),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
 
   return (
     <div className="text-xs h-[745.32283465px] w-[589.60629921px]">
       <div className="flex h-[20.787401575px] mt-[111.1181102406px]">
         <p className="w-[374.17322835px] pl-[98.267716535px]">
-          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
+          {data[1]?.[mainLineName]
+            ?.replace(/Ã/g, "Ñ")
+            .replace(/Ã‘/g, "Ñ")
+            .replace(/Ã±/g, "ñ") || ""}
         </p>
         <p className="w-[215.43307087px] pl-[56.692913386px]">
           {data[1]?.[date] || ""}
@@ -45,7 +126,7 @@ const Calape2 = ({ data }: any) => {
       </div>
       <div className="flex h-[20.787401575px]">
         <p className="w-[374.17322835px] pl-[98.267716535px]">
-           <span className="opacity-0">No Data</span>
+          <span className="opacity-0">No Data</span>
         </p>
         <p className="w-[215.43307087px] pl-[56.692913386px]">
           {data[1]?.[terms] || ""}
@@ -53,7 +134,13 @@ const Calape2 = ({ data }: any) => {
       </div>
       <div className="flex h-[20.787401575px]">
         <div className="w-[563.1496063px] pl-[98.267716535px]">
-          <p className={`h-[20.787401575px] ${data[1]?.[billingAddress].length > 85 ? "text-xs" : ""}`}>{data[1]?.[billingAddress] || ""}</p>
+          <p
+            className={`h-[20.787401575px] ${
+              data[1]?.[billingAddress].length > 85 ? "text-xs" : ""
+            }`}
+          >
+            {data[1]?.[billingAddress] || ""}
+          </p>
         </div>
       </div>
       <div className="flex h-[20.787401575px]">
@@ -66,7 +153,9 @@ const Calape2 = ({ data }: any) => {
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
               <tr key={index} className="text-xs text-center">
-                <td className="w-[69.165354331px]">{row[quantity]?.replace(/.0$/, "")}</td>
+                <td className="w-[69.165354331px]">
+                  {row[quantity]?.replace(/.0$/, "")}
+                </td>
                 <td className="w-[56.692913386px] h-[19.275590551px]">
                   {row[unitOfMeasurement]}
                 </td>
@@ -94,10 +183,10 @@ const Calape2 = ({ data }: any) => {
                 }`}
               >
                 {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
-                    <>Engine #: {data[1]?.[serialNumber]}</>
-                  ) : (
-                    <>Serial #: {data[1]?.[serialNumber]}</>
-                  )}
+                  <>Engine #: {data[1]?.[serialNumber]}</>
+                ) : (
+                  <>Serial #: {data[1]?.[serialNumber]}</>
+                )}
               </td>
               <td className="w-[163.81552306px] h-[19.275590551px]"></td>
               <td className="w-[114.30371204px] h-[19.275590551px]"></td>
@@ -126,51 +215,41 @@ const Calape2 = ({ data }: any) => {
             <tr className="text-xs">
               <td className="h-[19.275590551px] w-[126.61417323px]"></td>
               <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
+                {vatableSalesFn}
               </td>
               <td className="h-[19.275590551px] w-[128.88188976px]"></td>
               <td className="h-[19.275590551px] w-[98.645669291px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive, 16)}
+                {totalSalesVatInclusiveFn}
               </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[19.275590551px] w-[126.61417323px]"></td>
               <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]">
-                {/* {FormattedSumTotal(data, rateInclusiveVat, 16)} VAT EXEMPT SALES */}
                 0.00
               </td>
               <td className="h-[19.275590551px] w-[128.88188976px]"></td>
               <td className="h-[19.275590551px] w-[98.645669291px] text-center">
-                {/* {FormattedSumTotal(data, totalSalesVatInclusive2, 16)} LESS: SC/PWD DISCOUNT */}
+                {lessVatFn}
+              </td>
+            </tr>
+            <tr className="text-xs">
+              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
+              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]">
                 0.00
               </td>
-            </tr>
-            <tr className="text-xs">
-              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
-              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]">
-                {FormattedSumTotal(data, rateInclusiveVat, 16)}
-              </td>
               <td className="h-[19.275590551px] w-[128.88188976px]"></td>
               <td className="h-[19.275590551px] w-[98.645669291px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
+                {amountNetOfVatFn}
               </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[19.275590551px] w-[126.61417323px]"></td>
               <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]">
-                {FormattedSumTotal(data, vatAmount, 16)}
+                {vatAmountFn}
               </td>
               <td className="h-[19.275590551px] w-[128.88188976px]"></td>
               <td className="h-[19.275590551px] w-[98.645669291px] text-center">
-                {/* {FormattedSumTotal(data, totalSalesVatInclusive2, 16)} LESS: SC/PWD DISCOUNT */}
-              </td>
-            </tr>
-            <tr className="text-xs">
-              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
-              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]"></td>
-              <td className="h-[19.275590551px] w-[128.88188976px]"></td>
-              <td className="h-[19.275590551px] w-[98.645669291px] text-center">
-                {FormattedSumTotal(data, vatAmount2, 16)}
+                {lessWithHoldingTaxFn}
               </td>
             </tr>
             <tr className="text-xs">
@@ -178,7 +257,7 @@ const Calape2 = ({ data }: any) => {
               <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]"></td>
               <td className="h-[19.275590551px] w-[128.88188976px]"></td>
               <td className="h-[19.275590551px] w-[98.645669291px] text-center">
-                {FormattedSumTotal(data, vatAmount3, 16)}
+                {amountDueFn}
               </td>
             </tr>
             <tr className="text-xs">
@@ -186,7 +265,15 @@ const Calape2 = ({ data }: any) => {
               <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]"></td>
               <td className="h-[19.275590551px] w-[128.88188976px]"></td>
               <td className="h-[19.275590551px] w-[98.645669291px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive, 16)}
+                {addVatFn}
+              </td>
+            </tr>
+            <tr className="text-xs">
+              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
+              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]"></td>
+              <td className="h-[19.275590551px] w-[128.88188976px]"></td>
+              <td className="h-[19.275590551px] w-[98.645669291px] text-center">
+                {totalAmountDueFn}
               </td>
             </tr>
           </tbody>
@@ -195,7 +282,10 @@ const Calape2 = ({ data }: any) => {
       <div className="mx-[30.236220472px]">
         <div className="mt-[24.456692914px] ml-[332.976377952px]">
           <p className="text-xs text-center">
-            {data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
+            {data[1]?.[cashier]
+              ?.replace(/Ã/g, "Ñ")
+              .replace(/Ã‘/g, "Ñ")
+              .replace(/Ã±/g, "ñ") || ""}
           </p>
         </div>
       </div>

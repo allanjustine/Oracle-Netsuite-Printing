@@ -1,7 +1,12 @@
 "use client";
 import { PrintPageProps } from "@/types/types";
+import FormattedAmountDue from "@/utils/FormattedAmountDue";
+import FormattedLessWithHoldingTax from "@/utils/FormattedLessWithHoldingTax";
 import FormattedNumber from "@/utils/FormattedNumber";
 import FormattedSumTotal from "@/utils/FormattedSumTotal";
+import FormattedSumTotalLessVat from "@/utils/FormattedSumTotalLessVat";
+import FormattedSumTotalMinusLessVat from "@/utils/FormattedSumTotalMinusLessVat";
+import FormattedTotalAmountDue from "@/utils/FormattedTotalAmountDue";
 
 const Ipil = ({ data }: any) => {
   const mainLineName = 0;
@@ -31,7 +36,80 @@ const Ipil = ({ data }: any) => {
   const rateInclusiveOfTax = 24;
   const color = 25;
   const cashier = 26;
-  const totalAmountDue = 27;
+  const refNumber = 27;
+  const lessWithHoldingTax = 28;
+
+  // Vatable Sales
+  const vatableSalesFn = FormattedSumTotalMinusLessVat(
+    FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
+
+  // Total Sales Vat Inclusive
+  const totalSalesVatInclusiveFn = FormattedSumTotal(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Less Vat
+  const lessVatFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Amount Net Of Vat
+  const amountNetOfVatFn = FormattedSumTotalMinusLessVat(
+    FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
+
+  // Vat Amount
+  const vatAmountFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Less With Holding Tax
+  const lessWithHoldingTaxFn = FormattedLessWithHoldingTax(
+    data,
+    lessWithHoldingTax,
+    16
+  );
+
+  // Amount Due
+  const amountDueFn = FormattedAmountDue(
+    FormattedSumTotalMinusLessVat(
+      FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+      FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+    ),
+    FormattedLessWithHoldingTax(data, lessWithHoldingTax, 16)
+  );
+
+  // Add Vat
+  const addVatFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Total Amount Due
+  const totalAmountDueFn = FormattedTotalAmountDue(
+    FormattedAmountDue(
+      FormattedSumTotalMinusLessVat(
+        FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+        FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+      ),
+      FormattedLessWithHoldingTax(data, lessWithHoldingTax, 16)
+    ),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
 
   return (
     <div className="text-xs h-[745.32283465px] w-[589.60629921px]">
@@ -124,69 +202,67 @@ const Ipil = ({ data }: any) => {
         <table className="border-collapse w-full">
           <tbody>
             <tr className="text-xs">
-              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
-              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
+              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
+              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
+                {vatableSalesFn}
               </td>
-              <td className="h-[19.275590551px] w-[128.88188976px]"></td>
-              <td className="h-[19.275590551px] w-[98.645669291px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive, 16)}
+              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
+              <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+                {totalSalesVatInclusiveFn}
               </td>
             </tr>
             <tr className="text-xs">
-              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
-              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]">
-                {/* {FormattedSumTotal(data, rateInclusiveVat, 16)} VAT EXEMPT SALES */}
+              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
+              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
                 0.00
               </td>
-              <td className="h-[19.275590551px] w-[128.88188976px]"></td>
-              <td className="h-[19.275590551px] w-[98.645669291px] text-center">
-                {/* {FormattedSumTotal(data, totalSalesVatInclusive2, 16)} LESS: SC/PWD DISCOUNT */}
+              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
+              <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+                {lessVatFn}
+              </td>
+            </tr>
+            <tr className="text-xs">
+              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
+              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
                 0.00
               </td>
-            </tr>
-            <tr className="text-xs">
-              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
-              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]">
-                {FormattedSumTotal(data, rateInclusiveVat, 16)}
-              </td>
-              <td className="h-[19.275590551px] w-[128.88188976px]"></td>
-              <td className="h-[19.275590551px] w-[98.645669291px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
+              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
+              <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+                {amountNetOfVatFn}
               </td>
             </tr>
             <tr className="text-xs">
-              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
-              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]">
-                {FormattedSumTotal(data, vatAmount, 16)}
+              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
+              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
+                {vatAmountFn}
               </td>
-              <td className="h-[19.275590551px] w-[128.88188976px]"></td>
-              <td className="h-[19.275590551px] w-[98.645669291px] text-center">
-                {/* {FormattedSumTotal(data, totalSalesVatInclusive2, 16)} LESS: SC/PWD DISCOUNT */}
-              </td>
-            </tr>
-            <tr className="text-xs">
-              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
-              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]"></td>
-              <td className="h-[19.275590551px] w-[128.88188976px]"></td>
-              <td className="h-[19.275590551px] w-[98.645669291px] text-center">
-                {FormattedSumTotal(data, vatAmount2, 16)}
+              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
+              <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+                {lessWithHoldingTaxFn}
               </td>
             </tr>
             <tr className="text-xs">
-              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
-              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]"></td>
-              <td className="h-[19.275590551px] w-[128.88188976px]"></td>
-              <td className="h-[19.275590551px] w-[98.645669291px] text-center">
-                {FormattedSumTotal(data, vatAmount3, 16)}
+              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
+              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]"></td>
+              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
+              <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+                {amountDueFn}
               </td>
             </tr>
             <tr className="text-xs">
-              <td className="h-[19.275590551px] w-[126.61417323px]"></td>
-              <td className="h-[19.275590551px] w-[179.1496063px] pl-[11.338582677px]"></td>
-              <td className="h-[19.275590551px] w-[128.88188976px]"></td>
-              <td className="h-[19.275590551px] w-[98.645669291px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive, 16)}
+              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
+              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]"></td>
+              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
+              <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+                {addVatFn}
+              </td>
+            </tr>
+            <tr className="text-xs">
+              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
+              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]"></td>
+              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
+              <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+                {totalAmountDueFn}
               </td>
             </tr>
           </tbody>

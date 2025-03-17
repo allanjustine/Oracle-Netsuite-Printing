@@ -105,12 +105,7 @@ import SMCTGuindulman1 from "@/utils/salesinvoice/global/bjv/old/smct/SMCTGuindu
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
 
-  const luzonSizeData = [
-    //"PAGS",
-    //"SILA",
-    "SLAS",
-    //"SROS",
-  ];
+  const luzonSizeData = [""];
 
   const landscapeSiSizeData = [
     "ALAD",

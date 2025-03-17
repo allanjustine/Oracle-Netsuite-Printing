@@ -1,7 +1,12 @@
 "use client";
 import { PrintPageProps } from "@/types/types";
+import FormattedAmountDue from "@/utils/FormattedAmountDue";
+import FormattedLessWithHoldingTax from "@/utils/FormattedLessWithHoldingTax";
 import FormattedNumber from "@/utils/FormattedNumber";
 import FormattedSumTotal from "@/utils/FormattedSumTotal";
+import FormattedSumTotalLessVat from "@/utils/FormattedSumTotalLessVat";
+import FormattedSumTotalMinusLessVat from "@/utils/FormattedSumTotalMinusLessVat";
+import FormattedTotalAmountDue from "@/utils/FormattedTotalAmountDue";
 
 const HDCalamba: React.FC<PrintPageProps> = ({ data }) => {
   const mainLineName = 0;
@@ -31,7 +36,80 @@ const HDCalamba: React.FC<PrintPageProps> = ({ data }) => {
   const rateInclusiveOfTax = 24;
   const color = 25;
   const cashier = 26;
-  const totalAmountDue = 27;
+  const refNumber = 27;
+  const lessWithHoldingTax = 28;
+
+  // Vatable Sales
+  const vatableSalesFn = FormattedSumTotalMinusLessVat(
+    FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
+
+  // Total Sales Vat Inclusive
+  const totalSalesVatInclusiveFn = FormattedSumTotal(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Less Vat
+  const lessVatFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Amount Net Of Vat
+  const amountNetOfVatFn = FormattedSumTotalMinusLessVat(
+    FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
+
+  // Vat Amount
+  const vatAmountFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Less With Holding Tax
+  const lessWithHoldingTaxFn = FormattedLessWithHoldingTax(
+    data,
+    lessWithHoldingTax,
+    16
+  );
+
+  // Amount Due
+  const amountDueFn = FormattedAmountDue(
+    FormattedSumTotalMinusLessVat(
+      FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+      FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+    ),
+    FormattedLessWithHoldingTax(data, lessWithHoldingTax, 16)
+  );
+
+  // Add Vat
+  const addVatFn = FormattedSumTotalLessVat(
+    data,
+    rateInclusiveVat,
+    16,
+    quantity
+  );
+
+  // Total Amount Due
+  const totalAmountDueFn = FormattedTotalAmountDue(
+    FormattedAmountDue(
+      FormattedSumTotalMinusLessVat(
+        FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
+        FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+      ),
+      FormattedLessWithHoldingTax(data, lessWithHoldingTax, 16)
+    ),
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+  );
 
   return (
     <div className="text-xs h-[755.90551181px] w-[578.26771654px]">
@@ -127,11 +205,11 @@ const HDCalamba: React.FC<PrintPageProps> = ({ data }) => {
             <tr className="text-xs">
               <td className="h-[18.275590551px] w-[145.50393701px]"></td>
               <td className="h-[18.275590551px] w-[176.52755906px]">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
+                {vatableSalesFn}
               </td>
               <td className="h-[18.275590551px] w-[129.25984252px]"></td>
               <td className="h-[18.275590551px] w-[98.645669291px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive, 16)}
+                {totalSalesVatInclusiveFn}
               </td>
             </tr>
             <tr className="text-xs">
@@ -139,23 +217,21 @@ const HDCalamba: React.FC<PrintPageProps> = ({ data }) => {
               <td className="h-[18.275590551px] w-[176.52755906px]">0.00</td>
               <td className="h-[18.275590551px] w-[129.25984252px]"></td>
               <td className="h-[18.275590551px] w-[98.645669291px] text-center">
-                {FormattedSumTotal(data, vatAmount2, 16)}
+                {lessVatFn}
               </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[18.275590551px] w-[145.50393701px]"></td>
-              <td className="h-[18.275590551px] w-[176.52755906px]">
-                {FormattedSumTotal(data, rateInclusiveVat, 16)}
-              </td>
+              <td className="h-[18.275590551px] w-[176.52755906px]">0.00</td>
               <td className="h-[18.275590551px] w-[129.25984252px]"></td>
               <td className="h-[18.275590551px] w-[98.645669291px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
+                {amountNetOfVatFn}
               </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[18.275590551px] w-[145.50393701px]"></td>
               <td className="h-[18.275590551px] w-[176.52755906px]">
-                {FormattedSumTotal(data, vatAmount, 16)}
+                {vatAmountFn}
               </td>
               <td className="h-[18.275590551px] w-[129.25984252px]"></td>
               <td className="h-[18.275590551px] w-[98.645669291px] text-center"></td>
@@ -165,7 +241,7 @@ const HDCalamba: React.FC<PrintPageProps> = ({ data }) => {
               <td className="h-[18.275590551px] w-[176.52755906px]"></td>
               <td className="h-[18.275590551px] w-[129.25984252px]"></td>
               <td className="h-[18.275590551px] w-[98.645669291px] text-center">
-                {FormattedSumTotal(data, vatAmount2, 16)}
+                {amountDueFn}
               </td>
             </tr>
             <tr className="text-xs">
@@ -173,7 +249,7 @@ const HDCalamba: React.FC<PrintPageProps> = ({ data }) => {
               <td className="h-[18.275590551px] w-[176.52755906px]"></td>
               <td className="h-[18.275590551px] w-[129.25984252px]"></td>
               <td className="h-[18.275590551px] w-[98.645669291px] text-center">
-                {FormattedSumTotal(data, vatAmount3, 16)}
+                {addVatFn}
               </td>
             </tr>
             <tr className="text-xs">
@@ -181,7 +257,7 @@ const HDCalamba: React.FC<PrintPageProps> = ({ data }) => {
               <td className="h-[18.275590551px] w-[176.52755906px]"></td>
               <td className="h-[18.275590551px] w-[129.25984252px]"></td>
               <td className="h-[18.275590551px] w-[98.645669291px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive, 16)}
+                {totalAmountDueFn}
               </td>
             </tr>
           </tbody>

@@ -79,7 +79,8 @@ export default function Page() {
   const rateInclusiveOfTax = 24;
   const color = 25;
   const cashier = 26;
-  const totalAmountDue = 27;
+  const refNumber = 27;
+  const lessWithHoldingTax = 28;
 
   const CR_Date = 0;
   const CR_Name = 1;
