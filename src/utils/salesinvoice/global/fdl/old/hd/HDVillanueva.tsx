@@ -115,7 +115,10 @@ const HDVillanueva: React.FC<PrintPageProps> = ({ data }) => {
     <div className="text-xs h-[755.90551181px] w-[578.26771654px]">
       <div className="flex h-[21.165354331px] mt-[117.7244094521px]">
         <p className="w-[377.95275591px] pl-[94.488188976px]">
-          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || <span className="opacity-0">No Data</span>}
+          {data[1]?.[mainLineName]
+            ?.replace(/Ã/g, "Ñ")
+            .replace(/Ã‘/g, "Ñ")
+            .replace(/Ã±/g, "ñ") || <span className="opacity-0">No Data</span>}
         </p>
         <p className="w-[219.21259843px] pl-[62px]">
           {data[1]?.[date] || <span className="opacity-0">No Data</span>}
@@ -123,20 +126,28 @@ const HDVillanueva: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="flex h-[21.165354331px]">
         <p className="w-[377.95275591px] pl-[94.488188976px]">
-           <span className="opacity-0">No Data</span>
+          <span className="opacity-0">No Data</span>
         </p>
         <p className="w-[219.21259843px] pl-[62px]">
           {data[1]?.[terms] || <span className="opacity-0">No Data</span>}
         </p>
       </div>
       <div className="flex h-[21.165354331]">
-        <p className={`w-full pl-[94.488188976px] ${data[1]?.[billingAddress]?.length > 90 ? 'text-[9px]' : ''}`}>
-          {data[1]?.[billingAddress] || <span className="opacity-0">No Data</span>}
+        <p
+          className={`w-full pl-[94.488188976px] ${
+            data[1]?.[billingAddress]?.length > 90 ? "text-[9px]" : ""
+          }`}
+        >
+          {data[1]?.[billingAddress] || (
+            <span className="opacity-0">No Data</span>
+          )}
         </p>
       </div>
       <div className="flex h-[21.165354331px]">
         <p className="w-[377.95275591px] pl-[129px]">
-          {data[1]?.[businessStyle] || <span className="opacity-0">No Data</span>}
+          {data[1]?.[businessStyle] || (
+            <span className="opacity-0">No Data</span>
+          )}
         </p>
         <p className="w-[219.21259843px] pl-[87px]"></p>
       </div>
@@ -145,7 +156,9 @@ const HDVillanueva: React.FC<PrintPageProps> = ({ data }) => {
           <tbody>
             {data.slice(1, 17).map((row, index) => (
               <tr key={index} className="text-xs text-center">
-                <td className="w-[71.433070866px]">{row[quantity]?.replace(/.0$/, "")}</td>
+                <td className="w-[71.433070866px]">
+                  {row[quantity]?.replace(/.0$/, "")}
+                </td>
                 <td className="w-[56.31496063px] h-[18.275590551px]">
                   {row[unitOfMeasurement]}
                 </td>
@@ -173,10 +186,10 @@ const HDVillanueva: React.FC<PrintPageProps> = ({ data }) => {
                 }`}
               >
                 {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
-                    <>Engine #: {data[1]?.[serialNumber]}</>
-                  ) : (
-                    <>Serial #: {data[1]?.[serialNumber]}</>
-                  )}
+                  <>Engine #: {data[1]?.[serialNumber]}</>
+                ) : (
+                  <>Serial #: {data[1]?.[serialNumber]}</>
+                )}
               </td>
               <td className="w-[163.81552306px] h-[19.275590551px]"></td>
               <td className="w-[114.30371204px] h-[19.275590551px]"></td>
@@ -205,11 +218,11 @@ const HDVillanueva: React.FC<PrintPageProps> = ({ data }) => {
             <tr className="text-xs">
               <td className="h-[18.275590551px] w-[145.50393701px]"></td>
               <td className="h-[18.275590551px] w-[176.52755906px]">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
+                {vatableSalesFn}
               </td>
               <td className="h-[18.275590551px] w-[129.25984252px]"></td>
               <td className="h-[18.275590551px] w-[98.645669291px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive, 16)}
+                {totalSalesVatInclusiveFn}
               </td>
             </tr>
             <tr className="text-xs">
@@ -217,23 +230,21 @@ const HDVillanueva: React.FC<PrintPageProps> = ({ data }) => {
               <td className="h-[18.275590551px] w-[176.52755906px]">0.00</td>
               <td className="h-[18.275590551px] w-[129.25984252px]"></td>
               <td className="h-[18.275590551px] w-[98.645669291px] text-center">
-                {FormattedSumTotal(data, vatAmount2, 16)}
+                {lessVatFn}
               </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[18.275590551px] w-[145.50393701px]"></td>
-              <td className="h-[18.275590551px] w-[176.52755906px]">
-                {FormattedSumTotal(data, rateInclusiveVat, 16)}
-              </td>
+              <td className="h-[18.275590551px] w-[176.52755906px]">0.00</td>
               <td className="h-[18.275590551px] w-[129.25984252px]"></td>
               <td className="h-[18.275590551px] w-[98.645669291px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive2, 16)}
+                {amountNetOfVatFn}
               </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[18.275590551px] w-[145.50393701px]"></td>
               <td className="h-[18.275590551px] w-[176.52755906px]">
-                {FormattedSumTotal(data, vatAmount, 16)}
+                {vatAmountFn}
               </td>
               <td className="h-[18.275590551px] w-[129.25984252px]"></td>
               <td className="h-[18.275590551px] w-[98.645669291px] text-center"></td>
@@ -243,7 +254,7 @@ const HDVillanueva: React.FC<PrintPageProps> = ({ data }) => {
               <td className="h-[18.275590551px] w-[176.52755906px]"></td>
               <td className="h-[18.275590551px] w-[129.25984252px]"></td>
               <td className="h-[18.275590551px] w-[98.645669291px] text-center">
-                {FormattedSumTotal(data, vatAmount2, 16)}
+                {amountDueFn}
               </td>
             </tr>
             <tr className="text-xs">
@@ -251,7 +262,7 @@ const HDVillanueva: React.FC<PrintPageProps> = ({ data }) => {
               <td className="h-[18.275590551px] w-[176.52755906px]"></td>
               <td className="h-[18.275590551px] w-[129.25984252px]"></td>
               <td className="h-[18.275590551px] w-[98.645669291px] text-center">
-                {FormattedSumTotal(data, vatAmount3, 16)}
+                {addVatFn}
               </td>
             </tr>
             <tr className="text-xs">
@@ -259,7 +270,7 @@ const HDVillanueva: React.FC<PrintPageProps> = ({ data }) => {
               <td className="h-[18.275590551px] w-[176.52755906px]"></td>
               <td className="h-[18.275590551px] w-[129.25984252px]"></td>
               <td className="h-[18.275590551px] w-[98.645669291px] text-center">
-                {FormattedSumTotal(data, totalSalesVatInclusive, 16)}
+                {totalAmountDueFn}
               </td>
             </tr>
           </tbody>
@@ -268,7 +279,10 @@ const HDVillanueva: React.FC<PrintPageProps> = ({ data }) => {
       <div className="mx-[30.236220472px]">
         <div className="mt-[22.566929134px] ml-[392.31496063px]">
           <p className="text-xs text-center">
-            {data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
+            {data[1]?.[cashier]
+              ?.replace(/Ã/g, "Ñ")
+              .replace(/Ã‘/g, "Ñ")
+              .replace(/Ã±/g, "ñ") || ""}
           </p>
         </div>
       </div>
