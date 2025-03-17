@@ -30,6 +30,7 @@ const FdlNewCsiSize = ({ data }: any) => {
   const rateInclusiveOfTax = 24;
   const color = 25;
   const cashier = 26;
+  const totalAmountDue = 27;
 
   return (
     <div className="text-xs h-[767.24409449px] w-[610.39370079px]">
@@ -71,7 +72,7 @@ const FdlNewCsiSize = ({ data }: any) => {
                 </td>
                 <td className="w-[75.968503937px]">{row[quantity]?.replace(/.0$/, "")}</td>
                 <td className="w-[83.48976378px] h-[18.897637795px]">
-                  {/* {FormattedNumber(row[unitPrice])} */}
+                  {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[105.4488189px] h-[18.897637795px]">
                   {FormattedNumber(row[rateInclusiveOfTax])}

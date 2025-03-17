@@ -31,6 +31,7 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
   const rateInclusiveOfTax = 24;
   const color = 25;
   const cashier = 26;
+  const totalAmountDue = 27;
 
   return (
     <div className="text-xs h-[510.23622047px] w-[778.58267717px]">
@@ -82,10 +83,10 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
                   {row[articles]}
                 </td>
                 <td className="w-[164.40944882px] h-[18.141732283px]">
-                  {FormattedNumber(row[rateInclusiveVat])}
+                  {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[137.95275591px] h-[18.141732283px]">
-                  {FormattedNumber(row[totalSalesVatInclusive2])}
+                  {FormattedNumber(row[totalSalesVatInclusive2]) || "0.00"}
                 </td>
               </tr>
             ))}

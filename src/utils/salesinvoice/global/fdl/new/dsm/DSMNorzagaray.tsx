@@ -31,6 +31,7 @@ const DSMNorzagaray = ({ data }: any) => {
   const rateInclusiveOfTax = 24;
   const color = 25;
   const cashier = 26;
+  const totalAmountDue = 27;
 
   return (
     <div className="text-xs h-[763.46456693px] w-[610.39370079px]">
@@ -71,10 +72,10 @@ const DSMNorzagaray = ({ data }: any) => {
                   {row[quantity]?.replace(/.0$/, "")}
                 </td>
                 <td className="w-[83.149606299px] h-[19.275590551px]">
-                  {FormattedNumber(row[rateInclusiveVat])}
+                  {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[105.82677165px] h-[19.275590551px]">
-                  {FormattedNumber(row[totalSalesVatInclusive2])}
+                  {FormattedNumber(row[totalSalesVatInclusive2]) || "0.00"}
                 </td>
               </tr>
             ))}

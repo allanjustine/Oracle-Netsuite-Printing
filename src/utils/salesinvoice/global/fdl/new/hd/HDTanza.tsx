@@ -30,6 +30,7 @@ const HDTanza = ({ data }: any) => {
   const rateInclusiveOfTax = 24;
   const color = 25;
   const cashier = 26;
+  const totalAmountDue = 27;
 
   return (
     <div className="text-xs h-[767.24409449px] w-[608.50393701px]">
@@ -70,10 +71,10 @@ const HDTanza = ({ data }: any) => {
                   {row[quantity]?.replace(/.0$/, "")}
                 </td>
                 <td className="w-[83.149606299px] h-[19.275590551px]">
-                  {FormattedNumber(row[rateInclusiveVat])}
+                  {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[105.82677165px] h-[19.275590551px]">
-                  {FormattedNumber(row[totalSalesVatInclusive2])}
+                  {FormattedNumber(row[totalSalesVatInclusive2]) || "0.00"}
                 </td>
               </tr>
             ))}

@@ -31,6 +31,7 @@ const BjvOldCsiSize = ({ data }: any) => {
   const rateInclusiveOfTax = 24;
   const color = 25;
   const cashier = 26;
+  const totalAmountDue = 27;
 
   return (
     <div className="text-xs h-[771.02362205px] w-[604.72440945px]">
@@ -93,10 +94,10 @@ const BjvOldCsiSize = ({ data }: any) => {
                   {row[articles]}
                 </td>
                 <td className="w-[79.748031496px] h-[19.275590551px]">
-                  {FormattedNumber(row[rateInclusiveVat])}
+                  {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[102.38740157px] h-[19.275590551px]">
-                  {FormattedNumber(row[totalSalesVatInclusive2])}
+                  {FormattedNumber(row[totalSalesVatInclusive2]) || "0.00"}
                 </td>
               </tr>
             ))}

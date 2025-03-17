@@ -31,6 +31,7 @@ const SmctSiSize: React.FC<PrintPageProps> = ({ data }) => {
   const rateInclusiveOfTax = 24;
   const color = 25;
   const cashier = 26;
+  const totalAmountDue = 27;
 
   return (
     <div className="text-xs h-[785.76377953px] w-[582.80314961px]">
@@ -77,10 +78,10 @@ const SmctSiSize: React.FC<PrintPageProps> = ({ data }) => {
                   {row[articles]}
                 </td>
                 <td className="w-[79.37007874px] h-[18.275590551px]">
-                  {FormattedNumber(row[rateInclusiveVat])}
+                  {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[101.66929134px] h-[18.275590551px]">
-                  {FormattedNumber(row[totalSalesVatInclusive2])}
+                  {FormattedNumber(row[totalSalesVatInclusive2]) || "0.00"}
                 </td>
               </tr>
             ))}

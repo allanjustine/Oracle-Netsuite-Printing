@@ -31,6 +31,7 @@ const SMCTPagsanjan: React.FC<PrintPageProps> = ({ data }) => {
   const rateInclusiveOfTax = 24;
   const color = 25;
   const cashier = 26;
+  const totalAmountDue = 27;
 
   return (
     <div className="text-[10px] h-[638.74015748px] w-[774.80314961px]">
@@ -79,7 +80,7 @@ const SMCTPagsanjan: React.FC<PrintPageProps> = ({ data }) => {
                     {row[articles]}
                   </td>
                   <td className="w-[158.36220472px] h-[18.822047244px]">
-                    {FormattedNumber(row[rateInclusiveVat])}
+                    {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                   </td>
                   <td className="w-[131.90551181px] h-[18.822047244px]">
                     {FormattedNumber(row[totalSalesVatInclusive2]) || "0.00"}

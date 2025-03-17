@@ -30,6 +30,7 @@ const ObbusOldCsiSize = ({ data }: any) => {
   const rateInclusiveOfTax = 24;
   const color = 25;
   const cashier = 26;
+  const totalAmountDue = 27;
 
   return (
     <div className="text-xs h-[795.59055118px] w-[616.06299213px]">
@@ -78,10 +79,10 @@ const ObbusOldCsiSize = ({ data }: any) => {
                   {row[articles]}
                 </td>
                 <td className="w-[72.188976378px] h-[22.11023622px]">
-                  {FormattedNumber(row[rateInclusiveVat])}
+                  {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[95.244094488px] h-[22.11023622px]">
-                  {FormattedNumber(row[totalSalesVatInclusive2])}
+                  {FormattedNumber(row[totalSalesVatInclusive2]) || "0.00"}
                 </td>
               </tr>
             ))}

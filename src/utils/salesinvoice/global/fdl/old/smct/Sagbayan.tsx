@@ -31,6 +31,7 @@ const Sagbayan = ({ data }: any) => {
   const rateInclusiveOfTax = 24;
   const color = 25;
   const cashier = 26;
+  const totalAmountDue = 27;
 
   return (
     <div className="text-xs h-[745.32283465px] w-[589.60629921px]">
@@ -77,10 +78,10 @@ const Sagbayan = ({ data }: any) => {
                   {row[articles]}
                 </td>
                 <td className="w-[77.102362205px] h-[19.275590551px]">
-                  {FormattedNumber(row[rateInclusiveVat])}
+                  {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[98.267716535px] h-[19.275590551px]">
-                  {FormattedNumber(row[totalSalesVatInclusive2])}
+                  {FormattedNumber(row[totalSalesVatInclusive2]) || "0.00"}
                 </td>
               </tr>
             ))}

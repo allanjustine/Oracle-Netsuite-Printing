@@ -31,6 +31,7 @@ const Bulua2 = ({ data }: any) => {
   const rateInclusiveOfTax = 24;
   const color = 25;
   const cashier = 26;
+  const totalAmountDue = 27;
 
   return (
     <div className="text-xs h-[793.7007874px] w-[608.50393701px]">
@@ -85,10 +86,10 @@ const Bulua2 = ({ data }: any) => {
                   {row[articles]}
                 </td>
                 <td className="w-[79.748031496px] h-[18.897637795px]">
-                  {FormattedNumber(row[rateInclusiveVat])}
+                  {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[102.38740157px] h-[18.897637795px]">
-                  {FormattedNumber(row[totalSalesVatInclusive2])}
+                  {FormattedNumber(row[totalSalesVatInclusive2]) || "0.00"}
                 </td>
               </tr>
             ))}

@@ -31,6 +31,7 @@ const HdSiSize: React.FC<PrintPageProps> = ({ data }) => {
   const rateInclusiveOfTax = 24;
   const color = 25;
   const cashier = 26;
+  const totalAmountDue = 27;
 
   return (
     <div className="text-xs h-[755.90551181px] w-[578.26771654px]">
@@ -77,7 +78,7 @@ const HdSiSize: React.FC<PrintPageProps> = ({ data }) => {
                   {row[articles]}
                 </td>
                 <td className="w-[79.37007874px] h-[18.275590551px]">
-                  {/* {FormattedNumber(row[unitPrice])} */}
+                  {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[101.66929134px] h-[18.275590551px]">
                   {FormattedNumber(row[rateInclusiveOfTax])}

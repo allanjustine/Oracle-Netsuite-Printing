@@ -31,6 +31,7 @@ const DSMDanao = ({ data }: any) => {
   const rateInclusiveOfTax = 24;
   const color = 25;
   const cashier = 26;
+  const totalAmountDue = 27;
 
   return (
     <div className="text-xs h-[714.33070866px] w-[549.92125984px]">
@@ -75,10 +76,10 @@ const DSMDanao = ({ data }: any) => {
                   {row[quantity]?.replace(/.0$/, "")}
                 </td>
                 <td className="w-[77.480314961px] h-[18.141732283px]">
-                  {FormattedNumber(row[rateInclusiveVat])}
+                  {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[96.377952756px] h-[18.141732283px]">
-                  {FormattedNumber(row[totalSalesVatInclusive2])}
+                  {FormattedNumber(row[totalSalesVatInclusive2]) || "0.00"}
                 </td>
               </tr>
             ))}
