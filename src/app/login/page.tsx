@@ -9,6 +9,7 @@ import { data } from "@/data/credentials";
 import AlertBox from "@/components/ui/AlertBox";
 import { login as loginApi, logout } from "@/lib/authSanctum";
 import { FaCircleNotch } from "react-icons/fa";
+import api from "@/lib/axiosCall";
 
 export default function Home() {
   const { login, isAuthenticated } = useAuth();
@@ -28,8 +29,9 @@ export default function Home() {
     }
   }, [isAuthenticated, router]);
 
-  const handleLogin = (e: any) => {
+  const handleLogin = async (e: any) => {
     e.preventDefault();
+    const version = await api.get("/app-version");
     if (!branchCode || !password) {
       setShowAlert({
         message: "All fields are required!",
@@ -49,7 +51,7 @@ export default function Home() {
             user.branchCode === branchCode && user.password === password
         );
         if (foundUser) {
-          login(foundUser, foundBranch);
+          login(foundUser, foundBranch, version.data.version);
         }
       } else {
         setShowAlert({

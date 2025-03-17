@@ -46,13 +46,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     // fetchProfileData();
   }, []);
 
-  const login = (foundUser: any, foundBranch: any) => {
+  const login = (foundUser: any, foundBranch: any, version: any) => {
     const { password, ...Datas } = foundUser;
     setUser(foundUser);
     setBranch(foundBranch);
     setIsAuthenticated(true);
     localStorage.setItem("user", JSON.stringify(Datas));
     // localStorage.setItem('branch', JSON.stringify(foundBranch));
+    localStorage.setItem('ls-app-version', version);
   };
 
   const logout = () => {

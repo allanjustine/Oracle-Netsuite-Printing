@@ -1,3 +1,4 @@
+import { useVersion } from "@/context/versionContext";
 import { FormatFileSize } from "@/utils/size-format/FormatFileSize";
 import { useState } from "react";
 import { read, utils } from "xlsx";
@@ -10,6 +11,7 @@ export default function DragAndDropComponent({
   setIsLoading,
   setIsPrintCr,
 }: any) {
+  const { updateVersion }: any = useVersion();
   const [isOnDragOver, setIsDragOver] = useState(false);
 
   const handleDragOver = (e: any) => {
@@ -23,6 +25,7 @@ export default function DragAndDropComponent({
 
   const handleOnDrop = (e: any) => {
     e.preventDefault();
+    updateVersion();
     const file = e.dataTransfer.files?.[0];
     if (!file) return;
 

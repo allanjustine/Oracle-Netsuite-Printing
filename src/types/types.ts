@@ -11,7 +11,7 @@ export interface Branch{
 
 export interface AuthContextType {
     isAuthenticated: boolean;
-    login: (branchCode: string, password: string) => void;
+    login: (branchCode: string, password: string, version: any) => void;
     logout: () => void;
     user: User | null;
     branch: Branch | null;

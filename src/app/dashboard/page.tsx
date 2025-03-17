@@ -14,7 +14,7 @@ import {
 import { read, utils } from "xlsx";
 import PrintPage from "../print/page";
 import ReactDOM from "react-dom/client";
-import { FaRotate, FaXmark } from "react-icons/fa6";
+import { FaRotate, FaX, FaXmark } from "react-icons/fa6";
 import { FormatFileSize } from "@/utils/size-format/FormatFileSize";
 import DragAndDropComponent from "@/components/DragAndDropComponent";
 import FormattedNumber from "@/utils/FormattedNumber";
@@ -24,9 +24,12 @@ import api from "@/lib/axiosCall";
 import { PrintData } from "@/utils/constants";
 import { PrintDataType } from "@/types/PrintData";
 import { Bounce, toast } from "react-toastify";
+import { useVersion } from "@/context/versionContext";
 
 export default function Page() {
   const { user } = useAuth();
+  const { updateVersion, version, oldVersion, isOutDated, setIsOutDated }: any =
+    useVersion();
   const [excelData, setExcelData] = useState<any[]>([]);
   const [isFileUploaded, setIsFileUploaded] = useState<boolean>(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
@@ -351,7 +354,10 @@ export default function Page() {
     setFormInput(PrintData);
   };
 
-  const handleUploadFile = () => fileInputRef.current?.click();
+  const handleUploadFile = () => {
+    fileInputRef.current?.click();
+    updateVersion();
+  };
 
   const handleCloseTable = (rowIndex: number) => () => {
     setIsHideTable((isHideTable) => ({
@@ -407,6 +413,35 @@ export default function Page() {
 
   return (
     <PrivateRoute>
+      {isOutDated && (
+        <div className="p-2 text-white fixed top-0 bg-red-500 w-full h-auto z-50">
+          <div className="flex justify-between items-center">
+            <div className="flex space-x-3 items-center">
+              <p className="text-sm">
+                You are using the old version of Oracle NetSuite Printing.
+                Please reload the page for the latest version.{" "}
+                <span className="font-bold">
+                  (Current Version: v{oldVersion} - Latest Version: v{version})
+                </span>
+              </p>
+              <button
+                onClick={() => window.location.reload()}
+                type="button"
+                className="p-2 flex gap-2 items-center rounded-sm text-sm bg-blue-500 hover:bg-blue-400"
+              >
+                <FaRotate /> <span>Reload now</span>
+              </button>
+            </div>
+            <button
+              onClick={() => setIsOutDated(false)}
+              type="button"
+              className="mr-3"
+            >
+              <FaX />
+            </button>
+          </div>
+        </div>
+      )}
       <div className="mt-5 pl-5">
         <h2 className="text-2xl text-[#333] uppercase">
           Welcome to the official Oracle NetSuite Printing System,{" "}
@@ -602,7 +637,10 @@ export default function Page() {
                   <div className="flex flex-col">
                     <p>Mainline Name</p>
                     <p className="font-semibold">
-                      {row[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || "N/A"}
+                      {row[mainLineName]
+                        ?.replace(/Ã/g, "Ñ")
+                        .replace(/Ã‘/g, "Ñ")
+                        .replace(/Ã±/g, "ñ") || "N/A"}
                     </p>
                   </div>
                   <div className="flex flex-col">
@@ -617,7 +655,12 @@ export default function Page() {
                   </div>
                   <div className="flex flex-col">
                     <p>Cashier</p>
-                    <p className="font-semibold">{row[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || "N/A"}</p>
+                    <p className="font-semibold">
+                      {row[cashier]
+                        ?.replace(/Ã/g, "Ñ")
+                        .replace(/Ã‘/g, "Ñ")
+                        .replace(/Ã±/g, "ñ") || "N/A"}
+                    </p>
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
@@ -647,7 +690,9 @@ export default function Page() {
                   </div>
                   <div className="flex flex-col">
                     <p>Quantity</p>
-                    <p className="font-semibold">{row[quantity]?.replace(/.0$/, "") || "N/A"}</p>
+                    <p className="font-semibold">
+                      {row[quantity]?.replace(/.0$/, "") || "N/A"}
+                    </p>
                   </div>
                   <div className="flex flex-col">
                     <p>Unit of Measurement</p>
@@ -688,7 +733,8 @@ export default function Page() {
                   <div className="flex flex-col">
                     <p>Amount</p>
                     <p className="font-semibold">
-                      {FormattedNumber(row[quantity] * row[rateInclusiveVat]) || "0.00"}
+                      {FormattedNumber(row[quantity] * row[rateInclusiveVat]) ||
+                        "0.00"}
                     </p>
                   </div>
                 </div>
