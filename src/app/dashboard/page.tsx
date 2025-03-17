@@ -28,8 +28,15 @@ import { useVersion } from "@/context/versionContext";
 
 export default function Page() {
   const { user } = useAuth();
-  const { updateVersion, version, oldVersion, isOutDated, setIsOutDated }: any =
-    useVersion();
+  const {
+    updateVersion,
+    version,
+    oldVersion,
+    isOutDated,
+    setIsOutDated,
+    isAbnormalVersion,
+    setIsAbnormalVersion,
+  }: any = useVersion();
   const [excelData, setExcelData] = useState<any[]>([]);
   const [isFileUploaded, setIsFileUploaded] = useState<boolean>(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
@@ -413,13 +420,15 @@ export default function Page() {
 
   return (
     <PrivateRoute>
-      {isOutDated && (
-        <div className="p-2 text-white fixed top-0 bg-red-500 w-full h-auto z-50">
+      {(isOutDated || isAbnormalVersion) && (
+        <div className={`p-2 text-white fixed top-0 w-full h-auto z-50 ${isAbnormalVersion ? "bg-yellow-500" : "bg-red-500"}`}>
           <div className="flex justify-between items-center">
             <div className="flex space-x-3 items-center">
               <p className="text-sm">
-                You are using the old version of Oracle NetSuite Printing.
-                Please reload the page for the latest version.{" "}
+                {isAbnormalVersion
+                  ? "Ops! You are using an abnormal version of Oracle NetSuite Printing"
+                  : "You are using the old version of Oracle NetSuite Printing. Please reload the page for the latest version"}
+                .{" "}
                 <span className="font-bold">
                   (Current Version: v{oldVersion} - Latest Version: v{version})
                 </span>
@@ -433,7 +442,11 @@ export default function Page() {
               </button>
             </div>
             <button
-              onClick={() => setIsOutDated(false)}
+              onClick={() =>
+                isAbnormalVersion
+                  ? setIsAbnormalVersion(false)
+                  : setIsOutDated(false)
+              }
               type="button"
               className="mr-3"
             >

@@ -9,6 +9,7 @@ export const VersionProvider = ({ children }: any) => {
   const [version, setVersion] = useState(0);
   const [oldVersion, setOldVersion] = useState(0);
   const [isOutDated, setIsOutDated] = useState(false);
+  const [isAbnormalVersion, setIsAbnormalVersion] = useState(false);
   useEffect(() => {
     const fetchVersion = async () => {
       try {
@@ -16,6 +17,9 @@ export const VersionProvider = ({ children }: any) => {
         const version = response.data.version;
         const lsAppVersion: any = localStorage.getItem("ls-app-version");
         if (Number(version) > Number(lsAppVersion) || lsAppVersion === null) {
+          localStorage.setItem("ls-app-version", version);
+        }
+        if (Number(version) < Number(lsAppVersion)) {
           localStorage.setItem("ls-app-version", version);
         }
         setVersion(version);
@@ -38,8 +42,19 @@ export const VersionProvider = ({ children }: any) => {
         setOldVersion(lsAppVersion);
 
         if (Number(version) > Number(lsAppVersion) || lsAppVersion === null) {
-          console.error(`Version Out of date! New Version: ${version}, Current Version: ${lsAppVersion}`);
+          console.error(
+            `Version Out of date! New Version: ${version}, Current Version: ${lsAppVersion}`
+          );
           setIsOutDated(true);
+          setIsAbnormalVersion(false);
+        }
+
+        if (Number(version) < Number(lsAppVersion)) {
+          console.error(
+            `Version is abnormal! New Version: ${version}, Current Version: ${lsAppVersion}`
+          );
+          setIsAbnormalVersion(true);
+          setIsOutDated(false);
         }
       } catch (error) {
         console.error(error);
@@ -50,7 +65,9 @@ export const VersionProvider = ({ children }: any) => {
   };
 
   return (
-    <VersionContext.Provider value={{ version, updateVersion, isOutDated, setIsOutDated, oldVersion }}>
+    <VersionContext.Provider
+      value={{ version, updateVersion, isOutDated, setIsOutDated, oldVersion, setIsAbnormalVersion, isAbnormalVersion }}
+    >
       {children}
     </VersionContext.Provider>
   );
