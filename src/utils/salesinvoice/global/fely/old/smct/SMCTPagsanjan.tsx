@@ -113,7 +113,7 @@ const SMCTPagsanjan: React.FC<PrintPageProps> = ({ data }) => {
 
   return (
     <div className="text-[10px] h-[638.74015748px] w-[774.80314961px]">
-      <div className="mx-[41.952755906px] w-[684.09448819px] flex space-x-20 mt-[117.16535433px]">
+      <div className="mx-[41.952755906px] w-[684.09448819px] flex space-x-20 mt-[136.06299213px]">
         <div className="w-[415.7480315px] pr-[11.716535433px]">
           <p className="w-full text-[10px] h-[19.275590551px] ml-[120px]">
             {data[1]?.[mainLineName]
@@ -156,8 +156,8 @@ const SMCTPagsanjan: React.FC<PrintPageProps> = ({ data }) => {
                     {row[unitOfMeasurement]}
                   </td>
                   <td
-                    className={`w-[242.64566929px] h-[18.822047244px] ${
-                      row[articles]?.length > 41 ? "text-[7px]" : ""
+                    className={`w-[242.64566929px] h-[18.822047244px] text-start ${
+                      row[articles]?.length > 41 ? "text-[10px]" : ""
                     }`}
                   >
                     {row[articles]}
