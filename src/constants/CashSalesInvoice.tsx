@@ -199,6 +199,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "BANTA",
     "TALI2",
     "CALAP",
+    "DSMCN",
   ];
 
   const fdlSiOldSizeData = [
@@ -457,10 +458,10 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     case "INAB" === user?.branchCode:
       return <HDInabanga data={data} />; //CSI LANDSCAPE
     case "GUIN" === user?.branchCode:
-      return <SMCTGuindulman1 data={data} />; 
+      return <SMCTGuindulman1 data={data} />;
     case "SILA" === user?.branchCode:
-    return <SMCTSilang data={data} />; 
-    
+      return <SMCTSilang data={data} />;
+
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
