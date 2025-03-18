@@ -166,40 +166,81 @@ const SMCTPagsanjan: React.FC<PrintPageProps> = ({ data }) => {
                     {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                   </td>
                   <td className="w-[131.90551181px] h-[18.822047244px]">
-                    {FormattedNumber(row[quantity] * row[rateInclusiveVat]) || "0.00"}
+                    {FormattedNumber(row[quantity] * row[rateInclusiveVat]) ||
+                      "0.00"}
                   </td>
                 </tr>
               ))}
-              <tr className="text-[10px] text-center">
-                <td className="w-[75.212598425px]"></td>
-                <td className="w-[75.968503937px] h-[18.822047244px]"></td>
-                <td
-                  className={`w-[242.64566929px] h-[18.822047244px] ${
-                    data[1]?.[serialNumber]?.length > 41 ? "text-[7px]" : ""
-                  }`}
-                >
-                  {data[1]?.[serialNumber] && (
-                    <>Engine #: {data[1]?.[serialNumber]}</>
-                  )}
-                </td>
-                <td className="w-[158.36220472px] h-[18.822047244px]"></td>
-                <td className="w-[131.90551181px] h-[18.822047244px]"></td>
-              </tr>
-              <tr className="text-[10px] text-center">
-                <td className="w-[75.212598425px]"></td>
-                <td className="w-[75.968503937px] h-[18.822047244px]"></td>
-                <td
-                  className={`w-[242.64566929px] h-[18.822047244px] ${
-                    data[1]?.[chassisNumber]?.length > 41 ? "text-[7px]" : ""
-                  }`}
-                >
-                  {data[1]?.[chassisNumber] && (
-                    <>Chassis #: {data[1]?.[chassisNumber]}</>
-                  )}
-                </td>
-                <td className="w-[158.36220472px] h-[18.822047244px]"></td>
-                <td className="w-[131.90551181px] h-[18.822047244px]"></td>
-              </tr>
+              {data[1]?.[serialNumber] && (
+                <tr className="text-xs text-center">
+                  <td className="w-[75.212598425px]"></td>
+                  <td className="w-[75.968503937px] h-[18.822047244px]"></td>
+                  <td
+                    className={`w-[242.64566929px] h-[18.822047244px] text-start ${
+                      data[1]?.[serialNumber]?.length > 20 ? "text-[10px]" : ""
+                    }`}
+                  >
+                    {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
+                      <>Engine #: {data[1]?.[serialNumber]}</>
+                    ) : (
+                      <>Serial #: {data[1]?.[serialNumber]}</>
+                    )}
+                  </td>
+                  <td className="w-[158.36220472px] h-[18.822047244px]"></td>
+                  <td className="w-[131.90551181px] h-[18.822047244px]"></td>
+                </tr>
+              )}
+              {data[1]?.[chassisNumber] && (
+                <tr className="text-xs text-center">
+                  <td className="w-[75.212598425px]"></td>
+                  <td className="w-[75.968503937px] h-[18.822047244px]"></td>
+                  <td
+                    className={`w-[242.64566929px] h-[18.822047244px] text-start ${
+                      data[1]?.[chassisNumber]?.length > 20 ? "text-[10px]" : ""
+                    }`}
+                  >
+                    {data[1]?.[chassisNumber] && (
+                      <>Chassis #: {data[1]?.[chassisNumber]}</>
+                    )}
+                  </td>
+                  <td className="w-[158.36220472px] h-[18.822047244px]"></td>
+                  <td className="w-[131.90551181px] h-[18.822047244px]"></td>
+                </tr>
+              )}
+              {data?.[1]?.[conductionSticker] && (
+                <tr className="text-xs text-center">
+                  <td className="w-[75.212598425px]"></td>
+                  <td className="w-[75.968503937px] h-[18.822047244px]"></td>
+                  <td
+                    className={`w-[242.64566929px] h-[18.822047244px] text-start ${
+                      data[1]?.[conductionSticker]?.length > 20
+                        ? "text-[10px]"
+                        : ""
+                    }`}
+                  >
+                    {data[1]?.[conductionSticker] && (
+                      <>Conduction Sticker: {data[1]?.[conductionSticker]}</>
+                    )}
+                  </td>
+                  <td className="w-[158.36220472px] h-[18.822047244px]"></td>
+                  <td className="w-[131.90551181px] h-[18.822047244px]"></td>
+                </tr>
+              )}
+              {data?.[1]?.[color] && (
+                <tr className="text-xs text-center">
+                  <td className="w-[75.212598425px]"></td>
+                  <td className="w-[75.968503937px] h-[18.822047244px]"></td>
+                  <td
+                    className={`w-[242.64566929px] h-[18.822047244px] text-start ${
+                      data[1]?.[color]?.length > 20 ? "text-[10px]" : ""
+                    }`}
+                  >
+                    {data[1]?.[color] && <>Color: {data[1]?.[color]}</>}
+                  </td>
+                  <td className="w-[158.36220472px] h-[18.822047244px]"></td>
+                  <td className="w-[131.90551181px] h-[18.822047244px]"></td>
+                </tr>
+              )}
             </tbody>
           </table>
         </div>

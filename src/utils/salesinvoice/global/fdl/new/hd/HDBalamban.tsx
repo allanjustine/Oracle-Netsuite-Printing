@@ -115,20 +115,18 @@ const HDBalamban: React.FC<PrintPageProps> = ({ data }) => {
     <div className="text-xs h-[755.90551181px] w-[578.26771654px]">
       <div className="flex h-[21.165354331px] mt-[117.7244094521px]">
         <p className="w-[377.95275591px] pl-[94.488188976px]">
-          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
+          {data[1]?.[mainLineName]
+            ?.replace(/Ã/g, "Ñ")
+            .replace(/Ã‘/g, "Ñ")
+            .replace(/Ã±/g, "ñ") || ""}
         </p>
-        <p className="w-[219.21259843px] pl-[62px]">
-          {data[1]?.[date] || ""}
-        </p>
+        <p className="w-[219.21259843px] pl-[62px]">{data[1]?.[date] || ""}</p>
       </div>
       <div className="flex h-[21.165354331px]">
         <p className="w-[377.95275591px] pl-[94.488188976px]">
-          
           <span className="opacity-0">No Data</span>
         </p>
-        <p className="w-[219.21259843px] pl-[62px]">
-          {data[1]?.[terms] || ""}
-        </p>
+        <p className="w-[219.21259843px] pl-[62px]">{data[1]?.[terms] || ""}</p>
       </div>
       <div className="flex h-[21.165354331]">
         <p
@@ -150,7 +148,9 @@ const HDBalamban: React.FC<PrintPageProps> = ({ data }) => {
           <tbody>
             {data.slice(1, 17).map((row, index) => (
               <tr key={index} className="text-xs text-center">
-                <td className="w-[71.433070866px]">{row[quantity]?.replace(/.0$/, "")}</td>
+                <td className="w-[71.433070866px]">
+                  {row[quantity]?.replace(/.0$/, "")}
+                </td>
                 <td className="w-[56.31496063px] h-[18.275590551px]">
                   {row[unitOfMeasurement]}
                 </td>
@@ -169,38 +169,72 @@ const HDBalamban: React.FC<PrintPageProps> = ({ data }) => {
                 </td>
               </tr>
             ))}
-            <tr className="text-xs text-center">
-              <td className="w-[74.24071991px]"></td>
-              <td className="w-[53.831271091px] h-[19.275590551px]"></td>
-              <td
-                className={`w-[309.70528684px] h-[19.275590551px] ${
-                  data[1]?.[serialNumber]?.length > 41 ? "text-[10px]" : ""
-                }`}
-              >
-                {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
+            {data[1]?.[serialNumber] && (
+              <tr className="text-xs text-center">
+                <td
+                  className={`w-[268.72440945px] h-[18.897637795px] text-start ${
+                    data[1]?.[serialNumber]?.length > 41 ? "text-[10px]" : ""
+                  }`}
+                >
+                  {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
                     <>Engine #: {data[1]?.[serialNumber]}</>
                   ) : (
                     <>Serial #: {data[1]?.[serialNumber]}</>
                   )}
-              </td>
-              <td className="w-[163.81552306px] h-[19.275590551px]"></td>
-              <td className="w-[114.30371204px] h-[19.275590551px]"></td>
-            </tr>
-            <tr className="text-xs text-center">
-              <td className="w-[74.24071991px]"></td>
-              <td className="w-[53.831271091px] h-[19.275590551px]"></td>
-              <td
-                className={`w-[309.70528684px] h-[19.275590551px] ${
-                  data[1]?.[chassisNumber]?.length > 41 ? "text-[10px]" : ""
-                }`}
-              >
-                {data[1]?.[chassisNumber] && (
-                  <>Chassis #: {data[1]?.[chassisNumber]}</>
-                )}
-              </td>
-              <td className="w-[163.81552306px] h-[19.275590551px]"></td>
-              <td className="w-[114.30371204px] h-[19.275590551px]"></td>
-            </tr>
+                </td>
+                <td className="w-[75.968503937px]"></td>
+                <td className="w-[83.48976378px] h-[18.897637795px]"></td>
+                <td className="w-[105.4488189px] h-[18.897637795px]"></td>
+              </tr>
+            )}
+            {data[1]?.[chassisNumber] && (
+              <tr className="text-xs text-center">
+                <td
+                  className={`w-[268.72440945px] h-[18.897637795px] text-start ${
+                    data[1]?.[chassisNumber]?.length > 41 ? "text-[10px]" : ""
+                  }`}
+                >
+                  {data[1]?.[chassisNumber] && (
+                    <>Chassis #: {data[1]?.[chassisNumber]}</>
+                  )}
+                </td>
+                <td className="w-[75.968503937px]"></td>
+                <td className="w-[83.48976378px] h-[18.897637795px]"></td>
+                <td className="w-[105.4488189px] h-[18.897637795px]"></td>
+              </tr>
+            )}
+            {data[1]?.[conductionSticker] && (
+              <tr className="text-xs text-center">
+                <td
+                  className={`w-[268.72440945px] h-[18.897637795px] text-start ${
+                    data[1]?.[conductionSticker]?.length > 41
+                      ? "text-[10px]"
+                      : ""
+                  }`}
+                >
+                  {data[1]?.[conductionSticker] && (
+                    <>Conduction Sticker: {data[1]?.[conductionSticker]}</>
+                  )}
+                </td>
+                <td className="w-[75.968503937px]"></td>
+                <td className="w-[83.48976378px] h-[18.897637795px]"></td>
+                <td className="w-[105.4488189px] h-[18.897637795px]"></td>
+              </tr>
+            )}
+            {data[1]?.[color] && (
+              <tr className="text-xs text-center">
+                <td
+                  className={`w-[268.72440945px] h-[18.897637795px] text-start ${
+                    data[1]?.[color]?.length > 41 ? "text-[10px]" : ""
+                  }`}
+                >
+                  {data[1]?.[color] && <>Color: {data[1]?.[color]}</>}
+                </td>
+                <td className="w-[75.968503937px]"></td>
+                <td className="w-[83.48976378px] h-[18.897637795px]"></td>
+                <td className="w-[105.4488189px] h-[18.897637795px]"></td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>
@@ -270,7 +304,12 @@ const HDBalamban: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="mx-[30.236220472px]">
         <div className="mt-[22.566929134px] ml-[392.31496063px]">
-          <p className="text-xs text-center">{data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}</p>
+          <p className="text-xs text-center">
+            {data[1]?.[cashier]
+              ?.replace(/Ã/g, "Ñ")
+              .replace(/Ã‘/g, "Ñ")
+              .replace(/Ã±/g, "ñ") || ""}
+          </p>
         </div>
       </div>
     </div>

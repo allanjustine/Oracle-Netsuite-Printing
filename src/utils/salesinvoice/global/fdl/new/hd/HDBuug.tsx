@@ -120,12 +120,14 @@ const HDBuug = ({ data }: any) => {
       </div>
       <div className="w-full h-[19.409448819px] mt-[11.677165354px]">
         <p className="w-[377.95275591px] pl-[188.97637795px]">
-          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
+          {data[1]?.[mainLineName]
+            ?.replace(/Ã/g, "Ñ")
+            .replace(/Ã‘/g, "Ñ")
+            .replace(/Ã±/g, "ñ") || ""}
         </p>
       </div>
       <div className="w-full h-[19.409448819px] mt-[2.677165354px]">
         <p className="w-[377.95275591px] pl-[188.97637795px]">
-          
           <span className="opacity-0">No Data</span>
         </p>
       </div>
@@ -153,40 +155,77 @@ const HDBuug = ({ data }: any) => {
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[105.82677165px] h-[19.275590551px]">
-                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) || "0.00"}
+                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) ||
+                    "0.00"}
                 </td>
               </tr>
             ))}
-            <tr className="text-xs text-center">
-              <td
-                className={`w-[268.34645669px] ${
-                  data[1]?.[serialNumber]?.length > 41 ? "text-[10px]" : ""
-                }`}
-              >
-                {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
+            {data[1]?.[serialNumber] && (
+              <tr className="text-xs text-center">
+                <td
+                  className={`w-[268.72440945px] h-[18.897637795px] text-start ${
+                    data[1]?.[serialNumber]?.length > 41 ? "text-[10px]" : ""
+                  }`}
+                >
+                  {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
                     <>Engine #: {data[1]?.[serialNumber]}</>
                   ) : (
                     <>Serial #: {data[1]?.[serialNumber]}</>
                   )}
-              </td>
-              <td className="w-[75.5905511811px] h-[19.275590551px]"></td>
-              <td className="w-[83.149606299px] h-[19.275590551px]"></td>
-              <td className="w-[105.82677165px] h-[19.275590551px]"></td>
-            </tr>
-            <tr className="text-xs text-center">
-              <td
-                className={`w-[268.34645669px] ${
-                  data[1]?.[chassisNumber]?.length > 41 ? "text-[10px]" : ""
-                }`}
-              >
-                {data[1]?.[chassisNumber] && (
-                  <>Chassis #: {data[1]?.[chassisNumber]}</>
-                )}
-              </td>
-              <td className="w-[75.5905511811px] h-[19.275590551px]"></td>
-              <td className="w-[83.149606299px] h-[19.275590551px]"></td>
-              <td className="w-[105.82677165px] h-[19.275590551px]"></td>
-            </tr>
+                </td>
+                <td className="w-[75.968503937px]"></td>
+                <td className="w-[83.48976378px] h-[18.897637795px]"></td>
+                <td className="w-[105.4488189px] h-[18.897637795px]"></td>
+              </tr>
+            )}
+            {data[1]?.[chassisNumber] && (
+              <tr className="text-xs text-center">
+                <td
+                  className={`w-[268.72440945px] h-[18.897637795px] text-start ${
+                    data[1]?.[chassisNumber]?.length > 41 ? "text-[10px]" : ""
+                  }`}
+                >
+                  {data[1]?.[chassisNumber] && (
+                    <>Chassis #: {data[1]?.[chassisNumber]}</>
+                  )}
+                </td>
+                <td className="w-[75.968503937px]"></td>
+                <td className="w-[83.48976378px] h-[18.897637795px]"></td>
+                <td className="w-[105.4488189px] h-[18.897637795px]"></td>
+              </tr>
+            )}
+            {data[1]?.[conductionSticker] && (
+              <tr className="text-xs text-center">
+                <td
+                  className={`w-[268.72440945px] h-[18.897637795px] text-start ${
+                    data[1]?.[conductionSticker]?.length > 41
+                      ? "text-[10px]"
+                      : ""
+                  }`}
+                >
+                  {data[1]?.[conductionSticker] && (
+                    <>Conduction Sticker: {data[1]?.[conductionSticker]}</>
+                  )}
+                </td>
+                <td className="w-[75.968503937px]"></td>
+                <td className="w-[83.48976378px] h-[18.897637795px]"></td>
+                <td className="w-[105.4488189px] h-[18.897637795px]"></td>
+              </tr>
+            )}
+            {data[1]?.[color] && (
+              <tr className="text-xs text-center">
+                <td
+                  className={`w-[268.72440945px] h-[18.897637795px] text-start ${
+                    data[1]?.[color]?.length > 41 ? "text-[10px]" : ""
+                  }`}
+                >
+                  {data[1]?.[color] && <>Color: {data[1]?.[color]}</>}
+                </td>
+                <td className="w-[75.968503937px]"></td>
+                <td className="w-[83.48976378px] h-[18.897637795px]"></td>
+                <td className="w-[105.4488189px] h-[18.897637795px]"></td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>
@@ -260,7 +299,12 @@ const HDBuug = ({ data }: any) => {
       </div>
       <div className="mx-[34.393700787px]">
         <div className="mt-[15.456692914px] ml-[7.5px] w-[340.15748031px]">
-          <p className="text-xs text-center">{data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}</p>
+          <p className="text-xs text-center">
+            {data[1]?.[cashier]
+              ?.replace(/Ã/g, "Ñ")
+              .replace(/Ã‘/g, "Ñ")
+              .replace(/Ã±/g, "ñ") || ""}
+          </p>
         </div>
       </div>
     </div>

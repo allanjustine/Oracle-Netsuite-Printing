@@ -175,7 +175,8 @@ const BjvOldCsiSize = ({ data }: any) => {
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[102.38740157px] h-[19.275590551px]">
-                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) || "0.00"}
+                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) ||
+                    "0.00"}
                 </td>
               </tr>
             ))}
@@ -221,7 +222,9 @@ const BjvOldCsiSize = ({ data }: any) => {
                 <td className="w-[62.362204724px] h-[19.275590551px]"></td>
                 <td
                   className={`w-[238.48818898px] h-[19.275590551px] text-start ${
-                    data[1]?.[conductionSticker]?.length > 28 ? "text-[10px]" : ""
+                    data[1]?.[conductionSticker]?.length > 28
+                      ? "text-[10px]"
+                      : ""
                   }`}
                 >
                   {data[1]?.[conductionSticker] && (
@@ -251,70 +254,70 @@ const BjvOldCsiSize = ({ data }: any) => {
         </table>
       </div>
       <div className="mx-[34.393700787px] h-[126.99212598px]">
-          <tbody>
-            <tr className="text-xs">
-              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
-                {vatableSalesFn}
-              </td>
-              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-              <td className="h-[19.275590551px] w-[102.04724409px] text-center">
-                {totalSalesVatInclusiveFn}
-              </td>
-            </tr>
-            <tr className="text-xs">
-              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
-                0.00
-              </td>
-              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-              <td className="h-[19.275590551px] w-[102.04724409px] text-center">
-                {lessVatFn}
-              </td>
-            </tr>
-            <tr className="text-xs">
-              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
-                0.00
-              </td>
-              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-              <td className="h-[19.275590551px] w-[102.04724409px] text-center">
-                {amountNetOfVatFn}
-              </td>
-            </tr>
-            <tr className="text-xs">
-              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
-                {vatAmountFn}
-              </td>
-              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-              <td className="h-[19.275590551px] w-[102.04724409px] text-center"></td>
-            </tr>
-            <tr className="text-xs">
-              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]"></td>
-              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-              <td className="h-[19.275590551px] w-[102.04724409px] text-center">
-                {amountDueFn}
-              </td>
-            </tr>
-            <tr className="text-xs">
-              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]"></td>
-              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-              <td className="h-[19.275590551px] w-[102.04724409px] text-center">
-                {addVatFn}
-              </td>
-            </tr>
-            <tr className="text-xs">
-              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]"></td>
-              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-              <td className="h-[19.275590551px] w-[102.04724409px] text-center">
-                {totalAmountDueFn}
-              </td>
-            </tr>
-          </tbody>
+        <tbody>
+          <tr className="text-xs">
+            <td className="h-[19.275590551px] w-[131.90551181px]"></td>
+            <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
+              {vatableSalesFn}
+            </td>
+            <td className="h-[19.275590551px] w-[132.66141732px]"></td>
+            <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+              {totalSalesVatInclusiveFn}
+            </td>
+          </tr>
+          <tr className="text-xs">
+            <td className="h-[19.275590551px] w-[131.90551181px]"></td>
+            <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
+              0.00
+            </td>
+            <td className="h-[19.275590551px] w-[132.66141732px]"></td>
+            <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+              {lessVatFn}
+            </td>
+          </tr>
+          <tr className="text-xs">
+            <td className="h-[19.275590551px] w-[131.90551181px]"></td>
+            <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
+              0.00
+            </td>
+            <td className="h-[19.275590551px] w-[132.66141732px]"></td>
+            <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+              {amountNetOfVatFn}
+            </td>
+          </tr>
+          <tr className="text-xs">
+            <td className="h-[19.275590551px] w-[131.90551181px]"></td>
+            <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
+              {vatAmountFn}
+            </td>
+            <td className="h-[19.275590551px] w-[132.66141732px]"></td>
+            <td className="h-[19.275590551px] w-[102.04724409px] text-center"></td>
+          </tr>
+          <tr className="text-xs">
+            <td className="h-[19.275590551px] w-[131.90551181px]"></td>
+            <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]"></td>
+            <td className="h-[19.275590551px] w-[132.66141732px]"></td>
+            <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+              {amountDueFn}
+            </td>
+          </tr>
+          <tr className="text-xs">
+            <td className="h-[19.275590551px] w-[131.90551181px]"></td>
+            <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]"></td>
+            <td className="h-[19.275590551px] w-[132.66141732px]"></td>
+            <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+              {addVatFn}
+            </td>
+          </tr>
+          <tr className="text-xs">
+            <td className="h-[19.275590551px] w-[131.90551181px]"></td>
+            <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]"></td>
+            <td className="h-[19.275590551px] w-[132.66141732px]"></td>
+            <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+              {totalAmountDueFn}
+            </td>
+          </tr>
+        </tbody>
       </div>
       <div className="mx-[34.393700787px]">
         <div className="mt-[26.456692914px] ml-[332.976377952px]">
