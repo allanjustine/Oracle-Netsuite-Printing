@@ -14,19 +14,23 @@ const HDCalamba = ({ data }: any) => {
 
   return (
     <div className="text-xs w-[778.58267717px] h-[396.8503937px] ml-[10px]">
-      <div className="flex mt-[119.38582677px]">
+      <div className="flex mt-[115.38582677px]">
         <p className="pl-[604.72440945px] w-[151.18110236px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex justify-between  mt-[19.7952755906px]">
+      <div className="flex mt-[19.7952755906px]">
         <div className="w-[566.92913386px]">
           <p className="pl-[317.48031496px]">
             {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
           </p>
         </div>
-        <div className="w-[137.95275591px]">
-          <p className="pl-[41.57480315px]">
+        <div className="w-[151.18110236px]">
+          <p
+            className={`ml-[38.57480315px] ${
+              data[1]?.[CR_TIN].length > 15 ? "text-[10px]" : ""
+            }`}
+          >
             {data[1]?.[CR_TIN] || <span className="opacity-0">No data</span>}
           </p>
         </div>
