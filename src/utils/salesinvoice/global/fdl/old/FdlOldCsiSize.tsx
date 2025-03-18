@@ -152,7 +152,7 @@ const FdlOldCsiSize = ({ data }: any) => {
           {data[1]?.[cardHolderSignatures] || ""}
         </p>
       </div>
-      <div className="mx-[27.212598425px] mt-[24.102362205px] h-[316.03149606px]">
+      <div className="mx-[27.212598425px] mt-[19.102362205px] h-[316.03149606px]">
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (

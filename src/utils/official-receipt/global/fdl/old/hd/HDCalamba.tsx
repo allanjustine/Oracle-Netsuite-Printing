@@ -28,7 +28,7 @@ const HDCalamba = ({ data }: any) => {
         <div className="w-[151.18110236px]">
           <p
             className={`ml-[38.57480315px] ${
-              data[1]?.[CR_TIN].length > 15 ? "text-[10px]" : ""
+              data[1]?.[CR_TIN]?.length > 15 ? "text-[10px]" : ""
             }`}
           >
             {data[1]?.[CR_TIN] || <span className="opacity-0">No data</span>}

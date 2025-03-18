@@ -14,7 +14,7 @@ const FdlOldOrSize = ({ data }: any) => {
 
   return (
     <div className="text-xs w-[755.90551181px] h-[404.03149606px] ml-[10px]">
-      <div className="flex mt-[82.488188976px]">
+      <div className="flex mt-[101.38582677px]">
         <p className="ml-[585.82677165px] w-[147.4015748px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
