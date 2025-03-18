@@ -14,7 +14,7 @@ const FelyOldOrSize = ({ data }: any) => {
 
   return (
     <div className="text-xs w-[801.25984252px] h-[408.18897638px] ml-[10px]">
-      <div className="flex mt-[103.38582677px]">
+      <div className="flex mt-[137.4015748px]">
         <p className="ml-[659.72440945px] w-[151.18110236px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>

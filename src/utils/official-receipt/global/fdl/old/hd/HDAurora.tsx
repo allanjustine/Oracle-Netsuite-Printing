@@ -13,7 +13,7 @@ const HDAurora = ({ data }: any) => {
   const CR_PartnerName = 9;
 
   return (
-    <div className="text-xs w-[778.58267717px] h-[396.8503937px] ml-[10px]">
+    <div className="text-xs w-[778.58267717px] h-[396.8503937px]">
       <div className="flex mt-[119.38582677px]">
         <p className="pl-[604.72440945px] w-[151.18110236px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}

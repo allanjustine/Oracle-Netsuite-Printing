@@ -60,7 +60,7 @@ const Aurora: React.FC<PrintPageProps> = ({ data }) => {
           </p>
         </div>
       </div>
-      <div className="w-[529px] pl-[350.15748031px] mt-[6.8267716539px]">
+      <div className="w-[529px] ml-[350.15748031px] mt-[6.8267716539px]">
         <p>
           {data[1]?.[CR_Memo] || <span className="opacity-0">No data</span>}
         </p>

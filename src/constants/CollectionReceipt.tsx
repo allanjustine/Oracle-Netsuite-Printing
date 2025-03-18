@@ -431,8 +431,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <Bulua data={data} />; //OR
     case "BALAM" === user?.branchCode:
       return <HDBalamban data={data} />; //OR
-    case "AURO" === user?.branchCode:
-      return <DSMAurora data={data} />; //OR
+    // case "AURO" === user?.branchCode:
+    //   return <DSMAurora data={data} />; //OR
     case "INAB" === user?.branchCode:
       return <HDInabanga data={data} />; //OR
     default:
