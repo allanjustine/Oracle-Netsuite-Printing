@@ -112,7 +112,7 @@ const FdlOldCsiSize = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[793.7007874px] w-[608.50393701px]">
-      <div className="flex h-[19.409448819px] mt-[118.0078740201px]">
+      <div className="flex h-[19.409448819px] mt-[111.0078740201px]">
         <p className="w-[391.18110236px] pl-[95.82677165px]">
           {data[1]?.[mainLineName]
             ?.replace(/Ã/g, "Ñ")
@@ -152,7 +152,7 @@ const FdlOldCsiSize = ({ data }: any) => {
           {data[1]?.[cardHolderSignatures] || ""}
         </p>
       </div>
-      <div className="mx-[27.212598425px] mt-[19.102362205px] h-[316.03149606px]">
+      <div className="mx-[27.212598425px] mt-[26.102362205px] h-[316.03149606px]">
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
@@ -331,7 +331,7 @@ const FdlOldCsiSize = ({ data }: any) => {
         </table>
       </div>
       <div className="mx-[27.212598425px]">
-        <div className="mt-[20.456692914px] ml-[332.976377952px]">
+        <div className="mt-[28.456692914px] ml-[332.976377952px]">
           <p className="text-xs text-center">
             {data[1]?.[cashier]
               ?.replace(/Ã/g, "Ñ")
