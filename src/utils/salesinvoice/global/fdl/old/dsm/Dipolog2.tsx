@@ -113,7 +113,7 @@ const Dipolog2 = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[745.32283465px] w-[589.60629921px]">
-      <div className="flex h-[20.787401575px] mt-[111.1181102406px]">
+      <div className="flex h-[20.787401575px] mt-[130.01574804px]">
         <p className="w-[374.17322835px] pl-[98.267716535px]">
           {data[1]?.[mainLineName]
             ?.replace(/Ã/g, "Ñ")
@@ -319,7 +319,7 @@ const Dipolog2 = ({ data }: any) => {
         </table>
       </div>
       <div className="mx-[30.236220472px]">
-        <div className="mt-[24.456692914px] ml-[332.976377952px]">
+        <div className="mt-[30.456692914px] ml-[332.976377952px]">
           <p className="text-xs text-center">
             {data[1]?.[cashier]
               ?.replace(/Ã/g, "Ñ")
