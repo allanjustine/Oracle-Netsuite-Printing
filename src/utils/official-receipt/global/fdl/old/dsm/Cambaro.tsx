@@ -14,7 +14,7 @@ const Cambaro = ({ data }: any) => {
 
   return (
     <div className="text-xs w-[778.58267717px] h-[396.8503937px] ml-[10px]">
-      <div className="flex mt-[119.38582677px]">
+      <div className="flex mt-[101.38582677px]">
         <p className="pl-[604.72440945px] w-[151.18110236px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
