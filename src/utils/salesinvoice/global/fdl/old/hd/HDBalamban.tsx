@@ -112,7 +112,7 @@ const HDBalamban = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[771.02362205px] w-[593.38582677px]">
-      <div className="flex h-[19.409448819px] mt-[143.6771653587px]">
+      <div className="flex h-[19.409448819px] mt-[135.6771653587px]">
         <p className="w-[376.06299213px] pl-[94.488188976px]">
           {data[1]?.[mainLineName]
             ?.replace(/Ã/g, "Ñ")
@@ -134,10 +134,7 @@ const HDBalamban = ({ data }: any) => {
       <div className="flex h-[38.818897638px]">
         <div className="w-[376.06299213px] pl-[94.488188976px]">
           <p className="h-[19.409448819px]">
-            {data[1]?.[billingAddress].substring(0, 43) || ""}
-          </p>
-          <p className="h-[19.409448819px]">
-            {data[1]?.[billingAddress].substring(43) || ""}
+            {data[1]?.[billingAddress] || ""}
           </p>
         </div>
         <p className="w-[219.21259843px] pl-[136.06299213px]">
