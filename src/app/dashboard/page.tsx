@@ -686,7 +686,7 @@ export default function Page() {
                     <button
                       key={index}
                       onClick={option.action}
-                      className="px-2 text-center text-sm font-medium text-[#333] py-1 hover:bg-white"
+                      className="px-2 text-center text-sm font-medium py-1 hover:bg-white"
                     >
                       {option.label}
                     </button>
