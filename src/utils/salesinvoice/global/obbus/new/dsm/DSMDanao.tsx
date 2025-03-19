@@ -126,7 +126,7 @@ const DSMDanao = ({ data }: any) => {
             .replace(/Ã±/g, "ñ") || <span className="opacity-0">No Data</span>}
         </p>
         <p className="w-[359.43307087px] flex items-center h-[22.8031496px] ml-[143.62204724px]">
-          <span className="opacity-0">No Data</span>
+          {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
         <p
           className={`${
@@ -157,7 +157,8 @@ const DSMDanao = ({ data }: any) => {
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[96.377952756px] h-[18.141732283px]">
-                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) || "0.00"}
+                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) ||
+                    "0.00"}
                 </td>
               </tr>
             ))}

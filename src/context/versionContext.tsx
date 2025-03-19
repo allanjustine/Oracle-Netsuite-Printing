@@ -10,6 +10,8 @@ export const VersionProvider = ({ children }: any) => {
   const [oldVersion, setOldVersion] = useState(0);
   const [isOutDated, setIsOutDated] = useState(false);
   const [isAbnormalVersion, setIsAbnormalVersion] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isPrintable, setIsPrintable] = useState(false);
   useEffect(() => {
     const fetchVersion = async () => {
       try {
@@ -33,11 +35,12 @@ export const VersionProvider = ({ children }: any) => {
 
   const updateVersion = () => {
     const fetchVersion = async () => {
+      setIsPrintable(false);
+      setIsLoading(true);
       try {
         const response = await api.get("/app-version");
         const version = response.data.version;
         const lsAppVersion: any = localStorage.getItem("ls-app-version");
-
         setVersion(version);
         setOldVersion(lsAppVersion);
 
@@ -47,18 +50,28 @@ export const VersionProvider = ({ children }: any) => {
           );
           setIsOutDated(true);
           setIsAbnormalVersion(false);
+          setIsPrintable(false);
+          setIsPrintable(false);
         } else if (Number(version) < Number(lsAppVersion)) {
           console.error(
             `Version is abnormal! New Version: ${version}, Current Version: ${lsAppVersion}`
           );
           setIsAbnormalVersion(true);
           setIsOutDated(false);
+          setIsPrintable(false);
+          setIsPrintable(false);
         } else {
           setIsOutDated(false);
           setIsAbnormalVersion(false);
+
+          if (response.status === 200) {
+            setIsPrintable(true);
+          }
         }
-      } catch (error) {
+      } catch (error: any) {
         console.error(error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -75,6 +88,9 @@ export const VersionProvider = ({ children }: any) => {
         oldVersion,
         setIsAbnormalVersion,
         isAbnormalVersion,
+        isLoading,
+        isPrintable,
+        setIsPrintable,
       }}
     >
       {children}

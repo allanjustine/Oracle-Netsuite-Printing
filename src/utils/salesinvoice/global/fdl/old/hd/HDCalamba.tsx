@@ -126,7 +126,7 @@ const HDCalamba: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="flex h-[21.165354331px]">
         <p className="w-[377.95275591px] pl-[94.488188976px]">
-          <span className="opacity-0">No Data</span>
+          {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
         <p className="w-[219.21259843px] pl-[62px]">
           {data[1]?.[terms] || <span className="opacity-0">No Data</span>}

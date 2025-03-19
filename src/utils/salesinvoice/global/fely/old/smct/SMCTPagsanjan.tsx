@@ -122,7 +122,7 @@ const SMCTPagsanjan: React.FC<PrintPageProps> = ({ data }) => {
               .replace(/Ã±/g, "ñ") || ""}
           </p>
           <p className="w-full text-[10px] h-[19.275590551px] ml-[120px]">
-            <span className="opacity-0">No Data</span>
+            {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
           </p>
           <p className="text-[10px] h-[38.551181102px] ml-[120px] w-fit leading-[19.275590551px]">
             {data[1]?.[billingAddress] || ""}

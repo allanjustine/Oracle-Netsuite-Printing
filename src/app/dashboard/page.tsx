@@ -26,6 +26,7 @@ import { PrintData } from "@/utils/constants";
 import { PrintDataType } from "@/types/PrintData";
 import { Bounce, toast } from "react-toastify";
 import { useVersion } from "@/context/versionContext";
+import { printLabel } from "@/utils/printLabel";
 
 export default function Page() {
   const { user } = useAuth();
@@ -37,6 +38,9 @@ export default function Page() {
     setIsOutDated,
     isAbnormalVersion,
     setIsAbnormalVersion,
+    isLoading: checkingVersionLoading,
+    isPrintable,
+    setIsPrintable,
   }: any = useVersion();
   const [excelData, setExcelData] = useState<any[]>([]);
   const [isFileUploaded, setIsFileUploaded] = useState<boolean>(false);
@@ -57,6 +61,7 @@ export default function Page() {
   const [backToTop, setBackToTop] = useState(false);
   const [formInput, setFormInput] = useState<PrintDataType>(PrintData);
   const [isPrintLoading, setIsPrintLoading] = useState(false);
+  const [isToggle, setIsToggle] = useState(false);
   const isCrOrMessageError =
     "You uploaded a Cash Sales Invoice/Sales Invoice, so you can't print a Collection Receipt/Official Receipt.";
   const isCsiSiMessageError =
@@ -158,6 +163,15 @@ export default function Page() {
     }
   }, [user, excelData, isPrintCr]);
 
+  useEffect(() => {
+    console.log(isPrintable && isToggle);
+    if (isPrintable && isToggle) {
+      setIsDropdownOpen(true);
+    } else {
+      setIsDropdownOpen(false);
+    }
+  }, [isPrintable, isToggle]);
+
   const handleBackToTop = () => {
     const options: any = {
       top: 0,
@@ -167,6 +181,9 @@ export default function Page() {
   };
 
   const handlePrint = (componentType: string) => {
+    setIsDropdownOpen(false);
+    setIsToggle(false);
+    setIsPrintable(false);
     const printWindow = window.open("", "_blank");
     if (printWindow) {
       const printContent = (
@@ -176,27 +193,67 @@ export default function Page() {
       const printDocument = printWindow.document;
       printDocument.open();
       printDocument.write(`
-        <html>
-        <head>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <title>
-        ${
-          isPrintCr
-            ? "Collection Receipt Print"
-            : "Sales Invoice/Cash Sales Invoice Print"
-        }
-        </title>
-        <style>`);
+          <html>
+          <head>
+          <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+          <title>
+          ${
+            isPrintCr
+              ? "Collection Receipt Print"
+              : "Sales Invoice/Cash Sales Invoice Print"
+          }
+          </title>
+          <style>`);
       printDocument.write(`
-        @page{
-        margin: 0;
-        }
-        body {
-          font-family: Arial, sans-serif;
-        }
-      `);
+          @page{
+          margin: 0;
+          }
+          body {
+            font-family: Arial, sans-serif;
+          }
+        `);
       printDocument.write("</style></head><body>");
-      printDocument.write('<div id="root"></div>');
+      printDocument.write(`
+            <div
+              class="p-2 text-white fixed top-0 w-full h-auto z-50 ${
+                isAbnormalVersion
+                  ? "bg-yellow-500"
+                  : isOutDated
+                  ? "bg-red-500"
+                  : "hidden"
+              }"
+            >
+              <div class="flex justify-between items-center">
+                <div class="flex space-x-3 items-center">
+                  ${
+                    isAbnormalVersion
+                      ? '<i class="fa fa-exclamation-triangle text-2xl"></i>'
+                      : '<i class="fa fa-circle-xmark text-2xl"></i>'
+                  }
+                  <p class="text-sm">
+                    ${
+                      isAbnormalVersion
+                        ? "Ops! You are using an abnormal version of Oracle NetSuite Printing"
+                        : "You are using the old version of Oracle NetSuite Printing. Please reload the page for the latest version"
+                    }
+                    . ${" "}
+                    <span class="font-bold">
+                      (Current Version: v${oldVersion} - Latest Version: v${version})
+                    </span>
+                  </p>
+                  <button
+                    onclick="window.close();"
+                    type="button"
+                    class="p-2 flex gap-2 items-center rounded-sm text-sm bg-blue-500 hover:bg-blue-400"
+                  >
+                    <i class="fa fa-circle-xmark"></i> <span>Close</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          `);
+
+      printDocument.write(`<div id="root"></div>`);
       printDocument.write("</body></html>");
       printDocument.close();
 
@@ -231,14 +288,14 @@ export default function Page() {
 
   const printOptions = [
     {
-      label: "Collection Receipt",
+      label: printLabel("Collection Receipt/Official Receipt", isPrintCr),
       action: () =>
         isPrintCr
           ? handlePrint("Collection Receipt")
           : handleErrorPrint(isCrOrMessageError),
     },
     {
-      label: "Cash Sales Invoice",
+      label: printLabel("Cash Sales Invoice/Sales Invoice", !isPrintCr),
       action: () =>
         !isPrintCr
           ? handlePrint("Cash Sales Invoice")
@@ -246,8 +303,9 @@ export default function Page() {
     },
   ];
 
-  const toggleDropdown = (e: any) => {
-    setIsDropdownOpen((prev) => !prev);
+  const toggleDropdown = () => {
+    setIsToggle(true);
+    updateVersion();
   };
 
   useEffect(() => {
@@ -259,6 +317,8 @@ export default function Page() {
         !dropdownRef.current.contains(event.target)
       ) {
         setIsDropdownOpen(false);
+        setIsToggle(false);
+        setIsPrintable(false);
       }
     };
 
@@ -275,13 +335,13 @@ export default function Page() {
     if (isLoading) {
       interval = setInterval(() => {
         setProgress((prevProgress) => Math.min(prevProgress + 1, 100));
-      }, 25);
+      }, 10);
 
       timeout = setTimeout(() => {
         setIsLoading(false);
         clearInterval(interval);
         setProgress(100);
-      }, 2500);
+      }, 1000);
     }
 
     return () => {
@@ -422,10 +482,18 @@ export default function Page() {
   return (
     <PrivateRoute>
       {(isOutDated || isAbnormalVersion) && (
-        <div className={`p-2 text-white fixed top-0 w-full h-auto z-50 ${isAbnormalVersion ? "bg-yellow-500" : "bg-red-500"}`}>
+        <div
+          className={`p-2 text-white fixed top-0 w-full h-auto z-50 ${
+            isAbnormalVersion ? "bg-yellow-500" : "bg-red-500"
+          }`}
+        >
           <div className="flex justify-between items-center">
             <div className="flex space-x-3 items-center">
-              {isAbnormalVersion ? <FaExclamationTriangle className="text-2xl" /> : <FaCircleXmark className="text-2xl" />}
+              {isAbnormalVersion ? (
+                <FaExclamationTriangle className="text-2xl" />
+              ) : (
+                <FaCircleXmark className="text-2xl" />
+              )}
               <p className="text-sm">
                 {isAbnormalVersion
                   ? "Ops! You are using an abnormal version of Oracle NetSuite Printing"
@@ -593,8 +661,20 @@ export default function Page() {
                     isLoading && "opacity-0"
                   }`}
                 >
-                  <FaPrint size={20} color="#333" />
-                  Print Now
+                  {checkingVersionLoading ? (
+                    <>
+                      <FaCircleNotch
+                        className="animate-spin"
+                        size={20}
+                        color="#333"
+                      />{" "}
+                      Checking Version...
+                    </>
+                  ) : (
+                    <>
+                      <FaPrint size={20} color="#333" /> Print Now
+                    </>
+                  )}
                 </button>
               </div>
               {isDropdownOpen && (

@@ -127,7 +127,7 @@ const HDCamino = ({ data }: any) => {
       </div>
       <div className="w-full h-[19.409448819px] mt-[2.677165354px]">
         <p className="w-[377.95275591px] pl-[188.97637795px]">
-          <span className="opacity-0">No Data</span>
+          {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
       </div>
       <div className="w-[608.50393701px] h-[19.409448819px] mt-[2.677165354px]">

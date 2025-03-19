@@ -125,7 +125,7 @@ const Remegio = ({ data }: any) => {
       </div>
       <div className="flex h-[15.458267717px]">
         <p className="w-[402.51968504px] ml-[86.929133858px]">
-          <span className="opacity-0">No Data</span>
+          {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
         <p className="w-[215.43307087px] ml-[41.57480315px]"></p>
       </div>
@@ -165,7 +165,8 @@ const Remegio = ({ data }: any) => {
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[95.244094488px] h-[22.11023622px]">
-                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) || "0.00"}
+                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) ||
+                    "0.00"}
                 </td>
               </tr>
             ))}

@@ -114,9 +114,10 @@ const Cerilles = ({ data }: any) => {
     <div className="text-xs h-[795.59055118px] w-[616.06299213px]">
       <div className="flex h-[15.458267717px] mt-[125.503937007px]">
         <p className="w-[402.51968504px] ml-[86.929133858px]">
-          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || (
-            <span className="opacity-0">No Data</span>
-          )}
+          {data[1]?.[mainLineName]
+            ?.replace(/Ã/g, "Ñ")
+            .replace(/Ã‘/g, "Ñ")
+            .replace(/Ã±/g, "ñ") || <span className="opacity-0">No Data</span>}
         </p>
         <p className="w-[215.43307087px] ml-[41.57480315px]">
           {data[1]?.[date] || <span className="opacity-0">No Data</span>}
@@ -124,7 +125,7 @@ const Cerilles = ({ data }: any) => {
       </div>
       <div className="flex h-[15.458267717px]">
         <p className="w-[402.51968504px] ml-[86.929133858px]">
-          <span className="opacity-0">No Data</span>
+          {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
         <p className="w-[215.43307087px] ml-[41.57480315px]">
           {data[1]?.[terms] || <span className="opacity-0">No Data</span>}
@@ -155,7 +156,9 @@ const Cerilles = ({ data }: any) => {
           <tbody>
             {data.slice(1, 16).map((row: any, index: any) => (
               <tr key={index} className="text-xs text-center">
-                <td className="w-[53.291338583px]">{row[quantity]?.replace(/.0$/, "")}</td>
+                <td className="w-[53.291338583px]">
+                  {row[quantity]?.replace(/.0$/, "")}
+                </td>
                 <td className="w-[49.133858268px] h-[22.11023622px]">
                   {row[unitOfMeasurement]}
                 </td>
@@ -170,7 +173,8 @@ const Cerilles = ({ data }: any) => {
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[95.244094488px] h-[22.11023622px]">
-                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) || "0.00"}
+                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) ||
+                    "0.00"}
                 </td>
               </tr>
             ))}
@@ -216,7 +220,9 @@ const Cerilles = ({ data }: any) => {
                 <td className="w-[49.133858268px] h-[22.11023622px]"></td>
                 <td
                   className={`w-[285.73228346px] h-[22.11023622px] text-start ${
-                    data[1]?.[conductionSticker]?.length > 20 ? "text-[10px]" : ""
+                    data[1]?.[conductionSticker]?.length > 20
+                      ? "text-[10px]"
+                      : ""
                   }`}
                 >
                   {data[1]?.[conductionSticker] && (
@@ -247,7 +253,7 @@ const Cerilles = ({ data }: any) => {
       </div>
       <div className="mx-[25.700787402px] h-[170.07874016px]">
         <table className="border-collapse w-full">
-        <tbody>
+          <tbody>
             <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3">
@@ -324,7 +330,12 @@ const Cerilles = ({ data }: any) => {
       <div className="mx-[32.125984252px]">
         <div className="mt-[15.136220472px] w-[196.53543307px] ml-[336.37795276px]">
           <p className="text-xs text-center">
-            {data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || <span className="opacity-0">No Data</span>}
+            {data[1]?.[cashier]
+              ?.replace(/Ã/g, "Ñ")
+              .replace(/Ã‘/g, "Ñ")
+              .replace(/Ã±/g, "ñ") || (
+              <span className="opacity-0">No Data</span>
+            )}
           </p>
         </div>
       </div>

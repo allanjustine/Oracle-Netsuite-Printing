@@ -126,7 +126,7 @@ const CarmenCdo = ({ data }: any) => {
       </div>
       <div className="flex h-[19.409448819px]">
         <p className="w-[376.06299213px] pl-[94.488188976px]">
-          <span className="opacity-0">No Data</span>
+          {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
         <p className="w-[219.21259843px] pl-[60.472440945px]">
           {data[1]?.[terms] || ""}

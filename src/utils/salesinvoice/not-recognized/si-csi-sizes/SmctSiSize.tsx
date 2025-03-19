@@ -115,21 +115,25 @@ const SmctSiSize: React.FC<PrintPageProps> = ({ data }) => {
     <div className="text-xs h-[785.76377953px] w-[582.80314961px]">
       <div className="flex h-[21.165354331px] mt-[109.7244094521px]">
         <p className="w-[377.95275591px] pl-[94.488188976px]">
-          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
+          {data[1]?.[mainLineName]
+            ?.replace(/Ã/g, "Ñ")
+            .replace(/Ã‘/g, "Ñ")
+            .replace(/Ã±/g, "ñ") || ""}
         </p>
-        <p className="w-[219.21259843px] pl-[62px]">
-          {data[1]?.[date] || ""}
-        </p>
+        <p className="w-[219.21259843px] pl-[62px]">{data[1]?.[date] || ""}</p>
       </div>
       <div className="flex h-[21.165354331px]">
         <p className="w-[377.95275591px] pl-[94.488188976px]">
+          {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
-        <p className="w-[219.21259843px] pl-[62px]">
-          {data[1]?.[terms] || ""}
-        </p>
+        <p className="w-[219.21259843px] pl-[62px]">{data[1]?.[terms] || ""}</p>
       </div>
       <div className="flex h-[21.165354331]">
-        <p className={`w-full pl-[94.488188976px] ${data[1]?.[billingAddress]?.length > 90 ? 'text-[9px]' : ''}`}>
+        <p
+          className={`w-full pl-[94.488188976px] ${
+            data[1]?.[billingAddress]?.length > 90 ? "text-[9px]" : ""
+          }`}
+        >
           {data[1]?.[billingAddress] || ""}
         </p>
       </div>
@@ -144,7 +148,9 @@ const SmctSiSize: React.FC<PrintPageProps> = ({ data }) => {
           <tbody>
             {data.slice(1, 17).map((row, index) => (
               <tr key={index} className="text-xs text-center">
-                <td className="w-[71.433070866px]">{row[quantity]?.replace(/.0$/, "")}</td>
+                <td className="w-[71.433070866px]">
+                  {row[quantity]?.replace(/.0$/, "")}
+                </td>
                 <td className="w-[56.31496063px] h-[18.275590551px]">
                   {row[unitOfMeasurement]}
                 </td>
@@ -159,7 +165,8 @@ const SmctSiSize: React.FC<PrintPageProps> = ({ data }) => {
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[101.66929134px] h-[18.275590551px]">
-                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) || "0.00"}
+                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) ||
+                    "0.00"}
                 </td>
               </tr>
             ))}
@@ -172,10 +179,10 @@ const SmctSiSize: React.FC<PrintPageProps> = ({ data }) => {
                 }`}
               >
                 {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
-                    <>Engine #: {data[1]?.[serialNumber]}</>
-                  ) : (
-                    <>Serial #: {data[1]?.[serialNumber]}</>
-                  )}
+                  <>Engine #: {data[1]?.[serialNumber]}</>
+                ) : (
+                  <>Serial #: {data[1]?.[serialNumber]}</>
+                )}
               </td>
               <td className="w-[163.81552306px] h-[19.275590551px]"></td>
               <td className="w-[114.30371204px] h-[19.275590551px]"></td>
@@ -213,7 +220,9 @@ const SmctSiSize: React.FC<PrintPageProps> = ({ data }) => {
             </tr>
             <tr className="text-xs">
               <td className="h-[18.275590551px] w-[124.72440945px]"></td>
-              <td className="h-[18.275590551px] w-[179.90551181px] pl-[7.342622px]">0.00</td>
+              <td className="h-[18.275590551px] w-[179.90551181px] pl-[7.342622px]">
+                0.00
+              </td>
               <td className="h-[18.275590551px] w-[128.50393701px]"></td>
               <td className="h-[18.275590551px] w-[98.267716535px] text-center">
                 {lessVatFn}
@@ -267,7 +276,10 @@ const SmctSiSize: React.FC<PrintPageProps> = ({ data }) => {
       <div className="mx-[30.236220472px]">
         <div className="mt-[22.566929134px] ml-[392.31496063px]">
           <p className="text-xs text-center">
-            {data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
+            {data[1]?.[cashier]
+              ?.replace(/Ã/g, "Ñ")
+              .replace(/Ã‘/g, "Ñ")
+              .replace(/Ã±/g, "ñ") || ""}
           </p>
         </div>
       </div>

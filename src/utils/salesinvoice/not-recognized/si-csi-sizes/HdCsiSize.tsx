@@ -115,7 +115,10 @@ const HdCsiSizes = ({ data }: any) => {
     <div className="text-xs h-[771.02362205px] w-[593.38582677px]">
       <div className="flex h-[19.409448819px] mt-[118.6771653587px]">
         <p className="w-[376.06299213px] pl-[94.488188976px]">
-          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
+          {data[1]?.[mainLineName]
+            ?.replace(/Ã/g, "Ñ")
+            .replace(/Ã‘/g, "Ñ")
+            .replace(/Ã±/g, "ñ") || ""}
         </p>
         <p className="w-[219.21259843px] pl-[60.472440945px]">
           {data[1]?.[date] || ""}
@@ -123,6 +126,7 @@ const HdCsiSizes = ({ data }: any) => {
       </div>
       <div className="flex h-[19.409448819px]">
         <p className="w-[376.06299213px] pl-[94.488188976px]">
+          {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
         <p className="w-[219.21259843px] pl-[60.472440945px]">
           {data[1]?.[terms] || ""}
@@ -130,8 +134,12 @@ const HdCsiSizes = ({ data }: any) => {
       </div>
       <div className="flex h-[38.818897638px]">
         <div className="w-[376.06299213px] pl-[94.488188976px]">
-          <p className="h-[19.409448819px]">{data[1]?.[billingAddress].substring(0, 47) || ""}</p>
-          <p className="h-[19.409448819px]">{data[1]?.[billingAddress].substring(47) || ""}</p>
+          <p className="h-[19.409448819px]">
+            {data[1]?.[billingAddress].substring(0, 47) || ""}
+          </p>
+          <p className="h-[19.409448819px]">
+            {data[1]?.[billingAddress].substring(47) || ""}
+          </p>
         </div>
         <p className="w-[219.21259843px] pl-[136.06299213px]">
           {data[1]?.[oscaPwdIdNo] || ""}
@@ -150,7 +158,9 @@ const HdCsiSizes = ({ data }: any) => {
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
               <tr key={index} className="text-xs text-center">
-                <td className="w-[71.811023622px]">{row[quantity]?.replace(/.0$/, "")}</td>
+                <td className="w-[71.811023622px]">
+                  {row[quantity]?.replace(/.0$/, "")}
+                </td>
                 <td className="w-[62.362204724px] h-[19.275590551px]">
                   {row[unitOfMeasurement]}
                 </td>
@@ -165,7 +175,8 @@ const HdCsiSizes = ({ data }: any) => {
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[102.38740157px] h-[19.275590551px]">
-                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) || "0.00"}
+                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) ||
+                    "0.00"}
                 </td>
               </tr>
             ))}
@@ -178,10 +189,10 @@ const HdCsiSizes = ({ data }: any) => {
                 }`}
               >
                 {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
-                    <>Engine #: {data[1]?.[serialNumber]}</>
-                  ) : (
-                    <>Serial #: {data[1]?.[serialNumber]}</>
-                  )}
+                  <>Engine #: {data[1]?.[serialNumber]}</>
+                ) : (
+                  <>Serial #: {data[1]?.[serialNumber]}</>
+                )}
               </td>
               <td className="w-[163.81552306px] h-[19.275590551px]"></td>
               <td className="w-[114.30371204px] h-[19.275590551px]"></td>
@@ -277,7 +288,10 @@ const HdCsiSizes = ({ data }: any) => {
       <div className="mx-[34.393700787px]">
         <div className="mt-[26.456692914px] ml-[332.976377952px]">
           <p className="text-xs text-center">
-            {data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
+            {data[1]?.[cashier]
+              ?.replace(/Ã/g, "Ñ")
+              .replace(/Ã‘/g, "Ñ")
+              .replace(/Ã±/g, "ñ") || ""}
           </p>
         </div>
       </div>

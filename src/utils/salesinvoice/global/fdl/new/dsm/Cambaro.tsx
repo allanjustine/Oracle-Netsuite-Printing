@@ -126,7 +126,7 @@ const Cambaro = ({ data }: any) => {
             .replace(/Ã±/g, "ñ") || <span className="opacity-0">No Data</span>}
         </p>
         <p className="w-[389.29133858px] flex items-center h-[24.566929134px] ml-[154.96062992px]">
-          <span className="opacity-0">No Data</span>
+          {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
         <p
           className={`${

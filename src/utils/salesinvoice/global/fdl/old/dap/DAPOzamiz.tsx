@@ -126,7 +126,7 @@ const DAPOzamiz = ({ data }: any) => {
       </div>
       <div className="flex h-[19.409448819px]">
         <p className="w-[391.18110236px] pl-[105.82677165px]">
-          <span className="opacity-0">No Data</span>
+          {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
         <p className="w-[218.83464567px] pl-[60.472440945px]">
           {data[1]?.[terms] || ""}

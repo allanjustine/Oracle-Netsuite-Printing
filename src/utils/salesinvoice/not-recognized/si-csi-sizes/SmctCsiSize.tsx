@@ -115,7 +115,10 @@ const SmctCsiSize = ({ data }: any) => {
     <div className="text-xs h-[745.32283465px] w-[589.60629921px]">
       <div className="flex h-[20.787401575px] mt-[111.1181102406px]">
         <p className="w-[374.17322835px] pl-[98.267716535px]">
-          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
+          {data[1]?.[mainLineName]
+            ?.replace(/Ã/g, "Ñ")
+            .replace(/Ã‘/g, "Ñ")
+            .replace(/Ã±/g, "ñ") || ""}
         </p>
         <p className="w-[215.43307087px] pl-[56.692913386px]">
           {data[1]?.[date] || ""}
@@ -123,6 +126,7 @@ const SmctCsiSize = ({ data }: any) => {
       </div>
       <div className="flex h-[20.787401575px]">
         <p className="w-[374.17322835px] pl-[98.267716535px]">
+          {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
         <p className="w-[215.43307087px] pl-[56.692913386px]">
           {data[1]?.[terms] || ""}
@@ -130,7 +134,13 @@ const SmctCsiSize = ({ data }: any) => {
       </div>
       <div className="flex h-[20.787401575px]">
         <div className="w-[563.1496063px] pl-[98.267716535px]">
-          <p className={`h-[20.787401575px] ${data[1]?.[billingAddress].length > 85 ? "text-xs" : ""}`}>{data[1]?.[billingAddress] || ""}</p>
+          <p
+            className={`h-[20.787401575px] ${
+              data[1]?.[billingAddress].length > 85 ? "text-xs" : ""
+            }`}
+          >
+            {data[1]?.[billingAddress] || ""}
+          </p>
         </div>
       </div>
       <div className="flex h-[20.787401575px]">
@@ -143,7 +153,9 @@ const SmctCsiSize = ({ data }: any) => {
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
               <tr key={index} className="text-xs text-center">
-                <td className="w-[69.165354331px]">{row[quantity]?.replace(/.0$/, "")}</td>
+                <td className="w-[69.165354331px]">
+                  {row[quantity]?.replace(/.0$/, "")}
+                </td>
                 <td className="w-[56.692913386px] h-[19.275590551px]">
                   {row[unitOfMeasurement]}
                 </td>
@@ -158,7 +170,8 @@ const SmctCsiSize = ({ data }: any) => {
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[98.267716535px] h-[19.275590551px]">
-                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) || "0.00"}
+                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) ||
+                    "0.00"}
                 </td>
               </tr>
             ))}
@@ -171,10 +184,10 @@ const SmctCsiSize = ({ data }: any) => {
                 }`}
               >
                 {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
-                    <>Engine #: {data[1]?.[serialNumber]}</>
-                  ) : (
-                    <>Serial #: {data[1]?.[serialNumber]}</>
-                  )}
+                  <>Engine #: {data[1]?.[serialNumber]}</>
+                ) : (
+                  <>Serial #: {data[1]?.[serialNumber]}</>
+                )}
               </td>
               <td className="w-[163.81552306px] h-[19.275590551px]"></td>
               <td className="w-[114.30371204px] h-[19.275590551px]"></td>
@@ -236,9 +249,7 @@ const SmctCsiSize = ({ data }: any) => {
                 {vatAmountFn}
               </td>
               <td className="h-[19.275590551px] w-[128.88188976px]"></td>
-              <td className="h-[19.275590551px] w-[98.645669291px] text-center">
-                
-              </td>
+              <td className="h-[19.275590551px] w-[98.645669291px] text-center"></td>
             </tr>
             <tr className="text-xs">
               <td className="h-[19.275590551px] w-[126.61417323px]"></td>
@@ -270,7 +281,10 @@ const SmctCsiSize = ({ data }: any) => {
       <div className="mx-[30.236220472px]">
         <div className="mt-[24.456692914px] ml-[332.976377952px]">
           <p className="text-xs text-center">
-            {data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
+            {data[1]?.[cashier]
+              ?.replace(/Ã/g, "Ñ")
+              .replace(/Ã‘/g, "Ñ")
+              .replace(/Ã±/g, "ñ") || ""}
           </p>
         </div>
       </div>

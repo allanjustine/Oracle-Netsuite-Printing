@@ -124,7 +124,7 @@ const Binan: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="flex h-[21.165354331px]">
         <p className="w-[377.95275591px] pl-[94.488188976px]">
-          <span className="opacity-0">No Data</span>
+          {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
         <p className="w-[219.21259843px] pl-[62px]">{data[1]?.[terms] || ""}</p>
       </div>
@@ -315,7 +315,11 @@ const Binan: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="mx-[30.236220472px]">
         <div className="mt-[22.566929134px] ml-[392.31496063px]">
-          <p className={`text-center ${data[1]?.[cashier].length > 10 ? "text-[10px]" : ""}`}>
+          <p
+            className={`text-center ${
+              data[1]?.[cashier].length > 10 ? "text-[10px]" : ""
+            }`}
+          >
             {data[1]?.[cashier]
               ?.replace(/Ã/g, "Ñ")
               .replace(/Ã‘/g, "Ñ")

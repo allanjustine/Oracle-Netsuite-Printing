@@ -121,7 +121,9 @@ const LuzonSize: React.FC<PrintPageProps> = ({ data }) => {
               .replace(/Ã‘/g, "Ñ")
               .replace(/Ã±/g, "ñ") || ""}
           </p>
-          <p className="w-full text-xs h-[19.275590551px] ml-[120px]"></p>
+          <p className="w-full text-xs h-[19.275590551px] ml-[120px]">
+            {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
+          </p>
           <p className="text-xs h-[38.551181102px] ml-[120px] w-fit leading-[19.275590551px]">
             {data[1]?.[billingAddress] || ""}
           </p>
@@ -164,7 +166,8 @@ const LuzonSize: React.FC<PrintPageProps> = ({ data }) => {
                     {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                   </td>
                   <td className="w-[131.90551181px] h-[18.822047244px]">
-                    {FormattedNumber(row[quantity] * row[rateInclusiveVat]) || "0.00"}
+                    {FormattedNumber(row[quantity] * row[rateInclusiveVat]) ||
+                      "0.00"}
                   </td>
                 </tr>
               ))}

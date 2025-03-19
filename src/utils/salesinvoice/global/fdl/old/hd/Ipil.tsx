@@ -126,7 +126,7 @@ const Ipil = ({ data }: any) => {
       </div>
       <div className="flex h-[20.787401575px]">
         <p className="w-[374.17322835px] pl-[98.267716535px]">
-          <span className="opacity-0">No Data</span>
+          {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
         <p className="w-[215.43307087px] pl-[56.692913386px]">
           {data[1]?.[terms] || <span className="opacity-0">No Data</span>}

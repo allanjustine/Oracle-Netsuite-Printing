@@ -114,7 +114,10 @@ const ObbusOldCsiSize = ({ data }: any) => {
     <div className="text-xs h-[795.67716535px] w-[616.06299213px]">
       <div className="flex h-[15.458267717px] mt-[161.503937007px]">
         <p className="w-[402.51968504px] ml-[86.929133858px]">
-          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
+          {data[1]?.[mainLineName]
+            ?.replace(/Ã/g, "Ñ")
+            .replace(/Ã‘/g, "Ñ")
+            .replace(/Ã±/g, "ñ") || ""}
         </p>
         <p className="w-[215.43307087px] ml-[41.57480315px]">
           {data[1]?.[date] || ""}
@@ -122,7 +125,7 @@ const ObbusOldCsiSize = ({ data }: any) => {
       </div>
       <div className="flex h-[15.458267717px]">
         <p className="w-[402.51968504px] ml-[86.929133858px]">
-          <span className="opacity-0">No Data</span>
+          {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
         <p className="w-[215.43307087px] ml-[41.57480315px]"></p>
       </div>
@@ -136,7 +139,9 @@ const ObbusOldCsiSize = ({ data }: any) => {
       </div>
       <div className="flex h-[15.458267717px]">
         <p className="w-[402.51968504px] ml-[113.38582677px]">
-          {data[1]?.[businessStyle] || <span className="opacity-0">No Data</span>}
+          {data[1]?.[businessStyle] || (
+            <span className="opacity-0">No Data</span>
+          )}
         </p>
         <p className="w-[215.43307087px] ml-[41.57480315px]"></p>
       </div>
@@ -145,7 +150,9 @@ const ObbusOldCsiSize = ({ data }: any) => {
           <tbody>
             {data.slice(1, 16).map((row: any, index: any) => (
               <tr key={index} className="text-xs text-center">
-                <td className="w-[53.291338583px]">{row[quantity]?.replace(/.0$/, "")}</td>
+                <td className="w-[53.291338583px]">
+                  {row[quantity]?.replace(/.0$/, "")}
+                </td>
                 <td className="w-[49.133858268px] h-[22.488188976px]">
                   {row[unitOfMeasurement]}
                 </td>
@@ -160,7 +167,8 @@ const ObbusOldCsiSize = ({ data }: any) => {
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[95.244094488px] h-[22.488188976px]">
-                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) || "0.00"}
+                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) ||
+                    "0.00"}
                 </td>
               </tr>
             ))}
@@ -206,9 +214,7 @@ const ObbusOldCsiSize = ({ data }: any) => {
                 <td className="w-[49.133858268px] h-[22.488188976px]"></td>
                 <td
                   className={`w-[285.73228346px] h-[22.488188976px] text-start ${
-                    data[1]?.[conductionSticker]?.length > 30
-                      ? "text-xs"
-                      : ""
+                    data[1]?.[conductionSticker]?.length > 30 ? "text-xs" : ""
                   }`}
                 >
                   {data[1]?.[conductionSticker] && (
@@ -315,7 +321,12 @@ const ObbusOldCsiSize = ({ data }: any) => {
       </div>
       <div className="mx-[32.125984252px]">
         <div className="mt-[18.136220472px] w-[196.53543307px] ml-[336.37795276px]">
-          <p className="text-xs text-center">{data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}</p>
+          <p className="text-xs text-center">
+            {data[1]?.[cashier]
+              ?.replace(/Ã/g, "Ñ")
+              .replace(/Ã‘/g, "Ñ")
+              .replace(/Ã±/g, "ñ") || ""}
+          </p>
         </div>
       </div>
     </div>

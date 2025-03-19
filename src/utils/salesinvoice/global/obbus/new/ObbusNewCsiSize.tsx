@@ -126,7 +126,7 @@ const ObbusNewCsiSize = ({ data }: any) => {
             .replace(/Ã±/g, "ñ") || <span className="opacity-0">No Data</span>}
         </p>
         <p className="w-[359.43307087px] flex items-center h-[22.8031496px] ml-[143.62204724px]">
-          <span className="opacity-0">No Data</span>
+          {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
         <p
           className={`${

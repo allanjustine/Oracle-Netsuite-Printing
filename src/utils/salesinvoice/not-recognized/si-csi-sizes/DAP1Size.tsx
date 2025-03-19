@@ -125,7 +125,9 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
         </p>
       </div>
       <div className="flex h-[17.007874016px]">
-        <p className="w-[528.66141732px] pl-[147.4015748px]"></p>
+        <p className="w-[528.66141732px] pl-[147.4015748px]">
+          {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
+        </p>
         <p className="w-[284.50393701px] pl-[117.16535433px]">
           {data[1]?.[terms] || ""}
         </p>
@@ -168,7 +170,8 @@ const DAP1Size: React.FC<PrintPageProps> = ({ data }) => {
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[114.30371204px] h-[19.275590551px]">
-                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) || "0.00"}
+                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) ||
+                    "0.00"}
                 </td>
               </tr>
             ))}

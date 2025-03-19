@@ -115,7 +115,10 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
     <div className="text-xs h-[510.23622047px] w-[778.58267717px]">
       <div className="flex h-[18.141732283px] mt-[91.488188976px]">
         <p className="w-[461.1023622px] pl-[132.28346457px]">
-          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
+          {data[1]?.[mainLineName]
+            ?.replace(/Ã/g, "Ñ")
+            .replace(/Ã‘/g, "Ñ")
+            .replace(/Ã±/g, "ñ") || ""}
         </p>
         <p className="w-[132.28346457px] pl-[151.18110236px]">
           {data[1]?.[date] || ""}
@@ -123,6 +126,7 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="flex h-[18.141732283px]">
         <p className="w-[461.1023622px] pl-[132.28346457px]">
+          {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
         <p className="w-[132.28346457px] pl-[151.18110236px]">
           {data[1]?.[terms] || ""}
@@ -149,7 +153,9 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
           <tbody>
             {data.slice(1, 6).map((row, index) => (
               <tr key={index} className="text-xs text-center">
-                <td className="w-[75.590551181px]">{row[quantity]?.replace(/.0$/, "")}</td>
+                <td className="w-[75.590551181px]">
+                  {row[quantity]?.replace(/.0$/, "")}
+                </td>
                 <td className="w-[75.590551181px] h-[18.141732283px]">
                   {row[unitOfMeasurement]}
                 </td>
@@ -164,7 +170,8 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[137.95275591px] h-[18.141732283px]">
-                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) || "0.00"}
+                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) ||
+                    "0.00"}
                 </td>
               </tr>
             ))}
@@ -177,10 +184,10 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
                 }`}
               >
                 {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
-                    <>Engine #: {data[1]?.[serialNumber]}</>
-                  ) : (
-                    <>Serial #: {data[1]?.[serialNumber]}</>
-                  )}
+                  <>Engine #: {data[1]?.[serialNumber]}</>
+                ) : (
+                  <>Serial #: {data[1]?.[serialNumber]}</>
+                )}
               </td>
               <td className="w-[163.81552306px] h-[19.275590551px]"></td>
               <td className="w-[114.30371204px] h-[19.275590551px]"></td>
@@ -242,9 +249,7 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
             </tr>
             <tr className="text-xs">
               <td className="h-[18.141732283px] w-[289.13385827px]"></td>
-              <td className="h-[18.141732283px] w-[117.16535433px]">
-                0.00
-              </td>
+              <td className="h-[18.141732283px] w-[117.16535433px]">0.00</td>
               <td className="h-[18.141732283px] w-[162.51968504px]"></td>
               <td className="h-[18.141732283px] w-[137.95275591px] text-center">
                 {lessWithHoldingTaxFn}
@@ -252,9 +257,7 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
             </tr>
             <tr className="text-xs">
               <td className="h-[18.141732283px] w-[289.13385827px]"></td>
-              <td className="h-[18.141732283px] w-[117.16535433px]">
-                0.00
-              </td>
+              <td className="h-[18.141732283px] w-[117.16535433px]">0.00</td>
               <td className="h-[18.141732283px] w-[162.51968504px]"></td>
               <td className="h-[18.141732283px] w-[137.95275591px] text-center">
                 {amountDueFn}
@@ -284,7 +287,10 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
       <div className="mx-[32.125984252px]">
         <div className="mt-[30.236220472px] ml-[480px]">
           <p className="text-xs text-center">
-            {data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
+            {data[1]?.[cashier]
+              ?.replace(/Ã/g, "Ñ")
+              .replace(/Ã‘/g, "Ñ")
+              .replace(/Ã±/g, "ñ") || ""}
           </p>
         </div>
       </div>
