@@ -114,29 +114,34 @@ const DSMSuzukiPardo = ({ data }: any) => {
     <div className="text-xs h-[795.67716535px] w-[616.06299213px]">
       <div className="flex h-[15.458267717px] mt-[161.503937007px]">
         <p className="w-[402.51968504px] ml-[86.929133858px]">
-          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
+          {data[1]?.[mainLineName]
+            ?.replace(/Ã/g, "Ñ")
+            .replace(/Ã‘/g, "Ñ")
+            .replace(/Ã±/g, "ñ") || ""}
         </p>
         <p className="w-[215.43307087px] ml-[41.57480315px]">
           {data[1]?.[date] || ""}
         </p>
       </div>
-      <div className="flex h-[15.458267717px]">
+      <div className="flex h-[15.458267717px] mb-[7px]">
         <p className="w-[402.51968504px] ml-[86.929133858px]">
-          <span className="opacity-0">No Data</span>
+          {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
         <p className="w-[215.43307087px] ml-[41.57480315px]"></p>
       </div>
       <div className="w-[402.51968504px] flex flex-col h-[32.503937008px] mt=[11.338582677px]">
         <p className="ml-[86.929133858px] h-[16.251968504px]">
-          {data[1]?.[billingAddress].substring(0, 47) || ""}
+          {data[1]?.[billingAddress].substring(0, 55) || ""}
         </p>
         <p className="ml-[36.929133858px] h-[16.251968504px]">
-          {data[1]?.[billingAddress].substring(47) || ""}
+          {data[1]?.[billingAddress].substring(55) || ""}
         </p>
       </div>
       <div className="flex h-[15.458267717px]">
         <p className="w-[402.51968504px] ml-[113.38582677px]">
-          {data[1]?.[businessStyle] || <span className="opacity-0">No Data</span>}
+          {data[1]?.[businessStyle] || (
+            <span className="opacity-0">No Data</span>
+          )}
         </p>
         <p className="w-[215.43307087px] ml-[41.57480315px]"></p>
       </div>
@@ -145,7 +150,9 @@ const DSMSuzukiPardo = ({ data }: any) => {
           <tbody>
             {data.slice(1, 16).map((row: any, index: any) => (
               <tr key={index} className="text-xs text-center">
-                <td className="w-[53.291338583px]">{row[quantity]?.replace(/.0$/, "")}</td>
+                <td className="w-[53.291338583px]">
+                  {row[quantity]?.replace(/.0$/, "")}
+                </td>
                 <td className="w-[49.133858268px] h-[22.488188976px]">
                   {row[unitOfMeasurement]}
                 </td>
@@ -160,7 +167,8 @@ const DSMSuzukiPardo = ({ data }: any) => {
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[95.244094488px] h-[22.488188976px]">
-                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) || "0.00"}
+                  {FormattedNumber(row[quantity] * row[rateInclusiveVat]) ||
+                    "0.00"}
                 </td>
               </tr>
             ))}
@@ -206,9 +214,7 @@ const DSMSuzukiPardo = ({ data }: any) => {
                 <td className="w-[49.133858268px] h-[22.488188976px]"></td>
                 <td
                   className={`w-[285.73228346px] h-[22.488188976px] text-start ${
-                    data[1]?.[conductionSticker]?.length > 30
-                      ? "text-xs"
-                      : ""
+                    data[1]?.[conductionSticker]?.length > 30 ? "text-xs" : ""
                   }`}
                 >
                   {data[1]?.[conductionSticker] && (
@@ -241,72 +247,72 @@ const DSMSuzukiPardo = ({ data }: any) => {
         <table className="border-collapse w-full">
           <tbody>
             <tr className="text-xs">
-              <td className="h-[22.488188976px] w-[102.42519685px]"></td>
-              <td className="h-[22.488188976px] w-[216.18897638px] pl-3">
+              <td className="h-[19px] w-[102.42519685px]"></td>
+              <td className="h-[19px] w-[216.18897638px] pl-3">
                 {vatableSalesFn}
               </td>
-              <td className="h-[22.488188976px] w-[140.5984252px]"></td>
-              <td className="h-[22.488188976px] w-[96.755905512px] text-center"></td>
+              <td className="h-[19px] w-[140.5984252px]"></td>
+              <td className="h-[19px] w-[96.755905512px] text-center"></td>
             </tr>
             <tr className="text-xs">
-              <td className="h-[22.488188976px] w-[102.42519685px]"></td>
-              <td className="h-[22.488188976px] w-[216.18897638px] pl-3">
+              <td className="h-[19px] w-[102.42519685px]"></td>
+              <td className="h-[19px] w-[216.18897638px] pl-3">
                 0.00
               </td>
-              <td className="h-[22.488188976px] w-[140.5984252px]"></td>
-              <td className="h-[22.488188976px] w-[96.755905512px] text-center">
+              <td className="h-[19px] w-[140.5984252px]"></td>
+              <td className="h-[19px] w-[96.755905512px] text-center">
                 {totalSalesVatInclusiveFn}
               </td>
             </tr>
             <tr className="text-xs">
-              <td className="h-[22.488188976px] w-[102.42519685px]"></td>
-              <td className="h-[22.488188976px] w-[216.18897638px] pl-3">
+              <td className="h-[19px] w-[102.42519685px]"></td>
+              <td className="h-[19px] w-[216.18897638px] pl-3">
                 0.00
               </td>
-              <td className="h-[22.488188976px] w-[140.5984252px]"></td>
-              <td className="h-[22.488188976px] w-[96.755905512px] text-center">
+              <td className="h-[19px] w-[140.5984252px]"></td>
+              <td className="h-[19px] w-[96.755905512px] text-center">
                 {lessVatFn}
               </td>
             </tr>
             <tr className="text-xs">
-              <td className="h-[22.488188976px] w-[102.42519685px]"></td>
-              <td className="h-[22.488188976px] w-[216.18897638px] pl-3">
+              <td className="h-[19px] w-[102.42519685px]"></td>
+              <td className="h-[19px] w-[216.18897638px] pl-3">
                 {vatAmountFn}
               </td>
-              <td className="h-[22.488188976px] w-[140.5984252px]"></td>
-              <td className="h-[22.488188976px] w-[96.755905512px] text-center">
+              <td className="h-[19px] w-[140.5984252px]"></td>
+              <td className="h-[19px] w-[96.755905512px] text-center">
                 {amountNetOfVatFn}
               </td>
             </tr>
             <tr className="text-xs">
-              <td className="h-[22.488188976px] w-[102.42519685px]"></td>
-              <td className="h-[22.488188976px] w-[216.18897638px] pl-3"></td>
-              <td className="h-[22.488188976px] w-[140.5984252px]"></td>
-              <td className="h-[22.488188976px] w-[96.755905512px] text-center">
+              <td className="h-[19px] w-[102.42519685px]"></td>
+              <td className="h-[19px] w-[216.18897638px] pl-3"></td>
+              <td className="h-[19px] w-[140.5984252px]"></td>
+              <td className="h-[19px] w-[96.755905512px] text-center">
                 {lessWithHoldingTaxFn}
               </td>
             </tr>
             <tr className="text-xs">
-              <td className="h-[22.488188976px] w-[102.42519685px]"></td>
-              <td className="h-[22.488188976px] w-[216.18897638px] pl-3"></td>
-              <td className="h-[22.488188976px] w-[140.5984252px]"></td>
-              <td className="h-[22.488188976px] w-[96.755905512px] text-center">
+              <td className="h-[19px] w-[102.42519685px]"></td>
+              <td className="h-[19px] w-[216.18897638px] pl-3"></td>
+              <td className="h-[19px] w-[140.5984252px]"></td>
+              <td className="h-[19px] w-[96.755905512px] text-center">
                 {amountDueFn}
               </td>
             </tr>
             <tr className="text-xs">
-              <td className="h-[22.488188976px] w-[102.42519685px]"></td>
-              <td className="h-[22.488188976px] w-[216.18897638px] pl-3"></td>
-              <td className="h-[22.488188976px] w-[140.5984252px]"></td>
-              <td className="h-[22.488188976px] w-[96.755905512px] text-center">
+              <td className="h-[19px] w-[102.42519685px]"></td>
+              <td className="h-[19px] w-[216.18897638px] pl-3"></td>
+              <td className="h-[19px] w-[140.5984252px]"></td>
+              <td className="h-[19px] w-[96.755905512px] text-center">
                 {addVatFn}
               </td>
             </tr>
             <tr className="text-xs">
-              <td className="h-[22.488188976px] w-[102.42519685px]"></td>
-              <td className="h-[22.488188976px] w-[216.18897638px] pl-3"></td>
-              <td className="h-[22.488188976px] w-[140.5984252px]"></td>
-              <td className="h-[22.488188976px] w-[96.755905512px] text-center">
+              <td className="h-[19px] w-[102.42519685px]"></td>
+              <td className="h-[19px] w-[216.18897638px] pl-3"></td>
+              <td className="h-[19px] w-[140.5984252px]"></td>
+              <td className="h-[19px] w-[96.755905512px] text-center">
                 {totalAmountDueFn}
               </td>
             </tr>
@@ -315,7 +321,12 @@ const DSMSuzukiPardo = ({ data }: any) => {
       </div>
       <div className="mx-[32.125984252px]">
         <div className="mt-[18.136220472px] w-[196.53543307px] ml-[336.37795276px]">
-          <p className="text-xs text-center">{data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}</p>
+          <p className="text-xs text-center">
+            {data[1]?.[cashier]
+              ?.replace(/Ã/g, "Ñ")
+              .replace(/Ã‘/g, "Ñ")
+              .replace(/Ã±/g, "ñ") || ""}
+          </p>
         </div>
       </div>
     </div>
