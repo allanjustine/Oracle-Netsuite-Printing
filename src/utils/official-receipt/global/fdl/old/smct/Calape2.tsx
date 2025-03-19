@@ -60,7 +60,7 @@ const Calape2 = ({ data }: any) => {
         </div>
         <div className="w-[274.01574803px] ml-[132.28346457px]">
           <p>
-            {data[1]?.[CR_Memo].substring(0, 45) || (
+            {data[1]?.[CR_Memo].substring(0, 35) || (
               <span className="opacity-0">No data</span>
             )}
           </p>
@@ -68,7 +68,7 @@ const Calape2 = ({ data }: any) => {
       </div>
       <div className="ml-[226.77165354px] mt-[4.1811023622]">
         <p>
-          {data[1]?.[CR_Memo].substring(45) || (
+          {data[1]?.[CR_Memo].substring(35) || (
             <span className="opacity-0">No data</span>
           )}
         </p>
