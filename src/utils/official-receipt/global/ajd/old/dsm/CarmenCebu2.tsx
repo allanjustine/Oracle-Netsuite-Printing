@@ -13,65 +13,43 @@ const CarmenCebu2 = ({ data }: any) => {
   const CR_PartnerName = 9;
 
   return (
-    <div className="text-xs w-[778.58267717px] h-[396.8503937px] ml-[10px]">
-      <div className="flex mt-[96.708661417px]">
-        <p className="ml-[491.33858268px] w-[102.04724409px]">
+    <div className="text-xs h-[400.62992126px] w-[767.24409449px]">
+      <div className="w-[120.94488189px] flex items-center mt-[83.9291338579px] ml-[602.83464567px] h-[21.921259843px]">
+        <p className="text-xs ml-[11.338582677px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex w-[778.58267717px] mt-[13.7952755906px]">
-        <div className="w-[461.1023622px]">
-          <p className="ml-[313.7007874px] text-xs">
-            {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
-          </p>
-        </div>
-        <div className="w-[156.47244094px]">
-          <p className="ml-[56.692913386px]">
-            {data[1]?.[CR_TIN] || <span className="opacity-0">No data</span>}
-          </p>
-        </div>
-      </div>
-      <div className="flex ml-[302.36220472px] mt-[9.8267716539px]">
-        <p className="w-[211.65354331px] text-xs">
+      <div className="h-[61.984251969px] mt-[37.039370079px] ml-[164.40944882px]">
+        <p className="w-[563.1496063px] ml-[11.338582677px] h-[20.409448819px] flex items-center">
+          {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
+        </p>
+        <p className="w-[563.1496063px] ml-[11.338582677px] h-[20.409448819px] flex items-center">
+          {data[1]?.[CR_TIN] || <span className="opacity-0">No data</span>}
+        </p>
+        <p className="w-[563.1496063px] ml-[11.338582677px] h-[20.409448819px] flex items-center">
           {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex text-xs ml-[317.48031496px] mt-[6.8267716539px]">
-        <p className="w-[207.87401575px]">
-          {data[1]?.[CR_BusinessStyle] || (
-            <span className="opacity-0">No data</span>
-          )}
-        </p>
-      </div>
-      <div className="flex ml-[226.77165354px] mt-[3.8267716539px]">
-        <p className="w-[328.81889764px]">
-          {data[1]?.[CR_AmountInWords] || (
-            <span className="opacity-0">No data</span>
-          )}
-        </p>
-      </div>
-      <div className="flex w-[778.58267717px] mt-[6.8267716539px]">
-        <div className="w-[325.03937008px]">
-          <p className="ml-[234.33070866px]">
+      <div className="flex w-[699.59055118px] ml-[24.566929134px] mt-[34.37007874px]">
+        <div className="flex flex-col items-center w-[608.50393701px]">
+          <p className="w-[491.33858268px] h-[23.433070866px] ml-[88.818897638px]">
+            {data[1]?.[CR_Memo].substring(0, 92) || (
+              <span className="opacity-0">No data</span>
+            )}
+          </p>
+          <p className="w-[574.48818898px] ml-[11.338582677px] h-[23.433070866px]">
+            {data[1]?.[CR_Memo].substring(92) || (
+              <span className="opacity-0">No data</span>
+            )}
+          </p>
+        </div>
+        <div className="w-[120.56692913px]">
+          <p className="text-xs text-center h-[23.433070866px] ml-[7.5590551181px]">
             {data[1]?.[CR_AmountInFigures] || (
               <span className="opacity-0">No data</span>
             )}
           </p>
         </div>
-        <div className="w-[292.91338583px]">
-          <p className="ml-[147.4015748px] text-xs">
-            {data[1]?.[CR_Memo] || (
-              <span className="opacity-0">No data</span>
-            )}
-          </p>
-        </div>
-      </div>
-      <div className="w-[188.97637795px] ml-[404.40944882px] mt-[52.913385827px]">
-        <p className="text-center">
-          {data[1]?.[CR_PartnerName] || (
-            <span className="opacity-0">No Data</span>
-          )}
-        </p>
       </div>
     </div>
   );

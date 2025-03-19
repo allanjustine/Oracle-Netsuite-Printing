@@ -12,7 +12,7 @@ import { FaCircleNotch } from "react-icons/fa";
 import api from "@/lib/axiosCall";
 
 export default function Home() {
-  const { login, isAuthenticated } = useAuth();
+  const { login, isAuthenticated, isLoading, setIsLoading } = useAuth();
   const router = useRouter();
   const [branchCode, setBranchCode] = useState<string>("");
   const [password, setPassword] = useState<string>("Smct123456");
@@ -21,7 +21,6 @@ export default function Home() {
     error: false,
     warning: false,
   });
-  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -34,10 +33,6 @@ export default function Home() {
 
     setIsLoading(true);
 
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-
     const version = await api.get("/app-version");
     if (!branchCode || !password) {
       setShowAlert({
@@ -45,6 +40,7 @@ export default function Home() {
         warning: true,
         error: false,
       });
+      setIsLoading(false);
     } else {
       const foundBranch: any = data.find((branch) =>
         branch.users.some(
@@ -66,6 +62,7 @@ export default function Home() {
           error: true,
           warning: false,
         });
+        setIsLoading(false);
       }
     }
   };
@@ -142,7 +139,7 @@ export default function Home() {
             disabled={isLoading}
             className="bg-[#607799] text-white border px-3 py-1 rounded-md"
           >
-            {isLoading ? <FaCircleNotch className="animate-spin" /> : "Login"}
+            {isLoading ? <span className="flex gap-1 items-center"><FaCircleNotch className="animate-spin" /> Logging In...</span> : "Login"}
           </button>
         </div>
       </form>
