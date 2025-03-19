@@ -31,6 +31,13 @@ export default function Home() {
 
   const handleLogin = async (e: any) => {
     e.preventDefault();
+
+    setIsLoading(true);
+
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+
     const version = await api.get("/app-version");
     if (!branchCode || !password) {
       setShowAlert({
