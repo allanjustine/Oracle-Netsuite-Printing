@@ -12,6 +12,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [user, setUser] = useState<User | null>(null);
   const [branch, setBranch] = useState<Branch | null>(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -53,7 +54,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     setIsAuthenticated(true);
     localStorage.setItem("user", JSON.stringify(Datas));
     // localStorage.setItem('branch', JSON.stringify(foundBranch));
-    localStorage.setItem('ls-app-version', version);
+    localStorage.setItem("ls-app-version", version);
   };
 
   const logout = () => {
@@ -66,7 +67,15 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
 
   return (
     <AuthContext.Provider
-      value={{ isAuthenticated, login, logout, user, branch }}
+      value={{
+        isAuthenticated,
+        login,
+        logout,
+        user,
+        branch,
+        isLoading,
+        setIsLoading,
+      }}
     >
       {children}
     </AuthContext.Provider>

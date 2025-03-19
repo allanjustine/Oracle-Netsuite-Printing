@@ -7,7 +7,7 @@ import Navbar from "./navbar";
 import Footer from "./footer";
 
 const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, setIsLoading: setIsLoadingContext } = useAuth();
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -15,6 +15,7 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {
     if (!isAuthenticated) {
       router.push("/login");
     } else if (isAuthenticated) {
+      setIsLoadingContext(false);
       setTimeout(() => setIsLoading(false), 3000);
       router.push("/dashboard");
     }
