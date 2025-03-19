@@ -20,7 +20,7 @@ const CelroseOldCrSize: React.FC<PrintPageProps> = ({ data }) => {
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex justify-between mt-[9.6771653556px]">
+      <div className="flex justify-between mt-[2.6771653556px]">
         <div className="w-[574.48818898px]">
           <p className="pl-[283.46456693px]">
             {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
@@ -53,7 +53,7 @@ const CelroseOldCrSize: React.FC<PrintPageProps> = ({ data }) => {
           </p>
         </div>
         <div className="w-[181.41732283px]">
-          <p className="pl-[37.795275591px]">
+          <p className="pl-[30.795275591px]">
             {data[1]?.[CR_AmountInFigures] || (
               <span className="opacity-0">No data</span>
             )}
@@ -75,7 +75,7 @@ const CelroseOldCrSize: React.FC<PrintPageProps> = ({ data }) => {
         </p>
       </div>
 
-      <div className="w-[782.36220472px] pl-[529.13385827px] mt-[9.8976377953px] text-[11px]">
+      <div className="w-[782.36220472px] pl-[515.13385827px] mt-[2.8976377953px] text-[11px]">
         <p className="text-center w-[170.07874016px]">
           {data[1]?.[CR_PartnerName] || (
             <span className="opacity-0">No data</span>
