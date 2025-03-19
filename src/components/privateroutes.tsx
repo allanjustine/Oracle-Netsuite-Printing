@@ -19,7 +19,7 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {
       setTimeout(() => setIsLoading(false), 3000);
       router.push("/dashboard");
     }
-  }, [isAuthenticated, router]);
+  }, [isAuthenticated, router, setIsLoadingContext]);
 
   if (isLoading) {
     return (

@@ -327,7 +327,7 @@ export default function Page() {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [setIsPrintable]);
   useEffect(() => {
     let interval: any;
     let timeout: any;
