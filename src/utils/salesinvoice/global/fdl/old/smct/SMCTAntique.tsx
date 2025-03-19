@@ -113,7 +113,7 @@ const SMCTAntique: React.FC<PrintPageProps> = ({ data }) => {
 
   return (
     <div className="text-sm h-[506.45669291px] w-[767.24409449px]">
-      <div className="flex h-[17.007874016px] mt-[113.38582677px]">
+      <div className="flex h-[17.007874016px] mt-[117.38582677px]">
         <p className="w-[528.66141732px] pl-[147.4015748px]">
           {data[1]?.[mainLineName]
             ?.replace(/Ã/g, "Ñ")
