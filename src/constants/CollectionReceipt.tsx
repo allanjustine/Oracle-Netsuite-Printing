@@ -79,6 +79,7 @@ import BjvOldCrSize from "@/utils/collectionreceipt/global/bjv/old/BjvOldCrSize"
 import CelroseOldCrSize from "@/utils/collectionreceipt/global/celrose/old/CelroseOldCrSize";
 import ObbusNewCrSize from "@/utils/collectionreceipt/global/obbus/new/ObbusNewCrSize";
 import HDInabanga from "@/utils/collectionreceipt/global/bjv/old/HDInabanga";
+import SMCTJagna from "@/utils/official-receipt/global/bjv/old/smct/SMCTJagna";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -275,7 +276,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const bjvOrNewSizeData = [];
 
-  const bjvOrOldSizeData = ["JAGN", "GUIN"];
+  const bjvOrOldSizeData = ["GUIN"];
 
   switch (true) {
     // FDL OR - CR CASES
@@ -436,6 +437,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     //   return <DSMAurora data={data} />; //OR
     case "INAB" === user?.branchCode:
       return <HDInabanga data={data} />; //OR
+    case "JAGN" === user?.branchCode:
+      return <SMCTJagna data={data} />; //OR
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
