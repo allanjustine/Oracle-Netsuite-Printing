@@ -8,7 +8,7 @@ import FormattedSumTotalLessVat from "@/utils/FormattedSumTotalLessVat";
 import FormattedSumTotalMinusLessVat from "@/utils/FormattedSumTotalMinusLessVat";
 import FormattedTotalAmountDue from "@/utils/FormattedTotalAmountDue";
 
-const SMCTGuindulman1: React.FC<PrintPageProps> = ({ data }) => {
+const SMCTAntique: React.FC<PrintPageProps> = ({ data }) => {
   const mainLineName = 0;
   const date = 1;
   const taxNumber = 2;
@@ -113,9 +113,12 @@ const SMCTGuindulman1: React.FC<PrintPageProps> = ({ data }) => {
 
   return (
     <div className="text-sm h-[506.45669291px] w-[767.24409449px]">
-      <div className="flex h-[17.007874016px] mt-[49.133858268px]">
+      <div className="flex h-[17.007874016px] mt-[113.38582677px]">
         <p className="w-[528.66141732px] pl-[147.4015748px]">
-          {data[1]?.[mainLineName]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}
+          {data[1]?.[mainLineName]
+            ?.replace(/Ã/g, "Ñ")
+            .replace(/Ã‘/g, "Ñ")
+            .replace(/Ã±/g, "ñ") || ""}
         </p>
         <p className="w-[284.50393701px] pl-[127.16535433px]">
           {data[1]?.[date] || ""}
@@ -148,7 +151,9 @@ const SMCTGuindulman1: React.FC<PrintPageProps> = ({ data }) => {
           <tbody>
             {data.slice(1, 4).map((row, index) => (
               <tr key={index} className="text-sm text-center">
-                <td className="w-[74.24071991px]">{row[quantity]?.replace(/.0$/, "")}</td>
+                <td className="w-[74.24071991px]">
+                  {row[quantity]?.replace(/.0$/, "")}
+                </td>
                 <td className="w-[53.831271091px] h-[19.275590551px]">
                   {row[unitOfMeasurement]}
                 </td>
@@ -209,9 +214,7 @@ const SMCTGuindulman1: React.FC<PrintPageProps> = ({ data }) => {
                 <td className="w-[53.831271091px] h-[19.275590551px]"></td>
                 <td
                   className={`w-[309.70528684px] h-[19.275590551px] text-start ${
-                    data[1]?.[conductionSticker]?.length > 25
-                      ? "text-xs"
-                      : ""
+                    data[1]?.[conductionSticker]?.length > 25 ? "text-xs" : ""
                   }`}
                 >
                   {data[1]?.[conductionSticker] && (
@@ -320,10 +323,15 @@ const SMCTGuindulman1: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="mx-[37.795275591px]">
         <div className="mt-[18px] ml-[392.31496063px]">
-          <p className="text-sm text-center">{data[1]?.[cashier]?.replace(/Ã/g, "Ñ").replace(/Ã‘/g, "Ñ").replace(/Ã±/g, "ñ") || ""}</p>
+          <p className="text-sm text-center">
+            {data[1]?.[cashier]
+              ?.replace(/Ã/g, "Ñ")
+              .replace(/Ã‘/g, "Ñ")
+              .replace(/Ã±/g, "ñ") || ""}
+          </p>
         </div>
       </div>
     </div>
   );
 };
-export default SMCTGuindulman1;
+export default SMCTAntique;
