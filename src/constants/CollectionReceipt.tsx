@@ -397,7 +397,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     case "LABA" === user?.branchCode:
       return <Labason data={data} />;
     case "REMI" === user?.branchCode:
-      return <Remigio data={data} />; //OR
+      return <Remigio data={data} />;
     case "LAPU" === user?.branchCode:
       return <LapuLapu2 data={data} />;
     case "SLAP" === user?.branchCode:

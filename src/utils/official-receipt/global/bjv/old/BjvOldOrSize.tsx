@@ -14,8 +14,8 @@ const BjvOldOrSize = ({ data }: any) => {
 
   return (
     <div className="text-xs w-[755.90551181px] h-[404.03149606px] ml-[18px]">
-      <div className="flex mt-[82.488188976px]">
-        <p className="ml-[585.82677165px] w-[147.4015748px]">
+      <div className="flex mt-[112.72440945px]">
+        <p className="ml-[623.62204724px] w-[147.4015748px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
@@ -32,7 +32,7 @@ const BjvOldOrSize = ({ data }: any) => {
         </div>
       </div>
       <div className="flex ml-[302.36220472px] mt-[9.8267716539px]">
-        <p className="w-[362.83464567px] text-[11px]">
+        <p className={`w-[362.83464567px] ${data[1]?.[CR_Address].length > 40 ? "text-[10px]" : ""}`}>
           {data[1]?.[CR_Address]?.replace(/<br>/g, " ") || <span className="opacity-0">No data</span>}
         </p>
       </div>
@@ -60,7 +60,7 @@ const BjvOldOrSize = ({ data }: any) => {
         </div>
         <div className="w-[274.01574803px] ml-[132.28346457px]">
           <p>
-            {data[1]?.[CR_Memo].substring(0, 45) || (
+            {data[1]?.[CR_Memo].substring(0, 30) || (
               <span className="opacity-0">No data</span>
             )}
           </p>
@@ -68,7 +68,7 @@ const BjvOldOrSize = ({ data }: any) => {
       </div>
       <div className="ml-[226.77165354px] mt-[4.1811023622]">
         <p>
-          {data[1]?.[CR_Memo].substring(45) || (
+          {data[1]?.[CR_Memo].substring(30) || (
             <span className="opacity-0">No data</span>
           )}
         </p>
