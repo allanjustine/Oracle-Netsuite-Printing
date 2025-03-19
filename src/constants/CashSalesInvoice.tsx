@@ -103,6 +103,7 @@ import HDInabanga from "@/utils/salesinvoice/global/bjv/old/hd/HDInabanga";
 import SMCTGuindulman1 from "@/utils/salesinvoice/global/bjv/old/smct/SMCTGuindulman1";
 import SMCTSilang from "@/utils/salesinvoice/global/fely/old/smct/SMCTSilang";
 import SMCTAntique from "@/utils/salesinvoice/global/fdl/old/smct/SMCTAntique";
+import DSMTagbilaran from "@/utils/salesinvoice/global/obbus/old/dsm/DSMTagbilaran";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -226,7 +227,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "DSMK",
     "DSMPO",
     "REMI2",
-    "DSMT",
     "MATI",
     "DSMM",
     "TORI",
@@ -464,6 +464,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTSilang data={data} />;
     case "ANTI" === user?.branchCode:
       return <SMCTAntique data={data} />;
+    case "DSMT" === user?.branchCode:
+      return <DSMTagbilaran data={data} />;
 
     default:
       return (
