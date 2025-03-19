@@ -231,6 +231,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "ILOI",
     "DSMDM",
     "DSMB",
+    "UBAY",
   ];
 
   //FELY
@@ -275,7 +276,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const bjvOrNewSizeData = [];
 
-  const bjvOrOldSizeData = ["UBAY", "JAGN", "GUIN"];
+  const bjvOrOldSizeData = ["JAGN", "GUIN"];
 
   switch (true) {
     // FDL OR - CR CASES
