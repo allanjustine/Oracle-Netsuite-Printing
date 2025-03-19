@@ -14,8 +14,8 @@ const BjvOldOrSize = ({ data }: any) => {
 
   return (
     <div className="text-xs w-[755.90551181px] h-[404.03149606px] ml-[18px]">
-      <div className="flex mt-[112.72440945px]">
-        <p className="ml-[623.62204724px] w-[147.4015748px]">
+      <div className="flex mt-[82.488188976px]">
+        <p className="ml-[630.62204724px] w-[147.4015748px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
@@ -44,7 +44,7 @@ const BjvOldOrSize = ({ data }: any) => {
         </p>
       </div>
       <div className="flex mt-[3.8267716539px]">
-        <p className="ml-[226.77165354px] w-[472.44094488px]">
+        <p className="ml-[230.77165354px] w-[472.44094488px]">
           {data[1]?.[CR_AmountInWords] || (
             <span className="opacity-0">No data</span>
           )}
