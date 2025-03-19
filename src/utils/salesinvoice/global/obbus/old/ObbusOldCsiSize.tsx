@@ -237,7 +237,7 @@ const ObbusOldCsiSize = ({ data }: any) => {
           </tbody>
         </table>
       </div>
-      <div className="mx-[25.700787402px] h-[166.67716535px] mt-[-60.236220472px]">
+      <div className="mx-[25.700787402px] h-[166.67716535px]">
         <table className="border-collapse w-full">
           <tbody>
             <tr className="text-xs">
