@@ -105,6 +105,7 @@ import SMCTSilang from "@/utils/salesinvoice/global/fely/old/smct/SMCTSilang";
 import SMCTAntique from "@/utils/salesinvoice/global/fdl/old/smct/SMCTAntique";
 import DSMTagbilaran from "@/utils/salesinvoice/global/obbus/old/dsm/DSMTagbilaran";
 import DSMLabangon from "@/utils/salesinvoice/global/obbus/old/dsm/DSMLabangon";
+import DSMSuzukiPardo from "@/utils/salesinvoice/global/obbus/old/dsm/DSMSuzukiPardo";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -233,7 +234,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "MEDE",
     "CALI",
     "ILOI",
-    "PARD2",
     "DSMDM",
   ];
 
@@ -468,6 +468,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <DSMTagbilaran data={data} />;
     case "DSMK" === user?.branchCode:
       return <DSMLabangon data={data} />;
+    case "PARD2" === user?.branchCode:
+      return <DSMSuzukiPardo data={data} />;
 
     default:
       return (
