@@ -350,10 +350,10 @@ export default function Page() {
     };
   }, [isLoading]);
   const handleFileUpload = (e: any) => {
-    setProgress(0);
     const file = e.target.files[0];
     if (!file) return;
 
+    setProgress(0);
     const fileName = file.name;
 
     const fileSize = FormatFileSize(file.size);
@@ -423,8 +423,12 @@ export default function Page() {
   };
 
   const handleUploadFile = () => {
-    fileInputRef.current?.click();
     updateVersion();
+    if (isOutDated || isAbnormalVersion) {
+      window.location.reload();
+    } else {
+      fileInputRef.current?.click();
+    }
   };
 
   const handleCloseTable = (rowIndex: number) => () => {
@@ -536,8 +540,12 @@ export default function Page() {
           <div className="mb-2 text-xl font-bold">
             {isLoading ? (
               <TextLoading />
-            ) : excelData.length > 0 ? (
+            ) : excelData.length > 0 && !isOutDated && !isAbnormalVersion ? (
               "Preview Data"
+            ) : isOutDated ? (
+              "New Version Detected"
+            ) : isAbnormalVersion ? (
+              "Abnormal Version Detected"
             ) : (
               "Import Data"
             )}
@@ -569,9 +577,15 @@ export default function Page() {
                   </>
                 ) : (
                   <>
-                    {excelData.length > 0 ? (
+                    {excelData.length > 0 &&
+                    !isOutDated &&
+                    !isAbnormalVersion ? (
                       <>
                         <FaRotate size={20} color="#fff" /> Re-Upload
+                      </>
+                    ) : isOutDated || isAbnormalVersion ? (
+                      <>
+                        <FaRotate size={20} color="#fff" /> Reload Now
                       </>
                     ) : (
                       <>
@@ -591,7 +605,9 @@ export default function Page() {
                       <FaXmark size={20} color="#fff" /> Cancel Upload
                     </button>
                   )
-                : excelData.length > 0 && (
+                : excelData.length > 0 &&
+                  !isOutDated &&
+                  !isAbnormalVersion && (
                     <button
                       type="button"
                       onClick={handleRemoveFile}
@@ -638,8 +654,12 @@ export default function Page() {
 
           <div
             className={`absolute top-0 transition-all duration-100 ease-linear left-0 h-full -z-10 ${
-              progress === 100
+              progress === 100 && !isOutDated && !isAbnormalVersion
                 ? "bg-green-100/70"
+                : isOutDated
+                ? "bg-red-100/70"
+                : isAbnormalVersion
+                ? "bg-yellow-100/70"
                 : "bg-gradient-to-r from-[#005483] to-[#2eb2ff] opacity-20"
             }`}
             style={{ width: `${progress}%` }}
