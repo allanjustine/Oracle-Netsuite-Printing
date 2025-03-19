@@ -9,7 +9,7 @@ export const printLabel = (title: any, isLabel: any) => {
     );
   } else {
     return (
-      <span className="flex gap-1 text-red-600 items-center">
+      <span className="flex gap-1 items-center">
         <FaXmark /> {title}
       </span>
     );
