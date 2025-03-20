@@ -81,6 +81,8 @@ import ObbusNewCrSize from "@/utils/collectionreceipt/global/obbus/new/ObbusNewC
 import HDInabanga from "@/utils/collectionreceipt/global/bjv/old/HDInabanga";
 import SMCTJagna from "@/utils/official-receipt/global/bjv/old/smct/SMCTJagna";
 import Calinan from "@/utils/collectionreceipt/global/obbus/old/smct/Calinan";
+import DAPCaminoNuevo from "@/utils/official-receipt/global/fdl/old/dap/DAPCaminoNuevo";
+import DSMPardo from "@/utils/official-receipt/global/ajd/old/dsm/DSMPardo";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -142,7 +144,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "KABA",
     "CATM",
     "BUUD",
-    "CAMD",
     "PARD2",
     "BOHK",
     "DSMCN",
@@ -259,7 +260,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const ajdOrNewSizeData = [];
 
-  const ajdOrOldSizeData = ["PARD", "MARA"];
+  const ajdOrOldSizeData = ["MARA"];
 
   // BJV
   const bjvCrNewSizeData = [];
@@ -441,6 +442,10 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTJagna data={data} />; //OR
     case "CALI" === user?.branchCode:
       return <Calinan data={data} />;
+    case "CAMD" === user?.branchCode:
+      return <DAPCaminoNuevo data={data} />; //OR
+    case "PARD" === user?.branchCode:
+      return <DSMPardo data={data} />; //OR
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
