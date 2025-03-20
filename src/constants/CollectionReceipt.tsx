@@ -80,6 +80,7 @@ import CelroseOldCrSize from "@/utils/collectionreceipt/global/celrose/old/Celro
 import ObbusNewCrSize from "@/utils/collectionreceipt/global/obbus/new/ObbusNewCrSize";
 import HDInabanga from "@/utils/collectionreceipt/global/bjv/old/HDInabanga";
 import SMCTJagna from "@/utils/official-receipt/global/bjv/old/smct/SMCTJagna";
+import Calinan from "@/utils/collectionreceipt/global/obbus/old/smct/Calinan";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -208,7 +209,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "MATI",
     "TORI",
     "MEDE",
-    "CALI",
     "DONC",
     "CARC",
     "CARC2",
@@ -439,6 +439,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <HDInabanga data={data} />; //OR
     case "JAGN" === user?.branchCode:
       return <SMCTJagna data={data} />; //OR
+    case "CALI" === user?.branchCode:
+      return <Calinan data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
