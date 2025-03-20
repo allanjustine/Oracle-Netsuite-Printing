@@ -83,6 +83,7 @@ import SMCTJagna from "@/utils/official-receipt/global/bjv/old/smct/SMCTJagna";
 import Calinan from "@/utils/collectionreceipt/global/obbus/old/smct/Calinan";
 import DAPCaminoNuevo from "@/utils/official-receipt/global/fdl/old/dap/DAPCaminoNuevo";
 import DSMPardo from "@/utils/official-receipt/global/ajd/old/dsm/DSMPardo";
+import SMCTCalape from "@/utils/collectionreceipt/global/fdl/old/smct/SMCTCalape";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -181,7 +182,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DSMTA",
     "YATI",
     "BANTA",
-    "CALAP",
     "SALA",
     "SMCT",
     "TRINI2",
@@ -446,6 +446,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <DAPCaminoNuevo data={data} />; //OR
     case "PARD" === user?.branchCode:
       return <DSMPardo data={data} />; //OR
+    case "CALAP" === user?.branchCode:
+      return <SMCTCalape data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
