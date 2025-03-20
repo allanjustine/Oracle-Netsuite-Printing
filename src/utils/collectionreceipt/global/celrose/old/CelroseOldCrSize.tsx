@@ -12,6 +12,7 @@ const CelroseOldCrSize: React.FC<PrintPageProps> = ({ data }) => {
   const CR_Memo = 7;
   const CR_FormOfPayment = 8;
   const CR_PartnerName = 9;
+  const CR_Reference = 10;
 
   return (
     <div className="text-xs w-[805.03937008px] h-[415.7480315px]">
@@ -54,7 +55,7 @@ const CelroseOldCrSize: React.FC<PrintPageProps> = ({ data }) => {
         </div>
         <div className="w-[181.41732283px]">
           <p className="pl-[52.913385827px]">
-            {data[1]?.[CR_AmountInFigures] || (
+            {FormattedNumber(data[1]?.[CR_AmountInFigures]) || (
               <span className="opacity-0">No data</span>
             )}
           </p>

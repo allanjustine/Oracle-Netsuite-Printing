@@ -1,5 +1,6 @@
 "use client";
 import { PrintPageProps } from "@/types/types";
+import FormattedNumber from "@/utils/FormattedNumber";
 
 const LuzonSize: React.FC<PrintPageProps> = ({ data }) => {
   const CR_Date = 0;
@@ -12,6 +13,7 @@ const LuzonSize: React.FC<PrintPageProps> = ({ data }) => {
   const CR_Memo = 7;
   const CR_FormOfPayment = 8;
   const CR_PartnerName = 9;
+  const CR_Reference = 10;
 
   return (
     <div className="text-xs w-[577.88976378px] h-[381.73228346px]">
@@ -54,7 +56,7 @@ const LuzonSize: React.FC<PrintPageProps> = ({ data }) => {
         </div>
         <div className="w-[129.25984252px]">
           <p className="pl-[47.244094488px]">
-            {data[1]?.[CR_AmountInFigures] || (
+            {FormattedNumber(data[1]?.[CR_AmountInFigures]) || (
               <span className="opacity-0">No data</span>
             )}
           </p>

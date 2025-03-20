@@ -1,5 +1,6 @@
 "use client";
 import { PrintPageProps } from "@/types/types";
+import FormattedNumber from "@/utils/FormattedNumber";
 
 const DAPSize: React.FC<PrintPageProps> = ({ data }) => {
   const CR_Date = 0;
@@ -12,6 +13,7 @@ const DAPSize: React.FC<PrintPageProps> = ({ data }) => {
   const CR_Memo = 7;
   const CR_FormOfPayment = 8;
   const CR_PartnerName = 9;
+  const CR_Reference = 10;
 
   return (
     <div className="text-xs w-[774.80314961px] h-[404.40944882px] ml-[10px]">
@@ -54,7 +56,7 @@ const DAPSize: React.FC<PrintPageProps> = ({ data }) => {
         </div>
         <div className="w-[102.04724409px]">
           <p className="pl-[46.354330709px]">
-            {data[1]?.[CR_AmountInFigures] || (
+            {FormattedNumber(data[1]?.[CR_AmountInFigures]) || (
               <span className="opacity-0">No data</span>
             )}
           </p>

@@ -1,4 +1,5 @@
 "use client";
+import FormattedNumber from "@/utils/FormattedNumber";
 
 const CarmenCebu2 = ({ data }: any) => {
   const CR_Date = 0;
@@ -11,6 +12,7 @@ const CarmenCebu2 = ({ data }: any) => {
   const CR_Memo = 7;
   const CR_FormOfPayment = 8;
   const CR_PartnerName = 9;
+  const CR_Reference = 10;
 
   return (
     <div className="text-xs h-[400.62992126px] w-[767.24409449px]">
@@ -45,7 +47,7 @@ const CarmenCebu2 = ({ data }: any) => {
         </div>
         <div className="w-[120.56692913px]">
           <p className="text-xs text-center h-[23.433070866px] ml-[7.5590551181px]">
-            {data[1]?.[CR_AmountInFigures] || (
+            {FormattedNumber(data[1]?.[CR_AmountInFigures]) || (
               <span className="opacity-0">No data</span>
             )}
           </p>

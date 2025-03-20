@@ -12,6 +12,7 @@ const HDDipolog: React.FC<PrintPageProps> = ({ data }) => {
   const CR_Memo = 7;
   const CR_FormOfPayment = 8;
   const CR_PartnerName = 9;
+  const CR_Reference = 10;
 
   return (
     <div className="text-xs w-[769.13385827px] h-[396.8503937px]">
@@ -54,7 +55,7 @@ const HDDipolog: React.FC<PrintPageProps> = ({ data }) => {
         </div>
         <div className="w-[164.40944882px]">
           <p className="pl-[45.354330709px]">
-            {data[1]?.[CR_AmountInFigures] || (
+            {FormattedNumber(data[1]?.[CR_AmountInFigures]) || (
               <span className="opacity-0">No data</span>
             )}
           </p>

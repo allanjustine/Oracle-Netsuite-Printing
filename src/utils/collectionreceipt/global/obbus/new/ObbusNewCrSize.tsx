@@ -19,6 +19,7 @@ const ObbusNewCrSize = ({ data }: any) => {
   const CR_Memo = 7;
   const CR_FormOfPayment = 8;
   const CR_PartnerName = 9;
+  const CR_Reference = 10;
 
   return (
     <div className="text-xs h-[400.62992126px] w-[767.24409449px]">

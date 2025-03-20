@@ -108,6 +108,7 @@ export default function Page() {
   const CR_Memo = 7;
   const CR_FormOfPayment = 8;
   const CR_PartnerName = 9;
+  const CR_Reference = 10;
 
   // const billingAddress1 = 2;
   // const billingAddress2 = 3;
@@ -842,7 +843,7 @@ export default function Page() {
                   <div className="flex flex-col">
                     <p>Unit Price</p>
                     <p className="font-semibold">
-                      {/* {FormattedNumber(row[totalAmount]) || "0.00"} */}
+                      {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                     </p>
                   </div>
                   <div className="flex flex-col">

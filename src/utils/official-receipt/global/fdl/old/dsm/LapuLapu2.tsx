@@ -1,4 +1,5 @@
 "use client";
+import FormattedNumber from "@/utils/FormattedNumber";
 
 const LapuLapu2 = ({ data }: any) => {
   const CR_Date = 0;
@@ -11,6 +12,7 @@ const LapuLapu2 = ({ data }: any) => {
   const CR_Memo = 7;
   const CR_FormOfPayment = 8;
   const CR_PartnerName = 9;
+  const CR_Reference = 10;
 
   return (
     <div className="text-xs w-[755.90551181px] h-[404.03149606px] ml-[10px]">
@@ -53,7 +55,7 @@ const LapuLapu2 = ({ data }: any) => {
       <div className="flex w-full mt-[6.8267716539px]">
         <div className="w-[325.03937008px]">
           <p className="ml-[245.66929134px]">
-            {data[1]?.[CR_AmountInFigures] || (
+            {FormattedNumber(data[1]?.[CR_AmountInFigures]) || (
               <span className="opacity-0">No data</span>
             )}
           </p>

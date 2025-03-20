@@ -19,6 +19,7 @@ const DAPSanMiguel = ({ data }: any) => {
   const CR_Memo = 7;
   const CR_FormOfPayment = 8;
   const CR_PartnerName = 9;
+  const CR_Reference = 10;
   const test =
     "asdjfkajdfkajsdfjaklsdfjaklsdjfkl;asjdfkl;asjdgkasdklf vlkadfkla dfkahs dkfasdl fjasd; fajd;f jasd;f jasd;lfj";
 
@@ -55,7 +56,7 @@ const DAPSanMiguel = ({ data }: any) => {
         </div>
         <div className="w-[120.56692913px]">
           <p className="text-xs text-center h-[23.433070866px] ml-[7.5590551181px]">
-            {data[1]?.[CR_AmountInFigures] || (
+            {FormattedNumber(data[1]?.[CR_AmountInFigures]) || (
               <span className="opacity-0">No data</span>
             )}
           </p>

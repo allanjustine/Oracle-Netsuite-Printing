@@ -84,6 +84,7 @@ import Calinan from "@/utils/collectionreceipt/global/obbus/old/smct/Calinan";
 import DAPCaminoNuevo from "@/utils/official-receipt/global/fdl/old/dap/DAPCaminoNuevo";
 import DSMPardo from "@/utils/official-receipt/global/ajd/old/dsm/DSMPardo";
 import SMCTCalape from "@/utils/collectionreceipt/global/fdl/old/smct/SMCTCalape";
+import Danao from "@/utils/collectionreceipt/global/obbus/new/dsm/Danao";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -191,14 +192,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const fdlOrNewSizeData = [];
 
   // OBBUS
-  const obbusCrNewSizeData = [
-    "DANAO",
-    "TOMAS",
-    "DIGOS",
-    "CATAR2",
-    "BOLOD",
-    "MING",
-  ];
+  const obbusCrNewSizeData = ["TOMAS", "DIGOS", "CATAR2", "BOLOD", "MING"];
 
   const obbusCrOldSizeData = [
     "DSMBN",
@@ -448,6 +442,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <DSMPardo data={data} />; //OR
     case "CALAP" === user?.branchCode:
       return <SMCTCalape data={data} />;
+    case "DANAO" === user?.branchCode:
+      return <Danao data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
