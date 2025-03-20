@@ -1,5 +1,6 @@
 "use client";
 import { PrintPageProps } from "@/types/types";
+import FormattedNumber from "@/utils/FormattedNumber";
 
 const HDDipolog: React.FC<PrintPageProps> = ({ data }) => {
   const CR_Date = 0;

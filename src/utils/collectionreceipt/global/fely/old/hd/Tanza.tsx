@@ -1,4 +1,5 @@
 "use client";
+import FormattedNumber from "@/utils/FormattedNumber";
 
 const Tanza = ({ data }: any) => {
   const CR_Date = 0;
