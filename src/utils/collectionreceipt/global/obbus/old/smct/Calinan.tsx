@@ -14,9 +14,9 @@ const Calinan: React.FC<PrintPageProps> = ({ data }) => {
   const CR_PartnerName = 9;
 
   return (
-    <div className="text-xs w-[797.48031496px] h-[565.03937008px] ml-[10px]">
-      <div className="flex mt-[101.1732283431px]">
-        <p className="pl-[649.72440945px] w-[143.62204724px]">
+    <div className="text-xs w-[797.48031496px] h-[565.03937008px] ml-[15px]">
+      <div className="flex mt-[82.275590547px]">
+        <p className="pl-[706.41732283px] w-[143.62204724px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
@@ -66,7 +66,7 @@ const Calinan: React.FC<PrintPageProps> = ({ data }) => {
         </p>
       </div>
 
-      <div className="w-[769.13385827px] pl-[566.92913386px] mt-[45.7952755906px] text-[11px]">
+      <div className="w-[769.13385827px] pl-[566.92913386px] mt-[83.590551182px] text-[11px]">
         <p>{data[1]?.[CR_PartnerName] || ""}</p>
       </div>
     </div>

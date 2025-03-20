@@ -53,7 +53,21 @@ const ObbusNewCrSize = ({ data }: any) => {
         </div>
         <div className="w-[120.56692913px]">
           <p className="text-xs text-center h-[23.433070866px] ml-[7.5590551181px]">
-            {data[1]?.[CR_AmountInFigures] || (
+            {FormattedNumber(data[1]?.[CR_AmountInFigures]) || (
+              <span className="opacity-0">No data</span>
+            )}
+          </p>
+        </div>
+      </div>
+      <div className="flex w-[699.59055118px] ml-[24.566929134px]">
+        <div className="text-[11px] flex-none w-[425.19685039px]">
+          <p className="ml-[275.90551181px] text-center">
+            {data[1]?.[CR_PartnerName] || ""}
+          </p>
+        </div>
+        <div className="w-[291.77952756px]">
+          <p className="text-xs text-center h-[23.433070866px] ml-[160.62992126px]">
+            {FormattedNumber(data[1]?.[CR_AmountInFigures]) || (
               <span className="opacity-0">No data</span>
             )}
           </p>

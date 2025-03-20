@@ -30,40 +30,45 @@ export default function Home() {
 
   const handleLogin = async (e: any) => {
     e.preventDefault();
-
     setIsLoading(true);
-
-    const version = await api.get("/app-version");
-    if (!branchCode || !password) {
-      setShowAlert({
-        message: "All fields are required!",
-        warning: true,
-        error: false,
-      });
-      setIsLoading(false);
-    } else {
-      const foundBranch: any = data.find((branch) =>
-        branch.users.some(
-          (user) => user.branchCode === branchCode && user.password === password
-        )
-      );
-
-      if (foundBranch) {
-        const foundUser: any = foundBranch.users.find(
-          (user: any) =>
-            user.branchCode === branchCode && user.password === password
-        );
-        if (foundUser) {
-          login(foundUser, foundBranch, version.data.version);
-        }
-      } else {
+    try {
+      const version = await api.get("/app-version");
+      if (!branchCode || !password) {
         setShowAlert({
-          message: "Invalid credentials",
-          error: true,
-          warning: false,
+          message: "All fields are required!",
+          warning: true,
+          error: false,
         });
         setIsLoading(false);
+      } else {
+        const foundBranch: any = data.find((branch) =>
+          branch.users.some(
+            (user) =>
+              user.branchCode === branchCode && user.password === password
+          )
+        );
+
+        if (foundBranch) {
+          const foundUser: any = foundBranch.users.find(
+            (user: any) =>
+              user.branchCode === branchCode && user.password === password
+          );
+          if (foundUser) {
+            login(foundUser, foundBranch, version.data.version);
+          }
+        } else {
+          setShowAlert({
+            message: "Invalid credentials",
+            error: true,
+            warning: false,
+          });
+          setIsLoading(false);
+        }
       }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -139,7 +144,13 @@ export default function Home() {
             disabled={isLoading}
             className="bg-[#607799] text-white border px-3 py-1 rounded-md"
           >
-            {isLoading ? <span className="flex gap-1 items-center"><FaCircleNotch className="animate-spin" /> Logging In...</span> : "Login"}
+            {isLoading ? (
+              <span className="flex gap-1 items-center">
+                <FaCircleNotch className="animate-spin" /> Logging In...
+              </span>
+            ) : (
+              "Login"
+            )}
           </button>
         </div>
       </form>
