@@ -85,6 +85,7 @@ import DAPCaminoNuevo from "@/utils/official-receipt/global/fdl/old/dap/DAPCamin
 import DSMPardo from "@/utils/official-receipt/global/ajd/old/dsm/DSMPardo";
 import SMCTCalape from "@/utils/collectionreceipt/global/fdl/old/smct/SMCTCalape";
 import Danao from "@/utils/collectionreceipt/global/obbus/new/dsm/Danao";
+import Minglanilla from "@/utils/collectionreceipt/global/obbus/new/dsm/Minglanilla";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -192,7 +193,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const fdlOrNewSizeData = [];
 
   // OBBUS
-  const obbusCrNewSizeData = ["TOMAS", "DIGOS", "CATAR2", "BOLOD", "MING"];
+  const obbusCrNewSizeData = ["TOMAS", "DIGOS", "CATAR2", "BOLOD"];
 
   const obbusCrOldSizeData = [
     "DSMBN",
@@ -444,6 +445,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTCalape data={data} />;
     case "DANAO" === user?.branchCode:
       return <Danao data={data} />;
+    case "MING" === user?.branchCode:
+      return <Minglanilla data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
