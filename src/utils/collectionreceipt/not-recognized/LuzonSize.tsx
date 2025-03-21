@@ -24,7 +24,7 @@ const LuzonSize: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="flex justify-between mt-[14.7952755906px]">
         <div className="w-[442.20472441px]">
-          <p className="ml-[264.56692913px] ">
+          <p className={`ml-[264.56692913px] ${data[1]?.[CR_Name].length > 20 ? 'text-[10px]' : ''}`}>
             {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
           </p>
         </div>
