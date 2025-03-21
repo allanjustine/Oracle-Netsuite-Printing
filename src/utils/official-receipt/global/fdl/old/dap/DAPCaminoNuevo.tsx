@@ -21,7 +21,7 @@ const DAPCaminoNuevo = ({ data }: any) => {
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex w-[755.90551181px] mt-[26.7952755906px]">
+      <div className="flex w-[755.90551181px] mt-[10.7952755906px]">
         <div className="w-[578.26771654px]">
           <p className="ml-[276.7007874px]">
             {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
@@ -54,13 +54,13 @@ const DAPCaminoNuevo = ({ data }: any) => {
       </div>
       <div className="flex w-full mt-[6.8267716539px]">
         <div className="w-[325.03937008px]">
-          <p className="ml-[227.66929134px]">
+          <p className="ml-[209.66929134px]">
             {FormattedNumber(data[1]?.[CR_AmountInFigures]) || (
               <span className="opacity-0">No data</span>
             )}
           </p>
         </div>
-        <div className="w-[274.01574803px] ml-[100.28346457px]">
+        <div className="w-[274.01574803px] ml-[82.28346457px]">
           <p>
             {data[1]?.[CR_Memo].substring(0, 35) || (
               <span className="opacity-0">No data</span>
