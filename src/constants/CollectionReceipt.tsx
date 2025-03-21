@@ -88,6 +88,7 @@ import Minglanilla from "@/utils/collectionreceipt/global/obbus/new/dsm/Minglani
 import CelroseOldOrSize from "@/utils/official-receipt/global/celrose/old/CelroseOldOrSize";
 import DSMTagbilaran from "@/utils/official-receipt/global/obbus/old/dsm/DSMTagbilaran";
 import DSMCalinog from "@/utils/official-receipt/global/celrose/old/dsm/DSMCalinog";
+import DSMCarmenCebu from "@/utils/official-receipt/global/ajd/old/dsm/DSMCarmenCebu";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -451,6 +452,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <DSMTagbilaran data={data} />; //OR
     case "CALIN" === user?.branchCode:
       return <DSMCalinog data={data} />; //OR
+    case "DSMDN" === user?.branchCode:
+      return <DSMCarmenCebu data={data} />; //OR
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
