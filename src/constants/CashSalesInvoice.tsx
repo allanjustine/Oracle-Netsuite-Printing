@@ -108,6 +108,7 @@ import DSMLabangon from "@/utils/salesinvoice/global/obbus/old/dsm/DSMLabangon";
 import DSMSuzukiPardo from "@/utils/salesinvoice/global/obbus/old/dsm/DSMSuzukiPardo";
 import Bogo from "@/utils/salesinvoice/global/obbus/old/dsm/Bogo";
 import DSMPardo from "@/utils/salesinvoice/global/fdl/old/dsm/DSMPardo";
+import SMCTTubigon from "@/utils/salesinvoice/global/fdl/old/smct/SMCTTubigon";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -174,7 +175,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "CARS",
     "MANG",
     "TALI",
-    "TUBI",
     "VALEN",
     "ILIG",
     "KABA2",
@@ -475,6 +475,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Bogo data={data} />;
     case "PARD" === user?.branchCode:
       return <DSMPardo data={data} />;
+    case "TUBI" === user?.branchCode:
+      return <SMCTTubigon data={data} />;
 
     default:
       return (
