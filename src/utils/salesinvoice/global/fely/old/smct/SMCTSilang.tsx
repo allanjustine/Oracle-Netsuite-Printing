@@ -113,7 +113,7 @@ const SMCTSilang = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[808.81889764px] w-[629.29133858px]">
-      <div className="flex h-[19.409448819px] mt-[151.18110236px]">
+      <div className="flex h-[19.409448819px] mt-[132.28346457px]">
         <p className="w-[376.06299213px] pl-[94.488188976px]">
           {data[1]?.[mainLineName] || ""}
         </p>
