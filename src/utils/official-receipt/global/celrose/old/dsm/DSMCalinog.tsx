@@ -21,7 +21,7 @@ const DSMCalinog = ({ data }: any) => {
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex w-[755.90551181px] mt-[26.7952755906px]">
+      <div className="flex w-[755.90551181px] mt-[15.7952755906px]">
         <div className="w-[578.26771654px]">
           <p className="ml-[313.7007874px]">
             {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
@@ -45,7 +45,7 @@ const DSMCalinog = ({ data }: any) => {
           )}
         </p>
       </div>
-      <div className="flex mt-[3.8267716539px]">
+      <div className="flex mt-[14.8267716539px]">
         <p className="ml-[226.77165354px] w-[472.44094488px]">
           {data[1]?.[CR_AmountInWords] || (
             <span className="opacity-0">No data</span>
@@ -76,7 +76,7 @@ const DSMCalinog = ({ data }: any) => {
         </p>
       </div>
       <div className="w-[718.11023622px] mt-[25.7952755906px]">
-        <p className="ml-[566.92913386px]">
+        <p className="ml-[584.92913386px]">
           {data[1]?.[CR_PartnerName] || (
             <span className="opacity-0">No Data</span>
           )}
