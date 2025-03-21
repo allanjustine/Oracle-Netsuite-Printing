@@ -16,14 +16,14 @@ const DAPCaminoNuevo = ({ data }: any) => {
 
   return (
     <div className="text-xs w-[755.90551181px] h-[404.03149606px] ml-[10px]">
-      <div className="flex mt-[101.38582677px]">
-        <p className="ml-[585.82677165px] w-[147.4015748px]">
+      <div className="flex mt-[83.38582677px]">
+        <p className="ml-[500.82677165px] w-[147.4015748px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex w-[755.90551181px] mt-[26.7952755906px]">
         <div className="w-[578.26771654px]">
-          <p className="ml-[313.7007874px]">
+          <p className="ml-[276.7007874px]">
             {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
           </p>
         </div>
@@ -33,7 +33,7 @@ const DAPCaminoNuevo = ({ data }: any) => {
           </p>
         </div>
       </div>
-      <div className="flex ml-[302.36220472px] mt-[9.8267716539px]">
+      <div className="flex ml-[265.36220472px] mt-[9.8267716539px]">
         <p className="w-[362.83464567px] text-[11px]">
           {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
         </p>
@@ -46,7 +46,7 @@ const DAPCaminoNuevo = ({ data }: any) => {
         </p>
       </div>
       <div className="flex mt-[3.8267716539px]">
-        <p className="ml-[226.77165354px] w-[472.44094488px]">
+        <p className="ml-[208.77165354px] w-[472.44094488px]">
           {data[1]?.[CR_AmountInWords] || (
             <span className="opacity-0">No data</span>
           )}
@@ -54,13 +54,13 @@ const DAPCaminoNuevo = ({ data }: any) => {
       </div>
       <div className="flex w-full mt-[6.8267716539px]">
         <div className="w-[325.03937008px]">
-          <p className="ml-[245.66929134px]">
+          <p className="ml-[227.66929134px]">
             {FormattedNumber(data[1]?.[CR_AmountInFigures]) || (
               <span className="opacity-0">No data</span>
             )}
           </p>
         </div>
-        <div className="w-[274.01574803px] ml-[132.28346457px]">
+        <div className="w-[274.01574803px] ml-[100.28346457px]">
           <p>
             {data[1]?.[CR_Memo].substring(0, 35) || (
               <span className="opacity-0">No data</span>
@@ -76,7 +76,7 @@ const DAPCaminoNuevo = ({ data }: any) => {
         </p>
       </div>
       <div className="w-[718.11023622px] mt-[25.7952755906px]">
-        <p className="ml-[566.92913386px]">
+        <p className="ml-[453.92913386px]">
           {data[1]?.[CR_PartnerName] || (
             <span className="opacity-0">No Data</span>
           )}
