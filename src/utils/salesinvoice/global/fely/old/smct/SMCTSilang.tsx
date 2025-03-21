@@ -112,8 +112,8 @@ const SMCTSilang = ({ data }: any) => {
   );
 
   return (
-    <div className="text-xs h-[808.81889764px] w-[629.29133858px]">
-      <div className="flex h-[19.409448819px] mt-[151.18110236px]">
+    <div className="text-xs h-[808.81889764px] w-[630.04724409px]">
+      <div className="flex h-[15.118110236px] mt-[151.18110236px]">
         <p className="w-[376.06299213px] pl-[94.488188976px]">
           {data[1]?.[mainLineName] || ""}
         </p>
@@ -121,7 +121,7 @@ const SMCTSilang = ({ data }: any) => {
           {data[1]?.[date] || ""}
         </p>
       </div>
-      <div className="flex h-[19.409448819px]">
+      <div className="flex h-[15.118110236px]">
         <p className="w-[376.06299213px] pl-[94.488188976px]">
           {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
@@ -131,10 +131,10 @@ const SMCTSilang = ({ data }: any) => {
       </div>
       <div className="flex h-[38.818897638px]">
         <div className="w-[376.06299213px] pl-[94.488188976px]">
-          <p className="h-[19.409448819px]">
+          <p className="h-[15.118110236px]">
             {data[1]?.[billingAddress].substring(0, 43) || ""}
           </p>
-          <p className="h-[19.409448819px]">
+          <p className="h-[15.118110236px]">
             {data[1]?.[billingAddress].substring(43) || ""}
           </p>
         </div>
@@ -142,7 +142,7 @@ const SMCTSilang = ({ data }: any) => {
           {data[1]?.[oscaPwdIdNo] || ""}
         </p>
       </div>
-      <div className="flex h-[19.409448819px]">
+      <div className="flex h-[15.118110236px]">
         <p className="w-[376.06299213px] pl-[137.95275591px]">
           {data[1]?.[businessStyle] || ""}
         </p>
@@ -150,7 +150,7 @@ const SMCTSilang = ({ data }: any) => {
           {data[1]?.[cardHolderSignatures] || ""}
         </p>
       </div>
-      <div className="mx-[34.393700787px] mt-[23.4330708664px] h-[325.03937008px]">
+      <div className="mx-[34.393700787px] mt-[23.4330708664px] h-[323.52755906px]">
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
