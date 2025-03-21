@@ -86,6 +86,7 @@ import SMCTCalape from "@/utils/collectionreceipt/global/fdl/old/smct/SMCTCalape
 import Danao from "@/utils/collectionreceipt/global/obbus/new/dsm/Danao";
 import Minglanilla from "@/utils/collectionreceipt/global/obbus/new/dsm/Minglanilla";
 import CelroseOldOrSize from "@/utils/official-receipt/global/celrose/old/CelroseOldOrSize";
+import DSMTagbilaran from "@/utils/official-receipt/global/obbus/old/dsm/DSMTagbilaran";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -220,7 +221,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "JIMEDSM",
     "DSMK",
     "RIZA",
-    "DSMT",
     "DSMT2",
     "DSMM",
     "SARG",
@@ -447,6 +447,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <Danao data={data} />;
     case "MING" === user?.branchCode:
       return <Minglanilla data={data} />;
+    case "DSMT" === user?.branchCode:
+      return <DSMTagbilaran data={data} />; //OR
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
