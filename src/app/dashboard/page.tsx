@@ -336,13 +336,13 @@ export default function Page() {
     if (isLoading) {
       interval = setInterval(() => {
         setProgress((prevProgress) => Math.min(prevProgress + 1, 100));
-      }, 10);
+      }, 5);
 
       timeout = setTimeout(() => {
         setIsLoading(false);
         clearInterval(interval);
         setProgress(100);
-      }, 1000);
+      }, 500);
     }
 
     return () => {

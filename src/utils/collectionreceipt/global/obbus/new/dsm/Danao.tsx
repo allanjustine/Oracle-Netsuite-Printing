@@ -43,14 +43,14 @@ const Danao = ({ data }: any) => {
         <div className="flex flex-col items-center w-[629.29133858px]">
           <div className="w-[519.68503937px] h-[23.433070866px]">
             <p className="ml-[90.708661417px]">
-              {data[1]?.[CR_Memo].substring(0, 92) || (
+              {data[1]?.[CR_Memo].substring(0, 77) || (
                 <span className="opacity-0">No data</span>
               )}
             </p>
           </div>
           <div className="w-[519.68503937px] h-[23.433070866px]">
             <p className="ml-[11.338582677px]">
-              {data[1]?.[CR_Memo].substring(92) || (
+              {data[1]?.[CR_Memo].substring(77) || (
                 <span className="opacity-0">No data</span>
               )}
             </p>

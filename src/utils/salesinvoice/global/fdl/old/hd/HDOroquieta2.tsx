@@ -112,7 +112,7 @@ const HDOroquieta2: React.FC<PrintPageProps> = ({ data }) => {
   );
 
   return (
-    <div className="text-xs h-[755.90551181px] w-[578.26771654px]">
+    <div className="text-xs h-[747.96850394px] w-[580.15748031px]">
       <div className="flex h-[21.165354331px] mt-[117.7244094521px]">
         <p className="w-[377.95275591px] pl-[94.488188976px]">
           {data[1]?.[mainLineName]
@@ -151,28 +151,28 @@ const HDOroquieta2: React.FC<PrintPageProps> = ({ data }) => {
         </p>
         <p className="w-[219.21259843px] pl-[87px]"></p>
       </div>
-      <div className="mx-[30.236220472px] mt-[23.456692913px] h-[313.32283465px]">
+      <div className="mx-[30.236220472px] mt-[23.456692913px] h-[309.92125984px]">
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 17).map((row, index) => (
               <tr key={index} className="text-xs text-center">
-                <td className="w-[71.433070866px]">
+                <td className="w-[69.921259843px]">
                   {row[quantity]?.replace(/.0$/, "")}
                 </td>
-                <td className="w-[56.31496063px] h-[18.275590551px]">
+                <td className="w-[56.31496063px] h-[19.653543307px]">
                   {row[unitOfMeasurement]}
                 </td>
                 <td
-                  className={`w-[231.30708661px] h-[18.275590551px] text-start ${
+                  className={`w-[228.66141732px] h-[19.653543307px] text-start ${
                     row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >
                   {row[articles]}
                 </td>
-                <td className="w-[79.37007874px] h-[18.275590551px]">
+                <td className="w-[78.992125984px] h-[19.653543307px]">
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
-                <td className="w-[101.66929134px] h-[18.275590551px]">
+                <td className="w-[97.88976378px] h-[19.653543307px]">
                   {FormattedNumber(row[quantity] * row[rateInclusiveVat]) ||
                     "0.00"}
                 </td>
@@ -180,10 +180,10 @@ const HDOroquieta2: React.FC<PrintPageProps> = ({ data }) => {
             ))}
             {data[1]?.[serialNumber] && (
               <tr className="text-xs text-center">
-                <td className="w-[71.433070866px]"></td>
-                <td className="w-[56.31496063px] h-[18.275590551px]"></td>
+                <td className="w-[69.921259843px]"></td>
+                <td className="w-[56.31496063px] h-[19.653543307px]"></td>
                 <td
-                  className={`w-[231.30708661px] h-[18.275590551px] text-start ${
+                  className={`w-[228.66141732px] h-[19.653543307px] text-start ${
                     data[1]?.[serialNumber]?.length > 20 ? "text-[10px]" : ""
                   }`}
                 >
@@ -193,16 +193,16 @@ const HDOroquieta2: React.FC<PrintPageProps> = ({ data }) => {
                     <>Serial #: {data[1]?.[serialNumber]}</>
                   )}
                 </td>
-                <td className="w-[79.37007874px] h-[18.275590551px]"></td>
-                <td className="w-[101.66929134px] h-[18.275590551px]"></td>
+                <td className="w-[78.992125984px] h-[19.653543307px]"></td>
+                <td className="w-[97.88976378px] h-[19.653543307px]"></td>
               </tr>
             )}
             {data[1]?.[chassisNumber] && (
               <tr className="text-xs text-center">
-                <td className="w-[71.433070866px]"></td>
-                <td className="w-[56.31496063px] h-[18.275590551px]"></td>
+                <td className="w-[69.921259843px]"></td>
+                <td className="w-[56.31496063px] h-[19.653543307px]"></td>
                 <td
-                  className={`w-[231.30708661px] h-[18.275590551px] text-start ${
+                  className={`w-[228.66141732px] h-[19.653543307px] text-start ${
                     data[1]?.[chassisNumber]?.length > 20 ? "text-[10px]" : ""
                   }`}
                 >
@@ -210,16 +210,16 @@ const HDOroquieta2: React.FC<PrintPageProps> = ({ data }) => {
                     <>Chassis #: {data[1]?.[chassisNumber]}</>
                   )}
                 </td>
-                <td className="w-[79.37007874px] h-[18.275590551px]"></td>
-                <td className="w-[101.66929134px] h-[18.275590551px]"></td>
+                <td className="w-[78.992125984px] h-[19.653543307px]"></td>
+                <td className="w-[97.88976378px] h-[19.653543307px]"></td>
               </tr>
             )}
             {data?.[1]?.[conductionSticker] && (
               <tr className="text-xs text-center">
-                <td className="w-[71.433070866px]"></td>
-                <td className="w-[56.31496063px] h-[18.275590551px]"></td>
+                <td className="w-[69.921259843px]"></td>
+                <td className="w-[56.31496063px] h-[19.653543307px]"></td>
                 <td
-                  className={`w-[231.30708661px] h-[18.275590551px] text-start ${
+                  className={`w-[228.66141732px] h-[19.653543307px] text-start ${
                     data[1]?.[conductionSticker]?.length > 20
                       ? "text-[10px]"
                       : ""
@@ -229,23 +229,23 @@ const HDOroquieta2: React.FC<PrintPageProps> = ({ data }) => {
                     <>Conduction Sticker: {data[1]?.[conductionSticker]}</>
                   )}
                 </td>
-                <td className="w-[79.37007874px] h-[18.275590551px]"></td>
-                <td className="w-[101.66929134px] h-[18.275590551px]"></td>
+                <td className="w-[78.992125984px] h-[19.653543307px]"></td>
+                <td className="w-[97.88976378px] h-[19.653543307px]"></td>
               </tr>
             )}
             {data?.[1]?.[color] && (
               <tr className="text-xs text-center">
-                <td className="w-[71.433070866px]"></td>
-                <td className="w-[56.31496063px] h-[18.275590551px]"></td>
+                <td className="w-[69.921259843px]"></td>
+                <td className="w-[56.31496063px] h-[19.653543307px]"></td>
                 <td
-                  className={`w-[231.30708661px] h-[18.275590551px] text-start ${
+                  className={`w-[228.66141732px] h-[19.653543307px] text-start ${
                     data[1]?.[color]?.length > 20 ? "text-[10px]" : ""
                   }`}
                 >
                   {data[1]?.[color] && <>Color: {data[1]?.[color]}</>}
                 </td>
-                <td className="w-[79.37007874px] h-[18.275590551px]"></td>
-                <td className="w-[101.66929134px] h-[18.275590551px]"></td>
+                <td className="w-[78.992125984px] h-[19.653543307px]"></td>
+                <td className="w-[97.88976378px] h-[19.653543307px]"></td>
               </tr>
             )}
           </tbody>
@@ -255,60 +255,60 @@ const HDOroquieta2: React.FC<PrintPageProps> = ({ data }) => {
         <table className="border-collapse w-full">
           <tbody>
             <tr className="text-xs">
-              <td className="h-[18.275590551px] w-[145.50393701px]"></td>
-              <td className="h-[18.275590551px] w-[176.52755906px]">
+              <td className="h-[19.653543307px] w-[145.50393701px]"></td>
+              <td className="h-[19.653543307px] w-[176.52755906px]">
                 {vatableSalesFn}
               </td>
-              <td className="h-[18.275590551px] w-[129.25984252px]"></td>
-              <td className="h-[18.275590551px] w-[98.645669291px] text-center">
+              <td className="h-[19.653543307px] w-[129.25984252px]"></td>
+              <td className="h-[19.653543307px] w-[98.645669291px] text-center">
                 {totalSalesVatInclusiveFn}
               </td>
             </tr>
             <tr className="text-xs">
-              <td className="h-[18.275590551px] w-[145.50393701px]"></td>
-              <td className="h-[18.275590551px] w-[176.52755906px]">0.00</td>
-              <td className="h-[18.275590551px] w-[129.25984252px]"></td>
-              <td className="h-[18.275590551px] w-[98.645669291px] text-center">
+              <td className="h-[19.653543307px] w-[145.50393701px]"></td>
+              <td className="h-[19.653543307px] w-[176.52755906px]">0.00</td>
+              <td className="h-[19.653543307px] w-[129.25984252px]"></td>
+              <td className="h-[19.653543307px] w-[98.645669291px] text-center">
                 {lessVatFn}
               </td>
             </tr>
             <tr className="text-xs">
-              <td className="h-[18.275590551px] w-[145.50393701px]"></td>
-              <td className="h-[18.275590551px] w-[176.52755906px]">0.00</td>
-              <td className="h-[18.275590551px] w-[129.25984252px]"></td>
-              <td className="h-[18.275590551px] w-[98.645669291px] text-center">
+              <td className="h-[19.653543307px] w-[145.50393701px]"></td>
+              <td className="h-[19.653543307px] w-[176.52755906px]">0.00</td>
+              <td className="h-[19.653543307px] w-[129.25984252px]"></td>
+              <td className="h-[19.653543307px] w-[98.645669291px] text-center">
                 {amountNetOfVatFn}
               </td>
             </tr>
             <tr className="text-xs">
-              <td className="h-[18.275590551px] w-[145.50393701px]"></td>
-              <td className="h-[18.275590551px] w-[176.52755906px]">
+              <td className="h-[19.653543307px] w-[145.50393701px]"></td>
+              <td className="h-[19.653543307px] w-[176.52755906px]">
                 {vatAmountFn}
               </td>
-              <td className="h-[18.275590551px] w-[129.25984252px]"></td>
-              <td className="h-[18.275590551px] w-[98.645669291px] text-center"></td>
+              <td className="h-[19.653543307px] w-[129.25984252px]"></td>
+              <td className="h-[19.653543307px] w-[98.645669291px] text-center"></td>
             </tr>
             <tr className="text-xs">
-              <td className="h-[18.275590551px] w-[145.50393701px]"></td>
-              <td className="h-[18.275590551px] w-[176.52755906px]"></td>
-              <td className="h-[18.275590551px] w-[129.25984252px]"></td>
-              <td className="h-[18.275590551px] w-[98.645669291px] text-center">
+              <td className="h-[19.653543307px] w-[145.50393701px]"></td>
+              <td className="h-[19.653543307px] w-[176.52755906px]"></td>
+              <td className="h-[19.653543307px] w-[129.25984252px]"></td>
+              <td className="h-[19.653543307px] w-[98.645669291px] text-center">
                 {amountDueFn}
               </td>
             </tr>
             <tr className="text-xs">
-              <td className="h-[18.275590551px] w-[145.50393701px]"></td>
-              <td className="h-[18.275590551px] w-[176.52755906px]"></td>
-              <td className="h-[18.275590551px] w-[129.25984252px]"></td>
-              <td className="h-[18.275590551px] w-[98.645669291px] text-center">
+              <td className="h-[19.653543307px] w-[145.50393701px]"></td>
+              <td className="h-[19.653543307px] w-[176.52755906px]"></td>
+              <td className="h-[19.653543307px] w-[129.25984252px]"></td>
+              <td className="h-[19.653543307px] w-[98.645669291px] text-center">
                 {addVatFn}
               </td>
             </tr>
             <tr className="text-xs">
-              <td className="h-[18.275590551px] w-[145.50393701px]"></td>
-              <td className="h-[18.275590551px] w-[176.52755906px]"></td>
-              <td className="h-[18.275590551px] w-[129.25984252px]"></td>
-              <td className="h-[18.275590551px] w-[98.645669291px] text-center">
+              <td className="h-[19.653543307px] w-[145.50393701px]"></td>
+              <td className="h-[19.653543307px] w-[176.52755906px]"></td>
+              <td className="h-[19.653543307px] w-[129.25984252px]"></td>
+              <td className="h-[19.653543307px] w-[98.645669291px] text-center">
                 {totalAmountDueFn}
               </td>
             </tr>

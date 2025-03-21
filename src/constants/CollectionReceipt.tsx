@@ -45,7 +45,7 @@ import HDDatoc from "@/utils/collectionreceipt/global/fdl/old/hd/HDDatoc";
 import Calamba from "@/utils/collectionreceipt/global/fdl/old/dsm/Calamba";
 import DaanBantayan2 from "@/utils/collectionreceipt/global/fdl/old/dsm/DaanBantayan2";
 import HDPardo from "@/utils/collectionreceipt/global/fdl/old/hd/HDPardo";
-import HDMaranding from "@/utils/official-receipt/global/fdl/old/hd/HDMaranding";
+import HDMaranding from "@/utils/collectionreceipt/global/fdl/old/hd/HDMaranding";
 import Labason from "@/utils/collectionreceipt/global/obbus/old/dsm/Labason";
 import Remigio from "@/utils/official-receipt/global/fdl/old/dsm/Remigio";
 import LapuLapu2 from "@/utils/official-receipt/global/fdl/old/dsm/LapuLapu2";
