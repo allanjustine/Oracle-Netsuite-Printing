@@ -39,7 +39,7 @@ const Danao = ({ data }: any) => {
           {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex w-[650.07874016px] ml-[24.566929134px] mt-[25.275590551px] h-[41.57480315px]">
+      <div className="flex w-[650.07874016px] ml-[24.566929134px] mt-[36.614173228px] h-[41.57480315px]">
         <div className="flex flex-col items-center w-[629.29133858px]">
           <div className="w-[519.68503937px] h-[23.433070866px]">
             <p className="ml-[90.708661417px]">

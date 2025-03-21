@@ -300,7 +300,7 @@ const DSMDanao = ({ data }: any) => {
         </table>
       </div>
       <div className="w-[548.03149606px]">
-        <div className="mt-[15.897637795px] ml-[183.30708661px]">
+        <div className="mt-[15.897637795px] ml-[170.07874016px]">
           <p
             className={`${
               data[1]?.[cashier].length > 15 ? "text-[10px]" : ""
