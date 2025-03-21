@@ -92,7 +92,7 @@ import DSMTagbilaran from "@/utils/official-receipt/global/obbus/old/dsm/DSMTagb
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
 
-  const luzonSizeData = [""];
+  const luzonSizeData = ["SILA"];
 
   const HondaDESSizeData = [""];
 
@@ -244,7 +244,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "FAMY",
     "DASMA",
     "CARMO",
-    "SILA",
     "SROS",
   ];
 
