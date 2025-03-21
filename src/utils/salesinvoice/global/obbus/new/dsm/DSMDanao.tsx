@@ -138,7 +138,7 @@ const DSMDanao = ({ data }: any) => {
           )}
         </p>
       </div>
-      <div className="mx-[28.346456693px] w-[491.33858268px] mt-[30.236220472px] h-[211.65354331px]">
+      <div className="mx-[28.346456693px] w-[491.33858268px] mt-[34.236220472px] h-[211.65354331px]">
         <table className="border-collapse">
           <tbody>
             {data.slice(1, 13).map((row: any, index: number) => (
@@ -300,8 +300,12 @@ const DSMDanao = ({ data }: any) => {
         </table>
       </div>
       <div className="w-[548.03149606px]">
-        <div className="mt-[15.897637795px] ml-[183.30708661px] w-[142.86614173px]">
-          <p className="text-xs text-center">
+        <div className="mt-[15.897637795px] ml-[183.30708661px]">
+          <p
+            className={`${
+              data[1]?.[cashier].length > 15 ? "text-[10px]" : ""
+            } text-center w-[170.86614173px]`}
+          >
             {data[1]?.[cashier]
               ?.replace(/Ã/g, "Ñ")
               .replace(/Ã‘/g, "Ñ")
