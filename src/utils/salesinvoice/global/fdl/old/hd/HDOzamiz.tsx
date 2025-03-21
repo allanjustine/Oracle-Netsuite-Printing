@@ -113,7 +113,7 @@ const HDOzamiz: React.FC<PrintPageProps> = ({ data }) => {
 
   return (
     <div className="text-xs h-[755.90551181px] w-[578.26771654px]">
-      <div className="flex h-[21.165354331px] mt-[117.7244094521px]">
+      <div className="flex h-[21.165354331px] mt-[98.267716535px]">
         <p className="w-[377.95275591px] pl-[94.488188976px]">
           {data[1]?.[mainLineName]
             ?.replace(/Ã/g, "Ñ")
