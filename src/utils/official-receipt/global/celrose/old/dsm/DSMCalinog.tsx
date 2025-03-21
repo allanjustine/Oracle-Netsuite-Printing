@@ -60,7 +60,7 @@ const DSMCalinog = ({ data }: any) => {
             )}
           </p>
         </div>
-        <div className="w-[274.01574803px] ml-[150.28346457px]">
+        <div className="w-[274.01574803px] ml-[168.28346457px]">
           <p>
             {data[1]?.[CR_Memo].substring(0, 35) || (
               <span className="opacity-0">No data</span>
@@ -75,7 +75,7 @@ const DSMCalinog = ({ data }: any) => {
           )}
         </p>
       </div>
-      <div className="w-[718.11023622px] mt-[25.7952755906px]">
+      <div className="mt-[25.7952755906px]">
         <p className="ml-[584.92913386px]">
           {data[1]?.[CR_PartnerName] || (
             <span className="opacity-0">No Data</span>
