@@ -24,7 +24,7 @@ const LuzonSize: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="flex justify-between mt-[14.7952755906px]">
         <div className="w-[442.20472441px]">
-          <p className="pl-[264.56692913px]">
+          <p className="ml-[264.56692913px] ">
             {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
           </p>
         </div>
@@ -35,7 +35,7 @@ const LuzonSize: React.FC<PrintPageProps> = ({ data }) => {
         </div>
       </div>
       <div className="flex mt-[9.8267716539px]">
-        <p className={`${data[1]?.[CR_Address].length > 28 ? 'text-xs' : ''} ml-[272.12598425px] w-[204.09448819px]`}>
+        <p className={`${data[1]?.[CR_Address].length > 28 ? 'text-[10px]' : ''} ml-[272.12598425px] w-[204.09448819px]`}>
           {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
         </p>
       </div>
@@ -64,12 +64,12 @@ const LuzonSize: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="w-[551.81102362px] pl-[309.92125984px] mt-[8.8267716539px]">
         <p>
-          {data[1]?.[CR_Memo].substring(0, 40) || <span className="opacity-0">No data</span>}
+          {data[1]?.[CR_Memo].substring(0, 35) || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="w-[551.81102362px] pl-[207.87401575px] mt-[9.8267716539px]">
         <p>
-          {data[1]?.[CR_Memo].substring(40) || <span className="opacity-0">No data</span>}
+          {data[1]?.[CR_Memo].substring(35) || <span className="opacity-0">No data</span>}
         </p>
       </div>
       
