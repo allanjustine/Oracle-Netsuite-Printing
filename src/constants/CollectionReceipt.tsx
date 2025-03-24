@@ -91,6 +91,7 @@ import DSMCalinog from "@/utils/official-receipt/global/celrose/old/dsm/DSMCalin
 import DSMCarmenCebu from "@/utils/official-receipt/global/ajd/old/dsm/DSMCarmenCebu";
 import SMCTAntique from "@/utils/collectionreceipt/global/obbus/celrose/smct/SMCTAntique";
 import Tagum from "@/utils/collectionreceipt/global/obbus/old/dsm/Tagum";
+import SMCTLiloan from "@/utils/official-receipt/global/obbus/old/smct/SMCTLiloan";
 import Buug from "@/utils/official-receipt/global/fdl/old/dap/Buug";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
@@ -113,7 +114,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DSMSB",
     "KATI",
     "MARA",
-    // "SLIL",
     "TAGUM",
     "TORI",
   ];
@@ -219,7 +219,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const obbusOrNewSizeData = [];
 
   const obbusOrOldSizeData = [
-    "SLIL",
     "BOGO",
     "DSMC",
     "COMPO",
@@ -460,6 +459,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTAntique data={data} />; //OR
     case "DSMTG" === user?.branchCode:
       return <Tagum data={data} />;
+    case "SLIL" === user?.branchCode:
+      return <SMCTLiloan data={data} />; //OR
     case "BUUD" === user?.branchCode:
       return <Buug data={data} />;
     default:
