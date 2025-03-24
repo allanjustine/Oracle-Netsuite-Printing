@@ -16,7 +16,7 @@ const Liloan = ({ data }: any) => {
 
   return (
     <div className="text-xs w-[801.25984252px] h-[408.18897638px] ml-[10px]">
-      <div className="flex mt-[113.38582677px]">
+      <div className="flex mt-[96.38582677px]">
         <p className="ml-[659.72440945px] w-[151.18110236px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
@@ -46,15 +46,15 @@ const Liloan = ({ data }: any) => {
         </p>
       </div>
       <div className="flex mt-[3.8267716539px]">
-        <p className="ml-[283.56692913px]">
+        <p className="ml-[245.77165354px]">
           {data[1]?.[CR_AmountInWords] || (
             <span className="opacity-0">No data</span>
           )}
         </p>
       </div>
-      <div className="flex w-full mt-[16.8267716539px]">
+      <div className="flex w-full mt-[6.8267716539px]">
         <div className="w-[325.03937008px]">
-          <p className="ml-[260.66929134px]">
+          <p className="ml-[254.66929134px]">
             {FormattedNumber(data[1]?.[CR_AmountInFigures]) || (
               <span className="opacity-0">No data</span>
             )}
