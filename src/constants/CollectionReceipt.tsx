@@ -91,6 +91,7 @@ import DSMCalinog from "@/utils/official-receipt/global/celrose/old/dsm/DSMCalin
 import DSMCarmenCebu from "@/utils/official-receipt/global/ajd/old/dsm/DSMCarmenCebu";
 import SMCTAntique from "@/utils/collectionreceipt/global/obbus/celrose/smct/SMCTAntique";
 import Tagum from "@/utils/collectionreceipt/global/obbus/old/dsm/Tagum";
+import Buug from "@/utils/official-receipt/global/fdl/old/dap/Buug";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -151,7 +152,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "INIT2",
     "KABA",
     "CATM",
-    "BUUD",
     "PARD2",
     "BOHK",
     "DSMCN",
@@ -460,6 +460,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTAntique data={data} />; //OR
     case "DSMTG" === user?.branchCode:
       return <Tagum data={data} />;
+    case "BUUD" === user?.branchCode:
+      return <Buug data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
