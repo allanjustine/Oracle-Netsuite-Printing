@@ -113,7 +113,7 @@ const Calape2 = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[745.32283465px] w-[589.60629921px]">
-      <div className="flex h-[20.787401575px] mt-[111.1181102406px]">
+      <div className="flex h-[20.787401575px] mt-[128.50393701px]">
         <p className="w-[374.17322835px] pl-[98.267716535px]">
           {data[1]?.[mainLineName]
             ?.replace(/Ã/g, "Ñ")
