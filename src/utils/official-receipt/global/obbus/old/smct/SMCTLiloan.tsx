@@ -52,7 +52,7 @@ const SMCTLiloan = ({ data }: any) => {
           )}
         </p>
       </div>
-      <div className="flex w-full mt-[11.8267716539px]">
+      <div className="flex w-full mt-[6.8267716539px]">
         <div className="w-[325.03937008px]">
           <p className="ml-[254.66929134px]">
             {FormattedNumber(data[1]?.[CR_AmountInFigures]) || (
@@ -75,7 +75,7 @@ const SMCTLiloan = ({ data }: any) => {
           )}
         </p>
       </div>
-      <div className="w-[718.11023622px] pl-[566.92913386px] mt-[25.7952755906px]">
+      <div className="w-[718.11023622px] pl-[566.92913386px] mt-[30.7952755906px]">
         <p>
           {data[1]?.[CR_PartnerName] || (
             <span className="opacity-0">No Data</span>
