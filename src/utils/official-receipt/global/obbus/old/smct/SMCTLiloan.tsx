@@ -45,7 +45,7 @@ const SMCTLiloan = ({ data }: any) => {
           )}
         </p>
       </div>
-      <div className="flex mt-[26.8267716539px]">
+      <div className="flex mt-[13.8267716539px]">
         <p className="ml-[245.77165354px]">
           {data[1]?.[CR_AmountInWords] || (
             <span className="opacity-0">No data</span>
