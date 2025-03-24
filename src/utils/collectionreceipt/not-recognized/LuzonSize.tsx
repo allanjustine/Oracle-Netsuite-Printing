@@ -17,7 +17,7 @@ const LuzonSize: React.FC<PrintPageProps> = ({ data }) => {
 
   return (
     <div className="text-xs w-[577.88976378px] h-[381.73228346px] mt-[27.590551181px]">
-      <div className="flex mt-[95.1732283431px]">
+      <div className="flex mt-[110.29133858px]">
         <p className="pl-[472.44094488px] w-[86.551181102px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
