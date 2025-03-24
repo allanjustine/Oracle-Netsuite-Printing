@@ -113,7 +113,7 @@ const Calape2 = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[745.32283465px] w-[589.60629921px]">
-      <div className="flex h-[20.787401575px] mt-[128.50393701px]">
+      <div className="flex h-[22.677165354px] mt-[129.50393701px]">
         <p className="w-[374.17322835px] pl-[98.267716535px]">
           {data[1]?.[mainLineName]
             ?.replace(/Ã/g, "Ñ")
@@ -124,7 +124,7 @@ const Calape2 = ({ data }: any) => {
           {data[1]?.[date] || ""}
         </p>
       </div>
-      <div className="flex h-[20.787401575px]">
+      <div className="flex h-[22.677165354px]">
         <p className="w-[374.17322835px] pl-[98.267716535px]">
           {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
@@ -132,10 +132,10 @@ const Calape2 = ({ data }: any) => {
           {data[1]?.[terms] || ""}
         </p>
       </div>
-      <div className="flex h-[20.787401575px]">
+      <div className="flex h-[22.677165354px]">
         <div className="w-[563.1496063px] pl-[98.267716535px]">
           <p
-            className={`h-[20.787401575px] ${
+            className={`h-[22.677165354px] ${
               data[1]?.[billingAddress].length > 85 ? "text-xs" : ""
             }`}
           >
@@ -143,7 +143,7 @@ const Calape2 = ({ data }: any) => {
           </p>
         </div>
       </div>
-      <div className="flex h-[20.787401575px]">
+      <div className="flex h-[22.677165354px]">
         <p className="w-[563.1496063px] pl-[132.28346457px]">
           {data[1]?.[businessStyle] || ""}
         </p>
@@ -319,7 +319,7 @@ const Calape2 = ({ data }: any) => {
         </table>
       </div>
       <div className="mx-[30.236220472px]">
-        <div className="mt-[24.456692914px] ml-[332.976377952px]">
+        <div className="mt-[27.456692914px] ml-[332.976377952px]">
           <p className="text-xs text-center">
             {data[1]?.[cashier]
               ?.replace(/Ã/g, "Ñ")
