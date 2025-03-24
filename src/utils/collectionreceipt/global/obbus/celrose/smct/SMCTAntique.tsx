@@ -16,8 +16,8 @@ const SMCTAntique: React.FC<PrintPageProps> = ({ data }) => {
   const CR_Reference = 10;
 
   return (
-    <div className="text-xs w-[801.25984252px] h-[408.18897638px] ml-[15px]">
-      <div className="flex mt-[132.28346457px]">
+    <div className="text-xs w-[801.25984252px] h-[408.18897638px] ml-[13px]">
+      <div className="flex mt-[130.28346457px]">
         <p className="pl-[619.84251969px] w-[139.84251969px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
@@ -68,7 +68,7 @@ const SMCTAntique: React.FC<PrintPageProps> = ({ data }) => {
         </p>
       </div>
 
-      <div className="w-[763.46456693px] pl-[548.03149606px] mt-[18.897637795px] text-[11px]">
+      <div className="w-[763.46456693px] pl-[548.03149606px] mt-[30.897637795px] text-[11px]">
         <p>{data[1]?.[CR_PartnerName] || ""}</p>
       </div>
     </div>
