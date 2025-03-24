@@ -72,7 +72,7 @@ const Buug = ({ data }: any) => {
         <p className="w-[577.88976378px] pl-[445.98425197px] mt-[6.7952755906px] text-[11px]">
           {data[1]?.[CR_PartnerName] || (
             <span className="opacity-0">No Data</span>
-          )}a
+          )}
         </p>
       </div>
     </div>
