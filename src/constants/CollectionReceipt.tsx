@@ -94,6 +94,7 @@ import Tagum from "@/utils/collectionreceipt/global/obbus/old/dsm/Tagum";
 import SMCTLiloan from "@/utils/official-receipt/global/obbus/old/smct/SMCTLiloan";
 import Buug from "@/utils/official-receipt/global/fdl/old/dap/Buug";
 import DAPImelda from "@/utils/collectionreceipt/global/fdl/old/dap/DAPImelda";
+import SMCTSanJose from "@/utils/collectionreceipt/global/fdl/old/smct/SMCTSanJose";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -161,7 +162,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const fdlCrOldSizeData = [
     "CARMB",
     "CATAR",
-    "SANJ",
     "LIPA",
     "ALEN",
     "GUIN2",
@@ -466,6 +466,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <Buug data={data} />;
     case "IMED" === user?.branchCode:
       return <DAPImelda data={data} />;
+    case "SANJ" === user?.branchCode:
+    return <SMCTSanJose data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
