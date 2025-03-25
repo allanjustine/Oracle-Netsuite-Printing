@@ -16,8 +16,8 @@ const SMCTSanJose: React.FC<PrintPageProps> = ({ data }) => {
   const CR_Reference = 10;
 
   return (
-    <div className="text-xs w-[805.03937008px] h-[415.7480315px] ml-[10px]">
-      <div className="flex mt-[132.96850393px]">
+    <div className="text-xs w-[805.03937008px] h-[415.7480315px] ml-[15px]">
+      <div className="flex mt-[113.38582677px]">
         <p className="pl-[630.07874016px] w-[143.62204724px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
