@@ -136,7 +136,7 @@ const FelyOldSiSize: React.FC<PrintPageProps> = ({ data }) => {
             {data[1]?.[date] || ""}
           </p>
           <p className="w-full text-xs h-[19.275590551px] ml-[160px]">
-            {data[1]?.[terms] || ""}
+            {data[1]?.[terms] || "CASH"}
           </p>
           <p className="w-full text-xs h-[19.275590551px] ml-[160px]">
             {data[1]?.[oscaPwdIdNo] || ""}

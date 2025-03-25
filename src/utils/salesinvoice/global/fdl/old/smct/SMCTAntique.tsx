@@ -127,7 +127,7 @@ const SMCTAntique: React.FC<PrintPageProps> = ({ data }) => {
       <div className="flex h-[17.007874016px]">
         <p className="w-[528.66141732px] pl-[147.4015748px]"></p>
         <p className="w-[284.50393701px] pl-[117.16535433px]">
-          {data[1]?.[terms] || ""}
+          {data[1]?.[terms] || "CASH"}
         </p>
       </div>
       <div className="flex h-[34.015748032]">

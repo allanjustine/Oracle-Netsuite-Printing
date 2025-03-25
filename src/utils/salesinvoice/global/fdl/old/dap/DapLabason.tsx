@@ -129,7 +129,7 @@ const DapLabason: React.FC<PrintPageProps> = ({ data }) => {
           {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
         <p className="w-[284.50393701px] pl-[117.16535433px]">
-          {data[1]?.[terms] || ""}
+          {data[1]?.[terms] || "CASH"}
         </p>
       </div>
       <div className="flex h-[34.015748032]">

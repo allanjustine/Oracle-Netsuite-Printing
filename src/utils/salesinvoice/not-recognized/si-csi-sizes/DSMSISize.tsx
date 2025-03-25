@@ -129,7 +129,7 @@ const DSMSISize: React.FC<PrintPageProps> = ({ data }) => {
           {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
         <p className="w-[132.28346457px] pl-[151.18110236px]">
-          {data[1]?.[terms] || ""}
+          {data[1]?.[terms] || "CASH"}
         </p>
       </div>
       <div className="flex h-[37.795275591px]">

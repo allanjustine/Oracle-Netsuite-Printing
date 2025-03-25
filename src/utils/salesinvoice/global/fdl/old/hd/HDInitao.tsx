@@ -128,7 +128,7 @@ const HDInitao = ({ data }: any) => {
           {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
         <p className="w-[219.21259843px] pl-[60.472440945px]">
-          {data[1]?.[terms] || ""}
+          {data[1]?.[terms] || "CASH"}
         </p>
       </div>
       <div className="flex h-[38.818897638px]">

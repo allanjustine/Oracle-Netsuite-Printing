@@ -129,7 +129,7 @@ const DsmCsiSize = ({ data }: any) => {
           {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
         <p className="w-[214.67716535px] pl-[56.692913386px]">
-          {data[1]?.[terms] || ""}
+          {data[1]?.[terms] || "CASH"}
         </p>
       </div>
       <div className="flex items-center h-[20.677165354px]">
