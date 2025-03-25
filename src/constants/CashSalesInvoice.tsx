@@ -113,6 +113,7 @@ import Panabo from "@/utils/salesinvoice/global/obbus/old/dsm/Panabo";
 import DAPImelda from "@/utils/salesinvoice/global/fdl/old/dap/DAPImelda";
 import Iligan from "@/utils/salesinvoice/global/fdl/old/dsm/Iligan";
 import SMCTSanJose from "@/utils/salesinvoice/global/fdl/old/smct/SMCTSanJose";
+import HDTrinidad from "@/utils/salesinvoice/global/bjv/old/hd/HDTrinidad";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -270,7 +271,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   // BJV
   const bjvCsiNewSizeData = [];
 
-  const bjvCSiOldSizeData = ["CARMB", "LOAY", "JAGN", "TRINI", "ALIC"];
+  const bjvCSiOldSizeData = ["CARMB", "LOAY", "JAGN", "ALIC"];
 
   const bjvSiNewSizeData = [];
 
@@ -485,6 +486,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Iligan data={data} />;
     case "SANJ" === user?.branchCode:
       return <SMCTSanJose data={data} />;
+    case "TRINI" === user?.branchCode:
+      return <HDTrinidad data={data} />;
 
     default:
       return (
