@@ -114,6 +114,7 @@ import DAPImelda from "@/utils/salesinvoice/global/fdl/old/dap/DAPImelda";
 import Iligan from "@/utils/salesinvoice/global/fdl/old/dsm/Iligan";
 import SMCTSanJose from "@/utils/salesinvoice/global/fdl/old/smct/SMCTSanJose";
 import HDTrinidad from "@/utils/salesinvoice/global/bjv/old/hd/HDTrinidad";
+import SMCTCarcar from "@/utils/salesinvoice/global/fdl/old/smct/SMCTCarcar";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -175,7 +176,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     // "DSMBN",
     "DSMC",
     "AKLA",
-    "CARS",
+    //"CARS",
     "MANG",
     "TALI",
     "VALEN",
@@ -488,6 +489,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTSanJose data={data} />;
     case "TRINI" === user?.branchCode:
       return <HDTrinidad data={data} />;
+    case "CARS" === user?.branchCode:
+      return <SMCTCarcar data={data} />;
 
     default:
       return (
