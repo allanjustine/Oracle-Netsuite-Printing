@@ -252,7 +252,7 @@ const SMCTSanJose = ({ data }: any) => {
           </tbody>
         </table>
       </div>
-      <div className="mx-[27.212598425px] h-[136.06299213px]">
+      <div className="mx-[27.212598425px] h-[136.06299213px] mt-[15.897637795px] ml-[7.5590551181px]">
         <table className="border-collapse w-full">
           <tbody>
             <tr className="text-xs">
