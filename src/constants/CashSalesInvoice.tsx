@@ -111,6 +111,7 @@ import DSMPardo from "@/utils/salesinvoice/global/fdl/old/dsm/DSMPardo";
 import SMCTTubigon from "@/utils/salesinvoice/global/fdl/old/smct/SMCTTubigon";
 import Panabo from "@/utils/salesinvoice/global/obbus/old/dsm/Panabo";
 import DAPImelda from "@/utils/salesinvoice/global/fdl/old/dap/DAPImelda";
+import Iligan from "@/utils/salesinvoice/global/fdl/old/dsm/Iligan";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -177,7 +178,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "MANG",
     "TALI",
     "VALEN",
-    "ILIG",
     "KABA2",
     "TUBU",
     "ALAH",
@@ -481,6 +481,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Panabo data={data} />;
     case "IMED" === user?.branchCode:
       return <DAPImelda data={data} />;
+    case "ILIG" === user?.branchCode:
+      return <Iligan data={data} />;
 
     default:
       return (

@@ -165,7 +165,6 @@ export default function Page() {
   }, [user, excelData, isPrintCr]);
 
   useEffect(() => {
-    console.log(isPrintable && isToggle);
     if (isPrintable && isToggle) {
       setIsDropdownOpen(true);
     } else {
