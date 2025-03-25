@@ -160,13 +160,13 @@ const Calape2 = ({ data }: any) => {
                   {row[unitOfMeasurement]}
                 </td>
                 <td
-                  className={`w-[230.5511811px] h-[19.275590551px] text-start ${
+                  className={`w-[230.5511811px] h-[19.275590551px] pl-[5px] text-start ${
                     row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >
                   {row[articles]}
                 </td>
-                <td className="w-[77.102362205px] h-[19.275590551px]">
+                <td className="w-[77.102362205px] h-[19.275590551px] pl-[3px] ">
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
                 <td className="w-[98.267716535px] h-[19.275590551px]">
@@ -248,7 +248,7 @@ const Calape2 = ({ data }: any) => {
           </tbody>
         </table>
       </div>
-      <div className="mx-[30.236220472px] h-[134.17322835px]">
+      <div className="mx-[30.236220472px] h-[134.17322835px] mt-[18.897637795]">
         <table className="border-collapse w-full">
           <tbody>
             <tr className="text-xs">
