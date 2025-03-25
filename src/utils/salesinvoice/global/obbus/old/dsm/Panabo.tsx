@@ -112,7 +112,7 @@ const Panabo = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[795.67716535px] w-[616.06299213px]">
-      <div className="flex h-[15.458267717px] mt-[116.1496063px]">
+      <div className="flex h-[15.458267717px] mt-[75.866929134px]">
         <p className="w-[402.51968504px] ml-[86.929133858px]">
           {data[1]?.[mainLineName]
             ?.replace(/Ã/g, "Ñ")
