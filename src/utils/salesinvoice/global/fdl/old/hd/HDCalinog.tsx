@@ -113,7 +113,7 @@ const HDCalinog: React.FC<PrintPageProps> = ({ data }) => {
 
   return (
     <div className="text-xs h-[755.90551181px] w-[578.26771654px]">
-      <div className="flex h-[21.165354331px] mt-[117.7244094521px]">
+      <div className="flex h-[21.165354331px] mt-[102.04724409px]">
         <p className="w-[377.95275591px] pl-[94.488188976px]">
           {data[1]?.[mainLineName]
             ?.replace(/Ã/g, "Ñ")
@@ -251,7 +251,7 @@ const HDCalinog: React.FC<PrintPageProps> = ({ data }) => {
           </tbody>
         </table>
       </div>
-      <div className="mx-[30.236220472px] h-[135.68503937px]">
+      <div className="mx-[30.236220472px] h-[135.68503937px] mt-[11.338582677px]">
         <table className="border-collapse w-full">
           <tbody>
             <tr className="text-xs">
