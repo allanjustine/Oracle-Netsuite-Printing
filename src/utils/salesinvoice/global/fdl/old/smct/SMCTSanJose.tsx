@@ -112,7 +112,7 @@ const SMCTSanJose = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[774.80314961px] w-[600.94488189px] ml-[10px]">
-      <div className="flex h-[19.409448819px] mt-[111.0078740201px]">
+      <div className="flex h-[19.409448819px] mt-[132.28346457px]">
         <p className="w-[391.18110236px] pl-[128.50393701px]">
           {data[1]?.[mainLineName]
             ?.replace(/Ã/g, "Ñ")
@@ -170,10 +170,10 @@ const SMCTSanJose = ({ data }: any) => {
                 >
                   {row[articles]}
                 </td>
-                <td className="w-[79.748031496px] h-[18.897637795px]">
+                <td className="w-[79.748031496px] h-[18.897637795px] pl-[4px]">
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
-                <td className="w-[102.38740157px] h-[18.897637795px]">
+                <td className="w-[102.38740157px] h-[18.897637795px] pl-[7px]">
                   {FormattedNumber(row[quantity] * row[rateInclusiveVat]) ||
                     "0.00"}
                 </td>
@@ -194,8 +194,8 @@ const SMCTSanJose = ({ data }: any) => {
                     <>Serial #: {data[1]?.[serialNumber]}</>
                   )}
                 </td>
-                <td className="w-[79.748031496px] h-[18.897637795px]"></td>
-                <td className="w-[102.38740157px] h-[18.897637795px]"></td>
+                <td className="w-[79.748031496px] h-[18.897637795px] pl-[4px]"></td>
+                <td className="w-[102.38740157px] h-[18.897637795px] pl-[7px]"></td>
               </tr>
             )}
             {data[1]?.[chassisNumber] && (
@@ -211,8 +211,8 @@ const SMCTSanJose = ({ data }: any) => {
                     <>Chassis #: {data[1]?.[chassisNumber]}</>
                   )}
                 </td>
-                <td className="w-[79.748031496px] h-[18.897637795px]"></td>
-                <td className="w-[102.38740157px] h-[18.897637795px]"></td>
+                <td className="w-[79.748031496px] h-[18.897637795px] pl-[4px]"></td>
+                <td className="w-[102.38740157px] h-[18.897637795px] pl-[7px]"></td>
               </tr>
             )}
             {data?.[1]?.[conductionSticker] && (
@@ -230,8 +230,8 @@ const SMCTSanJose = ({ data }: any) => {
                     <>Conduction Sticker: {data[1]?.[conductionSticker]}</>
                   )}
                 </td>
-                <td className="w-[79.748031496px] h-[18.897637795px]"></td>
-                <td className="w-[102.38740157px] h-[18.897637795px]"></td>
+                <td className="w-[79.748031496px] h-[18.897637795px] pl-[4px]"></td>
+                <td className="w-[102.38740157px] h-[18.897637795px] pl-[7px]"></td>
               </tr>
             )}
             {data?.[1]?.[color] && (
@@ -245,8 +245,8 @@ const SMCTSanJose = ({ data }: any) => {
                 >
                   {data[1]?.[color] && <>Color: {data[1]?.[color]}</>}
                 </td>
-                <td className="w-[79.748031496px] h-[18.897637795px]"></td>
-                <td className="w-[102.38740157px] h-[18.897637795px]"></td>
+                <td className="w-[79.748031496px] h-[18.897637795px] pl-[4px]"></td>
+                <td className="w-[102.38740157px] h-[18.897637795px] pl-[7px]"></td>
               </tr>
             )}
           </tbody>
