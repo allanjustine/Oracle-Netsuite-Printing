@@ -112,7 +112,7 @@ const DAPImelda = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[771.02362205px] w-[601.32283465px]">
-      <div className="flex h-[20.787401575px] mt-[125.57480315px]">
+      <div className="flex h-[20.787401575px] mt-[115.57480315px]">
         <p className="w-[374.17322835px] pl-[98.267716535px] h-[22.299212598px]">
           {data[1]?.[mainLineName]
             ?.replace(/Ã/g, "Ñ")
