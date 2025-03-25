@@ -93,6 +93,7 @@ import SMCTAntique from "@/utils/collectionreceipt/global/obbus/celrose/smct/SMC
 import Tagum from "@/utils/collectionreceipt/global/obbus/old/dsm/Tagum";
 import SMCTLiloan from "@/utils/official-receipt/global/obbus/old/smct/SMCTLiloan";
 import Buug from "@/utils/official-receipt/global/fdl/old/dap/Buug";
+import DAPImelda from "@/utils/collectionreceipt/global/fdl/old/dap/DAPImelda";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -102,7 +103,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const HondaDESSizeData = [""];
 
-  const DAPSizeData = ["IMED", "SIND", "DIPD", "KABD", "MANO", "MARA2", "PUTD"];
+  const DAPSizeData = ["SIND", "DIPD", "KABD", "MANO", "MARA2", "PUTD"];
 
   const smctCrSizeData = [""];
 
@@ -463,6 +464,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTLiloan data={data} />; //OR
     case "BUUD" === user?.branchCode:
       return <Buug data={data} />;
+    case "IMED" === user?.branchCode:
+      return <DAPImelda data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
