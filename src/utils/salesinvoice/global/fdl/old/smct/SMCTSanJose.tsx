@@ -170,10 +170,10 @@ const SMCTSanJose = ({ data }: any) => {
                 >
                   {row[articles]}
                 </td>
-                <td className="w-[79.748031496px] h-[18.897637795px] pl-[18.338582677px] ">
+                <td className="w-[79.748031496px] h-[18.897637795px] pl-[35.338582677px] ">
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
-                <td className="w-[102.38740157px] h-[18.897637795px] pl-[18.338582677px] ">
+                <td className="w-[102.38740157px] h-[18.897637795px] pl-[35.338582677px] ">
                   {FormattedNumber(row[quantity] * row[rateInclusiveVat]) ||
                     "0.00"}
                 </td>
@@ -252,77 +252,77 @@ const SMCTSanJose = ({ data }: any) => {
           </tbody>
         </table>
       </div>
-      <div className="mx-[27.212598425px] h-[136.06299213px] mt-[15.897637795px] ml-[7.5590551181px]">
+      <div className="mx-[27.212598425px] h-[136.06299213px] mt-[15.897637795px]">
         <table className="border-collapse w-full">
           <tbody>
             <tr className="text-xs">
               <td className="h-[19.653543307px] w-[132.28346457px] "></td>
-              <td className="h-[19.653543307px] w-[181.41732283px] pl-[11.338582677px]">
+              <td className="h-[19.653543307px] w-[181.41732283px] pl-[15.338582677px]">
                 {/* Vatable Sales */}
                 {vatableSalesFn}
               </td>
               <td className="h-[19.653543307px] w-[136.06299213px]"></td>
-              <td className="h-[19.653543307px] w-[102.04724409px] text-center pl-[10.338582677px]">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-center pl-[35.338582677px]">
                 {/* Total Sales (VAT Inclusive) */}
                 {totalSalesVatInclusiveFn}
               </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[19.653543307px] w-[132.28346457px]"></td>
-              <td className="h-[19.653543307px] w-[181.41732283px] pl-[11.338582677px]">
+              <td className="h-[19.653543307px] w-[181.41732283px] pl-[15.338582677px]">
                 {/* VAT-Exempt Sales */}
                 0.00
               </td>
               <td className="h-[19.653543307px] w-[136.06299213px]"></td>
-              <td className="h-[19.653543307px] w-[102.04724409px] text-center pl-[10.338582677px]">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-center pl-[35.338582677px]">
                 {/* Less: VAT */}
                 {lessVatFn}
               </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[19.653543307px] w-[132.28346457px]"></td>
-              <td className="h-[19.653543307px] w-[181.41732283px] pl-[11.338582677px]">
+              <td className="h-[19.653543307px] w-[181.41732283px] pl-[15.338582677px]">
                 {/* Zero Rated Sales */}
                 0.00
               </td>
               <td className="h-[19.653543307px] w-[136.06299213px]"></td> 
-              <td className="h-[19.653543307px] w-[102.04724409px] text-center pl-[10.338582677px]">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-center pl-[35.338582677px]">
                 {/* Amount: Net Of Vat */}
                 {amountNetOfVatFn}
               </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[19.653543307px] w-[132.28346457px]"></td>
-              <td className="h-[19.653543307px] w-[181.41732283px] pl-[11.338582677px]">
+              <td className="h-[19.653543307px] w-[181.41732283px] pl-[15.338582677px]">
                 {/* VAT Amount */}
                 {vatAmountFn}
               </td>
               <td className="h-[19.653543307px] w-[136.06299213px]"></td>
-              <td className="h-[19.653543307px] w-[102.04724409px] text-center pl-[10.338582677px]"></td>
+              <td className="h-[19.653543307px] w-[102.04724409px] text-center pl-[35.338582677px]"></td>
             </tr>
             <tr className="text-xs">
               <td className="h-[19.653543307px] w-[132.28346457px]"></td>
-              <td className="h-[19.653543307px] w-[181.41732283px] pl-[11.338582677px]"></td>
+              <td className="h-[19.653543307px] w-[181.41732283px] pl-[15.338582677px]"></td>
               <td className="h-[19.653543307px] w-[136.06299213px]"></td>
-              <td className="h-[19.653543307px] w-[102.04724409px] text-center pl-[10.338582677px]">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-center pl-[35.338582677px]">
                 {/* Amount Due */}
                 {amountDueFn}
               </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[19.653543307px] w-[132.28346457px]"></td>
-              <td className="h-[19.653543307px] w-[181.41732283px] pl-[11.338582677px]"></td>
+              <td className="h-[19.653543307px] w-[181.41732283px] pl-[15.338582677px]"></td>
               <td className="h-[19.653543307px] w-[136.06299213px]"></td>
-              <td className="h-[19.653543307px] w-[102.04724409px] text-center pl-[10.338582677px]">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-center pl-[35.338582677px]">
                 {/* Add: VAT */}
                 {addVatFn}
               </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[19.653543307px] w-[132.28346457px]"></td>
-              <td className="h-[19.653543307px] w-[181.41732283px] pl-[11.338582677px]"></td>
+              <td className="h-[19.653543307px] w-[181.41732283px] pl-[15.338582677px]"></td>
               <td className="h-[19.653543307px] w-[136.06299213px]"></td>
-              <td className="h-[19.653543307px] w-[102.04724409px] text-center pl-[10.338582677px]">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-center pl-[35.338582677px]">
                 {/* TOTAL AMOUNT DUE */}
                 {totalAmountDueFn}
               </td>
