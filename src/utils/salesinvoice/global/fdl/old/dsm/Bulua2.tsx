@@ -113,7 +113,7 @@ const Bulua2 = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[763.46456693px] w-[604.72440945px]">
-      <div className="flex h-[19.409448819px] mt-[108.00787402px]">
+      <div className="flex h-[19.409448819px] mt-[105.00787402px]">
         <p className="w-[377.95275591px] pl-[94.488188976px]">
           {data[1]?.[mainLineName]
             ?.replace(/Ã/g, "Ñ")
