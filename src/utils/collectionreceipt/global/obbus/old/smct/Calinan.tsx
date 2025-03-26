@@ -16,8 +16,8 @@ const Calinan: React.FC<PrintPageProps> = ({ data }) => {
   const CR_Reference = 10;
 
   return (
-    <div className="text-xs w-[797.48031496px] h-[565.03937008px] ml-[15px]">
-      <div className="flex mt-[82.275590547px]">
+    <div className="text-xs w-[797.48031496px] h-[565.03937008px] ml-[45px]">
+      <div className="flex mt-[104.9527559px]">
         <p className="pl-[706.41732283px] w-[143.62204724px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
@@ -34,7 +34,7 @@ const Calinan: React.FC<PrintPageProps> = ({ data }) => {
           </p>
         </div>
       </div>
-      <div className="flex mt-[3.8267716539px]">
+      <div className="flex mt-[5.8267716539px]">
         <p className="pl-[312.36220472px]">
           {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
         </p>
@@ -46,7 +46,7 @@ const Calinan: React.FC<PrintPageProps> = ({ data }) => {
           )}
         </p>
       </div>
-      <div className="flex w-full mt-[3.8267716539px]">
+      <div className="flex w-full mt-[13.8267716539px]">
         <div className="w-[604.72440945px]">
           <p className="pl-[239.33070866px]">
             {data[1]?.[CR_AmountInWords] || (
@@ -55,14 +55,14 @@ const Calinan: React.FC<PrintPageProps> = ({ data }) => {
           </p>
         </div>
         <div className="w-[164.40944882px]">
-          <p className="pl-[60.354330709px]">
+          <p className="pl-[70.354330709px]">
             {FormattedNumber(data[1]?.[CR_AmountInFigures]) || (
               <span className="opacity-0">No data</span>
             )}
           </p>
         </div>
       </div>
-      <div className="w-[529px] ml-[350.15748031px] mt-[6.8267716539px]">
+      <div className="w-[529px] ml-[350.15748031px] mt-[10.8267716539px]">
         <p className={`${data[1]?.[CR_Memo].length > 40 ? "text-[10px]" : ""}`}>
           {data[1]?.[CR_Memo] || <span className="opacity-0">No data</span>}
         </p>
