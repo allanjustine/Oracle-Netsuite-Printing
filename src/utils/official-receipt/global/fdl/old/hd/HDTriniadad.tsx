@@ -1,7 +1,7 @@
 "use client";
 import FormattedNumber from "@/utils/FormattedNumber";
 
-const HDVeterans = ({ data }: any) => {
+const HDTrinidad = ({ data }: any) => {
   const CR_Date = 0;
   const CR_Name = 1;
   const CR_TIN = 2;
@@ -15,38 +15,38 @@ const HDVeterans = ({ data }: any) => {
   const CR_Reference = 10;
 
   return (
-    <div className="text-xs w-[778.58267717px] h-[396.8503937px] ml-[10px]">
-      <div className="flex mt-[100.48818898px]">
-        <p className="pl-[604.72440945px] w-[151.18110236px]">
+    <div className="text-xs w-[755.90551181px] h-[404.03149606px] ml-[10px]">
+      <div className="flex mt-[101.38582677px]">
+        <p className="ml-[585.82677165px] w-[147.4015748px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex justify-between  mt-[19.7952755906px]">
-        <div className="w-[566.92913386px]">
-          <p className="pl-[317.48031496px]">
+      <div className="flex w-[755.90551181px] mt-[7.897637794px]">
+        <div className="w-[578.26771654px]">
+          <p className="ml-[313.7007874px]">
             {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
           </p>
         </div>
-        <div className="w-[137.95275591px]">
-          <p className="pl-[41.57480315px]">
+        <div className="w-[177.63779528px]">
+          <p className="ml-[30.236220472px]">
             {data[1]?.[CR_TIN] || <span className="opacity-0">No data</span>}
           </p>
         </div>
       </div>
-      <div className="flex mt-[9.8267716539px]">
-        <p className="pl-[302.36220472px]">
+      <div className="flex ml-[302.36220472px] mt-[9.8267716539px]">
+        <p className="w-[362.83464567px] text-[11px]">
           {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex mt-[6.8267716539px]">
-        <p className="ml-[302.36220472px]">
+      <div className="flex mt-[6.8267716539px] w-[755.90551181px]">
+        <p className="ml-[294.80314961px] w-[381.73228346px] text-xs">
           {data[1]?.[CR_BusinessStyle] || (
             <span className="opacity-0">No data</span>
           )}
         </p>
       </div>
       <div className="flex mt-[3.8267716539px]">
-        <p className="ml-[226.77165354px]">
+        <p className="ml-[226.77165354px] w-[472.44094488px]">
           {data[1]?.[CR_AmountInWords] || (
             <span className="opacity-0">No data</span>
           )}
@@ -75,8 +75,8 @@ const HDVeterans = ({ data }: any) => {
           )}
         </p>
       </div>
-      <div className="w-[718.11023622px] pl-[566.92913386px] mt-[30.7952755906px]">
-        <p>
+      <div className="w-[718.11023622px] mt-[25.7952755906px]">
+        <p className="ml-[566.92913386px]">
           {data[1]?.[CR_PartnerName] || (
             <span className="opacity-0">No Data</span>
           )}
@@ -86,4 +86,4 @@ const HDVeterans = ({ data }: any) => {
   );
 };
 
-export default HDVeterans;
+export default HDTrinidad;

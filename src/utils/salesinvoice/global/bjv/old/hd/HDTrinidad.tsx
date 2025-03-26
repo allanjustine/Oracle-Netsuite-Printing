@@ -8,7 +8,7 @@ import FormattedSumTotalLessVat from "@/utils/FormattedSumTotalLessVat";
 import FormattedSumTotalMinusLessVat from "@/utils/FormattedSumTotalMinusLessVat";
 import FormattedTotalAmountDue from "@/utils/FormattedTotalAmountDue";
 
-const HDInabanga = ({ data }: any) => {
+const HDTrinidad = ({ data }: any) => {
   const mainLineName = 0;
   const date = 1;
   const taxNumber = 2;
@@ -112,10 +112,13 @@ const HDInabanga = ({ data }: any) => {
   );
 
   return (
-    <div className="text-xs h-[771.02362205px] w-[593.38582677px] ml-[7px]">
-      <div className="flex h-[19.409448819px] mt-[133.57480315px]">
+    <div className="text-xs h-[771.02362205px] w-[604.72440945px]">
+      <div className="flex h-[19.409448819px] mt-[109.60629921px]">
         <p className="w-[376.06299213px] pl-[94.488188976px]">
-          {data[1]?.[mainLineName] || ""}
+          {data[1]?.[mainLineName]
+            ?.replace(/Ã/g, "Ñ")
+            .replace(/Ã‘/g, "Ñ")
+            .replace(/Ã±/g, "ñ") || ""}
         </p>
         <p className="w-[219.21259843px] pl-[60.472440945px]">
           {data[1]?.[date] || ""}
@@ -126,16 +129,16 @@ const HDInabanga = ({ data }: any) => {
           {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
         <p className="w-[219.21259843px] pl-[60.472440945px]">
-          {data[1]?.[terms] || "CASH"}
+          {data[1]?.[terms] || ""}
         </p>
       </div>
       <div className="flex h-[38.818897638px]">
         <div className="w-[376.06299213px] pl-[94.488188976px]">
           <p className="h-[19.409448819px]">
-            {data[1]?.[billingAddress].substring(0, 43) || ""}
+            {data[1]?.[billingAddress].substring(0, 47) || ""}
           </p>
           <p className="h-[19.409448819px]">
-            {data[1]?.[billingAddress].substring(43) || ""}
+            {data[1]?.[billingAddress].substring(47) || ""}
           </p>
         </div>
         <p className="w-[219.21259843px] pl-[136.06299213px]">
@@ -150,13 +153,13 @@ const HDInabanga = ({ data }: any) => {
           {data[1]?.[cardHolderSignatures] || ""}
         </p>
       </div>
-      <div className="mx-[34.393700787px] mt-[23.4330708664px] h-[314.07874016px]">
+      <div className="mx-[34.393700787px] mt-[12.094488189px] h-[314.07874016px]">
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
               <tr key={index} className="text-xs text-center">
                 <td className="w-[71.811023622px]">
-                  {row[quantity].replace(/.0$/, "")}
+                  {row[quantity]?.replace(/.0$/, "")}
                 </td>
                 <td className="w-[62.362204724px] h-[19.275590551px]">
                   {row[unitOfMeasurement]}
@@ -183,7 +186,7 @@ const HDInabanga = ({ data }: any) => {
                 <td className="w-[62.362204724px] h-[19.275590551px]"></td>
                 <td
                   className={`w-[238.48818898px] h-[19.275590551px] text-start ${
-                    data[1]?.[serialNumber]?.length > 20 ? "text-[10px]" : ""
+                    data[1]?.[serialNumber]?.length > 28 ? "text-[10px]" : ""
                   }`}
                 >
                   {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
@@ -202,7 +205,7 @@ const HDInabanga = ({ data }: any) => {
                 <td className="w-[62.362204724px] h-[19.275590551px]"></td>
                 <td
                   className={`w-[238.48818898px] h-[19.275590551px] text-start ${
-                    data[1]?.[chassisNumber]?.length > 20 ? "text-[10px]" : ""
+                    data[1]?.[chassisNumber]?.length > 28 ? "text-[10px]" : ""
                   }`}
                 >
                   {data[1]?.[chassisNumber] && (
@@ -219,7 +222,7 @@ const HDInabanga = ({ data }: any) => {
                 <td className="w-[62.362204724px] h-[19.275590551px]"></td>
                 <td
                   className={`w-[238.48818898px] h-[19.275590551px] text-start ${
-                    data[1]?.[conductionSticker]?.length > 20
+                    data[1]?.[conductionSticker]?.length > 28
                       ? "text-[10px]"
                       : ""
                   }`}
@@ -238,7 +241,7 @@ const HDInabanga = ({ data }: any) => {
                 <td className="w-[62.362204724px] h-[19.275590551px]"></td>
                 <td
                   className={`w-[238.48818898px] h-[19.275590551px] text-start ${
-                    data[1]?.[color]?.length > 20 ? "text-[10px]" : ""
+                    data[1]?.[color]?.length > 28 ? "text-[10px]" : ""
                   }`}
                 >
                   {data[1]?.[color] && <>Color: {data[1]?.[color]}</>}
@@ -250,7 +253,7 @@ const HDInabanga = ({ data }: any) => {
           </tbody>
         </table>
       </div>
-      <div className="mx-[34.393700787px] h-[126.99212598px]">
+      <div className="mx-[34.393700787px] h-[139.84251969px]">
         <tbody>
           <tr className="text-xs">
             <td className="h-[19.275590551px] w-[131.90551181px]"></td>
@@ -318,11 +321,16 @@ const HDInabanga = ({ data }: any) => {
       </div>
       <div className="mx-[34.393700787px]">
         <div className="mt-[26.456692914px] ml-[332.976377952px]">
-          <p className="text-xs text-center">{data[1]?.[cashier] || ""}</p>
+          <p className="text-xs text-center">
+            {data[1]?.[cashier]
+              ?.replace(/Ã/g, "Ñ")
+              .replace(/Ã‘/g, "Ñ")
+              .replace(/Ã±/g, "ñ") || ""}
+          </p>
         </div>
       </div>
     </div>
   );
 };
 
-export default HDInabanga;
+export default HDTrinidad;

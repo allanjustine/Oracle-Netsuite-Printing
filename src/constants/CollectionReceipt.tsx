@@ -95,6 +95,7 @@ import SMCTLiloan from "@/utils/official-receipt/global/obbus/old/smct/SMCTLiloa
 import Buug from "@/utils/official-receipt/global/fdl/old/dap/Buug";
 import DAPImelda from "@/utils/collectionreceipt/global/fdl/old/dap/DAPImelda";
 import SMCTSanJose from "@/utils/collectionreceipt/global/fdl/old/smct/SMCTSanJose";
+import HDTrinidad from "@/utils/official-receipt/global/fdl/old/hd/HDTriniadad";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -142,14 +143,13 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "PAGS",
     "NUND2",
     "AKLA",
-    "CARS",
+    //"CARS",
     "TUBI",
     "DSMD",
     "REMI2",
     "TUBU",
     "ALAH",
     "BALAM",
-    "TRINI",
     "CALD",
     "INIT2",
     "KABA",
@@ -469,6 +469,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     return <SMCTSanJose data={data} />;
     case "SROS" === user?.branchCode:
     return <SMCTSanJose data={data} />;
+    case "TRINI" === user?.branchCode:
+      return <HDTrinidad data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
