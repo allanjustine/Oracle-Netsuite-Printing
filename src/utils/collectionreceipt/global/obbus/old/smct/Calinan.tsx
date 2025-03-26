@@ -55,7 +55,7 @@ const Calinan: React.FC<PrintPageProps> = ({ data }) => {
           </p>
         </div>
         <div className="w-[164.40944882px]">
-          <p className="pl-[70.354330709px]">
+          <p className="pl-[90.708661417px]">
             {FormattedNumber(data[1]?.[CR_AmountInFigures]) || (
               <span className="opacity-0">No data</span>
             )}
