@@ -28,7 +28,7 @@ const HDInitao = ({ data }: any) => {
           </p>
         </div>
         <div className="w-[137.95275591px]">
-          <p className="pl-[41.57480315px]">
+          <p className="pl-[25.57480315px]">
             {data[1]?.[CR_TIN] || <span className="opacity-0">No data</span>}
           </p>
         </div>

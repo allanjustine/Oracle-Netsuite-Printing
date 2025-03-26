@@ -112,7 +112,7 @@ const SMCTCarcar = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[793.7007874px] w-[608.50393701px]">
-      <div className="flex h-[19.409448819px] mt-[84.551181105px]">
+      <div className="flex h-[19.409448819px] mt-[103.4488189px]">
         <p className="w-[391.18110236px] pl-[95.82677165px]">
           {data[1]?.[mainLineName]
             ?.replace(/Ã/g, "Ñ")
@@ -157,7 +157,7 @@ const SMCTCarcar = ({ data }: any) => {
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
               <tr key={index} className="text-xs text-center">
-                <td className="w-[75.590551181px]">
+                <td className="w-[71.811023622px]">
                   {row[quantity]?.replace(/.0$/, "")}
                 </td>
                 <td className="w-[56.692913386px] h-[18.897637795px] pl-4">
@@ -170,10 +170,10 @@ const SMCTCarcar = ({ data }: any) => {
                 >
                   {row[articles]}
                 </td>
-                <td className="w-[79.748031496px] h-[18.897637795px]">
+                <td className="w-[79.37007874px] h-[18.897637795px]">
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
-                <td className="w-[98.267716535px] h-[18.897637795px]">
+                <td className="w-[102.04724409px] h-[18.897637795px]">
                   {FormattedNumber(row[quantity] * row[rateInclusiveVat]) ||
                     "0.00"}
                 </td>
@@ -181,7 +181,7 @@ const SMCTCarcar = ({ data }: any) => {
             ))}
             {data[1]?.[serialNumber] && (
               <tr className="text-xs text-center">
-                <td className="w-[75.590551181px]"></td>
+                <td className="w-[71.811023622px]"></td>
                 <td className="w-[56.692913386px] h-[18.897637795px] pl-4"></td>
                 <td
                   className={`w-[230.5511811px] h-[18.897637795px] pl-2 text-start ${
@@ -194,13 +194,13 @@ const SMCTCarcar = ({ data }: any) => {
                     <>Serial #: {data[1]?.[serialNumber]}</>
                   )}
                 </td>
-                <td className="w-[79.748031496px] h-[18.897637795px]"></td>
-                <td className="w-[98.267716535px] h-[18.897637795px]"></td>
+                <td className="w-[79.37007874px] h-[18.897637795px]"></td>
+                <td className="w-[102.04724409px] h-[18.897637795px]"></td>
               </tr>
             )}
             {data[1]?.[chassisNumber] && (
               <tr className="text-xs text-center">
-                <td className="w-[75.590551181px]"></td>
+                <td className="w-[71.811023622px]"></td>
                 <td className="w-[56.692913386px] h-[18.897637795px] pl-4"></td>
                 <td
                   className={`w-[230.5511811px] h-[18.897637795px] pl-2 text-start ${
@@ -211,13 +211,13 @@ const SMCTCarcar = ({ data }: any) => {
                     <>Chassis #: {data[1]?.[chassisNumber]}</>
                   )}
                 </td>
-                <td className="w-[79.748031496px] h-[18.897637795px]"></td>
-                <td className="w-[98.267716535px] h-[18.897637795px]"></td>
+                <td className="w-[79.37007874px] h-[18.897637795px]"></td>
+                <td className="w-[102.04724409px] h-[18.897637795px]"></td>
               </tr>
             )}
             {data?.[1]?.[conductionSticker] && (
               <tr className="text-xs text-center">
-                <td className="w-[75.590551181px]"></td>
+                <td className="w-[71.811023622px]"></td>
                 <td className="w-[56.692913386px] h-[18.897637795px] pl-4"></td>
                 <td
                   className={`w-[230.5511811px] h-[18.897637795px] pl-2 text-start ${
@@ -230,13 +230,13 @@ const SMCTCarcar = ({ data }: any) => {
                     <>Conduction Sticker: {data[1]?.[conductionSticker]}</>
                   )}
                 </td>
-                <td className="w-[79.748031496px] h-[18.897637795px]"></td>
-                <td className="w-[98.267716535px] h-[18.897637795px]"></td>
+                <td className="w-[79.37007874px] h-[18.897637795px]"></td>
+                <td className="w-[102.04724409px] h-[18.897637795px]"></td>
               </tr>
             )}
             {data?.[1]?.[color] && (
               <tr className="text-xs text-center">
-                <td className="w-[75.590551181px]"></td>
+                <td className="w-[71.811023622px]"></td>
                 <td className="w-[56.692913386px] h-[18.897637795px] pl-4"></td>
                 <td
                   className={`w-[230.5511811px] h-[18.897637795px] pl-2 text-start ${
@@ -245,8 +245,8 @@ const SMCTCarcar = ({ data }: any) => {
                 >
                   {data[1]?.[color] && <>Color: {data[1]?.[color]}</>}
                 </td>
-                <td className="w-[79.748031496px] h-[18.897637795px]"></td>
-                <td className="w-[98.267716535px] h-[18.897637795px]"></td>
+                <td className="w-[79.37007874px] h-[18.897637795px]"></td>
+                <td className="w-[102.04724409px] h-[18.897637795px]"></td>
               </tr>
             )}
           </tbody>
@@ -262,7 +262,7 @@ const SMCTCarcar = ({ data }: any) => {
                 {vatableSalesFn}
               </td>
               <td className="h-[19.653543307px] w-[132.66141732px]"></td>
-              <td className="h-[19.653543307px] w-[98.267716535px] text-center">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-center">
                 {/* Total Sales (VAT Inclusive) */}
                 {totalSalesVatInclusiveFn}
               </td>
@@ -274,7 +274,7 @@ const SMCTCarcar = ({ data }: any) => {
                 0.00
               </td>
               <td className="h-[19.653543307px] w-[132.66141732px]"></td>
-              <td className="h-[19.653543307px] w-[98.267716535px] text-center">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-center">
                 {/* Less: VAT */}
                 {lessVatFn}
               </td>
@@ -286,7 +286,7 @@ const SMCTCarcar = ({ data }: any) => {
                 0.00
               </td>
               <td className="h-[19.653543307px] w-[132.66141732px]"></td>
-              <td className="h-[19.653543307px] w-[98.267716535px] text-center">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-center">
                 {/* Amount: Net Of Vat */}
                 {amountNetOfVatFn}
               </td>
@@ -298,13 +298,13 @@ const SMCTCarcar = ({ data }: any) => {
                 {vatAmountFn}
               </td>
               <td className="h-[19.653543307px] w-[132.66141732px]"></td>
-              <td className="h-[19.653543307px] w-[98.267716535px] text-center"></td>
+              <td className="h-[19.653543307px] w-[102.04724409px] text-center"></td>
             </tr>
             <tr className="text-xs">
               <td className="h-[19.653543307px] w-[128.50393701px]"></td>
               <td className="h-[19.653543307px] w-[177.63779528px] pl-[11.338582677px]"></td>
               <td className="h-[19.653543307px] w-[132.66141732px]"></td>
-              <td className="h-[19.653543307px] w-[98.267716535px] text-center">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-center">
                 {/* Amount Due */}
                 {amountDueFn}
               </td>
@@ -313,7 +313,7 @@ const SMCTCarcar = ({ data }: any) => {
               <td className="h-[19.653543307px] w-[128.50393701px]"></td>
               <td className="h-[19.653543307px] w-[177.63779528px] pl-[11.338582677px]"></td>
               <td className="h-[19.653543307px] w-[132.66141732px]"></td>
-              <td className="h-[19.653543307px] w-[98.267716535px] text-center">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-center">
                 {/* Add: VAT */}
                 {addVatFn}
               </td>
@@ -322,7 +322,7 @@ const SMCTCarcar = ({ data }: any) => {
               <td className="h-[19.653543307px] w-[128.50393701px]"></td>
               <td className="h-[19.653543307px] w-[177.63779528px] pl-[11.338582677px]"></td>
               <td className="h-[19.653543307px] w-[132.66141732px]"></td>
-              <td className="h-[19.653543307px] w-[98.267716535px] text-center">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-center">
                 {/* TOTAL AMOUNT DUE */}
                 {totalAmountDueFn}
               </td>
