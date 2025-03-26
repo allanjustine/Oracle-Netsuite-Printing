@@ -111,7 +111,7 @@ const HDMaranding = ({ data }: any) => {
   );
 
   return (
-    <div className="text-xs h-[771.02362205px] w-[593.38582677px]">
+    <div className="text-xs h-[771.02362205px] w-[593.38582677px] ml-[7px]">
       <div className="flex h-[19.409448819px] mt-[154.96062992px]">
         <p className="w-[376.06299213px] pl-[94.488188976px]">
           {data[1]?.[mainLineName]
@@ -132,24 +132,15 @@ const HDMaranding = ({ data }: any) => {
         </p>
       </div>
       <div className="flex h-[38.818897638px]">
-        <div className="w-[376.06299213px] pl-[94.488188976px]">
-          <p className="h-[19.409448819px]">
-            {data[1]?.[billingAddress].substring(0, 43) || ""}
+        <div className="w-[595.27559056px] pl-[94.488188976px]">
+          <p className={`h-[19.409448819px] ${data[1]?.[billingAddress]?.length > 28 ? "text-[10px]" : ""}`}>
+            {data[1]?.[billingAddress] || ""}
           </p>
-          <p className="h-[19.409448819px]">
-            {data[1]?.[billingAddress].substring(43) || ""}
-          </p>
-        </div>
-        <p className="w-[219.21259843px] pl-[136.06299213px]">
-          {data[1]?.[oscaPwdIdNo] || ""}
-        </p>
+        </div> 
       </div>
       <div className="flex h-[19.409448819px]">
-        <p className="w-[376.06299213px] pl-[137.95275591px]">
+        <p className="w-[595.27559056px] pl-[137.95275591px]">
           {data[1]?.[businessStyle] || ""}
-        </p>
-        <p className="w-[219.21259843px] pl-[113.38582677px]">
-          {data[1]?.[cardHolderSignatures] || ""}
         </p>
       </div>
       <div className="mx-[34.393700787px] mt-[23.4330708664px] h-[314.07874016px]">
