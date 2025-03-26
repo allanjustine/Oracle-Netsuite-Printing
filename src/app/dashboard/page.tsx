@@ -269,6 +269,10 @@ export default function Page() {
           }, 50);
         }
       };
+
+      printWindow.onafterprint = () => {
+        printWindow.close();
+      };
     }
   };
 
