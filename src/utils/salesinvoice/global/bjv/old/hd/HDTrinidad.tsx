@@ -153,7 +153,7 @@ const HDTrinidad = ({ data }: any) => {
           {data[1]?.[cardHolderSignatures] || ""}
         </p>
       </div>
-      <div className="mx-[34.393700787px] mt-[12.094488189px] h-[308.07874016px]">
+      <div className="mx-[34.393700787px] mt-[14.094488189px] h-[290.07874016px]">
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
@@ -171,10 +171,10 @@ const HDTrinidad = ({ data }: any) => {
                 >
                   {row[articles]}
                 </td>
-                <td className="w-[79.748031496px] h-[19.275590551px]">
+                <td className="w-[89.748031496px] h-[19.275590551px] text-start">
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
-                <td className="w-[102.38740157px] h-[19.275590551px]">
+                <td className="w-[112.38740157px] h-[19.275590551px] text-start">
                   {FormattedNumber(row[quantity] * row[rateInclusiveVat]) ||
                     "0.00"}
                 </td>
