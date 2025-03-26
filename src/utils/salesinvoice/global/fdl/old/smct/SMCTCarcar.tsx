@@ -152,7 +152,7 @@ const SMCTCarcar = ({ data }: any) => {
           {data[1]?.[cardHolderSignatures] || ""}
         </p>
       </div>
-      <div className="mx-[27.212598425px] mt-[7.2047244094px] h-[316.03149606px]">
+      <div className="mx-[27.212598425px] mt-[7.2047244094px] h-[325.03937008px]">
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
@@ -170,10 +170,10 @@ const SMCTCarcar = ({ data }: any) => {
                 >
                   {row[articles]}
                 </td>
-                <td className="w-[79.37007874px] h-[18.897637795px]">
+                <td className="w-[79.37007874px] h-[18.897637795px] text-start">
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
-                <td className="w-[102.04724409px] h-[18.897637795px]">
+                <td className="w-[102.04724409px] h-[18.897637795px] text-start">
                   {FormattedNumber(row[quantity] * row[rateInclusiveVat]) ||
                     "0.00"}
                 </td>
@@ -262,7 +262,7 @@ const SMCTCarcar = ({ data }: any) => {
                 {vatableSalesFn}
               </td>
               <td className="h-[19.653543307px] w-[132.66141732px]"></td>
-              <td className="h-[19.653543307px] w-[102.04724409px] text-center">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-start">
                 {/* Total Sales (VAT Inclusive) */}
                 {totalSalesVatInclusiveFn}
               </td>
@@ -274,7 +274,7 @@ const SMCTCarcar = ({ data }: any) => {
                 0.00
               </td>
               <td className="h-[19.653543307px] w-[132.66141732px]"></td>
-              <td className="h-[19.653543307px] w-[102.04724409px] text-center">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-start">
                 {/* Less: VAT */}
                 {lessVatFn}
               </td>
@@ -286,7 +286,7 @@ const SMCTCarcar = ({ data }: any) => {
                 0.00
               </td>
               <td className="h-[19.653543307px] w-[132.66141732px]"></td>
-              <td className="h-[19.653543307px] w-[102.04724409px] text-center">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-start">
                 {/* Amount: Net Of Vat */}
                 {amountNetOfVatFn}
               </td>
@@ -298,13 +298,13 @@ const SMCTCarcar = ({ data }: any) => {
                 {vatAmountFn}
               </td>
               <td className="h-[19.653543307px] w-[132.66141732px]"></td>
-              <td className="h-[19.653543307px] w-[102.04724409px] text-center"></td>
+              <td className="h-[19.653543307px] w-[102.04724409px] text-start"></td>
             </tr>
             <tr className="text-xs">
               <td className="h-[19.653543307px] w-[128.50393701px]"></td>
               <td className="h-[19.653543307px] w-[177.63779528px] pl-[11.338582677px]"></td>
               <td className="h-[19.653543307px] w-[132.66141732px]"></td>
-              <td className="h-[19.653543307px] w-[102.04724409px] text-center">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-start">
                 {/* Amount Due */}
                 {amountDueFn}
               </td>
@@ -313,7 +313,7 @@ const SMCTCarcar = ({ data }: any) => {
               <td className="h-[19.653543307px] w-[128.50393701px]"></td>
               <td className="h-[19.653543307px] w-[177.63779528px] pl-[11.338582677px]"></td>
               <td className="h-[19.653543307px] w-[132.66141732px]"></td>
-              <td className="h-[19.653543307px] w-[102.04724409px] text-center">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-start">
                 {/* Add: VAT */}
                 {addVatFn}
               </td>
@@ -322,7 +322,7 @@ const SMCTCarcar = ({ data }: any) => {
               <td className="h-[19.653543307px] w-[128.50393701px]"></td>
               <td className="h-[19.653543307px] w-[177.63779528px] pl-[11.338582677px]"></td>
               <td className="h-[19.653543307px] w-[132.66141732px]"></td>
-              <td className="h-[19.653543307px] w-[102.04724409px] text-center">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-start">
                 {/* TOTAL AMOUNT DUE */}
                 {totalAmountDueFn}
               </td>

@@ -171,10 +171,10 @@ const HDTrinidad = ({ data }: any) => {
                 >
                   {row[articles]}
                 </td>
-                <td className="w-[79.748031496px] h-[19.275590551px]">
+                <td className="w-[79.748031496px] h-[19.275590551px] text-start">
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
-                <td className="w-[102.38740157px] h-[19.275590551px]">
+                <td className="w-[102.38740157px] h-[19.275590551px] text-start">
                   {FormattedNumber(row[quantity] * row[rateInclusiveVat]) ||
                     "0.00"}
                 </td>
@@ -261,7 +261,7 @@ const HDTrinidad = ({ data }: any) => {
               {vatableSalesFn}
             </td>
             <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-            <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+            <td className="h-[19.275590551px] w-[102.04724409px] text-start">
               {totalSalesVatInclusiveFn}
             </td>
           </tr>
@@ -271,7 +271,7 @@ const HDTrinidad = ({ data }: any) => {
               0.00
             </td>
             <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-            <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+            <td className="h-[19.275590551px] w-[102.04724409px] text-start">
               {lessVatFn}
             </td>
           </tr>
@@ -281,7 +281,7 @@ const HDTrinidad = ({ data }: any) => {
               0.00
             </td>
             <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-            <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+            <td className="h-[19.275590551px] w-[102.04724409px] text-start">
               {amountNetOfVatFn}
             </td>
           </tr>
@@ -291,13 +291,13 @@ const HDTrinidad = ({ data }: any) => {
               {vatAmountFn}
             </td>
             <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-            <td className="h-[19.275590551px] w-[102.04724409px] text-center"></td>
+            <td className="h-[19.275590551px] w-[102.04724409px] text-start"></td>
           </tr>
           <tr className="text-xs">
             <td className="h-[19.275590551px] w-[131.90551181px]"></td>
             <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]"></td>
             <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-            <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+            <td className="h-[19.275590551px] w-[102.04724409px] text-start">
               {amountDueFn}
             </td>
           </tr>
@@ -305,7 +305,7 @@ const HDTrinidad = ({ data }: any) => {
             <td className="h-[19.275590551px] w-[131.90551181px]"></td>
             <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]"></td>
             <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-            <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+            <td className="h-[19.275590551px] w-[102.04724409px] text-start">
               {addVatFn}
             </td>
           </tr>
@@ -313,7 +313,7 @@ const HDTrinidad = ({ data }: any) => {
             <td className="h-[19.275590551px] w-[131.90551181px]"></td>
             <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]"></td>
             <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-            <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+            <td className="h-[19.275590551px] w-[102.04724409px] text-start">
               {totalAmountDueFn}
             </td>
           </tr>
