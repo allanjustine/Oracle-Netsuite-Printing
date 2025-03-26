@@ -118,6 +118,7 @@ import HDTrinidad from "@/utils/salesinvoice/global/bjv/old/hd/HDTrinidad";
 import SMCTCarcar from "@/utils/salesinvoice/global/fdl/old/smct/SMCTCarcar";
 import SMCTCalinan from "@/utils/salesinvoice/global/fdl/old/smct/SMCTCalinan";
 import DSMMedellin from "@/utils/salesinvoice/global/obbus/old/dsm/DSMMedellin";
+import HDAlano from "@/utils/salesinvoice/global/fdl/old/hd/HDAlano";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -185,7 +186,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "VALEN",
     "KABA2",
     "TUBU",
-    "ALAH",
     "BUUD",
     "DIPD2",
     "DSMV",
@@ -497,6 +497,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTCalinan data={data} />;
     case "MEDE" === user?.branchCode:
       return <DSMMedellin data={data} />;
+    case "ALAH" === user?.branchCode:
+      return <HDAlano data={data} />;
 
     default:
       return (

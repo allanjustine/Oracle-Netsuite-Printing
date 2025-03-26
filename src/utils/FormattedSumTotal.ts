@@ -17,8 +17,5 @@ export default function FormattedSumTotal(
     );
   }, 0);
 
-  
-  console.log(sumOfTotalSalesVatInclusive);
-
   return FormattedNumber(sumOfTotalSalesVatInclusive);
 }
