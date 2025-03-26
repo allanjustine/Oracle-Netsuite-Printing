@@ -113,7 +113,7 @@ const HDTrinidad = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[771.02362205px] w-[604.72440945px]">
-      <div className="flex h-[19.409448819px] mt-[109.60629921px]">
+      <div className="flex h-[19.409448819px] mt-[110.6771653587px]">
         <p className="w-[376.06299213px] pl-[94.488188976px]">
           {data[1]?.[mainLineName]
             ?.replace(/Ã/g, "Ñ")
@@ -153,7 +153,7 @@ const HDTrinidad = ({ data }: any) => {
           {data[1]?.[cardHolderSignatures] || ""}
         </p>
       </div>
-      <div className="mx-[34.393700787px] mt-[12.094488189px] h-[321.25984252px]">
+      <div className="mx-[34.393700787px] mt-[12.094488189px] h-[308.07874016px]">
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
@@ -171,10 +171,10 @@ const HDTrinidad = ({ data }: any) => {
                 >
                   {row[articles]}
                 </td>
-                <td className="w-[79.748031496px] h-[19.275590551px] text-start">
+                <td className="w-[79.748031496px] h-[19.275590551px]">
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
-                <td className="w-[102.38740157px] h-[19.275590551px] text-start">
+                <td className="w-[102.38740157px] h-[19.275590551px]">
                   {FormattedNumber(row[quantity] * row[rateInclusiveVat]) ||
                     "0.00"}
                 </td>
@@ -253,7 +253,7 @@ const HDTrinidad = ({ data }: any) => {
           </tbody>
         </table>
       </div>
-      <div className="mx-[34.393700787px] h-[139.84251969px]">
+      <div className="mx-[34.393700787px] h-[126.99212598px]">
         <tbody>
           <tr className="text-xs">
             <td className="h-[19.275590551px] w-[131.90551181px]"></td>
@@ -320,7 +320,7 @@ const HDTrinidad = ({ data }: any) => {
         </tbody>
       </div>
       <div className="mx-[34.393700787px]">
-        <div className="mt-[22.456692914px] ml-[332.976377952px]">
+        <div className="mt-[26.456692914px] ml-[332.976377952px]">
           <p className="text-xs text-center">
             {data[1]?.[cashier]
               ?.replace(/Ã/g, "Ñ")
