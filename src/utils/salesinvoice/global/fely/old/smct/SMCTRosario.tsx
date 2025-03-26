@@ -111,69 +111,69 @@ const SMCTRosario = ({ data }: any) => {
   );
 
   return (
-    <div className="text-xs h-[771.02362205px] w-[593.38582677px]">
-      <div className="flex h-[19.409448819px] mt-[118.6771653587px]">
-        <p className="w-[376.06299213px] pl-[94.488188976px]">
+    <div className="text-xs h-[797.48031496px] w-[638.74015748px]">
+      <div className="flex h-[14.74015748px] mt-[125.01574804px]">
+        <p className={`w-[425.19685039px] pl-[109.60629921px] ${data[1]?.[mainLineName]?.length > 28 ? "text-[9px]" : ''}`}>
           {data[1]?.[mainLineName]
             ?.replace(/Ã/g, "Ñ")
             .replace(/Ã‘/g, "Ñ")
             .replace(/Ã±/g, "ñ") || ""}
         </p>
-        <p className="w-[219.21259843px] pl-[60.472440945px]">
+        <p className="w-[216.94488189px] pl-[56.692913386px]">
           {data[1]?.[date] || ""}
         </p>
       </div>
-      <div className="flex h-[19.409448819px]">
-        <p className="w-[376.06299213px] pl-[94.488188976px]">
+      <div className="flex h-[14.74015748px]">
+        <p className="w-[425.19685039px] pl-[109.60629921px]">
           {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
-        <p className="w-[219.21259843px] pl-[60.472440945px]">
+        <p className="w-[216.94488189px] pl-[56.692913386px]">
           {data[1]?.[terms] || "CASH"}
         </p>
       </div>
       <div className="flex h-[38.818897638px]">
-        <div className="w-[376.06299213px] pl-[94.488188976px]">
-          <p className="h-[19.409448819px]">
-            {data[1]?.[billingAddress].substring(0, 43) || ""}
+        <div className="w-[425.19685039px] pl-[109.60629921px]">
+          <p className="h-[14.74015748px]">
+            {data[1]?.[billingAddress].substring(0, 40) || ""}
           </p>
-          <p className="h-[19.409448819px]">
-            {data[1]?.[billingAddress].substring(43) || ""}
+          <p className="h-[14.74015748px]">
+            {data[1]?.[billingAddress].substring(40) || ""}
           </p>
         </div>
-        <p className="w-[219.21259843px] pl-[136.06299213px]">
+        <p className="w-[216.94488189px] pl-[124.72440945px]">
           {data[1]?.[oscaPwdIdNo] || ""}
         </p>
       </div>
-      <div className="flex h-[19.409448819px]">
-        <p className="w-[376.06299213px] pl-[137.95275591px]">
+      <div className="flex h-[14.74015748px]">
+        <p className="w-[425.19685039px] pl-[137.95275591px]">
           {data[1]?.[businessStyle] || ""}
         </p>
-        <p className="w-[219.21259843px] pl-[113.38582677px]">
+        <p className="w-[216.94488189px] pl-[86.929133858px]">
           {data[1]?.[cardHolderSignatures] || ""}
         </p>
       </div>
-      <div className="mx-[34.393700787px] mt-[23.4330708664px] h-[314.07874016px]">
+      <div className="mx-[39.68503937px] mt-[19.275590551px] h-[314.07874016px]">
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
               <tr key={index} className="text-[10px] text-center">
-                <td className="w-[71.811023622px]">
+                <td className="w-[49.133858268px]">
                   {row[quantity]?.replace(/.0$/, "")}
                 </td>
-                <td className="w-[62.362204724px] h-[19.275590551px]">
+                <td className="w-[49.133858268px] h-[19.275590551px]">
                   {row[unitOfMeasurement]}
                 </td>
                 <td
-                  className={`w-[238.48818898px] h-[19.275590551px] text-start ${
+                  className={`w-[283.46456693px] h-[19.275590551px] text-start ${
                     row[articles]?.length > 41 ? "text-[7px]" : ""
                   }`}
                 >
                   {row[articles]}
                 </td>
-                <td className="w-[79.748031496px] h-[19.275590551px]">
+                <td className="w-[79.37007874px] h-[19.275590551px]">
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
-                <td className="w-[102.38740157px] h-[19.275590551px]">
+                <td className="w-[79.748031496px] h-[19.275590551px]">
                   {FormattedNumber(row[quantity] * row[rateInclusiveVat]) ||
                     "0.00"}
                 </td>
@@ -181,10 +181,10 @@ const SMCTRosario = ({ data }: any) => {
             ))}
             {data[1]?.[serialNumber] && (
               <tr className="text-xs text-center">
-                <td className="w-[71.811023622px]"></td>
-                <td className="w-[62.362204724px] h-[19.275590551px]"></td>
+                <td className="w-[49.133858268px]"></td>
+                <td className="w-[49.133858268px] h-[19.275590551px]"></td>
                 <td
-                  className={`w-[238.48818898px] h-[19.275590551px] text-start ${
+                  className={`w-[283.46456693px] h-[19.275590551px] text-start ${
                     data[1]?.[serialNumber]?.length > 20 ? "text-[10px]" : ""
                   }`}
                 >
@@ -194,16 +194,16 @@ const SMCTRosario = ({ data }: any) => {
                     <>Serial #: {data[1]?.[serialNumber]}</>
                   )}
                 </td>
+                <td className="w-[79.37007874px] h-[19.275590551px]"></td>
                 <td className="w-[79.748031496px] h-[19.275590551px]"></td>
-                <td className="w-[102.38740157px] h-[19.275590551px]"></td>
               </tr>
             )}
             {data[1]?.[chassisNumber] && (
               <tr className="text-xs text-center">
-                <td className="w-[71.811023622px]"></td>
-                <td className="w-[62.362204724px] h-[19.275590551px]"></td>
+                <td className="w-[49.133858268px]"></td>
+                <td className="w-[49.133858268px] h-[19.275590551px]"></td>
                 <td
-                  className={`w-[238.48818898px] h-[19.275590551px] text-start ${
+                  className={`w-[283.46456693px] h-[19.275590551px] text-start ${
                     data[1]?.[chassisNumber]?.length > 20 ? "text-[10px]" : ""
                   }`}
                 >
@@ -211,16 +211,16 @@ const SMCTRosario = ({ data }: any) => {
                     <>Chassis #: {data[1]?.[chassisNumber]}</>
                   )}
                 </td>
+                <td className="w-[79.37007874px] h-[19.275590551px]"></td>
                 <td className="w-[79.748031496px] h-[19.275590551px]"></td>
-                <td className="w-[102.38740157px] h-[19.275590551px]"></td>
               </tr>
             )}
             {data?.[1]?.[conductionSticker] && (
               <tr className="text-xs text-center">
-                <td className="w-[71.811023622px]"></td>
-                <td className="w-[62.362204724px] h-[19.275590551px]"></td>
+                <td className="w-[49.133858268px]"></td>
+                <td className="w-[49.133858268px] h-[19.275590551px]"></td>
                 <td
-                  className={`w-[238.48818898px] h-[19.275590551px] text-start ${
+                  className={`w-[283.46456693px] h-[19.275590551px] text-start ${
                     data[1]?.[conductionSticker]?.length > 20
                       ? "text-[10px]"
                       : ""
@@ -230,100 +230,100 @@ const SMCTRosario = ({ data }: any) => {
                     <>Conduction Sticker: {data[1]?.[conductionSticker]}</>
                   )}
                 </td>
+                <td className="w-[79.37007874px] h-[19.275590551px]"></td>
                 <td className="w-[79.748031496px] h-[19.275590551px]"></td>
-                <td className="w-[102.38740157px] h-[19.275590551px]"></td>
               </tr>
             )}
             {data?.[1]?.[color] && (
               <tr className="text-xs text-center">
-                <td className="w-[71.811023622px]"></td>
-                <td className="w-[62.362204724px] h-[19.275590551px]"></td>
+                <td className="w-[49.133858268px]"></td>
+                <td className="w-[49.133858268px] h-[19.275590551px]"></td>
                 <td
-                  className={`w-[238.48818898px] h-[19.275590551px] text-start ${
+                  className={`w-[283.46456693px] h-[19.275590551px] text-start ${
                     data[1]?.[color]?.length > 20 ? "text-[10px]" : ""
                   }`}
                 >
                   {data[1]?.[color] && <>Color: {data[1]?.[color]}</>}
                 </td>
+                <td className="w-[79.37007874px] h-[19.275590551px]"></td>
                 <td className="w-[79.748031496px] h-[19.275590551px]"></td>
-                <td className="w-[102.38740157px] h-[19.275590551px]"></td>
               </tr>
             )}
           </tbody>
         </table>
       </div>
-      <div className="mx-[34.393700787px] h-[126.99212598px]">
+      <div className="mx-[39.68503937px] h-[126.99212598px]">
         <table className="border-collapse w-full">
           <tbody>
             <tr className="text-[10px]">
-              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
+              <td className="h-[19.275590551px] w-[94.488188976px]"></td>
+              <td className="h-[19.275590551px] w-[223.37007874px] pl-[11.338582677px]">
                 {vatableSalesFn}
               </td>
-              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-              <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+              <td className="h-[19.275590551px] w-[142.11023622px]"></td>
+              <td className="h-[19.275590551px] w-[79.748031496px] text-center">
                 {totalSalesVatInclusiveFn}
               </td>
             </tr>
             <tr className="text-[10px]">
-              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
+              <td className="h-[19.275590551px] w-[94.488188976px]"></td>
+              <td className="h-[19.275590551px] w-[223.37007874px] pl-[11.338582677px]">
                 0.00
               </td>
-              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-              <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+              <td className="h-[19.275590551px] w-[142.11023622px]"></td>
+              <td className="h-[19.275590551px] w-[79.748031496px] text-center">
                 {lessVatFn}
               </td>
             </tr>
             <tr className="text-[10px]">
-              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
+              <td className="h-[19.275590551px] w-[94.488188976px]"></td>
+              <td className="h-[19.275590551px] w-[223.37007874px] pl-[11.338582677px]">
                 0.00
               </td>
-              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-              <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+              <td className="h-[19.275590551px] w-[142.11023622px]"></td>
+              <td className="h-[19.275590551px] w-[79.748031496px] text-center">
                 {amountNetOfVatFn}
               </td>
             </tr>
             <tr className="text-[10px]">
-              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]">
+              <td className="h-[19.275590551px] w-[94.488188976px]"></td>
+              <td className="h-[19.275590551px] w-[223.37007874px] pl-[11.338582677px]">
                 {vatAmountFn}
               </td>
-              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-              <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+              <td className="h-[19.275590551px] w-[142.11023622px]"></td>
+              <td className="h-[19.275590551px] w-[79.748031496px] text-center">
                 {lessWithHoldingTaxFn}
               </td>
             </tr>
             <tr className="text-[10px]">
-              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]"></td>
-              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-              <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+              <td className="h-[19.275590551px] w-[94.488188976px]"></td>
+              <td className="h-[19.275590551px] w-[223.37007874px] pl-[11.338582677px]"></td>
+              <td className="h-[19.275590551px] w-[142.11023622px]"></td>
+              <td className="h-[19.275590551px] w-[79.748031496px] text-center">
                 {amountDueFn}
               </td>
             </tr>
             <tr className="text-[10px]">
-              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]"></td>
-              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-              <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+              <td className="h-[19.275590551px] w-[94.488188976px]"></td>
+              <td className="h-[19.275590551px] w-[223.37007874px] pl-[11.338582677px]"></td>
+              <td className="h-[19.275590551px] w-[142.11023622px]"></td>
+              <td className="h-[19.275590551px] w-[79.748031496px] text-center">
                 {addVatFn}
               </td>
             </tr>
             <tr className="text-[10px]">
-              <td className="h-[19.275590551px] w-[131.90551181px]"></td>
-              <td className="h-[19.275590551px] w-[185.57480315px] pl-[11.338582677px]"></td>
-              <td className="h-[19.275590551px] w-[132.66141732px]"></td>
-              <td className="h-[19.275590551px] w-[102.04724409px] text-center">
+              <td className="h-[19.275590551px] w-[94.488188976px]"></td>
+              <td className="h-[19.275590551px] w-[223.37007874px] pl-[11.338582677px]"></td>
+              <td className="h-[19.275590551px] w-[142.11023622px]"></td>
+              <td className="h-[19.275590551px] w-[79.748031496px] text-center">
                 {totalAmountDueFn}
               </td>
             </tr>
           </tbody>
         </table>
       </div>
-      <div className="mx-[34.393700787px]">
-        <div className="mt-[26.456692914px] ml-[332.976377952px]">
+      <div className="mx-[39.68503937px]">
+        <div className="mt-[26.456692914px] ml-[340.15748031px] w-[196.53543307px]">
           <p className="text-[10px] text-center">
             {data[1]?.[cashier]
               ?.replace(/Ã/g, "Ñ")

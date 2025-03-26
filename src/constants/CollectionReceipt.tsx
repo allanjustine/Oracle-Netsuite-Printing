@@ -98,6 +98,7 @@ import SMCTSanJose from "@/utils/collectionreceipt/global/fdl/old/smct/SMCTSanJo
 import HDTrinidad from "@/utils/official-receipt/global/fdl/old/hd/HDTriniadad";
 import Rosario from "@/utils/official-receipt/global/fely/old/smct/Rosario";
 import HDAlano from "@/utils/official-receipt/global/fdl/old/hd/HDAlano";
+import Pagsanjan from "@/utils/official-receipt/global/fdl/old/smct/Pagsanjan";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -142,7 +143,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   ];
 
   const fdlOrOldSizeData = [
-    "PAGS",
     "NUND2",
     "AKLA",
     //"CARS",
@@ -474,6 +474,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <HDTrinidad data={data} />;
     case "ALAH" === user?.branchCode:
       return <HDAlano data={data} />;
+    case "PAGS" === user?.branchCode:
+      return <Pagsanjan data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
