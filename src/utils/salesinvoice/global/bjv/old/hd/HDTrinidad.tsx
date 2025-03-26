@@ -153,7 +153,7 @@ const HDTrinidad = ({ data }: any) => {
           {data[1]?.[cardHolderSignatures] || ""}
         </p>
       </div>
-      <div className="mx-[34.393700787px] mt-[12.094488189px] h-[314.07874016px]">
+      <div className="mx-[34.393700787px] mt-[12.094488189px] h-[321.25984252px]">
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
@@ -320,7 +320,7 @@ const HDTrinidad = ({ data }: any) => {
         </tbody>
       </div>
       <div className="mx-[34.393700787px]">
-        <div className="mt-[26.456692914px] ml-[332.976377952px]">
+        <div className="mt-[22.456692914px] ml-[332.976377952px]">
           <p className="text-xs text-center">
             {data[1]?.[cashier]
               ?.replace(/Ã/g, "Ñ")
