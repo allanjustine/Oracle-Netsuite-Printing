@@ -5,7 +5,7 @@ export default function FormattedAmountDue(
   lessWithHoldingTax: any
 ) {
   return FormattedNumber(
-    Number(AmountNetOfVat.replace(",", "")) -
-      Number(lessWithHoldingTax.replace(",", ""))
+    Number(AmountNetOfVat.replace(/,/g, "")) -
+      Number(lessWithHoldingTax.replace(/,/g, ""))
   );
 }

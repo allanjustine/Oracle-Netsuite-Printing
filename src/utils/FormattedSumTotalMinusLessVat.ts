@@ -4,8 +4,9 @@ export default function FormattedSumTotalMinusLessVat(
   totalSales: any,
   lessVatToMinus: any
 ) {
+  console.log(totalSales, lessVatToMinus);
   return FormattedNumber(
-    Number(totalSales.replace(",", "")) -
-      Number(lessVatToMinus.replace(",", ""))
+    Number(totalSales.replace(/,/g, "")) -
+      Number(lessVatToMinus.replace(/,/g, ""))
   );
 }

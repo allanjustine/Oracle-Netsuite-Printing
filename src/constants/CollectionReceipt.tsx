@@ -248,7 +248,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "FAMY",
     "DASMA",
     "CARMO",
-    "SROS",
   ];
 
   // AJD
@@ -467,6 +466,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     case "IMED" === user?.branchCode:
       return <DAPImelda data={data} />;
     case "SANJ" === user?.branchCode:
+    return <SMCTSanJose data={data} />;
+    case "SROS" === user?.branchCode:
     return <SMCTSanJose data={data} />;
     default:
       return (

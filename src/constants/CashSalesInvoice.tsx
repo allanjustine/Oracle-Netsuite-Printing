@@ -113,6 +113,7 @@ import Panabo from "@/utils/salesinvoice/global/obbus/old/dsm/Panabo";
 import DAPImelda from "@/utils/salesinvoice/global/fdl/old/dap/DAPImelda";
 import Iligan from "@/utils/salesinvoice/global/fdl/old/dsm/Iligan";
 import SMCTSanJose from "@/utils/salesinvoice/global/fdl/old/smct/SMCTSanJose";
+import Kia from "@/utils/salesinvoice/global/fdl/old/smct/Kia";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -217,7 +218,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "BONI",
     "VITA",
     "BAYB",
-    "BOHK",
   ];
 
   // OBBUS
@@ -485,6 +485,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Iligan data={data} />;
     case "SANJ" === user?.branchCode:
       return <SMCTSanJose data={data} />;
+    case "BOHK" === user?.branchCode:
+      return <Kia data={data} />;
 
     default:
       return (
