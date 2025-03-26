@@ -117,6 +117,7 @@ import Kia from "@/utils/salesinvoice/global/fdl/old/smct/Kia";
 import HDTrinidad from "@/utils/salesinvoice/global/bjv/old/hd/HDTrinidad";
 import SMCTCarcar from "@/utils/salesinvoice/global/fdl/old/smct/SMCTCarcar";
 import SMCTCalinan from "@/utils/salesinvoice/global/fdl/old/smct/SMCTCalinan";
+import HDAlano from "@/utils/salesinvoice/global/fdl/old/hd/HDAlano";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -184,7 +185,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "VALEN",
     "KABA2",
     "TUBU",
-    "ALAH",
     "BUUD",
     "DIPD2",
     "DSMV",
@@ -495,6 +495,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTCarcar data={data} />;
     case "CALI" === user?.branchCode:
       return <SMCTCalinan data={data} />;
+    case "ALAH" === user?.branchCode:
+      return <HDAlano data={data} />;
 
     default:
       return (
