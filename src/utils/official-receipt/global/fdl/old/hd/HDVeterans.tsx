@@ -16,7 +16,7 @@ const HDVeterans = ({ data }: any) => {
 
   return (
     <div className="text-xs w-[778.58267717px] h-[396.8503937px] ml-[10px]">
-      <div className="flex mt-[100.48818898px]">
+      <div className="flex mt-[85.370078744px]">
         <p className="pl-[604.72440945px] w-[151.18110236px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
