@@ -170,10 +170,10 @@ const SMCTSanJose = ({ data }: any) => {
                 >
                   {row[articles]}
                 </td>
-                <td className="w-[79.748031496px] h-[18.897637795px] pl-[45.338582677px] ">
+                <td className="w-[79.748031496px] h-[18.897637795px] pl-[48.338582677px] ">
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
-                <td className="w-[102.38740157px] h-[18.897637795px] pl-[45.338582677px] ">
+                <td className="w-[102.38740157px] h-[18.897637795px] pl-[48.338582677px] ">
                   {FormattedNumber(row[quantity] * row[rateInclusiveVat]) ||
                     "0.00"}
                 </td>
@@ -262,7 +262,7 @@ const SMCTSanJose = ({ data }: any) => {
                 {vatableSalesFn}
               </td>
               <td className="h-[19.653543307px] w-[136.06299213px]"></td>
-              <td className="h-[19.653543307px] w-[102.04724409px] text-center pl-[45.338582677px]">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-center pl-[48.338582677px]">
                 {/* Total Sales (VAT Inclusive) */}
                 {totalSalesVatInclusiveFn}
               </td>
@@ -274,7 +274,7 @@ const SMCTSanJose = ({ data }: any) => {
                 0.00
               </td>
               <td className="h-[19.653543307px] w-[136.06299213px]"></td>
-              <td className="h-[19.653543307px] w-[102.04724409px] text-center pl-[45.338582677px]">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-center pl-[48.338582677px]">
                 {/* Less: VAT */}
                 {lessVatFn}
               </td>
@@ -286,7 +286,7 @@ const SMCTSanJose = ({ data }: any) => {
                 0.00
               </td>
               <td className="h-[19.653543307px] w-[136.06299213px]"></td> 
-              <td className="h-[19.653543307px] w-[102.04724409px] text-center pl-[45.338582677px]">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-center pl-[48.338582677px]">
                 {/* Amount: Net Of Vat */}
                 {amountNetOfVatFn}
               </td>
@@ -298,13 +298,13 @@ const SMCTSanJose = ({ data }: any) => {
                 {vatAmountFn}
               </td>
               <td className="h-[19.653543307px] w-[136.06299213px]"></td>
-              <td className="h-[19.653543307px] w-[102.04724409px] text-center pl-[45.338582677px]"></td>
+              <td className="h-[19.653543307px] w-[102.04724409px] text-center pl-[48.338582677px]"></td>
             </tr>
             <tr className="text-xs">
               <td className="h-[19.653543307px] w-[132.28346457px]"></td>
               <td className="h-[19.653543307px] w-[181.41732283px] pl-[15.338582677px]"></td>
               <td className="h-[19.653543307px] w-[136.06299213px]"></td>
-              <td className="h-[19.653543307px] w-[102.04724409px] text-center pl-[45.338582677px]">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-center pl-[48.338582677px]">
                 {/* Amount Due */}
                 {amountDueFn}
               </td>
@@ -313,7 +313,7 @@ const SMCTSanJose = ({ data }: any) => {
               <td className="h-[19.653543307px] w-[132.28346457px]"></td>
               <td className="h-[19.653543307px] w-[181.41732283px] pl-[15.338582677px]"></td>
               <td className="h-[19.653543307px] w-[136.06299213px]"></td>
-              <td className="h-[19.653543307px] w-[102.04724409px] text-center pl-[45.338582677px]">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-center pl-[48.338582677px]">
                 {/* Add: VAT */}
                 {addVatFn}
               </td>
@@ -322,7 +322,7 @@ const SMCTSanJose = ({ data }: any) => {
               <td className="h-[19.653543307px] w-[132.28346457px]"></td>
               <td className="h-[19.653543307px] w-[181.41732283px] pl-[15.338582677px]"></td>
               <td className="h-[19.653543307px] w-[136.06299213px]"></td>
-              <td className="h-[19.653543307px] w-[102.04724409px] text-center pl-[45.338582677px]">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-center pl-[48.338582677px]">
                 {/* TOTAL AMOUNT DUE */}
                 {totalAmountDueFn}
               </td>
