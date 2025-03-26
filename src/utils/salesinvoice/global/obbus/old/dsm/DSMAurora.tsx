@@ -143,7 +143,7 @@ const DSMAurora = ({ data }: any) => {
         </p>
         <p className="w-[215.43307087px] ml-[41.57480315px]"></p>
       </div>
-      <div className="mx-[25.700787402px] mt-[27.590551181px] h-[317.85826772px]">
+      <div className="mx-[25.700787402px] mt-[27.590551181px] h-[298.58267717px]">
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 16).map((row: any, index: any) => (
@@ -243,7 +243,7 @@ const DSMAurora = ({ data }: any) => {
           </tbody>
         </table>
       </div>
-      <div className="mx-[25.700787402px] h-[170.07874016px]">
+      <div className="mx-[25.700787402px] h-[177.63779528px]">
         <table className="border-collapse w-full">
           <tbody>
             <tr className="text-xs">
@@ -320,7 +320,7 @@ const DSMAurora = ({ data }: any) => {
         </table>
       </div>
       <div className="mx-[32.125984252px]">
-        <div className="mt-[15.136220472px] w-[196.53543307px] ml-[336.37795276px]">
+        <div className="mt-[19.136220472px] w-[196.53543307px] ml-[336.37795276px]">
           <p className="text-xs text-center">
             {data[1]?.[cashier]
               ?.replace(/Ã/g, "Ñ")
