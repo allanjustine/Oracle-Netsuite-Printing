@@ -15,9 +15,9 @@ const Rosario = ({ data }: any) => {
   const CR_Reference = 10;
 
   return (
-    <div className="text-xs w-[801.25984252px] h-[408.18897638px] ml-[10px]">
-      <div className="flex mt-[137.4015748px]">
-        <p className="ml-[659.72440945px] w-[151.18110236px]">
+    <div className="text-xs w-[786.14173228px] h-[419.52755906px] ml-[10px]">
+      <div className="flex mt-[105.82677165px]">
+        <p className="ml-[650.07874016px] w-[151.18110236px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
@@ -27,8 +27,8 @@ const Rosario = ({ data }: any) => {
             {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
           </p>
         </div>
-        <div className="w-[137.95275591px]">
-          <p className="pl-[12.57480315px]">
+        <div className="w-[137.95275591px] text-[10px]">
+          <p>
             {data[1]?.[CR_TIN] || <span className="opacity-0">No data</span>}
           </p>
         </div>

@@ -96,6 +96,7 @@ import Buug from "@/utils/official-receipt/global/fdl/old/dap/Buug";
 import DAPImelda from "@/utils/collectionreceipt/global/fdl/old/dap/DAPImelda";
 import SMCTSanJose from "@/utils/collectionreceipt/global/fdl/old/smct/SMCTSanJose";
 import HDTrinidad from "@/utils/official-receipt/global/fdl/old/hd/HDTriniadad";
+import Rosario from "@/utils/official-receipt/global/fely/old/smct/Rosario";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -468,7 +469,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     case "SANJ" === user?.branchCode:
     return <SMCTSanJose data={data} />;
     case "SROS" === user?.branchCode:
-    return <SMCTSanJose data={data} />;
+    return <Rosario data={data} />;
     case "TRINI" === user?.branchCode:
       return <HDTrinidad data={data} />;
     default:
