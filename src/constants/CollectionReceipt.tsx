@@ -97,6 +97,7 @@ import DAPImelda from "@/utils/collectionreceipt/global/fdl/old/dap/DAPImelda";
 import SMCTSanJose from "@/utils/collectionreceipt/global/fdl/old/smct/SMCTSanJose";
 import HDTrinidad from "@/utils/official-receipt/global/fdl/old/hd/HDTriniadad";
 import Rosario from "@/utils/official-receipt/global/fely/old/smct/Rosario";
+import HDAlano from "@/utils/official-receipt/global/fdl/old/hd/HDAlano";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -149,7 +150,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DSMD",
     "REMI2",
     "TUBU",
-    "ALAH",
     "BALAM",
     "CALD",
     "INIT2",
@@ -472,6 +472,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     return <Rosario data={data} />;
     case "TRINI" === user?.branchCode:
       return <HDTrinidad data={data} />;
+    case "ALAH" === user?.branchCode:
+      return <HDAlano data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
