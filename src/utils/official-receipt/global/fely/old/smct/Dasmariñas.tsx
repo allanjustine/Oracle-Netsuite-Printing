@@ -16,7 +16,7 @@ const Dasmariñas = ({ data }: any) => {
 
   return (
     <div className="text-xs w-[608.50393701px] h-[404.40944882px]">
-      <div className="flex mt-[92.047244092px]">
+      <div className="flex mt-[99.60629921px]">
         <p className="ml-[491.33858268px] w-[94.488188976px] h-[22.677165354px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
@@ -68,7 +68,7 @@ const Dasmariñas = ({ data }: any) => {
           </p>
         </div>
       </div>
-      <div className="w-[608.50393701px] mt-[56.692913386px]">
+      <div className="w-[608.50393701px] mt-[43.464566929px]">
         <p className="w-[162.51968504px] ml-[423.30708661px] h-[22.677165354px]">
           {data[1]?.[CR_PartnerName] || (
             <span className="opacity-0">No Data</span>
