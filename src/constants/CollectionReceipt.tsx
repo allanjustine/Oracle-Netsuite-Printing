@@ -101,6 +101,7 @@ import HDAlano from "@/utils/official-receipt/global/fdl/old/hd/HDAlano";
 import Pagsanjan from "@/utils/official-receipt/global/fdl/old/smct/Pagsanjan";
 import DAPMolave2 from "@/utils/collectionreceipt/global/fdl/old/dap/DAPMolave2";
 import SMCTAntipolo from "@/utils/official-receipt/global/fely/old/smct/SMCTAntipolo";
+import HDKabasalan from "@/utils/official-receipt/global/fdl/old/hd/HDKabasalan";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -155,7 +156,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "BALAM",
     "CALD",
     "INIT2",
-    "KABA",
     "CATM",
     "PARD2",
     "BOHK",
@@ -474,6 +474,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <DAPMolave2 data={data} />;
     case "ANTIP" === user?.branchCode:
       return <SMCTAntipolo data={data} />; //OR
+    case "KABA" === user?.branchCode:
+      return <HDKabasalan data={data} />; //OR
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
