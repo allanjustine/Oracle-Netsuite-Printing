@@ -270,9 +270,9 @@ export default function Page() {
         }
       };
 
-      printWindow.onafterprint = () => {
-        printWindow.close();
-      };
+      // printWindow.onafterprint = () => {
+      //   printWindow.close();
+      // };
     }
   };
 
