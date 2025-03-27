@@ -112,7 +112,7 @@ const HDTrinidad = ({ data }: any) => {
   );
 
   return (
-    <div className="text-xs h-[771.02362205px] w-[604.72440945px]">
+    <div className="text-xs h-[771.02362205px] w-[604.72440945px] ml-[8px]">
       <div className="flex h-[19.409448819px] mt-[110.6771653587px]">
         <p className="w-[376.06299213px] pl-[94.488188976px]">
           {data[1]?.[mainLineName]
@@ -153,7 +153,7 @@ const HDTrinidad = ({ data }: any) => {
           {data[1]?.[cardHolderSignatures] || ""}
         </p>
       </div>
-      <div className="mx-[34.393700787px] mt-[14.094488189px] h-[290.07874016px]">
+      <div className="mx-[34.393700787px] mt-[21.094488189px] h-[290.07874016px]">
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
@@ -253,7 +253,7 @@ const HDTrinidad = ({ data }: any) => {
           </tbody>
         </table>
       </div>
-      <div className="mx-[34.393700787px] h-[126.99212598px]">
+      <div className="mx-[34.393700787px] h-[126.99212598px] mt-[24px]">
         <tbody>
           <tr className="text-xs">
             <td className="h-[19.275590551px] w-[131.90551181px]"></td>
