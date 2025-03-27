@@ -16,14 +16,14 @@ const Dasmariñas = ({ data }: any) => {
 
   return (
     <div className="text-xs w-[608.50393701px] h-[404.40944882px]">
-      <div className="flex mt-[137.4015748px]">
+      <div className="flex mt-[92.047244092px]">
         <p className="ml-[491.33858268px] w-[94.488188976px] h-[22.677165354px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex justify-between mt-[7.7952755906px]">
         <div className="w-[491.33858268px]">
-          <p className="ml-[309.92125984px] h-[22.677165354px]">
+          <p className={`ml-[309.92125984px] h-[22.677165354px] ${data[1]?.[CR_Name]?.length > 28 ? "text-[9.5px]" : ""}`}>
             {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
           </p>
         </div>
@@ -34,49 +34,42 @@ const Dasmariñas = ({ data }: any) => {
         </div>
       </div>
       <div className="flex">
-        <p className="ml-[291.02362205px] w-[226.77165354px] h-[22.677165354px]">
+        <p className={`ml-[291.02362205px] w-[226.77165354px] h-[22.677165354px] ${data[1]?.[CR_Address]?.length > 28 ? "text-[9.5px]" : ""}`}>
           {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex">
-        <p className="ml-[291.02362205px] w-[241.88976378px] h-[22.677165354px]">
+        <p className={`ml-[291.02362205px] w-[241.88976378px] h-[22.677165354px] ${data[1]?.[CR_BusinessStyle]?.length > 28 ? "text-[9.5px]" : ""}`}>
           {data[1]?.[CR_BusinessStyle] || (
             <span className="opacity-0">No data</span>
           )}
         </p>
       </div>
       <div className="flex">
-        <p className="ml-[245.77165354px] h-[22.677165354px]">
+        <p className={`ml-[230.5511811px] h-[22.677165354px] w-[325.03937008px] ${data[1]?.[CR_AmountInWords]?.length > 28 ? "text-[9.5px]" : ""}`}>
           {data[1]?.[CR_AmountInWords] || (
             <span className="opacity-0">No data</span>
           )}
         </p>
       </div>
       <div className="flex w-full">
-        <div className="w-[325.03937008px]">
-          <p className="ml-[254.66929134px] h-[22.677165354px]">
+        <div className="w-[332.5984252px]">
+          <p className="ml-[245.66929134px] h-[22.677165354px]">
             {FormattedNumber(data[1]?.[CR_AmountInFigures]) || (
               <span className="opacity-0">No data</span>
             )}
           </p>
         </div>
-        <div className="w-[274.01574803px] ml-[158.28346457px]">
-          <p className="h-[22.677165354px]">
-            {data[1]?.[CR_Memo].substring(0, 35) || (
+        <div className="w-[275.90551181px]">
+          <p className={`h-[22.677165354px] ml-[113.38582677px] ${data[1]?.[CR_Memo]?.length > 28 ? "text-[9.5px]" : ""}`}>
+            {data[1]?.[CR_Memo] || (
               <span className="opacity-0">No data</span>
             )}
           </p>
         </div>
       </div>
-      <div className="ml-[245.77165354px]">
-        <p className="h-[22.677165354px]">
-          {data[1]?.[CR_Memo].substring(35) || (
-            <span className="opacity-0">No data</span>
-          )}
-        </p>
-      </div>
-      <div className="w-[718.11023622px] pl-[566.92913386px] mt-[27.7952755906px]">
-        <p className="h-[22.677165354px]">
+      <div className="w-[608.50393701px] mt-[56.692913386px]">
+        <p className="w-[162.51968504px] ml-[423.30708661px] h-[22.677165354px]">
           {data[1]?.[CR_PartnerName] || (
             <span className="opacity-0">No Data</span>
           )}
