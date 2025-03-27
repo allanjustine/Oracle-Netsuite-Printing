@@ -112,7 +112,7 @@ const Labason = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[812.5984252px] w-[616.06299213px]">
-      <div className="flex h-[15.458267717px] mt-[137.503937007px]">
+      <div className="flex h-[15.458267717px] mt-[156.4015748px]">
         <p className="w-[402.51968504px] ml-[86.929133858px]">
           {data[1]?.[mainLineName]
             ?.replace(/Ã/g, "Ñ")
