@@ -120,6 +120,7 @@ import SMCTCalinan from "@/utils/salesinvoice/global/fdl/old/smct/SMCTCalinan";
 import DSMMedellin from "@/utils/salesinvoice/global/obbus/old/dsm/DSMMedellin";
 import HDAlano from "@/utils/salesinvoice/global/fdl/old/hd/HDAlano";
 import Baybay from "@/utils/salesinvoice/global/fdl/old/smct/Baybay";
+import DSMToril from "@/utils/salesinvoice/global/obbus/old/dsm/DSMToril";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -235,7 +236,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "REMI2",
     "MATI",
     "DSMM",
-    "TORI",
     "ILOI",
     "DSMDM",
   ];
@@ -501,6 +501,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <HDAlano data={data} />;
     case "BAYB" === user?.branchCode:
       return <Baybay data={data} />;
+    case "TORI" === user?.branchCode:
+      return <DSMToril data={data} />;
 
     default:
       return (
