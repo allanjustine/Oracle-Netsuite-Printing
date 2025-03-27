@@ -171,10 +171,10 @@ const HDTrinidad = ({ data }: any) => {
                 >
                   {row[articles]}
                 </td>
-                <td className="w-[89.748031496px] h-[19.275590551px] text-start">
+                <td className="w-[89.748031496px] h-[19.275590551px] text-start pl-[8px]">
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
-                <td className="w-[112.38740157px] h-[19.275590551px] text-start">
+                <td className="w-[112.38740157px] h-[19.275590551px] text-start pl-[8px]">
                   {FormattedNumber(row[quantity] * row[rateInclusiveVat]) ||
                     "0.00"}
                 </td>
@@ -253,7 +253,7 @@ const HDTrinidad = ({ data }: any) => {
           </tbody>
         </table>
       </div>
-      <div className="mx-[34.393700787px] h-[126.99212598px] mt-[24px]">
+      <div className="mx-[34.393700787px] h-[126.99212598px] mt-[28px]">
         <tbody>
           <tr className="text-xs">
             <td className="h-[19.275590551px] w-[131.90551181px]"></td>
@@ -320,7 +320,7 @@ const HDTrinidad = ({ data }: any) => {
         </tbody>
       </div>
       <div className="mx-[34.393700787px]">
-        <div className="mt-[26.456692914px] ml-[332.976377952px]">
+        <div className="mt-[30.456692914px] ml-[332.976377952px]">
           <p className="text-xs text-center">
             {data[1]?.[cashier]
               ?.replace(/Ã/g, "Ñ")
