@@ -99,6 +99,7 @@ import HDTrinidad from "@/utils/official-receipt/global/fdl/old/hd/HDTriniadad";
 import Rosario from "@/utils/official-receipt/global/fely/old/smct/Rosario";
 import HDAlano from "@/utils/official-receipt/global/fdl/old/hd/HDAlano";
 import Pagsanjan from "@/utils/official-receipt/global/fdl/old/smct/Pagsanjan";
+import DAPMolave2 from "@/utils/collectionreceipt/global/fdl/old/dap/DAPMolave2";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -168,7 +169,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "GUIN2",
     "MALA",
     "MOLD",
-    "MOLD2",
     "LILD",
     // "DSMD2",
     "KABA2",
@@ -242,14 +242,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const felyOrNewSizeData = [];
 
-  const felyOrOldSizeData = [
-    "ANTIP",
-    "SANP",
-    "TANZ",
-    "FAMY",
-    "DASMA",
-    "CARMO",
-  ];
+  const felyOrOldSizeData = ["ANTIP", "SANP", "TANZ", "FAMY", "DASMA", "CARMO"];
 
   // AJD
   const ajdCrNewSizeData = [];
@@ -467,15 +460,17 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     case "IMED" === user?.branchCode:
       return <DAPImelda data={data} />;
     case "SANJ" === user?.branchCode:
-    return <SMCTSanJose data={data} />;
+      return <SMCTSanJose data={data} />;
     case "SROS" === user?.branchCode:
-    return <Rosario data={data} />;
+      return <Rosario data={data} />;
     case "TRINI" === user?.branchCode:
       return <HDTrinidad data={data} />;
     case "ALAH" === user?.branchCode:
       return <HDAlano data={data} />;
     case "PAGS" === user?.branchCode:
       return <Pagsanjan data={data} />;
+    case "MOLD2" === user?.branchCode:
+      return <DAPMolave2 data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
