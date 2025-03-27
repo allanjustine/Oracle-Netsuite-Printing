@@ -119,6 +119,7 @@ import SMCTCarcar from "@/utils/salesinvoice/global/fdl/old/smct/SMCTCarcar";
 import SMCTCalinan from "@/utils/salesinvoice/global/fdl/old/smct/SMCTCalinan";
 import DSMMedellin from "@/utils/salesinvoice/global/obbus/old/dsm/DSMMedellin";
 import HDAlano from "@/utils/salesinvoice/global/fdl/old/hd/HDAlano";
+import Baybay from "@/utils/salesinvoice/global/fdl/old/smct/Baybay";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -221,7 +222,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "TANZ",
     "BONI",
     "VITA",
-    "BAYB",
   ];
 
   // OBBUS
@@ -499,6 +499,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <DSMMedellin data={data} />;
     case "ALAH" === user?.branchCode:
       return <HDAlano data={data} />;
+    case "BAYB" === user?.branchCode:
+      return <Baybay data={data} />;
 
     default:
       return (

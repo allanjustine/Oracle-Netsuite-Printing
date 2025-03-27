@@ -15,7 +15,7 @@ const SuzukiOsamiz = ({ data }: any) => {
   const CR_Reference = 10;
 
   return (
-    <div className="text-xs w-[801.25984252px] h-[408.18897638px] ml-[10px]">
+    <div className="text-xs w-[801.25984252px] h-[408.18897638px]">
       <div className="flex mt-[96.38582677px]">
         <p className="ml-[659.72440945px] w-[151.18110236px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
@@ -23,7 +23,7 @@ const SuzukiOsamiz = ({ data }: any) => {
       </div>
       <div className="flex justify-between  mt-[15.7952755906px]">
         <div className="w-[566.92913386px]">
-          <p className="ml-[317.48031496px]">
+          <p className={`ml-[317.48031496px] ${data[1]?.[CR_Name]?.length > 28 ? "text-[9px]" : ""}`}>
             {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
           </p>
         </div>
@@ -34,7 +34,7 @@ const SuzukiOsamiz = ({ data }: any) => {
         </div>
       </div>
       <div className="flex mt-[9.8267716539px]">
-        <p className="ml-[312.36220472px]">
+        <p className={`ml-[312.36220472px] ${data[1]?.[CR_Address]?.length > 28 ? "text-[9px]" : ""} w-[408.18897638px]`}>
           {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
         </p>
       </div>
@@ -46,7 +46,7 @@ const SuzukiOsamiz = ({ data }: any) => {
         </p>
       </div>
       <div className="flex mt-[3.8267716539px]">
-        <p className="ml-[245.77165354px]">
+        <p className={`ml-[245.77165354px] ${data[1]?.[CR_AmountInWords]?.length > 28 ? "text-[9px]" : ""}`}>
           {data[1]?.[CR_AmountInWords] || (
             <span className="opacity-0">No data</span>
           )}

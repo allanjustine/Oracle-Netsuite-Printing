@@ -102,6 +102,8 @@ import Pagsanjan from "@/utils/official-receipt/global/fdl/old/smct/Pagsanjan";
 import DAPMolave2 from "@/utils/collectionreceipt/global/fdl/old/dap/DAPMolave2";
 import SMCTAntipolo from "@/utils/official-receipt/global/fely/old/smct/SMCTAntipolo";
 import HDKabasalan from "@/utils/official-receipt/global/fdl/old/hd/HDKabasalan";
+import Dasmariñas from "@/utils/official-receipt/global/fely/old/smct/Dasmariñas";
+import Basak from "@/utils/collectionreceipt/global/fdl/old/dsm/Basak";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -196,7 +198,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "SMCT",
     "TRINI2",
     "OZAD",
-    "DSMB",
   ];
 
   const fdlOrNewSizeData = [];
@@ -243,7 +244,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const felyOrNewSizeData = [];
 
-  const felyOrOldSizeData = ["SANP", "TANZ", "FAMY", "DASMA", "CARMO"];
+  const felyOrOldSizeData = ["SANP", "TANZ", "FAMY", "CARMO"];
 
   // AJD
   const ajdCrNewSizeData = [];
@@ -476,6 +477,10 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTAntipolo data={data} />; //OR
     case "KABA" === user?.branchCode:
       return <HDKabasalan data={data} />; //OR
+    case "DASMA" === user?.branchCode:
+      return <Dasmariñas data={data} />; //OR
+    case "DSMB" === user?.branchCode:
+      return <Basak data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
