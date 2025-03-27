@@ -18,11 +18,11 @@ const HDPardo: React.FC<PrintPageProps> = ({ data }) => {
   return (
     <div className="text-xs w-[769.13385827px] h-[396.8503937px]">
       <div className="flex mt-[107.73228346px]">
-        <p className="pl-[604.72440945px] w-[143.62204724px]">
+        <p className="pl-[607.72440945px] w-[143.62204724px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex justify-between  mt-[19.7952755906px]">
+      <div className="flex justify-between  mt-[21.7952755906px]">
         <div className="w-[566.92913386px]">
           <p className="pl-[313.7007874px]">
             {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
@@ -62,7 +62,7 @@ const HDPardo: React.FC<PrintPageProps> = ({ data }) => {
           </p>
         </div>
       </div>
-      <div className="w-[529px] pl-[340.15748031px] mt-[6.8267716539px]">
+      <div className="w-[718.11023622px] pl-[345.15748031px] mt-[6.8267716539px]">
         <p>
           {data[1]?.[CR_Memo] || <span className="opacity-0">No data</span>}
         </p>
