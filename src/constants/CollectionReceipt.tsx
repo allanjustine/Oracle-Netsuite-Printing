@@ -100,6 +100,7 @@ import Rosario from "@/utils/official-receipt/global/fely/old/smct/Rosario";
 import HDAlano from "@/utils/official-receipt/global/fdl/old/hd/HDAlano";
 import Pagsanjan from "@/utils/official-receipt/global/fdl/old/smct/Pagsanjan";
 import DAPMolave2 from "@/utils/collectionreceipt/global/fdl/old/dap/DAPMolave2";
+import SMCTAntipolo from "@/utils/official-receipt/global/fely/old/smct/SMCTAntipolo";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -242,7 +243,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const felyOrNewSizeData = [];
 
-  const felyOrOldSizeData = ["ANTIP", "SANP", "TANZ", "FAMY", "DASMA", "CARMO"];
+  const felyOrOldSizeData = ["SANP", "TANZ", "FAMY", "DASMA", "CARMO"];
 
   // AJD
   const ajdCrNewSizeData = [];
@@ -471,6 +472,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <Pagsanjan data={data} />;
     case "MOLD2" === user?.branchCode:
       return <DAPMolave2 data={data} />;
+    case "ANTIP" === user?.branchCode:
+      return <SMCTAntipolo data={data} />; //OR
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
