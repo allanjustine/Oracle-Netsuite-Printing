@@ -121,6 +121,7 @@ import DSMMedellin from "@/utils/salesinvoice/global/obbus/old/dsm/DSMMedellin";
 import HDAlano from "@/utils/salesinvoice/global/fdl/old/hd/HDAlano";
 import Baybay from "@/utils/salesinvoice/global/fdl/old/smct/Baybay";
 import DSMToril from "@/utils/salesinvoice/global/obbus/old/dsm/DSMToril";
+import DAPMolave2 from "@/utils/salesinvoice/global/fdl/old/dap/DAPMolave2";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -174,7 +175,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "JIME",
     "LILD",
     "MOLD",
-    "MOLD2",
     "OROD",
     "SUCD",
     "TUBOD",
@@ -216,14 +216,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "CARC2",
   ];
 
-  const fdlSiOldSizeData = [
-    "CATAR",
-    "NUND2",
-    "DAPI",
-    "TANZ",
-    "BONI",
-    "VITA",
-  ];
+  const fdlSiOldSizeData = ["CATAR", "NUND2", "DAPI", "TANZ", "BONI", "VITA"];
 
   // OBBUS
   const obbusCsiNewSizeData = [];
@@ -503,6 +496,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Baybay data={data} />;
     case "TORI" === user?.branchCode:
       return <DSMToril data={data} />;
+    case "MOLD2" === user?.branchCode:
+      return <DAPMolave2 data={data} />;
 
     default:
       return (
