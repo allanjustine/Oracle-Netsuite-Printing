@@ -104,6 +104,7 @@ import SMCTAntipolo from "@/utils/official-receipt/global/fely/old/smct/SMCTAnti
 import HDKabasalan from "@/utils/official-receipt/global/fdl/old/hd/HDKabasalan";
 import Dasmariñas from "@/utils/official-receipt/global/fely/old/smct/Dasmariñas";
 import Basak from "@/utils/collectionreceipt/global/fdl/old/dsm/Basak";
+import Kabasalan from "@/utils/official-receipt/global/fdl/old/dsm/Kabasalan";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -173,7 +174,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "MOLD",
     "LILD",
     // "DSMD2",
-    "KABA2",
     "KATI",
     "BAYB",
     "LOAY",
@@ -481,6 +481,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <Dasmariñas data={data} />; //OR
     case "DSMB" === user?.branchCode:
       return <Basak data={data} />;
+      case "KABA2" === user?.branchCode:
+        return <Kabasalan data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
