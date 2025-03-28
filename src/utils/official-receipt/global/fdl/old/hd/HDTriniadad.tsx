@@ -16,12 +16,12 @@ const HDTrinidad = ({ data }: any) => {
 
   return (
     <div className="text-xs w-[755.90551181px] h-[404.03149606px] ml-[10px]">
-      <div className="flex mt-[101.38582677px]">
+      <div className="flex mt-[82.488188976px]">
         <p className="ml-[585.82677165px] w-[147.4015748px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex w-[755.90551181px] mt-[7.897637794px]">
+      <div className="flex w-[755.90551181px] mt-[26.795275589px]">
         <div className="w-[578.26771654px]">
           <p className="ml-[313.7007874px]">
             {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
