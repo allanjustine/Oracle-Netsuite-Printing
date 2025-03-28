@@ -16,12 +16,12 @@ const HDKabasalan = ({ data }: any) => {
 
   return (
     <div className="text-xs w-[608.50393701px] h-[381.73228346px]">
-      <div className="flex mt-[90.38582677px]">
+      <div className="flex mt-[79.38582677px]">
         <p className="ml-[491.33858268px] w-[113.38582677px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex w-[608.50393701px] mt-[15.7952755906px]">
+      <div className="flex w-[608.50393701px] mt-[8.7952755906px]">
         <div className="w-[472.44094488px]">
           <p className="ml-[283.46456693px]">
             {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
@@ -33,7 +33,7 @@ const HDKabasalan = ({ data }: any) => {
           </p>
         </div>
       </div>
-      <div className="flex ml-[264.56692913px] mt-[9.8267716539px]">
+      <div className="flex ml-[264.56692913px]">
         <p className="w-[245.66929134px] text-[11px]">
           {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
         </p>
@@ -45,14 +45,14 @@ const HDKabasalan = ({ data }: any) => {
           )}
         </p>
       </div>
-      <div className="flex mt-[3.8267716539px]">
+      <div className="flex">
         <p className="ml-[207.87401575px] w-[359.05511811px]">
           {data[1]?.[CR_AmountInWords] || (
             <span className="opacity-0">No data</span>
           )}
         </p>
       </div>
-      <div className="flex w-full mt-[6.8267716539px]">
+      <div className="flex w-full">
         <div className="w-[302.36220472px]">
           <p className="ml-[226.77165354px]">
             {FormattedNumber(data[1]?.[CR_AmountInFigures]) || (
