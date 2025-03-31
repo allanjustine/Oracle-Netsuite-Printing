@@ -72,7 +72,6 @@ import AjdOldOrSize from "@/utils/official-receipt/global/ajd/old/AjdOldOrSize";
 import BjvOldOrSize from "@/utils/official-receipt/global/bjv/old/BjvOldOrSize";
 import Liloan from "@/utils/official-receipt/global/obbus/old/dsm/Liloan";
 import MandaueY3s from "@/utils/official-receipt/global/obbus/old/dsm/MandaueY3s";
-import HDBalamban from "@/utils/official-receipt/global/fdl/old/hd/HDBalamban";
 import DSMAurora from "@/utils/official-receipt/global/fdl/old/dsm/DSMAurora";
 import FelyOldOrSize from "@/utils/official-receipt/global/fely/old/FelyOldOrSize";
 import BjvOldCrSize from "@/utils/collectionreceipt/global/bjv/old/BjvOldCrSize";
@@ -105,6 +104,7 @@ import HDKabasalan from "@/utils/official-receipt/global/fdl/old/hd/HDKabasalan"
 import Dasmariñas from "@/utils/official-receipt/global/fely/old/smct/Dasmariñas";
 import Basak from "@/utils/collectionreceipt/global/fdl/old/dsm/Basak";
 import Kabasalan from "@/utils/official-receipt/global/fdl/old/dsm/Kabasalan";
+import HDBalamban from "@/utils/collectionreceipt/global/fdl/old/hd/HDBalamban";
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -197,7 +197,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "TRINI2",
     "OZAD",
     "IPID",
-    "BALAM"
   ];
 
   const fdlOrNewSizeData = [];
@@ -481,8 +480,10 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <Dasmariñas data={data} />; //OR
     case "DSMB" === user?.branchCode:
       return <Basak data={data} />;
-      case "KABA2" === user?.branchCode:
-        return <Kabasalan data={data} />;
+    case "KABA2" === user?.branchCode:
+      return <Kabasalan data={data} />;
+    case "BALAM" === user?.branchCode:
+      return <HDBalamban data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
