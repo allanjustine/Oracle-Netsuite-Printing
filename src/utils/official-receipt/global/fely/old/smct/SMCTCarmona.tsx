@@ -34,7 +34,7 @@ const SMCTCarmona = ({ data }: any) => {
         </div>
       </div>
       <div className="flex mt-[2.8267716539px]">
-        <p className="ml-[298.36220472px]">
+        <p className={`ml-[298.36220472px] ${data[1]?.[CR_Address].length > 28 ? "text-[10px]" : ""}`}>
           {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
         </p>
       </div>
@@ -60,7 +60,7 @@ const SMCTCarmona = ({ data }: any) => {
             )}
           </p>
         </div>
-        <div className="w-[274.01574803px] ml-[145.28346457px]">
+    <div className={`w-[274.01574803px] ml-[138.28346457px] ${data[1]?.[CR_Memo].length > 28 ? "text-[10px]" : ""}`}>
           <p>
             {data[1]?.[CR_Memo].substring(0, 35) || (
               <span className="opacity-0">No data</span>
@@ -75,7 +75,7 @@ const SMCTCarmona = ({ data }: any) => {
           )}
         </p>
       </div>
-      <div className="w-[718.11023622px] pl-[545.92913386px] mt-[27.7952755906px]">
+      <div className="w-[718.11023622px] pl-[500.92913386px] mt-[27.7952755906px]">
         <p>
           {data[1]?.[CR_PartnerName] || (
             <span className="opacity-0">No Data</span>
