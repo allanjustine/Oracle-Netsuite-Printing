@@ -122,6 +122,7 @@ import HDAlano from "@/utils/salesinvoice/global/fdl/old/hd/HDAlano";
 import Baybay from "@/utils/salesinvoice/global/fdl/old/smct/Baybay";
 import DSMToril from "@/utils/salesinvoice/global/obbus/old/dsm/DSMToril";
 import DAPMolave2 from "@/utils/salesinvoice/global/fdl/old/dap/DAPMolave2";
+import SMCTLipa from "@/utils/salesinvoice/global/fdl/old/smct/SMCTLipa";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -417,7 +418,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     case "LAPU" === user?.branchCode:
       return <LapuLapu2 data={data} />;
     case "LIPA" === user?.branchCode:
-      return <LapuLapu2 data={data} />; // TEMP NO TAG-IYA
+      return <SMCTLipa data={data} />; // TEMP NO TAG-IYA
     case "FAMY" === user?.branchCode:
       return <LapuLapu2 data={data} />; // TEMP NO TAG-IYA
     case "DSMLN" === user?.branchCode:
