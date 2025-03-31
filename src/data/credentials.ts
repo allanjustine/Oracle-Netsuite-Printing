@@ -792,6 +792,12 @@ export const data = [
         branchCode: "TANZ3",
         branchName: "DSM Tanza 3",
         password: "Smct123456",
+      },
+      {
+        id: 75,
+        branchCode: "UTAP",
+        branchName: "DSM Tacloban",
+        password: "Smct123456",
       }
     ],
   },
