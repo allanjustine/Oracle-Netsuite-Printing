@@ -123,6 +123,7 @@ import Baybay from "@/utils/salesinvoice/global/fdl/old/smct/Baybay";
 import DSMToril from "@/utils/salesinvoice/global/obbus/old/dsm/DSMToril";
 import DAPMolave2 from "@/utils/salesinvoice/global/fdl/old/dap/DAPMolave2";
 import SMCTLipa from "@/utils/salesinvoice/global/fdl/old/smct/SMCTLipa";
+import SMCTCarmona from "@/utils/salesinvoice/global/fely/old/smct/SMCTCarmona";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -253,7 +254,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
 
   const felySiNewSizeData = [];
 
-  const felySiOldSizeData = ["CARMO", "DIGOS"];
+  const felySiOldSizeData = ["DIGOS"];
 
   // AJD
   const ajdCsiNewSizeData = [];
@@ -500,6 +501,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <DSMToril data={data} />;
     case "MOLD2" === user?.branchCode:
       return <DAPMolave2 data={data} />;
+    case "CARMO" === user?.branchCode:
+      return <SMCTCarmona data={data} />;
 
     default:
       return (

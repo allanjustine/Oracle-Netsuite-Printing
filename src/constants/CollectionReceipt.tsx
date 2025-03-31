@@ -105,7 +105,9 @@ import Dasmariñas from "@/utils/official-receipt/global/fely/old/smct/Dasmariñ
 import Basak from "@/utils/collectionreceipt/global/fdl/old/dsm/Basak";
 import Kabasalan from "@/utils/official-receipt/global/fdl/old/dsm/Kabasalan";
 import HDBalamban from "@/utils/collectionreceipt/global/fdl/old/hd/HDBalamban";
+import SMCTCarmona from "@/utils/official-receipt/global/fely/old/smct/SMCTCarmona";
 import SMCTTalibon2 from "@/utils/collectionreceipt/global/fdl/new/smct/SMCTTalibon2";
+
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
@@ -244,7 +246,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const felyOrNewSizeData = [];
 
-  const felyOrOldSizeData = ["SANP", "TANZ", "FAMY", "CARMO"];
+  const felyOrOldSizeData = ["SANP", "TANZ", "FAMY"];
 
   // AJD
   const ajdCrNewSizeData = [];
@@ -485,6 +487,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <Kabasalan data={data} />;
     case "BALAM" === user?.branchCode:
       return <HDBalamban data={data} />;
+    case "CARMO" === user?.branchCode:
+      return <SMCTCarmona data={data} />;
     case "TALI2" === user?.branchCode:
       return <SMCTTalibon2 data={data} />;
     default:
