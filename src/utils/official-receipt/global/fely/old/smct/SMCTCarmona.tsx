@@ -15,15 +15,15 @@ const SMCTCarmona = ({ data }: any) => {
   const CR_Reference = 10;
 
   return (
-    <div className="text-xs w-[801.25984252px] h-[408.18897638px] ml-[0px]">
-      <div className="flex mt-[125.06299213px]">
+    <div className="text-xs w-[801.25984252px] h-[408.18897638px] ml-[10px]">
+      <div className="flex mt-[100.4015748px]">
         <p className="ml-[659.72440945px] w-[151.18110236px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex justify-between  mt-[15.7952755906px]">
         <div className="w-[566.92913386px]">
-          <p className="ml-[305.48031496px]">
+          <p className="ml-[317.48031496px]">
             {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
           </p>
         </div>
@@ -34,7 +34,7 @@ const SMCTCarmona = ({ data }: any) => {
         </div>
       </div>
       <div className="flex mt-[2.8267716539px]">
-        <p className="ml-[300.36220472px]">
+        <p className="ml-[312.36220472px]">
           {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
         </p>
       </div>
@@ -46,7 +46,7 @@ const SMCTCarmona = ({ data }: any) => {
         </p>
       </div>
       <div className="flex mt-[3.8267716539px]">
-        <p className="ml-[235.77165354px]">
+        <p className="ml-[245.77165354px]">
           {data[1]?.[CR_AmountInWords] || (
             <span className="opacity-0">No data</span>
           )}
@@ -54,13 +54,13 @@ const SMCTCarmona = ({ data }: any) => {
       </div>
       <div className="flex w-full mt-[6.8267716539px]">
         <div className="w-[325.03937008px]">
-          <p className="ml-[245.66929134px]">
+          <p className="ml-[254.66929134px]">
             {FormattedNumber(data[1]?.[CR_AmountInFigures]) || (
               <span className="opacity-0">No data</span>
             )}
           </p>
         </div>
-        <div className="w-[274.01574803px] ml-[145.28346457px]">
+        <div className="w-[274.01574803px] ml-[158.28346457px]">
           <p>
             {data[1]?.[CR_Memo].substring(0, 35) || (
               <span className="opacity-0">No data</span>
