@@ -132,10 +132,10 @@ const SMCTCarmona: React.FC<PrintPageProps> = ({ data }) => {
           </p>
         </div>
         <div className="w-[264.56692913px]">
-          <p className="w-full text-xs h-[19.275590551px] ml-[160px]">
+          <p className="w-full text-xs h-[19.275590551px] ml-[172px]">
             {data[1]?.[date] || ""}
           </p>
-          <p className="w-full text-xs h-[19.275590551px] ml-[160px]">
+          <p className="w-full text-xs h-[19.275590551px] ml-[172px]">
             {data[1]?.[terms] || "CASH"}
           </p>
           <p className="w-full text-xs h-[19.275590551px] ml-[160px]">
