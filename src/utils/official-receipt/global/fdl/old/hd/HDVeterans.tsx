@@ -16,12 +16,12 @@ const HDVeterans = ({ data }: any) => {
 
   return (
     <div className="text-xs w-[778.58267717px] h-[396.8503937px] ml-[10px]">
-      <div className="flex mt-[85.370078744px]">
+      <div className="flex mt-[96.370078744px]">
         <p className="pl-[604.72440945px] w-[151.18110236px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex justify-between  mt-[19.7952755906px]">
+      <div className="flex justify-between mt-[19.7952755906px]">
         <div className="w-[566.92913386px]">
           <p className="pl-[317.48031496px]">
             {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
@@ -33,19 +33,19 @@ const HDVeterans = ({ data }: any) => {
           </p>
         </div>
       </div>
-      <div className="flex mt-[9.8267716539px]">
-        <p className="pl-[302.36220472px]">
+      <div className="flex mt-[9.8267716539px] w-[670.31496063px]">
+        <p className="pl-[290.36220472px]">
           {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex mt-[6.8267716539px]">
+      <div className="flex">
         <p className="ml-[302.36220472px]">
           {data[1]?.[CR_BusinessStyle] || (
             <span className="opacity-0">No data</span>
           )}
         </p>
       </div>
-      <div className="flex mt-[3.8267716539px]">
+      <div className="flex">
         <p className="ml-[226.77165354px]">
           {data[1]?.[CR_AmountInWords] || (
             <span className="opacity-0">No data</span>
