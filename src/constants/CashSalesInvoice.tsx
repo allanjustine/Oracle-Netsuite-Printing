@@ -124,6 +124,7 @@ import DSMToril from "@/utils/salesinvoice/global/obbus/old/dsm/DSMToril";
 import DAPMolave2 from "@/utils/salesinvoice/global/fdl/old/dap/DAPMolave2";
 import SMCTLipa from "@/utils/salesinvoice/global/fdl/old/smct/SMCTLipa";
 import SMCTCarmona from "@/utils/salesinvoice/global/fely/old/smct/SMCTCarmona";
+import Balamban from "@/utils/salesinvoice/global/fdl/old/dsm/Balamban";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -143,7 +144,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "SLIL",
     "MADRI",
     "BALI",
-    "DSMBN",
     "ELSA",
     "KATI",
     "DSMTG",
@@ -503,6 +503,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <DAPMolave2 data={data} />;
     case "CARMO" === user?.branchCode:
       return <SMCTCarmona data={data} />;
+    case "DSMBN" === user?.branchCode:
+      return <Balamban data={data} />;
 
     default:
       return (
