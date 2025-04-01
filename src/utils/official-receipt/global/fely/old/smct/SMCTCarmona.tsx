@@ -75,7 +75,7 @@ const SMCTCarmona = ({ data }: any) => {
           )}
         </p>
       </div>
-      <div className="w-[718.11023622px] pl-[500.92913386px] mt-[27.7952755906px]">
+      <div className="w-[718.11023622px] pl-[450.92913386px] mt-[27.7952755906px]">
         <p>
           {data[1]?.[CR_PartnerName] || (
             <span className="opacity-0">No Data</span>
