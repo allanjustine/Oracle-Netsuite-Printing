@@ -64,10 +64,10 @@ const ObbusOldCrSize: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="w-full h-[41.57480315px] mt-[6.8267716539px]">
         <p className="ml-[350.15748031px] w-[423.30708661px] h-[20.299212598px]">
-          {data[1]?.[CR_Memo]?.substring(0, 60) || <span className="opacity-0">No data</span>}
+          {data[1]?.[CR_Memo]?.substring(0, 65) || <span className="opacity-0">No data</span>}
         </p>
         <p className="ml-[241.88976378px] w-[521.57480315] h-[20.299212598px]">
-          {data[1]?.[CR_Memo]?.substring(60) || <span className="opacity-0">No data</span>}
+          {data[1]?.[CR_Memo]?.substring(65) || <span className="opacity-0">No data</span>}
         </p>
       </div>
       
