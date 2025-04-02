@@ -19,13 +19,13 @@ const Rosario = ({ data }: any) => {
     <div className="text-xs w-[786.14173228px] h-[419.52755906px] ml-[10px]">
       <div className="flex mt-[105.82677165px]">
         <p className="ml-[650.07874016px] w-[151.18110236px]">
-          {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
+          {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex justify-between  mt-[15.7952755906px]">
         <div className="w-[566.92913386px]">
           <p className="ml-[317.48031496px]">
-            {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
+            {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
           </p>
         </div>
         <div className="w-[137.95275591px] text-[10px]">
