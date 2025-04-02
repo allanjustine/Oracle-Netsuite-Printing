@@ -26,12 +26,12 @@ const Minglanilla = ({ data }: any) => {
     <div className="text-xs h-[366.61417323px] w-[716.22047244px]">
       <div className="w-[113.38582677px] flex items-center mt-[83.9291338579px] ml-[551.81102362px] h-[21.921259843px]">
         <p className="text-xs ml-[11.338582677px]">
-          {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
+          {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="h-[52.913385827px] mt-[26.456692913px] ml-[154.18110236px]">
         <p className="w-[563.1496063px] ml-[11.338582677px] h-[17.63779527566667px] flex items-center">
-          {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
+          {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
         </p>
         <p className="w-[563.1496063px] ml-[11.338582677px] h-[17.63779527566667px] flex items-center">
           {data[1]?.[CR_TIN] || <span className="opacity-0">No data</span>}

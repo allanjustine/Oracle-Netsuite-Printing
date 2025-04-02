@@ -20,7 +20,7 @@ const ObbusOldCrSize: React.FC<PrintPageProps> = ({ data }) => {
     <div className="text-xs w-[752.12598425px] h-[389.29133858px] ml-[10px]">
       <div className="flex mt-[110.1732283431px]">
         <p className="pl-[649.72440945px] w-[143.62204724px]">
-          {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
+          {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex justify-between  mt-[15.7952755906px]">

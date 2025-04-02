@@ -20,13 +20,13 @@ const Aurora: React.FC<PrintPageProps> = ({ data }) => {
     <div className="text-xs w-[805.03937008px] h-[415.7480315px]">
       <div className="flex mt-[105px]">
         <p className="pl-[642.51968504px] w-[120.94488189px]">
-          {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
+          {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex justify-between  mt-[15.7952755906px]">
         <div className="w-[595.27559055px]">
           <p className="pl-[321.25984252px] h-[20.299212598px]">
-            {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
+            {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
           </p>
         </div>
         <div className="w-[209.76377953px]">

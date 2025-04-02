@@ -20,13 +20,13 @@ const SMCTAntique: React.FC<PrintPageProps> = ({ data }) => {
     <div className="text-xs w-[801.25984252px] h-[408.18897638px] ml-[13px]">
       <div className="flex mt-[130.28346457px]">
         <p className="pl-[619.84251969px] w-[139.84251969px]">
-          {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
+          {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex justify-between mt-[12.094488189px]">
         <div className="w-[619.84251969px]">
           <p className="pl-[309.92125984px]">
-            {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
+            {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
           </p>
         </div>
         <div className="w-[105.82677165px]">

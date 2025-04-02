@@ -951,7 +951,9 @@ export default function Page() {
                 <div className="flex flex-col gap-2">
                   <div className="flex flex-col">
                     <p>Customer Name</p>
-                    <p className="font-semibold">{enyeFormat(row[CR_Name]) || "N/A"}</p>
+                    <p className="font-semibold">
+                      {enyeFormat(row[CR_Name]) || "N/A"}
+                    </p>
                   </div>
                   <div className="flex flex-col">
                     <p>Date</p>

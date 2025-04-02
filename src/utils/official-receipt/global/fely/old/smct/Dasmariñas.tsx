@@ -19,13 +19,13 @@ const Dasmariñas = ({ data }: any) => {
     <div className="text-xs w-[608.50393701px] h-[404.40944882px]">
       <div className="flex mt-[99.60629921px]">
         <p className="ml-[491.33858268px] w-[94.488188976px] h-[22.677165354px]">
-          {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
+          {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex justify-between mt-[7.7952755906px]">
         <div className="w-[491.33858268px]">
-          <p className={`ml-[309.92125984px] h-[22.677165354px] ${data[1]?.[CR_Name]?.length > 28 ? "text-[9.5px]" : ""}`}>
-            {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
+          <p className={`ml-[309.92125984px] h-[22.677165354px] ${enyeFormat(data[1]?.[CR_Name])?.length > 28 ? "text-[9.5px]" : ""}`}>
+            {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
           </p>
         </div>
         <div className="w-[117.16535433px]">

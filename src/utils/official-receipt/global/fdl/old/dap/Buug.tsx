@@ -19,13 +19,13 @@ const Buug = ({ data }: any) => {
     <div className="text-xs w-[585.82677165px] h-[343.93700787px] ml-[10px]">
       <div className="flex mt-[75.590551181px]">
         <p className="ml-[457.32283465px] w-[105.82677165px]">
-          {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
+          {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex w-[585.82677165px] mt-[15.456692912px]">
         <div className="w-[453.54330709px]">
           <p className="ml-[260.78740157px]">
-            {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
+            {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
           </p>
         </div>
         <div className="w-[136.44094488px]">

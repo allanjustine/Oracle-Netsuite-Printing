@@ -19,13 +19,13 @@ const Remigio = ({ data }: any) => {
     <div className="text-xs w-[752.12598425px] h-[389.29133858px] ml-[10px]">
       <div className="flex mt-[101.1732283431px]">
         <p className="pl-[649.72440945px] w-[143.62204724px]">
-          {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
+          {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex justify-between  mt-[15.7952755906px]">
         <div className="w-[566.92913386px]">
           <p className="pl-[316.7007874px]">
-            {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
+            {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
           </p>
         </div>
         <div className="w-[202.58267717px]">

@@ -19,13 +19,13 @@ const DSMPardo = ({ data }: any) => {
     <div className="text-xs w-[778.58267717px] h-[396.8503937px] ml-[10px]">
       <div className="flex mt-[96.708661417px]">
         <p className="ml-[454.33858268px] w-[102.04724409px]">
-          {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
+          {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex w-[778.58267717px] mt-[4.7952755906px]">
         <div className="w-[461.1023622px]">
           <p className="ml-[276.7007874px] text-xs">
-            {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
+            {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
           </p>
         </div>
         <div className="w-[156.47244094px]">

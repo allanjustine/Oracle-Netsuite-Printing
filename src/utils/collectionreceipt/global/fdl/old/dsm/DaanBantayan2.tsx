@@ -20,13 +20,13 @@ const DaanBantayan2: React.FC<PrintPageProps> = ({ data }) => {
     <div className="text-xs w-[774.80314961px] h-[404.40944882px] ml-[10px]">
       <div className="flex mt-[110.38582677px]">
         <p className="pl-[635.72440945px] w-[143.62204724px]">
-          {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
+          {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex justify-between  mt-[15.7952755906px]">
         <div className="w-[559.37007874px]">
           <p className="pl-[302.36220472px]">
-            {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
+            {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
           </p>
         </div>
         <div className="w-[215.43307087px]">

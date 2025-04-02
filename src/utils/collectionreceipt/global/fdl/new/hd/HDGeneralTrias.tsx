@@ -26,12 +26,12 @@ const HDGeneralTrias = ({ data }: any) => {
     <div className="text-xs h-[400.62992126px] w-[767.24409449px]">
       <div className="w-[120.94488189px] flex items-center mt-[83.9291338579px] ml-[602.83464567px] h-[21.921259843px]">
         <p className="text-xs ml-[11.338582677px]">
-          {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
+          {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="h-[61.984251969px] mt-[37.039370079px] ml-[164.40944882px]">
         <p className="w-[563.1496063px] ml-[11.338582677px] h-[20.409448819px] flex items-center">
-          {data[1]?.[CR_Name] || <span className="opacity-0">No data</span>}
+          {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
         </p>
         <p className="w-[563.1496063px] ml-[11.338582677px] h-[20.409448819px] flex items-center">
           {data[1]?.[CR_TIN] || <span className="opacity-0">No data</span>}
