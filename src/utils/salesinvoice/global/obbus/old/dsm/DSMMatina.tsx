@@ -252,7 +252,9 @@ const DSMMatina = ({ data }: any) => {
                 {vatableSalesFn}
               </td>
               <td className="h-[22.488188976px] w-[140.5984252px]"></td>
-              <td className="h-[22.488188976px] w-[96.755905512px] text-center"></td>
+              <td className="h-[22.488188976px] w-[96.755905512px] text-center">
+              {totalSalesVatInclusiveFn}
+              </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[22.488188976px] w-[102.42519685px]"></td>
@@ -261,7 +263,7 @@ const DSMMatina = ({ data }: any) => {
               </td>
               <td className="h-[22.488188976px] w-[140.5984252px]"></td>
               <td className="h-[22.488188976px] w-[96.755905512px] text-center">
-                {totalSalesVatInclusiveFn}
+              {lessVatFn}
               </td>
             </tr>
             <tr className="text-xs">
@@ -271,7 +273,7 @@ const DSMMatina = ({ data }: any) => {
               </td>
               <td className="h-[22.488188976px] w-[140.5984252px]"></td>
               <td className="h-[22.488188976px] w-[96.755905512px] text-center">
-                {lessVatFn}
+              {amountNetOfVatFn}
               </td>
             </tr>
             <tr className="text-xs">
@@ -281,7 +283,7 @@ const DSMMatina = ({ data }: any) => {
               </td>
               <td className="h-[22.488188976px] w-[140.5984252px]"></td>
               <td className="h-[22.488188976px] w-[96.755905512px] text-center">
-                {amountNetOfVatFn}
+              {lessWithHoldingTaxFn}
               </td>
             </tr>
             <tr className="text-xs">
@@ -289,7 +291,7 @@ const DSMMatina = ({ data }: any) => {
               <td className="h-[22.488188976px] w-[216.18897638px] pl-3"></td>
               <td className="h-[22.488188976px] w-[140.5984252px]"></td>
               <td className="h-[22.488188976px] w-[96.755905512px] text-center">
-                {lessWithHoldingTaxFn}
+              {amountDueFn}
               </td>
             </tr>
             <tr className="text-xs">
@@ -297,7 +299,7 @@ const DSMMatina = ({ data }: any) => {
               <td className="h-[22.488188976px] w-[216.18897638px] pl-3"></td>
               <td className="h-[22.488188976px] w-[140.5984252px]"></td>
               <td className="h-[22.488188976px] w-[96.755905512px] text-center">
-                {amountDueFn}
+              {addVatFn}
               </td>
             </tr>
             <tr className="text-xs">
@@ -305,22 +307,14 @@ const DSMMatina = ({ data }: any) => {
               <td className="h-[22.488188976px] w-[216.18897638px] pl-3"></td>
               <td className="h-[22.488188976px] w-[140.5984252px]"></td>
               <td className="h-[22.488188976px] w-[96.755905512px] text-center">
-                {addVatFn}
-              </td>
-            </tr>
-            <tr className="text-xs">
-              <td className="h-[22.488188976px] w-[102.42519685px]"></td>
-              <td className="h-[22.488188976px] w-[216.18897638px] pl-3"></td>
-              <td className="h-[22.488188976px] w-[140.5984252px]"></td>
-              <td className="h-[22.488188976px] w-[96.755905512px] text-center">
-                {totalAmountDueFn}
+              {totalAmountDueFn}
               </td>
             </tr>
           </tbody>
         </table>
       </div>
       <div className="mx-[32.125984252px]">
-        <div className="mt-[18.136220472px] w-[196.53543307px] ml-[336.37795276px]">
+        <div className="w-[196.53543307px] ml-[336.37795276px]">
           <p className="text-xs text-center">
             {data[1]?.[cashier]
               ?.replace(/Ã/g, "Ñ")
