@@ -106,6 +106,7 @@ import Basak from "@/utils/collectionreceipt/global/fdl/old/dsm/Basak";
 import Kabasalan from "@/utils/official-receipt/global/fdl/old/dsm/Kabasalan";
 import HDBalamban from "@/utils/collectionreceipt/global/fdl/old/hd/HDBalamban";
 import SMCTCarmona from "@/utils/official-receipt/global/fely/old/smct/SMCTCarmona";
+import SMCTLipa from "@/utils/collectionreceipt/global/fdl/old/smct/SMCTLipa";
 import SMCTTalibon2 from "@/utils/collectionreceipt/global/fdl/new/smct/SMCTTalibon2";
 
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
@@ -169,7 +170,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const fdlCrOldSizeData = [
     "CARMB",
     "CATAR",
-    "LIPA",
     "ALEN",
     "GUIN2",
     "MALA",
@@ -491,6 +491,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTCarmona data={data} />;
     case "TALI2" === user?.branchCode:
       return <SMCTTalibon2 data={data} />;
+    case "LIPA" === user?.branchCode:
+      return <SMCTLipa data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
