@@ -112,7 +112,7 @@ const DSMMatina = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[795.67716535px] w-[616.06299213px]">
-      <div className="flex h-[15.458267717px] mt-[135.503937007px]">
+      <div className="flex h-[15.458267717px] mt-[170.503937007px]">
         <p className="w-[402.51968504px] ml-[86.929133858px]">
           {data[1]?.[mainLineName]
             ?.replace(/Ã/g, "Ñ")
@@ -145,7 +145,7 @@ const DSMMatina = ({ data }: any) => {
         </p>
         <p className="w-[215.43307087px] ml-[41.57480315px]"></p>
       </div>
-      <div className="mx-[25.700787402px] mt-[32.590551181px] h-[360.81102362px]">
+      <div className="mx-[25.700787402px] mt-[22.590551181px] h-[335.81102362px]">
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 16).map((row: any, index: any) => (
