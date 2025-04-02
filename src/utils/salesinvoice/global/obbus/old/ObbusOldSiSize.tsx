@@ -151,7 +151,7 @@ const ObbusOldSiSize = ({ data }: any) => {
         </p>
         <p className="w-[215.43307087px] ml-[41.57480315px]"></p>
       </div>
-      <div className="mx-[25.700787402px] mt-[27.590551181px] h-[317.85826772px]">
+      <div className="mx-[25.700787402px] mt-[27.590551181px] h-[310.85826772px]">
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 16).map((row: any, index: any) => (
@@ -258,14 +258,6 @@ const ObbusOldSiSize = ({ data }: any) => {
                 {vatableSalesFn}
               </td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
-              <td className="h-[22.11023622px] w-[96.755905512px] text-center"></td>
-            </tr>
-            <tr className="text-xs">
-              <td className="h-[22.11023622px] w-[102.42519685px]"></td>
-              <td className="h-[22.11023622px] w-[216.18897638px] pl-3">
-                0.00
-              </td>
-              <td className="h-[22.11023622px] w-[140.5984252px]"></td>
               <td className="h-[22.11023622px] w-[96.755905512px] text-center">
                 {totalSalesVatInclusiveFn}
               </td>
@@ -283,7 +275,7 @@ const ObbusOldSiSize = ({ data }: any) => {
             <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3">
-                {vatAmountFn}
+                0.00
               </td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
               <td className="h-[22.11023622px] w-[96.755905512px] text-center">
@@ -292,7 +284,9 @@ const ObbusOldSiSize = ({ data }: any) => {
             </tr>
             <tr className="text-xs">
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
-              <td className="h-[22.11023622px] w-[216.18897638px] pl-3"></td>
+              <td className="h-[22.11023622px] w-[216.18897638px] pl-3">
+                {vatAmountFn}
+              </td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
               <td className="h-[22.11023622px] w-[96.755905512px] text-center">
                 {lessWithHoldingTaxFn}
