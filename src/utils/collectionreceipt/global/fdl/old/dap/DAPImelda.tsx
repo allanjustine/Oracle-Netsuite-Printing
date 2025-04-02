@@ -46,7 +46,7 @@ const DAPImelda: React.FC<PrintPageProps> = ({ data }) => {
           )}
         </p>
       </div>
-      <div className="flex w-full mt-[3.8267716539px]">
+      <div className="flex w-full mt-[10.8267716539px]">
         <div className="w-[600.94488189px]">
           <p className="pl-[249.4488189px]">
             {data[1]?.[CR_AmountInWords] || (
