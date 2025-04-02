@@ -1,5 +1,6 @@
 "use client";
 import FormattedNumber from "@/utils/FormattedNumber";
+import enyeFormat from "@/utils/enyeFormat";
 
 const Ipil = ({ data }: any) => {
   const CR_Date = 0;
@@ -18,7 +19,7 @@ const Ipil = ({ data }: any) => {
     <div className="text-xs w-[778.58267717px] h-[396.8503937px] ml-[10px]">
       <div className="flex mt-[138.28346457px]">
         <p className="pl-[604.72440945px] w-[151.18110236px]">
-          {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
+          {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex justify-between  mt-[19.7952755906px]">

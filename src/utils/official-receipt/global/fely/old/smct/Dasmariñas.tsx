@@ -1,5 +1,6 @@
 "use client";
 import FormattedNumber from "@/utils/FormattedNumber";
+import enyeFormat from "@/utils/enyeFormat";
 
 const Dasmariñas = ({ data }: any) => {
   const CR_Date = 0;
@@ -18,7 +19,7 @@ const Dasmariñas = ({ data }: any) => {
     <div className="text-xs w-[608.50393701px] h-[404.40944882px]">
       <div className="flex mt-[99.60629921px]">
         <p className="ml-[491.33858268px] w-[94.488188976px] h-[22.677165354px]">
-          {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
+          {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex justify-between mt-[7.7952755906px]">

@@ -7,6 +7,7 @@ import FormattedSumTotal from "@/utils/FormattedSumTotal";
 import FormattedSumTotalLessVat from "@/utils/FormattedSumTotalLessVat";
 import FormattedSumTotalMinusLessVat from "@/utils/FormattedSumTotalMinusLessVat";
 import FormattedTotalAmountDue from "@/utils/FormattedTotalAmountDue";
+import enyeFormat from "@/utils/enyeFormat";
 
 const ObbusNewCrSize = ({ data }: any) => {
   const CR_Date = 0;
@@ -25,7 +26,7 @@ const ObbusNewCrSize = ({ data }: any) => {
     <div className="text-xs h-[400.62992126px] w-[767.24409449px]">
       <div className="w-[120.94488189px] flex items-center mt-[83.9291338579px] ml-[602.83464567px] h-[21.921259843px]">
         <p className="text-xs ml-[11.338582677px]">
-          {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
+          {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="h-[61.984251969px] mt-[37.039370079px] ml-[164.40944882px]">

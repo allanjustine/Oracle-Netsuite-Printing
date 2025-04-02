@@ -1,5 +1,6 @@
 "use client";
 import FormattedNumber from "@/utils/FormattedNumber";
+import enyeFormat from "@/utils/enyeFormat";
 
 const DSMPardo = ({ data }: any) => {
   const CR_Date = 0;
@@ -18,7 +19,7 @@ const DSMPardo = ({ data }: any) => {
     <div className="text-xs w-[778.58267717px] h-[396.8503937px] ml-[10px]">
       <div className="flex mt-[96.708661417px]">
         <p className="ml-[454.33858268px] w-[102.04724409px]">
-          {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
+          {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex w-[778.58267717px] mt-[4.7952755906px]">

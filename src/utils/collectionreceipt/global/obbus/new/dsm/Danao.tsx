@@ -7,6 +7,7 @@ import FormattedSumTotal from "@/utils/FormattedSumTotal";
 import FormattedSumTotalLessVat from "@/utils/FormattedSumTotalLessVat";
 import FormattedSumTotalMinusLessVat from "@/utils/FormattedSumTotalMinusLessVat";
 import FormattedTotalAmountDue from "@/utils/FormattedTotalAmountDue";
+import enyeFormat from "@/utils/enyeFormat";
 
 const Danao = ({ data }: any) => {
   const CR_Date = 0;
@@ -25,7 +26,7 @@ const Danao = ({ data }: any) => {
     <div className="text-xs h-[366.61417323px] w-[716.22047244px]">
       <div className="w-[113.38582677px] flex items-center mt-[83.9291338579px] ml-[551.81102362px] h-[21.921259843px]">
         <p className="text-xs ml-[11.338582677px]">
-          {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
+          {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="h-[52.913385827px] mt-[26.456692913px] ml-[154.18110236px]">

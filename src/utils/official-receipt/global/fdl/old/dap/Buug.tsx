@@ -1,5 +1,6 @@
 "use client";
 import FormattedNumber from "@/utils/FormattedNumber";
+import enyeFormat from "@/utils/enyeFormat";
 
 const Buug = ({ data }: any) => {
   const CR_Date = 0;
@@ -18,7 +19,7 @@ const Buug = ({ data }: any) => {
     <div className="text-xs w-[585.82677165px] h-[343.93700787px] ml-[10px]">
       <div className="flex mt-[75.590551181px]">
         <p className="ml-[457.32283465px] w-[105.82677165px]">
-          {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
+          {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex w-[585.82677165px] mt-[15.456692912px]">

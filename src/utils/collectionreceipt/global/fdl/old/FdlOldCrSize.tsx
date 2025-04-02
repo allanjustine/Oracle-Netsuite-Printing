@@ -1,6 +1,7 @@
 "use client";
 import { PrintPageProps } from "@/types/types";
 import FormattedNumber from "@/utils/FormattedNumber";
+import enyeFormat from "@/utils/enyeFormat";
 
 const FdlOldCrSize: React.FC<PrintPageProps> = ({ data }) => {
   const CR_Date = 0;
@@ -19,7 +20,7 @@ const FdlOldCrSize: React.FC<PrintPageProps> = ({ data }) => {
     <div className="text-xs w-[805.03937008px] h-[415.7480315px]">
       <div className="flex mt-[95.1732283431px]">
         <p className="pl-[620.07874016px] w-[143.62204724px]">
-          {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
+          {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex justify-between mt-[24.7952755906px]">
