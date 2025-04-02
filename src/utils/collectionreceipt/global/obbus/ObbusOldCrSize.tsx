@@ -17,7 +17,7 @@ const ObbusOldCrSize: React.FC<PrintPageProps> = ({ data }) => {
 
   return (
     <div className="text-xs w-[752.12598425px] h-[389.29133858px] ml-[10px]">
-      <div className="flex mt-[101.1732283431px]">
+      <div className="flex mt-[110.1732283431px]">
         <p className="pl-[649.72440945px] w-[143.62204724px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
@@ -62,13 +62,16 @@ const ObbusOldCrSize: React.FC<PrintPageProps> = ({ data }) => {
           </p>
         </div>
       </div>
-      <div className="w-[529px] pl-[350.15748031px] mt-[6.8267716539px]">
-        <p>
-          {data[1]?.[CR_Memo] || <span className="opacity-0">No data</span>}
+      <div className="w-full h-[41.57480315px] mt-[6.8267716539px]">
+        <p className="ml-[350.15748031px] w-[423.30708661px] h-[20.299212598px]">
+          {data[1]?.[CR_Memo]?.substring(0, 60) || <span className="opacity-0">No data</span>}
+        </p>
+        <p className="ml-[241.88976378px] w-[521.57480315] h-[20.299212598px]">
+          {data[1]?.[CR_Memo]?.substring(60) || <span className="opacity-0">No data</span>}
         </p>
       </div>
       
-      <div className="w-[769.13385827px] pl-[566.92913386px] mt-[45.7952755906px] text-[11px]">
+      <div className="w-[769.13385827px] pl-[566.92913386px] mt-[25.7952755906px] text-[11px]">
         <p>
         {data[1]?.[CR_PartnerName] || ""}
         </p>
