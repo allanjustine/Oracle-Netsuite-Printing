@@ -1,5 +1,6 @@
 "use client";
 import FormattedNumber from "@/utils/FormattedNumber";
+import enyeFormat from "@/utils/enyeFormat";
 
 const ObbusOldOrSize = ({ data }: any) => {
   const CR_Date = 0;
