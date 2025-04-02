@@ -1,6 +1,7 @@
 "use client";
 import { PrintPageProps } from "@/types/types";
 import FormattedNumber from "@/utils/FormattedNumber";
+import enyeFormat from "@/utils/enyeFormat";
 
 const Calinan: React.FC<PrintPageProps> = ({ data }) => {
   const CR_Date = 0;
@@ -19,7 +20,7 @@ const Calinan: React.FC<PrintPageProps> = ({ data }) => {
     <div className="text-xs w-[797.48031496px] h-[565.03937008px] ml-[45px]">
       <div className="flex mt-[104.9527559px]">
         <p className="pl-[706.41732283px] w-[143.62204724px]">
-          {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
+          {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex justify-between mt-[15.7952755906px]">

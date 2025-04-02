@@ -1,5 +1,6 @@
 "use client";
 import FormattedNumber from "@/utils/FormattedNumber";
+import enyeFormat from "@/utils/enyeFormat";
 
 const HDKabasalan = ({ data }: any) => {
   const CR_Date = 0;
@@ -18,7 +19,7 @@ const HDKabasalan = ({ data }: any) => {
     <div className="text-xs w-[608.50393701px] h-[381.73228346px]">
       <div className="flex mt-[79.38582677px]">
         <p className="ml-[491.33858268px] w-[113.38582677px]">
-          {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
+          {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex w-[608.50393701px] mt-[8.7952755906px]">

@@ -27,6 +27,7 @@ import { PrintDataType } from "@/types/PrintData";
 import { Bounce, toast } from "react-toastify";
 import { useVersion } from "@/context/versionContext";
 import { printLabel } from "@/utils/printLabel";
+import enyeFormat from "@/utils/enyeFormat";
 
 export default function Page() {
   const { user } = useAuth();
@@ -270,9 +271,9 @@ export default function Page() {
         }
       };
 
-      printWindow.onafterprint = () => {
-        printWindow.close();
-      };
+      // printWindow.onafterprint = () => {
+      //   printWindow.close();
+      // };
     }
   };
 
@@ -950,7 +951,7 @@ export default function Page() {
                 <div className="flex flex-col gap-2">
                   <div className="flex flex-col">
                     <p>Customer Name</p>
-                    <p className="font-semibold">{row[CR_Name] || "N/A"}</p>
+                    <p className="font-semibold">{enyeFormat(row[CR_Name]) || "N/A"}</p>
                   </div>
                   <div className="flex flex-col">
                     <p>Date</p>

@@ -1,5 +1,6 @@
 "use client";
 import FormattedNumber from "@/utils/FormattedNumber";
+import enyeFormat from "@/utils/enyeFormat";
 
 const LapuLapu = ({ data }: any) => {
   const CR_Date = 0;
@@ -18,7 +19,7 @@ const LapuLapu = ({ data }: any) => {
     <div className="text-xs w-[790.2992126px] h-[404.03149606px] pl-[21px]">
       <div className="flex mt-[100.488188976px]">
         <p className="ml-[585.82677165px] w-[147.4015748px]">
-          {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
+          {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex w-[790.2992126px] mt-[26.7952755906px]">

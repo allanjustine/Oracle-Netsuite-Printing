@@ -1,6 +1,7 @@
 "use client";
 import { PrintPageProps } from "@/types/types";
 import FormattedNumber from "@/utils/FormattedNumber";
+import enyeFormat from "@/utils/enyeFormat";
 
 const SMCTLipa: React.FC<PrintPageProps> = ({ data }) => {
   const CR_Date = 0;
@@ -19,7 +20,7 @@ const SMCTLipa: React.FC<PrintPageProps> = ({ data }) => {
     <div className="text-xs w-[767.24409449px] h-[400.62992126px]">
       <div className="flex mt-[113.38582677px]">
         <p className="pl-[604.72440945px] w-[151.18110236px]">
-          {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
+          {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex justify-between mt-[18.897637795px]">
