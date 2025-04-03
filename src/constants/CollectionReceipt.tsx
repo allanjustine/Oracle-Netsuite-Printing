@@ -71,7 +71,6 @@ import FelyOldCrSize from "@/utils/collectionreceipt/global/fely/old/FelyOldCrSi
 import AjdOldOrSize from "@/utils/official-receipt/global/ajd/old/AjdOldOrSize";
 import BjvOldOrSize from "@/utils/official-receipt/global/bjv/old/BjvOldOrSize";
 import Liloan from "@/utils/official-receipt/global/obbus/old/dsm/Liloan";
-import MandaueY3s from "@/utils/official-receipt/global/obbus/old/dsm/MandaueY3s";
 import DSMAurora from "@/utils/official-receipt/global/fdl/old/dsm/DSMAurora";
 import FelyOldOrSize from "@/utils/official-receipt/global/fely/old/FelyOldOrSize";
 import BjvOldCrSize from "@/utils/collectionreceipt/global/bjv/old/BjvOldCrSize";
@@ -110,6 +109,7 @@ import SMCTLipa from "@/utils/collectionreceipt/global/fdl/old/smct/SMCTLipa";
 import SMCTTalibon2 from "@/utils/collectionreceipt/global/fdl/new/smct/SMCTTalibon2";
 import DSMJimenez from "@/utils/official-receipt/global/obbus/old/dsm/DSMJimenez";
 import SMCTCatarman from "@/utils/collectionreceipt/global/fdl/old/smct/SMCTCatarman";
+import MandaueY3s from "@/utils/collectionreceipt/global/fdl/old/dsm/MandaueY3s";
 
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
