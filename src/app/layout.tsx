@@ -11,6 +11,18 @@ export const metadata: Metadata = {
   },
   description:
     "This system is intended for importing data from Oracle NetSuite and generating a uniform design related to SMCT Group of Companies.",
+  openGraph: {
+    title: "SMCT Group - Oracle NetSuite",
+    description:
+      "This system is intended for importing data from Oracle NetSuite and generating a uniform design related to SMCT Group of Companies.",
+    url: "https://netsuite-print.smctgroup.ph/",
+    siteName: "SMCT Group - Oracle NetSuite",
+    images: [
+      {
+        url: "https://netsuite-print.smctgroup.ph/smct_group.png",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
