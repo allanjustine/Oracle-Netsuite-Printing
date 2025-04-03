@@ -113,14 +113,14 @@ const SMCTLipa = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[771.02362205px] w-[593.38582677px]">
-      <div className="flex h-[19.409448819px] mt-[107.33858268px]">
+      <div className="flex h-[19.409448819px] mt-[118.6771653587px]">
         <p className="w-[376.06299213px] pl-[94.488188976px]">
           {data[1]?.[mainLineName]
             ?.replace(/Ã/g, "Ñ")
             .replace(/Ã‘/g, "Ñ")
             .replace(/Ã±/g, "ñ") || ""}
         </p>
-        <p className="w-[219.21259843px] pl-[67.472440945px]">
+        <p className="w-[219.21259843px] pl-[60.472440945px]">
           {data[1]?.[date] || ""}
         </p>
       </div>
@@ -128,7 +128,7 @@ const SMCTLipa = ({ data }: any) => {
         <p className="w-[376.06299213px] pl-[94.488188976px]">
           {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
-        <p className="w-[219.21259843px] pl-[67.472440945px]">
+        <p className="w-[219.21259843px] pl-[60.472440945px]">
           {data[1]?.[terms] || "CASH"}
         </p>
       </div>
