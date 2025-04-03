@@ -16,8 +16,8 @@ const HDInitao = ({ data }: any) => {
   const CR_Reference = 10;
 
   return (
-    <div className="text-xs w-[778.58267717px] h-[396.8503937px] ml-[10px]">
-      <div className="flex mt-[119.38582677px]">
+    <div className="text-xs w-[778.58267717px] h-[396.8503937px] ml-[0px]">
+      <div className="flex mt-[110.38582677px]">
         <p className="pl-[604.72440945px] w-[151.18110236px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
@@ -29,7 +29,7 @@ const HDInitao = ({ data }: any) => {
           </p>
         </div>
         <div className="w-[137.95275591px]">
-          <p className="pl-[25.57480315px]">
+          <p className="pl-[10.57480315px]">
             {data[1]?.[CR_TIN] || <span className="opacity-0">No data</span>}
           </p>
         </div>
