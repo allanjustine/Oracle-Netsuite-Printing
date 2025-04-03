@@ -113,14 +113,14 @@ const SMCTLipa = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[771.02362205px] w-[593.38582677px]">
-      <div className="flex h-[19.409448819px] mt-[99.779527563px]">
+      <div className="flex h-[19.409448819px] mt-[107.33858268px]">
         <p className="w-[376.06299213px] pl-[94.488188976px]">
           {data[1]?.[mainLineName]
             ?.replace(/Ã/g, "Ñ")
             .replace(/Ã‘/g, "Ñ")
             .replace(/Ã±/g, "ñ") || ""}
         </p>
-        <p className="w-[219.21259843px] pl-[60.472440945px]">
+        <p className="w-[219.21259843px] pl-[67.472440945px]">
           {data[1]?.[date] || ""}
         </p>
       </div>
@@ -128,7 +128,7 @@ const SMCTLipa = ({ data }: any) => {
         <p className="w-[376.06299213px] pl-[94.488188976px]">
           {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
-        <p className="w-[219.21259843px] pl-[60.472440945px]">
+        <p className="w-[219.21259843px] pl-[67.472440945px]">
           {data[1]?.[terms] || "CASH"}
         </p>
       </div>
@@ -153,7 +153,7 @@ const SMCTLipa = ({ data }: any) => {
           {data[1]?.[cardHolderSignatures] || ""}
         </p>
       </div>
-      <div className="mx-[25.393700787px] mt-[23.4330708664px] h-[314.07874016px]">
+      <div className="mx-[34.393700787px] mt-[23.4330708664px] h-[314.07874016px]">
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
@@ -253,7 +253,7 @@ const SMCTLipa = ({ data }: any) => {
           </tbody>
         </table>
       </div>
-      <div className="mx-[25.393700787px] h-[126.99212598px]">
+      <div className="mx-[34.393700787px] h-[126.99212598px]">
         <tbody>
           <tr className="text-xs">
             <td className="h-[19.275590551px] w-[131.90551181px]"></td>
