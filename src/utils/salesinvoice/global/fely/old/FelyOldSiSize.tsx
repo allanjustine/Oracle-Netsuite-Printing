@@ -112,7 +112,7 @@ const FelyOldSiSize: React.FC<PrintPageProps> = ({ data }) => {
   );
 
   return (
-    <div className="text-xs h-[506.83464567px] w-[741.16535433px]">
+    <div className="text-xs h-[506.83464567px] w-[741.16535434px]">
       <div className="mx-[30.614173228px] w-[684.09448819px] flex space-x-20 mt-[100px]">
         <div className="w-[419.90551181px] pr-[11.716535433px]">
           <p className="w-full text-xs h-[19.275590551px] ml-[120px]">
