@@ -46,7 +46,7 @@ const HDVeterans = ({ data }: any) => {
           )}
         </p>
       </div>
-      <div className="flex">
+      <div className="flex mt-[10px]">
         <p className="ml-[226.77165354px]">
           {data[1]?.[CR_AmountInWords] || (
             <span className="opacity-0">No data</span>
