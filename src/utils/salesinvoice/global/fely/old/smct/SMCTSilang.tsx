@@ -112,12 +112,12 @@ const SMCTSilang = ({ data }: any) => {
   );
 
   return (
-    <div className="text-xs h-[808.81889764px] w-[629.29133858px] ml-[5px]">
-      <div className="flex h-[19.409448819px] mt-[142.28346457px]">
+    <div className="text-xs h-[808.81889764px] w-[629.29133858px]">
+      <div className="flex h-[19.409448819px] mt-[152.28346457px]">
         <p className="w-[376.06299213px] pl-[94.488188976px]">
           {data[1]?.[mainLineName] || ""}
         </p>
-        <p className="w-[219.21259843px] pl-[71.811023622px]">
+        <p className="w-[219.21259843px] pl-[80.811023622px]">
           {data[1]?.[date] || ""}
         </p>
       </div>
@@ -125,7 +125,7 @@ const SMCTSilang = ({ data }: any) => {
         <p className="w-[376.06299213px] pl-[94.488188976px]">
           {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
-        <p className="w-[219.21259843px] pl-[60.472440945px]">
+        <p className="w-[219.21259843px] pl-[75.472440945px]">
           {data[1]?.[terms] || "CASH"}
         </p>
       </div>
@@ -150,7 +150,7 @@ const SMCTSilang = ({ data }: any) => {
           {data[1]?.[cardHolderSignatures] || ""}
         </p>
       </div>
-      <div className="mx-[34.393700787px] mt-[13.4330708664px] h-[325.03937008px]">
+      <div className="mx-[34.393700787px] mt-[13.4330708664px] h-[315.03937008px]">
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
