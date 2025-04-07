@@ -112,8 +112,8 @@ const SMCTSilang = ({ data }: any) => {
   );
 
   return (
-    <div className="text-xs h-[808.81889764px] w-[629.29133858px]">
-      <div className="flex h-[19.409448819px] mt-[132.28346457px]">
+    <div className="text-xs h-[808.81889764px] w-[629.29133858px] ml-[5px]">
+      <div className="flex h-[19.409448819px] mt-[142.28346457px]">
         <p className="w-[376.06299213px] pl-[94.488188976px]">
           {data[1]?.[mainLineName] || ""}
         </p>
@@ -150,7 +150,7 @@ const SMCTSilang = ({ data }: any) => {
           {data[1]?.[cardHolderSignatures] || ""}
         </p>
       </div>
-      <div className="mx-[34.393700787px] mt-[23.4330708664px] h-[325.03937008px]">
+      <div className="mx-[34.393700787px] mt-[13.4330708664px] h-[325.03937008px]">
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
