@@ -250,7 +250,7 @@ const SMCTSilang = ({ data }: any) => {
           </tbody>
         </table>
       </div>
-      <div className="mx-[34.393700787px] h-[144.75590551px]">
+      <div className="mx-[34.393700787px] h-[144.75590551px] mt-[10px]">
         <tbody>
           <tr className="text-xs">
             <td className="h-[19.275590551px] w-[97.88976378px]"></td>
@@ -317,7 +317,7 @@ const SMCTSilang = ({ data }: any) => {
         </tbody>
       </div>
       <div className="mx-[34.393700787px]">
-        <div className="mt-[20.456692914px] ml-[332.976377952px]">
+        <div className="mt-[15.456692914px] ml-[332.976377952px]">
           <p className="text-xs text-center">{data[1]?.[cashier] || ""}</p>
         </div>
       </div>
