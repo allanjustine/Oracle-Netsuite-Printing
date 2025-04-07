@@ -15,7 +15,7 @@ export default function Home() {
   const { login, isAuthenticated, isLoading, setIsLoading } = useAuth();
   const router = useRouter();
   const [branchCode, setBranchCode] = useState<string>("");
-  const [password, setPassword] = useState<string>("Smct123456");
+  const [password, setPassword] = useState<string>("");
   const [showAlert, setShowAlert] = useState<any>({
     message: "",
     error: false,
