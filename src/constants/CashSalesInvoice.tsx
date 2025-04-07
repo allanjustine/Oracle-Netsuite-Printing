@@ -126,6 +126,7 @@ import SMCTLipa from "@/utils/salesinvoice/global/fdl/old/smct/SMCTLipa";
 import SMCTCarmona from "@/utils/salesinvoice/global/fely/old/smct/SMCTCarmona";
 import Balamban from "@/utils/salesinvoice/global/fdl/old/dsm/Balamban";
 import DSMMatina from "@/utils/salesinvoice/global/obbus/old/dsm/DSMMatina";
+import Iloilo from "@/utils/salesinvoice/global/fdl/new/dsm/Iloilo";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -218,7 +219,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "CARC",
     "CARC2",
     "UTAP",
-    "ILOI"
   ];
 
   const fdlSiOldSizeData = ["CATAR", "NUND2", "DAPI", "TANZ", "BONI", "VITA"];
@@ -507,6 +507,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Balamban data={data} />;
     case "MATI" === user?.branchCode:
       return <DSMMatina data={data} />;
+    case "ILOI" === user?.branchCode:
+      return <Iloilo data={data} />;
 
     default:
       return (
