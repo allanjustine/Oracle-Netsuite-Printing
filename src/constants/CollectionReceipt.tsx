@@ -25,7 +25,7 @@ import Cambaro from "@/utils/official-receipt/global/fdl/old/dsm/Cambaro";
 import CarmenCdo from "@/utils/collectionreceipt/global/obbus/old/dsm/CarmenCdo";
 import Ipil from "@/utils/official-receipt/global/fdl/old/hd/Ipil";
 import Sucabon from "@/utils/collectionreceipt/global/fdl/new/dap/Sucabon";
-import MandaueMulti from "@/utils/official-receipt/global/obbus/old/dsm/MandaueMulti";
+// import MandaueMulti from "@/utils/official-receipt/global/obbus/old/dsm/MandaueMulti";
 import HDGeneralTrias from "@/utils/collectionreceipt/global/fdl/new/hd/HDGeneralTrias";
 import HDSindangan from "@/utils/collectionreceipt/global/fdl/old/hd/HDSindangan";
 import HDDipolog from "@/utils/collectionreceipt/global/fdl/old/hd/HDDipolog";
@@ -110,6 +110,7 @@ import SMCTTalibon2 from "@/utils/collectionreceipt/global/fdl/new/smct/SMCTTali
 import DSMJimenez from "@/utils/official-receipt/global/obbus/old/dsm/DSMJimenez";
 import SMCTCatarman from "@/utils/collectionreceipt/global/fdl/old/smct/SMCTCatarman";
 import MandaueY3s from "@/utils/collectionreceipt/global/fdl/old/dsm/MandaueY3s";
+import MandaueMulti from "@/utils/collectionreceipt/global/fdl/old/dsm/MandaueMulti";
 
 // import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
