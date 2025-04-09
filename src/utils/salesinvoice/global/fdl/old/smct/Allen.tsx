@@ -148,7 +148,7 @@ const Allen = ({ data }: any) => {
           {data[1]?.[businessStyle] || ""}
         </p>
       </div>
-      <div className="mx-[30.236220472px] mt-[23.4330708664px] h-[309.16535433px]">
+      <div className="mx-[30.236220472px] mt-[23.4330708664px] h-[320.16535433px] mt-[7px]">
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
