@@ -7,7 +7,7 @@ import FormattedSumTotalLessVat from "@/utils/FormattedSumTotalLessVat";
 import FormattedSumTotalMinusLessVat from "@/utils/FormattedSumTotalMinusLessVat";
 import FormattedTotalAmountDue from "@/utils/FormattedTotalAmountDue";
 
-const DsmCarmenCebu2 = ({ data }: any) => {
+const HDDSMCarmenCebu2 = ({ data }: any) => {
   const mainLineName = 0;
   const date = 1;
   const taxNumber = 2;
@@ -333,4 +333,4 @@ const DsmCarmenCebu2 = ({ data }: any) => {
   );
 };
 
-export default DsmCarmenCebu2;
+export default HDDSMCarmenCebu2;

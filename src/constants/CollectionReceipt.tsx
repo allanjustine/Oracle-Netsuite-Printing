@@ -32,7 +32,6 @@ import HDDipolog from "@/utils/collectionreceipt/global/fdl/old/hd/HDDipolog";
 import HDCarmenCebu from "@/utils/collectionreceipt/global/fdl/old/hd/HDCarmenCebu";
 import Cerilles from "@/utils/official-receipt/global/obbus/old/dsm/Cerilles";
 import Calape2 from "@/utils/official-receipt/global/fdl/old/smct/Calape2";
-import CarmenCebu2 from "@/utils/official-receipt/global/ajd/old/dsm/CarmenCebu2";
 import Tanza from "@/utils/collectionreceipt/global/fely/old/hd/Tanza";
 import HDMolave from "@/utils/official-receipt/global/fdl/old/hd/HDMolave";
 import Dipolog2 from "@/utils/official-receipt/global/fdl/old/dsm/Dipolog2";
@@ -111,6 +110,7 @@ import DSMJimenez from "@/utils/official-receipt/global/obbus/old/dsm/DSMJimenez
 import SMCTCatarman from "@/utils/collectionreceipt/global/fdl/old/smct/SMCTCatarman";
 import MandaueY3s from "@/utils/collectionreceipt/global/fdl/old/dsm/MandaueY3s";
 import MandaueMulti from "@/utils/collectionreceipt/global/fdl/old/dsm/MandaueMulti";
+import CarmenCebu2 from "@/utils/official-receipt/global/ajd/old/dsm/CarmenCebu2";
 
 //import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 

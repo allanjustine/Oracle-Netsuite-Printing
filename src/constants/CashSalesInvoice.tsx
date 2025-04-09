@@ -27,7 +27,6 @@ import Antipolo from "@/utils/salesinvoice/global/fdl/new/smct/Antipolo";
 import MandaueMulti from "@/utils/salesinvoice/global/obbus/new/dsm/MandaueMulti";
 import HDBuug from "@/utils/salesinvoice/global/fdl/new/hd/HDBuug";
 import DSMDanao from "@/utils/salesinvoice/global/obbus/new/dsm/DSMDanao";
-import DsmCarmenCebu2 from "@/utils/salesinvoice/global/obbus/old/dsm/DsmCarmenCebu2";
 import DAPBalingasag from "@/utils/salesinvoice/global/fdl/old/dap/DAPBalingasag";
 import DAPIligan from "@/utils/salesinvoice/global/fdl/old/dap/DAPIligan";
 import DSMBayugan from "@/utils/salesinvoice/global/fdl/new/dsm/DSMBayugan";
@@ -127,6 +126,7 @@ import SMCTCarmona from "@/utils/salesinvoice/global/fely/old/smct/SMCTCarmona";
 import Balamban from "@/utils/salesinvoice/global/fdl/old/dsm/Balamban";
 import DSMMatina from "@/utils/salesinvoice/global/obbus/old/dsm/DSMMatina";
 import Iloilo from "@/utils/salesinvoice/global/fdl/new/dsm/Iloilo";
+import CarmenCebu2 from "@/utils/salesinvoice/global/obbus/new/dsm/CarmenCebu2";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -330,7 +330,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     case "ANTIP" === user?.branchCode:
       return <Antipolo data={data} />;
     case "CARMC2" === user?.branchCode:
-      return <DsmCarmenCebu2 data={data} />;
+      return <CarmenCebu2 data={data} />;
     case "MAND" === user?.branchCode:
       return <MandaueMulti data={data} />;
     case "MAND2" === user?.branchCode:
