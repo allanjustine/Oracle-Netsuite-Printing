@@ -18,7 +18,7 @@ import Consolacion from "@/utils/official-receipt/global/fdl/old/dsm/Consolacion
 import DSMNorzagaray from "@/utils/collectionreceipt/global/fdl/new/dsm/DSMNorzagaray";
 import DAPSanMiguel from "@/utils/collectionreceipt/global/fdl/new/dap/DAPSanMiguel";
 import Binan from "@/utils/collectionreceipt/global/fdl/old/smct/Binan";
-//import Argao from "@/utils/official-receipt/global/fdl/old/dsm/Argao";
+import Argao from "@/utils/official-receipt/global/fdl/old/dsm/Argao";
 import Alano from "@/utils/collectionreceipt/global/fdl/new/dap/Alano";
 import Balangasan from "@/utils/collectionreceipt/global/obbus/old/dsm/Balangasan";
 import Cambaro from "@/utils/official-receipt/global/fdl/old/dsm/Cambaro";
@@ -112,7 +112,7 @@ import SMCTCatarman from "@/utils/collectionreceipt/global/fdl/old/smct/SMCTCata
 import MandaueY3s from "@/utils/collectionreceipt/global/fdl/old/dsm/MandaueY3s";
 import MandaueMulti from "@/utils/collectionreceipt/global/fdl/old/dsm/MandaueMulti";
 
-import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
+//import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -202,6 +202,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "TRINI2",
     "OZAD",
     "IPID",
+    "SARG"
   ];
 
   const fdlOrNewSizeData = [];
@@ -234,7 +235,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "RIZA",
     "DSMT2",
     "DSMM",
-    "SARG",
     "ILOI",
     "DSMDM",
     "UBAY",
