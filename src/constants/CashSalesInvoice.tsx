@@ -27,7 +27,7 @@ import Antipolo from "@/utils/salesinvoice/global/fdl/new/smct/Antipolo";
 import MandaueMulti from "@/utils/salesinvoice/global/obbus/new/dsm/MandaueMulti";
 import HDBuug from "@/utils/salesinvoice/global/fdl/new/hd/HDBuug";
 import DSMDanao from "@/utils/salesinvoice/global/obbus/new/dsm/DSMDanao";
-import DsmCarmenCebu2 from "@/utils/salesinvoice/global/obbus/new/dsm/DsmCarmenCebu2";
+import DsmCarmenCebu2 from "@/utils/salesinvoice/global/obbus/old/dsm/DsmCarmenCebu2";
 import DAPBalingasag from "@/utils/salesinvoice/global/fdl/old/dap/DAPBalingasag";
 import DAPIligan from "@/utils/salesinvoice/global/fdl/old/dap/DAPIligan";
 import DSMBayugan from "@/utils/salesinvoice/global/fdl/new/dsm/DSMBayugan";
