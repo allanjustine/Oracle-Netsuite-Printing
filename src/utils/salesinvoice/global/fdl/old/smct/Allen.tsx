@@ -113,7 +113,7 @@ const Allen = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[745.32283465px] w-[589.60629921px]">
-      <div className="flex h-[20.787401575px] mt-[111.1181102406px]">
+      <div className="flex h-[20.787401575px] mt-[130.1181102406px]">
         <p className="w-[374.17322835px] pl-[98.267716535px]">
           {data[1]?.[mainLineName]
             ?.replace(/Ã/g, "Ñ")
@@ -148,7 +148,7 @@ const Allen = ({ data }: any) => {
           {data[1]?.[businessStyle] || ""}
         </p>
       </div>
-      <div className="mx-[30.236220472px] mt-[23.4330708664px] h-[309.16535433px]">
+      <div className="mx-[30.236220472px] mt-[23.4330708664px] h-[320.16535433px] mt-[7px]">
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
