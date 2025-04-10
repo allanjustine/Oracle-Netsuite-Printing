@@ -110,6 +110,8 @@ import DSMJimenez from "@/utils/official-receipt/global/obbus/old/dsm/DSMJimenez
 import SMCTCatarman from "@/utils/collectionreceipt/global/fdl/old/smct/SMCTCatarman";
 import MandaueY3s from "@/utils/collectionreceipt/global/fdl/old/dsm/MandaueY3s";
 import MandaueMulti from "@/utils/collectionreceipt/global/fdl/old/dsm/MandaueMulti";
+import CarmenCebu2 from "@/utils/official-receipt/global/ajd/old/dsm/CarmenCebu2";
+import DSMSARG from "@/utils/collectionreceipt/global/fdl/old/dsm/DSMSARG";
 
 //import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
