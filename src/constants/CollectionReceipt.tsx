@@ -112,6 +112,7 @@ import MandaueY3s from "@/utils/collectionreceipt/global/fdl/old/dsm/MandaueY3s"
 import MandaueMulti from "@/utils/collectionreceipt/global/fdl/old/dsm/MandaueMulti";
 import CarmenCebu2 from "@/utils/official-receipt/global/ajd/old/dsm/CarmenCebu2";
 import DSMSARG from "@/utils/collectionreceipt/global/fdl/old/dsm/DSMSARG";
+import HDDSMCarmenCebu2 from "@/utils/official-receipt/global/ajd/old/dsm/HDDSMCarmenCebu2";
 
 //import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
@@ -236,7 +237,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DSMT2",
     "DSMM",
     "ILOI",
-    "DSMDM",
     "UBAY",
   ];
 
@@ -500,6 +500,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTCatarman data={data} />;
     case "SARG" === user?.branchCode:
       return <DSMSARG data={data} />;
+    case "DSMDM" === user?.branchCode:
+      return <HDDSMCarmenCebu2 data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
