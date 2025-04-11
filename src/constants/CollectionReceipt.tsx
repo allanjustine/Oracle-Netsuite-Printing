@@ -113,6 +113,7 @@ import MandaueMulti from "@/utils/collectionreceipt/global/fdl/old/dsm/MandaueMu
 import CarmenCebu2 from "@/utils/official-receipt/global/ajd/old/dsm/CarmenCebu2";
 import DSMSARG from "@/utils/collectionreceipt/global/fdl/old/dsm/DSMSARG";
 import HDDSMCarmenCebu2 from "@/utils/official-receipt/global/ajd/old/dsm/HDDSMCarmenCebu2";
+import DSMCatarman2 from "@/utils/collectionreceipt/global/obbus/new/dsm/DSMCatarman2";
 
 //import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
@@ -129,7 +130,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const dsmCrSizeData = [
     "CARS",
-    "CATAR2",
     "CONSO",
     "DONC",
     "DSMSB",
@@ -209,7 +209,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const fdlOrNewSizeData = [];
 
   // OBBUS
-  const obbusCrNewSizeData = ["TOMAS", "DIGOS", "CATAR2", "BOLOD"];
+  const obbusCrNewSizeData = ["TOMAS", "DIGOS", "BOLOD"];
 
   const obbusCrOldSizeData = [
     "DSMBN",
@@ -502,6 +502,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <DSMSARG data={data} />;
     case "DSMDM" === user?.branchCode:
       return <HDDSMCarmenCebu2 data={data} />;
+    case "CATAR2" === user?.branchCode:
+      return <DSMCatarman2 data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
