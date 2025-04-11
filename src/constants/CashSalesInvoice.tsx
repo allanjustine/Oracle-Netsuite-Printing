@@ -128,6 +128,7 @@ import DSMMatina from "@/utils/salesinvoice/global/obbus/old/dsm/DSMMatina";
 import Iloilo from "@/utils/salesinvoice/global/fdl/new/dsm/Iloilo";
 import CarmenCebu2 from "@/utils/salesinvoice/global/obbus/new/dsm/CarmenCebu2";
 import HDDSMCarmenCebu2 from "@/utils/salesinvoice/global/obbus/old/dsm/HDDSMCarmenCebu2";
+import DSMCatar2 from "@/utils/salesinvoice/global/obbus/new/dsm/DSMCatar2";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -240,7 +241,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "DSMD",
     "RIZA",
     "TOMAS",
-    "CATAR2",
     "BOLOD",
     "MING",
   ];
@@ -511,6 +511,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Iloilo data={data} />;
     case "DSMDM" === user?.branchCode:
       return <HDDSMCarmenCebu2 data={data} />;
+    case "CATAR2" === user?.branchCode:
+    return <DSMCatar2 data={data} />;
 
     default:
       return (
