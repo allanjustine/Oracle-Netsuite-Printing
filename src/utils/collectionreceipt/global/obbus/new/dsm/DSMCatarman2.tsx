@@ -40,7 +40,7 @@ const DSMCatarman2 = ({ data }: any) => {
           {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex w-[699.59055118px] ml-[24.566929134px] mt-[34.37007874px]">
+      <div className="flex w-[699.59055118px] ml-[24.566929134px] mt-[18.37007874px]">
         <div className="flex flex-col items-center w-[550.50393701px]">
           <p className="w-[491.33858268px] h-[23.433070866px] ml-[110.818897638px]">
             {data[1]?.[CR_Memo].substring(0, 70) || (
