@@ -509,7 +509,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <DSMMatina data={data} />;
     case "ILOI" === user?.branchCode:
       return <Iloilo data={data} />;
-    case "DSMDM" === user?.branchCode:
+    case "DSMDN" === user?.branchCode:
       return <HDDSMCarmenCebu2 data={data} />;
     case "CATAR2" === user?.branchCode:
     return <DSMCatar2 data={data} />;
