@@ -147,7 +147,7 @@ const SMCTCatarman = ({ data }: any) => {
           {data[1]?.[businessStyle] || ""}
         </p>
       </div>
-      <div className="mx-[34.393700787px] mt-[26.834645669px] h-[335.23622047px]">
+      <div className="mx-[34.393700787px] mt-[26.834645669px] h-[318.23622047px]">
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
