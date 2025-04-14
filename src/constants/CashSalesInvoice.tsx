@@ -129,6 +129,7 @@ import Iloilo from "@/utils/salesinvoice/global/fdl/new/dsm/Iloilo";
 import CarmenCebu2 from "@/utils/salesinvoice/global/obbus/new/dsm/CarmenCebu2";
 import HDDSMCarmenCebu2 from "@/utils/salesinvoice/global/obbus/old/dsm/HDDSMCarmenCebu2";
 import DSMCatar2 from "@/utils/salesinvoice/global/obbus/new/dsm/DSMCatar2";
+import SMCTCatarman from "@/utils/salesinvoice/global/fdl/old/smct/SMCTCatarman";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -223,7 +224,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "UTAP",
   ];
 
-  const fdlSiOldSizeData = ["CATAR", "NUND2", "DAPI", "TANZ", "BONI", "VITA"];
+  const fdlSiOldSizeData = ["NUND2", "DAPI", "TANZ", "BONI", "VITA"];
 
   // OBBUS
   const obbusCsiNewSizeData = [];
@@ -238,13 +239,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "DSMDM",
   ];
 
-  const obbusSiNewSizeData = [
-    "DSMD",
-    "RIZA",
-    "TOMAS",
-    "BOLOD",
-    "MING",
-  ];
+  const obbusSiNewSizeData = ["DSMD", "RIZA", "TOMAS", "BOLOD", "MING"];
 
   const obbusSiOldSizeData = ["TACU"];
 
@@ -513,7 +508,9 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     case "DSMDN" === user?.branchCode:
       return <HDDSMCarmenCebu2 data={data} />;
     case "CATAR2" === user?.branchCode:
-    return <DSMCatar2 data={data} />;
+      return <DSMCatar2 data={data} />;
+    case "CATAR" === user?.branchCode:
+      return <SMCTCatarman data={data} />;
 
     default:
       return (
