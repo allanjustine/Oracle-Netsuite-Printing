@@ -7,7 +7,7 @@ import FormattedSumTotalLessVat from "@/utils/FormattedSumTotalLessVat";
 import FormattedSumTotalMinusLessVat from "@/utils/FormattedSumTotalMinusLessVat";
 import FormattedTotalAmountDue from "@/utils/FormattedTotalAmountDue";
 
-const DSMSuzukiPardo = ({ data }: any) => {
+const DSMSuzukiPardoOld = ({ data }: any) => {
   const mainLineName = 0;
   const date = 1;
   const taxNumber = 2;
@@ -333,4 +333,4 @@ const DSMSuzukiPardo = ({ data }: any) => {
   );
 };
 
-export default DSMSuzukiPardo;
+export default DSMSuzukiPardoOld;

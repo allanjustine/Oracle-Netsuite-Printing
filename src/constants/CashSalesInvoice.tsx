@@ -104,7 +104,7 @@ import SMCTSilang from "@/utils/salesinvoice/global/fely/old/smct/SMCTSilang";
 import SMCTAntique from "@/utils/salesinvoice/global/fdl/old/smct/SMCTAntique";
 import DSMTagbilaran from "@/utils/salesinvoice/global/obbus/old/dsm/DSMTagbilaran";
 import DSMLabangon from "@/utils/salesinvoice/global/obbus/old/dsm/DSMLabangon";
-import DSMSuzukiPardo from "@/utils/salesinvoice/global/obbus/old/dsm/DSMSuzukiPardo";
+import DSMSuzukiPardo from "@/utils/salesinvoice/global/obbus/old/dsm/DSMSuzukiPardoOld";
 import Bogo from "@/utils/salesinvoice/global/obbus/old/dsm/Bogo";
 import DSMPardo from "@/utils/salesinvoice/global/fdl/old/dsm/DSMPardo";
 import SMCTTubigon from "@/utils/salesinvoice/global/fdl/old/smct/SMCTTubigon";
@@ -129,6 +129,7 @@ import Iloilo from "@/utils/salesinvoice/global/fdl/new/dsm/Iloilo";
 import CarmenCebu2 from "@/utils/salesinvoice/global/obbus/new/dsm/CarmenCebu2";
 import HDDSMCarmenCebu2 from "@/utils/salesinvoice/global/obbus/old/dsm/HDDSMCarmenCebu2";
 import DSMCatar2 from "@/utils/salesinvoice/global/obbus/new/dsm/DSMCatar2";
+import SuzukiPardo from "@/utils/salesinvoice/global/fdl/new/dsm/SuzukiPardo";
 import SMCTCatarman from "@/utils/salesinvoice/global/fdl/old/smct/SMCTCatarman";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
@@ -464,7 +465,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     case "DSMK" === user?.branchCode:
       return <DSMLabangon data={data} />;
     case "PARD2" === user?.branchCode:
-      return <DSMSuzukiPardo data={data} />;
+      return <SuzukiPardo data={data} />;
     case "BOGO" === user?.branchCode:
       return <Bogo data={data} />;
     case "PARD" === user?.branchCode:
