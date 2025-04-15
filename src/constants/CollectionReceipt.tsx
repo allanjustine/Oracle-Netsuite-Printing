@@ -114,6 +114,7 @@ import CarmenCebu2 from "@/utils/official-receipt/global/ajd/old/dsm/CarmenCebu2
 import DSMSARG from "@/utils/collectionreceipt/global/fdl/old/dsm/DSMSARG";
 import HDDSMCarmenCebu2 from "@/utils/official-receipt/global/ajd/old/dsm/HDDSMCarmenCebu2";
 import DSMCatarman2 from "@/utils/collectionreceipt/global/obbus/new/dsm/DSMCatarman2";
+import DSMToledo2 from "@/utils/official-receipt/global/obbus/old/dsm/DSMToledo2";
 
 //import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
@@ -501,7 +502,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     case "SARG" === user?.branchCode:
       return <DSMSARG data={data} />;
     case "DSMDM" === user?.branchCode:
-      return <HDDSMCarmenCebu2 data={data} />;
+      return <DSMToledo2 data={data} />;
     case "CATAR2" === user?.branchCode:
       return <DSMCatarman2 data={data} />;
     default:
