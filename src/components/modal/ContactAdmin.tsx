@@ -93,7 +93,7 @@ export default function ContactAdmin({ isOpen, onClose, modalRef }: any) {
                       </div>
                       <div className="ml-4">
                         <h5 className="text-sm font-medium text-gray-900">
-                          {item.name.replace("_", " ")}
+                          {item.name}
                         </h5>
                         <p className="text-xs text-gray-500">
                           {item.position}
