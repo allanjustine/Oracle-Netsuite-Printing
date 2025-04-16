@@ -204,7 +204,9 @@ export default function Home() {
                 type="text"
                 name="branchCode"
                 id="branchCode"
-                className={`w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all ${showAlert.warning && "border-red-500"}`}
+                className={`w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all focus:outline-none ${
+                  showAlert.warning && "border-red-500"
+                }`}
                 placeholder="Enter branch code"
                 value={branchCode}
                 onChange={(e) => setBranchCode(e.target.value.toUpperCase())}
@@ -224,25 +226,29 @@ export default function Home() {
                 type={isPasswordShow ? "text" : "password"}
                 name="password"
                 id="password"
-                className={`w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all ${showAlert.warning && "border-red-500"}`}
+                className={`w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all focus:outline-none ${
+                  showAlert.warning && "border-red-500"
+                }`}
                 placeholder="Enter password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <div className="mt-1 flex items-center">
-                <input
-                  type="checkbox"
-                  onChange={handleShowPassword}
-                  checked={isPasswordShow}
-                  className="cursor-pointer h-4 w-4 rounded-md"
-                />
-                <span
-                  className="ml-2 text-gray-500 text-sm cursor-pointer hover:underline"
-                  onClick={handleShowPassword}
-                >
-                  {isPasswordShow ? "Hide" : "Show"} password
-                </span>
-              </div>
+              {password && (
+                <div className="mt-2 flex items-center">
+                  <input
+                    type="checkbox"
+                    onChange={handleShowPassword}
+                    checked={isPasswordShow}
+                    className="cursor-pointer h-4 w-4 rounded-md"
+                  />
+                  <span
+                    className="ml-2 text-gray-500 text-sm cursor-pointer hover:underline"
+                    onClick={handleShowPassword}
+                  >
+                    {isPasswordShow ? "Hide" : "Show"} password
+                  </span>
+                </div>
+              )}
             </div>
             <button
               type="submit"
