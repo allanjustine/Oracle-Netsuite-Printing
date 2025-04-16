@@ -12,6 +12,8 @@ export const VersionProvider = ({ children }: any) => {
   const [isAbnormalVersion, setIsAbnormalVersion] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isPrintable, setIsPrintable] = useState(false);
+  const [isMaintenance, setIsMaintenance] = useState(false);
+  const [isFetchingVersion, setIsFetchingVersion] = useState(true);
   useEffect(() => {
     const fetchVersion = async () => {
       try {
@@ -25,8 +27,13 @@ export const VersionProvider = ({ children }: any) => {
           localStorage.setItem("ls-app-version", version);
         }
         setVersion(version);
-      } catch (error) {
+      } catch (error: any) {
         console.error(error);
+        if (error.response.status === 503) {
+          setIsMaintenance(true);
+        }
+      } finally {
+        setIsFetchingVersion(false);
       }
     };
 
@@ -91,6 +98,8 @@ export const VersionProvider = ({ children }: any) => {
         isLoading,
         isPrintable,
         setIsPrintable,
+        isMaintenance,
+        isFetchingVersion,
       }}
     >
       {children}

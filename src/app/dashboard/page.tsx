@@ -28,6 +28,9 @@ import { Bounce, toast } from "react-toastify";
 import { useVersion } from "@/context/versionContext";
 import { printLabel } from "@/utils/printLabel";
 import enyeFormat from "@/utils/enyeFormat";
+import MaintenanceMode from "@/components/ui/MaintenanceMode";
+import ContactAdmin from "@/components/modal/ContactAdmin";
+import GlobalLoader from "@/components/loaders/GlobalLoaders";
 
 export default function Page() {
   const { user } = useAuth();
@@ -42,6 +45,8 @@ export default function Page() {
     isLoading: checkingVersionLoading,
     isPrintable,
     setIsPrintable,
+    isFetchingVersion,
+    isMaintenance,
   }: any = useVersion();
   const [excelData, setExcelData] = useState<any[]>([]);
   const [isFileUploaded, setIsFileUploaded] = useState<boolean>(false);
@@ -63,6 +68,9 @@ export default function Page() {
   const [formInput, setFormInput] = useState<PrintDataType>(PrintData);
   const [isPrintLoading, setIsPrintLoading] = useState(false);
   const [isToggle, setIsToggle] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const modalRef = useRef<HTMLDivElement | null>(null);
+  const buttonRefModal = useRef<HTMLButtonElement | null>(null);
   const isCrOrMessageError =
     "You uploaded a Cash Sales Invoice/Sales Invoice, so you can't print a Collection Receipt/Official Receipt.";
   const isCsiSiMessageError =
@@ -122,6 +130,25 @@ export default function Page() {
   // const amountTax = 17;
   // const netTax = 18;
   // const transactionTotal = 19;
+
+  useEffect(() => {
+    const handleClickOutSide = (event: MouseEvent) => {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node) &&
+        buttonRefModal.current &&
+        !buttonRefModal.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutSide);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutSide);
+    };
+  }, [buttonRefModal, modalRef]);
 
   useEffect(() => {
     const handleBackToTop = () => {
@@ -488,8 +515,26 @@ export default function Page() {
     }
   };
 
+  const handleModal = () => {
+    setIsOpen(!isOpen);
+  };
+
+  if (isFetchingVersion) return <GlobalLoader />;
+
+  if (isMaintenance && !isFetchingVersion)
+    return (
+      <>
+        <MaintenanceMode handleModal={handleModal} buttonRef={buttonRefModal} />
+        <ContactAdmin
+          isOpen={isOpen}
+          onClose={handleModal}
+          modalRef={modalRef}
+        />
+      </>
+    );
+
   return (
-    <PrivateRoute>
+    <PrivateRoute handleModal={handleModal} buttonRefModal={buttonRefModal}>
       {(isOutDated || isAbnormalVersion) && (
         <div
           className={`p-2 text-white fixed top-0 w-full h-auto z-50 ${
@@ -1037,6 +1082,7 @@ export default function Page() {
         )}
       </div>
       <BackToTop backToTop={backToTop} handleBackToTop={handleBackToTop} />
+      <ContactAdmin isOpen={isOpen} onClose={handleModal} modalRef={modalRef} />
     </PrivateRoute>
   );
 }

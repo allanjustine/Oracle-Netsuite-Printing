@@ -21,6 +21,8 @@ export interface AuthContextType {
 
 export interface PrivateRouteProps {
   children: ReactNode;
+  handleModal: () => void;
+  buttonRefModal: any;
 }
 
 export interface PrintPageProps {

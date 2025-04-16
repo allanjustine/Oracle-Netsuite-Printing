@@ -33,7 +33,7 @@ export default function AlertBox({
       }`}
     >
       <div
-        className={`max-w-lg mx-auto my-4 p-4 border-l-4 shadow-lg rounded-lg ${
+        className={`max-w-lg w-full mx-auto p-4 border-l-4 shadow-lg rounded-lg ${
           isVisible ? "block" : "hidden"
         } ${
           error

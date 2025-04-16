@@ -5,8 +5,9 @@ import { PrivateRouteProps } from "@/types/types";
 import { useEffect, useState } from "react";
 import Navbar from "./navbar";
 import Footer from "./footer";
+import GlobalLoader from "./loaders/GlobalLoaders";
 
-const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {
+const PrivateRoute: React.FC<PrivateRouteProps> = ({ children, handleModal, buttonRefModal }) => {
   const { isAuthenticated, setIsLoading: setIsLoadingContext } = useAuth();
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
@@ -21,17 +22,11 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({ children }) => {
     }
   }, [isAuthenticated, router, setIsLoadingContext]);
 
-  if (isLoading) {
-    return (
-      <div className="h-screen justify-center items-center flex">
-        <span className="loader"></span>
-      </div>
-    );
-  }
+  if (isLoading) return <GlobalLoader />;
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
+      <Navbar handleModal={handleModal} buttonRefModal={buttonRefModal} />
       <div className="flex-1">{children}</div>
       <Footer />
     </div>
