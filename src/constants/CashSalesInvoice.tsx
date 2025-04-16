@@ -131,6 +131,7 @@ import HDDSMCarmenCebu2 from "@/utils/salesinvoice/global/obbus/old/dsm/HDDSMCar
 import DSMCatar2 from "@/utils/salesinvoice/global/obbus/new/dsm/DSMCatar2";
 import SuzukiPardo from "@/utils/salesinvoice/global/fdl/new/dsm/SuzukiPardo";
 import SMCTCatarman from "@/utils/salesinvoice/global/fdl/old/smct/SMCTCatarman";
+import HdBalamban from "@/utils/salesinvoice/global/fdl/new/hd/Balamban";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -321,7 +322,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     case "DANAO" === user?.branchCode:
       return <DSMDanao data={data} />;
     case "BALAM" === user?.branchCode:
-      return <HDBalamban data={data} />;
+      return <HdBalamban data={data} />;
     case "LABD" === user?.branchCode:
       return <DapLabason data={data} />;
     case "ANTIP" === user?.branchCode:
