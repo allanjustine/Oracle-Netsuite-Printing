@@ -31,9 +31,15 @@ export default function ContactAdmin({ isOpen, onClose, modalRef }: any) {
       },
       {
         name: "dev_jenecil",
-        link: "https://chat.smctgroup.ph/avatar/dev_jenecil",
+        link: "https://chat.smctgroup.ph/direct/9rSGAuSQvW7LY7uxQgR7v7bvZDtwJLZudt",
         profile_picture: "https://chat.smctgroup.ph/avatar/dev_jenecil",
         position: "Web Developer",
+      },
+      {
+        name: "dev_zart",
+        link: "https://chat.smctgroup.ph/direct/9rSGAuSQvW7LY7uxQk87qvZewTK4mnjHah",
+        profile_picture: "https://chat.smctgroup.ph/avatar/dev_zart",
+        position: "Frontend Developer",
       },
     ],
   };
