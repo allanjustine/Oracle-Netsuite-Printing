@@ -2,6 +2,7 @@
 
 import api from "@/lib/axiosCall";
 import { createContext, useContext, useEffect, useState } from "react";
+import { Bounce, toast } from "react-toastify";
 
 const VersionContext: any = createContext(undefined);
 
@@ -77,6 +78,19 @@ export const VersionProvider = ({ children }: any) => {
         }
       } catch (error: any) {
         console.error(error);
+        if (error.response.status === 503) {
+          toast.error(error.response.data.message, {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Bounce,
+          });
+        }
       } finally {
         setIsLoading(false);
       }
