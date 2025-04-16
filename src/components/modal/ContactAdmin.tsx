@@ -25,7 +25,7 @@ export default function ContactAdmin({ isOpen, onClose, modalRef }: any) {
       },
       {
         name: "Dev_Allan-J",
-        link: "https://chat.smctgroup.ph/direct/66bace43b98c8f4d69a24562",
+        link: "https://chat.smctgroup.ph/direct/9rSGAuSQvW7LY7uxQgR7v7bvZDtwJLZudt",
         profile_picture: "https://chat.smctgroup.ph/avatar/Dev_Allan-J",
         position: "Web Developer",
       },
