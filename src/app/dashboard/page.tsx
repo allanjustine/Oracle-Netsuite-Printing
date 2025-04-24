@@ -498,7 +498,7 @@ export default function Page() {
   const handlePrintCount = async () => {
     setIsPrintLoading(true);
     try {
-      getCsrfToken();
+      await getCsrfToken();
       const response = await api.post("/print-receipt-count", formInput);
       if (response.status === 201) {
         toast.success(response.data.message, {
