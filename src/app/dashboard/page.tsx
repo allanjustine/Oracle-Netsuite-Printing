@@ -71,6 +71,7 @@ export default function Page() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const modalRef = useRef<HTMLDivElement | null>(null);
   const buttonRefModal = useRef<HTMLButtonElement | null>(null);
+  const [isAlreadyPrinted, setIsAlreadyPrinted] = useState(false);
   const isCrOrMessageError =
     "You uploaded a Cash Sales Invoice/Sales Invoice, so you can't print a Collection Receipt/Official Receipt.";
   const isCsiSiMessageError =
@@ -182,17 +183,6 @@ export default function Page() {
   }, [isLoading]);
 
   useEffect(() => {
-    if (user || excelData || isPrintCr) {
-      setFormInput(() => ({
-        external_id: isPrintCr
-          ? excelData[1]?.[CR_Name]
-          : excelData[1]?.[mainLineName] ?? "",
-        print_by: `${user?.branchCode}-${user?.branchName}`,
-      }));
-    }
-  }, [user, excelData, isPrintCr]);
-
-  useEffect(() => {
     if (isPrintable && isToggle) {
       setIsDropdownOpen(true);
     } else {
@@ -212,6 +202,10 @@ export default function Page() {
     setIsDropdownOpen(false);
     setIsToggle(false);
     setIsPrintable(false);
+    if (isAlreadyPrinted) {
+      handlePrintCount();
+      return;
+    }
     const printWindow = window.open("", "_blank");
     if (printWindow) {
       const printContent = (
@@ -381,6 +375,36 @@ export default function Page() {
       clearTimeout(timeout);
     };
   }, [isLoading]);
+
+  useEffect(() => {
+    if (excelData.length <= 0) return;
+
+    const fetchRecords = async () => {
+      try {
+        const response = await api.get("receipt-records");
+        const receipts = response?.data?.receipts;
+
+        const result = receipts.some((item: any) => {
+          return (
+            item.external_id ===
+              (isPrintCr ? excelData[1][10] : excelData[1][27]) &&
+            item.print_count >= 1
+          );
+        });
+
+        setIsAlreadyPrinted(result);
+        setFormInput({
+          external_id: isPrintCr ? excelData[1][10] : excelData[1][27],
+          print_by: `${user?.branchCode}-${user?.branchName}`,
+        });
+      } catch (error: any) {
+        console.error(error);
+      }
+    };
+
+    fetchRecords();
+  }, [excelData, isPrintCr, user]);
+
   const handleFileUpload = (e: any) => {
     const file = e.target.files[0];
     if (!file) return;
@@ -671,21 +695,22 @@ export default function Page() {
                   type="button"
                   disabled={isPrintLoading}
                   onClick={handlePrintCount}
-                  className="p-2 hidden cursor-not-allowed gap-2 items-center bg-blue-500/80 text-white hover:bg-blue-600/80 hover:translate-x-1 hover:-translate-y-1 transition-all duration-300 ease-in-out rounded-md"
+                  className="p-2 gap-2 items-center bg-green-500/80 text-white hover:bg-green-600/80 hover:translate-x-1 hover:-translate-y-1 transition-all duration-300 ease-in-out rounded-md"
                 >
                   {isPrintLoading ? (
-                    <>
+                    <span className="flex items-center gap-2">
                       <FaCircleNotch
                         className="animate-spin"
                         size={20}
                         color="#fff"
                       />{" "}
-                      Please wait...
-                    </>
+                      <span>Please wait...</span>
+                    </span>
                   ) : (
-                    <>
-                      <FaCheckDouble size={20} color="#fff" /> Done Print
-                    </>
+                    <span className="flex items-center gap-2">
+                      <FaCheckDouble size={20} color="#fff" />{" "}
+                      <span>Done Print</span>
+                    </span>
                   )}
                 </button>
               )}
