@@ -31,7 +31,6 @@ import enyeFormat from "@/utils/enyeFormat";
 import MaintenanceMode from "@/components/ui/MaintenanceMode";
 import ContactAdmin from "@/components/modal/ContactAdmin";
 import GlobalLoader from "@/components/loaders/GlobalLoaders";
-import { getCsrfToken } from "@/lib/authSanctum";
 
 export default function Page() {
   const { user } = useAuth();
@@ -498,7 +497,6 @@ export default function Page() {
   const handlePrintCount = async () => {
     setIsPrintLoading(true);
     try {
-      await getCsrfToken();
       const response = await api.post("/print-receipt-count", formInput);
       if (response.status === 201) {
         toast.success(response.data.message, {
