@@ -145,7 +145,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "CAMD",
     "KABD",
     "RIZD",
-    "SANM",
     "IPID",
     "SIND",
     "SLIL",
@@ -226,7 +225,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "UTAP",
   ];
 
-  const fdlSiOldSizeData = ["NUND2", "DAPI", "TANZ", "BONI", "VITA"];
+  const fdlSiOldSizeData = ["NUND2", "DAPI", "TANZ", "BONI", "VITA", "SANM"];
 
   // OBBUS
   const obbusCsiNewSizeData = [];
