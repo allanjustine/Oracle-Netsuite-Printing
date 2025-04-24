@@ -132,6 +132,7 @@ import DSMCatar2 from "@/utils/salesinvoice/global/obbus/new/dsm/DSMCatar2";
 import SuzukiPardo from "@/utils/salesinvoice/global/fdl/new/dsm/SuzukiPardo";
 import SMCTCatarman from "@/utils/salesinvoice/global/fdl/old/smct/SMCTCatarman";
 import HdBalamban from "@/utils/salesinvoice/global/fdl/new/hd/Balamban";
+import DAPSanMiguel from "@/utils/salesinvoice/global/fdl/old/dap/DAPSanMiguel";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -225,7 +226,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "UTAP",
   ];
 
-  const fdlSiOldSizeData = ["NUND2", "DAPI", "TANZ", "BONI", "VITA", "SANM"];
+  const fdlSiOldSizeData = ["NUND2", "DAPI", "TANZ", "BONI", "VITA"];
 
   // OBBUS
   const obbusCsiNewSizeData = [];
@@ -512,6 +513,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <DSMCatar2 data={data} />;
     case "CATAR" === user?.branchCode:
       return <SMCTCatarman data={data} />;
+    case "SANM" === user?.branchCode:
+      return <DAPSanMiguel data={data} />;
 
     default:
       return (
