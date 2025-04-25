@@ -4,7 +4,7 @@ import { printReceiptsData } from "../_constants/printReceiptsData";
 import useEcho from "@/hooks/echo";
 import { paginationData } from "../_constants/paginationData";
 
-export default function fetchPrintReceipts() {
+export default function useFetchPrintReceipts() {
   const [data, setData] = useState(printReceiptsData);
   const [loading, setLoading] = useState(true);
   const [dataLoaded, setDataLoaded] = useState(false);

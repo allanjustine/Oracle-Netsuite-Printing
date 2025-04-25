@@ -3,15 +3,11 @@
 import GlobalLoader from "@/components/loaders/GlobalLoaders";
 import Navbar from "@/components/navbar";
 import { useAuth } from "@/context/authcontext";
-import fetchPrintReceipts from "../_hooks/fetchPrintReceipts";
-import {
-  FaList,
-} from "react-icons/fa";
+import useFetchPrintReceipts from "../_hooks/useFetchPrintReceipts";
+import { FaList } from "react-icons/fa";
 import NotLogin from "../_components/NotLogin";
 import Unauthorized from "../_components/Unauthorized";
-import {
-  FaMagnifyingGlass,
-} from "react-icons/fa6";
+import { FaMagnifyingGlass } from "react-icons/fa6";
 import { useRef } from "react";
 import Pagination from "../_components/Pagination";
 import CardsLoader from "../_components/loaders/cards-loader";
@@ -30,7 +26,7 @@ export default function AdminDashboard() {
     setSearchTerm,
     searchTerm,
     pagination,
-  } = fetchPrintReceipts();
+  } = useFetchPrintReceipts();
   const debounceRef = useRef<any>(null);
 
   if (loadingData) return <GlobalLoader />;
