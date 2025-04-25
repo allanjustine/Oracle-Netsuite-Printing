@@ -16,7 +16,8 @@ import MaintenanceMode from "@/components/ui/MaintenanceMode";
 import GlobalLoader from "@/components/loaders/GlobalLoaders";
 
 export default function Home() {
-  const { login, isAuthenticated, isLoading, setIsLoading } = useAuth();
+  const { login, isAuthenticated, isLoading, setIsLoading, isAdmin } =
+    useAuth();
   const router = useRouter();
   const [branchCode, setBranchCode] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -33,9 +34,13 @@ export default function Home() {
 
   useEffect(() => {
     if (isAuthenticated) {
-      router.push("/dashboard");
+      if (isAdmin) {
+        router.push("/admin/dashboard");
+      } else {
+        router.push("/dashboard");
+      }
     }
-  }, [isAuthenticated, router]);
+  }, [isAuthenticated, router, isAdmin]);
 
   useEffect(() => {
     const handleClickOutSide = (event: MouseEvent) => {
@@ -82,7 +87,12 @@ export default function Home() {
               user.branchCode === branchCode && user.password === password
           );
           if (foundUser) {
-            login(foundUser, foundBranch, version.data.version);
+            const isAdminUser =
+              foundUser.branchCode === "ADMIN" &&
+              branchCode === "ADMIN" &&
+              foundUser.password === "dapho04051983";
+            foundUser.id === 998877766;
+            login(foundUser, foundBranch, version.data.version, isAdminUser);
           }
         } else {
           setShowAlert({

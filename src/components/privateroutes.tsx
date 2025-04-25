@@ -7,8 +7,16 @@ import Navbar from "./navbar";
 import Footer from "./footer";
 import GlobalLoader from "./loaders/GlobalLoaders";
 
-const PrivateRoute: React.FC<PrivateRouteProps> = ({ children, handleModal, buttonRefModal }) => {
-  const { isAuthenticated, setIsLoading: setIsLoadingContext } = useAuth();
+const PrivateRoute: React.FC<PrivateRouteProps> = ({
+  children,
+  handleModal,
+  buttonRefModal,
+}) => {
+  const {
+    isAuthenticated,
+    setIsLoading: setIsLoadingContext,
+    isAdmin,
+  } = useAuth();
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -18,9 +26,13 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({ children, handleModal, butt
     } else if (isAuthenticated) {
       setIsLoadingContext(false);
       setTimeout(() => setIsLoading(false), 3000);
-      router.push("/dashboard");
+      if (isAdmin) {
+        router.push("/admin/dashboard");
+      } else {
+        router.push("/dashboard");
+      }
     }
-  }, [isAuthenticated, router, setIsLoadingContext]);
+  }, [isAuthenticated, router, setIsLoadingContext, isAdmin]);
 
   if (isLoading) return <GlobalLoader />;
 

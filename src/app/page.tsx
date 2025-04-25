@@ -4,7 +4,7 @@ import { useAuth } from "@/context/authcontext";
 import Link from "next/link";
 
 export default function Home() {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, isAdmin } = useAuth();
   return (
     <div className="flex justify-center items-center h-screen w-full">
       <div className="w-full border-2 border-[#607799] flex flex-col items-center justify-center py-20 mx-40">
@@ -22,7 +22,7 @@ export default function Home() {
         </p>
         <div className="mt-5 w-1/6">
           {isAuthenticated ? (
-            <Link href="/dashboard" legacyBehavior>
+            <Link href={isAdmin ? "/admin/dashboard" : "/dashboard"} legacyBehavior>
               <button className="bg-[#006aff] text-white py-2 rounded-md font-semibold w-full">
                 DASHBOARD
               </button>

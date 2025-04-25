@@ -10,7 +10,7 @@ import { FaAngleDown, FaHeadset, FaHome, FaRedo } from "react-icons/fa";
 import { useEffect, useRef, useState } from "react";
 
 export default function Navbar({ buttonRefModal, handleModal }: any) {
-  const { branch, user, logout } = useAuth();
+  const { branch, user, logout, isAdmin } = useAuth();
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
@@ -88,7 +88,7 @@ export default function Navbar({ buttonRefModal, handleModal }: any) {
         <button onClick={refreshPage} className="text-white">
           <FaRedo size={20} color="white" />
         </button>
-        <button onClick={handleModal} ref={buttonRefModal} className="text-white">
+        <button hidden={isAdmin} onClick={handleModal} ref={buttonRefModal} className="text-white">
           <FaHeadset size={20} color="white" />
         </button>
       </div>

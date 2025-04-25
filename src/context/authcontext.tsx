@@ -2,6 +2,7 @@
 import { data } from "@/data/credentials";
 import { fetchProfile } from "@/lib/authSanctum";
 import { AuthContextType, Branch, User } from "@/types/types";
+import { useRouter } from "next/navigation";
 import React, { createContext, useContext, useState, useEffect } from "react";
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -13,6 +14,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   const [user, setUser] = useState<User | null>(null);
   const [branch, setBranch] = useState<Branch | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [loadingData, setIsLoadingData] = useState(true);
+  const router = useRouter();
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -26,6 +30,18 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
         const foundUser = foundBranch.users.find(
           (user) => user.branchCode === parsedUser.branchCode
         );
+        const adminFound: any = foundBranch.users.find(
+          (user) => user.branchCode === parsedUser.branchCode
+        );
+
+        const isAdminUser =
+          adminFound.branchCode === "ADMIN" &&
+          parsedUser.branchCode === "ADMIN" &&
+          parsedUser.id === 998877766 &&
+          adminFound.password === "dapho04051983";
+        adminFound.id === 998877766;
+
+        setIsAdmin(isAdminUser);
         if (foundUser) {
           setUser(foundUser);
           setBranch(foundBranch);
@@ -33,6 +49,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
         }
       }
     }
+    
+
+    setTimeout(() => {
+      setIsLoadingData(false);
+    }, 2000);
     // const fetchProfileData = async () => {
     //   try {
     //     const response = await fetchProfile();
@@ -47,11 +68,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     // fetchProfileData();
   }, []);
 
-  const login = (foundUser: any, foundBranch: any, version: any) => {
+  const login = (foundUser: any, foundBranch: any, version: any, isAdminLogin: boolean) => {
     const { password, ...Datas } = foundUser;
     setUser(foundUser);
     setBranch(foundBranch);
     setIsAuthenticated(true);
+    setIsAdmin(isAdminLogin)
     localStorage.setItem("user", JSON.stringify(Datas));
     // localStorage.setItem('branch', JSON.stringify(foundBranch));
     localStorage.setItem("ls-app-version", version);
@@ -61,8 +83,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     setUser(null);
     setIsAuthenticated(false);
     setBranch(null);
+    setIsAdmin(false);
     localStorage.removeItem("user");
     // localStorage.removeItem('branch');
+    router.push('/login');
   };
 
   return (
@@ -75,6 +99,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
         branch,
         isLoading,
         setIsLoading,
+        isAdmin,
+        loadingData,
       }}
     >
       {children}

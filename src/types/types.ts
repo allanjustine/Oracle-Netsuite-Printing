@@ -11,12 +11,14 @@ export interface Branch {
 
 export interface AuthContextType {
   isAuthenticated: boolean;
-  login: (branchCode: string, password: string, version: any) => void;
+  login: (branchCode: string, password: string, version: any, isAdminLogin: boolean) => void;
   logout: () => void;
   user: User | null;
   branch: Branch | null;
   isLoading: boolean;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
+  isAdmin: boolean;
+  loadingData: boolean;
 }
 
 export interface PrivateRouteProps {

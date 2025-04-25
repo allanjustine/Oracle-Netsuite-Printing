@@ -338,6 +338,12 @@ export const data = [
         branchName: "SMCT Yati Liloan",
         password: "Smct123456",
       },
+      {
+        id: 998877766,
+        branchCode: "ADMIN",
+        branchName: "Administrator",
+        password: "dapho04051983",
+      },
     ],
   },
   {
