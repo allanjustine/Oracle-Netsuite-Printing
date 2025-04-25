@@ -4,21 +4,12 @@ import GlobalLoader from "@/components/loaders/GlobalLoaders";
 import Navbar from "@/components/navbar";
 import { useAuth } from "@/context/authcontext";
 import fetchPrintReceipts from "../_hooks/fetchPrintReceipts";
-import { format, formatDistanceToNowStrict } from "date-fns";
 import {
-  FaArrowUp,
-  FaCalendarWeek,
-  FaCheck,
-  FaEdit,
   FaList,
-  FaPrint,
-  FaTrash,
 } from "react-icons/fa";
 import NotLogin from "../_components/NotLogin";
 import Unauthorized from "../_components/Unauthorized";
 import {
-  FaCalendarDay,
-  FaCalendarDays,
   FaMagnifyingGlass,
 } from "react-icons/fa6";
 import { useRef } from "react";
