@@ -16,6 +16,7 @@ export default function useFetchPrintReceipts() {
     if (!echo) return;
 
     echo.channel("print-channel").listen("ReceiptRecords", (e: any) => {
+      console.log(e);
       setDataLoaded(e.data);
     });
 
