@@ -10,4 +10,14 @@ const api = axios.create({
   },
 });
 
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.code === "ECONNABORTED") {
+      console.error("Timeout error");
+    }
+    return Promise.reject(error);
+  }
+);
+
 export default api;
