@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import api from "@/lib/axiosCall";
 import Echo from "laravel-echo";
-
 import Pusher from "pusher-js";
-(window as any).Pusher = Pusher;
 
 const useEcho = () => {
   const [echoInstance, setEchoInstance] = useState(null);
 
   useEffect(() => {
+    if (typeof window !== "undefined") return;
+
+    (window as any).Pusher = Pusher;
     const echo: any = new Echo({
       broadcaster: "reverb",
       key: process.env.NEXT_PUBLIC_REVERB_APP_KEY,
