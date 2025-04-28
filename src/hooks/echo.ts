@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import api from "@/lib/axiosCall";
 import Echo from "laravel-echo";
 import Pusher from "pusher-js";
-window.Pusher = Pusher;
+(window as any).Pusher = Pusher;
 
 const useEcho = () => {
   const [echoInstance, setEchoInstance] = useState(null);
