@@ -18,7 +18,7 @@ const HDDipolog: React.FC<PrintPageProps> = ({ data }) => {
 
   return (
     <div className="text-xs w-[769.13385827px] h-[396.8503937px]">
-      <div className="flex mt-[126.62992125px]">
+      <div className="flex mt-[107.73228346px]">
         <p className="pl-[604.72440945px] w-[143.62204724px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
