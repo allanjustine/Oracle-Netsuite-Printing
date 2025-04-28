@@ -45,6 +45,7 @@ export default function useFetchPrintReceipts() {
             todaysPercentage: Number(response?.data?.todays_percentage),
             monthlyPercentage: Number(response?.data?.monthly_percentage),
             weeklyPercentage: Number(response?.data?.weekly_percentage),
+            searchingIfExists: response?.data?.searching_if_exists,
           });
 
           setPagination({

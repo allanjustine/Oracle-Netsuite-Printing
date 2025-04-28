@@ -17,7 +17,7 @@ import ReceiptLatestDataList from "../_components/ReceiptLatestDataList";
 import CardsCountList from "../_components/CardsCountsList";
 
 export default function AdminDashboard() {
-  const { isAdmin, isAuthenticated, loadingData, user } = useAuth();
+  const { isAdmin, isAuthenticated, loadingData } = useAuth();
   const {
     data: receiptRecords,
     loading,

@@ -2,7 +2,6 @@
 import { data } from "@/data/credentials";
 import { fetchProfile } from "@/lib/authSanctum";
 import { AuthContextType, Branch, User } from "@/types/types";
-import { useRouter } from "next/navigation";
 import React, { createContext, useContext, useState, useEffect } from "react";
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -16,7 +15,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   const [isLoading, setIsLoading] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [loadingData, setIsLoadingData] = useState(true);
-  const router = useRouter();
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
@@ -49,7 +47,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
         }
       }
     }
-    
 
     setTimeout(() => {
       setIsLoadingData(false);
@@ -68,25 +65,30 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     // fetchProfileData();
   }, []);
 
-  const login = (foundUser: any, foundBranch: any, version: any, isAdminLogin: boolean) => {
+  const login = (
+    foundUser: any,
+    foundBranch: any,
+    version: any,
+    isAdminLogin: boolean
+  ) => {
     const { password, ...Datas } = foundUser;
     setUser(foundUser);
     setBranch(foundBranch);
     setIsAuthenticated(true);
-    setIsAdmin(isAdminLogin)
+    setIsAdmin(isAdminLogin);
     localStorage.setItem("user", JSON.stringify(Datas));
     // localStorage.setItem('branch', JSON.stringify(foundBranch));
     localStorage.setItem("ls-app-version", version);
   };
 
-  const logout = () => {
+  const logout = (router: any) => {
     setUser(null);
     setIsAuthenticated(false);
     setBranch(null);
     setIsAdmin(false);
     localStorage.removeItem("user");
     // localStorage.removeItem('branch');
-    router.push('/login');
+    router.push("/login");
   };
 
   return (

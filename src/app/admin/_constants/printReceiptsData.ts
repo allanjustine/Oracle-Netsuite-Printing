@@ -8,4 +8,5 @@ export const printReceiptsData = {
   todaysPercentage: 0,
   weeklyPercentage: 0,
   monthlyPercentage: 0,
+  searchingIfExists: [],
 };

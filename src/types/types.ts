@@ -12,7 +12,7 @@ export interface Branch {
 export interface AuthContextType {
   isAuthenticated: boolean;
   login: (branchCode: string, password: string, version: any, isAdminLogin: boolean) => void;
-  logout: () => void;
+  logout: (router: any) => void | any;
   user: User | null;
   branch: Branch | null;
   isLoading: boolean;

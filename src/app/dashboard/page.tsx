@@ -382,15 +382,17 @@ export default function Page() {
     const fetchRecords = async () => {
       try {
         const response = await api.get("receipt-records");
-        const receipts = response?.data?.receipts;
 
-        const result = receipts.some((item: any) => {
+        const receipts = response?.data?.searching_if_exists;
+
+        const result = receipts?.some((item: any) => {
           return (
             item.external_id ===
               (isPrintCr ? excelData[1][10] : excelData[1][27]) &&
             item.print_count >= 1
           );
         });
+
 
         setIsAlreadyPrinted(result);
         setFormInput({

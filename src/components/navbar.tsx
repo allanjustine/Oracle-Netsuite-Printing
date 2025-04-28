@@ -8,12 +8,14 @@ import dap from "../../public/dap.jpg";
 import { useAuth } from "@/context/authcontext";
 import { FaAngleDown, FaHeadset, FaHome, FaRedo } from "react-icons/fa";
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Navbar({ buttonRefModal, handleModal }: any) {
   const { branch, user, logout, isAdmin } = useAuth();
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const router = useRouter();
 
   const toggleDropdown = () => {
     setIsDropdownOpen((prev) => !prev);
@@ -72,7 +74,7 @@ export default function Navbar({ buttonRefModal, handleModal }: any) {
           {isDropdownOpen && (
             <div ref={dropdownRef} className="absolute right-5 mt-2 py-1 px-5 bg-white border rounded shadow-lg">
               <button
-                onClick={logout}
+                onClick={logout(router)}
                 className="w-full text-left text-sm font-medium text-[#333]"
               >
                 Logout
