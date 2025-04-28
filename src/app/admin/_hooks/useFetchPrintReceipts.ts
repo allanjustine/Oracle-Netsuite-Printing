@@ -22,7 +22,7 @@ export default function useFetchPrintReceipts() {
     return () => {
       echo.leave("print-channel");
     };
-  }, [echo]);
+  }, []);
 
   useEffect(() => {
     const fetchPrintReceiptsData = async () => {
