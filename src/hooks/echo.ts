@@ -5,10 +5,9 @@ import Pusher from "pusher-js";
 const pusherClient = new Pusher(process.env.NEXT_PUBLIC_REVERB_APP_KEY!, {
   cluster: process.env.NEXT_PUBLIC_REVERB_CLUSTER ?? "mt1",
   wsHost: process.env.NEXT_PUBLIC_REVERB_HOST,
-  // wsPort: Number(process.env.NEXT_PUBLIC_REVERB_PORT),
-  // wssPort: Number(process.env.NEXT_PUBLIC_REVERB_PORT),
-  forceTLS: true,
-  // forceTLS: (process.env.NEXT_PUBLIC_REVERB_SCHEME ?? "https") === "https",
+  wsPort: Number(process.env.NEXT_PUBLIC_REVERB_PORT),
+  wssPort: Number(process.env.NEXT_PUBLIC_REVERB_PORT),
+  forceTLS: (process.env.NEXT_PUBLIC_REVERB_SCHEME ?? "https") === "https",
   enabledTransports: ["ws", "wss"],
 });
 
