@@ -3,6 +3,7 @@ import {
   FaCalendarDay,
   FaCalendarWeek,
   FaPrint,
+  FaUsers,
 } from "react-icons/fa";
 import { FaCalendarDays } from "react-icons/fa6";
 
@@ -81,7 +82,7 @@ export default function CardsCountList({ receiptRecords }: any) {
               : "text-green-500"
           }`}
         >
-          <i className="fas fa-arrow-down mr-1" />
+          <FaArrowUp className="mr-1" />
           <span className="text-sm">
             {receiptRecords.weeklyPercentage}% from last week
           </span>
@@ -102,7 +103,7 @@ export default function CardsCountList({ receiptRecords }: any) {
             {receiptRecords.totalBranchPrintRecords}
           </p>
           <div className="flex items-center text-blue-500 mt-2">
-            <i className="fas fa-info-circle mr-1" />
+            <FaUsers className="mr-1" />
             <span className="text-sm">100% total records</span>
           </div>
         </div>
