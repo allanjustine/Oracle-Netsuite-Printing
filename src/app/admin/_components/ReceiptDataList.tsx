@@ -35,12 +35,12 @@ export default function ReceiptDataList({ record, setIsRefresh }: any) {
 
       if (response.status === 200) {
         setErrors(receiptRecords);
-        useToast("Receipt updated successfully", "success");
+        Toast("Receipt updated successfully", "success");
       }
     } catch (error: any) {
       console.error(error);
       setErrors(error.response.data.errors);
-      useToast(error.response.data.message, "error");
+      Toast(error.response.data.message, "error");
     } finally {
       setIsLoading(false);
       setIsRefresh(false);
@@ -63,11 +63,11 @@ export default function ReceiptDataList({ record, setIsRefresh }: any) {
     try {
       const response = await api.delete(`/print-receipt/${record.id}`);
       if (response.status === 200) {
-        useToast("Receipt deleted successfully", "success");
+        Toast("Receipt deleted successfully", "success");
       }
     } catch (error: any) {
       console.error(error);
-      useToast(error.response.data.message, "error");
+      Toast(error.response.data.message, "error");
     } finally {
       setIsLoading(false);
       setIsRefresh(false);
@@ -75,7 +75,7 @@ export default function ReceiptDataList({ record, setIsRefresh }: any) {
     }
   };
 
-  function useToast(
+  function Toast(
     msg: any,
     type: "success" | "error" | "info" | "warn" | "warning"
   ) {
