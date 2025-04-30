@@ -8,6 +8,8 @@ import {
 } from "../_constants/maintenanceModeData";
 import { useFetchMaintenanceTime } from "@/hooks/useFetchMaintenanceTime";
 import CountdownTimer from "./CountdownTimer";
+import { Bounce, toast } from "react-toastify";
+import { Toast } from "./ui/toast";
 
 export default function MaintenanceModeModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -51,8 +53,9 @@ export default function MaintenanceModeModal() {
     setIsLoading(true);
     try {
       const response = await api.post("/maintenance-mode-on", { ...formInput });
-      if (response.status === 201) {
+      if (response.status === 204) {
         handleModal();
+        Toast("Maintenance mode on successfully", "success");
       }
     } catch (error: any) {
       console.error(error);

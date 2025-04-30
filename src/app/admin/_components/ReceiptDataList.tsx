@@ -6,6 +6,7 @@ import { receiptRecords } from "../_constants/printReceiptsData";
 import Input from "./ui/input";
 import api from "@/lib/axiosCall";
 import { Bounce, toast } from "react-toastify";
+import { Toast } from "./ui/toast";
 
 export default function ReceiptDataList({ record, setIsRefresh }: any) {
   const [formInput, setFormInput] = useState(receiptRecords);
@@ -33,7 +34,7 @@ export default function ReceiptDataList({ record, setIsRefresh }: any) {
         formInput
       );
 
-      if (response.status === 200) {
+      if (response.status === 204) {
         setErrors(receiptRecords);
         Toast("Receipt updated successfully", "success");
       }
@@ -62,7 +63,7 @@ export default function ReceiptDataList({ record, setIsRefresh }: any) {
     setIsRefresh(true);
     try {
       const response = await api.delete(`/print-receipt/${record.id}`);
-      if (response.status === 200) {
+      if (response.status === 204) {
         Toast("Receipt deleted successfully", "success");
       }
     } catch (error: any) {
@@ -74,23 +75,6 @@ export default function ReceiptDataList({ record, setIsRefresh }: any) {
       setIsOpenDelete(false);
     }
   };
-
-  function Toast(
-    msg: any,
-    type: "success" | "error" | "info" | "warn" | "warning"
-  ) {
-    toast[type](msg, {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: false,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "colored",
-      transition: Bounce,
-    });
-  }
 
   return (
     <tr className="border-b border-gray-100 hover:bg-gray-50">
