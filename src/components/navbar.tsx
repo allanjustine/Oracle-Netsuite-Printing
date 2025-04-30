@@ -65,6 +65,7 @@ export default function Navbar({ buttonRefModal, handleModal }: any) {
         </div>
         <div>
           <button
+            type="button"
             ref={buttonRef}
             onClick={toggleDropdown}
             className="font-semibold uppercase flex items-center gap-2 text-[#333]"
@@ -78,6 +79,7 @@ export default function Navbar({ buttonRefModal, handleModal }: any) {
               className="absolute right-5 mt-2 py-1 px-5 bg-white border rounded shadow-lg"
             >
               <button
+                type="button"
                 onClick={logout(router)}
                 className="w-full text-left text-sm font-medium text-[#333]"
               >
