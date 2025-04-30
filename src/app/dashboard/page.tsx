@@ -28,7 +28,7 @@ import { Bounce, toast } from "react-toastify";
 import { useVersion } from "@/context/versionContext";
 import { printLabel } from "@/utils/printLabel";
 import enyeFormat from "@/utils/enyeFormat";
-import MaintenanceMode from "@/components/ui/MaintenanceMode";
+import MaintenanceMode from "@/components/MaintenanceMode";
 import ContactAdmin from "@/components/modal/ContactAdmin";
 import GlobalLoader from "@/components/loaders/GlobalLoaders";
 

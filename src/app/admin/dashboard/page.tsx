@@ -15,6 +15,7 @@ import RecentActivityLoader from "../_components/loaders/recent-activity-loader"
 import ReceiptDataList from "../_components/ReceiptDataList";
 import ReceiptLatestDataList from "../_components/ReceiptLatestDataList";
 import CardsCountList from "../_components/CardsCountsList";
+import TableLoader from "../_components/loaders/table-loader";
 
 export default function AdminDashboard() {
   const { isAdmin, isAuthenticated, loadingData } = useAuth();
@@ -26,6 +27,8 @@ export default function AdminDashboard() {
     setSearchTerm,
     searchTerm,
     pagination,
+    onSearchLoading,
+    setIsRefresh,
   } = useFetchPrintReceipts();
   const debounceRef = useRef<any>(null);
 
@@ -49,6 +52,7 @@ export default function AdminDashboard() {
     "External Id",
     "Print Count",
     "Print By",
+    "Can Re-print",
     "Created At",
     "Action",
   ];
@@ -100,19 +104,19 @@ export default function AdminDashboard() {
                   </tr>
                 </thead>
                 <tbody>
-                  {loading ? (
-                    <tr>
-                      <td colSpan={5} className="text-center">
-                        <>Loading...</>
-                      </td>
-                    </tr>
+                  {loading || onSearchLoading ? (
+                    <TableLoader colSpan={7} />
                   ) : receiptRecords.data.length > 0 ? (
                     receiptRecords.data.map((record: any, index: number) => (
-                      <ReceiptDataList key={index} record={record} />
+                      <ReceiptDataList
+                        key={index}
+                        record={record}
+                        setIsRefresh={setIsRefresh}
+                      />
                     ))
                   ) : (
                     <tr>
-                      <td colSpan={5} className="text-center text-gray-400">
+                      <td colSpan={7} className="text-center text-gray-400">
                         {searchTerm
                           ? `No results for "${searchTerm}"`
                           : "No print records yet"}

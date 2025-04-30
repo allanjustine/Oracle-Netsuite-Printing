@@ -7,10 +7,12 @@ import echo from "@/hooks/echo";
 export default function useFetchPrintReceipts() {
   const [data, setData] = useState(printReceiptsData);
   const [loading, setLoading] = useState(true);
+  const [onSearchLoading, setOnSearchLoading] = useState(false);
   const [dataLoaded, setDataLoaded] = useState(false);
   const [pagination, setPagination] = useState(paginationData);
   const [isNextPrevPage, setIsNextPrevPage] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [isRefresh, setIsRefresh] = useState(false);
 
   useEffect(() => {
     if (!echo) return;
@@ -27,10 +29,12 @@ export default function useFetchPrintReceipts() {
   useEffect(() => {
     const fetchPrintReceiptsData = async () => {
       if (pagination?.current_page) setIsNextPrevPage(true);
-      if (searchTerm) setLoading(true);
+      if (searchTerm) setOnSearchLoading(true);
       try {
         const response = await api.get(
-          `/receipt-records?page=${pagination?.current_page}&search=${searchTerm}`
+          `/receipt-records?page=${
+            searchTerm ? 1 : pagination?.current_page
+          }&search=${searchTerm}`
         );
 
         if (response.status === 200) {
@@ -60,12 +64,14 @@ export default function useFetchPrintReceipts() {
         console.error(error);
       } finally {
         setLoading(false);
+        setOnSearchLoading(false);
         if (pagination?.current_page) setIsNextPrevPage(false);
+        setDataLoaded(false);
       }
     };
 
     fetchPrintReceiptsData();
-  }, [dataLoaded, pagination?.current_page, searchTerm]);
+  }, [dataLoaded, pagination?.current_page, searchTerm, isRefresh]);
 
   const handlePrevPage = () => {
     if (pagination?.current_page === 1 || isNextPrevPage) {
@@ -97,5 +103,7 @@ export default function useFetchPrintReceipts() {
     pagination,
     setSearchTerm,
     searchTerm,
+    onSearchLoading,
+    setIsRefresh,
   };
 }

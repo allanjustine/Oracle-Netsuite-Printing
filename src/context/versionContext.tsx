@@ -79,7 +79,7 @@ export const VersionProvider = ({ children }: any) => {
       } catch (error: any) {
         console.error(error);
         if (error.response.status === 503) {
-          toast.error(error.response.data.message, {
+          toast.error(`${error.response.data.message}, Please reload the page.`, {
             position: "top-right",
             autoClose: 3000,
             hideProgressBar: false,

@@ -9,6 +9,7 @@ import { useAuth } from "@/context/authcontext";
 import { FaAngleDown, FaHeadset, FaHome, FaRedo } from "react-icons/fa";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import MaintenanceModeModal from "@/app/admin/_components/MaintenanceModeModal";
 
 export default function Navbar({ buttonRefModal, handleModal }: any) {
   const { branch, user, logout, isAdmin } = useAuth();
@@ -41,8 +42,8 @@ export default function Navbar({ buttonRefModal, handleModal }: any) {
   }, []);
 
   const refreshPage = () => {
-      window.location.reload();
-  }
+    window.location.reload();
+  };
 
   return (
     <>
@@ -55,9 +56,9 @@ export default function Navbar({ buttonRefModal, handleModal }: any) {
           ) : branch?.branch === "HD" ? (
             <Image src={hd} alt="Honda DES" width={200} />
           ) : branch?.branch === "HO" ? (
-            <Image src={ho} alt="SMCT Group of Companies" width={200}/>
+            <Image src={ho} alt="SMCT Group of Companies" width={200} />
           ) : branch?.branch === "DAP" ? (
-            <Image src={dap} alt="DES Appliance Plaza" width={200}/>
+            <Image src={dap} alt="DES Appliance Plaza" width={200} />
           ) : (
             <div>Branch not found...</div>
           )}
@@ -72,7 +73,10 @@ export default function Navbar({ buttonRefModal, handleModal }: any) {
             <FaAngleDown />
           </button>
           {isDropdownOpen && (
-            <div ref={dropdownRef} className="absolute right-5 mt-2 py-1 px-5 bg-white border rounded shadow-lg">
+            <div
+              ref={dropdownRef}
+              className="absolute right-5 mt-2 py-1 px-5 bg-white border rounded shadow-lg"
+            >
               <button
                 onClick={logout(router)}
                 className="w-full text-left text-sm font-medium text-[#333]"
@@ -90,9 +94,15 @@ export default function Navbar({ buttonRefModal, handleModal }: any) {
         <button onClick={refreshPage} className="text-white">
           <FaRedo size={20} color="white" />
         </button>
-        <button hidden={isAdmin} onClick={handleModal} ref={buttonRefModal} className="text-white">
+        <button
+          hidden={isAdmin}
+          onClick={handleModal}
+          ref={buttonRefModal}
+          className="text-white"
+        >
           <FaHeadset size={20} color="white" />
         </button>
+        <MaintenanceModeModal />
       </div>
     </>
   );

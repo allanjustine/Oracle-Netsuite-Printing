@@ -10,3 +10,9 @@ export const printReceiptsData = {
   monthlyPercentage: 0,
   searchingIfExists: [],
 };
+
+export const receiptRecords = {
+  external_id: "",
+  print_by: "",
+  re_print: false,
+};

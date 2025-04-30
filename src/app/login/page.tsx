@@ -6,13 +6,13 @@ import { useEffect, useRef, useState } from "react";
 import netsuite from "../../../public/netsuite-logo.png";
 import smct from "../../../public/smct_group.png";
 import { data } from "@/data/credentials";
-import AlertBox from "@/components/ui/AlertBox";
+import AlertBox from "@/components/ui/alert-box";
 import { login as loginApi, logout } from "@/lib/authSanctum";
 import { FaCircleNotch } from "react-icons/fa";
 import api from "@/lib/axiosCall";
 import ContactAdmin from "@/components/modal/ContactAdmin";
 import { useVersion } from "@/context/versionContext";
-import MaintenanceMode from "@/components/ui/MaintenanceMode";
+import MaintenanceMode from "@/components/MaintenanceMode";
 import GlobalLoader from "@/components/loaders/GlobalLoaders";
 
 export default function Home() {
@@ -103,8 +103,11 @@ export default function Home() {
           setIsLoading(false);
         }
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error(error);
+      if (error.response.status === 503) {
+        window.location.reload();
+      }
     } finally {
       setIsLoading(false);
     }
