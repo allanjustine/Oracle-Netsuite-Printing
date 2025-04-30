@@ -157,6 +157,9 @@ export default function MaintenanceModeModal() {
                               <option value="Emergency fix">
                                 Emergency fix
                               </option>
+                              <option value="Bug fixing">
+                                Bug fixing
+                              </option>
                             </select>
                             <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                               <svg

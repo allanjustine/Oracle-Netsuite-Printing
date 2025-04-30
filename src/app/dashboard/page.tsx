@@ -389,7 +389,8 @@ export default function Page() {
           return (
             item.external_id ===
               (isPrintCr ? excelData[1][10] : excelData[1][27]) &&
-            item.print_count >= 1
+            item.print_count >= 1 &&
+            item.re_print === false
           );
         });
 
