@@ -81,7 +81,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     localStorage.setItem("ls-app-version", version);
   };
 
-  const logout = (router: any) => {
+  const logout = (router: any) => (e: any) => {
+    e.preventDefault();
     setUser(null);
     setIsAuthenticated(false);
     setBranch(null);

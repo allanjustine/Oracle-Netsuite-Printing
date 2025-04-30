@@ -394,7 +394,6 @@ export default function Page() {
           );
         });
 
-
         setIsAlreadyPrinted(result);
         setFormInput({
           external_id: isPrintCr ? excelData[1][10] : excelData[1][27],
@@ -693,30 +692,33 @@ export default function Page() {
                       <FaTrashAlt size={20} color="#fff" /> Remove
                     </button>
                   )}
-              {!isLoading && excelData.length > 0 && (
-                <button
-                  type="button"
-                  disabled={isPrintLoading}
-                  onClick={handlePrintCount}
-                  className="p-2 gap-2 items-center bg-green-500/80 text-white hover:bg-green-600/80 hover:translate-x-1 hover:-translate-y-1 transition-all duration-300 ease-in-out rounded-md"
-                >
-                  {isPrintLoading ? (
-                    <span className="flex items-center gap-2">
-                      <FaCircleNotch
-                        className="animate-spin"
-                        size={20}
-                        color="#fff"
-                      />{" "}
-                      <span>Please wait...</span>
-                    </span>
-                  ) : (
-                    <span className="flex items-center gap-2">
-                      <FaCheckDouble size={20} color="#fff" />{" "}
-                      <span>Done Print</span>
-                    </span>
-                  )}
-                </button>
-              )}
+              {!isLoading &&
+                excelData.length > 0 &&
+                !isOutDated &&
+                !isAbnormalVersion && (
+                  <button
+                    type="button"
+                    disabled={isPrintLoading}
+                    onClick={handlePrintCount}
+                    className="p-2 gap-2 items-center bg-green-500/80 text-white hover:bg-green-600/80 hover:translate-x-1 hover:-translate-y-1 transition-all duration-300 ease-in-out rounded-md"
+                  >
+                    {isPrintLoading ? (
+                      <span className="flex items-center gap-2">
+                        <FaCircleNotch
+                          className="animate-spin"
+                          size={20}
+                          color="#fff"
+                        />{" "}
+                        <span>Please wait...</span>
+                      </span>
+                    ) : (
+                      <span className="flex items-center gap-2">
+                        <FaCheckDouble size={20} color="#fff" />{" "}
+                        <span>Done Print</span>
+                      </span>
+                    )}
+                  </button>
+                )}
             </div>
             {fileInfo.name && !isLoading && (
               <div className="mt-2">
