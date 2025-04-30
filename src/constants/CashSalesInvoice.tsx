@@ -134,6 +134,7 @@ import SMCTCatarman from "@/utils/salesinvoice/global/fdl/old/smct/SMCTCatarman"
 import HdBalamban from "@/utils/salesinvoice/global/fdl/new/hd/Balamban";
 import DAPSanMiguel from "@/utils/salesinvoice/global/fdl/old/dap/DAPSanMiguel";
 import OroquietaNew from "@/utils/salesinvoice/global/fdl/new/hd/OroquietaNew";
+import Gingoog from "@/utils/salesinvoice/global/fdl/new/dsm/Gingoog";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -516,6 +517,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTCatarman data={data} />;
     case "SANM" === user?.branchCode:
       return <DAPSanMiguel data={data} />;
+    case "GINGO" === user?.branchCode:
+      return <Gingoog data={data} />;
 
     default:
       return (

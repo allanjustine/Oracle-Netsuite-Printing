@@ -804,6 +804,12 @@ export const data = [
         branchCode: "UTAP",
         branchName: "DSM Tacloban",
         password: "Smct123456",
+      },
+      {
+        id: 76,
+        branchCode: "GINGO",
+        branchName: "DSM Gingoog",
+        password: "Smct123456",
       }
     ],
   },
