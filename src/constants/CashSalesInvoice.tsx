@@ -133,6 +133,7 @@ import SuzukiPardo from "@/utils/salesinvoice/global/fdl/new/dsm/SuzukiPardo";
 import SMCTCatarman from "@/utils/salesinvoice/global/fdl/old/smct/SMCTCatarman";
 import HdBalamban from "@/utils/salesinvoice/global/fdl/new/hd/Balamban";
 import DAPSanMiguel from "@/utils/salesinvoice/global/fdl/old/dap/DAPSanMiguel";
+import OroquietaNew from "@/utils/salesinvoice/global/fdl/new/hd/OroquietaNew";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -398,7 +399,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     case "OROH2" === user?.branchCode:
       return <HDOroquieta2 data={data} />;
     case "OROH" === user?.branchCode:
-      return <Oroquieta data={data} />;
+      return <OroquietaNew data={data} />;
     case "DSMCA" === user?.branchCode:
       return <Calamba data={data} />;
     case "DATH" === user?.branchCode:
