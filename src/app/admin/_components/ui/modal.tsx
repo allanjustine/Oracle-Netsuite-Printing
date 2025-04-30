@@ -32,7 +32,7 @@ export default function Modal({
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [setIsOpen, buttonRef, modalRef]);
 
   const handleModal = () => {
     setIsOpen(!isOpen);
