@@ -4,7 +4,7 @@ import GlobalLoader from "@/components/loaders/GlobalLoaders";
 import Navbar from "@/components/navbar";
 import { useAuth } from "@/context/authcontext";
 import useFetchPrintReceipts from "../_hooks/useFetchPrintReceipts";
-import { FaList } from "react-icons/fa";
+import { FaArrowDown, FaArrowUp, FaHistory, FaList } from "react-icons/fa";
 import NotLogin from "../_components/NotLogin";
 import Unauthorized from "../_components/Unauthorized";
 import { FaMagnifyingGlass } from "react-icons/fa6";
@@ -29,6 +29,10 @@ export default function AdminDashboard() {
     pagination,
     onSearchLoading,
     setIsRefresh,
+    setFilter,
+    perPage,
+    filter,
+    setPerPage,
   } = useFetchPrintReceipts();
   const debounceRef = useRef<any>(null);
 
@@ -48,14 +52,26 @@ export default function AdminDashboard() {
   };
 
   const receiptRecordsTableHead = [
-    "ID",
-    "External Id",
-    "Print Count",
-    "Print By",
-    "Can Re-print",
-    "Created At",
-    "Action",
+    { col: "ID", key: "id" },
+    { col: "External Id", key: "external_id" },
+    { col: "Print Count", key: "print_count" },
+    { col: "Print By", key: "print_by" },
+    { col: "Can Re-Print", key: "re_print" },
+    { col: "Created At", key: "created_at" },
+    { col: "Action", key: "action" },
   ];
+
+  const handlePerPage = (e: any) => {
+    const { value } = e.target;
+    setPerPage(value);
+  };
+
+  const handleFilter = (key: any) => () => {
+    setFilter({
+      column: key,
+      direction: filter.direction === "asc" ? "desc" : "asc",
+    });
+  };
 
   return (
     <div className="flex h-screen">
@@ -76,7 +92,24 @@ export default function AdminDashboard() {
                 Recent Print Jobs
               </h3>
             </div>
-            <div className="mb-2 flex w-full justify-end items-end">
+            <div className="mb-2 flex w-full justify-between items-end">
+              <div className="relative border border-gray-300 rounded-lg pl-10">
+                <span className="absolute left-2 top-1.5 text-gray-400">
+                  Show:
+                </span>
+                <select
+                  onChange={handlePerPage}
+                  value={perPage}
+                  className="px-3 py-2 rounded-lg focus:outline-none ring-0"
+                >
+                  <option value="20">20</option>
+                  <option value="40">40</option>
+                  <option value="50">50</option>
+                  <option value="70">70</option>
+                  <option value="80">80</option>
+                  <option value="100">100</option>
+                </select>
+              </div>
               <div className="relative">
                 <input
                   type="search"
@@ -95,10 +128,32 @@ export default function AdminDashboard() {
                   <tr className="border-b border-gray-200">
                     {receiptRecordsTableHead.map((item, index) => (
                       <th
-                        className="p-3 text-xs uppercase text-primarylight text-left font-semibold"
+                        className={`p-3 text-xs uppercase text-primarylight text-left font-semibold ${
+                          item.key !== "action" && "cursor-pointer"
+                        }`}
                         key={index}
+                        onClick={
+                          item.key === "action"
+                            ? undefined
+                            : handleFilter(item.key)
+                        }
                       >
-                        {item}
+                        <span className="flex gap-1 items-center">
+                          {filter.column === item.key && (
+                            <span>
+                              {filter.direction === "asc" ? (
+                                <>
+                                  <FaArrowUp />
+                                </>
+                              ) : (
+                                <>
+                                  <FaArrowDown />
+                                </>
+                              )}
+                            </span>
+                          )}
+                          <span>{item.col}</span>
+                        </span>
                       </th>
                     ))}
                   </tr>
@@ -134,25 +189,29 @@ export default function AdminDashboard() {
               )}
             </div>
           </div>
-          <div className="bg-white rounded-lg shadow p-6">
-            <div className="flex items-center mb-6">
-              <i className="fas fa-bell text-accent mr-2" />
-              <h3 className="text-xl font-semibold text-primarydark">
-                Recent Print Activity
-              </h3>
-            </div>
-            <div className="space-y-4">
-              {loading ? (
-                <RecentActivityLoader />
-              ) : receiptRecords.latestData?.length > 0 ? (
-                receiptRecords.latestData?.map((record: any, index: number) => (
-                  <ReceiptLatestDataList key={index} record={record} />
-                ))
-              ) : (
-                <p className="text-gray-400 text-center">
-                  No print activity yet
-                </p>
-              )}
+          <div>
+            <div className="bg-white rounded-lg shadow p-6">
+              <div className="flex items-center mb-6">
+                <i className="fas fa-bell text-accent mr-2" />
+                <h3 className="text-xl font-semibold text-primarydark flex gap-1 items-center">
+                 <FaHistory className="mr-1" /> <span>Recent Print Activity</span>
+                </h3>
+              </div>
+              <div className="space-y-4">
+                {loading ? (
+                  <RecentActivityLoader />
+                ) : receiptRecords.latestData?.length > 0 ? (
+                  receiptRecords.latestData?.map(
+                    (record: any, index: number) => (
+                      <ReceiptLatestDataList key={index} record={record} />
+                    )
+                  )
+                ) : (
+                  <p className="text-gray-400 text-center">
+                    No print activity yet
+                  </p>
+                )}
+              </div>
             </div>
           </div>
         </div>

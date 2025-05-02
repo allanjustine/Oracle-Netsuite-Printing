@@ -1,6 +1,7 @@
 export const printReceiptsData = {
   data: [],
   latestData: [],
+  totalReceipts: 0,
   todaysCount: 0,
   weeklyCount: 0,
   monthlyCount: 0,

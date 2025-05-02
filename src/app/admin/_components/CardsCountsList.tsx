@@ -2,6 +2,7 @@ import {
   FaArrowUp,
   FaCalendarDay,
   FaCalendarWeek,
+  FaFile,
   FaPrint,
   FaUsers,
 } from "react-icons/fa";
@@ -10,6 +11,21 @@ import { FaCalendarDays } from "react-icons/fa6";
 export default function CardsCountList({ receiptRecords }: any) {
   return (
     <>
+      <div className="bg-white rounded-lg shadow p-6 hover:shadow-lg transition duration-200 relative">
+        <h3 className="text-sm uppercase text-primarylight font-semibold">
+          Total Receipt Prints
+        </h3>
+        <p className="text-3xl font-bold text-primarydark mt-2">
+          {receiptRecords.totalReceipts}
+        </p>
+        <div className={"flex items-center mt-2 text-green-500"}>
+          <FaArrowUp className="mr-1" />
+          <span className="text-sm">100% all time</span>
+        </div>
+        <div className="absolute top-8 right-3">
+          <FaFile className="text-gray-100 text-7xl" />
+        </div>
+      </div>
       <div className="bg-white rounded-lg shadow p-6 hover:shadow-lg transition duration-200 relative">
         <h3 className="text-sm uppercase text-primarylight font-semibold">
           Today's Prints
@@ -39,33 +55,6 @@ export default function CardsCountList({ receiptRecords }: any) {
       </div>
       <div className="bg-white rounded-lg shadow p-6 hover:shadow-lg transition duration-200 relative">
         <h3 className="text-sm uppercase text-primarylight font-semibold">
-          Monthly Prints
-        </h3>
-        <p className="text-3xl font-bold text-primarydark mt-2">
-          {receiptRecords.monthlyCount}
-        </p>
-        <div
-          className={`flex items-center mt-2 ${
-            receiptRecords.monthlyPercentage < 10
-              ? "text-red-500"
-              : receiptRecords.monthlyPercentage < 50
-              ? "text-yellow-500"
-              : receiptRecords.monthlyPercentage < 80
-              ? "text-violet-500"
-              : "text-green-500"
-          }`}
-        >
-          <FaArrowUp className="mr-1" />
-          <span className="text-sm">
-            {receiptRecords.monthlyPercentage}% from last month
-          </span>
-        </div>
-        <div className="absolute top-8 right-3">
-          <FaCalendarDays className="text-gray-100 text-7xl" />
-        </div>
-      </div>
-      <div className="bg-white rounded-lg shadow p-6 hover:shadow-lg transition duration-200 relative">
-        <h3 className="text-sm uppercase text-primarylight font-semibold">
           Weekly Prints
         </h3>
         <p className="text-3xl font-bold text-primarydark mt-2">
@@ -89,6 +78,33 @@ export default function CardsCountList({ receiptRecords }: any) {
         </div>
         <div className="absolute top-8 right-3">
           <FaCalendarWeek className="text-gray-100 text-7xl" />
+        </div>
+      </div>
+      <div className="bg-white rounded-lg shadow p-6 hover:shadow-lg transition duration-200 relative">
+        <h3 className="text-sm uppercase text-primarylight font-semibold">
+          Monthly Prints
+        </h3>
+        <p className="text-3xl font-bold text-primarydark mt-2">
+          {receiptRecords.monthlyCount}
+        </p>
+        <div
+          className={`flex items-center mt-2 ${
+            receiptRecords.monthlyPercentage < 10
+              ? "text-red-500"
+              : receiptRecords.monthlyPercentage < 50
+              ? "text-yellow-500"
+              : receiptRecords.monthlyPercentage < 80
+              ? "text-violet-500"
+              : "text-green-500"
+          }`}
+        >
+          <FaArrowUp className="mr-1" />
+          <span className="text-sm">
+            {receiptRecords.monthlyPercentage}% from last month
+          </span>
+        </div>
+        <div className="absolute top-8 right-3">
+          <FaCalendarDays className="text-gray-100 text-7xl" />
         </div>
       </div>
       <div className="bg-white rounded-lg shadow p-6 hover:shadow-lg transition duration-200 relative overflow-hidden">

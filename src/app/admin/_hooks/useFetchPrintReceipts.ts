@@ -1,7 +1,7 @@
 import api from "@/lib/axiosCall";
 import { useEffect, useState } from "react";
 import { printReceiptsData } from "../_constants/printReceiptsData";
-import { paginationData } from "../_constants/paginationData";
+import { filterData, paginationData } from "../_constants/paginationData";
 import echo from "@/hooks/echo";
 
 export default function useFetchPrintReceipts() {
@@ -13,6 +13,8 @@ export default function useFetchPrintReceipts() {
   const [isNextPrevPage, setIsNextPrevPage] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [isRefresh, setIsRefresh] = useState(false);
+  const [filter, setFilter] = useState(filterData);
+  const [perPage, setPerPage] = useState(20);
 
   useEffect(() => {
     if (!echo) return;
@@ -34,13 +36,18 @@ export default function useFetchPrintReceipts() {
         const response = await api.get(
           `/receipt-records?page=${
             searchTerm ? 1 : pagination?.current_page
-          }&search=${searchTerm}`
+          }&search=${searchTerm}${
+            filter.column &&
+            filter.direction &&
+            `&column=${filter.column}&direction=${filter.direction}`
+          }${perPage && `&per_page=${perPage}`}`
         );
 
         if (response.status === 200) {
           setData({
             data: response?.data?.receipts?.data,
             latestData: response?.data?.latest_receipts,
+            totalReceipts: response?.data?.total_receipts,
             todaysCount: response?.data?.todays_receipts_count,
             weeklyCount: response?.data?.weekly_receipts_count,
             monthlyCount: response?.data?.monthly_receipts_count,
@@ -71,7 +78,15 @@ export default function useFetchPrintReceipts() {
     };
 
     fetchPrintReceiptsData();
-  }, [dataLoaded, pagination?.current_page, searchTerm, isRefresh]);
+  }, [
+    dataLoaded,
+    pagination?.current_page,
+    searchTerm,
+    isRefresh,
+    filter.column,
+    filter.direction,
+    perPage,
+  ]);
 
   const handlePrevPage = () => {
     if (pagination?.current_page === 1 || isNextPrevPage) {
@@ -105,5 +120,9 @@ export default function useFetchPrintReceipts() {
     searchTerm,
     onSearchLoading,
     setIsRefresh,
+    setFilter,
+    setPerPage,
+    filter,
+    perPage,
   };
 }
