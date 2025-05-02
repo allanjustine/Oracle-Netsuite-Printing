@@ -10,6 +10,8 @@ export const printReceiptsData = {
   weeklyPercentage: 0,
   monthlyPercentage: 0,
   searchingIfExists: [],
+  totalInvoice: 0,
+  totalCustPay: 0,
 };
 
 export const receiptRecords = {

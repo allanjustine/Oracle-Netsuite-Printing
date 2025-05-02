@@ -83,13 +83,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const logout = (router: any) => (e: any) => {
     e.preventDefault();
+    router.push("/login");
     setUser(null);
     setIsAuthenticated(false);
     setBranch(null);
     setIsAdmin(false);
     localStorage.removeItem("user");
     // localStorage.removeItem('branch');
-    router.push("/login");
   };
 
   return (

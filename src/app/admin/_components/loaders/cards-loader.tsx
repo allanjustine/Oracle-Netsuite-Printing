@@ -1,5 +1,5 @@
 export default function CardsLoader() {
-  return Array.from({ length: 5 }).map((_, index) => (
+  return Array.from({ length: 7 }).map((_, index) => (
     <div
       className="bg-white rounded-lg shadow p-6 hover:shadow-lg transition duration-200 relative"
       key={index}

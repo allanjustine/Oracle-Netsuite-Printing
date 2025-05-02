@@ -56,6 +56,8 @@ export default function useFetchPrintReceipts() {
             monthlyPercentage: Number(response?.data?.monthly_percentage),
             weeklyPercentage: Number(response?.data?.weekly_percentage),
             searchingIfExists: response?.data?.searching_if_exists,
+            totalInvoice: response?.data?.total_invoice,
+            totalCustPay: response?.data?.total_cust_pay,
           });
 
           setPagination({

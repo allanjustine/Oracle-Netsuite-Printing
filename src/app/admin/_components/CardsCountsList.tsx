@@ -3,6 +3,7 @@ import {
   FaCalendarDay,
   FaCalendarWeek,
   FaFile,
+  FaFileInvoiceDollar,
   FaPrint,
   FaUsers,
 } from "react-icons/fa";
@@ -121,6 +122,40 @@ export default function CardsCountList({ receiptRecords }: any) {
           <div className="flex items-center text-blue-500 mt-2">
             <FaUsers className="mr-1" />
             <span className="text-sm">100% total records</span>
+          </div>
+        </div>
+      </div>
+      <div className="bg-white rounded-lg shadow p-6 hover:shadow-lg transition duration-200 relative overflow-hidden">
+        <div className="absolute top-1/2 right-4 -translate-y-1/2">
+          <FaFileInvoiceDollar className="text-gray-100 text-7xl" />
+        </div>
+        <div className="relative z-10">
+          <h3 className="text-sm uppercase text-primarylight font-semibold">
+            Total Cash Sales/Sales Invoice
+          </h3>
+          <p className="text-3xl font-bold text-primarydark mt-2">
+            {receiptRecords.totalInvoice}
+          </p>
+          <div className="flex items-center text-blue-500 mt-2">
+            <FaFileInvoiceDollar className="mr-1" />
+            <span className="text-sm">100% total cash sales/sales invoice</span>
+          </div>
+        </div>
+      </div>
+      <div className="bg-white rounded-lg shadow p-6 hover:shadow-lg transition duration-200 relative overflow-hidden">
+        <div className="absolute top-1/2 right-4 -translate-y-1/2">
+          <FaFileInvoiceDollar className="text-gray-100 text-7xl" />
+        </div>
+        <div className="relative z-10">
+          <h3 className="text-sm uppercase text-primarylight font-semibold">
+            Total Customer Payment
+          </h3>
+          <p className="text-3xl font-bold text-primarydark mt-2">
+            {receiptRecords.totalCustPay}
+          </p>
+          <div className="flex items-center text-blue-500 mt-2">
+            <FaFileInvoiceDollar className="mr-1" />
+            <span className="text-sm">100% total customer payment</span>
           </div>
         </div>
       </div>
