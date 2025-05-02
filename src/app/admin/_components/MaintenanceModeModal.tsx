@@ -1,6 +1,6 @@
 import api from "@/lib/axiosCall";
 import { useEffect, useRef, useState } from "react";
-import { FaTools } from "react-icons/fa";
+import { FaCircleNotch, FaTools } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
 import {
   maintenanceErrors,
@@ -112,7 +112,11 @@ export default function MaintenanceModeModal() {
                   </p>
                   <div className="mt-5">
                     {isLoading || isLoadingMaintenance ? (
-                      "Loading..."
+                      <div className="flex items-center justify-center gap-1">
+                        <div className="w-4 h-4 rounded-full animate-ping bg-red-500"></div>
+                        <div className="w-4 h-4 rounded-full animate-ping bg-yellow-500"></div>
+                        <div className="w-4 h-4 rounded-full animate-ping bg-green-500"></div>
+                      </div>
                     ) : maintenanceTime || maintenanceType ? (
                       <CountdownTimer initialTimeInSeconds={maintenanceTime} />
                     ) : (
@@ -157,9 +161,7 @@ export default function MaintenanceModeModal() {
                               <option value="Emergency fix">
                                 Emergency fix
                               </option>
-                              <option value="Bug fixing">
-                                Bug fixing
-                              </option>
+                              <option value="Bug fixing">Bug fixing</option>
                             </select>
                             <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                               <svg
@@ -217,7 +219,13 @@ export default function MaintenanceModeModal() {
                         isLoading ? "opacity-50 cursor-not-allowed" : ""
                       }`}
                     >
-                      {isLoading ? "Loading..." : "Yes, I'm sure"}
+                      {isLoading ? (
+                        <span className="flex gap-1 items-center">
+                          <FaCircleNotch className="animate-spin" /> Activating
+                        </span>
+                      ) : (
+                        "Yes, I'm sure"
+                      )}
                     </button>
                   )}
                   <button
