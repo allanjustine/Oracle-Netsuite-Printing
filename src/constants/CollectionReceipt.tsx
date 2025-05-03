@@ -208,6 +208,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "INIT",
     "DSMAO",
     "TUBU",
+    "MARA"
   ];
 
   const fdlOrNewSizeData = [];
@@ -260,7 +261,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const ajdOrNewSizeData = [];
 
-  const ajdOrOldSizeData = ["MARA"];
+  const ajdOrOldSizeData = [""];
 
   // BJV
   const bjvCrNewSizeData = [];
