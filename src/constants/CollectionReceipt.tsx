@@ -207,7 +207,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "IPID",
     "INIT",
     "DSMAO",
-    "TUBU"
+    "TUBU",
   ];
 
   const fdlOrNewSizeData = [];
