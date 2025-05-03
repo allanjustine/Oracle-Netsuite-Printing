@@ -24,7 +24,7 @@ const SMCTTalibon2 = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[400.62992126px] w-[767.24409449px]">
-      <div className="w-[120.94488189px] flex items-center mt-[95.9291338579px] ml-[602.83464567px] h-[21.921259843px]">
+      <div className="w-[120.94488189px] flex items-center mt-[83.9291338579px] ml-[602.83464567px] h-[21.921259843px]">
         <p className="text-xs ml-[11.338582677px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
@@ -60,6 +60,13 @@ const SMCTTalibon2 = ({ data }: any) => {
             )}
           </p>
         </div>
+      </div>
+      <div className="ml-[275.90551181px] text-center mt-[19.566929134px]">
+        <p className="w-[166.2992126px]">
+          {data[1]?.[CR_PartnerName] || (
+            <span className="opacity-0">Test Cashier</span>
+          )}
+        </p>
       </div>
     </div>
   );

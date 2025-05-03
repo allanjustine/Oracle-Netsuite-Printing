@@ -21,8 +21,6 @@ const DSMNorzagaray = ({ data }: any) => {
   const CR_FormOfPayment = 8;
   const CR_PartnerName = 9;
   const CR_Reference = 10;
-  const test =
-    "asdjfkajdfkajsdfjaklsdfjaklsdjfkl;asjdfkl;asjdgkasdklf vlkadfkla dfkahs dkfasdl fjasd; fajd;f jasd;f jasd;lfj";
 
   return (
     <div className="text-xs h-[400.62992126px] w-[767.24409449px]">
@@ -62,6 +60,13 @@ const DSMNorzagaray = ({ data }: any) => {
             )}
           </p>
         </div>
+      </div>
+      <div className="ml-[275.90551181px] text-center mt-[19.566929134px]">
+        <p className="w-[166.2992126px]">
+          {data[1]?.[CR_PartnerName] || (
+            <span className="opacity-0">Test Cashier</span>
+          )}
+        </p>
       </div>
     </div>
   );

@@ -62,9 +62,11 @@ const DSMBayugan = ({ data }: any) => {
         </div>
       </div>
       <div className="ml-[275.90551181px] text-center mt-[19.566929134px]">
-            <p className="w-[166.2992126px]">
-              {data[1]?.[CR_PartnerName] || <span className="opacity-0">Test Cashier</span>}
-            </p>
+        <p className="w-[166.2992126px]">
+          {data[1]?.[CR_PartnerName] || (
+            <span className="opacity-0">Test Cashier</span>
+          )}
+        </p>
       </div>
     </div>
   );
