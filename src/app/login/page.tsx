@@ -275,7 +275,7 @@ export default function Home() {
               {isLoading ? (
                 <span className="flex items-center justify-center gap-2">
                   <FaCircleNotch className="animate-spin" />
-                  Authenticating...
+                  Signing In...
                 </span>
               ) : (
                 <span>Sign In</span>

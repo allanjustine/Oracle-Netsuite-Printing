@@ -6,10 +6,11 @@ import hd from "../../public/hd.png";
 import ho from "../../public/smct_group.png";
 import dap from "../../public/dap.jpg";
 import { useAuth } from "@/context/authcontext";
-import { FaAngleDown, FaHeadset, FaHome, FaRedo } from "react-icons/fa";
+import { FaAngleDown, FaHeadset, FaHome, FaRedo, FaUser } from "react-icons/fa";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import MaintenanceModeModal from "@/app/admin/_components/MaintenanceModeModal";
+import { FaArrowRightFromBracket } from "react-icons/fa6";
 
 export default function Navbar({ buttonRefModal, handleModal }: any) {
   const { branch, user, logout, isAdmin } = useAuth();
@@ -47,7 +48,7 @@ export default function Navbar({ buttonRefModal, handleModal }: any) {
 
   return (
     <>
-      <div className="py-2 pl-2 pr-4 flex items-center justify-between">
+      <div className="py-2 pl-2 pr-4 flex items-center justify-between relative">
         <div>
           {branch?.branch === "SMCT" ? (
             <Image src={smct} alt="SMCT, Inc." width={200} />
@@ -74,18 +75,35 @@ export default function Navbar({ buttonRefModal, handleModal }: any) {
             <FaAngleDown />
           </button>
           {isDropdownOpen && (
-            <div
-              ref={dropdownRef}
-              className="absolute right-5 mt-2 py-1 px-5 bg-white border rounded shadow-lg"
-            >
-              <button
-                type="button"
-                onClick={logout(router)}
-                className="w-full text-left text-sm font-medium text-[#333]"
+            <>
+              <span className="absolute w-4 h-4 bg-gray-100 z-40 top-11 right-7 transform rotate-45 origin-center"></span>
+              <div
+                ref={dropdownRef}
+                className="absolute right-5 mt-2 bg-gray-50 border rounded shadow-lg z-50"
               >
-                Logout
-              </button>
-            </div>
+                <div className="flex flex-col">
+                  <p className="p-3 text-sm hover:bg-gray-200">
+                    <span className="flex gap-1 items-center">
+                      <FaUser />{" "}
+                      <span>
+                        {user?.branchCode} - {user?.branchName}
+                      </span>
+                    </span>
+                  </p>
+                  <p className="p-3 border-t hover:bg-gray-200">
+                    <button
+                      type="button"
+                      onClick={logout(router)}
+                      className="w-full text-left text-sm font-medium text-[#333]"
+                    >
+                      <span className="flex gap-1 items-center">
+                        <FaArrowRightFromBracket /> <span>Logout</span>
+                      </span>
+                    </button>
+                  </p>
+                </div>
+              </div>
+            </>
           )}
         </div>
       </div>
