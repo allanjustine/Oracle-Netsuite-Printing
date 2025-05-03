@@ -4,11 +4,17 @@ import GlobalLoader from "@/components/loaders/GlobalLoaders";
 import Navbar from "@/components/navbar";
 import { useAuth } from "@/context/authcontext";
 import useFetchPrintReceipts from "../_hooks/useFetchPrintReceipts";
-import { FaArrowDown, FaArrowUp, FaHistory, FaList } from "react-icons/fa";
+import {
+  FaAngleUp,
+  FaArrowDown,
+  FaArrowUp,
+  FaHistory,
+  FaList,
+} from "react-icons/fa";
 import NotLogin from "../_components/NotLogin";
 import Unauthorized from "../_components/Unauthorized";
 import { FaMagnifyingGlass } from "react-icons/fa6";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Pagination from "../_components/Pagination";
 import CardsLoader from "../_components/loaders/cards-loader";
 import RecentActivityLoader from "../_components/loaders/recent-activity-loader";
@@ -24,17 +30,37 @@ export default function AdminDashboard() {
     loading,
     handleNextPage,
     handlePrevPage,
+    handleFirstPage,
+    handleLastPage,
     setSearchTerm,
     searchTerm,
     pagination,
-    onSearchLoading,
+    isSearching,
     setIsRefresh,
     setFilter,
     perPage,
     filter,
     setPerPage,
+    setIsSearching,
   } = useFetchPrintReceipts();
   const debounceRef = useRef<any>(null);
+  const [isBackToTop, setIsBackToTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 500) {
+        setIsBackToTop(true);
+      } else {
+        setIsBackToTop(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   if (loadingData) return <GlobalLoader />;
 
@@ -48,6 +74,7 @@ export default function AdminDashboard() {
     debounceRef.current = setTimeout(() => {
       const { value } = e.target;
       setSearchTerm(value);
+      setIsSearching(true);
     }, 1000);
   };
 
@@ -73,9 +100,24 @@ export default function AdminDashboard() {
     });
   };
 
+  const handleBackToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <div className="flex h-screen">
-      <div className="flex-1 overflow-auto">
+    <>
+      <button
+        type="button"
+        onClick={handleBackToTop}
+        className={`p-2 rounded-full fixed bg-blue-400 hover:bg-blue-500 text-white transition-all duration-300 ease-in-out ${
+          isBackToTop
+            ? "bottom-4 right-6 opacity-1"
+            : "-bottom-10 opacity-0 right-1"
+        }`}
+      >
+        <FaAngleUp className="text-md" />
+      </button>
+      <div className="flex-1">
         <Navbar />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
           {loading ? (
@@ -92,7 +134,7 @@ export default function AdminDashboard() {
                 Recent Print Jobs
               </h3>
             </div>
-            <div className="mb-2 flex w-full justify-between items-end">
+            <div className="mb-2 flex w-full flex-col md:justify-between items-end md:flex-row space-y-2">
               <div className="relative border border-gray-300 rounded-lg pl-10">
                 <span className="absolute left-2 top-1.5 text-gray-400">
                   Show:
@@ -102,12 +144,12 @@ export default function AdminDashboard() {
                   value={perPage}
                   className="px-3 py-2 rounded-lg focus:outline-none ring-0"
                 >
-                  <option value="20">20</option>
-                  <option value="40">40</option>
-                  <option value="50">50</option>
-                  <option value="70">70</option>
-                  <option value="80">80</option>
-                  <option value="100">100</option>
+                  <option value="20">20 per page</option>
+                  <option value="40">40 per page</option>
+                  <option value="50">50 per page</option>
+                  <option value="70">70 per page</option>
+                  <option value="80">80 per page</option>
+                  <option value="100">100 per page</option>
                 </select>
               </div>
               <div className="relative">
@@ -159,7 +201,7 @@ export default function AdminDashboard() {
                   </tr>
                 </thead>
                 <tbody>
-                  {loading || onSearchLoading ? (
+                  {loading || isSearching ? (
                     <TableLoader colSpan={7} />
                   ) : receiptRecords.data.length > 0 ? (
                     receiptRecords.data.map((record: any, index: number) => (
@@ -185,6 +227,8 @@ export default function AdminDashboard() {
                   pagination={pagination}
                   handleNextPage={handleNextPage}
                   handlePrevPage={handlePrevPage}
+                  handleFirstPage={handleFirstPage}
+                  handleLastPage={handleLastPage}
                 />
               )}
             </div>
@@ -194,7 +238,8 @@ export default function AdminDashboard() {
               <div className="flex items-center mb-6">
                 <i className="fas fa-bell text-accent mr-2" />
                 <h3 className="text-xl font-semibold text-primarydark flex gap-1 items-center">
-                 <FaHistory className="mr-1" /> <span>Recent Print Activity</span>
+                  <FaHistory className="mr-1" />{" "}
+                  <span>Recent Print Activity</span>
                 </h3>
               </div>
               <div className="space-y-4">
@@ -216,6 +261,6 @@ export default function AdminDashboard() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

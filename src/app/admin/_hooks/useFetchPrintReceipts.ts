@@ -7,11 +7,11 @@ import echo from "@/hooks/echo";
 export default function useFetchPrintReceipts() {
   const [data, setData] = useState(printReceiptsData);
   const [loading, setLoading] = useState(true);
-  const [onSearchLoading, setOnSearchLoading] = useState(false);
   const [dataLoaded, setDataLoaded] = useState(false);
   const [pagination, setPagination] = useState(paginationData);
   const [isNextPrevPage, setIsNextPrevPage] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
+  const [isSearching, setIsSearching] = useState(false);
   const [isRefresh, setIsRefresh] = useState(false);
   const [filter, setFilter] = useState(filterData);
   const [perPage, setPerPage] = useState(20);
@@ -31,7 +31,6 @@ export default function useFetchPrintReceipts() {
   useEffect(() => {
     const fetchPrintReceiptsData = async () => {
       if (pagination?.current_page) setIsNextPrevPage(true);
-      if (searchTerm) setOnSearchLoading(true);
       try {
         const response = await api.get(
           `/receipt-records?page=${
@@ -73,9 +72,9 @@ export default function useFetchPrintReceipts() {
         console.error(error);
       } finally {
         setLoading(false);
-        setOnSearchLoading(false);
         if (pagination?.current_page) setIsNextPrevPage(false);
         setDataLoaded(false);
+        setIsSearching(false);
       }
     };
 
@@ -112,6 +111,28 @@ export default function useFetchPrintReceipts() {
     }));
   };
 
+  const handleFirstPage = () => {
+    if (pagination?.current_page === 1 || isNextPrevPage) {
+      return;
+    }
+
+    setPagination((prev: any) => ({
+      ...prev,
+      current_page: 1,
+    }));
+  };
+
+  const handleLastPage = () => {
+    if (pagination?.current_page === pagination?.last_page || isNextPrevPage) {
+      return;
+    }
+
+    setPagination((prev: any) => ({
+      ...prev,
+      current_page: pagination?.last_page,
+    }));
+  };
+
   return {
     data,
     loading,
@@ -120,11 +141,14 @@ export default function useFetchPrintReceipts() {
     pagination,
     setSearchTerm,
     searchTerm,
-    onSearchLoading,
+    isSearching,
     setIsRefresh,
     setFilter,
     setPerPage,
     filter,
     perPage,
+    setIsSearching,
+    handleFirstPage,
+    handleLastPage,
   };
 }

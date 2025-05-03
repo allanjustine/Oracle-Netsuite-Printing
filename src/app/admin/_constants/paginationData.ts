@@ -8,6 +8,6 @@ export const paginationData = {
 };
 
 export const filterData = {
-  column: "",
-  direction: "desc",
+  column: "id",
+  direction: "asc",
 };
