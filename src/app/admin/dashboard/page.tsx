@@ -74,7 +74,9 @@ export default function AdminDashboard() {
     debounceRef.current = setTimeout(() => {
       const { value } = e.target;
       setSearchTerm(value);
-      setIsSearching(true);
+      if(value) {
+        setIsSearching(true);
+      }
     }, 1000);
   };
 
