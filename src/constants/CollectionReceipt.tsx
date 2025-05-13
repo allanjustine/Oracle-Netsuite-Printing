@@ -242,7 +242,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DSMT2",
     "DSMM",
     "ILOI",
-    "UBAY",
+    // "UBAY",
   ];
 
   //FELY
@@ -267,7 +267,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const bjvCrNewSizeData = [];
 
   const bjvCrOldSizeData = [
-    // "UBAY",
+    "UBAY",
     "",
   ];
 
