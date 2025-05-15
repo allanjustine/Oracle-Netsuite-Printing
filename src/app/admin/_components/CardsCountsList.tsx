@@ -179,8 +179,20 @@ export default function CardsCountList({ receiptRecords }: any) {
             Over All Total Sales
           </h3>
           <p className="text-3xl font-bold text-primarydark mt-2 flex gap-1 items-center">
-            <span>{receiptRecords.overAllTotalAmountDue}</span>{" "}
-            <span className="text-sm cursor-pointer" title={`CustPay: PHP ${receiptRecords.sumCustPay} - Invoice: PHP ${receiptRecords.sumInvoice}`}>
+            <span
+              className={`${
+                receiptRecords.overAllTotalAmountDue.replace(/,/g, "") >
+                1000000000
+                  ? "text-xl"
+                  : ""
+              }`}
+            >
+              {receiptRecords.overAllTotalAmountDue}
+            </span>{" "}
+            <span
+              className="text-sm cursor-pointer"
+              title={`CustPay: PHP ${receiptRecords.sumCustPay} - Invoice: PHP ${receiptRecords.sumInvoice}`}
+            >
               <FaQuestionCircle />
             </span>
           </p>
