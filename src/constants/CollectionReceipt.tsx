@@ -126,7 +126,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const HondaDESSizeData = [""];
 
-  const DAPSizeData = ["SIND", "DIPD", "KABD", "MANO", "MARA2", "PUTD"];
+  const DAPSizeData = ["SIND", "DIPD", "KABD", "MANO", "PUTD"];
 
   const smctCrSizeData = [""];
 
@@ -208,13 +208,13 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "INIT",
     "DSMAO",
     "TUBU",
-    "MARA"
+    "MARA",
   ];
 
   const fdlOrNewSizeData = [];
 
   // OBBUS
-  const obbusCrNewSizeData = ["TOMAS", "DIGOS", "BOLOD"];
+  const obbusCrNewSizeData = ["TOMAS", "DIGOS", "BOLOD", "MARA2"];
 
   const obbusCrOldSizeData = [
     "DSMBN",
@@ -266,10 +266,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   // BJV
   const bjvCrNewSizeData = [];
 
-  const bjvCrOldSizeData = [
-    "UBAY",
-    "",
-  ];
+  const bjvCrOldSizeData = ["UBAY", ""];
 
   // CELROSE
   const celroseOrNewSizeData = [];
