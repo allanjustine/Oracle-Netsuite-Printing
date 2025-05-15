@@ -205,7 +205,7 @@ export default function AdminDashboard() {
                 </thead>
                 <tbody>
                   {loading || isSearching ? (
-                    <TableLoader colSpan={7} />
+                    <TableLoader colSpan={8} />
                   ) : receiptRecords.data.length > 0 ? (
                     receiptRecords.data.map((record: any, index: number) => (
                       <ReceiptDataList

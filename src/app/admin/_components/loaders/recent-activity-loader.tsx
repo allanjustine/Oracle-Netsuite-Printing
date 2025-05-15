@@ -7,6 +7,7 @@ export default function RecentActivityLoader() {
       <div>
         <p className="text-sm font-medium text-primarydark mb-1 w-28 h-5 animate-pulse rounded bg-slate-200"></p>
         <p className="text-xs text-primarylight w-36 h-5 bg-slate-200 animate-pulse rounded"></p>
+        <p className="text-xs text-primarylight w-32 h-5 bg-slate-200 animate-pulse rounded"></p>
         <p className="text-xs text-gray-400 mt-1 w-16 h-3 bg-slate-200 animate-pulse rounded"></p>
       </div>
     </div>
