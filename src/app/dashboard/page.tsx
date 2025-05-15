@@ -294,6 +294,7 @@ export default function Page() {
 
       printWindow.onafterprint = () => {
         printWindow.close();
+        handlePrintCount();
       };
     }
   };
@@ -692,7 +693,7 @@ export default function Page() {
                       <FaTrashAlt size={20} color="#fff" /> Remove
                     </button>
                   )}
-              {!isLoading &&
+              {/* {!isLoading &&
                 excelData.length > 0 &&
                 !isOutDated &&
                 !isAbnormalVersion && (
@@ -718,7 +719,7 @@ export default function Page() {
                       </span>
                     )}
                   </button>
-                )}
+                )} */}
             </div>
             {fileInfo.name && !isLoading && (
               <div className="mt-2">
