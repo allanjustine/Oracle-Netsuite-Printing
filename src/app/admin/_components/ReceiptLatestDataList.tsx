@@ -1,3 +1,4 @@
+import FormattedNumber from "@/utils/FormattedNumber";
 import { formatDistanceToNowStrict } from "date-fns";
 import { FaCheck } from "react-icons/fa";
 
@@ -13,7 +14,8 @@ export default function ReceiptLatestDataList({ record }: any) {
         <h4 className="text-sm font-medium text-primarydark">
           {record.external_id}
         </h4>
-        <p className="text-xs text-primarylight">{record.print_by}</p>
+        <p className="text-xs text-gray-500">{record.print_by}</p>
+        <p className="text-[10px] text-gray-400">PHP {FormattedNumber(record.total_amount_due)}</p>
         <p className="text-xs text-gray-400 mt-1">
           {formatDistanceToNowStrict(record.created_at, {
             addSuffix: true,

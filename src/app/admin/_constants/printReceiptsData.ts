@@ -12,6 +12,12 @@ export const printReceiptsData = {
   searchingIfExists: [],
   totalInvoice: 0,
   totalCustPay: 0,
+  yesterdayCount: 0,
+  lastWeekCount: 0,
+  lastMonthCount: 0,
+  overAllTotalAmountDue: 0,
+  sumInvoice: 0,
+  sumCustPay: 0,
 };
 
 export const receiptRecords = {

@@ -86,6 +86,7 @@ export default function AdminDashboard() {
     { col: "Print Count", key: "print_count" },
     { col: "Print By", key: "print_by" },
     { col: "Can Re-Print", key: "re_print" },
+    { col: "Total Amount Due", key: "total_amount_due" },
     { col: "Created At", key: "created_at" },
     { col: "Action", key: "action" },
   ];

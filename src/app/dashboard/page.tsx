@@ -31,6 +31,12 @@ import enyeFormat from "@/utils/enyeFormat";
 import MaintenanceMode from "@/components/MaintenanceMode";
 import ContactAdmin from "@/components/modal/ContactAdmin";
 import GlobalLoader from "@/components/loaders/GlobalLoaders";
+import FormattedTotalAmountDue from "@/utils/FormattedTotalAmountDue";
+import FormattedAmountDue from "@/utils/FormattedAmountDue";
+import FormattedSumTotalMinusLessVat from "@/utils/FormattedSumTotalMinusLessVat";
+import FormattedSumTotal from "@/utils/FormattedSumTotal";
+import FormattedSumTotalLessVat from "@/utils/FormattedSumTotalLessVat";
+import FormattedLessWithHoldingTax from "@/utils/FormattedLessWithHoldingTax";
 
 export default function Page() {
   const { user } = useAuth();
@@ -382,23 +388,46 @@ export default function Page() {
 
     const fetchRecords = async () => {
       try {
-        const response = await api.get("receipt-records");
-
-        const receipts = response?.data?.searching_if_exists;
-
-        const result = receipts?.some((item: any) => {
-          return (
-            item.external_id ===
-              (isPrintCr ? excelData[1][10] : excelData[1][27]) &&
-            item.print_count >= 1 &&
-            item.re_print === false
-          );
+        const response = await api.get("receipt-records", {
+          params: {
+            external_id: isPrintCr ? excelData[1][10] : excelData[1][27],
+          },
         });
+
+        const totalAmountDueFn = FormattedTotalAmountDue(
+          FormattedAmountDue(
+            FormattedSumTotalMinusLessVat(
+              FormattedSumTotal(excelData, rateInclusiveVat, 16, quantity),
+              FormattedSumTotalLessVat(
+                excelData,
+                rateInclusiveVat,
+                16,
+                quantity
+              )
+            ),
+            FormattedLessWithHoldingTax(excelData, lessWithHoldingTax, 16)
+          ),
+          FormattedSumTotalLessVat(excelData, rateInclusiveVat, 16, quantity)
+        );
+
+        const totalAmountDueCrOrOr = FormattedNumber(excelData[1]?.[CR_AmountInFigures]);
+
+        const result = response?.data?.searching_if_exists;
+
+        // const result = receipts?.some((item: any) => {
+        //   return (
+        //     item.external_id ===
+        //       (isPrintCr ? excelData[1][10] : excelData[1][27]) &&
+        //     item.print_count >= 1 &&
+        //     item.re_print === false
+        //   );
+        // });
 
         setIsAlreadyPrinted(result);
         setFormInput({
           external_id: isPrintCr ? excelData[1][10] : excelData[1][27],
           print_by: `${user?.branchCode}-${user?.branchName}`,
+          total_amount_due: isPrintCr ? Number(totalAmountDueCrOrOr.replace(/,/g, "")) : Number(totalAmountDueFn.replace(/,/g, ""))
         });
       } catch (error: any) {
         console.error(error);

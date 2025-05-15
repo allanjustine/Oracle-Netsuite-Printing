@@ -32,15 +32,15 @@ export default function useFetchPrintReceipts() {
     const fetchPrintReceiptsData = async () => {
       if (pagination?.current_page) setIsNextPrevPage(true);
       try {
-        const response = await api.get(
-          `/receipt-records?page=${
-            searchTerm ? 1 : pagination?.current_page
-          }&search=${searchTerm}${
-            filter.column &&
-            filter.direction &&
-            `&column=${filter.column}&direction=${filter.direction}`
-          }${perPage && `&per_page=${perPage}`}`
-        );
+        const response = await api.get("/receipt-records", {
+          params: {
+            page: searchTerm ? 1 : pagination?.current_page,
+            search: searchTerm,
+            column: filter.column,
+            direction: filter.direction,
+            per_page: perPage,
+          },
+        });
 
         if (response.status === 200) {
           setData({
@@ -57,6 +57,12 @@ export default function useFetchPrintReceipts() {
             searchingIfExists: response?.data?.searching_if_exists,
             totalInvoice: response?.data?.total_invoice,
             totalCustPay: response?.data?.total_cust_pay,
+            yesterdayCount: response?.data?.yesterdays_receipts_count,
+            lastWeekCount: response?.data?.last_weekly_receipts_count,
+            lastMonthCount: response?.data?.last_monthly_receipts_count,
+            overAllTotalAmountDue: response?.data?.over_all_total_amount_due,
+            sumInvoice: response?.data?.sum_invoice,
+            sumCustPay: response?.data?.sum_cust_pay,
           });
 
           setPagination({

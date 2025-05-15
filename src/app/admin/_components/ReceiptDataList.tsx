@@ -7,6 +7,7 @@ import Input from "./ui/input";
 import api from "@/lib/axiosCall";
 import { Bounce, toast } from "react-toastify";
 import { Toast } from "./ui/toast";
+import FormattedNumber from "@/utils/FormattedNumber";
 
 export default function ReceiptDataList({ record, setIsRefresh }: any) {
   const [formInput, setFormInput] = useState(receiptRecords);
@@ -87,6 +88,7 @@ export default function ReceiptDataList({ record, setIsRefresh }: any) {
       </td>
       <td className="p-3 text-sm">{record.print_by}</td>
       <td className="p-3 text-sm">{record.re_print ? "Yes" : "No"}</td>
+      <td className="p-3 text-sm flex gap-1"><span>PHP</span> <span>{FormattedNumber(record.total_amount_due)}</span></td>
       <td className="p-3 text-sm">
         {format(record.created_at, "MMM d, yyyy - h:mm a")}
         <br />

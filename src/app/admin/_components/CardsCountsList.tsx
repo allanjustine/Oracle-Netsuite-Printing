@@ -2,9 +2,11 @@ import {
   FaArrowUp,
   FaCalendarDay,
   FaCalendarWeek,
+  FaDollarSign,
   FaFile,
   FaFileInvoiceDollar,
   FaPrint,
+  FaQuestionCircle,
   FaUsers,
 } from "react-icons/fa";
 import { FaCalendarDays } from "react-icons/fa6";
@@ -32,7 +34,10 @@ export default function CardsCountList({ receiptRecords }: any) {
           Today's Prints
         </h3>
         <p className="text-3xl font-bold text-primarydark mt-2">
-          {receiptRecords.todaysCount}
+          {receiptRecords.todaysCount}{" "}
+          <span className="text-xs text-gray-400">
+            ({receiptRecords.yesterdayCount})
+          </span>
         </p>
         <div
           className={`flex items-center mt-2 ${
@@ -59,7 +64,10 @@ export default function CardsCountList({ receiptRecords }: any) {
           Weekly Prints
         </h3>
         <p className="text-3xl font-bold text-primarydark mt-2">
-          {receiptRecords.weeklyCount}
+          {receiptRecords.weeklyCount}{" "}
+          <span className="text-xs text-gray-400">
+            ({receiptRecords.lastWeekCount})
+          </span>
         </p>
         <div
           className={`flex items-center mt-2 ${
@@ -86,7 +94,10 @@ export default function CardsCountList({ receiptRecords }: any) {
           Monthly Prints
         </h3>
         <p className="text-3xl font-bold text-primarydark mt-2">
-          {receiptRecords.monthlyCount}
+          {receiptRecords.monthlyCount}{" "}
+          <span className="text-xs text-gray-400">
+            ({receiptRecords.lastMonthCount})
+          </span>
         </p>
         <div
           className={`flex items-center mt-2 ${
@@ -156,6 +167,26 @@ export default function CardsCountList({ receiptRecords }: any) {
           <div className="flex items-center text-blue-500 mt-2">
             <FaFileInvoiceDollar className="mr-1" />
             <span className="text-sm">100% total customer payment</span>
+          </div>
+        </div>
+      </div>
+      <div className="bg-white rounded-lg shadow p-6 hover:shadow-lg transition duration-200 relative overflow-hidden">
+        <div className="absolute top-1/2 right-4 -translate-y-1/2">
+          <FaDollarSign className="text-gray-100 text-7xl" />
+        </div>
+        <div className="relative z-10">
+          <h3 className="text-sm uppercase text-primarylight font-semibold">
+            Over All Total Amount Due
+          </h3>
+          <p className="text-3xl font-bold text-primarydark mt-2 flex gap-1 items-center">
+            <span>{receiptRecords.overAllTotalAmountDue}</span>{" "}
+            <span className="text-sm cursor-pointer" title={`CustPay: PHP ${receiptRecords.sumCustPay} - Invoice: PHP ${receiptRecords.sumInvoice}`}>
+              <FaQuestionCircle />
+            </span>
+          </p>
+          <div className="flex items-center text-yellow-400 mt-2">
+            <FaDollarSign className="mr-1" />
+            <span className="text-sm">100% over all total amount due</span>
           </div>
         </div>
       </div>
