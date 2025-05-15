@@ -9,7 +9,7 @@ import {
   FaQuestionCircle,
   FaUsers,
 } from "react-icons/fa";
-import { FaCalendarDays } from "react-icons/fa6";
+import { FaCalendarDays, FaPesoSign } from "react-icons/fa6";
 
 export default function CardsCountList({ receiptRecords }: any) {
   return (
@@ -172,11 +172,11 @@ export default function CardsCountList({ receiptRecords }: any) {
       </div>
       <div className="bg-white rounded-lg shadow p-6 hover:shadow-lg transition duration-200 relative overflow-hidden">
         <div className="absolute top-1/2 right-4 -translate-y-1/2">
-          <FaDollarSign className="text-gray-100 text-7xl" />
+          <FaPesoSign className="text-gray-100 text-7xl" />
         </div>
         <div className="relative z-10">
           <h3 className="text-sm uppercase text-primarylight font-semibold">
-            Over All Total Amount Due
+            Over All Total Sales
           </h3>
           <p className="text-3xl font-bold text-primarydark mt-2 flex gap-1 items-center">
             <span>{receiptRecords.overAllTotalAmountDue}</span>{" "}
@@ -185,8 +185,8 @@ export default function CardsCountList({ receiptRecords }: any) {
             </span>
           </p>
           <div className="flex items-center text-yellow-400 mt-2">
-            <FaDollarSign className="mr-1" />
-            <span className="text-sm">100% over all total amount due</span>
+            <FaPesoSign className="mr-1" />
+            <span className="text-sm">100% over all total sales</span>
           </div>
         </div>
       </div>
