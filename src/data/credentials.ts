@@ -810,6 +810,12 @@ export const data = [
         branchCode: "GINGO",
         branchName: "DSM Gingoog",
         password: "Smct123456",
+      },
+      {
+        id: 77,
+        branchCode: "CALB",
+        branchName: "DSM Calbayog",
+        password: "Smct123456",
       }
     ],
   },
