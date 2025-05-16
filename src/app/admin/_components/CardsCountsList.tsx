@@ -186,12 +186,13 @@ export default function CardsCountList({ receiptRecords }: any) {
                   ? "text-xl"
                   : ""
               }`}
+              title={`Today Sales: ₱${receiptRecords.sumToday}`}
             >
               {receiptRecords.overAllTotalAmountDue}
             </span>{" "}
             <span
               className="text-sm cursor-pointer"
-              title={`CustPay: PHP ${receiptRecords.sumCustPay} - Invoice: PHP ${receiptRecords.sumInvoice}`}
+              title={`CustPay: ₱${receiptRecords.sumCustPay} - Invoice: ₱${receiptRecords.sumInvoice}`}
             >
               <FaQuestionCircle />
             </span>

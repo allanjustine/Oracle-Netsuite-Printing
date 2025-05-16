@@ -18,6 +18,7 @@ export const printReceiptsData = {
   overAllTotalAmountDue: 0,
   sumInvoice: 0,
   sumCustPay: 0,
+  sumToday: 0,
 };
 
 export const receiptRecords = {

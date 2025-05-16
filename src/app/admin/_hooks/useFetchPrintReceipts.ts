@@ -63,6 +63,7 @@ export default function useFetchPrintReceipts() {
             overAllTotalAmountDue: response?.data?.over_all_total_amount_due,
             sumInvoice: response?.data?.sum_invoice,
             sumCustPay: response?.data?.sum_cust_pay,
+            sumToday: response?.data?.todays_total_amount_due,
           });
 
           setPagination({
