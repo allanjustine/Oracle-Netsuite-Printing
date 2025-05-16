@@ -188,7 +188,7 @@ export default function CardsCountList({ receiptRecords }: any) {
               }`}
               title={`Today Sales: ₱${receiptRecords.sumToday}`}
             >
-              {receiptRecords.overAllTotalAmountDue}
+              ₱{receiptRecords.overAllTotalAmountDue}
             </span>{" "}
             <span
               className="text-sm cursor-pointer"
