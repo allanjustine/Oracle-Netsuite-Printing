@@ -47,6 +47,7 @@ export default function AdminDashboard() {
   const [isBackToTop, setIsBackToTop] = useState(false);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
     const handleScroll = () => {
       if (window.scrollY > 500) {
         setIsBackToTop(true);
@@ -74,7 +75,7 @@ export default function AdminDashboard() {
     debounceRef.current = setTimeout(() => {
       const { value } = e.target;
       setSearchTerm(value);
-      if(value) {
+      if (value) {
         setIsSearching(true);
       }
     }, 1000);
