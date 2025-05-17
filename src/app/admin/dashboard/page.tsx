@@ -47,19 +47,18 @@ export default function AdminDashboard() {
   const [isBackToTop, setIsBackToTop] = useState(false);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
     const handleScroll = () => {
-      if (window.scrollY > 500) {
+      if ((window as any).scrollY > 500) {
         setIsBackToTop(true);
       } else {
         setIsBackToTop(false);
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    (window as any).addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      (window as any).removeEventListener("scroll", handleScroll);
     };
   }, []);
 
