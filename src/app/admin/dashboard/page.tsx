@@ -45,12 +45,10 @@ export default function AdminDashboard() {
   } = useFetchPrintReceipts();
   const debounceRef = useRef<any>(null);
   const [isBackToTop, setIsBackToTop] = useState(false);
-  const [windowScrollY, setWindowScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setWindowScrollY(window.scrollY);
-      if (windowScrollY > 500) {
+      if (window.scrollY > 500) {
         setIsBackToTop(true);
       } else {
         setIsBackToTop(false);
@@ -106,7 +104,9 @@ export default function AdminDashboard() {
   };
 
   const handleBackToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   };
 
   return (
