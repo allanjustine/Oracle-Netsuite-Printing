@@ -122,7 +122,7 @@ export default function Navbar({ buttonRefModal, handleModal }: any) {
         >
           <FaHeadset size={20} color="white" />
         </button>
-        <MaintenanceModeModal />
+        {isAdmin && <MaintenanceModeModal />}
       </div>
     </>
   );

@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 
-const AdminDashboard = dynamic(() => import("../_components/dashboard"), {
+const AdminDashboard = dynamic(() => import("../_components/Dashboard"), {
   ssr: false,
 });
 

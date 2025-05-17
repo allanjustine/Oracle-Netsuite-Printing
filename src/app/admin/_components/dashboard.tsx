@@ -9,17 +9,17 @@ import {
   FaHistory,
   FaList,
 } from "react-icons/fa";
-import NotLogin from "../_components/NotLogin";
-import Unauthorized from "../_components/Unauthorized";
+import NotLogin from "./NotLogin";
+import Unauthorized from "./Unauthorized";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { useEffect, useRef, useState } from "react";
-import Pagination from "../_components/Pagination";
-import CardsLoader from "../_components/loaders/cards-loader";
-import RecentActivityLoader from "../_components/loaders/recent-activity-loader";
-import ReceiptDataList from "../_components/ReceiptDataList";
-import ReceiptLatestDataList from "../_components/ReceiptLatestDataList";
-import CardsCountList from "../_components/CardsCountsList";
-import TableLoader from "../_components/loaders/table-loader";
+import Pagination from "./Pagination";
+import CardsLoader from "./loaders/cards-loader";
+import RecentActivityLoader from "./loaders/recent-activity-loader";
+import ReceiptDataList from "./ReceiptDataList";
+import ReceiptLatestDataList from "./ReceiptLatestDataList";
+import CardsCountList from "./CardsCountsList";
+import TableLoader from "./loaders/table-loader";
 
 export default function Dashboard() {
   const { isAdmin, isAuthenticated, loadingData } = useAuth();
