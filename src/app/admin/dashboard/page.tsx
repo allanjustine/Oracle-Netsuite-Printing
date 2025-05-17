@@ -47,19 +47,21 @@ export default function AdminDashboard() {
   const [isBackToTop, setIsBackToTop] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if ((window as any).scrollY > 500) {
-        setIsBackToTop(true);
-      } else {
-        setIsBackToTop(false);
-      }
-    };
+    if (typeof window !== "undefined") {
+      const handleScroll = () => {
+        if (window.scrollY > 500) {
+          setIsBackToTop(true);
+        } else {
+          setIsBackToTop(false);
+        }
+      };
 
-    (window as any).addEventListener("scroll", handleScroll);
+      window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      (window as any).removeEventListener("scroll", handleScroll);
-    };
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
   }, []);
 
   if (loadingData) return <GlobalLoader />;
