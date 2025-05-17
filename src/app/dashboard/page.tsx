@@ -37,6 +37,8 @@ import FormattedSumTotalMinusLessVat from "@/utils/FormattedSumTotalMinusLessVat
 import FormattedSumTotal from "@/utils/FormattedSumTotal";
 import FormattedSumTotalLessVat from "@/utils/FormattedSumTotalLessVat";
 import FormattedLessWithHoldingTax from "@/utils/FormattedLessWithHoldingTax";
+import SubmitReprint from "@/components/modal/SubmitReprint";
+import { reprintDialogData } from "./_constants/reprintDialogData";
 
 export default function Page() {
   const { user } = useAuth();
@@ -78,6 +80,7 @@ export default function Page() {
   const modalRef = useRef<HTMLDivElement | null>(null);
   const buttonRefModal = useRef<HTMLButtonElement | null>(null);
   const [isAlreadyPrinted, setIsAlreadyPrinted] = useState(false);
+  const [isReprintDialog, setIsReprintDialog] = useState(reprintDialogData);
   const isCrOrMessageError =
     "You uploaded a Cash Sales Invoice/Sales Invoice, so you can't print a Collection Receipt/Official Receipt.";
   const isCsiSiMessageError =
@@ -156,6 +159,23 @@ export default function Page() {
       document.removeEventListener("mousedown", handleClickOutSide);
     };
   }, [buttonRefModal, modalRef]);
+
+  useEffect(() => {
+    const handleClickOutSide = (event: MouseEvent) => {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
+        setIsReprintDialog(reprintDialogData);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutSide);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutSide);
+    };
+  }, [modalRef]);
 
   useEffect(() => {
     const handleBackToTop = () => {
@@ -410,7 +430,9 @@ export default function Page() {
           FormattedSumTotalLessVat(excelData, rateInclusiveVat, 16, quantity)
         );
 
-        const totalAmountDueCrOrOr = FormattedNumber(excelData[1]?.[CR_AmountInFigures]);
+        const totalAmountDueCrOrOr = FormattedNumber(
+          excelData[1]?.[CR_AmountInFigures]
+        );
 
         const result = response?.data?.searching_if_exists;
 
@@ -427,7 +449,9 @@ export default function Page() {
         setFormInput({
           external_id: isPrintCr ? excelData[1][10] : excelData[1][27],
           print_by: `${user?.branchCode}-${user?.branchName}`,
-          total_amount_due: isPrintCr ? Number(totalAmountDueCrOrOr.replace(/,/g, "")) : Number(totalAmountDueFn.replace(/,/g, ""))
+          total_amount_due: isPrintCr
+            ? Number(totalAmountDueCrOrOr.replace(/,/g, ""))
+            : Number(totalAmountDueFn.replace(/,/g, "")),
         });
       } catch (error: any) {
         console.error(error);
@@ -557,6 +581,10 @@ export default function Page() {
           theme: "colored",
           transition: Bounce,
         });
+        setIsReprintDialog({
+          isOpen: true,
+          message: error.response.data.message,
+        });
       }
     } finally {
       setIsPrintLoading(false);
@@ -573,6 +601,10 @@ export default function Page() {
 
   const handleModal = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleClose = () => {
+    setIsReprintDialog(reprintDialogData);
   };
 
   if (isFetchingVersion) return <GlobalLoader />;
@@ -1143,6 +1175,12 @@ export default function Page() {
       </div>
       <BackToTop backToTop={backToTop} handleBackToTop={handleBackToTop} />
       <ContactAdmin isOpen={isOpen} onClose={handleModal} modalRef={modalRef} />
+      <SubmitReprint
+        isOpen={isReprintDialog.isOpen}
+        onClose={handleClose}
+        modalRef={modalRef}
+        message={isReprintDialog.message}
+      />
     </PrivateRoute>
   );
 }

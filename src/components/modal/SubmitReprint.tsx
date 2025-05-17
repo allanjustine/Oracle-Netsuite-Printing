@@ -1,12 +1,8 @@
 import { FaXmark } from "react-icons/fa6";
-import { MdLabelImportantOutline } from "react-icons/md";
-import Button from "../ui/button";
-import Label from "../ui/label";
-import Textarea from "../ui/textarea";
 import Link from "next/link";
-import { FaCode, FaCommentDots } from "react-icons/fa";
+import { FaCode, FaCommentDots, FaHistory } from "react-icons/fa";
 
-export default function ContactAdmin({ isOpen, onClose, modalRef }: any) {
+export default function SubmitReprint({ isOpen, onClose, modalRef, message }: any) {
   if (!isOpen) return;
 
   const contactAdmins: any = {
@@ -58,11 +54,16 @@ export default function ContactAdmin({ isOpen, onClose, modalRef }: any) {
           >
             <div className="px-6 pt-6 pb-2 border-b border-gray-100">
               <h4 className="text-lg font-semibold text-blue-500 flex items-center">
-                <FaCode className="w-5 h-5 mr-2" />
-                Contact Development Team
+                <FaHistory className="w-5 h-5 mr-2" />
+                {message}
               </h4>
-              <p className="text-sm text-gray-500 mt-1">
-                Get in touch with our developers
+              <p className="text-xl text-gray-500 mt-1">
+                For reprint requests, please contact the development team.
+              </p>
+              <p className="font-bold text-xl">
+                Please provide your{" "}
+                <span className="text-red-500 uppercase">reference number</span>{" "}
+                from the receipt when requesting a reprint.
               </p>
             </div>
 
@@ -89,9 +90,7 @@ export default function ContactAdmin({ isOpen, onClose, modalRef }: any) {
                         <h5 className="text-sm font-medium text-gray-900">
                           {item.name}
                         </h5>
-                        <p className="text-xs text-gray-500">
-                          {item.position}
-                        </p>
+                        <p className="text-xs text-gray-500">{item.position}</p>
                       </div>
                     </div>
                     <Link
