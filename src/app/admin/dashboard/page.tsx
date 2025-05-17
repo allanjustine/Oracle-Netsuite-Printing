@@ -45,23 +45,23 @@ export default function AdminDashboard() {
   } = useFetchPrintReceipts();
   const debounceRef = useRef<any>(null);
   const [isBackToTop, setIsBackToTop] = useState(false);
+  const [windowScrollY, setWindowScrollY] = useState(0);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      const handleScroll = () => {
-        if (window.scrollY > 500) {
-          setIsBackToTop(true);
-        } else {
-          setIsBackToTop(false);
-        }
-      };
+    const handleScroll = () => {
+      setWindowScrollY(window.scrollY);
+      if (windowScrollY > 500) {
+        setIsBackToTop(true);
+      } else {
+        setIsBackToTop(false);
+      }
+    };
 
-      window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   if (loadingData) return <GlobalLoader />;
