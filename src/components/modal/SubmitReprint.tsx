@@ -1,8 +1,23 @@
 import { FaXmark } from "react-icons/fa6";
 import Link from "next/link";
-import { FaCode, FaCommentDots, FaHistory } from "react-icons/fa";
+import {
+  FaArrowUp,
+  FaCheck,
+  FaCommentDots,
+  FaCopy,
+  FaHistory,
+} from "react-icons/fa";
+import { useState } from "react";
 
-export default function SubmitReprint({ isOpen, onClose, modalRef, message }: any) {
+export default function SubmitReprint({
+  isOpen,
+  onClose,
+  modalRef,
+  message,
+  isShowIndicator,
+  setIsShowIndicator
+}: any) {
+  const [isCopied, setIsCopied] = useState(false);
   if (!isOpen) return;
 
   const contactAdmins: any = {
@@ -34,6 +49,19 @@ export default function SubmitReprint({ isOpen, onClose, modalRef, message }: an
     ],
   };
 
+  const splittedMessage = message.split(" ");
+
+  const handleCopyText = (word: string) => (): void => {
+    if (!word) return;
+    navigator.clipboard.writeText(word);
+    setIsCopied(true);
+    setIsShowIndicator(false);
+
+    setTimeout(() => {
+      setIsCopied(false);
+    }, 3000);
+  };
+
   return (
     <div className="fixed z-50 inset-0 overflow-y-auto">
       <div className="grid items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
@@ -53,9 +81,51 @@ export default function SubmitReprint({ isOpen, onClose, modalRef, message }: an
             ref={modalRef}
           >
             <div className="px-6 pt-6 pb-2 border-b border-gray-100">
-              <h4 className="text-lg font-semibold text-blue-500 flex items-center">
-                <FaHistory className="w-5 h-5 mr-2" />
-                {message}
+              <h4 className="text-lg font-semibold text-blue-500 flex gap-1 items-center">
+                <FaHistory className="w-10 h-10 mr-2" />
+                <span>
+                  {splittedMessage.map((word: string, index: number) =>
+                    ["INV", "CustPay", "CS", "CSDEP"].some((key) =>
+                      word.includes(key)
+                    ) ? (
+                      <span key={index} className="relative">
+                        <span
+                          className="font-bold text-red-500 text-lg"
+                          key={index}
+                        >
+                          REFERENCE #: {word}
+                        </span>{" "}
+                        <button
+                          type="button"
+                          onClick={handleCopyText(word)}
+                          title="Copy Reference Number"
+                        >
+                          {isCopied ? (
+                            <span className="text-green-500 flex gap-1 text-xs items-center">
+                              <FaCheck /> <span>copied.</span>
+                            </span>
+                          ) : (
+                            <FaCopy className="text-gray-500" />
+                          )}
+                        </button>
+                        {isShowIndicator && (
+                          <span className="absolute top-5 w-full text-center text-[11px] z-[100] left-[123px] p-1 rounded bg-black/30">
+                            <span className="flex items-center justify-center animate-bounce">
+                              <FaArrowUp className="text-white w-4 h-4" />
+                            </span>
+                            <span className="text-white">
+                              You can copy your reference number here
+                            </span>
+                          </span>
+                        )}
+                      </span>
+                    ) : (
+                      <span key={index} className="capitalize">
+                        {word}&nbsp;
+                      </span>
+                    )
+                  )}
+                </span>
               </h4>
               <p className="text-xl text-gray-500 mt-1">
                 For reprint requests, please contact the development team.
@@ -63,7 +133,8 @@ export default function SubmitReprint({ isOpen, onClose, modalRef, message }: an
               <p className="font-bold text-xl">
                 Please provide your{" "}
                 <span className="text-red-500 uppercase">reference number</span>{" "}
-                from the receipt when requesting a reprint.
+                from the excel file when requesting a reprint. You can see your
+                reference number above.
               </p>
             </div>
 

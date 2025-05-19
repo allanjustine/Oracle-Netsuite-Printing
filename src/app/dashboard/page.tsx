@@ -81,6 +81,7 @@ export default function Page() {
   const buttonRefModal = useRef<HTMLButtonElement | null>(null);
   const [isAlreadyPrinted, setIsAlreadyPrinted] = useState(false);
   const [isReprintDialog, setIsReprintDialog] = useState(reprintDialogData);
+  const [isShowIndicator, setIsShowIndicator] = useState(true);
   const isCrOrMessageError =
     "You uploaded a Cash Sales Invoice/Sales Invoice, so you can't print a Collection Receipt/Official Receipt.";
   const isCsiSiMessageError =
@@ -167,6 +168,7 @@ export default function Page() {
         !modalRef.current.contains(event.target as Node)
       ) {
         setIsReprintDialog(reprintDialogData);
+        setIsShowIndicator(true);
       }
     };
 
@@ -194,18 +196,17 @@ export default function Page() {
   }, []);
 
   useEffect(() => {
-    if (isLoading) {
-      const handleBeforeUnload = (event: BeforeUnloadEvent) => {
-        event.preventDefault();
-        event.returnValue = "";
-      };
+    if (!isLoading) return;
+    const handleBeforeUnload = (event: BeforeUnloadEvent) => {
+      event.preventDefault();
+      event.returnValue = "";
+    };
 
-      window.addEventListener("beforeunload", handleBeforeUnload);
+    window.addEventListener("beforeunload", handleBeforeUnload);
 
-      return () => {
-        window.removeEventListener("beforeunload", handleBeforeUnload);
-      };
-    }
+    return () => {
+      window.removeEventListener("beforeunload", handleBeforeUnload);
+    };
   }, [isLoading]);
 
   useEffect(() => {
@@ -316,11 +317,11 @@ export default function Page() {
             printWindow.print();
           }, 50);
         }
-      };
 
-      printWindow.onafterprint = () => {
-        printWindow.close();
-        handlePrintCount();
+        printWindow.onafterprint = () => {
+          printWindow.close();
+          handlePrintCount();
+        };
       };
     }
   };
@@ -585,6 +586,7 @@ export default function Page() {
           isOpen: true,
           message: error.response.data.message,
         });
+        setIsShowIndicator(true);
       }
     } finally {
       setIsPrintLoading(false);
@@ -605,6 +607,7 @@ export default function Page() {
 
   const handleClose = () => {
     setIsReprintDialog(reprintDialogData);
+    setIsShowIndicator(true);
   };
 
   if (isFetchingVersion) return <GlobalLoader />;
@@ -1180,6 +1183,8 @@ export default function Page() {
         onClose={handleClose}
         modalRef={modalRef}
         message={isReprintDialog.message}
+        setIsShowIndicator={setIsShowIndicator}
+        isShowIndicator={isShowIndicator}
       />
     </PrivateRoute>
   );
