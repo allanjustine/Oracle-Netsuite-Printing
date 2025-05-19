@@ -15,7 +15,7 @@ export default function SubmitReprint({
   modalRef,
   message,
   isShowIndicator,
-  setIsShowIndicator
+  setIsShowIndicator,
 }: any) {
   const [isCopied, setIsCopied] = useState(false);
   if (!isOpen) return;
@@ -90,8 +90,9 @@ export default function SubmitReprint({
                     ) ? (
                       <span key={index} className="relative">
                         <span
-                          className="font-bold text-red-500 text-lg"
+                          className="font-bold text-red-500 cursor-pointer text-lg"
                           key={index}
+                          onClick={handleCopyText(word)}
                         >
                           REFERENCE #: {word}
                         </span>{" "}

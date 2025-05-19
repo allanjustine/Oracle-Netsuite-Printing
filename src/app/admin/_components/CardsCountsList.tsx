@@ -1,4 +1,5 @@
 import {
+  FaArrowDown,
   FaArrowUp,
   FaCalendarDay,
   FaCalendarWeek,
@@ -50,7 +51,11 @@ export default function CardsCountList({ receiptRecords }: any) {
               : "text-green-500"
           }`}
         >
-          <FaArrowUp className="mr-1" />
+          {receiptRecords.todaysPercentage < 100 ? (
+            <FaArrowDown className="mr-1" />
+          ) : (
+            <FaArrowUp className="mr-1" />
+          )}
           <span className="text-sm">
             {receiptRecords.todaysPercentage}% from yesterday
           </span>
@@ -80,7 +85,11 @@ export default function CardsCountList({ receiptRecords }: any) {
               : "text-green-500"
           }`}
         >
-          <FaArrowUp className="mr-1" />
+          {receiptRecords.weeklyPercentage < 100 ? (
+            <FaArrowDown className="mr-1" />
+          ) : (
+            <FaArrowUp className="mr-1" />
+          )}
           <span className="text-sm">
             {receiptRecords.weeklyPercentage}% from last week
           </span>
@@ -110,7 +119,11 @@ export default function CardsCountList({ receiptRecords }: any) {
               : "text-green-500"
           }`}
         >
-          <FaArrowUp className="mr-1" />
+          {receiptRecords.monthlyPercentage < 100 ? (
+            <FaArrowDown className="mr-1" />
+          ) : (
+            <FaArrowUp className="mr-1" />
+          )}
           <span className="text-sm">
             {receiptRecords.monthlyPercentage}% from last month
           </span>
