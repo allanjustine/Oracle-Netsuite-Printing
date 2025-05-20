@@ -51,7 +51,7 @@ export default function CardsCountList({ receiptRecords }: any) {
               : "text-green-500"
           }`}
         >
-          {receiptRecords.todaysPercentage < 100 ? (
+          {receiptRecords.todaysPercentage < 0 ? (
             <FaArrowDown className="mr-1" />
           ) : (
             <FaArrowUp className="mr-1" />
@@ -85,7 +85,7 @@ export default function CardsCountList({ receiptRecords }: any) {
               : "text-green-500"
           }`}
         >
-          {receiptRecords.weeklyPercentage < 100 ? (
+          {receiptRecords.weeklyPercentage < 0 ? (
             <FaArrowDown className="mr-1" />
           ) : (
             <FaArrowUp className="mr-1" />
@@ -119,7 +119,7 @@ export default function CardsCountList({ receiptRecords }: any) {
               : "text-green-500"
           }`}
         >
-          {receiptRecords.monthlyPercentage < 100 ? (
+          {receiptRecords.monthlyPercentage < 0 ? (
             <FaArrowDown className="mr-1" />
           ) : (
             <FaArrowUp className="mr-1" />
