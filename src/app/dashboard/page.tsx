@@ -6,6 +6,7 @@ import {
   FaCheckDouble,
   FaCircleNotch,
   FaExclamationTriangle,
+  FaEye,
   FaMinus,
   FaPlus,
   FaPrint,
@@ -39,6 +40,9 @@ import FormattedSumTotalLessVat from "@/utils/FormattedSumTotalLessVat";
 import FormattedLessWithHoldingTax from "@/utils/FormattedLessWithHoldingTax";
 import SubmitReprint from "@/components/modal/SubmitReprint";
 import { reprintDialogData } from "./_constants/reprintDialogData";
+import PreviewOrCr from "@/components/PreviewOrCr";
+import Modal from "@/components/ui/modal";
+import PreviewSiCsi from "@/components/PreviewSiCsi";
 
 export default function Page() {
   const { user } = useAuth();
@@ -82,6 +86,8 @@ export default function Page() {
   const [isAlreadyPrinted, setIsAlreadyPrinted] = useState(false);
   const [isReprintDialog, setIsReprintDialog] = useState(reprintDialogData);
   const [isShowIndicator, setIsShowIndicator] = useState(true);
+  const [isPreview, setIsPreview] = useState(false);
+  const [isReadyPrint, setIsReadyPrint] = useState(false);
   const isCrOrMessageError =
     "You uploaded a Cash Sales Invoice/Sales Invoice, so you can't print a Collection Receipt/Official Receipt.";
   const isCsiSiMessageError =
@@ -467,6 +473,8 @@ export default function Page() {
     if (!file) return;
 
     setProgress(0);
+    setIsPreview(false);
+    setIsReadyPrint(false);
     const fileName = file.name;
 
     const fileSize = FormatFileSize(file.size);
@@ -522,6 +530,8 @@ export default function Page() {
     setIsFileUploaded(false);
     setProgress(0);
     setFormInput(PrintData);
+    setIsPreview(false);
+    setIsReadyPrint(false);
   };
   const handleCancelUpload = () => {
     setExcelData([]);
@@ -533,6 +543,8 @@ export default function Page() {
     setIsLoading(false);
     setProgress(0);
     setFormInput(PrintData);
+    setIsPreview(false);
+    setIsReadyPrint(false);
   };
 
   const handleUploadFile = () => {
@@ -598,6 +610,8 @@ export default function Page() {
       setIsFileUploaded(false);
       setProgress(0);
       setFormInput(PrintData);
+      setIsPreview(false);
+      setIsReadyPrint(false);
     }
   };
 
@@ -623,6 +637,16 @@ export default function Page() {
         />
       </>
     );
+
+  const handlePreview = () => {
+    setIsPreview(!isPreview);
+  };
+
+  const handleGoPrint = () => {
+    setIsReadyPrint(true);
+    setIsPreview(false);
+    toggleDropdown();
+  };
 
   return (
     <PrivateRoute handleModal={handleModal} buttonRefModal={buttonRefModal}>
@@ -817,14 +841,24 @@ export default function Page() {
         >
           {isFileUploaded && (
             <>
-              <div>
+              <div className="flex gap-3 items-center">
+                {!isReadyPrint && (
+                  <button
+                    type="button"
+                    onClick={handlePreview}
+                    className="font-semibold flex gap-2 items-center"
+                  >
+                    <FaEye size={20} color="#333" /> <span>Preview</span>
+                  </button>
+                )}
                 <button
                   type="button"
+                  disabled={!isReadyPrint}
                   ref={buttonRef}
                   onClick={toggleDropdown}
                   className={`flex items-center gap-2 font-semibold ${
                     isLoading && "opacity-0"
-                  }`}
+                  } ${!isReadyPrint && "cursor-not-allowed opacity-50"}`}
                 >
                   {checkingVersionLoading ? (
                     <>
@@ -1186,6 +1220,17 @@ export default function Page() {
         setIsShowIndicator={setIsShowIndicator}
         isShowIndicator={isShowIndicator}
       />
+      <Modal
+        isOpen={isPreview}
+        onClose={handlePreview}
+        handleGoPrint={handleGoPrint}
+      >
+        {isPrintCr ? (
+          <PreviewOrCr data={excelData} />
+        ) : (
+          <PreviewSiCsi data={excelData} />
+        )}
+      </Modal>
     </PrivateRoute>
   );
 }
