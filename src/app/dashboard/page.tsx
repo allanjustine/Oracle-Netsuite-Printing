@@ -835,7 +835,7 @@ export default function Page() {
           ></div>
         </div>
         <div
-          className={`w-full flex justify-end pr-5 ${
+          className={`w-full flex justify-end relative pr-5 ${
             isFileUploaded ? "py-2" : "py-4"
           } my-5 bg-[#dfe4eb]`}
         >
@@ -851,30 +851,50 @@ export default function Page() {
                     <FaEye size={20} color="#333" /> <span>Preview</span>
                   </button>
                 )}
-                <button
-                  type="button"
-                  disabled={!isReadyPrint}
-                  ref={buttonRef}
-                  onClick={toggleDropdown}
-                  className={`flex items-center gap-2 font-semibold ${
-                    isLoading && "opacity-0"
-                  } ${!isReadyPrint && "cursor-not-allowed opacity-50"}`}
-                >
-                  {checkingVersionLoading ? (
+                <div className="group">
+                  <button
+                    type="button"
+                    disabled={!isReadyPrint}
+                    ref={buttonRef}
+                    onClick={toggleDropdown}
+                    className={`flex items-center gap-2 font-semibold ${
+                      isLoading && "opacity-0"
+                    } ${!isReadyPrint && "cursor-not-allowed opacity-50"}`}
+                    title={`${
+                      isReadyPrint
+                        ? "Print Now"
+                        : "Please Preview First to Proceed"
+                    }`}
+                  >
+                    {checkingVersionLoading ? (
+                      <>
+                        <FaCircleNotch
+                          className="animate-spin"
+                          size={20}
+                          color="#333"
+                        />{" "}
+                        Checking Version...
+                      </>
+                    ) : (
+                      <>
+                        <FaPrint size={20} color="#333" /> Print Now
+                      </>
+                    )}
+                  </button>
+
+                  {!isReadyPrint && (
                     <>
-                      <FaCircleNotch
-                        className="animate-spin"
-                        size={20}
-                        color="#333"
-                      />{" "}
-                      Checking Version...
-                    </>
-                  ) : (
-                    <>
-                      <FaPrint size={20} color="#333" /> Print Now
+                      <span className="group-hover:opacity-100 text-sm scale-90 group-hover:scale-100 opacity-0 transition-all duration-300 ease-in-out absolute bottom-10 z-50 right-0 bg-gray-900 px-2 py-1 text-white rounded">
+                        Please Preview First to Proceed
+                      </span>
+                      <span
+                        className="w-0 h-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-300 ease-in-out absolute bottom-8 right-16 rotate-180 z-50 opacity-0
+            border-l-8 border-r-8 border-b-8 
+            border-l-transparent border-r-transparent border-b-black"
+                      ></span>
                     </>
                   )}
-                </button>
+                </div>
               </div>
               {isDropdownOpen && (
                 <div
