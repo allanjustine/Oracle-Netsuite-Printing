@@ -24,25 +24,25 @@ export default function SubmitReprint({
     admins: [
       {
         name: "Dev_Macmac",
-        link: "https://chat.smctgroup.ph/direct/9rSGAuSQvW7LY7uxQQftTyPFraEgBtS8u9",
+        link: "https://chat.smctgroup.ph/direct/Dev_Macmac",
         profile_picture: "https://chat.smctgroup.ph/avatar/Dev_Macmac",
         position: "Junior Web Developer",
       },
       {
         name: "Dev_Allan-J",
-        link: "https://chat.smctgroup.ph/direct/9rSGAuSQvW7LY7uxQgR7v7bvZDtwJLZudt",
+        link: "https://chat.smctgroup.ph/direct/Dev_Allan-J",
         profile_picture: "https://chat.smctgroup.ph/avatar/Dev_Allan-J",
         position: "Web Developer",
       },
       {
         name: "dev_jenecil",
-        link: "https://chat.smctgroup.ph/direct/9rSGAuSQvW7LY7uxQgR7v7bvZDtwJLZudt",
+        link: "https://chat.smctgroup.ph/direct/dev_jenecil",
         profile_picture: "https://chat.smctgroup.ph/avatar/dev_jenecil",
         position: "Web Developer",
       },
       {
         name: "dev_zart",
-        link: "https://chat.smctgroup.ph/direct/9rSGAuSQvW7LY7uxQk87qvZewTK4mnjHah",
+        link: "https://chat.smctgroup.ph/direct/dev_zart",
         profile_picture: "https://chat.smctgroup.ph/avatar/dev_zart",
         position: "Frontend Developer",
       },

@@ -887,11 +887,7 @@ export default function Page() {
                       <span className="group-hover:opacity-100 text-sm scale-90 group-hover:scale-100 opacity-0 transition-all duration-300 ease-in-out absolute bottom-10 z-50 right-0 bg-gray-900 px-2 py-1 text-white rounded">
                         Please Preview First to Proceed
                       </span>
-                      <span
-                        className="w-0 h-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-300 ease-in-out absolute bottom-8 right-16 rotate-180 z-50 opacity-0
-            border-l-8 border-r-8 border-b-8 
-            border-l-transparent border-r-transparent border-b-black"
-                      ></span>
+                      <span className="w-0 h-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-300 ease-in-out absolute bottom-8 right-16 rotate-180 z-50 opacity-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-black"></span>
                     </>
                   )}
                 </div>
