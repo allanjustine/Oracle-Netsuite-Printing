@@ -121,7 +121,7 @@ export default function SubmitReprint({
                         )}
                       </span>
                     ) : (
-                      <span key={index} className="capitalize">
+                      <span key={index} className="uppercase">
                         {word}&nbsp;
                       </span>
                     )
