@@ -135,6 +135,7 @@ import HdBalamban from "@/utils/salesinvoice/global/fdl/new/hd/Balamban";
 import DAPSanMiguel from "@/utils/salesinvoice/global/fdl/old/dap/DAPSanMiguel";
 import OroquietaNew from "@/utils/salesinvoice/global/fdl/new/hd/OroquietaNew";
 import Gingoog from "@/utils/salesinvoice/global/fdl/new/dsm/Gingoog";
+import DAPIliganNew from "@/utils/salesinvoice/global/fdl/old/dap/DAPIliganNew";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -233,7 +234,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "INAB",
   ];
 
-  const fdlSiOldSizeData = ["NUND2", "DAPI", "TANZ", "BONI", "VITA","ILID"];
+  const fdlSiOldSizeData = ["NUND2", "DAPI", "TANZ", "BONI", "VITA"];
 
   // OBBUS
   const obbusCsiNewSizeData = [];
@@ -342,8 +343,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <MandaueY3s data={data} />;
     case "BALD" === user?.branchCode:
       return <DAPBalingasag data={data} />;
-    // case "ILID" === user?.branchCode:
-    //   return <DAPIligan data={data} />;
+    case "ILID" === user?.branchCode:
+       return <DAPIliganNew data={data} />;
     case "BAYU" === user?.branchCode:
       return <DSMBayugan data={data} />;
     case "NORZA" === user?.branchCode:
