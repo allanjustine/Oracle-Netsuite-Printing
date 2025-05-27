@@ -147,7 +147,7 @@ const DAPIliganNew = ({ data }: any) => {
           {data[1]?.[businessStyle] || ""}
         </p>
       </div>
-      <div className="mx-[34.393700787px] mt-[11.716535433px] h-[318.23622047px]">
+      <div className="mx-[34.393700787px] mt-[26.834645669px] h-[318.23622047px]">
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
@@ -326,7 +326,7 @@ const DAPIliganNew = ({ data }: any) => {
         </table>
       </div>
       <div className="mx-[34.393700787px]">
-        <div className="mt-[29.456692914px] ml-[332.976377952px]">
+        <div className="mt-[10.559055118px] ml-[332.976377952px]">
           <p className="text-xs text-center">
             {data[1]?.[cashier]
               ?.replace(/Ã/g, "Ñ")
