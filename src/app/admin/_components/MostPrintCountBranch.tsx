@@ -1,4 +1,5 @@
 import { formatDistanceToNowStrict } from "date-fns";
+import { use, useEffect, useState } from "react";
 import {
   Fa0,
   Fa1,
@@ -13,13 +14,33 @@ import {
 } from "react-icons/fa6";
 
 export default function MostPrintCountBranch({ record, index }: any) {
+  const [item, setItem] = useState(0);
+  const [pulse, setPulse] = useState(true);
   const randomColor = [
     "bg-red-500",
     "bg-blue-500",
     "bg-yellow-500",
     "bg-violet-500",
     "bg-green-500",
+    "bg-cyan-500",
+    "bg-gray-500",
+    "bg-black",
+    "bg-indigo-500",
+    "bg-yellow-700",
   ];
+
+  useEffect(() => {
+    setInterval(() => {
+      setItem(Math.floor(Math.random() * 9));
+      setPulse(true);
+    }, 2000);
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setPulse(false);
+    }, 500);
+  }, [pulse]);
 
   const icon = [
     <Fa1 key="1" />,
@@ -41,9 +62,9 @@ export default function MostPrintCountBranch({ record, index }: any) {
     <div className="flex">
       <div className="flex-shrink-0 mr-3">
         <div
-          className={`w-10 h-10 rounded-full flex items-center justify-center text-white ${
-            randomColor[index % 5]
-          }`}
+          className={`w-10 h-10 rounded-full flex items-center justify-center text-white transition-all duration-300 ease-in-out ${
+            randomColor[item]
+          } ${pulse && "animate-bounce"}`}
         >
           {icon[index]}
         </div>

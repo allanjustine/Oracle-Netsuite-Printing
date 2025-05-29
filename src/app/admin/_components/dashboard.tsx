@@ -154,7 +154,7 @@ export default function Dashboard() {
           )}
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 px-6">
-          <div className="lg:col-span-2 bg-white rounded-lg shadow p-6">
+          <div className="lg:col-span-2 bg-white rounded-lg shadow p-6 h-fit">
             <div className="flex items-center mb-6">
               <FaList className="text-accent mr-2" />
               <h3 className="text-xl font-semibold text-primarydark">
