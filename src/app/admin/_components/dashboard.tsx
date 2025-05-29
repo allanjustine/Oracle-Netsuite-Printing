@@ -8,10 +8,11 @@ import {
   FaArrowUp,
   FaHistory,
   FaList,
+  FaSortNumericUp,
 } from "react-icons/fa";
 import NotLogin from "./NotLogin";
 import Unauthorized from "./Unauthorized";
-import { FaMagnifyingGlass } from "react-icons/fa6";
+import { FaMagnifyingGlass, FaRepeat } from "react-icons/fa6";
 import { useEffect, useRef, useState } from "react";
 import Pagination from "./Pagination";
 import CardsLoader from "./loaders/cards-loader";
@@ -20,6 +21,7 @@ import ReceiptDataList from "./ReceiptDataList";
 import ReceiptLatestDataList from "./ReceiptLatestDataList";
 import CardsCountList from "./CardsCountsList";
 import TableLoader from "./loaders/table-loader";
+import MostPrintCountBranch from "./MostPrintCountBranch";
 
 export default function Dashboard() {
   const { isAdmin, isAuthenticated, loadingData } = useAuth();
@@ -43,6 +45,22 @@ export default function Dashboard() {
   } = useFetchPrintReceipts();
   const debounceRef = useRef<any>(null);
   const [isBackToTop, setIsBackToTop] = useState(false);
+  const [isReverse, setIsReverse] = useState(false);
+  const [isClick, setIsClick] = useState(false);
+
+  useEffect(() => {
+    const handleClick = () => {
+      setTimeout(() => {
+        setIsClick(false);
+      }, 100);
+    };
+
+    window.addEventListener("mouseup", handleClick);
+
+    return () => {
+      window.removeEventListener("mouseup", handleClick);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -103,6 +121,14 @@ export default function Dashboard() {
 
   const handleBackToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleReverseCard = () => {
+    setIsReverse(!isReverse);
+  };
+
+  const handleClick = () => {
+    setIsClick(true);
   };
 
   return (
@@ -234,29 +260,74 @@ export default function Dashboard() {
               )}
             </div>
           </div>
-          <div>
-            <div className="bg-white rounded-lg shadow p-6">
-              <div className="flex items-center mb-6">
-                <i className="fas fa-bell text-accent mr-2" />
-                <h3 className="text-xl font-semibold text-primarydark flex gap-1 items-center">
-                  <FaHistory className="mr-1" />{" "}
-                  <span>Recent Print Activity</span>
-                </h3>
-              </div>
-              <div className="space-y-4">
-                {loading ? (
-                  <RecentActivityLoader />
-                ) : receiptRecords.latestData?.length > 0 ? (
-                  receiptRecords.latestData?.map(
-                    (record: any, index: number) => (
-                      <ReceiptLatestDataList key={index} record={record} />
+          <div className="rounded-lg">
+            <button
+              type="button"
+              onMouseDown={handleClick}
+              onClick={handleReverseCard}
+              className="bg-gray-200 hover:bg-gray-300 w-full p-2 rounded-md flex justify-center mb-2"
+            >
+              <FaRepeat
+                className={`transition-all duration-300 ease-in-out ${
+                  isClick ? "-rotate-45" : "rotate-90"
+                }`}
+              />
+            </button>
+            <div
+              className={`flex transition-all duration-300 ease-in-out ${
+                isReverse ? "flex-col-reverse" : "flex-col"
+              }
+              ${isClick ? "scale-0" : "scale-100"}`}
+            >
+              <div className="bg-white rounded-lg shadow p-6 mb-5">
+                <div className="flex items-center mb-6">
+                  <h3 className="text-xl font-semibold text-primarydark flex gap-1 items-center">
+                    <FaHistory className="mr-1" />{" "}
+                    <span>Recent Print Activity</span>
+                  </h3>
+                </div>
+                <div className="space-y-4">
+                  {loading ? (
+                    <RecentActivityLoader />
+                  ) : receiptRecords.latestData?.length > 0 ? (
+                    receiptRecords.latestData?.map(
+                      (record: any, index: number) => (
+                        <ReceiptLatestDataList key={index} record={record} />
+                      )
                     )
-                  )
-                ) : (
-                  <p className="text-gray-400 text-center">
-                    No print activity yet
-                  </p>
-                )}
+                  ) : (
+                    <p className="text-gray-400 text-center">
+                      No print activity yet
+                    </p>
+                  )}
+                </div>
+              </div>
+              <div className="bg-white rounded-lg shadow p-6 mb-5">
+                <div className="flex items-center mb-6">
+                  <h3 className="text-xl font-semibold text-primarydark flex gap-1 items-center">
+                    <FaSortNumericUp className="mr-1" />{" "}
+                    <span>Most Print Count</span>
+                  </h3>
+                </div>
+                <div className="space-y-4">
+                  {loading ? (
+                    <RecentActivityLoader />
+                  ) : receiptRecords.mostPrintCountBranch?.length > 0 ? (
+                    receiptRecords.mostPrintCountBranch?.map(
+                      (record: any, index: number) => (
+                        <MostPrintCountBranch
+                          key={index}
+                          record={record}
+                          index={index}
+                        />
+                      )
+                    )
+                  ) : (
+                    <p className="text-gray-400 text-center">
+                      No print activity yet
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
           </div>

@@ -51,9 +51,15 @@ export default function useFetchPrintReceipts() {
             weeklyCount: response?.data?.weekly_receipts_count,
             monthlyCount: response?.data?.monthly_receipts_count,
             totalBranchPrintRecords: response?.data?.total_branch_print_records,
-            todaysPercentage: Number(response?.data?.todays_percentage.replace(/,/g, "")),
-            monthlyPercentage: Number(response?.data?.monthly_percentage.replace(/,/g, "")),
-            weeklyPercentage: Number(response?.data?.weekly_percentage.replace(/,/g, "")),
+            todaysPercentage: Number(
+              response?.data?.todays_percentage.replace(/,/g, "")
+            ),
+            monthlyPercentage: Number(
+              response?.data?.monthly_percentage.replace(/,/g, "")
+            ),
+            weeklyPercentage: Number(
+              response?.data?.weekly_percentage.replace(/,/g, "")
+            ),
             searchingIfExists: response?.data?.searching_if_exists,
             totalInvoice: response?.data?.total_invoice,
             totalCustPay: response?.data?.total_cust_pay,
@@ -64,6 +70,7 @@ export default function useFetchPrintReceipts() {
             sumInvoice: response?.data?.sum_invoice,
             sumCustPay: response?.data?.sum_cust_pay,
             sumToday: response?.data?.todays_total_amount_due,
+            mostPrintCountBranch: response?.data?.most_print_count_branch,
           });
 
           setPagination({

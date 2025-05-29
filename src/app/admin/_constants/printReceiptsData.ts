@@ -19,6 +19,7 @@ export const printReceiptsData = {
   sumInvoice: 0,
   sumCustPay: 0,
   sumToday: 0,
+  mostPrintCountBranch: [],
 };
 
 export const receiptRecords = {
