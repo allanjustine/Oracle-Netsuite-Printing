@@ -136,7 +136,7 @@ export default function Dashboard() {
       <button
         type="button"
         onClick={handleBackToTop}
-        className={`p-2 rounded-full fixed bg-blue-400 hover:bg-blue-500 text-white transition-all duration-300 ease-in-out ${
+        className={`p-2 rounded-full fixed bg-blue-400 hover:bg-blue-500 text-white transition-all duration-300 z-50 ease-in-out ${
           isBackToTop
             ? "bottom-4 right-6 opacity-1"
             : "-bottom-10 opacity-0 right-1"
