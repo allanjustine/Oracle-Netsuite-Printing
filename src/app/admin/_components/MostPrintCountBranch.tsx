@@ -22,19 +22,19 @@ export default function MostPrintCountBranch({ record, index }: any) {
   ];
 
   const icon = [
-    <Fa1 />,
-    <Fa2 />,
-    <Fa3 />,
-    <Fa4 />,
-    <Fa5 />,
-    <Fa6 />,
-    <Fa7 />,
-    <Fa8 />,
-    <Fa9 />,
-    <>
+    <Fa1 key="1" />,
+    <Fa2 key="2" />,
+    <Fa3 key="3" />,
+    <Fa4 key="4" />,
+    <Fa5 key="5" />,
+    <Fa6 key="6" />,
+    <Fa7 key="7" />,
+    <Fa8 key="8" />,
+    <Fa9 key="9" />,
+    <span key="10">
       <Fa1 />
       <Fa0 />
-    </>,
+    </span>,
   ];
 
   return (
