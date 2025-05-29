@@ -31,7 +31,7 @@ export default function MostPrintCountBranch({ record, index }: any) {
     <Fa7 key="7" />,
     <Fa8 key="8" />,
     <Fa9 key="9" />,
-    <span key="10">
+    <span key="10" className="flex">
       <Fa1 />
       <Fa0 />
     </span>,
