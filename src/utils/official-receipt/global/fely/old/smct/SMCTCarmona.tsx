@@ -61,7 +61,7 @@ const SMCTCarmona = ({ data }: any) => {
             )}
           </p>
         </div>
-    <div className={`w-[274.01574803px] ml-[118.28346457px] ${data[1]?.[CR_Memo].length > 28 ? "text-[10px]" : ""}`}>
+    <div className={`w-[274.01574803px] ml-[105.28346457px] ${data[1]?.[CR_Memo].length > 28 ? "text-[10px]" : ""}`}>
           <p>
             {data[1]?.[CR_Memo].substring(0, 35) || (
               <span className="opacity-0">No data</span>
