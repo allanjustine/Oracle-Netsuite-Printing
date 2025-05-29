@@ -1,5 +1,6 @@
 "use client";
 import { PrintPageProps } from "@/types/types";
+import enyeFormat from "@/utils/enyeFormat";
 import FormattedAmountDue from "@/utils/FormattedAmountDue";
 import FormattedLessWithHoldingTax from "@/utils/FormattedLessWithHoldingTax";
 import FormattedNumber from "@/utils/FormattedNumber";
@@ -136,9 +137,9 @@ const HdDipolog: React.FC<PrintPageProps> = ({ data }) => {
         <p
           className={`w-full pl-[94.488188976px] ${
             data[1]?.[billingAddress]?.length > 90 ? "text-[9px]" : ""
-          }`}
+            }`}
         >
-          {data[1]?.[billingAddress] || (
+          {enyeFormat(data[1]?.[billingAddress]) || (
             <span className="opacity-0">No Data</span>
           )}
         </p>
@@ -165,7 +166,7 @@ const HdDipolog: React.FC<PrintPageProps> = ({ data }) => {
                 <td
                   className={`w-[231.30708661px] h-[18.275590551px] text-start ${
                     row[articles]?.length > 41 ? "text-[10px]" : ""
-                  }`}
+                    }`}
                 >
                   {row[articles]}
                 </td>
@@ -185,7 +186,7 @@ const HdDipolog: React.FC<PrintPageProps> = ({ data }) => {
                 <td
                   className={`w-[231.30708661px] h-[18.275590551px] text-start ${
                     data[1]?.[serialNumber]?.length > 20 ? "text-[10px]" : ""
-                  }`}
+                    }`}
                 >
                   {data[1]?.[serialNumber] && data[1]?.[chassisNumber] ? (
                     <>Engine #: {data[1]?.[serialNumber]}</>
@@ -204,7 +205,7 @@ const HdDipolog: React.FC<PrintPageProps> = ({ data }) => {
                 <td
                   className={`w-[231.30708661px] h-[18.275590551px] text-start ${
                     data[1]?.[chassisNumber]?.length > 20 ? "text-[10px]" : ""
-                  }`}
+                    }`}
                 >
                   {data[1]?.[chassisNumber] && (
                     <>Chassis #: {data[1]?.[chassisNumber]}</>
@@ -221,9 +222,9 @@ const HdDipolog: React.FC<PrintPageProps> = ({ data }) => {
                 <td
                   className={`w-[231.30708661px] h-[18.275590551px] text-start ${
                     data[1]?.[conductionSticker]?.length > 20
-                      ? "text-[10px]"
-                      : ""
-                  }`}
+                    ? "text-[10px]"
+                    : ""
+                    }`}
                 >
                   {data[1]?.[conductionSticker] && (
                     <>Conduction Sticker: {data[1]?.[conductionSticker]}</>
@@ -240,7 +241,7 @@ const HdDipolog: React.FC<PrintPageProps> = ({ data }) => {
                 <td
                   className={`w-[231.30708661px] h-[18.275590551px] text-start ${
                     data[1]?.[color]?.length > 20 ? "text-[10px]" : ""
-                  }`}
+                    }`}
                 >
                   {data[1]?.[color] && <>Color: {data[1]?.[color]}</>}
                 </td>
