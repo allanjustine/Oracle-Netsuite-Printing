@@ -1,6 +1,4 @@
-import FormattedNumber from "@/utils/FormattedNumber";
 import { formatDistanceToNowStrict } from "date-fns";
-import { FaCheck } from "react-icons/fa";
 import {
   Fa0,
   Fa1,
@@ -12,8 +10,6 @@ import {
   Fa7,
   Fa8,
   Fa9,
-  FaPesoSign,
-  FaX,
 } from "react-icons/fa6";
 
 export default function MostPrintCountBranch({ record, index }: any) {
