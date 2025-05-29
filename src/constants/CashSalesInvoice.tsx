@@ -135,6 +135,7 @@ import HdBalamban from "@/utils/salesinvoice/global/fdl/new/hd/Balamban";
 import DAPSanMiguel from "@/utils/salesinvoice/global/fdl/old/dap/DAPSanMiguel";
 import OroquietaNew from "@/utils/salesinvoice/global/fdl/new/hd/OroquietaNew";
 import Gingoog from "@/utils/salesinvoice/global/fdl/new/dsm/Gingoog";
+import DAPIliganNew from "@/utils/salesinvoice/global/fdl/old/dap/DAPIliganNew";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -230,6 +231,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "PUTD",
     "CALB",
     "OZAH",
+    "INAB",
   ];
 
   const fdlSiOldSizeData = ["NUND2", "DAPI", "TANZ", "BONI", "VITA"];
@@ -342,7 +344,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     case "BALD" === user?.branchCode:
       return <DAPBalingasag data={data} />;
     case "ILID" === user?.branchCode:
-      return <DAPIligan data={data} />;
+       return <DAPIliganNew data={data} />;
     case "BAYU" === user?.branchCode:
       return <DSMBayugan data={data} />;
     case "NORZA" === user?.branchCode:
@@ -459,8 +461,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTRosario data={data} />;
     case "PAGS" === user?.branchCode:
       return <SMCTPagsanjan data={data} />; //CSI LANDSCAPE
-    case "INAB" === user?.branchCode:
-      return <HDInabanga data={data} />; //CSI LANDSCAPE
+    // case "INAB" === user?.branchCode:
+    //   return <HDInabanga data={data} />; //CSI LANDSCAPE
     case "GUIN" === user?.branchCode:
       return <SMCTGuindulman1 data={data} />;
     case "SILA" === user?.branchCode:

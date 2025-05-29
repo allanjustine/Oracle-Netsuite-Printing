@@ -37,7 +37,7 @@ const HDDipolog: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="flex mt-[9.8267716539px]">
         <p className="pl-[302.36220472px]">
-          {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
+          {enyeFormat(data[1]?.[CR_Address]) || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex mt-[6.8267716539px]">

@@ -61,9 +61,9 @@ const SMCTCarmona = ({ data }: any) => {
             )}
           </p>
         </div>
-    <div className={`w-[274.01574803px] ml-[138.28346457px] ${data[1]?.[CR_Memo].length > 28 ? "text-[10px]" : ""}`}>
+    <div className={`w-[274.01574803px] ml-[105.28346457px] ${data[1]?.[CR_Memo].length > 28 ? "text-[10px]" : ""}`}>
           <p>
-            {data[1]?.[CR_Memo].substring(0, 35) || (
+            {data[1]?.[CR_Memo] || (
               <span className="opacity-0">No data</span>
             )}
           </p>
@@ -71,9 +71,7 @@ const SMCTCarmona = ({ data }: any) => {
       </div>
       <div className="ml-[245.77165354px] mt-[4.1811023622]">
         <p>
-          {data[1]?.[CR_Memo].substring(35) || (
             <span className="opacity-0">No data</span>
-          )}
         </p>
       </div>
       <div className="w-[718.11023622px] pl-[425.92913386px] mt-[27.7952755906px]">
