@@ -93,7 +93,6 @@ import Buug from "@/utils/official-receipt/global/fdl/old/dap/Buug";
 import DAPImelda from "@/utils/collectionreceipt/global/fdl/old/dap/DAPImelda";
 import SMCTSanJose from "@/utils/collectionreceipt/global/fdl/old/smct/SMCTSanJose";
 import HDTrinidad from "@/utils/official-receipt/global/fdl/old/hd/HDTriniadad";
-import Rosario from "@/utils/official-receipt/global/fely/old/smct/Rosario";
 import HDAlano from "@/utils/official-receipt/global/fdl/old/hd/HDAlano";
 import Pagsanjan from "@/utils/official-receipt/global/fdl/old/smct/Pagsanjan";
 import DAPMolave2 from "@/utils/collectionreceipt/global/fdl/old/dap/DAPMolave2";
@@ -116,6 +115,7 @@ import HDDSMCarmenCebu2 from "@/utils/official-receipt/global/ajd/old/dsm/HDDSMC
 import DSMCatarman2 from "@/utils/collectionreceipt/global/obbus/new/dsm/DSMCatarman2";
 import DSMToledo2 from "@/utils/official-receipt/global/obbus/old/dsm/DSMToledo2";
 import Gingoog from "@/utils/collectionreceipt/global/fdl/new/dsm/Gingoog";
+import SMCTRosario from "@/utils/collectionreceipt/global/fely/old/smct/SMCTRosario";
 
 //import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
@@ -210,7 +210,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DSMAO",
     "TUBU",
     "MARA",
-    "SROS",
   ];
 
   const fdlOrNewSizeData = [];
@@ -470,8 +469,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <DAPImelda data={data} />;
     case "SANJ" === user?.branchCode:
       return <SMCTSanJose data={data} />;
-    // case "SROS" === user?.branchCode:
-    //   return <Rosario data={data} />;
+    case "SROS" === user?.branchCode:
+      return <SMCTRosario data={data} />;
     case "TRINI" === user?.branchCode:
       return <HDTrinidad data={data} />;
     case "ALAH" === user?.branchCode:
