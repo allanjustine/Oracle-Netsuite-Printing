@@ -816,7 +816,13 @@ export const data = [
         branchCode: "CALB",
         branchName: "DSM Calbayog",
         password: "Smct123456",
-      }
+      },
+      {
+        id: 78,
+        branchCode: "SABLA",
+        branchName: "DSM Sablayan",
+        password: "Smct123456",
+      },
     ],
   },
   {
@@ -983,7 +989,7 @@ export const data = [
         branchName: "Head Office",
         password: "Smct123456",
       },
-    ]
+    ],
   },
   {
     branch: "DAP",
@@ -1185,7 +1191,7 @@ export const data = [
         branchCode: "VITA",
         branchName: "DAP Vitali",
         password: "Smct123456",
-      }
-    ]
-  }
+      },
+    ],
+  },
 ];

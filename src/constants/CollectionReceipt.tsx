@@ -116,6 +116,7 @@ import DSMCatarman2 from "@/utils/collectionreceipt/global/obbus/new/dsm/DSMCata
 import DSMToledo2 from "@/utils/official-receipt/global/obbus/old/dsm/DSMToledo2";
 import Gingoog from "@/utils/collectionreceipt/global/fdl/new/dsm/Gingoog";
 import SMCTRosario from "@/utils/collectionreceipt/global/fely/old/smct/SMCTRosario";
+import Sablayan from "@/utils/collectionreceipt/global/fdl/new/dsm/Sablayan";
 
 //import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
@@ -230,7 +231,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DONC",
     "CARC",
     "CARC2",
-    "COMPO"
+    "COMPO",
   ];
 
   const obbusOrNewSizeData = [];
@@ -509,6 +510,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <DSMCatarman2 data={data} />;
     case "GINGO" === user?.branchCode:
       return <Gingoog data={data} />;
+    case "SABLA" === user?.branchCode:
+      return <Sablayan data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">

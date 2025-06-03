@@ -136,6 +136,7 @@ import DAPSanMiguel from "@/utils/salesinvoice/global/fdl/old/dap/DAPSanMiguel";
 import OroquietaNew from "@/utils/salesinvoice/global/fdl/new/hd/OroquietaNew";
 import Gingoog from "@/utils/salesinvoice/global/fdl/new/dsm/Gingoog";
 import DAPIliganNew from "@/utils/salesinvoice/global/fdl/old/dap/DAPIliganNew";
+import Sablayan from "@/utils/salesinvoice/global/fdl/new/dsm/Sablayan";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -344,7 +345,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     case "BALD" === user?.branchCode:
       return <DAPBalingasag data={data} />;
     case "ILID" === user?.branchCode:
-       return <DAPIliganNew data={data} />;
+      return <DAPIliganNew data={data} />;
     case "BAYU" === user?.branchCode:
       return <DSMBayugan data={data} />;
     case "NORZA" === user?.branchCode:
@@ -525,6 +526,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <DAPSanMiguel data={data} />;
     case "GINGO" === user?.branchCode:
       return <Gingoog data={data} />;
+    case "SABLA" === user?.branchCode:
+      return <Sablayan data={data} />;
 
     default:
       return (
