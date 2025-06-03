@@ -251,6 +251,7 @@ export default function Page() {
           <html>
           <head>
           <script src="https://cdn.tailwindcss.com"></script>
+          <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
           <title>
           ${
             isPrintCr
