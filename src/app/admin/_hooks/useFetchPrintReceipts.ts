@@ -1,5 +1,5 @@
 import api from "@/lib/axiosCall";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { printReceiptsData } from "../_constants/printReceiptsData";
 import { filterData, paginationData } from "../_constants/paginationData";
 import echo from "@/hooks/echo";
@@ -15,6 +15,7 @@ export default function useFetchPrintReceipts() {
   const [isRefresh, setIsRefresh] = useState(false);
   const [filter, setFilter] = useState(filterData);
   const [perPage, setPerPage] = useState(20);
+  const debounceRef = useRef<any>(null);
 
   useEffect(() => {
     if (!echo) return;
@@ -42,46 +43,44 @@ export default function useFetchPrintReceipts() {
           },
         });
 
-        if (response.status === 200) {
-          setData({
-            data: response?.data?.receipts?.data,
-            latestData: response?.data?.latest_receipts,
-            totalReceipts: response?.data?.total_receipts,
-            todaysCount: response?.data?.todays_receipts_count,
-            weeklyCount: response?.data?.weekly_receipts_count,
-            monthlyCount: response?.data?.monthly_receipts_count,
-            totalBranchPrintRecords: response?.data?.total_branch_print_records,
-            todaysPercentage: Number(
-              response?.data?.todays_percentage.replace(/,/g, "")
-            ),
-            monthlyPercentage: Number(
-              response?.data?.monthly_percentage.replace(/,/g, "")
-            ),
-            weeklyPercentage: Number(
-              response?.data?.weekly_percentage.replace(/,/g, "")
-            ),
-            searchingIfExists: response?.data?.searching_if_exists,
-            totalInvoice: response?.data?.total_invoice,
-            totalCustPay: response?.data?.total_cust_pay,
-            yesterdayCount: response?.data?.yesterdays_receipts_count,
-            lastWeekCount: response?.data?.last_weekly_receipts_count,
-            lastMonthCount: response?.data?.last_monthly_receipts_count,
-            overAllTotalAmountDue: response?.data?.over_all_total_amount_due,
-            sumInvoice: response?.data?.sum_invoice,
-            sumCustPay: response?.data?.sum_cust_pay,
-            sumToday: response?.data?.todays_total_amount_due,
-            mostPrintCountBranch: response?.data?.most_print_count_branch,
-          });
+        setData({
+          data: response?.data?.receipts?.data,
+          latestData: response?.data?.latest_receipts,
+          totalReceipts: response?.data?.total_receipts,
+          todaysCount: response?.data?.todays_receipts_count,
+          weeklyCount: response?.data?.weekly_receipts_count,
+          monthlyCount: response?.data?.monthly_receipts_count,
+          totalBranchPrintRecords: response?.data?.total_branch_print_records,
+          todaysPercentage: Number(
+            response?.data?.todays_percentage.replace(/,/g, "")
+          ),
+          monthlyPercentage: Number(
+            response?.data?.monthly_percentage.replace(/,/g, "")
+          ),
+          weeklyPercentage: Number(
+            response?.data?.weekly_percentage.replace(/,/g, "")
+          ),
+          searchingIfExists: response?.data?.searching_if_exists,
+          totalInvoice: response?.data?.total_invoice,
+          totalCustPay: response?.data?.total_cust_pay,
+          yesterdayCount: response?.data?.yesterdays_receipts_count,
+          lastWeekCount: response?.data?.last_weekly_receipts_count,
+          lastMonthCount: response?.data?.last_monthly_receipts_count,
+          overAllTotalAmountDue: response?.data?.over_all_total_amount_due,
+          sumInvoice: response?.data?.sum_invoice,
+          sumCustPay: response?.data?.sum_cust_pay,
+          sumToday: response?.data?.todays_total_amount_due,
+          mostPrintCountBranch: response?.data?.most_print_count_branch,
+        });
 
-          setPagination({
-            current_page: response?.data?.receipts?.current_page,
-            last_page: response?.data?.receipts?.last_page,
-            total: response?.data?.receipts?.total,
-            per_page: response?.data?.receipts?.per_page,
-            from: response?.data?.receipts?.from,
-            to: response?.data?.receipts?.to,
-          });
-        }
+        setPagination({
+          current_page: response?.data?.receipts?.current_page,
+          last_page: response?.data?.receipts?.last_page,
+          total: response?.data?.receipts?.total,
+          per_page: response?.data?.receipts?.per_page,
+          from: response?.data?.receipts?.from,
+          to: response?.data?.receipts?.to,
+        });
       } catch (error: any) {
         console.error(error);
       } finally {
@@ -147,6 +146,17 @@ export default function useFetchPrintReceipts() {
     }));
   };
 
+  const handleSearchTerm = (e: any) => {
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+
+    const { value } = e.target;
+
+    debounceRef.current = setTimeout(() => {
+      setIsSearching(true);
+      setSearchTerm(value);
+    }, 1000);
+  };
+
   return {
     data,
     loading,
@@ -164,5 +174,6 @@ export default function useFetchPrintReceipts() {
     setIsSearching,
     handleFirstPage,
     handleLastPage,
+    handleSearchTerm,
   };
 }

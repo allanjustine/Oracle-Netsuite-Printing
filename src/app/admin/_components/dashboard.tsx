@@ -13,7 +13,7 @@ import {
 import NotLogin from "./NotLogin";
 import Unauthorized from "./Unauthorized";
 import { FaMagnifyingGlass, FaRepeat } from "react-icons/fa6";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Pagination from "./Pagination";
 import CardsLoader from "./loaders/cards-loader";
 import RecentActivityLoader from "./loaders/recent-activity-loader";
@@ -41,9 +41,8 @@ export default function Dashboard() {
     perPage,
     filter,
     setPerPage,
-    setIsSearching,
+    handleSearchTerm,
   } = useFetchPrintReceipts();
-  const debounceRef = useRef<any>(null);
   const [isBackToTop, setIsBackToTop] = useState(false);
   const [isReverse, setIsReverse] = useState(false);
   const [isClick, setIsClick] = useState(false);
@@ -83,18 +82,6 @@ export default function Dashboard() {
   if (!isAuthenticated) return <NotLogin />;
 
   if (!isAdmin) return <Unauthorized />;
-
-  const handleSearchTerm = (e: any) => {
-    if (debounceRef.current) clearTimeout(debounceRef.current);
-
-    debounceRef.current = setTimeout(() => {
-      const { value } = e.target;
-      setSearchTerm(value);
-      if (value) {
-        setIsSearching(true);
-      }
-    }, 1000);
-  };
 
   const receiptRecordsTableHead = [
     { col: "ID", key: "id" },
