@@ -269,7 +269,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   // BJV
   const bjvCrNewSizeData = [];
 
-  const bjvCrOldSizeData = ["UBAY", ""];
+  const bjvCrOldSizeData = ["UBAY", "GUIN"];
 
   // CELROSE
   const celroseOrNewSizeData = [];
@@ -278,7 +278,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const bjvOrNewSizeData = [];
 
-  const bjvOrOldSizeData = ["GUIN"];
+  const bjvOrOldSizeData = [""];
 
   switch (true) {
     // FDL OR - CR CASES
