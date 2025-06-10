@@ -292,6 +292,7 @@ export default function ReceiptDataTable({
       onChangeRowsPerPage={handlePerPage}
       persistTableHead={true}
       noDataComponent={<NoData />}
+      paginationPerPage={pagination.per_page}
     />
   );
 }
