@@ -161,6 +161,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DIPD",
     "IPID",
     "LOAY",
+    "NABU",
+    "MARD",
   ];
 
   const fdlOrOldSizeData = [
@@ -196,7 +198,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DAPI",
     "LABD",
     "LILD",
-    "MARD",
     "VITA",
     "DIPD2",
     "DSMV",
@@ -212,7 +213,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DSMAO",
     "TUBU",
     "MARA",
-    "CALAP2",
   ];
 
   const fdlOrNewSizeData = [];
@@ -370,8 +370,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <HDCarmenCebu data={data} />;
     case "CERI" === user?.branchCode:
       return <Cerilles data={data} />;
-    // case "CALAP2" === user?.branchCode:
-    //   return <Calape2 data={data} />;
+     case "CALAP2" === user?.branchCode:
+       return <Calape2 data={data} />;
     case "CARMC2" === user?.branchCode:
       return <CarmenCebu2 data={data} />;
     case "DSMD2" === user?.branchCode:
@@ -416,8 +416,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <HDCalinog data={data} />;
     case "OROH2" === user?.branchCode:
       return <HDOroquieta2 data={data} />;
-    case "NABU" === user?.branchCode:
-      return <Nabunturan data={data} />;
+    // case "NABU" === user?.branchCode:
+    //   return <Nabunturan data={data} />;
     case "DSMSO" === user?.branchCode:
       return <SuzukiOsamiz data={data} />;
     // case "INIT" === user?.branchCode:
