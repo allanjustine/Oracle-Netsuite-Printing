@@ -272,8 +272,6 @@ export default function ReceiptDataTable({
     );
   };
 
-  console.log(pagination);
-
   return (
     <DataTable
       data={receiptRecords.data}
