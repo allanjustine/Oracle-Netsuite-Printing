@@ -32,6 +32,10 @@ export default function useFetchPrintReceipts() {
   useEffect(() => {
     const fetchPrintReceiptsData = async () => {
       if (pagination?.current_page) setIsNextPrevPage(true);
+      setPagination((pagination: any) => ({
+        ...pagination,
+        loading: true,
+      }));
       try {
         const response = await api.get("/receipt-records", {
           params: {
@@ -80,6 +84,7 @@ export default function useFetchPrintReceipts() {
           per_page: response?.data?.receipts?.per_page,
           from: response?.data?.receipts?.from,
           to: response?.data?.receipts?.to,
+          loading: false,
         });
       } catch (error: any) {
         console.error(error);
@@ -88,6 +93,10 @@ export default function useFetchPrintReceipts() {
         if (pagination?.current_page) setIsNextPrevPage(false);
         setDataLoaded(false);
         setIsSearching(false);
+        setPagination((pagination: any) => ({
+          ...pagination,
+          loading: false,
+        }));
       }
     };
 
@@ -175,5 +184,6 @@ export default function useFetchPrintReceipts() {
     handleFirstPage,
     handleLastPage,
     handleSearchTerm,
+    setPagination,
   };
 }

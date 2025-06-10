@@ -2,46 +2,32 @@ import GlobalLoader from "@/components/loaders/GlobalLoaders";
 import Navbar from "@/components/navbar";
 import { useAuth } from "@/context/authcontext";
 import useFetchPrintReceipts from "../_hooks/useFetchPrintReceipts";
-import {
-  FaAngleUp,
-  FaArrowDown,
-  FaArrowUp,
-  FaHistory,
-  FaList,
-  FaSortNumericUp,
-} from "react-icons/fa";
+import { FaAngleUp, FaHistory, FaList, FaSortNumericUp } from "react-icons/fa";
 import NotLogin from "./NotLogin";
 import Unauthorized from "./Unauthorized";
 import { FaMagnifyingGlass, FaRepeat } from "react-icons/fa6";
 import { useEffect, useState } from "react";
-import Pagination from "./Pagination";
 import CardsLoader from "./loaders/cards-loader";
 import RecentActivityLoader from "./loaders/recent-activity-loader";
-import ReceiptDataList from "./ReceiptDataList";
 import ReceiptLatestDataList from "./ReceiptLatestDataList";
 import CardsCountList from "./CardsCountsList";
-import TableLoader from "./loaders/table-loader";
 import MostPrintCountBranch from "./MostPrintCountBranch";
+import ReceiptDataTable from "./ReceiptDataTable";
 
 export default function Dashboard() {
   const { isAdmin, isAuthenticated, loadingData } = useAuth();
   const {
     data: receiptRecords,
     loading,
-    handleNextPage,
-    handlePrevPage,
-    handleFirstPage,
-    handleLastPage,
-    setSearchTerm,
     searchTerm,
     pagination,
     isSearching,
     setIsRefresh,
     setFilter,
-    perPage,
     filter,
     setPerPage,
     handleSearchTerm,
+    setPagination,
   } = useFetchPrintReceipts();
   const [isBackToTop, setIsBackToTop] = useState(false);
   const [isReverse, setIsReverse] = useState(false);
@@ -140,32 +126,15 @@ export default function Dashboard() {
             <CardsCountList receiptRecords={receiptRecords} />
           )}
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 px-6">
-          <div className="lg:col-span-2 bg-white rounded-lg shadow p-6 h-fit">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 px-6">
+          <div className="lg:col-span-3 bg-white rounded-lg shadow p-6 h-fit">
             <div className="flex items-center mb-6">
               <FaList className="text-accent mr-2" />
               <h3 className="text-xl font-semibold text-primarydark">
                 Recent Print Jobs
               </h3>
             </div>
-            <div className="mb-2 flex w-full flex-col md:justify-between items-end md:flex-row space-y-2">
-              <div className="relative border border-gray-300 rounded-lg pl-10">
-                <span className="absolute left-2 top-1.5 text-gray-400">
-                  Show:
-                </span>
-                <select
-                  onChange={handlePerPage}
-                  value={perPage}
-                  className="px-3 py-2 rounded-lg focus:outline-none ring-0"
-                >
-                  <option value="20">20 per page</option>
-                  <option value="40">40 per page</option>
-                  <option value="50">50 per page</option>
-                  <option value="70">70 per page</option>
-                  <option value="80">80 per page</option>
-                  <option value="100">100 per page</option>
-                </select>
-              </div>
+            <div className="mb-2 flex w-full flex-col md:justify-end items-end md:flex-row space-y-2">
               <div className="relative">
                 <input
                   type="search"
@@ -179,72 +148,18 @@ export default function Dashboard() {
               </div>
             </div>
             <div className="overflow-x-auto">
-              <table className="w-full min-w-[600px]">
-                <thead>
-                  <tr className="border-b border-gray-200">
-                    {receiptRecordsTableHead.map((item, index) => (
-                      <th
-                        className={`p-3 text-xs uppercase text-primarylight text-left font-semibold ${
-                          item.key !== "action" && "cursor-pointer"
-                        }`}
-                        key={index}
-                        onClick={
-                          item.key === "action"
-                            ? undefined
-                            : handleFilter(item.key)
-                        }
-                      >
-                        <span className="flex gap-1 items-center">
-                          {filter.column === item.key && (
-                            <span>
-                              {filter.direction === "asc" ? (
-                                <>
-                                  <FaArrowUp />
-                                </>
-                              ) : (
-                                <>
-                                  <FaArrowDown />
-                                </>
-                              )}
-                            </span>
-                          )}
-                          <span>{item.col}</span>
-                        </span>
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {loading || isSearching ? (
-                    <TableLoader colSpan={8} />
-                  ) : receiptRecords.data.length > 0 ? (
-                    receiptRecords.data.map((record: any, index: number) => (
-                      <ReceiptDataList
-                        key={index}
-                        record={record}
-                        setIsRefresh={setIsRefresh}
-                      />
-                    ))
-                  ) : (
-                    <tr>
-                      <td colSpan={7} className="text-center text-gray-400">
-                        {searchTerm
-                          ? `No results for "${searchTerm}"`
-                          : "No print records yet"}
-                      </td>
-                    </tr>
-                  )}
-                </tbody>
-              </table>
-              {!searchTerm && receiptRecords.data.length > 0 && (
-                <Pagination
-                  pagination={pagination}
-                  handleNextPage={handleNextPage}
-                  handlePrevPage={handlePrevPage}
-                  handleFirstPage={handleFirstPage}
-                  handleLastPage={handleLastPage}
-                />
-              )}
+              <ReceiptDataTable
+                receiptRecords={receiptRecords}
+                setIsRefresh={setIsRefresh}
+                isSearching={isSearching}
+                pagination={pagination}
+                loading={loading}
+                filter={filter}
+                setFilter={setFilter}
+                setPerPage={setPerPage}
+                setPagination={setPagination}
+                searchTerm={searchTerm}
+              />
             </div>
           </div>
           <div className="rounded-lg">

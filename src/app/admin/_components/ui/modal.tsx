@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { FaXmark } from "react-icons/fa6";
 
 export default function Modal({
@@ -11,6 +11,8 @@ export default function Modal({
   buttonColorHover,
   isOpen,
   setIsOpen,
+  row,
+  setRecord,
 }: any) {
   const modalRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -35,7 +37,11 @@ export default function Modal({
   }, [setIsOpen, buttonRef, modalRef]);
 
   const handleModal = () => {
-    setIsOpen(!isOpen);
+    setIsOpen((isOpen: any) => ({
+      ...isOpen,
+      [row.id]: !isOpen[row.id],
+    }));
+    setRecord(row);
   };
 
   return (
@@ -48,7 +54,7 @@ export default function Modal({
       >
         {title}
       </button>
-      {isOpen && (
+      {isOpen[row?.id] && (
         <div className="fixed z-50 inset-0 overflow-y-auto">
           <div className="grid items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
             <div className="fixed inset-0 transition-opacity">

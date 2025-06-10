@@ -1,5 +1,5 @@
 "use client";
-import { data } from "@/data/credentials";
+import data from "@/data/credentials.json";
 import { fetchProfile } from "@/lib/authSanctum";
 import { AuthContextType, Branch, User } from "@/types/types";
 import React, { createContext, useContext, useState, useEffect } from "react";

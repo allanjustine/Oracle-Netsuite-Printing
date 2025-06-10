@@ -22,7 +22,7 @@ export const printReceiptsData = {
   mostPrintCountBranch: [],
 };
 
-export const receiptRecords = {
+export const receiptRecordsData = {
   external_id: "",
   print_by: "",
   re_print: false,

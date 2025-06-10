@@ -1,23 +1,39 @@
-import { format, formatDistanceToNowStrict } from "date-fns";
-import { FaCircleNotch, FaEdit, FaTrash } from "react-icons/fa";
-import Modal from "./ui/modal";
+import DataTable from "react-data-table-component";
 import { useEffect, useState } from "react";
-import { receiptRecordsData } from "../_constants/printReceiptsData";
+import { InputTypes } from "../_types/inputTypes";
+import { tableDatas } from "../_constants/tableData";
+import Modal from "./ui/modal";
+import { FaCircleNotch, FaEdit, FaTrash } from "react-icons/fa";
 import Input from "./ui/input";
 import api from "@/lib/axiosCall";
 import { Toast } from "./ui/toast";
-import FormattedNumber from "@/utils/FormattedNumber";
-import { FaPesoSign } from "react-icons/fa6";
+import { receiptRecordsData } from "../_constants/printReceiptsData";
+import TableLoader from "./loaders/table-loader";
+import { paginationRowsPerPageOptions } from "../_constants/paginationRowsPerPageOptions";
 
-export default function ReceiptDataList({ record, setIsRefresh, index }: any) {
-  const [formInput, setFormInput] = useState(receiptRecordsData);
-  const [errors, setErrors] = useState(receiptRecordsData);
+export default function ReceiptDataTable({
+  receiptRecords,
+  setIsRefresh,
+  isSearching,
+  pagination,
+  loading,
+  filter,
+  setFilter,
+  setPerPage,
+  setPagination,
+  searchTerm,
+}: any) {
+  const [formInput, setFormInput] = useState<InputTypes>(receiptRecordsData);
+  const [errors, setErrors] = useState<InputTypes>(receiptRecordsData);
   const [isLoading, setIsLoading] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState<{ [key: number]: boolean }>({
+    [0]: false,
+  });
   const [isOpenDelete, setIsOpenDelete] = useState(false);
+  const [record, setRecord] = useState(receiptRecordsData);
 
   useEffect(() => {
-    setFormInput((formInput) => ({
+    setFormInput((formInput: InputTypes) => ({
       ...formInput,
       external_id: record.external_id,
       print_by: record.print_by,
@@ -25,7 +41,7 @@ export default function ReceiptDataList({ record, setIsRefresh, index }: any) {
     }));
   }, [record]);
 
-  const handleUpdate = async (e: any) => {
+  const handleUpdate = (record: any) => async (e: any) => {
     e.preventDefault();
     setIsLoading(true);
     setIsRefresh(true);
@@ -46,7 +62,10 @@ export default function ReceiptDataList({ record, setIsRefresh, index }: any) {
     } finally {
       setIsLoading(false);
       setIsRefresh(false);
-      setIsOpen(false);
+      setIsOpen((isOpen) => ({
+        ...isOpen,
+        [record.id]: !isOpen[record.id],
+      }));
     }
   };
 
@@ -58,7 +77,7 @@ export default function ReceiptDataList({ record, setIsRefresh, index }: any) {
     }));
   };
 
-  const handleDelete = async (e: any) => {
+  const handleDelete = (record: any) => async (e: any) => {
     e.preventDefault();
     setIsLoading(true);
     setIsRefresh(true);
@@ -77,39 +96,14 @@ export default function ReceiptDataList({ record, setIsRefresh, index }: any) {
     }
   };
 
-  return (
-    <tr
-      className={`border-b border-gray-100 hover:bg-gray-50 ${
-        index % 2 && "bg-gray-100"
-      }`}
-    >
-      <td className="p-3 text-sm">{record.id}</td>
-      <td className="p-3 text-sm">{record.external_id}</td>
-      <td className="p-3">
-        <span className="px-2 py-1 text-xs rounded-full bg-green-100 text-green-800">
-          {record.print_count}
-        </span>
-      </td>
-      <td className="p-3 text-sm">{record.print_by}</td>
-      <td className="p-3 text-sm">{record.re_print ? "Yes" : "No"}</td>
-      <td className="p-3 text-sm flex gap-1 items-center">
-        <FaPesoSign />
-        <span>{FormattedNumber(record.total_amount_due)}</span>
-      </td>
-      <td className="p-3 text-sm">
-        {format(record.created_at, "MMM d, yyyy - h:mm a")}
-        <br />
-        <span className="text-gray-400 text-xs font-thin">
-          (
-          {formatDistanceToNowStrict(record.created_at, {
-            addSuffix: true,
-          })}
-          )
-        </span>
-      </td>
-      <td>
-        <span className="flex gap-2">
+  const action = [
+    {
+      name: "ACTION",
+      cell: (row: any) => (
+        <div className="flex gap-2">
           <Modal
+            row={row}
+            setRecord={setRecord}
             buttonText={
               <>
                 <FaEdit /> Update
@@ -120,7 +114,7 @@ export default function ReceiptDataList({ record, setIsRefresh, index }: any) {
                 <FaCircleNotch className="animate-spin" /> Updating...
               </>
             }
-            handleSubmitButton={handleUpdate}
+            handleSubmitButton={handleUpdate(row)}
             isLoading={isLoading}
             buttonColorHover="bg-blue-500 hover:bg-blue-600"
             title={
@@ -132,9 +126,8 @@ export default function ReceiptDataList({ record, setIsRefresh, index }: any) {
             setIsOpen={setIsOpen}
           >
             <p className="text-lg mt-2 mb-5">
-              Updating <span className="font-bold">{record.external_id}</span>{" "}
-              that printed by{" "}
-              <span className="font-bold">{record.print_by}</span>
+              Updating <span className="font-bold">{row.external_id}</span> that
+              printed by <span className="font-bold">{row.print_by}</span>
             </p>
             <div className="space-y-4">
               <div className="space-y-1">
@@ -147,7 +140,7 @@ export default function ReceiptDataList({ record, setIsRefresh, index }: any) {
                 </label>
                 <Input
                   type="text"
-                  value={formInput.external_id}
+                  defaultValue={row.external_id}
                   onChange={handleChange("external_id")}
                   placeholder="Enter unique external ID"
                   error={errors?.external_id}
@@ -164,7 +157,7 @@ export default function ReceiptDataList({ record, setIsRefresh, index }: any) {
                 </label>
                 <Input
                   type="text"
-                  value={formInput.print_by}
+                  defaultValue={row.print_by}
                   onChange={handleChange("print_by")}
                   placeholder="Enter printer name"
                   error={errors?.print_by}
@@ -181,7 +174,7 @@ export default function ReceiptDataList({ record, setIsRefresh, index }: any) {
                 <div className="relative">
                   <select
                     id="re_print"
-                    value={formInput.re_print ? "true" : "false"}
+                    defaultValue={row.re_print ? "true" : "false"}
                     onChange={handleChange("re_print")}
                     className={`block w-full px-4 py-2.5 pr-8 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all appearance-none bg-white ${
                       errors?.re_print && "border-red-500"
@@ -211,6 +204,8 @@ export default function ReceiptDataList({ record, setIsRefresh, index }: any) {
           </Modal>
 
           <Modal
+            row={row}
+            setRecord={setRecord}
             buttonText={
               <>
                 <FaTrash /> Yes, Delete
@@ -221,7 +216,7 @@ export default function ReceiptDataList({ record, setIsRefresh, index }: any) {
                 <FaCircleNotch className="animate-spin" /> Deleting...
               </>
             }
-            handleSubmitButton={handleDelete}
+            handleSubmitButton={handleDelete(row)}
             isLoading={isLoading}
             buttonColorHover="bg-red-500 hover:bg-red-600"
             title={
@@ -234,15 +229,71 @@ export default function ReceiptDataList({ record, setIsRefresh, index }: any) {
           >
             <p className="text-lg mt-5 mb-5">
               Are you sure you want to delete this receipt data with external ID
-              of <span className="font-bold">{record.external_id}</span> that
-              printed by <span className="font-bold">{record.print_by}?</span>
+              of <span className="font-bold">{row.external_id}</span> that
+              printed by <span className="font-bold">{row.print_by}?</span>
             </p>
             <p className="text-center text-gray-400">
               This action cannot be undone!
             </p>
           </Modal>
-        </span>
-      </td>
-    </tr>
+        </div>
+      ),
+      width: "170px",
+    },
+  ];
+
+  const columns = [...tableDatas, ...action];
+
+  const handleShort = (column: any, direction: any) => {
+    setFilter({
+      column: column.sortField,
+      direction: direction,
+    });
+  };
+
+  const handlePage = (page: number) => {
+    if (pagination.loading) return;
+    setPagination((pagination: any) => ({
+      ...pagination,
+      current_page: page,
+    }));
+  };
+
+  const handlePerPage = (perPage: number) => {
+    if (pagination.loading) return;
+    setPerPage(perPage);
+  };
+
+  const NoData = () => {
+    return (
+      <div className="py-10">
+        {searchTerm ? `No results for "${searchTerm}"` : "No print records yet"}
+      </div>
+    );
+  };
+
+  console.log(pagination);
+
+  return (
+    <DataTable
+      data={receiptRecords.data}
+      columns={columns}
+      pagination
+      paginationServer
+      striped
+      highlightOnHover
+      progressPending={loading || isSearching}
+      progressComponent={<TableLoader colSpan={8} />}
+      sortServer
+      onSort={handleShort}
+      paginationTotalRows={pagination.total}
+      defaultSortAsc={filter.direction}
+      defaultSortFieldId={filter.column}
+      paginationRowsPerPageOptions={paginationRowsPerPageOptions}
+      onChangePage={handlePage}
+      onChangeRowsPerPage={handlePerPage}
+      persistTableHead={true}
+      noDataComponent={<NoData />}
+    />
   );
 }

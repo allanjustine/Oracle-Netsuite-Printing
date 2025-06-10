@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import netsuite from "../../../public/netsuite-logo.png";
 import smct from "../../../public/smct_group.png";
-import { data } from "@/data/credentials";
+import data from "@/data/credentials.json";
 import AlertBox from "@/components/ui/alert-box";
 import { login as loginApi, logout } from "@/lib/authSanctum";
 import { FaCircleNotch } from "react-icons/fa";
