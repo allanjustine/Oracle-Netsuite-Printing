@@ -15,7 +15,6 @@ export const tableDatas = [
     cell: (row: any) => <div>{row.external_id}</div>,
     sortable: true,
     sortField: "external_id",
-    width: "100px",
   },
   {
     name: "PRINT COUNT",
@@ -26,21 +25,18 @@ export const tableDatas = [
     ),
     sortable: true,
     sortField: "print_count",
-    width: "80px",
   },
   {
     name: "PRINT BY",
     cell: (row: any) => <div>{row.print_by}</div>,
     sortable: true,
     sortField: "print_by",
-    width: "120px",
   },
   {
     name: "CAN RE-PRINT",
     cell: (row: any) => <div>{row.re_print ? "Yes" : "No"}</div>,
     sortable: true,
     sortField: "re_print",
-    width: "90px",
   },
   {
     name: "TOTAL AMOUNT",
@@ -68,7 +64,6 @@ export const tableDatas = [
         </span>
       </div>
     ),
-    width: "114px",
     sortable: true,
     sortField: "created_at",
   },
