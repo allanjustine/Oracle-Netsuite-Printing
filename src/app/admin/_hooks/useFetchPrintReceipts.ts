@@ -48,42 +48,44 @@ export default function useFetchPrintReceipts() {
         });
 
         setData({
-          data: response?.data?.receipts?.data,
-          latestData: response?.data?.latest_receipts,
-          totalReceipts: response?.data?.total_receipts,
-          todaysCount: response?.data?.todays_receipts_count,
-          weeklyCount: response?.data?.weekly_receipts_count,
-          monthlyCount: response?.data?.monthly_receipts_count,
-          totalBranchPrintRecords: response?.data?.total_branch_print_records,
+          data: response?.data?.datas?.receipts?.data,
+          latestData: response?.data?.datas?.latest_receipts,
+          totalReceipts: response?.data?.datas?.total_receipts,
+          todaysCount: response?.data?.datas?.todays_receipts_count,
+          weeklyCount: response?.data?.datas?.weekly_receipts_count,
+          monthlyCount: response?.data?.datas?.monthly_receipts_count,
+          totalBranchPrintRecords:
+            response?.data?.datas?.total_branch_print_records,
           todaysPercentage: Number(
-            response?.data?.todays_percentage.replace(/,/g, "")
+            response?.data?.datas?.todays_percentage.replace(/,/g, "")
           ),
           monthlyPercentage: Number(
-            response?.data?.monthly_percentage.replace(/,/g, "")
+            response?.data?.datas?.monthly_percentage.replace(/,/g, "")
           ),
           weeklyPercentage: Number(
-            response?.data?.weekly_percentage.replace(/,/g, "")
+            response?.data?.datas?.weekly_percentage.replace(/,/g, "")
           ),
-          searchingIfExists: response?.data?.searching_if_exists,
-          totalInvoice: response?.data?.total_invoice,
-          totalCustPay: response?.data?.total_cust_pay,
-          yesterdayCount: response?.data?.yesterdays_receipts_count,
-          lastWeekCount: response?.data?.last_weekly_receipts_count,
-          lastMonthCount: response?.data?.last_monthly_receipts_count,
-          overAllTotalAmountDue: response?.data?.over_all_total_amount_due,
-          sumInvoice: response?.data?.sum_invoice,
-          sumCustPay: response?.data?.sum_cust_pay,
-          sumToday: response?.data?.todays_total_amount_due,
-          mostPrintCountBranch: response?.data?.most_print_count_branch,
+          searchingIfExists: response?.data?.datas?.searching_if_exists,
+          totalInvoice: response?.data?.datas?.total_invoice,
+          totalCustPay: response?.data?.datas?.total_cust_pay,
+          yesterdayCount: response?.data?.datas?.yesterdays_receipts_count,
+          lastWeekCount: response?.data?.datas?.last_weekly_receipts_count,
+          lastMonthCount: response?.data?.datas?.last_monthly_receipts_count,
+          overAllTotalAmountDue:
+            response?.data?.datas?.over_all_total_amount_due,
+          sumInvoice: response?.data?.datas?.sum_invoice,
+          sumCustPay: response?.data?.datas?.sum_cust_pay,
+          sumToday: response?.data?.datas?.todays_total_amount_due,
+          mostPrintCountBranch: response?.data?.datas?.most_print_count_branch,
         });
 
         setPagination({
-          current_page: response?.data?.receipts?.current_page,
-          last_page: response?.data?.receipts?.last_page,
-          total: response?.data?.receipts?.total,
-          per_page: response?.data?.receipts?.per_page,
-          from: response?.data?.receipts?.from,
-          to: response?.data?.receipts?.to,
+          current_page: response?.data?.datas?.receipts?.current_page,
+          last_page: response?.data?.datas?.receipts?.last_page,
+          total: response?.data?.datas?.receipts?.total,
+          per_page: response?.data?.datas?.receipts?.per_page,
+          from: response?.data?.datas?.receipts?.from,
+          to: response?.data?.datas?.receipts?.to,
           loading: false,
         });
       } catch (error: any) {
