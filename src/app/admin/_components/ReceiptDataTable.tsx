@@ -174,7 +174,7 @@ export default function ReceiptDataTable({
                 <div className="relative">
                   <select
                     id="re_print"
-                    defaultValue={row.re_print ? "true" : "false"}
+                    defaultValue={String(row.re_print)}
                     onChange={handleChange("re_print")}
                     className={`block w-full px-4 py-2.5 pr-8 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all appearance-none bg-white ${
                       errors?.re_print && "border-red-500"
