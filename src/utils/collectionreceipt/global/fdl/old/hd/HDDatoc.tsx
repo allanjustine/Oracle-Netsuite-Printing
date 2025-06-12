@@ -56,7 +56,7 @@ const HDDatoc: React.FC<PrintPageProps> = ({ data }) => {
           </p>
         </div>
         <div className="w-[164.40944882px]">
-          <p className="pl-[45.354330709px]">
+          <p className="pl-[4.354330709px]">
             {FormattedNumber(data[1]?.[CR_AmountInFigures]) || (
               <span className="opacity-0">No data</span>
             )}
