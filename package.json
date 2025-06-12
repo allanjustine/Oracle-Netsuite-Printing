@@ -13,9 +13,9 @@
     "axios": "^1.9.0",
     "date-fns": "^4.1.0",
     "js-cookie": "^3.0.5",
-    "laravel-echo": "^2.1.4",
+    "laravel-echo": "^2.1.5",
     "next": "15.0.3",
-    "papaparse": "^5.5.2",
+    "papaparse": "^5.5.3",
     "pusher-js": "^8.4.0",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-data-table-component": "^7.7.0",
@@ -25,13 +25,13 @@
     "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
   },
   "devDependencies": {
-    "@types/node": "^22.15.18",
+    "@types/node": "^22.15.31",
     "@types/papaparse": "^5.3.16",
-    "@types/react": "^18.3.21",
+    "@types/react": "^18.3.23",
     "@types/react-dom": "^18.3.7",
-    "eslint": "^9.27.0",
+    "eslint": "^9.28.0",
     "eslint-config-next": "15.0.3",
-    "postcss": "^8.5.3",
+    "postcss": "^8.5.5",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.8.3"
   }

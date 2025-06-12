@@ -441,7 +441,7 @@ export default function Page() {
           excelData[1]?.[CR_AmountInFigures]
         );
 
-        const result = response?.data?.searching_if_exists;
+        const result = response?.data?.datas?.searching_if_exists;
 
         // const result = receipts?.some((item: any) => {
         //   return (
@@ -451,7 +451,6 @@ export default function Page() {
         //     item.re_print === false
         //   );
         // });
-
         setIsAlreadyPrinted(result);
         setFormInput({
           external_id: isPrintCr ? excelData[1][10] : excelData[1][27],
