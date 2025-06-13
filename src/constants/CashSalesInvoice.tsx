@@ -137,6 +137,7 @@ import OroquietaNew from "@/utils/salesinvoice/global/fdl/new/hd/OroquietaNew";
 import Gingoog from "@/utils/salesinvoice/global/fdl/new/dsm/Gingoog";
 import DAPIliganNew from "@/utils/salesinvoice/global/fdl/old/dap/DAPIliganNew";
 import Sablayan from "@/utils/salesinvoice/global/fdl/new/dsm/Sablayan";
+import DSMQuezon from "@/utils/salesinvoice/global/fdl/old/dsm/DSMQuezon";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -208,7 +209,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "MARA2",
     "DONC",
     "SIND",
-    "QUEZ",
   ];
 
   const fdlSiNewSizeData = [
@@ -529,6 +529,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Gingoog data={data} />;
     case "SABLA" === user?.branchCode:
       return <Sablayan data={data} />;
+    case "QUEZ" === user?.branchCode:
+      return <DSMQuezon data={data} />;
 
     default:
       return (
