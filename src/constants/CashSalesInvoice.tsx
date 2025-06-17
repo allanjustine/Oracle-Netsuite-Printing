@@ -531,6 +531,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Sablayan data={data} />;
     case "QUEZ" === user?.branchCode:
       return <DSMQuezon data={data} />;
+    case "SANPA" === user?.branchCode:
+    return <HDTanza data={data} />;
 
     default:
       return (
