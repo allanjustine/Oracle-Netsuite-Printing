@@ -13,7 +13,6 @@ import { paginationRowsPerPageOptions } from "../_constants/paginationRowsPerPag
 
 export default function ReceiptDataTable({
   receiptRecords,
-  setIsRefresh,
   isSearching,
   pagination,
   loading,
@@ -22,6 +21,7 @@ export default function ReceiptDataTable({
   setPerPage,
   setPagination,
   searchTerm,
+  fetchPrintReceiptsData,
 }: any) {
   const [formInput, setFormInput] = useState<InputTypes>(receiptRecordsData);
   const [errors, setErrors] = useState<InputTypes>(receiptRecordsData);
@@ -44,15 +44,15 @@ export default function ReceiptDataTable({
   const handleUpdate = (record: any) => async (e: any) => {
     e.preventDefault();
     setIsLoading(true);
-    setIsRefresh(true);
     try {
       const response = await api.patch(
-        `/print-receipt/${record.id}`,
+        `/print-receipt/${record.id}/update-reciept`,
         formInput
       );
 
       if (response.status === 204) {
         setErrors(receiptRecordsData);
+        fetchPrintReceiptsData();
         Toast("Receipt updated successfully", "success");
       }
     } catch (error: any) {
@@ -61,7 +61,6 @@ export default function ReceiptDataTable({
       Toast(error.response.data.message, "error");
     } finally {
       setIsLoading(false);
-      setIsRefresh(false);
       setIsOpen((isOpen) => ({
         ...isOpen,
         [record.id]: !isOpen[record.id],
@@ -80,9 +79,8 @@ export default function ReceiptDataTable({
   const handleDelete = (record: any) => async (e: any) => {
     e.preventDefault();
     setIsLoading(true);
-    setIsRefresh(true);
     try {
-      const response = await api.delete(`/print-receipt/${record.id}`);
+      const response = await api.delete(`/print-receipt/${record.id}/delete-reciept`);
       if (response.status === 204) {
         Toast("Receipt deleted successfully", "success");
       }
@@ -91,7 +89,6 @@ export default function ReceiptDataTable({
       Toast(error.response.data.message, "error");
     } finally {
       setIsLoading(false);
-      setIsRefresh(false);
       setIsOpenDelete(false);
     }
   };

@@ -7,25 +7,27 @@ import echo from "@/hooks/echo";
 export default function useFetchPrintReceipts() {
   const [data, setData] = useState(printReceiptsData);
   const [loading, setLoading] = useState(true);
-  const [dataLoaded, setDataLoaded] = useState(false);
   const [pagination, setPagination] = useState(paginationData);
   const [isNextPrevPage, setIsNextPrevPage] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [isSearching, setIsSearching] = useState(false);
-  const [isRefresh, setIsRefresh] = useState(false);
   const [filter, setFilter] = useState(filterData);
   const [perPage, setPerPage] = useState(20);
   const debounceRef = useRef<any>(null);
 
   const fetchPrintReceiptsData = async () => {
+    const payload = {
+      page: searchTerm ? 1 : pagination?.current_page,
+      search: searchTerm,
+      column: filter.column,
+      direction: filter.direction,
+      per_page: perPage,
+    };
+
     try {
       const response = await api.get("/receipt-records", {
         params: {
-          page: searchTerm ? 1 : pagination?.current_page,
-          search: searchTerm,
-          column: filter.column,
-          direction: filter.direction,
-          per_page: perPage,
+          ...payload,
         },
       });
 
@@ -74,7 +76,6 @@ export default function useFetchPrintReceipts() {
     } finally {
       setLoading(false);
       setIsNextPrevPage(false);
-      setDataLoaded(false);
       setIsSearching(false);
       setPagination((pagination: any) => ({
         ...pagination,
@@ -169,7 +170,6 @@ export default function useFetchPrintReceipts() {
     setSearchTerm,
     searchTerm,
     isSearching,
-    setIsRefresh,
     setFilter,
     setPerPage,
     filter,
@@ -179,5 +179,6 @@ export default function useFetchPrintReceipts() {
     handleLastPage,
     handleSearchTerm,
     setPagination,
+    fetchPrintReceiptsData,
   };
 }
