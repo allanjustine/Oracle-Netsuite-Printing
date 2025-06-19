@@ -255,6 +255,10 @@ export default function ReceiptDataTable({
     if (pagination.loading) return;
     setPagination((pagination: any) => ({
       ...pagination,
+      loading: true,
+    }));
+    setPagination((pagination: any) => ({
+      ...pagination,
       current_page: page,
     }));
   };
