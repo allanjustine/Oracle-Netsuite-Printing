@@ -14,14 +14,33 @@ export default function useFetchPrintReceipts() {
   const [filter, setFilter] = useState(filterData);
   const [perPage, setPerPage] = useState(20);
   const debounceRef = useRef<any>(null);
+  const searchRef = useRef<any>(null);
+  const pageRef = useRef<any>(null);
+  const columnRef = useRef<any>(null);
+  const directionRef = useRef<any>(null);
+  const perPageRef = useRef<any>(null);
+
+  useEffect(() => {
+    pageRef.current = searchTerm ? 1 : pagination?.current_page;
+    searchRef.current = searchTerm;
+    columnRef.current = filter.column;
+    directionRef.current = filter.direction;
+    perPageRef.current = perPage;
+  }, [
+    pagination?.current_page,
+    searchTerm,
+    filter.column,
+    filter.direction,
+    perPage,
+  ]);
 
   const fetchPrintReceiptsData = async () => {
     const payload = {
-      page: searchTerm ? 1 : pagination?.current_page,
-      search: searchTerm,
-      column: filter.column,
-      direction: filter.direction,
-      per_page: perPage,
+      page: pageRef.current,
+      search: searchRef.current,
+      column: columnRef.current,
+      direction: directionRef.current,
+      per_page: perPageRef.current,
     };
 
     try {
