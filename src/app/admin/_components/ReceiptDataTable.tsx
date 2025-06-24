@@ -83,6 +83,7 @@ export default function ReceiptDataTable({
       const response = await api.delete(`/print-receipt/${record.id}/delete-reciept`);
       if (response.status === 204) {
         Toast("Receipt deleted successfully", "success");
+        fetchPrintReceiptsData();
       }
     } catch (error: any) {
       console.error(error);
