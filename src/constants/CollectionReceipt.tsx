@@ -164,6 +164,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "MARD",
     "GUIN2",
     "DAPI",
+    "PANGL",
   ];
 
   const fdlOrOldSizeData = [
