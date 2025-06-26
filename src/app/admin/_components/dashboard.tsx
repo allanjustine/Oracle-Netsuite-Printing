@@ -22,12 +22,12 @@ export default function Dashboard() {
     searchTerm,
     pagination,
     isSearching,
-    setIsRefresh,
     setFilter,
     filter,
     setPerPage,
     handleSearchTerm,
     setPagination,
+    fetchPrintReceiptsData,
   } = useFetchPrintReceipts();
   const [isBackToTop, setIsBackToTop] = useState(false);
   const [isReverse, setIsReverse] = useState(false);
@@ -150,10 +150,10 @@ export default function Dashboard() {
             <div className="overflow-x-auto">
               <ReceiptDataTable
                 receiptRecords={receiptRecords}
-                setIsRefresh={setIsRefresh}
                 isSearching={isSearching}
                 pagination={pagination}
                 loading={loading}
+                fetchPrintReceiptsData={fetchPrintReceiptsData}
                 filter={filter}
                 setFilter={setFilter}
                 setPerPage={setPerPage}

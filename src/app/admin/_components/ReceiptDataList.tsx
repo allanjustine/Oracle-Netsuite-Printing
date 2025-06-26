@@ -63,7 +63,7 @@ export default function ReceiptDataList({ record, setIsRefresh, index }: any) {
     setIsLoading(true);
     setIsRefresh(true);
     try {
-      const response = await api.delete(`/print-receipt/${record.id}`);
+      const response = await api.delete(`/print-receipt/${record.id}/delete-reciept`);
       if (response.status === 204) {
         Toast("Receipt deleted successfully", "success");
       }
