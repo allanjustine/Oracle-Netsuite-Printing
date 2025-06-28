@@ -164,6 +164,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "MARD",
     "GUIN2",
     "DAPI",
+    "MOLD2"
   ];
 
   const fdlOrOldSizeData = [
@@ -480,8 +481,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <HDAlano data={data} />;
     case "PAGS" === user?.branchCode:
       return <Pagsanjan data={data} />;
-    case "MOLD2" === user?.branchCode:
-      return <DAPMolave2 data={data} />;
+    // case "MOLD2" === user?.branchCode:
+    //   return <DAPMolave2 data={data} />;
     case "ANTIP" === user?.branchCode:
       return <SMCTAntipolo data={data} />; //OR
     case "KABA" === user?.branchCode:
