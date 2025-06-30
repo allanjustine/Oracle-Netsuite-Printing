@@ -78,7 +78,7 @@ const HDCalinog: React.FC<PrintPageProps> = ({ data }) => {
         </p>
       </div>
       
-      <div className="w-[769.13385827px] pl-[566.92913386px] mt-[45.7952755906px] text-[11px]">
+      <div className="w-[769.13385827px] pl-[566.92913386px] mt-[37.7952755906px] text-[11px]">
         <p>
         {data[1]?.[CR_PartnerName]}
         </p>
