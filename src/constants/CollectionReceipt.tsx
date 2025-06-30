@@ -117,6 +117,7 @@ import DSMToledo2 from "@/utils/official-receipt/global/obbus/old/dsm/DSMToledo2
 import Gingoog from "@/utils/collectionreceipt/global/fdl/new/dsm/Gingoog";
 import SMCTRosario from "@/utils/collectionreceipt/global/fely/old/smct/SMCTRosario";
 import Sablayan from "@/utils/collectionreceipt/global/fdl/new/dsm/Sablayan";
+import SMCTTalibon from "@/utils/collectionreceipt/global/fdl/old/smct/SMCTTalibon";
 
 //import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
@@ -193,7 +194,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "BAYB",
     "MANG",
     "VALEN",
-    "TALI",
+    // "TALI",
     "VILLA2",
     "BONI",
     "LABD",
@@ -515,6 +516,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <Gingoog data={data} />;
     case "SABLA" === user?.branchCode:
       return <Sablayan data={data} />;
+    case "TALI" === user?.branchCode:
+      return <SMCTTalibon data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
