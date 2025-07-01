@@ -3,7 +3,7 @@ import { PrintPageProps } from "@/types/types";
 import FormattedNumber from "@/utils/FormattedNumber";
 import enyeFormat from "@/utils/enyeFormat";
 
-const HDCalinog: React.FC<PrintPageProps> = ({ data }) => {
+const SMCTTalibon: React.FC<PrintPageProps> = ({ data }) => {
   const CR_Date = 0;
   const CR_Name = 1;
   const CR_TIN = 2;
@@ -17,46 +17,46 @@ const HDCalinog: React.FC<PrintPageProps> = ({ data }) => {
   const CR_Reference = 10;
 
   return (
-    <div className="text-xs w-[769.13385827px] h-[396.8503937px]">
+    <div className="text-xs w-[805.03937008px] h-[415.7480315px]">
       <div className="flex mt-[100.1732283431px]">
-        <p className="pl-[604.72440945px] w-[143.62204724px]">
+        <p className="pl-[620.07874016px] w-[143.62204724px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex justify-between  mt-[19.7952755906px]">
-        <div className="w-[566.92913386px]">
-          <p className="pl-[313.7007874px]">
+      <div className="flex justify-between mt-[24.7952755906px]">
+        <div className="w-[574.48818898px]">
+          <p className="pl-[321.25984252px]">
             {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
           </p>
         </div>
-        <div className="w-[202.58267717px]">
-          <p className="pl-[37.795275591px]">
+        <div className="w-[207.87401575px]">
+          <p className="pl-[40.133858268px]">
             {data[1]?.[CR_TIN] || <span className="opacity-0">No data</span>}
           </p>
         </div>
       </div>
-      <div className="flex mt-[9.8267716539px]">
-        <p className="pl-[302.36220472px]">
+      <div className="flex mt-[6.8267716539px]">
+        <p className="pl-[313.7007874px]">
           {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex mt-[6.8267716539px]">
-        <p className="ml-[294.80314961px]">
+      <div className="flex mt-[3.8267716539px]">
+        <p className="ml-[306.14173228px]">
           {data[1]?.[CR_BusinessStyle] || (
             <span className="opacity-0">No data</span>
           )}
         </p>
       </div>
       <div className="flex w-full mt-[3.8267716539px]">
-        <div className="w-[604.72440945px]">
-          <p className="pl-[234.33070866px]">
+        <div className="w-[600.94488189px]">
+          <p className="pl-[249.4488189px]">
             {data[1]?.[CR_AmountInWords] || (
               <span className="opacity-0">No data</span>
             )}
           </p>
         </div>
-        <div className="w-[164.40944882px]">
-          <p className="pl-[45.354330709px]">
+        <div className="w-[181.41732283px]">
+          <p className="pl-[52.913385827px]">
             {FormattedNumber(data[1]?.[CR_AmountInFigures]) || (
               <span className="opacity-0">No data</span>
             )}
@@ -77,14 +77,16 @@ const HDCalinog: React.FC<PrintPageProps> = ({ data }) => {
           )}
         </p>
       </div>
-      
-      <div className="w-[769.13385827px] pl-[566.92913386px] mt-[37.7952755906px] text-[11px]">
-        <p>
-        {data[1]?.[CR_PartnerName]}
+
+      <div className="w-[782.36220472px] pl-[566.92913386px] mt-[28.7952755906px] text-[11px]">
+        <p className="text-center w-[170.07874016px]">
+          {data[1]?.[CR_PartnerName] || (
+            <span className="opacity-0">No data</span>
+          )}
         </p>
       </div>
     </div>
   );
 };
 
-export default HDCalinog;
+export default SMCTTalibon;
