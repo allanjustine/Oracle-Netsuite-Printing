@@ -60,7 +60,10 @@ export const VersionProvider = ({ children }: any) => {
           setIsAbnormalVersion(false);
           setIsPrintable(false);
           setIsPrintable(false);
-        } else if (Number(version) < Number(lsAppVersion)) {
+        } else if (
+          Number(version) < Number(lsAppVersion) ||
+          lsAppVersion === null
+        ) {
           console.error(
             `Version is abnormal! New Version: ${version}, Current Version: ${lsAppVersion}`
           );
@@ -79,17 +82,20 @@ export const VersionProvider = ({ children }: any) => {
       } catch (error: any) {
         console.error(error);
         if (error.response.status === 503) {
-          toast.error(`${error.response.data.message}, Please reload the page.`, {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: false,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "colored",
-            transition: Bounce,
-          });
+          toast.error(
+            `${error.response.data.message}, Please reload the page.`,
+            {
+              position: "top-right",
+              autoClose: 3000,
+              hideProgressBar: false,
+              closeOnClick: false,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+              transition: Bounce,
+            }
+          );
         }
       } finally {
         setIsLoading(false);
