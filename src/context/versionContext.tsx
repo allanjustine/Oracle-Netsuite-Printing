@@ -24,7 +24,7 @@ export const VersionProvider = ({ children }: any) => {
         if (Number(version) > Number(lsAppVersion) || lsAppVersion === null) {
           localStorage.setItem("ls-app-version", version);
         }
-        if (Number(version) < Number(lsAppVersion)) {
+        if (Number(version) < Number(lsAppVersion) || lsAppVersion === null) {
           localStorage.setItem("ls-app-version", version);
         }
         setVersion(version);
