@@ -21,10 +21,11 @@ export const VersionProvider = ({ children }: any) => {
         const response = await api.get("/app-version");
         const version = response.data.version;
         const lsAppVersion: any = localStorage.getItem("ls-app-version");
-        if (Number(version) > Number(lsAppVersion) && lsAppVersion === null) {
+
+        if (Number(version) > Number(lsAppVersion) || lsAppVersion === "null") {
           localStorage.setItem("ls-app-version", version);
         }
-        if (Number(version) < Number(lsAppVersion) && lsAppVersion === null) {
+        if (Number(version) < Number(lsAppVersion)) {
           localStorage.setItem("ls-app-version", version);
         }
         setVersion(version);
@@ -52,7 +53,7 @@ export const VersionProvider = ({ children }: any) => {
         setVersion(version);
         setOldVersion(lsAppVersion);
 
-        if (Number(version) > Number(lsAppVersion) && lsAppVersion === null) {
+        if (Number(version) > Number(lsAppVersion) || lsAppVersion === "null") {
           console.error(
             `Version Out of date! New Version: ${version}, Current Version: ${lsAppVersion}`
           );
@@ -60,10 +61,7 @@ export const VersionProvider = ({ children }: any) => {
           setIsAbnormalVersion(false);
           setIsPrintable(false);
           setIsPrintable(false);
-        } else if (
-          Number(version) < Number(lsAppVersion) &&
-          lsAppVersion === null
-        ) {
+        } else if (Number(version) < Number(lsAppVersion)) {
           console.error(
             `Version is abnormal! New Version: ${version}, Current Version: ${lsAppVersion}`
           );
