@@ -164,7 +164,9 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "MARD",
     "GUIN2",
     "DAPI",
+    "MOLD2",
     "PANGL",
+    "CALD",
     "ISU",
     "BAYB",
     "TORI",
@@ -177,12 +179,11 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "TUBI",
     "DSMD",
     "REMI2",
-    "CALD",
     "CATM",
     "PARD2",
     "BOHK",
     "DSMCN",
-    "PARD",
+    // "PARD",
   ];
 
   const fdlCrOldSizeData = [
@@ -216,6 +217,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "TUBU",
     "MARA",
     "DIPD",
+    "PARD"
   ];
 
   const fdlOrNewSizeData = [];
@@ -483,8 +485,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <HDAlano data={data} />;
     case "PAGS" === user?.branchCode:
       return <Pagsanjan data={data} />;
-    case "MOLD2" === user?.branchCode:
-      return <DAPMolave2 data={data} />;
+    // case "MOLD2" === user?.branchCode:
+    //   return <DAPMolave2 data={data} />;
     case "ANTIP" === user?.branchCode:
       return <SMCTAntipolo data={data} />; //OR
     case "KABA" === user?.branchCode:

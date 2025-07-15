@@ -63,12 +63,12 @@ const DAPTubod: React.FC<PrintPageProps> = ({ data }) => {
           </p>
         </div>
       </div>
-      <div className="w-[521.57480315px] pl-[340.15748031px] mt-[6.8267716539px]">
+      <div className="w-[730.57480315px] pl-[340.15748031px] mt-[6.8267716539px]">
         <p>
           {data[1]?.[CR_Memo] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="w-[774.80314961px] pl-[566.92913386px] mt-[45.7952755906px] text-[11px]">
+      <div className="w-[774.80314961px] pl-[566.92913386px] mt-[30.7952755906px] text-[11px]">
         <p>
         {data[1]?.[CR_PartnerName]}
         </p>

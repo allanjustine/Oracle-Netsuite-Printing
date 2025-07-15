@@ -202,7 +202,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "MANG",
     "TALI",
     "VALEN",
-    "TUBU",
+    // "TUBU",
     "BUUD",
     "DIPD2",
     "DSMV",
@@ -236,6 +236,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "OZAH",
     "INAB",
     "KABA2",
+    "NABU",
+    "TUBU"
   ];
 
   const fdlSiOldSizeData = ["NUND2", "DAPI", "TANZ", "BONI", "VITA"];
@@ -440,8 +442,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <HDCalinog data={data} />;
     case "SLAP" === user?.branchCode:
       return <LapuLapu data={data} />;
-    case "NABU" === user?.branchCode:
-      return <Nabunturan data={data} />;
+    // case "NABU" === user?.branchCode:
+    //   return <Nabunturan data={data} />;
     case "DSMSO" === user?.branchCode:
       return <SuzukiOsamiz data={data} />;
     case "INIT" === user?.branchCode:
