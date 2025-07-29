@@ -184,6 +184,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "BOHK",
     "DSMCN",
     // "PARD",
+    "TRINI",
   ];
 
   const fdlCrOldSizeData = [
@@ -478,8 +479,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTSanJose data={data} />;
     case "SROS" === user?.branchCode:
       return <SMCTRosario data={data} />;
-    case "TRINI" === user?.branchCode:
-      return <HDTrinidad data={data} />;
+    // case "TRINI" === user?.branchCode:
+    //   return <HDTrinidad data={data} />;
     case "ALAH" === user?.branchCode:
       return <HDAlano data={data} />;
     case "PAGS" === user?.branchCode:
