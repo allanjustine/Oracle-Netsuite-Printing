@@ -220,6 +220,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "BUUH",
     "DSMM",
     "TRINI",
+    "AURH",
   ];
 
   const fdlOrNewSizeData = [];
@@ -391,8 +392,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <HDVeterans data={data} />; //OR
     case "DSML" === user?.branchCode:
       return <HDToledo data={data} />; //OR
-    case "AURH" === user?.branchCode:
-      return <HDAurora data={data} />; //OR
+    // case "AURH" === user?.branchCode:
+    //   return <HDAurora data={data} />; //OR
     case "DATH" === user?.branchCode:
       return <HDDatoc data={data} />; //OR
     case "DSMCA" === user?.branchCode:
