@@ -118,6 +118,7 @@ import Gingoog from "@/utils/collectionreceipt/global/fdl/new/dsm/Gingoog";
 import SMCTRosario from "@/utils/collectionreceipt/global/fely/old/smct/SMCTRosario";
 import Sablayan from "@/utils/collectionreceipt/global/fdl/new/dsm/Sablayan";
 import SMCTTalibon from "@/utils/collectionreceipt/global/fdl/old/smct/SMCTTalibon";
+import DSMHeadOffice from "@/utils/collectionreceipt/global/fdl/old/dsm/DSMHeadOffice";
 
 //import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
@@ -223,7 +224,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "AURH",
     "DSMP",
     "IPIH",
-    "HO",
   ];
 
   const fdlOrNewSizeData = [];
@@ -525,6 +525,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <Sablayan data={data} />;
     case "TALI" === user?.branchCode:
       return <SMCTTalibon data={data} />;
+    case "HO" === user?.branchCode:
+    return <DSMHeadOffice data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
