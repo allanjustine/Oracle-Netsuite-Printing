@@ -119,6 +119,7 @@ import SMCTRosario from "@/utils/collectionreceipt/global/fely/old/smct/SMCTRosa
 import Sablayan from "@/utils/collectionreceipt/global/fdl/new/dsm/Sablayan";
 import SMCTTalibon from "@/utils/collectionreceipt/global/fdl/old/smct/SMCTTalibon";
 import DSMHeadOffice from "@/utils/collectionreceipt/global/fdl/old/dsm/DSMHeadOffice";
+import HO_DAP from "@/utils/collectionreceipt/global/fdl/old/dap/HO_DAP";
 
 //import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
@@ -525,7 +526,13 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <Sablayan data={data} />;
     case "TALI" === user?.branchCode:
       return <SMCTTalibon data={data} />;
-    case "HO" === user?.branchCode:
+    case "HO-DSM"=== user?.branchCode:
+    return <DSMHeadOffice data={data} />;
+    case "HO-DAP"=== user?.branchCode:
+    return <HO_DAP data={data} />;
+    case "HO-SMCT"=== user?.branchCode:
+    return <DSMHeadOffice data={data} />;
+     case "HO-HD"=== user?.branchCode:
     return <DSMHeadOffice data={data} />;
     default:
       return (
