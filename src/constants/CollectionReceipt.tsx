@@ -528,13 +528,13 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     case "TALI" === user?.branchCode:
       return <SMCTTalibon data={data} />;
     case "HO-DSM"=== user?.branchCode:
-    return <DSMHeadOffice data={data} />;
+      return <DSMHeadOffice data={data} />;
     case "HO-DAP"=== user?.branchCode:
-    return <HO_DAP data={data} />;
+      return <HO_DAP data={data} />;
     case "HO-SMCT"=== user?.branchCode:
-    return <HO_SMCT data={data} />;
-     case "HO-HD"=== user?.branchCode:
-    return <DSMHeadOffice data={data} />;
+      return <HO_SMCT data={data} />;
+    case "HO-HD"=== user?.branchCode:
+      return <HO_DAP data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
