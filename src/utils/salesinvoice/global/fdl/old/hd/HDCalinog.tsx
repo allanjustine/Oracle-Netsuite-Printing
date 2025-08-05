@@ -316,7 +316,7 @@ const HDCalinog: React.FC<PrintPageProps> = ({ data }) => {
         </table>
       </div>
       <div className="mx-[30.236220472px]">
-        <div className="mt-[22.566929134px] ml-[392.31496063px]">
+        <div className="mt-[22.566929134px] ml-[375.31496063px]">
           <p className="text-xs text-center">
             {data[1]?.[cashier]
               ?.replace(/Ã/g, "Ñ")
