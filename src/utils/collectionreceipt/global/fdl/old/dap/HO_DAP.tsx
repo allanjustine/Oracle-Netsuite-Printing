@@ -68,7 +68,7 @@ const HO_DAP: React.FC<PrintPageProps> = ({ data }) => {
           {data[1]?.[CR_Memo] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="w-[151.18110236px] pl-[434.64566929px] mt-[37.795275591px] text-[11px]">
+      <div className="w-[151.18110236px] pl-[414.64566929px] mt-[37.795275591px] text-[11px]">
         <p>
         {data[1]?.[CR_PartnerName]}
         </p>
