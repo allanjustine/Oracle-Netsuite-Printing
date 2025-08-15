@@ -111,6 +111,7 @@ const Binan: React.FC<PrintPageProps> = ({ data }) => {
     FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
   );
 
+  console.log(data);
   return (
     <div className="text-xs h-[785.76377953px] w-[582.80314961px]">
       <div className="flex h-[21.165354331px] mt-[128.62204725px]">
@@ -126,7 +127,9 @@ const Binan: React.FC<PrintPageProps> = ({ data }) => {
         <p className="w-[377.95275591px] pl-[94.488188976px]">
           {data[1]?.[taxNumber] || <span className="opacity-0">No Data</span>}
         </p>
-        <p className="w-[219.21259843px] pl-[62px]">{data[1]?.[terms] || "CASH"}</p>
+        <p className="w-[219.21259843px] pl-[62px]">
+          {data[1]?.[terms] || "CASH"}
+        </p>
       </div>
       <div className="flex h-[21.165354331]">
         <p
@@ -317,7 +320,7 @@ const Binan: React.FC<PrintPageProps> = ({ data }) => {
         <div className="mt-[22.566929134px] ml-[392.31496063px]">
           <p
             className={`text-center ${
-              data[1]?.[cashier].length > 10 ? "text-[10px]" : ""
+              data[1]?.[cashier]?.length > 10 ? "text-[10px]" : ""
             }`}
           >
             {data[1]?.[cashier]
