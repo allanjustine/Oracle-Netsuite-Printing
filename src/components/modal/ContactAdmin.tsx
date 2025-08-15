@@ -1,8 +1,4 @@
 import { FaXmark } from "react-icons/fa6";
-import { MdLabelImportantOutline } from "react-icons/md";
-import Button from "../ui/button";
-import Label from "../ui/label";
-import Textarea from "../ui/textarea";
 import Link from "next/link";
 import { FaCode, FaCommentDots } from "react-icons/fa";
 
@@ -89,9 +85,7 @@ export default function ContactAdmin({ isOpen, onClose, modalRef }: any) {
                         <h5 className="text-sm font-medium text-gray-900">
                           {item.name}
                         </h5>
-                        <p className="text-xs text-gray-500">
-                          {item.position}
-                        </p>
+                        <p className="text-xs text-gray-500">{item.position}</p>
                       </div>
                     </div>
                     <Link
