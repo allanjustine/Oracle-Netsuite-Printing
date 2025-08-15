@@ -28,11 +28,11 @@ export default function Error() {
         <p className="mt-4 text-gray-500">
           Please try again later or contact support if the problem persists.
         </p>
-        <div className="mt-5 transition-all duration-300 ease-in-out hover:scale-105 w-full flex justify-center">
+        <div className="mt-5 w-full flex justify-center">
           <button
             onClick={handleReloadPage}
             type="button"
-            className="text-white p-3 bg-blue-500 hover:bg-blue-600 rounded-md flex gap-1 items-center"
+            className="text-white p-3 bg-blue-500 hover:bg-blue-600 rounded-md flex gap-1 items-center transition-all duration-300 ease-in-out hover:scale-105"
           >
             <RxReload /> <span>Reload Page</span>
           </button>
