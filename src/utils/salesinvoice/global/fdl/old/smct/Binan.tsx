@@ -111,7 +111,6 @@ const Binan: React.FC<PrintPageProps> = ({ data }) => {
     FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
   );
 
-  console.log(data);
   return (
     <div className="text-xs h-[785.76377953px] w-[582.80314961px]">
       <div className="flex h-[21.165354331px] mt-[128.62204725px]">
