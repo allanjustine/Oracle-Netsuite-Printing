@@ -28,7 +28,7 @@ export default function Error() {
         <p className="mt-4 text-gray-500">
           Please try again later or contact support if the problem persists.
         </p>
-        <div className="mt-5 transition-all duration-300 ease-in-out hover:scale-105">
+        <div className="mt-5 transition-all duration-300 ease-in-out hover:scale-105 w-full flex justify-center">
           <button
             onClick={handleReloadPage}
             type="button"
