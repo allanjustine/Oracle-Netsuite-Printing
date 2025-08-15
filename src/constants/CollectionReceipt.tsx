@@ -231,14 +231,13 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const fdlOrNewSizeData = [];
 
   // OBBUS
-  const obbusCrNewSizeData = ["TOMAS", "DIGOS", "BOLOD", "MARA2","TORI",];
+  const obbusCrNewSizeData = ["TOMAS", "DIGOS", "BOLOD", "MARA2","TORI", "TACU",];
 
   const obbusCrOldSizeData = [
     "DSMBN",
     "ELSA",
     "ILIG",
     "DSMPO",
-    "TACU",
     "VILLA",
     "MATI",
     "MEDE",
