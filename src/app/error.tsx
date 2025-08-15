@@ -32,9 +32,9 @@ export default function Error() {
           <button
             onClick={handleReloadPage}
             type="button"
-            className="text-white p-3 bg-blue-500 hover:bg-blue-600 rounded-md"
+            className="text-white p-3 bg-blue-500 hover:bg-blue-600 rounded-md flex gap-1 items-center"
           >
-            <RxReload /> Reload Page
+            <RxReload /> <span>Reload Page</span>
           </button>
         </div>
       </div>
