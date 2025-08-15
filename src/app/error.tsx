@@ -1,11 +1,13 @@
 "use client";
 
-import { useAuth } from "@/context/authcontext";
 import Image from "next/image";
-import Link from "next/link";
+import { RxReload } from "react-icons/rx";
 
 export default function Error() {
-  const { isAuthenticated } = useAuth();
+  function handleReloadPage() {
+    window.location.reload();
+  }
+
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="text-center">
@@ -26,23 +28,15 @@ export default function Error() {
         <p className="mt-4 text-gray-500">
           Please try again later or contact support if the problem persists.
         </p>
-        <p className="mt-5 transition-all duration-300 ease-in-out hover:scale-105">
-          {isAuthenticated ? (
-            <Link
-              href={"/dashboard"}
-              className="text-white p-3 bg-blue-500 hover:bg-blue-600 rounded-md"
-            >
-              Back to Dashboard
-            </Link>
-          ) : (
-            <Link
-              href={"/"}
-              className="text-white p-3 bg-blue-500 hover:bg-blue-600 rounded-md"
-            >
-              Back to Home
-            </Link>
-          )}
-        </p>
+        <div className="mt-5 transition-all duration-300 ease-in-out hover:scale-105">
+          <button
+            onClick={handleReloadPage}
+            type="button"
+            className="text-white p-3 bg-blue-500 hover:bg-blue-600 rounded-md"
+          >
+            <RxReload /> Reload Page
+          </button>
+        </div>
       </div>
     </div>
   );
