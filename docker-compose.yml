@@ -7,6 +7,14 @@ services:
     restart: unless-stopped
     ports:
       - "1000:1000"
+
+cloudflared-netsuite-printing:
+    image: cloudflare/cloudflared:latest
+    container_name: netsuite-printing-tunnel
+    restart: unless-stopped
+    command: tunnel run --url http://nestsuite-printing:1000
+    environment:
+    - TUNNEL_TOKEN=eyJhIjoiODE3YmEzYzg5MGM0YTRmYzRjN2YwYTg1NmQ3YzFmODciLCJ0IjoiZjFmNTk4MmYtOTU3Yy00M2UxLTliNmQtMWEzZWE0OWNmMjg2IiwicyI6IlkyWTNNMkkyT0RNdE9EVTBNeTAwTkdWbExXSmtNakF0WkRObFpUSmxORGd3TkRRMyJ9
     # networks:
     #   - app-network
     # depends_on:
