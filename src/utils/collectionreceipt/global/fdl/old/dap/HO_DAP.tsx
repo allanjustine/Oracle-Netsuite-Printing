@@ -64,14 +64,18 @@ const HO_DAP: React.FC<PrintPageProps> = ({ data }) => {
         </div>
       </div>
       <div className="w-[582.04724409px] pl-[294.80314961px] mt-[6.8267716539px]">
-        <p
-          className={`${
-            data[1]?.[CR_Memo]?.length > 60 ? "text-[10px]" : ""
-          }`}
-        >
-          {data[1]?.[CR_Memo] || <span className="opacity-0">No data</span>}
+        <p>
+          {data[1]?.[CR_Memo].substring(0,50) || (
+            <span className="opacity-0">No data</span>
+          )}
         </p>
-
+      </div>
+      <div className="w-[632.04724409px] pl-[104.80314961px] mt-[4.8267716539px]">
+        <p>
+          {data[1]?.[CR_Memo].substring(50) || (
+            <span className="opacity-0">No data</span>
+          )}
+        </p>
       </div>
       <div className="w-[585.82677165px] pl-[434.64566929px] mt-[37.795275591px] text-[11px]">
         <p>
