@@ -77,7 +77,8 @@ const HO_DAP: React.FC<PrintPageProps> = ({ data }) => {
           )}
         </p>
       </div>
-      <div className="w-[585.82677165px] pl-[434.64566929px] mt-[30.795275591px] text-[11px]">
+
+      <div className="w-[585.82677165px] pl-[434.64566929px] mt-[20.795275591px] text-[11px]">
         <p>
         {data[1]?.[CR_PartnerName]}
         </p>
