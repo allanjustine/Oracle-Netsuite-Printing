@@ -177,6 +177,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "KABAC",
     "DSMCN",
     "CALB",
+    "SINDA",
   ];
 
   const fdlOrOldSizeData = [
@@ -374,8 +375,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <MandaueMulti data={data} />;
     case "GENT" === user?.branchCode:
       return <HDGeneralTrias data={data} />;
-    case "SINDA" === user?.branchCode:
-      return <HDSindangan data={data} />;
+    // case "SINDA" === user?.branchCode:
+    //   return <HDSindangan data={data} />;
     case "SDIP" === user?.branchCode:
       return <HDDipolog data={data} />;
     case "CARMC" === user?.branchCode:
