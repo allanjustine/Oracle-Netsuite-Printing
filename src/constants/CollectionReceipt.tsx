@@ -121,7 +121,7 @@ import SMCTTalibon from "@/utils/collectionreceipt/global/fdl/old/smct/SMCTTalib
 import DSMHeadOffice from "@/utils/collectionreceipt/global/fdl/old/dsm/DSMHeadOffice";
 import HO_DAP from "@/utils/collectionreceipt/global/fdl/old/dap/HO_DAP";
 import HO_SMCT from "@/utils/official-receipt/global/fdl/old/smct/HO_SMCT";
-// import DSMQuezon from "@/utils/collectionreceipt/global/fdl/new/dsm/DSMQuezon";
+import DSMQuezon from "@/utils/collectionreceipt/global/fdl/new/dsm/DSMQuezon";
 
 //import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
@@ -180,7 +180,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "CALB",
     "SINDA",
     "VITA",
-    "QUEZ",
   ];
 
   const fdlOrOldSizeData = [
@@ -539,8 +538,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <HO_SMCT data={data} />;
     case "HO-HD"=== user?.branchCode:
       return <HO_DAP data={data} />;
-    // case "QUEZ"=== user?.branchCode:
-    // return <DSMQuezon data={data} />;
+    case "QUEZ"=== user?.branchCode:
+    return <DSMQuezon data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
