@@ -139,6 +139,7 @@ import DAPIliganNew from "@/utils/salesinvoice/global/fdl/old/dap/DAPIliganNew";
 import Sablayan from "@/utils/salesinvoice/global/fdl/new/dsm/Sablayan";
 import DSMQuezon from "@/utils/salesinvoice/global/fdl/new/dsm/DSMQuezon";
 import Kabac from "@/utils/salesinvoice/not-recognized/si-csi-sizes/Kabac";
+import DSMIsulan from "@/utils/salesinvoice/global/obbus/old/dsm/DSMIsulan";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -164,7 +165,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "TRINI2",
     "MOLS",
     "DASMA",
-    "SARG",
     "DSMB",
     "MARA",
     // "KABAC",
@@ -259,6 +259,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "DSMM",
     "DSMDM",
     "LABA",
+    "SARG",
   ];
 
   const obbusSiNewSizeData = ["DSMD", "RIZA", "TOMAS", "BOLOD", "MING"];
@@ -545,6 +546,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Kabac data={data} />;
     case "QUEZ" === user?.branchCode:
       return <DSMQuezon data={data} />;
+    case "ISU" === user?.branchCode:
+    return <DSMIsulan data={data} />;
 
     default:
       return (
