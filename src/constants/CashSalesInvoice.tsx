@@ -140,6 +140,7 @@ import Sablayan from "@/utils/salesinvoice/global/fdl/new/dsm/Sablayan";
 import DSMQuezon from "@/utils/salesinvoice/global/fdl/new/dsm/DSMQuezon";
 import Kabac from "@/utils/salesinvoice/not-recognized/si-csi-sizes/Kabac";
 import DSMIsulan from "@/utils/salesinvoice/global/obbus/old/dsm/DSMIsulan";
+import DSMArgao from "@/utils/salesinvoice/global/obbus/old/dsm/DSMArgao";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -259,7 +260,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "DSMM",
     "DSMDM",
     "LABA",
-    "SARG",
   ];
 
   const obbusSiNewSizeData = ["DSMD", "RIZA", "TOMAS", "BOLOD", "MING"];
@@ -548,6 +548,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <DSMQuezon data={data} />;
     case "ISU" === user?.branchCode:
     return <DSMIsulan data={data} />;
+    case "SARG" === user?.branchCode:
+    return <DSMArgao data={data} />;
 
     default:
       return (
