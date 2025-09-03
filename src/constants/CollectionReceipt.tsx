@@ -122,6 +122,7 @@ import DSMHeadOffice from "@/utils/collectionreceipt/global/fdl/old/dsm/DSMHeadO
 import HO_DAP from "@/utils/collectionreceipt/global/fdl/old/dap/HO_DAP";
 import HO_SMCT from "@/utils/official-receipt/global/fdl/old/smct/HO_SMCT";
 import DSMQuezon from "@/utils/collectionreceipt/global/fdl/new/dsm/DSMQuezon";
+import PropertyVenturesCorporation from "@/utils/salesinvoice/global/fdl/new/smct/property-ventures-corporation";
 
 //import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
@@ -136,14 +137,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const smctCrSizeData = [""];
 
-  const dsmCrSizeData = [
-    "CARS",
-    "CONSO",
-    "DONC",
-    "DSMSB",
-    "MARA",
-    "TAGUM",
-  ];
+  const dsmCrSizeData = ["CARS", "CONSO", "DONC", "DSMSB", "MARA", "TAGUM"];
 
   //FDL
   const fdlCrNewSizeData = [
@@ -235,7 +229,14 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const fdlOrNewSizeData = [];
 
   // OBBUS
-  const obbusCrNewSizeData = ["TOMAS", "DIGOS", "BOLOD", "MARA2","TORI", "TACU",];
+  const obbusCrNewSizeData = [
+    "TOMAS",
+    "DIGOS",
+    "BOLOD",
+    "MARA2",
+    "TORI",
+    "TACU",
+  ];
 
   const obbusCrOldSizeData = [
     "DSMBN",
@@ -384,8 +385,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <HDCarmenCebu data={data} />;
     case "CERI" === user?.branchCode:
       return <Cerilles data={data} />;
-     case "CALAP2" === user?.branchCode:
-       return <Calape2 data={data} />;
+    case "CALAP2" === user?.branchCode:
+      return <Calape2 data={data} />;
     case "CARMC2" === user?.branchCode:
       return <CarmenCebu2 data={data} />;
     case "DSMD2" === user?.branchCode:
@@ -530,16 +531,18 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <Sablayan data={data} />;
     case "TALI" === user?.branchCode:
       return <SMCTTalibon data={data} />;
-    case "HO-DSM"=== user?.branchCode:
+    case "HO-DSM" === user?.branchCode:
       return <DSMHeadOffice data={data} />;
-    case "HO-DAP"=== user?.branchCode:
+    case "HO-DAP" === user?.branchCode:
       return <HO_DAP data={data} />;
-    case "HO-SMCT"=== user?.branchCode:
+    case "HO-SMCT" === user?.branchCode:
       return <HO_SMCT data={data} />;
-    case "HO-HD"=== user?.branchCode:
+    case "HO-HD" === user?.branchCode:
       return <HO_DAP data={data} />;
-    case "QUEZ"=== user?.branchCode:
-    return <DSMQuezon data={data} />;
+    case "QUEZ" === user?.branchCode:
+      return <DSMQuezon data={data} />;
+    case "SPVC" === user?.branchCode:
+      return <PropertyVenturesCorporation data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
