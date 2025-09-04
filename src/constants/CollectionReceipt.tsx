@@ -122,7 +122,6 @@ import DSMHeadOffice from "@/utils/collectionreceipt/global/fdl/old/dsm/DSMHeadO
 import HO_DAP from "@/utils/collectionreceipt/global/fdl/old/dap/HO_DAP";
 import HO_SMCT from "@/utils/official-receipt/global/fdl/old/smct/HO_SMCT";
 import DSMQuezon from "@/utils/collectionreceipt/global/fdl/new/dsm/DSMQuezon";
-import PropertyVenturesCorporation from "@/utils/salesinvoice/global/fdl/new/smct/property-ventures-corporation";
 
 //import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
@@ -541,8 +540,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <HO_DAP data={data} />;
     case "QUEZ" === user?.branchCode:
       return <DSMQuezon data={data} />;
-    case "SPVC" === user?.branchCode:
-      return <PropertyVenturesCorporation data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">

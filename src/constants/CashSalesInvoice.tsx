@@ -141,6 +141,7 @@ import DSMQuezon from "@/utils/salesinvoice/global/fdl/new/dsm/DSMQuezon";
 import Kabac from "@/utils/salesinvoice/not-recognized/si-csi-sizes/Kabac";
 import DSMIsulan from "@/utils/salesinvoice/global/obbus/old/dsm/DSMIsulan";
 import DSMArgao from "@/utils/salesinvoice/global/obbus/old/dsm/DSMArgao";
+import PropertyVenturesCorporation from "@/utils/salesinvoice/global/fdl/new/smct/property-ventures-corporation";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -547,9 +548,11 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     case "QUEZ" === user?.branchCode:
       return <DSMQuezon data={data} />;
     case "ISU" === user?.branchCode:
-    return <DSMIsulan data={data} />;
+      return <DSMIsulan data={data} />;
     case "SARG" === user?.branchCode:
-    return <DSMArgao data={data} />;
+      return <DSMArgao data={data} />;
+    case "SPVC" === user?.branchCode:
+      return <PropertyVenturesCorporation data={data} />;
 
     default:
       return (
