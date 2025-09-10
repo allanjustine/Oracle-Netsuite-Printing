@@ -33,9 +33,9 @@ export default function ContactAdmin({ isOpen, onClose, modalRef }: any) {
         position: "Frontend Developer",
       },
       {
-        name: "Dev_Tial",
-        link: "https://chat.smctgroup.ph/direct/Dev_Tial",
-        profile_picture: "https://chat.smctgroup.ph/avatar/Dev_Tial",
+        name: "Dev_Tian",
+        link: "https://chat.smctgroup.ph/direct/Dev_Tian",
+        profile_picture: "https://chat.smctgroup.ph/avatar/Dev_Tian",
         position: "Backend Developer",
       },
     ],
