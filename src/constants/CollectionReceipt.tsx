@@ -124,7 +124,7 @@ import HO_SMCT from "@/utils/official-receipt/global/fdl/old/smct/HO_SMCT";
 import DSMQuezon from "@/utils/collectionreceipt/global/fdl/new/dsm/DSMQuezon";
 import DAPCalamba from "@/utils/collectionreceipt/global/fdl/new/dap/DAPCalamba";
 import CashSalesPropertyVenturesCorporation from "@/utils/collectionreceipt/global/fdl/new/smct/cash-sales-property-ventures-corporation";
-import Tacloban from "@/utils/collectionreceipt/global/fdl/new/dsm/Tacloban";
+import DsmTacloban from "@/utils/collectionreceipt/global/fdl/new/dsm/dsm-tacloban";
 
 //import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
@@ -545,11 +545,11 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     case "QUEZ" === user?.branchCode:
       return <DSMQuezon data={data} />;
     case "CALD" === user?.branchCode:
-    return <DAPCalamba data={data} />;
+      return <DAPCalamba data={data} />;
     case "SPVC" === user?.branchCode:
       return <CashSalesPropertyVenturesCorporation data={data} />;
     case "UTAP" === user?.branchCode:
-      return <Tacloban data={data} />;
+      return <DsmTacloban data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">

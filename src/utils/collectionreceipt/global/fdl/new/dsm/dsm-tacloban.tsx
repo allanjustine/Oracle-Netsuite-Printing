@@ -9,7 +9,7 @@ import FormattedSumTotalMinusLessVat from "@/utils/FormattedSumTotalMinusLessVat
 import FormattedTotalAmountDue from "@/utils/FormattedTotalAmountDue";
 import enyeFormat from "@/utils/enyeFormat";
 
-const Tacloban = ({ data }: any) => {
+const DsmTacloban = ({ data }: any) => {
   const CR_Date = 0;
   const CR_Name = 1;
   const CR_TIN = 2;
@@ -89,4 +89,4 @@ const Tacloban = ({ data }: any) => {
   );
 };
 
-export default Tacloban;
+export default DsmTacloban;
