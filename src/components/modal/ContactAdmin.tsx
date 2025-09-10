@@ -14,9 +14,10 @@ export default function ContactAdmin({ isOpen, onClose, modalRef }: any) {
         position: "Junior Web Developer",
       },
       {
-        name: "Dev_Allan-J",
-        link: "https://chat.smctgroup.ph/direct/Dev_Allan-J",
-        profile_picture: "https://chat.smctgroup.ph/avatar/Dev_Allan-J",
+        name: "DevunderscoreAllandashJ",
+        link: "https://chat.smctgroup.ph/direct/DevunderscoreAllandashJ",
+        profile_picture:
+          "https://chat.smctgroup.ph/avatar/DevunderscoreAllandashJ",
         position: "Web Developer",
       },
       {
@@ -30,6 +31,12 @@ export default function ContactAdmin({ isOpen, onClose, modalRef }: any) {
         link: "https://chat.smctgroup.ph/direct/dev_zart",
         profile_picture: "https://chat.smctgroup.ph/avatar/dev_zart",
         position: "Frontend Developer",
+      },
+      {
+        name: "Dev_Tial",
+        link: "https://chat.smctgroup.ph/direct/Dev_Tial",
+        profile_picture: "https://chat.smctgroup.ph/avatar/Dev_Tial",
+        position: "Backend Developer",
       },
     ],
   };
