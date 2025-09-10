@@ -166,7 +166,7 @@ const CashSalesPropertyVenturesCorporation = ({ data }: any) => {
             <tr className="text-xs">
               <td className="h-[18.897637795px] w-[162.51968504px]"></td>
               <td className="h-[18.897637795px] w-[106.96062992px] pl-[11.338582677px]">
-                0.00
+                {/* 0.00 */}
               </td>
               <td className="h-[18.897637795px] w-[159.11811024px]"></td>
               <td className="h-[18.897637795px] w-[102.38740157px] text-center">
@@ -176,7 +176,7 @@ const CashSalesPropertyVenturesCorporation = ({ data }: any) => {
             <tr className="text-xs">
               <td className="h-[18.897637795px] w-[162.51968504px]"></td>
               <td className="h-[18.897637795px] w-[106.96062992px] pl-[11.338582677px]">
-                0.00
+                {/* 0.00 */}
               </td>
               <td className="h-[18.897637795px] w-[159.11811024px]"></td>
               <td className="h-[18.897637795px] w-[102.38740157px] text-center"></td>
