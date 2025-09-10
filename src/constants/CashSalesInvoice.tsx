@@ -142,6 +142,7 @@ import Kabac from "@/utils/salesinvoice/not-recognized/si-csi-sizes/Kabac";
 import DSMIsulan from "@/utils/salesinvoice/global/obbus/old/dsm/DSMIsulan";
 import DSMArgao from "@/utils/salesinvoice/global/obbus/old/dsm/DSMArgao";
 import PropertyVenturesCorporation from "@/utils/salesinvoice/global/fdl/new/smct/property-ventures-corporation";
+import Tacloban from "@/utils/salesinvoice/global/fdl/new/dsm/tacloban";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -234,7 +235,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "CALAP",
     "CARC",
     "CARC2",
-    "UTAP",
+    // "UTAP",
     "SMCT",
     "PUTD",
     "CALB",
@@ -554,6 +555,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <DSMArgao data={data} />;
     case "SPVC" === user?.branchCode:
       return <PropertyVenturesCorporation data={data} />;
+    case "UTAP" === user?.branchCode:
+      return <Tacloban data={data} />;
 
     default:
       return (
