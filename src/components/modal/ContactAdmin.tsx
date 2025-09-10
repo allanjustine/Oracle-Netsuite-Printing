@@ -11,7 +11,7 @@ export default function ContactAdmin({ isOpen, onClose, modalRef }: any) {
         name: "Dev_Macmac",
         link: "https://chat.smctgroup.ph/direct/Dev_Macmac",
         profile_picture: "https://chat.smctgroup.ph/avatar/Dev_Macmac",
-        position: "Junior Web Developer",
+        position: "IT Supervisor",
       },
       {
         name: "DevunderscoreAllandashJ",
@@ -24,7 +24,7 @@ export default function ContactAdmin({ isOpen, onClose, modalRef }: any) {
         name: "dev_jenecil",
         link: "https://chat.smctgroup.ph/direct/dev_jenecil",
         profile_picture: "https://chat.smctgroup.ph/avatar/dev_jenecil",
-        position: "Web Developer",
+        position: "Web Developer II",
       },
       {
         name: "dev_zart",
