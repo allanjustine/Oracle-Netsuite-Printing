@@ -1062,8 +1062,9 @@ export default function Page() {
                           Total Sales (VAT Inclusive)
                         </td>
                         <td className="text-right p-2 font-semibold">
-                          {FormattedNumber(row[totalSalesVatInclusive]) ||
-                            "0.00"}
+                          {FormattedNumber(
+                            row[quantity] * row[totalSalesVatInclusive]
+                          ) || "0.00"}
                         </td>
                       </tr>
                       <tr>
@@ -1095,8 +1096,9 @@ export default function Page() {
                       <tr>
                         <td className="text-left p-2">TOTAL AMOUNT DUE</td>
                         <td className="text-right p-2 font-semibold">
-                          {FormattedNumber(row[totalSalesVatInclusive]) ||
-                            "0.00"}
+                          {FormattedNumber(
+                            row[quantity] * row[totalSalesVatInclusive]
+                          ) || "0.00"}
                         </td>
                       </tr>
                     </tbody>
