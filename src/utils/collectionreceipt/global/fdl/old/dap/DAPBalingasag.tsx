@@ -17,7 +17,7 @@ const DAPBalingasag: React.FC<PrintPageProps> = ({ data }) => {
   const CR_Reference = 10;
 
   return (
-    <div className="text-xs w-[774.80314961px] h-[404.40944882px] ml-[10px] mt-[18.897637795px">
+    <div className="text-xs w-[774.80314961px] h-[404.40944882px] ml-[10px] mt-[18.897637795px]">
       <div className="flex mt-[108.38582677px]">
         <p className="pl-[604.72440945px] w-[143.62204724px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
