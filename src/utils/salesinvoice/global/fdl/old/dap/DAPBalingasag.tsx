@@ -112,7 +112,7 @@ const DAPBalingasag: React.FC<PrintPageProps> = ({ data }) => {
   );
 
   return (
-    <div className="text-xs h-[506.45669291px] w-[767.24409449px]">
+    <div className="text-xs h-[506.45669291px] w-[767.24409449px] mt-[18.897637795px]">
       <div className="flex h-[17.007874016px] mt-[105.448818896px]">
         <p className="w-[528.66141732px] pl-[147.4015748px]">
           {data[1]?.[mainLineName]
