@@ -112,7 +112,7 @@ const DSMIsulan = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[795.59055118px] w-[616.06299213px]">
-      <div className="flex h-[15.458267717px] mt-[120.503937007px]">
+      <div className="flex h-[15.458267717px] mt-[125.503937007px]">
         <p className="w-[402.51968504px] ml-[86.929133858px]">
           {data[1]?.[mainLineName]
             ?.replace(/Ã/g, "Ñ")
@@ -172,7 +172,7 @@ const DSMIsulan = ({ data }: any) => {
                 <td className="w-[72.188976378px] h-[22.11023622px]">
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
-                <td className="w-[95.244094488px] h-[22.11023622px]">
+                <td className="w-[108.244094488px] h-[22.11023622px]">
                   {FormattedNumber(row[quantity] * row[rateInclusiveVat]) ||
                     "0.00"}
                 </td>
@@ -258,7 +258,7 @@ const DSMIsulan = ({ data }: any) => {
                 {vatableSalesFn}
               </td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
-              <td className="h-[22.11023622px] w-[96.755905512px] text-center">
+              <td className="h-[22.11023622px] w-[126.755905512px] text-center">
                 {totalSalesVatInclusiveFn}
               </td>
             </tr>
@@ -268,7 +268,7 @@ const DSMIsulan = ({ data }: any) => {
                 0.00
               </td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
-              <td className="h-[22.11023622px] w-[96.755905512px] text-center">
+              <td className="h-[22.11023622px] w-[126.755905512px] text-center">
                 {lessVatFn}
               </td>
             </tr>
@@ -278,7 +278,7 @@ const DSMIsulan = ({ data }: any) => {
                 0.00
               </td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
-              <td className="h-[22.11023622px] w-[96.755905512px] text-center">
+              <td className="h-[22.11023622px] w-[126.755905512px] text-center">
                 {amountNetOfVatFn}
               </td>
             </tr>
@@ -288,7 +288,7 @@ const DSMIsulan = ({ data }: any) => {
                 {vatAmountFn}
               </td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
-              <td className="h-[22.11023622px] w-[96.755905512px] text-center">
+              <td className="h-[22.11023622px] w-[126.755905512px] text-center">
                 {lessWithHoldingTaxFn}
               </td>
             </tr>
@@ -296,7 +296,7 @@ const DSMIsulan = ({ data }: any) => {
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3"></td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
-              <td className="h-[22.11023622px] w-[96.755905512px] text-center">
+              <td className="h-[22.11023622px] w-[126.755905512px] text-center">
                 {amountDueFn}
               </td>
             </tr>
@@ -304,7 +304,7 @@ const DSMIsulan = ({ data }: any) => {
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3"></td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
-              <td className="h-[22.11023622px] w-[96.755905512px] text-center">
+              <td className="h-[22.11023622px] w-[126.755905512px] text-center">
                 {addVatFn}
               </td>
             </tr>
@@ -312,7 +312,7 @@ const DSMIsulan = ({ data }: any) => {
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3"></td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
-              <td className="h-[22.11023622px] w-[96.755905512px] text-center">
+              <td className="h-[22.11023622px] w-[126.755905512px] text-center">
                 {totalSalesVatInclusiveFn}
               </td>
             </tr>
