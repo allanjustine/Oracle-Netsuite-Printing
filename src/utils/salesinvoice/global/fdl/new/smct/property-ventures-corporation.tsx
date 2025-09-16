@@ -138,13 +138,13 @@ const PropertyVenturesCorporation = ({ data }: any) => {
           )}
         </p>
       </div>
-      <div className="mx-[37.795275591px] w-[533.29133858px] mt-[35.858267717px] h-[226.77165354px]">
+      <div className="mx-[37.795275591px] w-[533.29133858px] mt-[40.858267717px] h-[226.77165354px]">
         <table className="border-collapse">
           <tbody>
             {data.slice(1, 13).map((row: any, index: number) => (
               <tr key={index} className="text-xs text-center">
                 <td
-                  className={`w-[268.72440945px] h-[18.897637795px] text-start ${
+                  className={`w-[268.72440945px] h-[18.897637795px] ml-[10.5590551181px] text-start ${
                     row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >
@@ -231,7 +231,7 @@ const PropertyVenturesCorporation = ({ data }: any) => {
           </tbody>
         </table>
       </div>
-      <div className="mx-[37.795275591px] h-[132.28346457px] mt-37.795275591px">
+      <div className="mx-[37.795275591px] h-[132.28346457px]">
         <table className="border-collapse w-full">
           <tbody>
             <tr className="text-xs">
