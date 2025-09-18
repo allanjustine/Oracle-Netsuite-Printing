@@ -8,9 +8,9 @@ export default function ContactAdmin({ isOpen, onClose, modalRef }: any) {
   const contactAdmins: any = {
     admins: [
       {
-        name: "Dev_Macmac",
-        link: "https://chat.smctgroup.ph/direct/Dev_Macmac",
-        profile_picture: "https://chat.smctgroup.ph/avatar/Dev_Macmac",
+        name: "Dev-IT_Macmac",
+        link: "https://chat.smctgroup.ph/direct/Dev-IT_Macmac",
+        profile_picture: "https://chat.smctgroup.ph/avatar/Dev-IT_Macmac",
         position: "IT Supervisor",
       },
       {
