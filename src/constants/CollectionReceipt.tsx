@@ -184,6 +184,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "BANTA",
     "TOLED",
     "ASTUR",
+    "SANTA",
   ];
 
   const fdlOrOldSizeData = [
@@ -275,11 +276,11 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   //FELY
   const felyCrNewSizeData = [];
 
-  const felyCrOldSizeData = ["NAIC"];
+  const felyCrOldSizeData = ["NAIC","FAMY"];
 
   const felyOrNewSizeData = [];
 
-  const felyOrOldSizeData = ["SANP", "TANZ", "FAMY"];
+  const felyOrOldSizeData = ["SANP", "TANZ",];
 
   // AJD
   const ajdCrNewSizeData = [];
