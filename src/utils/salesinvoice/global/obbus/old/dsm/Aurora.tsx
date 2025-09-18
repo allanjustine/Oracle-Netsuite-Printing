@@ -112,7 +112,7 @@ const Aurora = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[806.92913386px] w-[612.28346457px]">
-      <div className="flex h-[15.874015748px] mt-[145.503937007px]">
+      <div className="flex h-[15.874015748px] mt-[132.16535433px]">
         <p className={`w-[404.40944882px] ml-[86.929133858px] ${data[1]?.[mainLineName]?.length > 28 ? "text-[10px]" : ""}`}>
           {data[1]?.[mainLineName]
             ?.replace(/Ã/g, "Ñ")
