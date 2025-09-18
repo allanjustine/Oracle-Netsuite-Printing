@@ -112,7 +112,7 @@ const DSMIsulan = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[795.59055118px] w-[616.06299213px]">
-      <div className="flex h-[15.458267717px] mt-[120.503937007px]">
+      <div className="flex h-[15.458267717px] mt-[87.708661417px]">
         <p className="w-[402.51968504px] ml-[86.929133858px]">
           {data[1]?.[mainLineName]
             ?.replace(/Ã/g, "Ñ")
@@ -249,7 +249,7 @@ const DSMIsulan = ({ data }: any) => {
           </tbody>
         </table>
       </div>
-      <div className="mx-[25.700787402px] h-[170.07874016px]">
+      <div className="mx-[25.700787402px] h-[170.07874016px] mt-20px">
         <table className="border-collapse w-full">
           <tbody>
             <tr className="text-xs">
@@ -258,7 +258,7 @@ const DSMIsulan = ({ data }: any) => {
                 {vatableSalesFn}
               </td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
-              <td className="h-[22.11023622px] w-[96.755905512px] text-center">
+              <td className="h-[22.11023622px] w-[126.755905512px] text-center">
                 {totalSalesVatInclusiveFn}
               </td>
             </tr>
@@ -268,7 +268,7 @@ const DSMIsulan = ({ data }: any) => {
                 0.00
               </td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
-              <td className="h-[22.11023622px] w-[96.755905512px] text-center">
+              <td className="h-[22.11023622px] w-[126.755905512px] text-center">
                 {lessVatFn}
               </td>
             </tr>
@@ -278,7 +278,7 @@ const DSMIsulan = ({ data }: any) => {
                 0.00
               </td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
-              <td className="h-[22.11023622px] w-[96.755905512px] text-center">
+              <td className="h-[22.11023622px] w-[126.755905512px] text-center">
                 {amountNetOfVatFn}
               </td>
             </tr>
@@ -288,7 +288,7 @@ const DSMIsulan = ({ data }: any) => {
                 {vatAmountFn}
               </td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
-              <td className="h-[22.11023622px] w-[96.755905512px] text-center">
+              <td className="h-[22.11023622px] w-[126.755905512px] text-center">
                 {lessWithHoldingTaxFn}
               </td>
             </tr>
@@ -296,7 +296,7 @@ const DSMIsulan = ({ data }: any) => {
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3"></td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
-              <td className="h-[22.11023622px] w-[96.755905512px] text-center">
+              <td className="h-[22.11023622px] w-[126.755905512px] text-center">
                 {amountDueFn}
               </td>
             </tr>
@@ -304,7 +304,7 @@ const DSMIsulan = ({ data }: any) => {
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3"></td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
-              <td className="h-[22.11023622px] w-[96.755905512px] text-center">
+              <td className="h-[22.11023622px] w-[126.755905512px] text-center">
                 {addVatFn}
               </td>
             </tr>
@@ -312,7 +312,7 @@ const DSMIsulan = ({ data }: any) => {
               <td className="h-[22.11023622px] w-[102.42519685px]"></td>
               <td className="h-[22.11023622px] w-[216.18897638px] pl-3"></td>
               <td className="h-[22.11023622px] w-[140.5984252px]"></td>
-              <td className="h-[22.11023622px] w-[96.755905512px] text-center">
+              <td className="h-[22.11023622px] w-[126.755905512px] text-center">
                 {totalSalesVatInclusiveFn}
               </td>
             </tr>
@@ -320,7 +320,7 @@ const DSMIsulan = ({ data }: any) => {
         </table>
       </div>
       <div className="mx-[32.125984252px]">
-        <div className="mt-[15.136220472px] w-[196.53543307px] ml-[336.37795276px]">
+        <div className="mt-[5.136220472px] w-[196.53543307px] ml-[336.37795276px]">
           <p className="text-xs text-center">
             {data[1]?.[cashier]
               ?.replace(/Ã/g, "Ñ")

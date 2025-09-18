@@ -114,7 +114,7 @@ const PropertyVenturesCorporation = ({ data }: any) => {
   return (
     <div className="text-xs h-[767.24409449px] w-[610.39370079px]">
       <div className="flex items-center h-[29.480314961px] mx-[37.795275591px] ml-[412.34645669px] mt-[144.999999996px]">
-        <p className="w-[161.00787402px] ml-[7.5590551181px]">
+        <p className="w-[161.00787402px] ml-[20.5590551181px]">
           {data[1]?.[date] || ""}
         </p>
       </div>
@@ -138,13 +138,13 @@ const PropertyVenturesCorporation = ({ data }: any) => {
           )}
         </p>
       </div>
-      <div className="mx-[37.795275591px] w-[533.29133858px] mt-[29.858267717px] h-[226.77165354px]">
+      <div className="mx-[37.795275591px] w-[533.29133858px] mt-[40.858267717px] h-[226.77165354px]">
         <table className="border-collapse">
           <tbody>
             {data.slice(1, 13).map((row: any, index: number) => (
               <tr key={index} className="text-xs text-center">
                 <td
-                  className={`w-[268.72440945px] h-[18.897637795px] text-start ${
+                  className={`w-[268.72440945px] h-[18.897637795px] ml-[10.5590551181px] text-start ${
                     row[articles]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >

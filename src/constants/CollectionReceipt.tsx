@@ -125,6 +125,8 @@ import DSMQuezon from "@/utils/collectionreceipt/global/fdl/new/dsm/DSMQuezon";
 import DAPCalamba from "@/utils/collectionreceipt/global/fdl/new/dap/DAPCalamba";
 import CashSalesPropertyVenturesCorporation from "@/utils/collectionreceipt/global/fdl/new/smct/cash-sales-property-ventures-corporation";
 import DsmTacloban from "@/utils/collectionreceipt/global/fdl/new/dsm/dsm-tacloban";
+import DSMButuan from "@/utils/collectionreceipt/global/fdl/new/dsm/DSMButuan";
+import HDSanPablo from "@/utils/collectionreceipt/global/fdl/new/hd/HDSanPablo";
 
 //import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
@@ -178,6 +180,10 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "VITA",
     "MANG",
     "BULU",
+    "OROD2",
+    "BANTA",
+    "TOLED",
+    "ASTUR",
   ];
 
   const fdlOrOldSizeData = [
@@ -210,7 +216,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "MOLS",
     "DSMTA",
     "YATI",
-    "BANTA",
     "SALA",
     "SMCT",
     "TRINI2",
@@ -253,6 +258,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "CARC",
     "CARC2",
     "COMPO",
+    "RIZA",
   ];
 
   const obbusOrNewSizeData = [];
@@ -261,7 +267,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "BOGO",
     "DSMC",
     "DSMK",
-    "RIZA",
     "DSMT2",
     "ILOI",
     // "UBAY",
@@ -550,6 +555,10 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <CashSalesPropertyVenturesCorporation data={data} />;
     case "UTAP" === user?.branchCode:
       return <DsmTacloban data={data} />;
+    case "BUTU" === user?.branchCode:
+      return <DSMButuan data={data} />;
+    case "SANPA" === user?.branchCode:
+      return <HDSanPablo data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
