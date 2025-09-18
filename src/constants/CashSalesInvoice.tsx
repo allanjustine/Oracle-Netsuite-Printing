@@ -468,8 +468,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <HDGusa data={data} />;
     case "DSMBL" === user?.branchCode:
       return <Bulua data={data} />;
-    case "AURO" === user?.branchCode:
-      return <DSMAurora data={data} />;
+    // case "AURO" === user?.branchCode:
+    //   return <DSMAurora data={data} />;
     case "SALA" === user?.branchCode:
       return <SMCTAlano data={data} />; //CSI
     case "OZAD" === user?.branchCode:

@@ -17,9 +17,9 @@ const Aurora: React.FC<PrintPageProps> = ({ data }) => {
   const CR_Reference = 10;
 
   return (
-    <div className="text-xs w-[805.03937008px] h-[415.7480315px]">
-      <div className="flex mt-[105px]">
-        <p className="pl-[642.51968504px] w-[120.94488189px]">
+    <div className="text-xs w-[805.03937008px] h-[415.7480315px] ml-[10px]">
+      <div className="flex mt-[117.16535433px]">
+        <p className="pl-[658.51968504px] w-[120.94488189px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
