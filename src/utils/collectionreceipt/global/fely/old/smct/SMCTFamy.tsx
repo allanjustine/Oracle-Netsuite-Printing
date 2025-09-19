@@ -18,7 +18,7 @@ const SMCTFamy: React.FC<PrintPageProps> = ({ data }) => {
 
   return (
     <div className="text-xs w-[805.03937008px] h-[415.7480315px]">
-      <div className="flex mt-[105.82677165px]">
+      <div className="flex mt-[143.62204724px]">
         <p className="pl-[638.07874016px] w-[143.62204724px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
