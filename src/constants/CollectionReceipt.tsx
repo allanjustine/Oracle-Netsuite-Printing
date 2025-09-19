@@ -127,6 +127,7 @@ import CashSalesPropertyVenturesCorporation from "@/utils/collectionreceipt/glob
 import DsmTacloban from "@/utils/collectionreceipt/global/fdl/new/dsm/dsm-tacloban";
 import DSMButuan from "@/utils/collectionreceipt/global/fdl/new/dsm/DSMButuan";
 import HDSanPablo from "@/utils/collectionreceipt/global/fdl/new/hd/HDSanPablo";
+import SMCTFamy from "@/utils/collectionreceipt/global/fely/old/smct/SMCTFamy";
 
 //import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
@@ -276,7 +277,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   //FELY
   const felyCrNewSizeData = [];
 
-  const felyCrOldSizeData = ["NAIC","FAMY"];
+  const felyCrOldSizeData = ["NAIC"];
 
   const felyOrNewSizeData = [];
 
@@ -560,6 +561,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <DSMButuan data={data} />;
     case "SANPA" === user?.branchCode:
       return <HDSanPablo data={data} />;
+    case "FAMY" === user?.branchCode:
+    return <SMCTFamy data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
