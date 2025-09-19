@@ -288,8 +288,8 @@ export default function Page() {
                   <p class="text-sm">
                     ${
                       isAbnormalVersion
-                        ? "Ops! You are using an abnormal version of Oracle NetSuite Printing"
-                        : "You are using the old version of Oracle NetSuite Printing. Please reload the page for the latest version"
+                        ? "Ops! You are using an abnormal version of SMCT Printing"
+                        : "You are using the old version of SMCT Printing. Please reload the page for the latest version"
                     }
                     . ${" "}
                     <span class="font-bold">
@@ -664,8 +664,8 @@ export default function Page() {
               )}
               <p className="text-sm">
                 {isAbnormalVersion
-                  ? "Ops! You are using an abnormal version of Oracle NetSuite Printing"
-                  : "You are using the old version of Oracle NetSuite Printing. Please reload the page for the latest version"}
+                  ? "Ops! You are using an abnormal version of SMCT Printing"
+                  : "You are using the old version of SMCT Printing. Please reload the page for the latest version"}
                 .{" "}
                 <span className="font-bold">
                   (Current Version: v{oldVersion} - Latest Version: v{version})
@@ -695,7 +695,7 @@ export default function Page() {
       )}
       <div className="mt-5 pl-5">
         <h2 className="text-2xl text-[#333] uppercase">
-          Welcome to the official Oracle NetSuite Printing System,{" "}
+          Welcome to the official SMCT Printing System,{" "}
           <span className="font-semibold">{user?.branchName}</span>!
         </h2>
       </div>
