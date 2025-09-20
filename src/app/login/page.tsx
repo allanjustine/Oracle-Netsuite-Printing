@@ -3,7 +3,6 @@ import { useAuth } from "@/context/authcontext";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import netsuite from "../../../public/netsuite-logo.png";
 import smct from "../../../public/smct_group.png";
 import data from "@/data/credentials.json";
 import AlertBox from "@/components/ui/alert-box";
@@ -177,12 +176,6 @@ export default function Home() {
           <div className="mb-5">
             <div className="flex flex-col items-center">
               <div className="flex gap-4 items-center mb-6">
-                <Image
-                  src={netsuite}
-                  alt="NetSuite"
-                  width={120}
-                  className="transition-transform hover:scale-105"
-                />
                 <Image
                   src={smct}
                   alt="SMCT Group of Companies"

@@ -2,9 +2,20 @@
 
 import { useAuth } from "@/context/authcontext";
 import Link from "next/link";
+import { useEffect } from "react";
+import Swal from "sweetalert2";
 
 export default function Home() {
   const { isAuthenticated, isAdmin } = useAuth();
+  useEffect(() => {
+    Swal.fire({
+      icon: "info",
+      title: "Welcome to SMCT Printing System",
+      text: "Good morning! Since this is the new link of the SMCT Printing System, you may need to log in again and use your Branch Code and (Smct123456) as your password. Thank you!",
+      showConfirmButton: true,
+    });
+  }, []);
+
   return (
     <div className="flex justify-center items-center h-screen w-full">
       <div className="w-full border-2 border-[#607799] flex flex-col items-center justify-center py-20 mx-40">
