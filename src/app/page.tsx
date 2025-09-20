@@ -11,7 +11,7 @@ export default function Home() {
     Swal.fire({
       icon: "info",
       title: "Welcome to SMCT Printing System",
-      text: "Good morning! Since this is the new link of the SMCT Printing System, you may need to log in again and use your Branch Code and (Smct123456) as your password. Thank you!",
+      text: "Good day! Since this is the new link of the SMCT Printing System, you may need to log in again and use your Branch Code and (Smct123456) as your password. Thank you!",
       showConfirmButton: true,
     });
   }, []);
