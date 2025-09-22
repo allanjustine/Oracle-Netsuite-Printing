@@ -18,7 +18,7 @@ const SMCTTalibon: React.FC<PrintPageProps> = ({ data }) => {
 
   return (
     <div className="text-xs w-[805.03937008px] h-[415.7480315px]">
-      <div className="flex mt-[100.1732283431px]">
+      <div className="flex mt-[119.07086614px]">
         <p className="pl-[620.07874016px] w-[143.62204724px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
