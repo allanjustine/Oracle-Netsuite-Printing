@@ -26,7 +26,7 @@ export default function SubmitReprint({
         name: "Dev_Macmac",
         link: "https://chat.smctgroup.ph/direct/Dev_Macmac",
         profile_picture: "https://chat.smctgroup.ph/avatar/Dev_Macmac",
-        position: "Junior Web Developer",
+        position: "IT Supervisor",
       },
       {
         name: "Dev_Allan-J",
@@ -45,6 +45,12 @@ export default function SubmitReprint({
         link: "https://chat.smctgroup.ph/direct/dev_zart",
         profile_picture: "https://chat.smctgroup.ph/avatar/dev_zart",
         position: "Frontend Developer",
+      },
+      {
+        name: "Dev_Tian",
+        link: "https://chat.smctgroup.ph/direct/Dev_Tian",
+        profile_picture: "https://chat.smctgroup.ph/avatar/Dev_Tian",
+        position: "Backend Developer",
       },
     ],
   };
