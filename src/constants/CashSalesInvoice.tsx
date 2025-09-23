@@ -269,7 +269,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "LABA",
   ];
 
-  const obbusSiNewSizeData = ["DSMD", "RIZA", "TOMAS", "BOLOD", "MING"];
+  const obbusSiNewSizeData = ["DSMD", "RIZA", "TOMAS", "BOLOD", "MING","TORI"];
 
   const obbusSiOldSizeData = ["TACU", "DIGOS"];
 
@@ -523,8 +523,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <HDAlano data={data} />;
     case "BAYB" === user?.branchCode:
       return <Baybay data={data} />;
-    case "TORI" === user?.branchCode:
-      return <DSMToril data={data} />;
+    // case "TORI" === user?.branchCode:
+    //   return <DSMToril data={data} />;
     case "MOLD2" === user?.branchCode:
       return <DAPMolave2 data={data} />;
     case "CARMO" === user?.branchCode:
