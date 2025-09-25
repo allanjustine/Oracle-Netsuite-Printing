@@ -130,7 +130,7 @@ const ObbusNewSiSize = ({ data }: any) => {
         </p>
         <p
           className={`${
-            data[1]?.[billingAddress].length > 45 ? "text-[9px]" : ""
+            data[1]?.[billingAddress].length > 45 ? "text-[10px]" : ""
           } w-[359.43307087px] flex items-center h-[22.8031496px] ml-[143.62204724px]`}
         >
           {data[1]?.[billingAddress] || (
@@ -138,7 +138,7 @@ const ObbusNewSiSize = ({ data }: any) => {
           )}
         </p>
       </div>
-      <div className="mx-[28.346456693px] w-[491.33858268px] mt-[30.236220472px] h-[211.65354331px]">
+      <div className="mx-[28.346456693px] w-[491.33858268px] mt-[34.236220472px] h-[211.65354331px]">
         <table className="border-collapse">
           <tbody>
             {data.slice(1, 13).map((row: any, index: number) => (
@@ -231,7 +231,7 @@ const ObbusNewSiSize = ({ data }: any) => {
           </tbody>
         </table>
       </div>
-      <div className="mx-[28.346456693px] h-[124.72440945px]">
+      <div className="mx-[28.346456693px] h-[124.72440945px] mt-[5px]">
         <table className="border-collapse w-full">
           <tbody>
             <tr className="text-xs">
