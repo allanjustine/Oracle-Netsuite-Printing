@@ -233,7 +233,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DSMM",
     "TRINI",
     "AURH",
-    "DSMP",
     "IPIH",
     "MOLH",
     "VETH",
@@ -264,6 +263,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "CARC2",
     "COMPO",
     "RIZA",
+    "DSMP",
   ];
 
   const obbusOrNewSizeData = [];
