@@ -112,7 +112,7 @@ const SMCTTubigon = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[793.7007874px] w-[608.50393701px]">
-      <div className="flex h-[19.409448819px] mt-[126.0078740201px]">
+      <div className="flex h-[19.409448819px] mt-[122.3464567px]">
         <p className="w-[391.18110236px] pl-[95.82677165px]">
           {data[1]?.[mainLineName]
             ?.replace(/Ã/g, "Ñ")
@@ -132,12 +132,12 @@ const SMCTTubigon = ({ data }: any) => {
         </p>
       </div>
       <div className="flex h-[38.818897638px]">
-        <div className="w-[391.18110236px] pl-[95.82677165px]">
+        <div className="w-[391.18110236px] pl-[95.82677165px] h-[38.818897638px]">
           <p className="h-[19.409448819px]">
-            {data[1]?.[billingAddress].substring(0, 48) || ""}
+            {data[1]?.[billingAddress].substring(0, 45) || ""}
           </p>
           <p className="h-[19.409448819px]">
-            {data[1]?.[billingAddress].substring(48) || ""}
+            {data[1]?.[billingAddress].substring(45) || ""}
           </p>
         </div>
         <p className="w-[218.83464567px] pl-[126.06299213px]">
@@ -152,7 +152,7 @@ const SMCTTubigon = ({ data }: any) => {
           {data[1]?.[cardHolderSignatures] || ""}
         </p>
       </div>
-      <div className="mx-[27.212598425px] mt-[11.102362205px] h-[316.03149606px]">
+      <div className="mx-[27.212598425px] mt-[15.102362205px] h-[316.03149606px]">
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
