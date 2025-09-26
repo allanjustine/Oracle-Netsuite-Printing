@@ -187,6 +187,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "ASTUR",
     "SANTA",
     "BALAM",
+    "DSMSI",
   ];
 
   const fdlOrOldSizeData = [
@@ -510,8 +511,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <Pagsanjan data={data} />;
     // case "MOLD2" === user?.branchCode:
     //   return <DAPMolave2 data={data} />;
-    // case "ANTIP" === user?.branchCode:
-    //   return <SMCTAntipolo data={data} />; //OR
+    case "ANTIP" === user?.branchCode:
+      return <SMCTAntipolo data={data} />; 
     case "KABA" === user?.branchCode:
       return <HDKabasalan data={data} />; //OR
     case "DASMA" === user?.branchCode:
@@ -565,8 +566,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     case "SANPA" === user?.branchCode:
       return <HDSanPablo data={data} />;
     case "FAMY" === user?.branchCode:
-    return <SMCTFamy data={data} />;
-    case "ANTIP" === user?.branchCode:
     return <SMCTFamy data={data} />;
     default:
       return (
