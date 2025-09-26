@@ -217,7 +217,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "SIND",
     "HO-SMCT",
     "HO-DSM",
-    "TUBI",
   ];
 
   const fdlSiNewSizeData = [
@@ -500,8 +499,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Bogo data={data} />;
     case "PARD" === user?.branchCode:
       return <DSMPardo data={data} />;
-    // case "TUBI" === user?.branchCode:
-    //   return <SMCTTubigon data={data} />;
+    case "TUBI" === user?.branchCode:
+      return <SMCTTubigon data={data} />;
     case "DSMPO" === user?.branchCode:
       return <Panabo data={data} />;
     case "IMED" === user?.branchCode:
