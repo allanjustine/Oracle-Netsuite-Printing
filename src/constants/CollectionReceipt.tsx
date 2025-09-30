@@ -188,6 +188,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "SANTA",
     "BALAM",
     "DSMSI",
+    "BALAS",
   ];
 
   const fdlOrOldSizeData = [
