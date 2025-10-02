@@ -54,7 +54,7 @@ export default function Modal({
                   onClick={handleGoPrint}
                   className="p-2 bg-green-500 hover:bg-green-600 hover:-translate-x-1 text-white rounded-md transition-all ease-in-out duration-300"
                 >
-                  Go Print
+                  Proceed to print
                 </button>
                 <button
                   type="button"

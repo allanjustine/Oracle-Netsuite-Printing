@@ -43,6 +43,7 @@ import { reprintDialogData } from "./_constants/reprintDialogData";
 import PreviewOrCr from "@/components/PreviewOrCr";
 import Modal from "@/components/ui/modal";
 import PreviewSiCsi from "@/components/PreviewSiCsi";
+import Swal from "sweetalert2";
 
 export default function Page() {
   const { user } = useAuth();
@@ -639,6 +640,11 @@ export default function Page() {
 
   const handlePreview = () => {
     setIsPreview(!isPreview);
+    Swal.fire({
+      icon: "info",
+      title: "Preview Notice",
+      text: "This is only a preview of the data that will be printed. Please double-check the information before printing. To continue with the printing process, click 'Proceed to Print'. Thank you!",
+    });
   };
 
   const handleGoPrint = () => {
