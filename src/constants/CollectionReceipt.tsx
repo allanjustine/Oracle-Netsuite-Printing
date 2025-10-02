@@ -186,6 +186,9 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "TOLED",
     "ASTUR",
     "SANTA",
+    "BALAM",
+    "DSMSI",
+    "BALAS",
   ];
 
   const fdlOrOldSizeData = [
@@ -203,7 +206,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const fdlCrOldSizeData = [
     "CARMB",
-    "MALA",
     "MOLD",
     "LILD",
     // "DSMD2",
@@ -232,9 +234,9 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DSMM",
     "TRINI",
     "AURH",
-    "DSMP",
     "IPIH",
     "MOLH",
+    "VETH",
   ];
 
   const fdlOrNewSizeData = [];
@@ -247,6 +249,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "MARA2",
     "TORI",
     "TACU",
+    "MALA",
   ];
 
   const obbusCrOldSizeData = [
@@ -262,6 +265,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "CARC2",
     "COMPO",
     "RIZA",
+    "DSMP",
   ];
 
   const obbusOrNewSizeData = [];
@@ -408,8 +412,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <HDCamino data={data} />; //OR
     case "OZAH" === user?.branchCode:
       return <HDOzamiz data={data} />; //OR
-    case "VETH" === user?.branchCode:
-      return <HDVeterans data={data} />; //OR
+    // case "VETH" === user?.branchCode:
+    //   return <HDVeterans data={data} />; //OR
     case "DSML" === user?.branchCode:
       return <HDToledo data={data} />; //OR
     // case "AURH" === user?.branchCode:
@@ -509,7 +513,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     // case "MOLD2" === user?.branchCode:
     //   return <DAPMolave2 data={data} />;
     case "ANTIP" === user?.branchCode:
-      return <SMCTAntipolo data={data} />; //OR
+      return <SMCTAntipolo data={data} />; 
     case "KABA" === user?.branchCode:
       return <HDKabasalan data={data} />; //OR
     case "DASMA" === user?.branchCode:
@@ -518,8 +522,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <Basak data={data} />;
     case "KABA2" === user?.branchCode:
       return <Kabasalan data={data} />;
-    case "BALAM" === user?.branchCode:
-      return <HDBalamban data={data} />;
+    // case "BALAM" === user?.branchCode:
+    //   return <HDBalamban data={data} />;
     case "CARMO" === user?.branchCode:
       return <SMCTCarmona data={data} />;
     case "TALI2" === user?.branchCode:

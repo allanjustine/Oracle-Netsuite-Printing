@@ -144,6 +144,7 @@ import DSMArgao from "@/utils/salesinvoice/global/obbus/old/dsm/DSMArgao";
 import PropertyVenturesCorporation from "@/utils/salesinvoice/global/fdl/new/smct/property-ventures-corporation";
 import Tacloban from "@/utils/salesinvoice/global/fdl/new/dsm/tacloban";
 import DAPCalamba from "@/utils/salesinvoice/global/fdl/old/dap/DAPCalamba";
+import SMCTTalibon from "@/utils/salesinvoice/global/fdl/old/smct/SMCTTalibon";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -204,7 +205,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "AKLA",
     //"CARS",
     "MANG",
-    "TALI",
     "VALEN",
     // "TUBU",
     "BUUD",
@@ -251,6 +251,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "TOLED",
     "ASTUR",
     "SANTA",
+    "BALAS",
+    "JAGN",
   ];
 
   const fdlSiOldSizeData = ["NUND2", "DAPI", "TANZ", "BONI", "VITA"];
@@ -269,7 +271,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "LABA",
   ];
 
-  const obbusSiNewSizeData = ["DSMD", "RIZA", "TOMAS", "BOLOD", "MING"];
+  const obbusSiNewSizeData = ["DSMD", "RIZA", "TOMAS", "BOLOD", "MING","TORI"];
 
   const obbusSiOldSizeData = ["TACU", "DIGOS"];
 
@@ -294,7 +296,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   // BJV
   const bjvCsiNewSizeData = [];
 
-  const bjvCSiOldSizeData = ["CARMB", "LOAY", "JAGN", "ALIC"];
+  const bjvCSiOldSizeData = ["CARMB", "LOAY", "ALIC"];
 
   const bjvSiNewSizeData = [];
 
@@ -523,8 +525,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <HDAlano data={data} />;
     case "BAYB" === user?.branchCode:
       return <Baybay data={data} />;
-    case "TORI" === user?.branchCode:
-      return <DSMToril data={data} />;
+    // case "TORI" === user?.branchCode:
+    //   return <DSMToril data={data} />;
     case "MOLD2" === user?.branchCode:
       return <DAPMolave2 data={data} />;
     case "CARMO" === user?.branchCode:
@@ -563,6 +565,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Tacloban data={data} />;
     case "CALD" === user?.branchCode:
     return <DAPCalamba data={data} />;
+    case "TALI" === user?.branchCode:
+    return <SMCTTalibon data={data} />;
 
     default:
       return (

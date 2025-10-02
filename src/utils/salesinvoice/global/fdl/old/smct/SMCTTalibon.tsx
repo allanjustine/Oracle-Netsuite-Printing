@@ -7,7 +7,7 @@ import FormattedSumTotalLessVat from "@/utils/FormattedSumTotalLessVat";
 import FormattedSumTotalMinusLessVat from "@/utils/FormattedSumTotalMinusLessVat";
 import FormattedTotalAmountDue from "@/utils/FormattedTotalAmountDue";
 
-const SMCTTubigon = ({ data }: any) => {
+const SMCTTalibon = ({ data }: any) => {
   const mainLineName = 0;
   const date = 1;
   const taxNumber = 2;
@@ -112,7 +112,7 @@ const SMCTTubigon = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[793.7007874px] w-[608.50393701px]">
-      <div className="flex h-[19.409448819px] mt-[122.3464567px]">
+      <div className="flex h-[19.409448819px] mt-[127.90551181px]">
         <p className="w-[391.18110236px] pl-[95.82677165px]">
           {data[1]?.[mainLineName]
             ?.replace(/Ã/g, "Ñ")
@@ -152,7 +152,7 @@ const SMCTTubigon = ({ data }: any) => {
           {data[1]?.[cardHolderSignatures] || ""}
         </p>
       </div>
-      <div className="mx-[27.212598425px] mt-[15.102362205px] h-[316.03149606px]">
+      <div className="mx-[27.212598425px] mt-[26.102362205px] h-[316.03149606px]">
         <table className="border-collapse w-full">
           <tbody>
             {data.slice(1, 17).map((row: any, index: number) => (
@@ -344,4 +344,4 @@ const SMCTTubigon = ({ data }: any) => {
   );
 };
 
-export default SMCTTubigon;
+export default SMCTTalibon;
