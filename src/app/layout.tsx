@@ -15,11 +15,11 @@ export const metadata: Metadata = {
     title: "SMCT Group - Printing",
     description:
       "This system is intended for importing data from Printing and generating a uniform design related to SMCT Group of Companies.",
-    url: "https://netsuite-print.smctgroup.ph/",
+    url: "https://printing.smctgroup.ph/",
     siteName: "SMCT Group - Printing",
     images: [
       {
-        url: "https://netsuite-print.smctgroup.ph/smct_group.png",
+        url: "https://printing.smctgroup.ph/smct_group.png",
       },
     ],
   },
@@ -42,7 +42,7 @@ export default function RootLayout({
           font-size: 120px;color: red; text-shadow: 3px 3px 0 rgb(217,324, 422)
           , 6px 6px 0 rgb(333,91,14) , 9px 9px 0 rgb(122,221,8) , 12px 12px 0
           rgb(5,45,68) , 15px 15px 0 rgb(2,22,206) , 18px 18px 0 rgb(4,77,155) ,
-          21px 21px 0 rgb(42,21,155)"), console.log("%c 𝓞𝓻𝓪𝓬𝓵𝓮 𝓝𝓮𝓽𝓼𝓾𝓲𝓽𝓮",
+          21px 21px 0 rgb(42,21,155)"), console.log("%c 𝓞𝓻𝓪𝓬𝓵𝓮",
           "font-family:monospace; font-weight: 900; font-size: 120px;color: red;
           text-shadow: 3px 3px 0 rgb(217,324, 422) , 6px 6px 0 rgb(333,91,14) ,
           9px 9px 0 rgb(122,221,8) , 12px 12px 0 rgb(5,45,68) , 15px 15px 0
