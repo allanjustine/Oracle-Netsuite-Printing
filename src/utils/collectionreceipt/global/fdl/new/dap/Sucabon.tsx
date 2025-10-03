@@ -24,8 +24,8 @@ const Sucabon = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[400.62992126px] w-[767.24409449px]">
-      <div className="w-[117.16535433px] flex items-center mt-[83.9291338579px] ml-[604.72440945px] h-[21.921259843px]">
-        <p className="text-xs ml-[11.338582677px]">
+      <div className="w-[117.16535433px] flex items-center mt-[95.267716535px] ml-[604.72440945px] h-[21.921259843px]">
+        <p className="text-xs ml-[15.338582677px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
