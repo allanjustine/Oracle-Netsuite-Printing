@@ -8,7 +8,6 @@ import {
 } from "../_constants/maintenanceModeData";
 import { useFetchMaintenanceTime } from "@/hooks/useFetchMaintenanceTime";
 import CountdownTimer from "./CountdownTimer";
-import { Bounce, toast } from "react-toastify";
 import { Toast } from "./ui/toast";
 
 export default function MaintenanceModeModal() {
