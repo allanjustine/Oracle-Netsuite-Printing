@@ -145,6 +145,7 @@ import PropertyVenturesCorporation from "@/utils/salesinvoice/global/fdl/new/smc
 import Tacloban from "@/utils/salesinvoice/global/fdl/new/dsm/tacloban";
 import DAPCalamba from "@/utils/salesinvoice/global/fdl/old/dap/DAPCalamba";
 import SMCTTalibon from "@/utils/salesinvoice/global/fdl/old/smct/SMCTTalibon";
+import DAPIpil from "@/utils/salesinvoice/global/fdl/old/dap/DAPIpil";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -157,7 +158,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "CAMD",
     "KABD",
     "RIZD",
-    "IPID",
     "SLIL",
     "MADRI",
     "BALI",
@@ -570,6 +570,9 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     return <DAPCalamba data={data} />;
     case "TALI" === user?.branchCode:
     return <SMCTTalibon data={data} />;
+    case "IPID" === user?.branchCode:
+    return <DAPIpil data={data} />;
+
 
     default:
       return (
