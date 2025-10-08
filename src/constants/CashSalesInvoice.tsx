@@ -256,6 +256,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "BALAS",
     "JAGN",
     "LOON",
+    "BAYU",
   ];
 
   const fdlSiOldSizeData = ["NUND2", "DAPI", "TANZ", "BONI", "VITA"];
@@ -274,7 +275,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "LABA",
   ];
 
-  const obbusSiNewSizeData = ["DSMD", "RIZA", "TOMAS", "BOLOD", "MING","TORI"];
+  const obbusSiNewSizeData = ["DSMD", "RIZA", "TOMAS", "BOLOD", "MING", "TORI"];
 
   const obbusSiOldSizeData = ["TACU", "DIGOS"];
 
@@ -370,8 +371,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <DAPBalingasag data={data} />;
     case "ILID" === user?.branchCode:
       return <DAPIliganNew data={data} />;
-    case "BAYU" === user?.branchCode:
-      return <DSMBayugan data={data} />;
+    // case "BAYU" === user?.branchCode:
+    //   return <DSMBayugan data={data} />;
     case "NORZA" === user?.branchCode:
       return <DSMNorzagaray data={data} />;
     case "BINAN" === user?.branchCode:
@@ -567,9 +568,9 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     case "UTAP" === user?.branchCode:
       return <Tacloban data={data} />;
     case "CALD" === user?.branchCode:
-    return <DAPCalamba data={data} />;
+      return <DAPCalamba data={data} />;
     case "TALI" === user?.branchCode:
-    return <SMCTTalibon data={data} />;
+      return <SMCTTalibon data={data} />;
 
     default:
       return (
