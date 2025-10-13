@@ -24,7 +24,7 @@ const Sablayan = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[400.62992126px] w-[767.24409449px]">
-      <div className="w-[117.16535433px] flex items-center mt-[163.07874015px] ml-[604.72440945px] h-[21.921259843px]">
+      <div className="w-[117.16535433px] flex items-center mt-[106.38582677px] ml-[604.72440945px] h-[21.921259843px]">
         <p className="text-xs ml-[11.338582677px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
