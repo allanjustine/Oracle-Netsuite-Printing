@@ -24,27 +24,25 @@ const Sablayan = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[400.62992126px] w-[767.24409449px]">
-      <div className="w-[117.16535433px] flex items-center mt-[83.9291338579px] ml-[604.72440945px] h-[21.921259843px]">
+      <div className="w-[117.16535433px] flex items-center mt-[106.38582677px] ml-[604.72440945px] h-[21.921259843px]"> //adjusted mt from 83 to 110
         <p className="text-xs ml-[11.338582677px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="h-[61.984251969px] mt-[37.039370079px] ml-[149.29133858px]">
-        <p className="w-[563.1496063px] ml-[11.338582677px] h-[20.409448819px] flex items-center">
-          {enyeFormat(data[1]?.[CR_Name]) || (
-            <span className="opacity-0">No data</span>
-          )}
+        <p className="w-[563.1496063px] ml-[16.338582677px] h-[20.409448819px] flex items-center">
+          {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
         </p>
-        <p className="w-[563.1496063px] ml-[11.338582677px] h-[20.409448819px] flex items-center">
+        <p className="w-[563.1496063px] ml-[16.338582677px] h-[20.409448819px] flex items-center">
           {data[1]?.[CR_TIN] || <span className="opacity-0">No data</span>}
         </p>
-        <p className="w-[563.1496063px] ml-[11.338582677px] h-[20.409448819px] flex items-center">
+        <p className="w-[563.1496063px] ml-[16.338582677px] h-[20.409448819px] flex items-center">
           {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex w-[680.31496063px] mx-[37.795275591px] mt-[34.37007874px]">
         <div className="flex flex-col w-[568.81889764px]">
-          <p className="h-[23.433070866px] pl-[83.149606299px]">
+          <p className="h-[23.433070866px] pl-[88.149606299px]">
             {data[1]?.[CR_Memo].substring(0, 92) || (
               <span className="opacity-0">No data</span>
             )}
@@ -65,9 +63,7 @@ const Sablayan = ({ data }: any) => {
       </div>
       <div className="flex w-[680.31496063px] mx-[37.795275591px]">
         <div className="text-[11px] w-[568.81889764px] flex-none">
-          <p>
-            <span className="opacity-0">No data</span>
-          </p>
+          <p><span className="opacity-0">No data</span></p>
           <p className="text-center w-[162.51968504px] ml-[260.78740157px]">
             {data[1]?.[CR_PartnerName] || ""}
           </p>
