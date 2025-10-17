@@ -499,8 +499,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     case "SILA" === user?.branchCode:
       return <SMCTSilang data={data} />;
     case "ANTI" === user?.branchCode:
-      return <SMCTAntique data={data} />; // old
-      // return <SmctAntique data={data} />; // new
+      // return <SMCTAntique data={data} />; // old
+      return <SmctAntique data={data} />; // new
     case "DSMT" === user?.branchCode:
       return <DSMTagbilaran data={data} />;
     case "DSMK" === user?.branchCode:
