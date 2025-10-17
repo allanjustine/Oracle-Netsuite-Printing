@@ -136,7 +136,7 @@ import SMCTAbuyog from "@/utils/collectionreceipt/global/fdl/new/smct/SMCTAbuyog
 const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
 
-  const luzonSizeData = ["SILA"];
+  const luzonSizeData = [""];
 
   const HondaDESSizeData = [""];
 
@@ -288,7 +288,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   //FELY
   const felyCrNewSizeData = [];
 
-  const felyCrOldSizeData = ["NAIC"];
+  const felyCrOldSizeData = ["NAIC","SILA",];
 
   const felyOrNewSizeData = [];
 
