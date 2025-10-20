@@ -195,7 +195,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "BAYU",
     "SARA",
     "MOLD",
-    "GENMAX",
   ];
 
   const fdlOrOldSizeData = [
@@ -579,6 +578,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <DAPIpil data={data} />;
     case "ABUY" === user?.branchCode:
       return <SMCTAbuyog data={data} />;
+    case "GENMAX" === user?.branchCode:
+    return <SMCTAbuyog data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
