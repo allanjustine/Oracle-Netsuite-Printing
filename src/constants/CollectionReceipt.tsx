@@ -140,7 +140,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const HondaDESSizeData = [""];
 
-  const DAPSizeData = ["SIND", "KABD", "MANO", "PUTD"];
+  const DAPSizeData = ["KABD", "MANO", "PUTD"];
 
   const smctCrSizeData = [""];
 
@@ -195,6 +195,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "BAYU",
     "SARA",
     "MOLD",
+    "SIND",
   ];
 
   const fdlOrOldSizeData = [
