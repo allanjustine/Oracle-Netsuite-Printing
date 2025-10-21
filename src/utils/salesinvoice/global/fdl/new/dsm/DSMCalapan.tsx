@@ -112,7 +112,7 @@ const DSMCalapan = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[767.24409449px] w-[610.39370079px]">
-      <div className="flex items-center h-[29.480314961px] mx-[37.795275591px] ml-[425.34645669px] mt-[150.1023622px]">
+      <div className="flex items-center h-[29.480314961px] mx-[37.795275591px] ml-[425.34645669px] mt-[144.1023622px]">
         <p className="w-[161.00787402px] ml-[7.5590551181px]">
           {data[1]?.[date] || ""}
         </p>
