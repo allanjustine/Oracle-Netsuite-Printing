@@ -148,6 +148,7 @@ import SMCTTalibon from "@/utils/salesinvoice/global/fdl/old/smct/SMCTTalibon";
 import DAPIpil from "@/utils/salesinvoice/global/fdl/old/dap/DAPIpil";
 import Abuyog from "@/utils/salesinvoice/global/fdl/old/smct/SMCT Abuyog";
 import SmctAntique from "@/utils/salesinvoice/global/fdl/old/smct/smct-antique";
+import DSMGenMax from "@/utils/salesinvoice/global/fdl/new/dsm/DSMGenMax";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -262,7 +263,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "PANGL",
     "SAGBA",
     "SARA",
-    "GENMAX",
   ];
 
   const fdlSiOldSizeData = ["NUND2", "DAPI", "TANZ", "BONI", "VITA"];
@@ -581,7 +581,9 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     case "IPID" === user?.branchCode:
       return <DAPIpil data={data} />;
     case "ABUY" === user?.branchCode:
-      return <Abuyog data={data} />;  
+      return <Abuyog data={data} />; 
+    case "GENMAX" === user?.branchCode:
+      return <DSMGenMax data={data} />;   
 
     default:
       return (
