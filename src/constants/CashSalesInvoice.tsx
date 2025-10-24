@@ -268,6 +268,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "BAYOG",
     "BUEN",
     "BACO",
+    "LOAY",
   ];
 
   const fdlSiOldSizeData = ["NUND2", "DAPI", "TANZ", "BONI", "VITA"];
@@ -311,7 +312,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   // BJV
   const bjvCsiNewSizeData = [];
 
-  const bjvCSiOldSizeData = ["CARMB", "LOAY", "ALIC"];
+  const bjvCSiOldSizeData = ["CARMB", "ALIC"];
 
   const bjvSiNewSizeData = [];
 
