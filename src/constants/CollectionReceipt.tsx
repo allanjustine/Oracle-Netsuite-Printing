@@ -199,7 +199,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "LABD",
     "CALAPM",
     "BUEN",
-    "GAISA",
     "CABA",
   ];
 
@@ -584,7 +583,9 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     case "ABUY" === user?.branchCode:
       return <SMCTAbuyog data={data} />;
     case "GENMAX" === user?.branchCode:
-    return <SMCTAbuyog data={data} />;
+      return <SMCTAbuyog data={data} />;
+    case "GAISA" === user?.branchCode:
+      return <SMCTAbuyog data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
