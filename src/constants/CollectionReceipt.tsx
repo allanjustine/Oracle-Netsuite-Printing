@@ -130,6 +130,7 @@ import HDSanPablo from "@/utils/collectionreceipt/global/fdl/new/hd/HDSanPablo";
 import SMCTFamy from "@/utils/collectionreceipt/global/fely/old/smct/SMCTFamy";
 import DAPIpil from "@/utils/collectionreceipt/global/fdl/new/dap/DAPIpil";
 import SMCTAbuyog from "@/utils/collectionreceipt/global/fdl/new/smct/SMCTAbuyog";
+import DSMSurigao from "@/utils/collectionreceipt/global/fdl/new/dsm/DSMSurigao";
 
 //import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
@@ -585,7 +586,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     case "GENMAX" === user?.branchCode:
       return <SMCTAbuyog data={data} />;
     case "GAISA" === user?.branchCode:
-      return <SMCTAbuyog data={data} />;
+      return <DSMSurigao data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
