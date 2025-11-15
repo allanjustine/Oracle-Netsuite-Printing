@@ -131,6 +131,7 @@ import SMCTFamy from "@/utils/collectionreceipt/global/fely/old/smct/SMCTFamy";
 import DAPIpil from "@/utils/collectionreceipt/global/fdl/new/dap/DAPIpil";
 import SMCTAbuyog from "@/utils/collectionreceipt/global/fdl/new/smct/SMCTAbuyog";
 import DSMSurigao from "@/utils/collectionreceipt/global/fdl/new/dsm/DSMSurigao";
+import Pinamalayan from "@/utils/collectionreceipt/global/fdl/new/dsm/Pinamalayan";
 
 //import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
@@ -204,7 +205,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "BACO",
     "CARMB",
     "RAWIS",
-    "PINA",
+    // "PINA",
     "CALAP",
     "SALA",
   ];
@@ -593,6 +594,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTAbuyog data={data} />;
     case "GAISA" === user?.branchCode:
       return <DSMSurigao data={data} />;
+    case "PINA" === user?.branchCode:
+      return <Pinamalayan data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
