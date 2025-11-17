@@ -112,7 +112,7 @@ const Pinamalayan = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[767.24409449px] w-[610.39370079px]">
-      <div className="flex items-center h-[29.480314961px] mx-[37.795275591px] ml-[412.34645669px] mt-[170.999999996px]">
+      <div className="flex items-center h-[29.480314961px] mx-[37.795275591px] ml-[412.34645669px] mt-[172.999999996px]">
         <p className="w-[161.00787402px] ml-[7.5590551181px]">
           {data[1]?.[date] || ""}
         </p>
@@ -137,7 +137,7 @@ const Pinamalayan = ({ data }: any) => {
           )}
         </p>
       </div>
-      <div className="mx-[37.795275591px] w-[533.29133858px] mt-[29.858267717px] h-[226.77165354px]">
+      <div className="mx-[37.795275591px] w-[533.29133858px] mt-[33.858267717px] h-[226.77165354px]">
         <table className="border-collapse">
           <tbody>
             {data.slice(1, 13).map((row: any, index: number) => (
@@ -230,7 +230,7 @@ const Pinamalayan = ({ data }: any) => {
           </tbody>
         </table>
       </div>
-      <div className="mx-[37.795275591px] h-[132.28346457px]">
+      <div className="mx-[37.795275591px] h-[132.28346457px] mt-[17px]">
         <table className="border-collapse w-full">
           <tbody>
             <tr className="text-xs">
