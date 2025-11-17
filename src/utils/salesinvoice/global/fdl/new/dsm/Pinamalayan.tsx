@@ -112,12 +112,12 @@ const Pinamalayan = ({ data }: any) => {
 
   return (
     <div className="text-xs h-[767.24409449px] w-[610.39370079px]">
-      <div className="flex items-center h-[29.480314961px] mx-[37.795275591px] ml-[412.34645669px] mt-[184.33858267px]">
+      <div className="flex items-center h-[29.480314961px] mx-[37.795275591px] ml-[412.34645669px] mt-[177.999999996px]">
         <p className="w-[161.00787402px] ml-[7.5590551181px]">
           {data[1]?.[date] || ""}
         </p>
       </div>
-      <div className="mt-[17.007874016px] mx-[37.795275591px] h-[73.700787402px] w-[534.80314961px]">
+      <div className="mt-[28.346456693px] mx-[37.795275591px] h-[73.700787402px] w-[534.80314961px]">
         <p className="w-[389.29133858px] flex items-center h-[24.566929134px] ml-[154.96062992px]">
           {data[1]?.[mainLineName]
             ?.replace(/Ã/g, "Ñ")
