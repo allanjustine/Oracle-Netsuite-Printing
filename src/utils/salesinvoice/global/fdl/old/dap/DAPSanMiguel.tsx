@@ -135,7 +135,7 @@ const DAPSanMiguel = ({ data }: any) => {
         <div className="w-[563.1496063px] pl-[98.267716535px]">
           <p
             className={`h-[22.299212598px] ${
-              data[1]?.[billingAddress].length > 70 ? "text-[10.5px]" : ""
+              data[1]?.[billingAddress]?.length > 70 ? "text-[10.5px]" : ""
             }`}
           >
             {data[1]?.[billingAddress] || ""}

@@ -64,7 +64,7 @@ const SMCTAntique: React.FC<PrintPageProps> = ({ data }) => {
         </div>
       </div>
       <div className="w-[763.46456693px] pl-[370.39370079px] mt-[11.338582677px]">
-        <p className={`${data[1]?.[CR_Memo].length > 40 ? "text-[10px]" : ""}`}>
+        <p className={`${data[1]?.[CR_Memo]?.length > 40 ? "text-[10px]" : ""}`}>
           {data[1]?.[CR_Memo] || <span className="opacity-0">No data</span>}
         </p>
       </div>

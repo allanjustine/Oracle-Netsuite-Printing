@@ -64,7 +64,7 @@ const Calinan: React.FC<PrintPageProps> = ({ data }) => {
         </div>
       </div>
       <div className="w-[529px] ml-[350.15748031px] mt-[10.8267716539px]">
-        <p className={`${data[1]?.[CR_Memo].length > 40 ? "text-[10px]" : ""}`}>
+        <p className={`${data[1]?.[CR_Memo]?.length > 40 ? "text-[10px]" : ""}`}>
           {data[1]?.[CR_Memo] || <span className="opacity-0">No data</span>}
         </p>
       </div>

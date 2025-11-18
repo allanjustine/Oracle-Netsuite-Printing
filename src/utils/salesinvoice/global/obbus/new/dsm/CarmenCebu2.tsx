@@ -130,7 +130,7 @@ const CarmenCebu2 = ({ data }: any) => {
         </p>
         <p
           className={`${
-            data[1]?.[billingAddress].length > 45 ? "text-[9px]" : ""
+            data[1]?.[billingAddress]?.length > 45 ? "text-[9px]" : ""
           } w-[359.43307087px] flex items-center h-[22.8031496px] ml-[143.62204724px]`}
         >
           {data[1]?.[billingAddress] || (

@@ -35,7 +35,7 @@ const SMCTJagna = ({ data }: any) => {
         </div>
       </div>
       <div className="flex ml-[302.36220472px] mt-[9.8267716539px]">
-        <p className={`w-[362.83464567px] ${data[1]?.[CR_Address].length > 40 ? "text-[10px]" : ""}`}>
+        <p className={`w-[362.83464567px] ${data[1]?.[CR_Address]?.length > 40 ? "text-[10px]" : ""}`}>
           {data[1]?.[CR_Address]?.replace(/<br>/g, " ") || <span className="opacity-0">No data</span>}
         </p>
       </div>

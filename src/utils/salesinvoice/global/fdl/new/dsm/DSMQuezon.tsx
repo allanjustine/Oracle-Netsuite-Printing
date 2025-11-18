@@ -129,7 +129,7 @@ const DSMQuezon = ({ data }: any) => {
         </p>
         <p
           className={`${
-            data[1]?.[billingAddress].length > 65 ? "text-[9px]" : ""
+            data[1]?.[billingAddress]?.length > 65 ? "text-[9px]" : ""
           } w-[389.29133858px] flex items-center h-[24.566929134px] ml-[154.96062992px]`}
         >
           {data[1]?.[billingAddress] || (

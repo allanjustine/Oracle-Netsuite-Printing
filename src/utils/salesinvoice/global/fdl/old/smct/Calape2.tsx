@@ -136,7 +136,7 @@ const Calape2 = ({ data }: any) => {
         <div className="w-[563.1496063px] pl-[98.267716535px]">
           <p
             className={`h-[22.677165354px] ${
-              data[1]?.[billingAddress].length > 85 ? "text-xs" : ""
+              data[1]?.[billingAddress]?.length > 85 ? "text-xs" : ""
             }`}
           >
             {data[1]?.[billingAddress] || ""}

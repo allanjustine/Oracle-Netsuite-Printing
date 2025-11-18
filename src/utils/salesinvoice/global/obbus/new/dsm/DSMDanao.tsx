@@ -130,7 +130,7 @@ const DSMDanao = ({ data }: any) => {
         </p>
         <p
           className={`${
-            data[1]?.[billingAddress].length > 45 ? "text-[9px]" : ""
+            data[1]?.[billingAddress]?.length > 45 ? "text-[9px]" : ""
           } w-[359.43307087px] flex items-center h-[22.8031496px] ml-[143.62204724px]`}
         >
           {data[1]?.[billingAddress] || (
@@ -303,7 +303,7 @@ const DSMDanao = ({ data }: any) => {
         <div className="mt-[15.897637795px] ml-[170.07874016px]">
           <p
             className={`${
-              data[1]?.[cashier].length > 15 ? "text-[10px]" : ""
+              data[1]?.[cashier]?.length > 15 ? "text-[10px]" : ""
             } text-center w-[170.86614173px]`}
           >
             {data[1]?.[cashier]
