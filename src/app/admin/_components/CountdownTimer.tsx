@@ -25,7 +25,7 @@ const CountdownTimer = ({ initialTimeInSeconds }: any) => {
           return newTime;
         });
       }, 1000);
-    } else if (timeLeft < 0) {
+    } else if (timeLeft < 1) {
       const maintenaceModeOff = async () => {
         setIsActive(false);
         setIsReloadInFiveSeconds(true);
