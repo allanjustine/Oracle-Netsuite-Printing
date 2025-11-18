@@ -63,7 +63,7 @@ const SMCTLiloan = ({ data }: any) => {
         </div>
         <div className="w-[274.01574803px] ml-[158.28346457px]">
           <p>
-            {data[1]?.[CR_Memo].substring(0, 35) || (
+            {data[1]?.[CR_Memo]?.substring(0, 35) || (
               <span className="opacity-0">No data</span>
             )}
           </p>
@@ -71,7 +71,7 @@ const SMCTLiloan = ({ data }: any) => {
       </div>
       <div className="ml-[245.77165354px] mt-[4.1811023622]">
         <p>
-          {data[1]?.[CR_Memo].substring(35) || (
+          {data[1]?.[CR_Memo]?.substring(35) || (
             <span className="opacity-0">No data</span>
           )}
         </p>

@@ -65,12 +65,12 @@ const LuzonSize: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="w-[551.81102362px] pl-[309.92125984px] mt-[8.8267716539px]">
         <p>
-          {data[1]?.[CR_Memo].substring(0, 35) || <span className="opacity-0">No data</span>}
+          {data[1]?.[CR_Memo]?.substring(0, 35) || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="w-[551.81102362px] pl-[207.87401575px] mt-[9.8267716539px]">
         <p>
-          {data[1]?.[CR_Memo].substring(35) || <span className="opacity-0">No data</span>}
+          {data[1]?.[CR_Memo]?.substring(35) || <span className="opacity-0">No data</span>}
         </p>
       </div>
       

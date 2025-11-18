@@ -63,7 +63,7 @@ const HDKabasalan = ({ data }: any) => {
         </div>
         <div className="w-[170.07874016px] ml-[94.488188976px]">
           <p>
-            {data[1]?.[CR_Memo].substring(0, 35) || (
+            {data[1]?.[CR_Memo]?.substring(0, 35) || (
               <span className="opacity-0">No data</span>
             )}
           </p>
@@ -71,7 +71,7 @@ const HDKabasalan = ({ data }: any) => {
       </div>
       <div className="ml-[226.77165354px] mt-[4.1811023622]">
         <p>
-          {data[1]?.[CR_Memo].substring(35) || (
+          {data[1]?.[CR_Memo]?.substring(35) || (
             <span className="opacity-0">No data</span>
           )}
         </p>

@@ -11,6 +11,12 @@ export const tableDatas = [
     sortField: "id",
   },
   {
+    name: "CUSTOMER NAME",
+    cell: (row: any) => <div>{row.customer ?? "-"}</div>,
+    sortable: true,
+    sortField: "customer",
+  },
+  {
     name: "EXTERNAL ID",
     cell: (row: any) => <div>{row.external_id}</div>,
     sortable: true,

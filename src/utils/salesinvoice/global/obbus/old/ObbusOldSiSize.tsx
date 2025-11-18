@@ -133,12 +133,12 @@ const ObbusOldSiSize = ({ data }: any) => {
       </div>
       <div className="w-[402.51968504px] flex flex-col h-[32.503937008px]">
         <p className="ml-[86.929133858px] h-[16.251968504px]">
-          {data[1]?.[billingAddress].substring(0, 55) || (
+          {data[1]?.[billingAddress]?.substring(0, 55) || (
             <span className="opacity-0">No Data</span>
           )}
         </p>
         <p className="ml-[86.929133858px] h-[16.251968504px]">
-          {data[1]?.[billingAddress].substring(55) || (
+          {data[1]?.[billingAddress]?.substring(55) || (
             <span className="opacity-0">No Data</span>
           )}
         </p>

@@ -134,10 +134,10 @@ const DAPMolave2 = ({ data }: any) => {
       <div className="flex h-[38.818897638px]">
         <div className="w-[391.18110236px] pl-[95.82677165px] h-[38.818897638px]">
           <p className="h-[19.409448819px]">
-            {data[1]?.[billingAddress].substring(0, 45) || ""}
+            {data[1]?.[billingAddress]?.substring(0, 45) || ""}
           </p>
           <p className="h-[19.409448819px]">
-            {data[1]?.[billingAddress].substring(45) || ""}
+            {data[1]?.[billingAddress]?.substring(45) || ""}
           </p>
         </div>
         <p className="w-[218.83464567px] pl-[126.06299213px]">

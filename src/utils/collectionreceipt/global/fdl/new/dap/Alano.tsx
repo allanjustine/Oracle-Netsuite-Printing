@@ -43,12 +43,12 @@ const Alano = ({ data }: any) => {
       <div className="flex w-[680.31496063px] mx-[37.795275591px] mt-[34.37007874px]">
         <div className="flex flex-col w-[568.81889764px]">
           <p className="h-[23.433070866px] pl-[83.149606299px]">
-            {data[1]?.[CR_Memo].substring(0, 92) || (
+            {data[1]?.[CR_Memo]?.substring(0, 92) || (
               <span className="opacity-0">No data</span>
             )}
           </p>
           <p className="pl-[56.692913386px] h-[23.433070866px]">
-            {data[1]?.[CR_Memo].substring(92) || (
+            {data[1]?.[CR_Memo]?.substring(92) || (
               <span className="opacity-0">No data</span>
             )}
           </p>

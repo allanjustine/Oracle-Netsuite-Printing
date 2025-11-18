@@ -65,14 +65,14 @@ const SMCTLipa: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="w-[737.00787402px] mt-[7.8267716539px]">
         <p className="w-[396.8503937px] ml-[340.15748031px]">
-          {data[1]?.[CR_Memo].substring(0, 70) || (
+          {data[1]?.[CR_Memo]?.substring(0, 70) || (
             <span className="opacity-0">No data</span>
           )}
         </p>
       </div>
       <div className="w-[737.00787402px] mt-[6.8267716539px]">
         <p className="w-[510.23622047px] ml-[226.77165354px]">
-          {data[1]?.[CR_Memo].substring(70) || (
+          {data[1]?.[CR_Memo]?.substring(70) || (
             <span className="opacity-0">No data</span>
           )}
         </p>

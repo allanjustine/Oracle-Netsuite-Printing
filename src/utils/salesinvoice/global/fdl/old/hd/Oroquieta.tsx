@@ -137,10 +137,10 @@ const Oroquieta = ({ data }: any) => {
       <div className="flex h-[38.818897638px]">
         <div className="w-[376.06299213px] pl-[94.488188976px]">
           <p className="h-[19.409448819px]">
-            {data[1]?.[billingAddress].substring(0, 40) || ""}
+            {data[1]?.[billingAddress]?.substring(0, 40) || ""}
           </p>
           <p className="h-[19.409448819px]">
-            {data[1]?.[billingAddress].substring(40) || ""}
+            {data[1]?.[billingAddress]?.substring(40) || ""}
           </p>
         </div>
         <p className="w-[219.21259843px] pl-[136.06299213px]">

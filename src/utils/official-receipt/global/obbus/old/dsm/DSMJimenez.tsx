@@ -63,7 +63,7 @@ const DSMJimenez = ({ data }: any) => {
         </div>
         <div className="w-[350.01574803px] ml-[158.28346457px]">
           <p>
-            {data[1]?.[CR_Memo].substring(0, 50) || (
+            {data[1]?.[CR_Memo]?.substring(0, 50) || (
               <span className="opacity-0">No data</span>
             )}
           </p>
@@ -71,7 +71,7 @@ const DSMJimenez = ({ data }: any) => {
       </div>
       <div className="ml-[245.77165354px] mt-[4.1811023622]">
         <p>
-          {data[1]?.[CR_Memo].substring(50) || (
+          {data[1]?.[CR_Memo]?.substring(50) || (
             <span className="opacity-0">No data</span>
           )}
         </p>

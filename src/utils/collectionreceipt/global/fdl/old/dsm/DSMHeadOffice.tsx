@@ -65,14 +65,14 @@ const DSMHeadOffice: React.FC<PrintPageProps> = ({ data }) => {
       </div>
       <div className="w-[782.36220472px] mt-[7.8267716539px]">
         <p className="w-[419.52755906px] ml-[347.71653543px]">
-          {data[1]?.[CR_Memo].substring(0, 70) || (
+          {data[1]?.[CR_Memo]?.substring(0, 70) || (
             <span className="opacity-0">No data</span>
           )}
         </p>
       </div>
       <div className="w-[782.36220472px] mt-[6.8267716539px]">
         <p className="w-[521.57480315px] ml-[245.66929134px]">
-          {data[1]?.[CR_Memo].substring(70) || (
+          {data[1]?.[CR_Memo]?.substring(70) || (
             <span className="opacity-0">No data</span>
           )}
         </p>

@@ -135,10 +135,10 @@ const DAPOzamiz = ({ data }: any) => {
       <div className="flex h-[38.818897638px]">
         <div className="w-[391.18110236px] pl-[105.82677165px]">
           <p className="h-[19.409448819px]">
-            {data[1]?.[billingAddress].substring(0, 44) || ""}
+            {data[1]?.[billingAddress]?.substring(0, 44) || ""}
           </p>
           <p className="h-[19.409448819px]">
-            {data[1]?.[billingAddress].substring(44) || ""}
+            {data[1]?.[billingAddress]?.substring(44) || ""}
           </p>
         </div>
         <p className="w-[218.83464567px] pl-[136.06299213px]">

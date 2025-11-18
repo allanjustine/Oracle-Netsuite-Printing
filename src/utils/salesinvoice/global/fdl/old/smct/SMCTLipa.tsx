@@ -135,10 +135,10 @@ const SMCTLipa = ({ data }: any) => {
       <div className="flex h-[38.818897638px]">
         <div className="w-[415.7480315px] pl-[94.488188976px]">
           <p className="h-[19.409448819px]">
-            {data[1]?.[billingAddress].substring(0, 47) || ""}
+            {data[1]?.[billingAddress]?.substring(0, 47) || ""}
           </p>
           <p className="h-[19.409448819px]">
-            {data[1]?.[billingAddress].substring(47) || ""}
+            {data[1]?.[billingAddress]?.substring(47) || ""}
           </p>
         </div>
         <p className="w-[181.41732283px] pl-[113.38582677px]">

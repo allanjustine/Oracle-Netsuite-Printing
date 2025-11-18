@@ -134,10 +134,10 @@ const SMCTRosario = ({ data }: any) => {
       <div className="flex h-[38.818897638px]">
         <div className="w-[425.19685039px] pl-[109.60629921px]">
           <p className="h-[14.74015748px]">
-            {data[1]?.[billingAddress].substring(0, 40) || ""}
+            {data[1]?.[billingAddress]?.substring(0, 40) || ""}
           </p>
           <p className="h-[14.74015748px]">
-            {data[1]?.[billingAddress].substring(40) || ""}
+            {data[1]?.[billingAddress]?.substring(40) || ""}
           </p>
         </div>
         <p className="w-[216.94488189px] pl-[124.72440945px]">

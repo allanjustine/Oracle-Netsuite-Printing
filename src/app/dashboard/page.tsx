@@ -459,6 +459,7 @@ export default function Page() {
           total_amount_due: isPrintCr
             ? Number(totalAmountDueCrOrOr.replace(/,/g, ""))
             : Number(totalAmountDueFn.replace(/,/g, "")),
+          customer: isPrintCr ? excelData[1][1] : excelData[1][0],
         });
       } catch (error: any) {
         console.error(error);
@@ -640,6 +641,9 @@ export default function Page() {
 
   const handlePreview = () => {
     setIsPreview(!isPreview);
+
+    if (isPreview) return;
+
     Swal.fire({
       icon: "info",
       title: "Preview Notice",

@@ -135,10 +135,10 @@ const Bulua2 = ({ data }: any) => {
       <div className="flex h-[38.818897638px]">
         <div className="w-[377.95275591px] pl-[94.488188976px]">
           <p className="h-[19.409448819px]">
-            {data[1]?.[billingAddress].substring(0, 48) || ""}
+            {data[1]?.[billingAddress]?.substring(0, 48) || ""}
           </p>
           <p className="h-[19.409448819px]">
-            {data[1]?.[billingAddress].substring(48) || ""}
+            {data[1]?.[billingAddress]?.substring(48) || ""}
           </p>
         </div>
         <p className="w-[219.21259843px] pl-[132.28346457px]">

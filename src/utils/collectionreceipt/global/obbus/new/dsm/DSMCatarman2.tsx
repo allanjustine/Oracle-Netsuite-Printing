@@ -43,12 +43,12 @@ const DSMCatarman2 = ({ data }: any) => {
       <div className="flex w-[699.59055118px] ml-[24.566929134px] mt-[18.37007874px]">
         <div className="flex flex-col items-center w-[550.50393701px]">
           <p className="w-[491.33858268px] h-[23.433070866px] ml-[110.818897638px]">
-            {data[1]?.[CR_Memo].substring(0, 70) || (
+            {data[1]?.[CR_Memo]?.substring(0, 70) || (
               <span className="opacity-0">No data</span>
             )}
           </p>
           <p className="w-[574.48818898px] ml-[11.338582677px] h-[23.433070866px]">
-            {data[1]?.[CR_Memo].substring(70) || (
+            {data[1]?.[CR_Memo]?.substring(70) || (
               <span className="opacity-0">No data</span>
             )}
           </p>
