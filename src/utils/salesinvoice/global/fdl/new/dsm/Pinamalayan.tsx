@@ -117,7 +117,7 @@ const Pinamalayan = ({ data }: any) => {
           {data[1]?.[date] || ""}
         </p>
       </div>
-      <div className="mt-[17.007874016px] mx-[37.795275591px] h-[73.700787402px] w-[534.80314961px]">
+      <div className="mt-[28.346456693px] mx-[37.795275591px] h-[73.700787402px] w-[534.80314961px]">
         <p className="w-[389.29133858px] flex items-center h-[24.566929134px] ml-[154.96062992px]">
           {data[1]?.[mainLineName]
             ?.replace(/Ã/g, "Ñ")
@@ -137,7 +137,7 @@ const Pinamalayan = ({ data }: any) => {
           )}
         </p>
       </div>
-      <div className="mx-[37.795275591px] w-[533.29133858px] mt-[29.858267717px] h-[226.77165354px]">
+      <div className="mx-[37.795275591px] w-[533.29133858px] mt-[33.858267717px] h-[226.77165354px]">
         <table className="border-collapse">
           <tbody>
             {data.slice(1, 13).map((row: any, index: number) => (
@@ -230,7 +230,7 @@ const Pinamalayan = ({ data }: any) => {
           </tbody>
         </table>
       </div>
-      <div className="mx-[37.795275591px] h-[132.28346457px]">
+      <div className="mx-[37.795275591px] h-[132.28346457px] mt-[17px]">
         <table className="border-collapse w-full">
           <tbody>
             <tr className="text-xs">
