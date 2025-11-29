@@ -9,6 +9,9 @@ const pusherClient = new Pusher(process.env.NEXT_PUBLIC_REVERB_APP_KEY!, {
   wssPort: Number(process.env.NEXT_PUBLIC_REVERB_PORT),
   forceTLS: (process.env.NEXT_PUBLIC_REVERB_SCHEME ?? "https") === "https",
   enabledTransports: ["ws", "wss"],
+  authEndpoint:
+    String(process.env.NEXT_PUBLIC_API_BASE_URL)?.replace("/v1", "") +
+    "/broadcasting/auth",
 });
 
 const echo: any = new Echo({
@@ -16,9 +19,9 @@ const echo: any = new Echo({
   client: pusherClient,
   authorizer: (channel: any) => {
     return {
-      authorize: (socketId: any, callback: any) => {
-        api
-          .post("/api/broadcasting/auth", {
+      authorize: async (socketId: any, callback: any) => {
+        await api
+          .post("/broadcasting/auth", {
             socket_id: socketId,
             channel_name: channel.name,
           })

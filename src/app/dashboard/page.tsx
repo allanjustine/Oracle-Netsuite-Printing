@@ -16,7 +16,7 @@ import {
 import { read, utils } from "xlsx";
 import PrintPage from "../print/page";
 import ReactDOM from "react-dom/client";
-import { FaCircleXmark, FaRotate, FaX, FaXmark } from "react-icons/fa6";
+import { FaCircleXmark, FaFile, FaRotate, FaX, FaXmark } from "react-icons/fa6";
 import { FormatFileSize } from "@/utils/size-format/FormatFileSize";
 import DragAndDropComponent from "@/components/DragAndDropComponent";
 import FormattedNumber from "@/utils/FormattedNumber";
@@ -44,6 +44,7 @@ import PreviewOrCr from "@/components/PreviewOrCr";
 import Modal from "@/components/ui/modal";
 import PreviewSiCsi from "@/components/PreviewSiCsi";
 import Swal from "sweetalert2";
+import echo from "@/hooks/echo";
 
 export default function Page() {
   const { user } = useAuth();
@@ -89,10 +90,15 @@ export default function Page() {
   const [isShowIndicator, setIsShowIndicator] = useState(true);
   const [isPreview, setIsPreview] = useState(false);
   const [isReadyPrint, setIsReadyPrint] = useState(false);
+  const [isSendingNextReference, setIsSendingNextReference] =
+    useState<boolean>(false);
   const isCrOrMessageError =
     "You uploaded a Cash Sales Invoice/Sales Invoice, so you can't print a Collection Receipt/Official Receipt.";
   const isCsiSiMessageError =
     "You uploaded a Collection Receipt/Official Receipt, so you can't print a Cash Sales Invoice/Sales Invoice.";
+  const [currentReferenceNumber, setCurrentReferenceNumber] =
+    useState<number>(0);
+  const [references, setReferences] = useState<any>(null);
 
   // const internalIdColumnIndex = 0;
   const mainLineName = 0;
@@ -148,6 +154,66 @@ export default function Page() {
   // const amountTax = 17;
   // const netTax = 18;
   // const transactionTotal = 19;
+
+  useEffect(() => {
+    if ("Notification" in window) {
+      Notification.requestPermission().then((permission) => {
+        if (permission === "granted") {
+          Swal.fire({
+            icon: "success",
+            title: "Notifications Enabled",
+            text: "You have successfully enabled notifications.",
+          });
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Notifications Disabled",
+            text: "You have disabled notifications. Please enable for best experience and realtime notifications. You can enable them in your browser settings.",
+          });
+        }
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!echo || !user?.branchCode) return;
+
+    const channel = `reference-number-channel-${user?.branchCode}`;
+
+    echo.channel(channel).listen("ReferenceNumberStatusEvent", (e: any) => {
+      setReferences(e);
+      Swal.fire({
+        icon: "info",
+        title: "Reference Number Notification",
+        text: `${e.branch_code} inform you that the current reference number is ${e.current_reference_number} and the next reference number is ${e.next_reference_number}.`,
+        showConfirmButton: false,
+        showCancelButton: true,
+        cancelButtonText: "Close",
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+      });
+
+      if (Notification.permission === "granted") {
+        new Notification("Reference Number Update", {
+          body: `${e.branch_code} informs you that the current reference number is ${e.current_reference_number} and the next reference number is ${e.next_reference_number}.`,
+          icon: "/favicon.ico",
+        });
+      } else if (Notification.permission !== "denied") {
+        Notification.requestPermission().then((permission) => {
+          if (permission === "granted") {
+            new Notification("Reference Number Update", {
+              body: `${e.branch_code} informs you that the current reference number is ${e.current_reference_number} and the next reference number is ${e.next_reference_number}.`,
+              icon: "/favicon.ico",
+            });
+          }
+        });
+      }
+    });
+
+    return () => {
+      echo.leave(channel);
+    };
+  }, [echo, user?.branchCode]);
 
   useEffect(() => {
     const handleClickOutSide = (event: MouseEvent) => {
@@ -657,6 +723,35 @@ export default function Page() {
     toggleDropdown();
   };
 
+  async function submitRef() {
+    setIsSendingNextReference(true);
+    try {
+      const response = await api.post("submit-next-reference-number", {
+        branch_code: user?.branchCode,
+        current_reference_number: currentReferenceNumber,
+      });
+
+      if (response.status === 200) {
+        setCurrentReferenceNumber(0);
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsSendingNextReference(false);
+    }
+  }
+
+  const handleOpenCurrentAndNextRef = () => {
+    Swal.fire({
+      icon: "success",
+      title: "Current and Next Reference Number",
+      html: `<p>Current Reference Number: <strong>${references.current_reference_number}</strong></p>
+            <p>Next Reference Number: <strong>${references.next_reference_number}</strong></p>`,
+      showConfirmButton: false,
+      cancelButtonText: "Close",
+    });
+  };
+
   return (
     <PrivateRoute handleModal={handleModal} buttonRefModal={buttonRefModal}>
       {(isOutDated || isAbnormalVersion) && (
@@ -703,11 +798,40 @@ export default function Page() {
           </div>
         </div>
       )}
-      <div className="mt-5 pl-5">
+      <div className="mt-5 pl-5 flex justify-between">
         <h2 className="text-2xl text-[#333] uppercase">
           Welcome to the official SMCT Printing System,{" "}
           <span className="font-semibold">{user?.branchName}</span>!
         </h2>
+        <div className="flex gap-2 items-center mr-5">
+          {references && (
+            <button
+              type="button"
+              className="p-2.5 border border-gray-300 rounded-md text-xl"
+              title="Show current and next reference number"
+              onClick={handleOpenCurrentAndNextRef}
+            >
+              <FaFile className="text-blue-500" />
+            </button>
+          )}
+          <input
+            type="number"
+            className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Enter current reference number"
+            onChange={(e: any) =>
+              setCurrentReferenceNumber(e.target.value.replace(0, ""))
+            }
+            value={currentReferenceNumber}
+          />
+          <button
+            type="button"
+            onClick={submitRef}
+            className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            disabled={isSendingNextReference}
+          >
+            {isSendingNextReference ? "Submitting..." : "Submit"}
+          </button>
+        </div>
       </div>
       <div className="mt-5 px-5">
         <div className="border border-[#005483] pl-5 py-5 relative">
