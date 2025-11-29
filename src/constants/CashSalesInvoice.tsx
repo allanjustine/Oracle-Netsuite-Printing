@@ -274,7 +274,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "MAND2",
     // "CALD",
     "DSMBL",
-    "ABUY",
+    // "ABUY",
     "JARO",
   ];
 
@@ -593,8 +593,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTTalibon data={data} />;
     case "IPID" === user?.branchCode:
       return <DAPIpil data={data} />;
-    // case "ABUY" === user?.branchCode:
-    //   return <Abuyog data={data} />; 
+    case "ABUY" === user?.branchCode:
+      return <Abuyog data={data} />; 
     case "GENMAX" === user?.branchCode:
       return <DSMGenMax data={data} />;  
     case "CALAPM" === user?.branchCode:
