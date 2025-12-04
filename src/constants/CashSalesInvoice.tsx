@@ -153,6 +153,7 @@ import DSMCalapan from "@/utils/salesinvoice/global/fdl/new/dsm/DSMCalapan";
 import DSMSurigao from "@/utils/salesinvoice/global/fdl/new/dsm/DSMSurigao";
 import SMCTLoay from "@/utils/salesinvoice/global/fdl/new/smct/SMCTLoay";
 import Pinamalayan from "@/utils/salesinvoice/global/fdl/new/dsm/Pinamalayan";
+import DSMVictoria from "@/utils/salesinvoice/global/fdl/new/dsm/DSMVictoria";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -278,7 +279,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "JARO",
     "DAAN",
     "PARD3",
-    "VICTO",
   ];
 
   const fdlSiOldSizeData = ["NUND2", "DAPI", "TANZ", "BONI", "VITA"];
@@ -608,6 +608,9 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTLoay data={data} />; 
     case "PINA" === user?.branchCode:
       return <Pinamalayan data={data} />; 
+    case "VICTO" === user?.branchCode:
+      return <DSMVictoria data={data} />; 
+
 
     default:
       return (
