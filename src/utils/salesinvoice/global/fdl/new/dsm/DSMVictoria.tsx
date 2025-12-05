@@ -137,7 +137,7 @@ const DSMVictoria = ({ data }: any) => {
           )}
         </p>
       </div>
-      <div className="mx-[37.795275591px] w-[533.29133858px] mt-[29.858267717px] h-[226.77165354px]">
+      <div className="mx-[37.795275591px] w-[533.29133858px] mt-[32.858267717px] h-[226.77165354px]">
         <table className="border-collapse">
           <tbody>
             {data.slice(1, 13).map((row: any, index: number) => (
@@ -230,7 +230,7 @@ const DSMVictoria = ({ data }: any) => {
           </tbody>
         </table>
       </div>
-      <div className="mx-[37.795275591px] h-[132.28346457px]">
+      <div className="mx-[37.795275591px] h-[132.28346457px] mt-[5px]">
         <table className="border-collapse w-full">
           <tbody>
             <tr className="text-xs">
