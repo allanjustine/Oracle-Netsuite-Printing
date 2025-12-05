@@ -1,9 +1,15 @@
 "use client";
 import { PrintPageProps } from "@/types/types";
+import FormattedAmountDue from "@/utils/FormattedAmountDue";
+import FormattedLessWithHoldingTax from "@/utils/FormattedLessWithHoldingTax";
 import FormattedNumber from "@/utils/FormattedNumber";
+import FormattedSumTotal from "@/utils/FormattedSumTotal";
+import FormattedSumTotalLessVat from "@/utils/FormattedSumTotalLessVat";
+import FormattedSumTotalMinusLessVat from "@/utils/FormattedSumTotalMinusLessVat";
+import FormattedTotalAmountDue from "@/utils/FormattedTotalAmountDue";
 import enyeFormat from "@/utils/enyeFormat";
 
-const Labason: React.FC<PrintPageProps> = ({ data }) => {
+const Labason = ({ data }: any) => {
   const CR_Date = 0;
   const CR_Name = 1;
   const CR_TIN = 2;
@@ -17,62 +23,63 @@ const Labason: React.FC<PrintPageProps> = ({ data }) => {
   const CR_Reference = 10;
 
   return (
-    <div className="text-xs w-[752.12598425px] h-[389.29133858px] ml-[10px]">
-      <div className="flex mt-[135.07086614px]">
-        <p className="pl-[649.72440945px] w-[143.62204724px]">
+    <div className="text-xs h-[400.62992126px] w-[767.24409449px]">
+      <div className="w-[117.16535433px] flex items-center mt-[95.9291338579px] ml-[604.72440945px] h-[21.921259843px]">
+        <p className="text-xs ml-[11.338582677px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex justify-between  mt-[15.7952755906px]">
-        <div className="w-[566.92913386px]">
-          <p className="pl-[316.7007874px]">
-            {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
-          </p>
-        </div>
-        <div className="w-[202.58267717px]">
-          <p className="pl-[71.795275591px]">
-            {data[1]?.[CR_TIN] || <span className="opacity-0">No data</span>}
-          </p>
-        </div>
-      </div>
-      <div className="flex mt-[3.8267716539px]">
-        <p className="pl-[312.36220472px]">
+      <div className="h-[61.984251969px] mt-[37.039370079px] ml-[149.29133858px]">
+        <p className="w-[563.1496063px] ml-[11.338582677px] h-[20.409448819px] flex items-center">
+          {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
+        </p>
+        <p className="w-[563.1496063px] ml-[11.338582677px] h-[20.409448819px] flex items-center">
+          {data[1]?.[CR_TIN] || <span className="opacity-0">No data</span>}
+        </p>
+        <p className="w-[563.1496063px] ml-[11.338582677px] h-[20.409448819px] flex items-center">
           {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex mt-[6.8267716539px]">
-        <p className="ml-[302.80314961px]">
-          {data[1]?.[CR_BusinessStyle] || (
-            <span className="opacity-0">No data</span>
-          )}
-        </p>
-      </div>
-      <div className="flex w-full mt-[3.8267716539px]">
-        <div className="w-[604.72440945px]">
-          <p className="pl-[239.33070866px]">
-            {data[1]?.[CR_AmountInWords] || (
+      <div className="flex w-[680.31496063px] mx-[37.795275591px] mt-[34.37007874px]">
+        <div className="flex flex-col w-[568.81889764px]">
+          <p className="h-[23.433070866px] pl-[83.149606299px]">
+            {data[1]?.[CR_Memo]?.substring(0, 92) || (
+              <span className="opacity-0">No data</span>
+            )}
+          </p>
+          <p className="pl-[56.692913386px] h-[23.433070866px]">
+            {data[1]?.[CR_Memo]?.substring(92) || (
               <span className="opacity-0">No data</span>
             )}
           </p>
         </div>
-        <div className="w-[164.40944882px]">
-          <p className="pl-[60.354330709px]">
+        <div className="w-[113.38582677px]">
+          <p className="text-xs text-center h-[23.433070866px]">
             {FormattedNumber(data[1]?.[CR_AmountInFigures]) || (
               <span className="opacity-0">No data</span>
             )}
           </p>
         </div>
       </div>
-      <div className="w-[529px] pl-[350.15748031px] mt-[6.8267716539px]">
-        <p>
-          {data[1]?.[CR_Memo] || <span className="opacity-0">No data</span>}
-        </p>
-      </div>
-      
-      <div className="w-[769.13385827px] pl-[566.92913386px] mt-[45.7952755906px] text-[11px]">
-        <p>
-        {data[1]?.[CR_PartnerName] || ""}
-        </p>
+      <div className="flex w-[680.31496063px] mx-[37.795275591px]">
+        <div className="text-[11px] w-[568.81889764px] flex-none">
+          <p><span className="opacity-0">No data</span></p>
+          <p className="text-center w-[162.51968504px] ml-[260.78740157px]">
+            {data[1]?.[CR_PartnerName] || ""}
+          </p>
+        </div>
+        <div className="w-[113.38582677px]">
+          <p className="text-xs text-center h-[23.433070866px]">
+            {FormattedNumber(data[1]?.[CR_AmountInFigures]) || (
+              <span className="opacity-0">No data</span>
+            )}
+          </p>
+          <p className="text-xs text-center h-[23.433070866px]">
+            {data[1]?.[CR_Reference] || (
+              <span className="opacity-0">No data</span>
+            )}
+          </p>
+        </div>
       </div>
     </div>
   );
