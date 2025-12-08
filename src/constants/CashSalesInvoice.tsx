@@ -161,7 +161,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const luzonSizeData = [""];
 
   const landscapeSiSizeData = [
-    "ALAD",
     "AURD",
     "CAMD",
     "KABD",
@@ -279,6 +278,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "JARO",
     "DAAN",
     "PARD3",
+    "ALAD",
   ];
 
   const fdlSiOldSizeData = ["NUND2", "DAPI", "TANZ", "BONI", "VITA"];
