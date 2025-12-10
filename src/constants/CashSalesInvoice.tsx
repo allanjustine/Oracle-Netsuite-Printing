@@ -280,6 +280,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "PARD3",
     "ALAD",
     "DSMSB",
+    "CAMH",
   ];
 
   const fdlSiOldSizeData = ["NUND2", "DAPI", "TANZ", "BONI", "VITA"];
@@ -402,8 +403,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Binan data={data} />;
     case "DSMP" === user?.branchCode:
       return <Consolacion data={data} />;
-    case "CAMH" === user?.branchCode:
-      return <HDCamino data={data} />;
+    // case "CAMH" === user?.branchCode:
+    //   return <HDCamino data={data} />;
     case "CARMC" === user?.branchCode:
       return <HDCarmenCebu data={data} />;
     case "SDIP" === user?.branchCode:
