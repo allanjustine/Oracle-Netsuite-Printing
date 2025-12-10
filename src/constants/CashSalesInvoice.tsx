@@ -282,6 +282,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "CAMH",
     "DIPD2",
     "ALEN",
+    "DSMK",
   ];
 
   const fdlSiOldSizeData = ["NUND2", "DAPI", "TANZ", "BONI", "VITA"];
@@ -523,8 +524,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <SmctAntique data={data} />; // new
     case "DSMT" === user?.branchCode:
       return <DSMTagbilaran data={data} />;
-    case "DSMK" === user?.branchCode:
-      return <DSMLabangon data={data} />;
+    // case "DSMK" === user?.branchCode:
+    //   return <DSMLabangon data={data} />;
     case "PARD2" === user?.branchCode:
       return <SuzukiPardo data={data} />;
     case "BOGO" === user?.branchCode:
