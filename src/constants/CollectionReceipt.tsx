@@ -147,7 +147,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const smctCrSizeData = [""];
 
-  const dsmCrSizeData = ["CARS", "CONSO","DSMSB", "MARA", "TAGUM"];
+  const dsmCrSizeData = ["CARS", "CONSO", "DSMSB", "MARA", "TAGUM"];
 
   //FDL
   const fdlCrNewSizeData = [
@@ -219,6 +219,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DSMTA",
     "VILLA2",
     "KABD",
+    "TRINI2",
   ];
 
   const fdlOrOldSizeData = [
@@ -246,7 +247,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "MOLS",
     "YATI",
     "SMCT",
-    "TRINI2",
     "DSMAO",
     "TUBU",
     "MARA",
@@ -261,7 +261,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "VETH",
     "ALAH",
     "SLAP",
-    "KABA2"
+    "KABA2",
   ];
 
   const fdlOrNewSizeData = [];
@@ -309,11 +309,11 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   //FELY
   const felyCrNewSizeData = [];
 
-  const felyCrOldSizeData = ["NAIC","SILA",];
+  const felyCrOldSizeData = ["NAIC", "SILA"];
 
   const felyOrNewSizeData = [];
 
-  const felyOrOldSizeData = ["SANP", "TANZ",];
+  const felyOrOldSizeData = ["SANP", "TANZ"];
 
   // AJD
   const ajdCrNewSizeData = [];
@@ -540,7 +540,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     // case "MOLD2" === user?.branchCode:
     //   return <DAPMolave2 data={data} />;
     case "ANTIP" === user?.branchCode:
-      return <SMCTAntipolo data={data} />; 
+      return <SMCTAntipolo data={data} />;
     case "KABA" === user?.branchCode:
       return <HDKabasalan data={data} />; //OR
     case "DASMA" === user?.branchCode:
