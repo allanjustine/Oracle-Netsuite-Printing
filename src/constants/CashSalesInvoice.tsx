@@ -285,6 +285,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "ALEN",
     "DSMLN",
     "INIT",
+    "ALAH",
   ];
 
   const fdlSiOldSizeData = ["NUND2", "DAPI", "TANZ", "BONI", "VITA"];
@@ -303,7 +304,15 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "LABA",
   ];
 
-  const obbusSiNewSizeData = ["DSMD", "RIZA", "TOMAS", "BOLOD", "MING", "TORI", "MATI"];
+  const obbusSiNewSizeData = [
+    "DSMD",
+    "RIZA",
+    "TOMAS",
+    "BOLOD",
+    "MING",
+    "TORI",
+    "MATI",
+  ];
 
   const obbusSiOldSizeData = ["TACU", "DIGOS"];
 
@@ -554,8 +563,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTCalinan data={data} />;
     case "MEDE" === user?.branchCode:
       return <DSMMedellin data={data} />;
-    case "ALAH" === user?.branchCode:
-      return <HDAlano data={data} />;
+    // case "ALAH" === user?.branchCode:
+    //   return <HDAlano data={data} />;
     case "BAYB" === user?.branchCode:
       return <Baybay data={data} />;
     // case "TORI" === user?.branchCode:
@@ -603,22 +612,26 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     case "IPID" === user?.branchCode:
       return <DAPIpil data={data} />;
     case "ABUY" === user?.branchCode:
-      return <Abuyog data={data} />; 
+      return <Abuyog data={data} />;
     case "GENMAX" === user?.branchCode:
-      return <DSMGenMax data={data} />;  
+      return <DSMGenMax data={data} />;
     case "CALAPM" === user?.branchCode:
-      return <DSMCalapan data={data} />;  
+      return <DSMCalapan data={data} />;
     case "GAISA" === user?.branchCode:
-      return <DSMSurigao data={data} />;  
+      return <DSMSurigao data={data} />;
     case "LOAY" === user?.branchCode:
-      return <SMCTLoay data={data} />; 
+      return <SMCTLoay data={data} />;
     case "PINA" === user?.branchCode:
-      return <Pinamalayan data={data} />; 
+      return <Pinamalayan data={data} />;
     case "VICTO" === user?.branchCode:
+<<<<<<< Updated upstream
       return <DSMVictoria data={data} />; 
     case "PASI" === user?.branchCode:
       return <DSMPasi data={data} />; 
 
+=======
+      return <DSMVictoria data={data} />;
+>>>>>>> Stashed changes
 
     default:
       return (
