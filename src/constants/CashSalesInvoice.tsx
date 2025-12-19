@@ -624,14 +624,9 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     case "PINA" === user?.branchCode:
       return <Pinamalayan data={data} />;
     case "VICTO" === user?.branchCode:
-<<<<<<< Updated upstream
       return <DSMVictoria data={data} />; 
     case "PASI" === user?.branchCode:
       return <DSMPasi data={data} />; 
-
-=======
-      return <DSMVictoria data={data} />;
->>>>>>> Stashed changes
 
     default:
       return (
