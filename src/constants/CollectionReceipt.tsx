@@ -262,6 +262,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "ALAH",
     "SLAP",
     "KABA2",
+    "SLIL",
   ];
 
   const fdlOrNewSizeData = [];
@@ -521,8 +522,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTAntique data={data} />; //OR
     case "DSMTG" === user?.branchCode:
       return <Tagum data={data} />;
-    case "SLIL" === user?.branchCode:
-      return <SMCTLiloan data={data} />; //OR
+    // case "SLIL" === user?.branchCode:
+    //   return <SMCTLiloan data={data} />; //OR
     case "BUUD" === user?.branchCode:
       return <Buug data={data} />;
     case "IMED" === user?.branchCode:
