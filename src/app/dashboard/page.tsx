@@ -819,7 +819,7 @@ export default function Page() {
             className="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Enter current reference number"
             onChange={(e: any) =>
-              setCurrentReferenceNumber(e.target.value.replace(0, ""))
+              setCurrentReferenceNumber(e.target.value.replace(/^0+/, ""))
             }
             value={currentReferenceNumber}
           />
