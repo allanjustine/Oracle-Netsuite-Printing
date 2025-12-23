@@ -19,7 +19,7 @@ const SMCTLiloan: React.FC<PrintPageProps> = ({ data }) => {
   return (
     <div className="text-xs w-[805.03937008px] h-[415.7480315px]">
       <div className="flex mt-[76.275590547px]">
-        <p className="pl-[572.07874016px] w-[143.62204724px]">
+        <p className="pl-[535.07874016px] w-[143.62204724px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
@@ -55,8 +55,8 @@ const SMCTLiloan: React.FC<PrintPageProps> = ({ data }) => {
             )}
           </p>
         </div>
-        <div className="w-[181.41732283px]">
-          <p className="pl-[1.913385827px]">
+        <div className="w-[18.41732283px]">
+          <p className="ml-[-70px]">
             {FormattedNumber(data[1]?.[CR_AmountInFigures]) || (
               <span className="opacity-0">No data</span>
             )}
@@ -78,7 +78,7 @@ const SMCTLiloan: React.FC<PrintPageProps> = ({ data }) => {
         </p>
       </div>
 
-      <div className="w-[782.36220472px] pl-[500.92913386px] mt-[28.7952755906px] text-[11px]">
+      <div className="w-[782.36220472px] pl-[450.92913386px] mt-[28.7952755906px] text-[11px]">
         <p className="text-center w-[170.07874016px]">
           {data[1]?.[CR_PartnerName] || (
             <span className="opacity-0">No data</span>
