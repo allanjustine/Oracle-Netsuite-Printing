@@ -133,6 +133,7 @@ import SMCTAbuyog from "@/utils/collectionreceipt/global/fdl/new/smct/SMCTAbuyog
 import DSMSurigao from "@/utils/collectionreceipt/global/fdl/new/dsm/DSMSurigao";
 import Pinamalayan from "@/utils/collectionreceipt/global/fdl/new/dsm/Pinamalayan";
 import DSMPasi from "@/utils/collectionreceipt/global/fdl/new/dsm/DSMPasi";
+import HDAyala from "@/utils/collectionreceipt/global/fdl/new/hd/HDAyala";
 
 //import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
@@ -226,7 +227,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DANAO",
     "DINAG",
     "SMAC",
-    "AYAL",
   ];
 
   const fdlOrOldSizeData = [
@@ -615,6 +615,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <Pinamalayan data={data} />;
     case "PASI" === user?.branchCode:
       return <DSMPasi data={data} />;
+    case "AYAL" === user?.branchCode:
+      return <HDAyala data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
