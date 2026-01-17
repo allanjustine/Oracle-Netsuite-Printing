@@ -155,6 +155,8 @@ import SMCTLoay from "@/utils/salesinvoice/global/fdl/new/smct/SMCTLoay";
 import Pinamalayan from "@/utils/salesinvoice/global/fdl/new/dsm/Pinamalayan";
 import DSMVictoria from "@/utils/salesinvoice/global/fdl/new/dsm/DSMVictoria";
 import DSMPasi from "@/utils/salesinvoice/global/fdl/new/dsm/DSMPasi";
+import DAPNunez2 from "@/utils/salesinvoice/global/fdl/new/dap/DAPNunez2";
+import HDAyala from "@/utils/salesinvoice/global/fdl/new/hd/HDAyala";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -212,7 +214,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "DSMC",
     "AKLA",
     //"CARS",
-    "MANG",
     "VALEN",
     // "TUBU",
     "BUUD",
@@ -225,6 +226,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "HO-SMCT",
     "HO-DSM",
     "KIBA",
+    "MANG",
+    "JAGN",
   ];
 
   const fdlSiNewSizeData = [
@@ -260,7 +263,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "ASTUR",
     "SANTA",
     "BALAS",
-    "JAGN",
+    // "JAGN",
     "LOON",
     "BAYU",
     "PANGL",
@@ -287,9 +290,15 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "INIT",
     "ALAH",
     "DIGOS2",
+    "VALEN2",
+    "REMI2",
+    // "MANG",
+    "BUTU",
+    "DINAG",
+    "SMAC",
   ];
 
-  const fdlSiOldSizeData = ["NUND2", "DAPI", "TANZ", "BONI", "VITA"];
+  const fdlSiOldSizeData = [ "DAPI", "TANZ", "BONI", "VITA"];
 
   // OBBUS
   const obbusCsiNewSizeData = [];
@@ -299,7 +308,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "CALIN",
     "COMPO",
     "JIMEDSM",
-    "REMI2",
     "DSMM",
     "DSMDM",
     "LABA",
@@ -628,6 +636,10 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <DSMVictoria data={data} />;
     case "PASI" === user?.branchCode:
       return <DSMPasi data={data} />;
+    case "NUND2" === user?.branchCode:
+      return <DAPNunez2 data={data} />;
+    case "AYAL" === user?.branchCode:
+      return <HDAyala data={data} />; 
 
     default:
       return (

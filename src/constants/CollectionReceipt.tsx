@@ -133,6 +133,7 @@ import SMCTAbuyog from "@/utils/collectionreceipt/global/fdl/new/smct/SMCTAbuyog
 import DSMSurigao from "@/utils/collectionreceipt/global/fdl/new/dsm/DSMSurigao";
 import Pinamalayan from "@/utils/collectionreceipt/global/fdl/new/dsm/Pinamalayan";
 import DSMPasi from "@/utils/collectionreceipt/global/fdl/new/dsm/DSMPasi";
+import HDAyala from "@/utils/collectionreceipt/global/fdl/new/hd/HDAyala";
 
 //import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
@@ -221,6 +222,12 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "KABD",
     "TRINI2",
     "DIGOS2",
+    "VALEN2",
+    "CALAP2",
+    "ANTI",
+    "DANAO",
+    "DINAG",
+    "SMAC",
   ];
 
   const fdlOrOldSizeData = [
@@ -429,8 +436,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <HDCarmenCebu data={data} />;
     case "CERI" === user?.branchCode:
       return <Cerilles data={data} />;
-    case "CALAP2" === user?.branchCode:
-      return <Calape2 data={data} />;
+    // case "CALAP2" === user?.branchCode:
+    //   return <Calape2 data={data} />;
     case "CARMC2" === user?.branchCode:
       return <CarmenCebu2 data={data} />;
     case "DSMD2" === user?.branchCode:
@@ -509,8 +516,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     //   return <DSMPardo data={data} />; //OR
     // case "CALAP" === user?.branchCode:
     //   return <SMCTCalape data={data} />;
-    case "DANAO" === user?.branchCode:
-      return <Danao data={data} />;
+    // case "DANAO" === user?.branchCode:
+    //   return <Danao data={data} />;
     case "MING" === user?.branchCode:
       return <Minglanilla data={data} />;
     case "DSMT" === user?.branchCode:
@@ -519,8 +526,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <DSMCalinog data={data} />; //OR
     case "DSMDN" === user?.branchCode:
       return <DSMCarmenCebu data={data} />; //OR
-    case "ANTI" === user?.branchCode:
-      return <SMCTAntique data={data} />; //OR
+    // case "ANTI" === user?.branchCode:
+    //   return <SMCTAntique data={data} />; //OR
     case "DSMTG" === user?.branchCode:
       return <Tagum data={data} />;
     case "SLIL" === user?.branchCode:
@@ -609,6 +616,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <Pinamalayan data={data} />;
     case "PASI" === user?.branchCode:
       return <DSMPasi data={data} />;
+    case "AYAL" === user?.branchCode:
+      return <HDAyala data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
