@@ -228,6 +228,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "KIBA",
     "MANG",
     "JAGN",
+    "VALEN2",
   ];
 
   const fdlSiNewSizeData = [
@@ -290,7 +291,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "INIT",
     "ALAH",
     "DIGOS2",
-    "VALEN2",
     "REMI2",
     // "MANG",
     "BUTU",
