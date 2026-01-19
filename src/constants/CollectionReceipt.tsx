@@ -228,6 +228,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DANAO",
     "DINAG",
     "SMAC",
+    "IMED",
     "MAHA",
   ];
 
@@ -535,8 +536,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTLiloan data={data} />; //OR
     case "BUUD" === user?.branchCode:
       return <Buug data={data} />;
-    case "IMED" === user?.branchCode:
-      return <DAPImelda data={data} />;
+    // case "IMED" === user?.branchCode:
+    //   return <DAPImelda data={data} />;
     case "SANJ" === user?.branchCode:
       return <SMCTSanJose data={data} />;
     case "SROS" === user?.branchCode:
