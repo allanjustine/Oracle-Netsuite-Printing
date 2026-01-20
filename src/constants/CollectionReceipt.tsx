@@ -230,6 +230,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "SMAC",
     "IMED",
     "MAHA",
+    "BALD",
   ];
 
   const fdlOrOldSizeData = [
@@ -396,8 +397,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <SmctCrSize data={data} />;
     case dsmCrSizeData.some((branch) => branch === user?.branchCode):
       return <DsmCrSize data={data} />;
-    case "BALD" === user?.branchCode:
-      return <DAPBalingasag data={data} />;
+    // case "BALD" === user?.branchCode:
+    //   return <DAPBalingasag data={data} />;
     case "ILID" === user?.branchCode:
       return <DAPIligan data={data} />;
     case "TUBOD" === user?.branchCode:
