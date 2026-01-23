@@ -157,6 +157,7 @@ import DSMVictoria from "@/utils/salesinvoice/global/fdl/new/dsm/DSMVictoria";
 import DSMPasi from "@/utils/salesinvoice/global/fdl/new/dsm/DSMPasi";
 import DAPNunez2 from "@/utils/salesinvoice/global/fdl/new/dap/DAPNunez2";
 import HDAyala from "@/utils/salesinvoice/global/fdl/new/hd/HDAyala";
+import DSMLabason from "@/utils/salesinvoice/global/fdl/old/dsm/DSMLabason";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -298,7 +299,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "MAHA",
     "BAYB",
     "SILA",
-    "LABA",
   ];
 
   const fdlSiOldSizeData = [ "DAPI", "TANZ", "BONI", "VITA"];
@@ -643,6 +643,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <DAPNunez2 data={data} />;
     case "AYAL" === user?.branchCode:
       return <HDAyala data={data} />; 
+    case "LABA" === user?.branchCode:
+      return <DSMLabason data={data} />; 
 
     default:
       return (
