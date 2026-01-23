@@ -157,7 +157,7 @@ import DSMVictoria from "@/utils/salesinvoice/global/fdl/new/dsm/DSMVictoria";
 import DSMPasi from "@/utils/salesinvoice/global/fdl/new/dsm/DSMPasi";
 import DAPNunez2 from "@/utils/salesinvoice/global/fdl/new/dap/DAPNunez2";
 import HDAyala from "@/utils/salesinvoice/global/fdl/new/hd/HDAyala";
-import DSMLabason from "@/utils/salesinvoice/global/fdl/old/dsm/DSMLabason";
+import DSMLabason from "@/utils/salesinvoice/global/fdl/new/dsm/DSMLabason";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
