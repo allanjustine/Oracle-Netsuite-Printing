@@ -291,7 +291,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "MALA",
     "DONC",
     "DSMV",
-    "DSMTG",
   ];
 
   const obbusCrOldSizeData = [
@@ -536,8 +535,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <DSMCarmenCebu data={data} />; //OR
     // case "ANTI" === user?.branchCode:
     //   return <SMCTAntique data={data} />; //OR
-    // case "DSMTG" === user?.branchCode:
-    //   return <Tagum data={data} />;
+    case "DSMTG" === user?.branchCode:
+      return <Tagum data={data} />;
     case "SLIL" === user?.branchCode:
       return <SMCTLiloan data={data} />; //OR
     case "BUUD" === user?.branchCode:
