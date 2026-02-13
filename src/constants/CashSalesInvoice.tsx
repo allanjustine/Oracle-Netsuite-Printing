@@ -279,7 +279,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "MAND2",
     // "CALD",
     "DSMBL",
-    // "ABUY",
+    "ABUY",
     "JARO",
     "DAAN",
     "PARD3",
@@ -303,10 +303,10 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "TANH",
     "OROH2",
     "SERG",
-    "SPVC"
+    "SPVC",
   ];
 
-  const fdlSiOldSizeData = [ "DAPI", "TANZ", "BONI", "VITA"];
+  const fdlSiOldSizeData = ["DAPI", "TANZ", "BONI", "VITA"];
 
   // OBBUS
   const obbusCsiNewSizeData = [];
@@ -627,8 +627,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTTalibon data={data} />;
     case "IPID" === user?.branchCode:
       return <DAPIpil data={data} />;
-    case "ABUY" === user?.branchCode:
-      return <Abuyog data={data} />;
+    // case "ABUY" === user?.branchCode:
+    //   return <Abuyog data={data} />;
     case "GENMAX" === user?.branchCode:
       return <DSMGenMax data={data} />;
     case "CALAPM" === user?.branchCode:
@@ -646,11 +646,11 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     case "NUND2" === user?.branchCode:
       return <DAPNunez2 data={data} />;
     case "AYAL" === user?.branchCode:
-      return <HDAyala data={data} />; 
+      return <HDAyala data={data} />;
     case "LABA" === user?.branchCode:
       return <DSMLabason data={data} />;
     case "OROD" === user?.branchCode:
-      return <DAPOroquieta data={data} />;  
+      return <DAPOroquieta data={data} />;
 
     default:
       return (
