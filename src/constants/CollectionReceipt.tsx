@@ -279,6 +279,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "ALAH",
     "SLAP",
     "KABA2",
+    "OZAH",
   ];
 
   const fdlOrNewSizeData = [];
@@ -455,8 +456,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     //   return <HDMolave data={data} />; //OR
     case "CAMH" === user?.branchCode:
       return <HDCamino data={data} />; //OR
-    case "OZAH" === user?.branchCode:
-      return <HDOzamiz data={data} />; //OR
+    // case "OZAH" === user?.branchCode:
+    //   return <HDOzamiz data={data} />; //OR
     // case "VETH" === user?.branchCode:
     //   return <HDVeterans data={data} />; //OR
     case "DSML" === user?.branchCode:
