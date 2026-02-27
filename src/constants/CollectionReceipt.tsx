@@ -134,6 +134,7 @@ import DSMSurigao from "@/utils/collectionreceipt/global/fdl/new/dsm/DSMSurigao"
 import Pinamalayan from "@/utils/collectionreceipt/global/fdl/new/dsm/Pinamalayan";
 import DSMPasi from "@/utils/collectionreceipt/global/fdl/new/dsm/DSMPasi";
 import HDAyala from "@/utils/collectionreceipt/global/fdl/new/hd/HDAyala";
+import HO_DAP2 from "@/utils/collectionreceipt/global/fdl/new/dap/HO_DAP2";
 
 //import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
@@ -241,7 +242,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "UBAY",
     "COMPO",
     "HILON",
-    "HO-DAP2",
   ];
 
   const fdlOrOldSizeData = [
@@ -630,6 +630,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <DSMPasi data={data} />;
     case "AYAL" === user?.branchCode:
       return <HDAyala data={data} />;
+    case "HO-DAP2" === user?.branchCode:
+      return <HO_DAP2 data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
