@@ -348,7 +348,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   // BJV
   const bjvCrNewSizeData = [];
 
-  const bjvCrOldSizeData = ["GUIN"];
+  const bjvCrOldSizeData = ["GUIN","JAGN"];
 
   // CELROSE
   const celroseOrNewSizeData = [];
@@ -518,8 +518,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     //   return <DSMAurora data={data} />; //OR
     // case "INAB" === user?.branchCode:
     //   return <HDInabanga data={data} />; //OR
-    case "JAGN" === user?.branchCode:
-      return <SMCTJagna data={data} />; //OR
+    // case "JAGN" === user?.branchCode:
+    //   return <SMCTJagna data={data} />; //OR
     case "CALI" === user?.branchCode:
       return <Calinan data={data} />;
     case "CAMD" === user?.branchCode:
