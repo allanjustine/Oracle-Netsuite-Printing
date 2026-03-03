@@ -100,7 +100,7 @@ export default function Dashboard() {
       <div className="flex-1">
         <Navbar />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-6">
-          {loading ? (
+          {loadingDashboardData ? (
             <CardsLoader />
           ) : (
             <CardsCountList receiptRecords={receiptDashboards} />
