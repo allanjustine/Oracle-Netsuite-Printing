@@ -74,7 +74,7 @@ export default function useFetchPrintReceiptRecords() {
   };
 
   useEffect(() => {
-    if (!echo) return;
+    if (!echo || searchTerm) return;
 
     echo.channel("print-channel").listen("ReceiptRecords", (e: any) => {
       fetchPrintReceiptRecordsData();
@@ -83,7 +83,7 @@ export default function useFetchPrintReceiptRecords() {
     return () => {
       echo.leave("print-channel");
     };
-  }, []);
+  }, [searchTerm]);
 
   useEffect(() => {
     fetchPrintReceiptRecordsData();

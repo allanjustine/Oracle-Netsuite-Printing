@@ -17,8 +17,6 @@ import useFetchPrintReceiptRecords from "../_hooks/useFetch";
 
 export default function Dashboard() {
   const { isAdmin, isAuthenticated, loadingData } = useAuth();
-  const { data: receiptDashboards, loading: loadingDashboardData } =
-    useFetchPrintReceipts();
   const {
     data: receiptRecords,
     loading,
@@ -32,6 +30,8 @@ export default function Dashboard() {
     setPagination,
     fetchPrintReceiptRecordsData,
   } = useFetchPrintReceiptRecords();
+  const { data: receiptDashboards, loading: loadingDashboardData } =
+    useFetchPrintReceipts(searchTerm);
   const [isBackToTop, setIsBackToTop] = useState(false);
   const [isReverse, setIsReverse] = useState(false);
   const [isClick, setIsClick] = useState(false);
