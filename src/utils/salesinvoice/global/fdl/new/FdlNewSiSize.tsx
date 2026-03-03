@@ -299,7 +299,8 @@ const FdlNewSiSize = ({ data }: any) => {
         </table>
       </div>
       <div className="w-[610.39370079px]">
-        <div className="mt-[15.897637795px] ml-[192.75590551px] w-[154.96062992px]">
+        <div className="-mt-[35.897637795px] ml-[165.75590551px] w-[154.96062992px]">{totalAmountDueFn}</div>
+        <div className="mt-[50.897637795px] ml-[192.75590551px] w-[154.96062992px]">
           <p className="text-xs text-center">
             {data[1]?.[cashier]
               ?.replace(/Ã/g, "Ñ")

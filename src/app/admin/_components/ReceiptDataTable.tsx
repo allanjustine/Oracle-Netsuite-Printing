@@ -47,7 +47,7 @@ export default function ReceiptDataTable({
     try {
       const response = await api.patch(
         `/print-receipt/${record.id}/update-reciept`,
-        formInput
+        formInput,
       );
 
       if (response.status === 204) {
@@ -80,7 +80,9 @@ export default function ReceiptDataTable({
     e.preventDefault();
     setIsLoading(true);
     try {
-      const response = await api.delete(`/print-receipt/${record.id}/delete-reciept`);
+      const response = await api.delete(
+        `/print-receipt/${record.id}/delete-reciept`,
+      );
       if (response.status === 204) {
         Toast("Receipt deleted successfully", "success");
         fetchPrintReceiptsData();
@@ -276,7 +278,7 @@ export default function ReceiptDataTable({
 
   return (
     <DataTable
-      data={receiptRecords.data}
+      data={receiptRecords}
       columns={columns}
       pagination
       paginationServer

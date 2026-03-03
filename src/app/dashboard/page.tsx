@@ -74,7 +74,7 @@ export default function Page() {
   });
   const [isLoading, setIsLoading] = useState(false);
   const [isHideTable, setIsHideTable] = useState<{ [key: number]: boolean }>(
-    {}
+    {},
   );
   const [progress, setProgress] = useState(0);
   const [isPrintCr, setIsPrintCr] = useState(false);
@@ -341,8 +341,8 @@ export default function Page() {
                 isAbnormalVersion
                   ? "bg-yellow-500"
                   : isOutDated
-                  ? "bg-red-500"
-                  : "hidden"
+                    ? "bg-red-500"
+                    : "hidden"
               }"
             >
               <div class="flex justify-between items-center">
@@ -482,7 +482,7 @@ export default function Page() {
 
     const fetchRecords = async () => {
       try {
-        const response = await api.get("receipt-records", {
+        const response = await api.get("is-exists-reference-number", {
           params: {
             external_id: isPrintCr ? excelData[1][10] : excelData[1][27],
           },
@@ -496,19 +496,19 @@ export default function Page() {
                 excelData,
                 rateInclusiveVat,
                 16,
-                quantity
-              )
+                quantity,
+              ),
             ),
-            FormattedLessWithHoldingTax(excelData, lessWithHoldingTax, 16)
+            FormattedLessWithHoldingTax(excelData, lessWithHoldingTax, 16),
           ),
-          FormattedSumTotalLessVat(excelData, rateInclusiveVat, 16, quantity)
+          FormattedSumTotalLessVat(excelData, rateInclusiveVat, 16, quantity),
         );
 
         const totalAmountDueCrOrOr = FormattedNumber(
-          excelData[1]?.[CR_AmountInFigures]
+          excelData[1]?.[CR_AmountInFigures],
         );
-
-        const result = response?.data?.datas?.searching_if_exists;
+        
+        const result = response?.data?.searching_if_exists;
 
         // const result = receipts?.some((item: any) => {
         //   return (
@@ -570,7 +570,7 @@ export default function Page() {
       const stringData = jsonData.map((row) =>
         row.map((cell: any) => {
           return String(cell);
-        })
+        }),
       );
 
       setExcelData(stringData);
@@ -959,10 +959,10 @@ export default function Page() {
               progress === 100 && !isOutDated && !isAbnormalVersion
                 ? "bg-green-100/70"
                 : isOutDated
-                ? "bg-red-100/70"
-                : isAbnormalVersion
-                ? "bg-yellow-100/70"
-                : "bg-gradient-to-r from-[#005483] to-[#2eb2ff] opacity-20"
+                  ? "bg-red-100/70"
+                  : isAbnormalVersion
+                    ? "bg-yellow-100/70"
+                    : "bg-gradient-to-r from-[#005483] to-[#2eb2ff] opacity-20"
             }`}
             style={{ width: `${progress}%` }}
           ></div>
@@ -1197,7 +1197,7 @@ export default function Page() {
                         </td>
                         <td className="text-right p-2 font-semibold">
                           {FormattedNumber(
-                            row[quantity] * row[totalSalesVatInclusive]
+                            row[quantity] * row[totalSalesVatInclusive],
                           ) || "0.00"}
                         </td>
                       </tr>
@@ -1211,7 +1211,7 @@ export default function Page() {
                         <td className="text-left p-2">Amount: Net of VAT</td>
                         <td className="text-right p-2 font-semibold">
                           {FormattedNumber(
-                            row[quantity] * row[totalSalesVatExclusive]
+                            row[quantity] * row[totalSalesVatExclusive],
                           ) || "0.00"}
                         </td>
                       </tr>
@@ -1219,7 +1219,7 @@ export default function Page() {
                         <td className="text-left p-2">Amount Due</td>
                         <td className="text-right p-2 font-semibold">
                           {FormattedNumber(
-                            row[quantity] * row[totalSalesVatExclusive2]
+                            row[quantity] * row[totalSalesVatExclusive2],
                           ) || "0.00"}
                         </td>
                       </tr>
@@ -1233,7 +1233,7 @@ export default function Page() {
                         <td className="text-left p-2">TOTAL AMOUNT DUE</td>
                         <td className="text-right p-2 font-semibold">
                           {FormattedNumber(
-                            row[quantity] * row[totalSalesVatInclusive]
+                            row[quantity] * row[totalSalesVatInclusive],
                           ) || "0.00"}
                         </td>
                       </tr>

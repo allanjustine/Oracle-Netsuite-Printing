@@ -1,5 +1,4 @@
 export const printReceiptsData = {
-  data: [],
   latestData: [],
   totalReceipts: 0,
   todaysCount: 0,
@@ -9,7 +8,6 @@ export const printReceiptsData = {
   todaysPercentage: 0,
   weeklyPercentage: 0,
   monthlyPercentage: 0,
-  searchingIfExists: [],
   totalInvoice: 0,
   totalCustPay: 0,
   yesterdayCount: 0,

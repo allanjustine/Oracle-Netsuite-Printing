@@ -13,9 +13,12 @@ import ReceiptLatestDataList from "./ReceiptLatestDataList";
 import CardsCountList from "./CardsCountsList";
 import MostPrintCountBranch from "./MostPrintCountBranch";
 import ReceiptDataTable from "./ReceiptDataTable";
+import useFetchPrintReceiptRecords from "../_hooks/useFetch";
 
 export default function Dashboard() {
   const { isAdmin, isAuthenticated, loadingData } = useAuth();
+  const { data: receiptDashboards, loading: loadingDashboardData } =
+    useFetchPrintReceipts();
   const {
     data: receiptRecords,
     loading,
@@ -27,8 +30,8 @@ export default function Dashboard() {
     setPerPage,
     handleSearchTerm,
     setPagination,
-    fetchPrintReceiptsData,
-  } = useFetchPrintReceipts();
+    fetchPrintReceiptRecordsData,
+  } = useFetchPrintReceiptRecords();
   const [isBackToTop, setIsBackToTop] = useState(false);
   const [isReverse, setIsReverse] = useState(false);
   const [isClick, setIsClick] = useState(false);
@@ -69,29 +72,6 @@ export default function Dashboard() {
 
   if (!isAdmin) return <Unauthorized />;
 
-  const receiptRecordsTableHead = [
-    { col: "ID", key: "id" },
-    { col: "External Id", key: "external_id" },
-    { col: "Print Count", key: "print_count" },
-    { col: "Print By", key: "print_by" },
-    { col: "Can Re-Print", key: "re_print" },
-    { col: "Total Amount", key: "total_amount_due" },
-    { col: "Created At", key: "created_at" },
-    { col: "Action", key: "action" },
-  ];
-
-  const handlePerPage = (e: any) => {
-    const { value } = e.target;
-    setPerPage(value);
-  };
-
-  const handleFilter = (key: any) => () => {
-    setFilter({
-      column: key,
-      direction: filter.direction === "asc" ? "desc" : "asc",
-    });
-  };
-
   const handleBackToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
@@ -123,7 +103,7 @@ export default function Dashboard() {
           {loading ? (
             <CardsLoader />
           ) : (
-            <CardsCountList receiptRecords={receiptRecords} />
+            <CardsCountList receiptRecords={receiptDashboards} />
           )}
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 px-6">
@@ -153,7 +133,7 @@ export default function Dashboard() {
                 isSearching={isSearching}
                 pagination={pagination}
                 loading={loading}
-                fetchPrintReceiptsData={fetchPrintReceiptsData}
+                fetchPrintReceiptsData={fetchPrintReceiptRecordsData}
                 filter={filter}
                 setFilter={setFilter}
                 setPerPage={setPerPage}
@@ -189,13 +169,13 @@ export default function Dashboard() {
                   </h3>
                 </div>
                 <div className="space-y-4">
-                  {loading ? (
+                  {loadingDashboardData ? (
                     <RecentActivityLoader />
-                  ) : receiptRecords.latestData?.length > 0 ? (
-                    receiptRecords.latestData?.map(
+                  ) : receiptDashboards.latestData?.length > 0 ? (
+                    receiptDashboards.latestData?.map(
                       (record: any, index: number) => (
                         <ReceiptLatestDataList key={index} record={record} />
-                      )
+                      ),
                     )
                   ) : (
                     <p className="text-gray-400 text-center">
@@ -212,17 +192,17 @@ export default function Dashboard() {
                   </h3>
                 </div>
                 <div className="space-y-4">
-                  {loading ? (
+                  {loadingDashboardData ? (
                     <RecentActivityLoader />
-                  ) : receiptRecords.mostPrintCountBranch?.length > 0 ? (
-                    receiptRecords.mostPrintCountBranch?.map(
+                  ) : receiptDashboards.mostPrintCountBranch?.length > 0 ? (
+                    receiptDashboards.mostPrintCountBranch?.map(
                       (record: any, index: number) => (
                         <MostPrintCountBranch
                           key={index}
                           record={record}
                           index={index}
                         />
-                      )
+                      ),
                     )
                   ) : (
                     <p className="text-gray-400 text-center">
