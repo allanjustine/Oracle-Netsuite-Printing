@@ -1,7 +1,6 @@
 import api from "@/lib/axiosCall";
 import { useEffect, useState } from "react";
 import { printReceiptsData } from "../_constants/printReceiptsData";
-import echo from "@/hooks/echo";
 
 export default function useFetchPrintReceipts() {
   const [data, setData] = useState(printReceiptsData);
@@ -45,18 +44,6 @@ export default function useFetchPrintReceipts() {
       setLoading(false);
     }
   };
-
-  useEffect(() => {
-    if (!echo) return;
-
-    echo.channel("print-channel").listen("ReceiptRecords", (e: any) => {
-      fetchPrintReceiptsData();
-    });
-
-    return () => {
-      echo.leave("print-channel");
-    };
-  }, []);
 
   useEffect(() => {
     fetchPrintReceiptsData();
