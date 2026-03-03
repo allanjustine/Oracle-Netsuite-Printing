@@ -41,7 +41,7 @@ const FdlNewSiSize = ({ data }: any) => {
   // Vatable Sales
   const vatableSalesFn = FormattedSumTotalMinusLessVat(
     FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
-    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity),
   );
 
   // Total Sales Vat Inclusive
@@ -49,7 +49,7 @@ const FdlNewSiSize = ({ data }: any) => {
     data,
     rateInclusiveVat,
     16,
-    quantity
+    quantity,
   );
 
   // Less Vat
@@ -57,13 +57,13 @@ const FdlNewSiSize = ({ data }: any) => {
     data,
     rateInclusiveVat,
     16,
-    quantity
+    quantity,
   );
 
   // Amount Net Of Vat
   const amountNetOfVatFn = FormattedSumTotalMinusLessVat(
     FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
-    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity),
   );
 
   // Vat Amount
@@ -71,23 +71,23 @@ const FdlNewSiSize = ({ data }: any) => {
     data,
     rateInclusiveVat,
     16,
-    quantity
+    quantity,
   );
 
   // Less With Holding Tax
   const lessWithHoldingTaxFn = FormattedLessWithHoldingTax(
     data,
     lessWithHoldingTax,
-    16
+    16,
   );
 
   // Amount Due
   const amountDueFn = FormattedAmountDue(
     FormattedSumTotalMinusLessVat(
       FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
-      FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+      FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity),
     ),
-    FormattedLessWithHoldingTax(data, lessWithHoldingTax, 16)
+    FormattedLessWithHoldingTax(data, lessWithHoldingTax, 16),
   );
 
   // Add Vat
@@ -95,7 +95,7 @@ const FdlNewSiSize = ({ data }: any) => {
     data,
     rateInclusiveVat,
     16,
-    quantity
+    quantity,
   );
 
   // Total Amount Due
@@ -103,11 +103,11 @@ const FdlNewSiSize = ({ data }: any) => {
     FormattedAmountDue(
       FormattedSumTotalMinusLessVat(
         FormattedSumTotal(data, rateInclusiveVat, 16, quantity),
-        FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+        FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity),
       ),
-      FormattedLessWithHoldingTax(data, lessWithHoldingTax, 16)
+      FormattedLessWithHoldingTax(data, lessWithHoldingTax, 16),
     ),
-    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity)
+    FormattedSumTotalLessVat(data, rateInclusiveVat, 16, quantity),
   );
 
   return (
@@ -299,8 +299,9 @@ const FdlNewSiSize = ({ data }: any) => {
         </table>
       </div>
       <div className="w-[610.39370079px]">
-        <div className="-mt-[42.897637795px] ml-[165.75590551px] w-[154.96062992px]">{totalAmountDueFn}</div>
-        <div className="mt-[43.897637795px] ml-[192.75590551px] w-[154.96062992px]">
+        <div className="mt-[15.897637795px] ml-[192.75590551px] w-[154.96062992px]">
+          {/* <div className="-mt-[35.897637795px] ml-[165.75590551px] w-[154.96062992px]">{totalAmountDueFn}</div>
+        <div className="mt-[50.897637795px] ml-[192.75590551px] w-[154.96062992px]"> */}
           <p className="text-xs text-center">
             {data[1]?.[cashier]
               ?.replace(/Ã/g, "Ñ")
