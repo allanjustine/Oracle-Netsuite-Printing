@@ -4,8 +4,19 @@ import { printReceiptsData } from "../_constants/printReceiptsData";
 import echo from "@/hooks/echo";
 
 export default function useFetchPrintReceipts(isSearching?: boolean | string) {
-  const [data, setData] = useState(printReceiptsData);
+  const [data, setData] = useState<any>(printReceiptsData);
   const [loading, setLoading] = useState(true);
+
+  const formattedNumber = (number: number) => {
+    return number.toLocaleString("en-US", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+  };
+
+  const stringToNumber = (string: string) => {
+    return Number(string.replace(/,/g, ""));
+  };
 
   const fetchPrintReceiptsData = async () => {
     try {
@@ -50,7 +61,39 @@ export default function useFetchPrintReceipts(isSearching?: boolean | string) {
     if (!echo || isSearching) return;
 
     echo.channel("print-channel").listen("ReceiptRecords", (e: any) => {
-      fetchPrintReceiptsData();
+      const newReceipt = e?.receipt_item;
+      const isInvoice = e?.receipt?.external_id?.startsWith("INV");
+
+      setData((prev: any) => ({
+        ...prev,
+        latestData: [newReceipt.receipt, ...prev.latestData].slice(0, 10),
+        totalReceipts: prev.totalReceipts + 1,
+        todaysCount: prev.todaysCount + 1,
+        weeklyCount: prev.weeklyCount + 1,
+        monthlyCount: prev.monthlyCount + 1,
+        totalBranchPrintRecords: newReceipt.is_exists_branch
+          ? prev.totalBranchPrintRecords
+          : prev.totalBranchPrintRecords + 1,
+        totalInvoice: isInvoice ? prev.totalInvoice + 1 : prev.totalInvoice,
+        totalCustPay: isInvoice ? prev.totalCustPay : prev.totalCustPay + 1,
+        overAllTotalAmountDue: formattedNumber(
+          stringToNumber(prev.overAllTotalAmountDue) +
+            newReceipt.receipt.total_amount_due,
+        ),
+        sumInvoice: isInvoice
+          ? formattedNumber(
+              stringToNumber(prev.sumInvoice) +
+                newReceipt.receipt.total_amount_due,
+            )
+          : prev.sumInvoice,
+        sumCustPay: isInvoice
+          ? prev.sumCustPay
+          : formattedNumber(
+              stringToNumber(prev.sumCustPay) +
+                newReceipt.receipt.total_amount_due,
+            ),
+        sumToday: prev.sumToday + newReceipt.receipt.total_amount_due,
+      }));
     });
 
     return () => {

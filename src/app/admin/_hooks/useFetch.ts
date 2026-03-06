@@ -1,10 +1,11 @@
 import api from "@/lib/axiosCall";
 import { useEffect, useRef, useState } from "react";
 import { filterData, paginationData } from "../_constants/paginationData";
+import echo from "@/hooks/echo";
 // import echo from "@/hooks/echo";
 
 export default function useFetchPrintReceiptRecords() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<any>([]);
   const [loading, setLoading] = useState(true);
   const [pagination, setPagination] = useState(paginationData);
   const [isNextPrevPage, setIsNextPrevPage] = useState(false);
@@ -73,17 +74,19 @@ export default function useFetchPrintReceiptRecords() {
     }
   };
 
-  // useEffect(() => {
-  //   if (!echo || searchTerm) return;
+  useEffect(() => {
+    if (!echo || searchTerm) return;
 
-  //   echo.channel("print-channel").listen("ReceiptRecords", (e: any) => {
-  //     fetchPrintReceiptRecordsData();
-  //   });
+    echo.channel("print-channel").listen("ReceiptRecords", (e: any) => {
+      const newReceipt = e?.receipt_item?.receipt;
 
-  //   return () => {
-  //     echo.leave("print-channel");
-  //   };
-  // }, [searchTerm]);
+      setData((prev: any) => [newReceipt, ...prev].slice(0, perPage));
+    });
+
+    return () => {
+      echo.leave("print-channel");
+    };
+  }, [searchTerm, perPage]);
 
   useEffect(() => {
     fetchPrintReceiptRecordsData();
