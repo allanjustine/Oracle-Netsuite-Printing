@@ -288,9 +288,9 @@ export default function ReceiptDataTable({
       progressComponent={<TableLoader colSpan={8} />}
       sortServer
       onSort={handleShort}
+      defaultSortFieldId={1}
+      defaultSortAsc={false}
       paginationTotalRows={pagination.total}
-      defaultSortAsc={filter.direction}
-      defaultSortFieldId={filter.column}
       paginationRowsPerPageOptions={paginationRowsPerPageOptions}
       onChangePage={handlePage}
       onChangeRowsPerPage={handlePerPage}
