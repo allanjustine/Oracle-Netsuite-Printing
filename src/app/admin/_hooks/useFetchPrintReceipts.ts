@@ -93,6 +93,27 @@ export default function useFetchPrintReceipts(isSearching?: boolean | string) {
                 newReceipt.receipt.total_amount_due,
             ),
         sumToday: prev.sumToday + newReceipt.receipt.total_amount_due,
+        todaysPercentage: formattedNumber(
+          prev.yesterdayCount === 0
+            ? 100
+            : ((prev.todaysCount + 1 - prev.yesterdayCount) /
+                prev.yesterdayCount) *
+                100,
+        ),
+        weeklyPercentage: formattedNumber(
+          prev.lastWeekCount === 0
+            ? 100
+            : ((prev.weeklyCount + 1 - prev.lastWeekCount) /
+                prev.lastWeekCount) *
+                100,
+        ),
+        monthlyPercentage: formattedNumber(
+          prev.lastMonthCount === 0
+            ? 100
+            : ((prev.monthlyCount + 1 - prev.lastMonthCount) /
+                prev.lastMonthCount) *
+                100,
+        ),
       }));
     });
 
