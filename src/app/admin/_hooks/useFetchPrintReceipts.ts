@@ -124,7 +124,7 @@ export default function useFetchPrintReceipts(isSearching?: boolean | string) {
 
   useEffect(() => {
     fetchPrintReceiptsData();
-  }, []);
+  }, [isSearching]);
 
   return {
     data,
