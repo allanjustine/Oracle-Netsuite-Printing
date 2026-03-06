@@ -10,5 +10,5 @@ export const paginationData = {
 
 export const filterData = {
   column: "id",
-  direction: "asc",
+  direction: "desc",
 };
