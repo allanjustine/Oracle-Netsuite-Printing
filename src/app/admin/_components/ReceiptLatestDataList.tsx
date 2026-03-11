@@ -5,7 +5,7 @@ import { FaPesoSign } from "react-icons/fa6";
 
 export default function ReceiptLatestDataList({ record }: any) {
   const time = formatDistanceToNowStrict(record.created_at, { addSuffix: true });
-  const timeFormatted === "0 seconds ago" || time === "in 0 seconds" ? "Just now" : time;
+  const timeFormatted = time === "0 seconds ago" || time === "in 0 seconds" ? "Just now" : time;
   
   return (
     <div className="flex">
