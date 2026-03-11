@@ -160,6 +160,7 @@ import HDAyala from "@/utils/salesinvoice/global/fdl/new/hd/HDAyala";
 import DSMLabason from "@/utils/salesinvoice/global/fdl/new/dsm/DSMLabason";
 import DAPOroquieta from "@/utils/salesinvoice/global/fdl/old/dap/DAPOroquieta";
 import DSMHilongos from "@/utils/salesinvoice/global/fdl/new/dsm/DSMHilongos";
+import DSMDinagat from "@/utils/salesinvoice/global/fdl/new/dsm/DSMDinagat";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -296,7 +297,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "REMI2",
     // "MANG",
     "BUTU",
-    "DINAG",
     "SMAC",
     "MAHA",
     "SILA",
@@ -657,6 +657,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <DAPOroquieta data={data} />;
     case "HILON" === user?.branchCode:
       return <DSMHilongos data={data} />;
+    case "DINAG" === user?.branchCode:
+      return <DSMDinagat data={data} />;
 
     default:
       return (
