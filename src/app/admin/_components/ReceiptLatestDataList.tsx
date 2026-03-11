@@ -4,6 +4,9 @@ import { FaCheck } from "react-icons/fa";
 import { FaPesoSign } from "react-icons/fa6";
 
 export default function ReceiptLatestDataList({ record }: any) {
+  const time = formatDistanceToNowStrict(record.created_at, { addSuffix: true });
+  const timeFormatted === "0 seconds ago" || time === "in 0 seconds" ? "Just now" : time;
+  
   return (
     <div className="flex">
       <div className="flex-shrink-0 mr-3">
@@ -21,13 +24,7 @@ export default function ReceiptLatestDataList({ record }: any) {
           <span>{FormattedNumber(record.total_amount_due)}</span>
         </p>
         <p className="text-xs text-gray-400 mt-1">
-          {formatDistanceToNowStrict(record.created_at, {
-            addSuffix: true,
-          }) === "0 seconds ago" || formatDistanceToNowStrict(record.created_at, {
-            addSuffix: true,
-          }) === "in 0 seconds"
-            ? "Just now"
-            : formatDistanceToNowStrict(record.created_at, { addSuffix: true })}
+          {timeFormatted}
         </p>
       </div>
     </div>
