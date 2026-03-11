@@ -23,7 +23,9 @@ export default function ReceiptLatestDataList({ record }: any) {
         <p className="text-xs text-gray-400 mt-1">
           {formatDistanceToNowStrict(record.created_at, {
             addSuffix: true,
-          }) === "0 seconds ago"
+          }) === "0 seconds ago" || formatDistanceToNowStrict(record.created_at, {
+            addSuffix: true,
+          }) === "in 0 seconds"
             ? "Just now"
             : formatDistanceToNowStrict(record.created_at, { addSuffix: true })}
         </p>
