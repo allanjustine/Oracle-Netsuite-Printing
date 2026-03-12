@@ -245,6 +245,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "YATI",
     "MAND",
     "VILLA",
+    "ILID",
   ];
 
   const fdlOrOldSizeData = [
@@ -410,8 +411,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <DsmCrSize data={data} />;
     // case "BALD" === user?.branchCode:
     //   return <DAPBalingasag data={data} />;
-    case "ILID" === user?.branchCode:
-      return <DAPIligan data={data} />;
+    // case "ILID" === user?.branchCode:
+    //   return <DAPIligan data={data} />;
     case "TUBOD" === user?.branchCode:
       return <DAPTubod data={data} />;
     // case "BAYU" === user?.branchCode:
