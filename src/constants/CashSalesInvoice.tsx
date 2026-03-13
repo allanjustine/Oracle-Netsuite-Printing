@@ -310,6 +310,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "MANO",
     "ILID",
     "ALIC",
+    "GUSA",
   ];
 
   const fdlSiOldSizeData = ["DAPI", "TANZ", "BONI", "VITA", "BAYB"];
@@ -530,8 +531,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Bulua2 data={data} />;
     case "AURO" === user?.branchCode:
       return <Aurora data={data} />;
-    case "GUSA" === user?.branchCode:
-      return <HDGusa data={data} />;
+    // case "GUSA" === user?.branchCode:
+    //   return <HDGusa data={data} />;
     // case "DSMBL" === user?.branchCode:
     //   return <Bulua data={data} />;
     // case "AURO" === user?.branchCode:
