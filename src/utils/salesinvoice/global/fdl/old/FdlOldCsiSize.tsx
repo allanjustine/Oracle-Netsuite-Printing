@@ -300,7 +300,7 @@ const FdlOldCsiSize = ({ data }: any) => {
               <td className="h-[19.653543307px] w-[132.66141732px]"></td>
               <td className="h-[19.653543307px] w-[102.04724409px] text-center">
                  {/* Less: SC/PWD Discount */}
-              {/* {data[1]?.[lessWithHoldingTax] || ""} */}
+              {data[1]?.[lessWithHoldingTax] || ""}
               </td>
             </tr>
             <tr className="text-xs">
