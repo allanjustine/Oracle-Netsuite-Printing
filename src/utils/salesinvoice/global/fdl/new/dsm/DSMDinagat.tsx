@@ -113,7 +113,7 @@ const DSMDinagat = ({ data }: any) => {
   return (
     <div className="text-xs h-[767.24409449px] w-[610.39370079px]">
       <div className="flex items-center h-[29.480314961px] mx-[37.795275591px] ml-[423.34645669px] mt-[162.999999996px]">
-        <p className="w-[161.00787402px] ml-[12.5590551181px]">
+        <p className="w-[161.00787402px] ml-[7.5590551181px]">
           {data[1]?.[date] || ""}
         </p>
       </div>
