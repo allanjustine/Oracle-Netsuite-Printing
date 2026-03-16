@@ -248,6 +248,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "ILID",
     "MAND2",
     "DSMSB",
+    "CARMC2",
   ];
 
   const fdlOrOldSizeData = [
@@ -455,8 +456,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <Cerilles data={data} />;
     // case "CALAP2" === user?.branchCode:
     //   return <Calape2 data={data} />;
-    case "CARMC2" === user?.branchCode:
-      return <CarmenCebu2 data={data} />;
+    // case "CARMC2" === user?.branchCode:
+    //   return <CarmenCebu2 data={data} />;
     case "DSMD2" === user?.branchCode:
       return <Dipolog2 data={data} />;
     // case "MOLH" === user?.branchCode:
