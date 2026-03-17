@@ -136,6 +136,7 @@ import DSMPasi from "@/utils/collectionreceipt/global/fdl/new/dsm/DSMPasi";
 import HDAyala from "@/utils/collectionreceipt/global/fdl/new/hd/HDAyala";
 import HO_DAP2 from "@/utils/collectionreceipt/global/fdl/new/dap/HO_DAP2";
 import DSMDinagat from "@/utils/collectionreceipt/global/fdl/new/dsm/DSMDinagat";
+import SMCTTubigon from "@/utils/collectionreceipt/global/fdl/old/smct/SMCTTubigon";
 
 //import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
@@ -289,7 +290,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "KABA2",
     "OZAH",
     "LAPU",
-    "TUBI",
+    // "TUBI",
   ];
 
   const fdlOrNewSizeData = [];
@@ -640,6 +641,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <HO_DAP2 data={data} />;
     case "DINAG" === user?.branchCode:
       return <DSMDinagat data={data} />;
+    case "TUBI" === user?.branchCode:
+      return <SMCTTubigon data={data} />;
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
