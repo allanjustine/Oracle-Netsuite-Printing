@@ -80,13 +80,15 @@ export default function useFetchPrintReceiptRecords() {
     echo.channel("print-channel").listen("ReceiptRecords", (e: any) => {
       const newReceipt = e?.receipt_item?.receipt;
 
+      if(searchTerm) return;
+
       setData((prev: any) => [newReceipt, ...prev].slice(0, perPage));
     });
 
     return () => {
       echo.leave("print-channel");
     };
-  }, [perPage]);
+  }, [searchTerm, perPage]);
 
   useEffect(() => {
     fetchPrintReceiptRecordsData();
