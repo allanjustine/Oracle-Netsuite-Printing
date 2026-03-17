@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { printReceiptsData } from "../_constants/printReceiptsData";
 import echo from "@/hooks/echo";
 
-export default function useFetchPrintReceipts(isSearching?: boolean | string) {
+export default function useFetchPrintReceipts() {
   const [data, setData] = useState<any>(printReceiptsData);
   const [loading, setLoading] = useState(true);
 
@@ -58,7 +58,7 @@ export default function useFetchPrintReceipts(isSearching?: boolean | string) {
   };
 
   useEffect(() => {
-    if (!echo || isSearching) return;
+    if (!echo) return;
 
     echo.channel("print-channel").listen("ReceiptRecords", (e: any) => {
       const newReceipt = e?.receipt_item;
@@ -120,11 +120,11 @@ export default function useFetchPrintReceipts(isSearching?: boolean | string) {
     return () => {
       echo.leave("print-channel");
     };
-  }, [isSearching]);
+  }, []);
 
   useEffect(() => {
     fetchPrintReceiptsData();
-  }, [isSearching]);
+  }, []);
 
   return {
     data,

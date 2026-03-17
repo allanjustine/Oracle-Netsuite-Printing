@@ -507,7 +507,7 @@ export default function Page() {
         const totalAmountDueCrOrOr = FormattedNumber(
           excelData[1]?.[CR_AmountInFigures],
         );
-        
+
         const result = response?.data?.searching_if_exists;
 
         // const result = receipts?.some((item: any) => {

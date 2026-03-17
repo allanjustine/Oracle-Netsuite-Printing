@@ -31,7 +31,7 @@ export default function Dashboard() {
     fetchPrintReceiptRecordsData,
   } = useFetchPrintReceiptRecords();
   const { data: receiptDashboards, loading: loadingDashboardData } =
-    useFetchPrintReceipts(searchTerm);
+    useFetchPrintReceipts();
   const [isBackToTop, setIsBackToTop] = useState(false);
   const [isReverse, setIsReverse] = useState(false);
   const [isClick, setIsClick] = useState(false);
