@@ -78,9 +78,9 @@ export default function useFetchPrintReceiptRecords() {
     if (!echo) return;
 
     echo.channel("print-channel").listen("ReceiptRecords", (e: any) => {
-      const newReceipt = e?.receipt_item?.receipt;
-
       if (searchTerm) return;
+      
+      const newReceipt = e?.receipt_item?.receipt;
 
       setData((prev: any) => [newReceipt, ...prev].slice(0, perPage));
     });
