@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { printReceiptsData } from "../_constants/printReceiptsData";
 import echo from "@/hooks/echo";
 
-export default function useFetchPrintReceipts() {
+export default function useFetchPrintReceipts(isSearching?: boolean | string) {
   const [data, setData] = useState<any>(printReceiptsData);
   const [loading, setLoading] = useState(true);
 
@@ -120,7 +120,7 @@ export default function useFetchPrintReceipts() {
     return () => {
       echo.leave("print-channel");
     };
-  }, []);
+  }, [isSearching, echo]);
 
   useEffect(() => {
     fetchPrintReceiptsData();
