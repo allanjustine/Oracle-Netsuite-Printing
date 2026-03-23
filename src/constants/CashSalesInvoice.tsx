@@ -313,6 +313,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "GUSA",
     "ISU",
     "CABA",
+    "CATMO",
   ];
 
   const fdlSiOldSizeData = ["DAPI", "TANZ", "BONI", "VITA", "BAYB"];
