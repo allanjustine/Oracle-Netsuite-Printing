@@ -314,6 +314,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "ISU",
     "CABA",
     "CATMO",
+    "CATAR2",
   ];
 
   const fdlSiOldSizeData = ["DAPI", "TANZ", "BONI", "VITA", "BAYB"];
@@ -607,8 +608,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Iloilo data={data} />;
     case "DSMDN" === user?.branchCode:
       return <HDDSMCarmenCebu2 data={data} />;
-    case "CATAR2" === user?.branchCode:
-      return <DSMCatar2 data={data} />;
+    // case "CATAR2" === user?.branchCode:
+    //   return <DSMCatar2 data={data} />;
     case "CATAR" === user?.branchCode:
       return <SMCTCatarman data={data} />;
     case "SANM" === user?.branchCode:
