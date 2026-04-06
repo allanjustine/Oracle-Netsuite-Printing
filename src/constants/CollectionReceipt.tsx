@@ -151,7 +151,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
 
   const smctCrSizeData = [""];
 
-  const dsmCrSizeData = [ "CONSO", "MARA", "TAGUM"];
+  const dsmCrSizeData = ["CONSO", "MARA", "TAGUM"];
 
   //FDL
   const fdlCrNewSizeData = [
@@ -252,6 +252,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "CARMC2",
     "CATMO",
     "CARS",
+    "SMCT",
   ];
 
   const fdlOrOldSizeData = [
@@ -271,10 +272,10 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     // "DSMD2",
     "KATI",
     // "TALI",
-    
+
     "LILD",
     "MOLS",
-    "SMCT",
+    // "SMCT",
     "DSMAO",
     "TUBU",
     "MARA",
@@ -358,7 +359,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   // BJV
   const bjvCrNewSizeData = [];
 
-  const bjvCrOldSizeData = ["GUIN","JAGN"];
+  const bjvCrOldSizeData = ["GUIN", "JAGN"];
 
   // CELROSE
   const celroseOrNewSizeData = [];
