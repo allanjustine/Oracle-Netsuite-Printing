@@ -230,7 +230,7 @@ const DSMMahayag = ({ data }: any) => {
           </tbody>
         </table>
       </div>
-      <div className="mx-[37.795275591px] h-[132.28346457px]">
+      <div className="mx-[37.795275591px] h-[132.28346457px] mt-[15px]">
         <table className="border-collapse w-full">
           <tbody>
             <tr className="text-xs">
