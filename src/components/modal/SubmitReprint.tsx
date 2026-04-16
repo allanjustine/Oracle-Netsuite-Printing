@@ -16,6 +16,8 @@ export default function SubmitReprint({
   message,
   isShowIndicator,
   setIsShowIndicator,
+  setIsRequestedReprint,
+  isPending,
 }: any) {
   const [isCopied, setIsCopied] = useState(false);
   if (!isOpen) return;
@@ -89,10 +91,10 @@ export default function SubmitReprint({
             <div className="px-6 pt-6 pb-2 border-b border-gray-100">
               <h4 className="text-lg font-semibold text-blue-500 flex gap-1 items-center">
                 <FaHistory className="w-10 h-10 mr-2" />
-                <span>
+                <span className="w-full break-words">
                   {splittedMessage.map((word: string, index: number) =>
                     ["INV", "CustPay", "CS", "CSDEP"].some((key) =>
-                      word.includes(key)
+                      word.includes(key),
                     ) ? (
                       <span key={index} className="relative">
                         <span
@@ -130,13 +132,32 @@ export default function SubmitReprint({
                       <span key={index} className="uppercase">
                         {word}&nbsp;
                       </span>
-                    )
+                    ),
                   )}
                 </span>
               </h4>
-              <p className="text-xl text-gray-500 mt-1">
-                For reprint requests, please contact the development team.
-              </p>
+              <div className="text-xl text-gray-500 mt-1 py-2 space-y-2">
+                <p>
+                  For reprint requests, please contact the development team{" "}
+                  {!isPending &&
+                    `or
+                  you can submit a re-print request by clicking the button
+                  below`}
+                  .
+                </p>
+                {!isPending && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIsRequestedReprint(true);
+                      onClose();
+                    }}
+                    className="bg-blue-500 hover:bg-blue-600 px-2 py-1.5 rounded-xl w-full text-white"
+                  >
+                    Request Re-Print
+                  </button>
+                )}
+              </div>
               <p className="font-bold text-xl">
                 Please provide your{" "}
                 <span className="text-red-500 uppercase">reference number</span>{" "}

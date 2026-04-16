@@ -14,6 +14,7 @@ import CardsCountList from "./CardsCountsList";
 import MostPrintCountBranch from "./MostPrintCountBranch";
 import ReceiptDataTable from "./ReceiptDataTable";
 import useFetchPrintReceiptRecords from "../_hooks/useFetch";
+import ReprintRequested from "./reprint-requested";
 
 export default function Dashboard() {
   const { isAdmin, isAuthenticated, loadingData } = useAuth();
@@ -108,38 +109,43 @@ export default function Dashboard() {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 px-6">
           <div className="lg:col-span-3 bg-white rounded-lg shadow p-6 h-fit">
-            <div className="flex items-center mb-6">
-              <FaList className="text-accent mr-2" />
-              <h3 className="text-xl font-semibold text-primarydark">
-                Recent Print Jobs
-              </h3>
-            </div>
-            <div className="mb-2 flex w-full flex-col md:justify-end items-end md:flex-row space-y-2">
-              <div className="relative">
-                <input
-                  type="search"
-                  onChange={handleSearchTerm}
-                  placeholder="Search..."
-                  className="pr-2 pl-8 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-all"
-                />
-                <span className="absolute left-2 top-3 text-gray-300">
-                  <FaMagnifyingGlass className="text-lg" />
-                </span>
+            <div className="flex flex-col gap-10">
+              <ReprintRequested />
+              <div className="flex justfy-between items-center">
+                <div className="flex items-center w-full">
+                  <FaList className="text-accent mr-2" />
+                  <h3 className="text-xl font-semibold text-primarydark">
+                    Recent Print Jobs
+                  </h3>
+                </div>
+                <div className="mb-2 flex w-full flex-col md:justify-end items-end md:flex-row space-y-2">
+                  <div className="relative">
+                    <input
+                      type="search"
+                      onChange={handleSearchTerm}
+                      placeholder="Search..."
+                      className="pr-2 pl-8 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-transparent transition-all"
+                    />
+                    <span className="absolute left-2 top-3 text-gray-300">
+                      <FaMagnifyingGlass className="text-lg" />
+                    </span>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="overflow-x-auto">
-              <ReceiptDataTable
-                receiptRecords={receiptRecords}
-                isSearching={isSearching}
-                pagination={pagination}
-                loading={loading}
-                fetchPrintReceiptsData={fetchPrintReceiptRecordsData}
-                filter={filter}
-                setFilter={setFilter}
-                setPerPage={setPerPage}
-                setPagination={setPagination}
-                searchTerm={searchTerm}
-              />
+              <div className="overflow-x-auto">
+                <ReceiptDataTable
+                  receiptRecords={receiptRecords}
+                  isSearching={isSearching}
+                  pagination={pagination}
+                  loading={loading}
+                  fetchPrintReceiptsData={fetchPrintReceiptRecordsData}
+                  filter={filter}
+                  setFilter={setFilter}
+                  setPerPage={setPerPage}
+                  setPagination={setPagination}
+                  searchTerm={searchTerm}
+                />
+              </div>
             </div>
           </div>
           <div className="rounded-lg">

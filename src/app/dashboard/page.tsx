@@ -45,6 +45,7 @@ import Modal from "@/components/ui/modal";
 import PreviewSiCsi from "@/components/PreviewSiCsi";
 import Swal from "sweetalert2";
 import echo from "@/hooks/echo";
+import RequestReprint from "@/components/modal/request-reprint";
 
 export default function Page() {
   const { user } = useAuth();
@@ -80,7 +81,7 @@ export default function Page() {
   const [isPrintCr, setIsPrintCr] = useState(false);
   const [backToTop, setBackToTop] = useState(false);
   const [formInput, setFormInput] = useState<PrintDataType>(PrintData);
-  const [isPrintLoading, setIsPrintLoading] = useState(false);
+  const [externalId, setExternalId] = useState<string>("");
   const [isToggle, setIsToggle] = useState(false);
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const modalRef = useRef<HTMLDivElement | null>(null);
@@ -99,6 +100,8 @@ export default function Page() {
   const [currentReferenceNumber, setCurrentReferenceNumber] =
     useState<number>(0);
   const [references, setReferences] = useState<any>(null);
+  const [isRequestedReprint, setIsRequestedReprint] = useState<boolean>(false);
+  const [isPending, setIsPending] = useState<boolean>(false);
 
   // const internalIdColumnIndex = 0;
   const mainLineName = 0;
@@ -242,6 +245,21 @@ export default function Page() {
       ) {
         setIsReprintDialog(reprintDialogData);
         setIsShowIndicator(true);
+        Swal.fire({
+          icon: "info",
+          title: "We have a new feature added!",
+          text: "You can now submit a re-print request with reason why you want to re-print the receipt.",
+          allowEscapeKey: false,
+          allowOutsideClick: false,
+          confirmButtonText: "Okay, I want to request re-print",
+          confirmButtonColor: "#005483",
+          showCancelButton: true,
+          cancelButtonText: "Maybe Later",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            setIsRequestedReprint(true);
+          }
+        });
       }
     };
 
@@ -527,6 +545,7 @@ export default function Page() {
             : Number(totalAmountDueFn.replace(/,/g, "")),
           customer: isPrintCr ? excelData[1][1] : excelData[1][0],
         });
+        setExternalId(isPrintCr ? excelData[1][10] : excelData[1][27]);
       } catch (error: any) {
         console.error(error);
       }
@@ -631,7 +650,6 @@ export default function Page() {
   };
 
   const handlePrintCount = async () => {
-    setIsPrintLoading(true);
     try {
       const response = await api.post("/print-receipt-count", formInput);
       if (response.status === 201) {
@@ -666,9 +684,9 @@ export default function Page() {
           message: error.response.data.message,
         });
         setIsShowIndicator(true);
+        setIsPending(error.response.data.is_pending);
       }
     } finally {
-      setIsPrintLoading(false);
       setExcelData([]);
       setFileInfo({ name: "", size: "" });
       if (fileInputRef.current) {
@@ -689,6 +707,19 @@ export default function Page() {
   const handleClose = () => {
     setIsReprintDialog(reprintDialogData);
     setIsShowIndicator(true);
+    Swal.fire({
+      icon: "info",
+      title: "Whe have new feature added!",
+      text: "You can now submit a re-print request with reason why you want to re-print the receipt.",
+      allowEscapeKey: false,
+      allowOutsideClick: false,
+      confirmButtonText: "Okay",
+      confirmButtonColor: "#005483",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        setIsRequestedReprint(true);
+      }
+    });
   };
 
   if (isFetchingVersion) return <GlobalLoader />;
@@ -1372,6 +1403,8 @@ export default function Page() {
         message={isReprintDialog.message}
         setIsShowIndicator={setIsShowIndicator}
         isShowIndicator={isShowIndicator}
+        setIsRequestedReprint={setIsRequestedReprint}
+        isPending={isPending}
       />
       <Modal
         isOpen={isPreview}
@@ -1384,6 +1417,12 @@ export default function Page() {
           <PreviewSiCsi data={excelData} />
         )}
       </Modal>
+      <RequestReprint
+        isRequestedReprint={isRequestedReprint}
+        setIsRequestedReprint={setIsRequestedReprint}
+        externalId={externalId}
+        setExternalId={setExternalId}
+      />
     </PrivateRoute>
   );
 }

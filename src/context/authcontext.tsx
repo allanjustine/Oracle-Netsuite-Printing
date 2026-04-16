@@ -1,8 +1,10 @@
 "use client";
 import data from "@/data/credentials.json";
+import echo from "@/hooks/echo";
 import { fetchProfile } from "@/lib/authSanctum";
 import { AuthContextType, Branch, User } from "@/types/types";
 import React, { createContext, useContext, useState, useEffect } from "react";
+import Swal from "sweetalert2";
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
@@ -17,19 +19,39 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   const [loadingData, setIsLoadingData] = useState(true);
 
   useEffect(() => {
+    if (!echo || !user) return;
+
+    const channelName = `reprint-channel-${user.branchCode}`;
+    echo.channel(channelName).listen("ReprintEvent", (e: any) => {
+      Swal.fire({
+        icon: "success",
+        title: "Reprint Request Received",
+        text: e.data.message,
+        allowEscapeKey: false,
+        allowOutsideClick: false,
+        confirmButtonText: "Close",
+      });
+    });
+
+    return () => {
+      echo.leave(channelName);
+    };
+  }, [echo, user, branch]);
+
+  useEffect(() => {
     const storedUser = localStorage.getItem("user");
     // const storedBranch = localStorage.getItem('branch');  && storedBranch
     if (storedUser) {
       const parsedUser = JSON.parse(storedUser);
       const foundBranch = data.find((branch) =>
-        branch.users.some((user) => user.branchCode === parsedUser.branchCode)
+        branch.users.some((user) => user.branchCode === parsedUser.branchCode),
       );
       if (foundBranch) {
         const foundUser = foundBranch.users.find(
-          (user) => user.branchCode === parsedUser.branchCode
+          (user) => user.branchCode === parsedUser.branchCode,
         );
         const adminFound: any = foundBranch.users.find(
-          (user) => user.branchCode === parsedUser.branchCode
+          (user) => user.branchCode === parsedUser.branchCode,
         );
 
         const isAdminUser =
@@ -69,7 +91,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     foundUser: any,
     foundBranch: any,
     version: any,
-    isAdminLogin: boolean
+    isAdminLogin: boolean,
   ) => {
     const { password, ...Datas } = foundUser;
     setUser(foundUser);
