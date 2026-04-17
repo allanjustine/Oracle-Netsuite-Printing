@@ -8,6 +8,7 @@ import TableLoader from "./loaders/table-loader";
 import { paginationRowsPerPageOptions } from "../_constants/paginationRowsPerPageOptions";
 import { FaCheck, FaMagnifyingGlass, FaX } from "react-icons/fa6";
 import { MdRequestQuote } from "react-icons/md";
+import { format, formatDistanceToNowStrict } from "date-fns";
 
 export default function ReprintRequested() {
   const [data, setData] = useState<any[]>([]);
@@ -154,6 +155,22 @@ export default function ReprintRequested() {
     {
       name: "BRANCH REQUESTED",
       cell: (row: any) => row?.receipt?.print_by,
+    },
+    {
+      name: "CREATED AT",
+      cell: (row: any) => (
+        <div>
+          {format(row.created_at, "MMM d, yyyy - h:mm a")}
+          <br />
+          <span className="text-gray-400 text-xs font-thin">
+            (
+            {formatDistanceToNowStrict(row.created_at, {
+              addSuffix: true,
+            })}
+            )
+          </span>
+        </div>
+      ),
     },
     {
       name: "ACTION",
