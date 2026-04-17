@@ -157,91 +157,95 @@ export default function ReprintRequested() {
     },
     {
       name: "ACTION",
-      cell: (row: any) => (
-        <div className="flex gap-2 items-center">
-          <Modal
-            row={row}
-            buttonText={
-              <>
-                <FaCheck /> Yes, Approve
-              </>
-            }
-            buttonLoadingText={
-              <>
-                <FaCircleNotch className="animate-spin" /> Approving...
-              </>
-            }
-            handleSubmitButton={handleApprove(row)}
-            isLoading={isLoading}
-            buttonColorHover="bg-blue-500 hover:bg-blue-600"
-            title={
-              <>
-                <FaCheck /> <span className="text-xs">Approve</span>
-              </>
-            }
-            isOpen={isOpenApprove}
-            setIsOpen={setIsOpenApprove}
-          >
-            <p className="text-lg mt-5 mb-5">
-              Are you sure you want to approve this request reprint with
-              external ID of{" "}
-              <span className="font-bold">{row.receipt.external_id}</span> that
-              printed by{" "}
-              <span className="font-bold">{row.receipt.print_by}?</span>
-            </p>
-            <p className="text-center text-gray-400">
-              This action cannot be undone!
-            </p>
-          </Modal>
-          <Modal
-            row={row}
-            buttonText={
-              <>
-                <FaTrash /> Yes, Reject
-              </>
-            }
-            buttonLoadingText={
-              <>
-                <FaCircleNotch className="animate-spin" /> Rejecting...
-              </>
-            }
-            handleSubmitButton={handleReject(row)}
-            isLoading={isLoading}
-            buttonColorHover="bg-red-500 hover:bg-red-600"
-            title={
-              <>
-                <FaX /> <span className="text-xs">Reject</span>
-              </>
-            }
-            isOpen={isOpenDelete}
-            setIsOpen={setIsOpenDelete}
-          >
-            <p className="text-lg mt-5 mb-5">
-              Are you sure you want to reject this request reprint with external
-              ID of <span className="font-bold">{row.receipt.external_id}</span>{" "}
-              that printed by{" "}
-              <span className="font-bold">{row.receipt.print_by}?</span>
-            </p>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="reason" className="text-gray-600 text-xs">
-                Enter what is the reason of rejecting the ticket
-              </label>
-              <textarea
-                rows={5}
-                className={`${errors.reason ? "border-red-500" : "border-gray-200"} w-full resize-none px-4 py-3 text-gray-700 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all focus:outline-none`}
-                onChange={(e) => setReason(e.target.value)}
-                placeholder="Enter what is the reason of rejecting the ticket..."
-              ></textarea>
-              {errors.reason && (
-                <p className="text-red-500">{errors.reason[0]}</p>
-              )}
-            </div>
-            <p className="text-center text-gray-400">
-              This action cannot be undone!
-            </p>
-          </Modal>
-        </div>
-      ),
+      cell: (row: any) =>
+        row.status === "pending" ? (
+          <div className="flex gap-2 items-center">
+            <Modal
+              row={row}
+              buttonText={
+                <>
+                  <FaCheck /> Yes, Approve
+                </>
+              }
+              buttonLoadingText={
+                <>
+                  <FaCircleNotch className="animate-spin" /> Approving...
+                </>
+              }
+              handleSubmitButton={handleApprove(row)}
+              isLoading={isLoading}
+              buttonColorHover="bg-blue-500 hover:bg-blue-600"
+              title={
+                <>
+                  <FaCheck /> <span className="text-xs">Approve</span>
+                </>
+              }
+              isOpen={isOpenApprove}
+              setIsOpen={setIsOpenApprove}
+            >
+              <p className="text-lg mt-5 mb-5">
+                Are you sure you want to approve this request reprint with
+                external ID of{" "}
+                <span className="font-bold">{row.receipt.external_id}</span>{" "}
+                that printed by{" "}
+                <span className="font-bold">{row.receipt.print_by}?</span>
+              </p>
+              <p className="text-center text-gray-400">
+                This action cannot be undone!
+              </p>
+            </Modal>
+            <Modal
+              row={row}
+              buttonText={
+                <>
+                  <FaTrash /> Yes, Reject
+                </>
+              }
+              buttonLoadingText={
+                <>
+                  <FaCircleNotch className="animate-spin" /> Rejecting...
+                </>
+              }
+              handleSubmitButton={handleReject(row)}
+              isLoading={isLoading}
+              buttonColorHover="bg-red-500 hover:bg-red-600"
+              title={
+                <>
+                  <FaX /> <span className="text-xs">Reject</span>
+                </>
+              }
+              isOpen={isOpenDelete}
+              setIsOpen={setIsOpenDelete}
+            >
+              <p className="text-lg mt-5 mb-5">
+                Are you sure you want to reject this request reprint with
+                external ID of{" "}
+                <span className="font-bold">{row.receipt.external_id}</span>{" "}
+                that printed by{" "}
+                <span className="font-bold">{row.receipt.print_by}?</span>
+              </p>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="reason" className="text-gray-600 text-xs">
+                  Enter what is the reason of rejecting the ticket
+                </label>
+                <textarea
+                  rows={5}
+                  className={`${errors.reason ? "border-red-500" : "border-gray-200"} w-full resize-none px-4 py-3 text-gray-700 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all focus:outline-none`}
+                  onChange={(e) => setReason(e.target.value)}
+                  placeholder="Enter what is the reason of rejecting the ticket..."
+                ></textarea>
+                {errors.reason && (
+                  <p className="text-red-500">{errors.reason[0]}</p>
+                )}
+              </div>
+              <p className="text-center text-gray-400">
+                This action cannot be undone!
+              </p>
+            </Modal>
+          </div>
+        ) : (
+          "-"
+        ),
       width: "200px",
     },
   ];
