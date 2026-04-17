@@ -31,13 +31,13 @@ export default function useFetchPrintReceipts(isSearching?: boolean | string) {
         totalBranchPrintRecords:
           response?.data?.datas?.total_branch_print_records,
         todaysPercentage: Number(
-          response?.data?.datas?.todays_percentage.replace(/,/g, ""),
+          response?.data?.datas?.todays_percentage?.replace(/,/g, ""),
         ),
         monthlyPercentage: Number(
-          response?.data?.datas?.monthly_percentage.replace(/,/g, ""),
+          response?.data?.datas?.monthly_percentage?.replace(/,/g, ""),
         ),
         weeklyPercentage: Number(
-          response?.data?.datas?.weekly_percentage.replace(/,/g, ""),
+          response?.data?.datas?.weekly_percentage?.replace(/,/g, ""),
         ),
         totalInvoice: response?.data?.datas?.total_invoice,
         totalCustPay: response?.data?.datas?.total_cust_pay,

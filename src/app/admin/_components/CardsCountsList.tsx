@@ -194,7 +194,7 @@ export default function CardsCountList({ receiptRecords }: any) {
           <p className="text-3xl font-bold text-primarydark mt-2 flex gap-1 items-center">
             <span
               className={`${
-                receiptRecords.overAllTotalAmountDue.replace(/,/g, "") >
+                receiptRecords.overAllTotalAmountDue?.replace(/,/g, "") >
                 1000000000
                   ? "text-xl"
                   : ""
