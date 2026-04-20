@@ -253,6 +253,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "CATMO",
     "CARS",
     "SMCT",
+    "TALI",
   ];
 
   const fdlOrOldSizeData = [
@@ -605,8 +606,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <Gingoog data={data} />;
     case "SABLA" === user?.branchCode:
       return <Sablayan data={data} />;
-    case "TALI" === user?.branchCode:
-      return <SMCTTalibon data={data} />;
+    // case "TALI" === user?.branchCode:
+    //   return <SMCTTalibon data={data} />;
     case "HO-DSM" === user?.branchCode:
       return <DSMHeadOffice data={data} />;
     case "HO-DAP" === user?.branchCode:
