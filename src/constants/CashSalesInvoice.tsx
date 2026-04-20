@@ -234,6 +234,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "MANG",
     "JAGN",
     "VALEN2",
+    "TALI",
   ];
 
   const fdlSiNewSizeData = [
@@ -636,8 +637,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Tacloban data={data} />;
     case "CALD" === user?.branchCode:
       return <DAPCalamba data={data} />;
-    case "TALI" === user?.branchCode:
-      return <SMCTTalibon data={data} />;
+    // case "TALI" === user?.branchCode:
+    //   return <SMCTTalibon data={data} />;
     case "IPID" === user?.branchCode:
       return <DAPIpil data={data} />;
     // case "ABUY" === user?.branchCode:
