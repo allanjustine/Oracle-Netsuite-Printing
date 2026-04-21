@@ -22,7 +22,7 @@ const DSMLahug = ({ data }: any) => {
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex w-[755.90551181px] mt-[26.7952755906px]">
+      <div className="flex w-[755.90551181px] mt-[20.7952755906px]">
         <div className="w-[578.26771654px]">
           <p className="ml-[308.7007874px]">
             {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
