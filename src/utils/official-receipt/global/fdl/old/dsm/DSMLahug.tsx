@@ -18,7 +18,7 @@ const DSMLahug = ({ data }: any) => {
   return (
     <div className="text-xs w-[755.90551181px] h-[404.03149606px] ml-[10px]">
       <div className="flex mt-[65.38582677px]">
-        <p className="ml-[550.82677165px] w-[147.4015748px]">
+        <p className="ml-[500.82677165px] w-[147.4015748px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
@@ -61,7 +61,7 @@ const DSMLahug = ({ data }: any) => {
             )}
           </p>
         </div>
-        <div className="w-[274.01574803px] ml-[110.28346457px]">
+        <div className="w-[274.01574803px] ml-[90.28346457px]">
           <p>
             {data[1]?.[CR_Memo]?.substring(0, 35) || (
               <span className="opacity-0">No data</span>
@@ -77,7 +77,7 @@ const DSMLahug = ({ data }: any) => {
         </p>
       </div>
       <div className="w-[718.11023622px] mt-[25.7952755906px]">
-        <p className="ml-[520.92913386px]">
+        <p className="ml-[480.92913386px]">
           {data[1]?.[CR_PartnerName] || (
             <span className="opacity-0">No Data</span>
           )}
