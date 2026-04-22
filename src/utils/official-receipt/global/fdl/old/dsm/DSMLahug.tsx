@@ -16,15 +16,15 @@ const DSMLahug = ({ data }: any) => {
   const CR_Reference = 10;
 
   return (
-    <div className="text-xs w-[755.90551181px] h-[404.03149606px]">
+    <div className="text-xs w-[755.90551181px] h-[404.03149606px] ml-[10px]">
       <div className="flex mt-[80.38582677px]">
-        <p className="ml-[580.82677165px] w-[147.4015748px]">
+        <p className="ml-[575.82677165px] w-[147.4015748px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex w-[755.90551181px] mt-[20.7952755906px]">
+      <div className="flex w-[755.90551181px] mt-[6.7952755906px]">
         <div className="w-[578.26771654px]">
-          <p className="ml-[308.7007874px]">
+          <p className="ml-[313.7007874px]">
             {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
           </p>
         </div>
@@ -34,13 +34,13 @@ const DSMLahug = ({ data }: any) => {
           </p>
         </div>
       </div>
-      <div className="flex ml-[397.36220472px] mt-[9.8267716539px]">
+      <div className="flex ml-[302.36220472px] mt-[9.8267716539px]">
         <p className="w-[362.83464567px] text-[11px]">
           {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
         </p>
       </div>
       <div className="flex mt-[6.8267716539px] w-[755.90551181px]">
-        <p className="ml-[290.80314961px] w-[381.73228346px] text-xs">
+        <p className="ml-[294.80314961px] w-[381.73228346px] text-xs">
           {data[1]?.[CR_BusinessStyle] || (
             <span className="opacity-0">No data</span>
           )}
@@ -61,7 +61,7 @@ const DSMLahug = ({ data }: any) => {
             )}
           </p>
         </div>
-        <div className="w-[274.01574803px] ml-[132.28346457px]">
+        <div className="w-[274.01574803px] ml-[125.28346457px]">
           <p>
             {data[1]?.[CR_Memo]?.substring(0, 35) || (
               <span className="opacity-0">No data</span>
@@ -77,7 +77,7 @@ const DSMLahug = ({ data }: any) => {
         </p>
       </div>
       <div className="w-[718.11023622px] mt-[25.7952755906px]">
-        <p className="ml-[566.92913386px]">
+        <p className="ml-[550.92913386px]">
           {data[1]?.[CR_PartnerName] || (
             <span className="opacity-0">No Data</span>
           )}
