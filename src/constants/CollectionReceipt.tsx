@@ -138,6 +138,7 @@ import HO_DAP2 from "@/utils/collectionreceipt/global/fdl/new/dap/HO_DAP2";
 import DSMDinagat from "@/utils/collectionreceipt/global/fdl/new/dsm/DSMDinagat";
 import SMCTTubigon from "@/utils/collectionreceipt/global/fdl/old/smct/SMCTTubigon";
 import DSMLahug from "@/utils/official-receipt/global/fdl/old/dsm/DSMLahug";
+import DsmMedellin from "@/utils/collectionreceipt/global/fdl/new/dsm/dsm-medellin";
 
 //import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
@@ -255,7 +256,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "CARS",
     "SMCT",
     "TALI",
-    "MEDE",
   ];
 
   const fdlOrOldSizeData = [
@@ -654,6 +654,9 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTTubigon data={data} />;
     case "LAHUG" === user?.branchCode:
       return <DSMLahug data={data} />;
+    case "MEDE" === user?.branchCode:
+      return <DsmMedellin data={data} />;
+
     default:
       return (
         <div className="text-center flex items-center justify-center h-screen font-bold text-lg">
