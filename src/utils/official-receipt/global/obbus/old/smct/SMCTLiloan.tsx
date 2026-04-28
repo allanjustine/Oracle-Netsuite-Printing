@@ -1,7 +1,7 @@
 "use client";
 import { PrintPageProps } from "@/types/types";
-import FormattedNumber from "@/utils/FormattedNumber";
 import enyeFormat from "@/utils/enyeFormat";
+import FormattedNumber from "@/utils/FormattedNumber";
 
 const SMCTLiloan: React.FC<PrintPageProps> = ({ data }) => {
   const CR_Date = 0;
@@ -17,73 +17,69 @@ const SMCTLiloan: React.FC<PrintPageProps> = ({ data }) => {
   const CR_Reference = 10;
 
   return (
-    <div className="text-xs w-[805.03937008px] h-[415.7480315px]">
-      <div className="flex mt-[76.275590547px]">
-        <p className="pl-[535.07874016px] w-[143.62204724px]">
+    <div className="text-xs w-[752.12598425px] h-[389.29133858px] ml-[10px]">
+      <div className="flex mt-[128.1732283431px]">
+        <p className="pl-[649.72440945px] w-[143.62204724px]">
           {data[1]?.[CR_Date] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex justify-between mt-[24.7952755906px]">
-        <div className="w-[574.48818898px]">
-          <p className="pl-[295.25984252px]">
-            {enyeFormat(data[1]?.[CR_Name]) || <span className="opacity-0">No data</span>}
+      <div className="flex justify-between  mt-[15.7952755906px]">
+        <div className="w-[566.92913386px]">
+          <p className="pl-[316.7007874px]">
+            {enyeFormat(data[1]?.[CR_Name]) || (
+              <span className="opacity-0">No data</span>
+            )}
           </p>
         </div>
-        <div className="w-[207.87401575px]">
-          <p className="pl-[24.133858268px]">
+        <div className="w-[202.58267717px]">
+          <p className="pl-[71.795275591px]">
             {data[1]?.[CR_TIN] || <span className="opacity-0">No data</span>}
           </p>
         </div>
       </div>
-      <div className="flex mt-[6.8267716539px]">
-        <p className="pl-[287.7007874px]">
+      <div className="flex mt-[3.8267716539px]">
+        <p className="pl-[312.36220472px]">
           {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex mt-[3.8267716539px]">
-        <p className="ml-[306.14173228px]">
+      <div className="flex mt-[6.8267716539px]">
+        <p className="ml-[302.80314961px]">
           {data[1]?.[CR_BusinessStyle] || (
             <span className="opacity-0">No data</span>
           )}
         </p>
       </div>
       <div className="flex w-full mt-[3.8267716539px]">
-        <div className="w-[600.94488189px]">
-          <p className="pl-[223.4488189px]">
+        <div className="w-[604.72440945px]">
+          <p className="pl-[239.33070866px]">
             {data[1]?.[CR_AmountInWords] || (
               <span className="opacity-0">No data</span>
             )}
           </p>
         </div>
-        <div className="w-[18.41732283px]">
-          <p className="ml-[-70px]">
+        <div className="w-[164.40944882px]">
+          <p className="pl-[60.354330709px]">
             {FormattedNumber(data[1]?.[CR_AmountInFigures]) || (
               <span className="opacity-0">No data</span>
             )}
           </p>
         </div>
       </div>
-      <div className="w-[782.36220472px] mt-[7.8267716539px]">
-        <p className="w-[419.52755906px] ml-[320.71653543px]">
-          {data[1]?.[CR_Memo]?.substring(0, 70) || (
+      <div className="w-full h-[41.57480315px] mt-[6.8267716539px]">
+        <p className="ml-[350.15748031px] w-[423.30708661px] h-[20.299212598px]">
+          {data[1]?.[CR_Memo]?.substring(0, 65) || (
             <span className="opacity-0">No data</span>
           )}
         </p>
-      </div>
-      <div className="w-[782.36220472px] mt-[6.8267716539px]">
-        <p className="w-[521.57480315px] ml-[220.66929134px]">
-          {data[1]?.[CR_Memo]?.substring(70) || (
+        <p className="ml-[241.88976378px] w-[521.57480315] h-[20.299212598px]">
+          {data[1]?.[CR_Memo]?.substring(65) || (
             <span className="opacity-0">No data</span>
           )}
         </p>
       </div>
 
-      <div className="w-[782.36220472px] pl-[450.92913386px] mt-[28.7952755906px] text-[11px]">
-        <p className="text-center w-[170.07874016px]">
-          {data[1]?.[CR_PartnerName] || (
-            <span className="opacity-0">No data</span>
-          )}
-        </p>
+      <div className="w-[769.13385827px] pl-[566.92913386px] mt-[25.7952755906px] text-[11px]">
+        <p>{data[1]?.[CR_PartnerName] || ""}</p>
       </div>
     </div>
   );
