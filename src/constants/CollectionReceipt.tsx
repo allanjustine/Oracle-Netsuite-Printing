@@ -324,11 +324,11 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "DSMV",
     "DSMTG",
     "CARMCDO",
+    "DSMPO",
   ];
 
   const obbusCrOldSizeData = [
     "ILIG",
-    "DSMPO",
     "MATI",
     // "MEDE",
     "RIZA",
