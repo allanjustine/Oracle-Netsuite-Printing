@@ -322,6 +322,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "DSMTG",
     "BUUD",
     "CARMC2",
+    "REMI",
   ];
 
   const fdlSiOldSizeData = ["DAPI", "TANZ", "BONI", "VITA", "BAYB"];
@@ -432,48 +433,28 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <DapLabason data={data} />;
     case "ANTIP" === user?.branchCode:
       return <Antipolo data={data} />;
-    // case "CARMC2" === user?.branchCode:
-    //   return <CarmenCebu2 data={data} />;
     case "MAND" === user?.branchCode:
       return <MandaueMulti data={data} />;
-    // case "MAND2" === user?.branchCode:
-    //   return <MandaueY3s data={data} />;
     case "BALD" === user?.branchCode:
       return <DAPBalingasag data={data} />;
-    // case "ILID" === user?.branchCode:
-    //   return <DAPIliganNew data={data} />;
-    // case "BAYU" === user?.branchCode:
-    //   return <DSMBayugan data={data} />;
     case "NORZA" === user?.branchCode:
       return <DSMNorzagaray data={data} />;
     case "BINAN" === user?.branchCode:
       return <Binan data={data} />;
     case "DSMP" === user?.branchCode:
       return <Consolacion data={data} />;
-    // case "CAMH" === user?.branchCode:
-    //   return <HDCamino data={data} />;
     case "CARMC" === user?.branchCode:
       return <HDCarmenCebu data={data} />;
-    // case "SDIP" === user?.branchCode:
-    //   return <HDDipolog data={data} />;
-    //case "SMCT" === user?.branchCode:
-    //  return <SmctHdIpilWingShop data={data} />;
     case "DSMAO" === user?.branchCode:
       return <Argao data={data} />;
-    // case "BALA" === user?.branchCode:
-    //   return <Balangasan data={data} />;
     case "DSMA" === user?.branchCode:
       return <Cambaro data={data} />;
     case "CARMCDO" === user?.branchCode:
       return <CarmenCdo data={data} />;
     case "HO" === user?.branchCode:
       return <HeadOffice data={data} />;
-    // case "SAGBA" === user?.branchCode:
-    //   return <Sagbayan data={data} />;
     case "IPIH" === user?.branchCode:
       return <Ipil data={data} />;
-    // case "ALEN" === user?.branchCode:
-    //   return <Allen data={data} />;
     case "SUCD" === user?.branchCode:
       return <Sucabon data={data} />;
     case "VILLA2" === user?.branchCode:
@@ -482,72 +463,42 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Maranding data={data} />;
     case "GENT" === user?.branchCode:
       return <HDGeneralTrias data={data} />;
-    // case "SINDA" === user?.branchCode:
-    //   return <HDSindangan data={data} />;
     case "DSML" === user?.branchCode:
       return <HDToledo data={data} />; //CSI
-    // case "TANH" === user?.branchCode:
-    //   return <HDTanza data={data} />;
     case "CERI" === user?.branchCode:
       return <Cerilles data={data} />;
     case "CALAP2" === user?.branchCode:
       return <Calape2 data={data} />;
     case "DSMD2" === user?.branchCode:
       return <Dipolog2 data={data} />;
-    // case "OZAH" === user?.branchCode:
-    //   return <HDOzamiz data={data} />;
     case "VETH" === user?.branchCode:
       return <HDVeterans data={data} />;
     case "MOLH" === user?.branchCode:
       return <HDMolave data={data} />;
-    // case "OROH2" === user?.branchCode:
-    //   return <HDOroquieta2 data={data} />;
     case "OROH" === user?.branchCode:
       return <OroquietaNew data={data} />;
     case "DSMCA" === user?.branchCode:
       return <Calamba data={data} />;
     case "DATH" === user?.branchCode:
       return <HDDatoc data={data} />; //CSI
-    // case "DAAN" === user?.branchCode:
-    //   return <DaanBantayan2 data={data} />;
-    // case "CALA" === user?.branchCode:
-    //   return <HDCalamba data={data} />;
-    // case "PARD3" === user?.branchCode:
-    //   return <HDPardo data={data} />;
     case "MARH" === user?.branchCode:
       return <HDMaranding data={data} />; //CSI
-    // case "LABA" === user?.branchCode:
-    //   return <Labason data={data} />;
-    case "REMI" === user?.branchCode:
-      return <Remigio data={data} />;
     case "LAPU" === user?.branchCode:
       return <LapuLapu2 data={data} />;
     case "LIPA" === user?.branchCode:
       return <SMCTLipa data={data} />; // TEMP NO TAG-IYA
     case "FAMY" === user?.branchCode:
       return <LapuLapu2 data={data} />; // TEMP NO TAG-IYA
-    // case "DSMLN" === user?.branchCode:
-    //   return <Liloan data={data} />;
     case "CALIN2" === user?.branchCode:
       return <HDCalinog data={data} />;
     case "SLAP" === user?.branchCode:
       return <LapuLapu data={data} />;
-    // case "NABU" === user?.branchCode:
-    //   return <Nabunturan data={data} />;
     case "DSMSO" === user?.branchCode:
       return <SuzukiOsamiz data={data} />;
-    // case "INIT" === user?.branchCode:
-    //   return <HDInitao data={data} />; //CSI
     case "BULU" === user?.branchCode:
       return <Bulua2 data={data} />;
     case "AURO" === user?.branchCode:
       return <Aurora data={data} />;
-    // case "GUSA" === user?.branchCode:
-    //   return <HDGusa data={data} />;
-    // case "DSMBL" === user?.branchCode:
-    //   return <Bulua data={data} />;
-    // case "AURO" === user?.branchCode:
-    //   return <DSMAurora data={data} />;
     case "SALA" === user?.branchCode:
       return <SMCTAlano data={data} />; //CSI
     case "OZAD" === user?.branchCode:
@@ -558,14 +509,9 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTRosario data={data} />;
     case "PAGS" === user?.branchCode:
       return <SMCTPagsanjan data={data} />; //CSI LANDSCAPE
-    // case "INAB" === user?.branchCode:
-    //   return <HDInabanga data={data} />; //CSI LANDSCAPE
     case "GUIN" === user?.branchCode:
       return <SMCTGuindulman1 data={data} />;
-    // case "SILA" === user?.branchCode:
-    //   return <SMCTSilang data={data} />;
     case "ANTI" === user?.branchCode:
-      // return <SMCTAntique data={data} />; // old
       return <SmctAntique data={data} />; // new
     case "DSMT" === user?.branchCode:
       return <DSMTagbilaran data={data} />;
@@ -589,28 +535,18 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <SMCTSanJose data={data} />;
     case "BOHK" === user?.branchCode:
       return <Kia data={data} />;
-    // case "TRINI" === user?.branchCode:
-    //   return <HDTrinidad data={data} />;
     case "CARS" === user?.branchCode:
       return <SMCTCarcar data={data} />;
     case "CALI" === user?.branchCode:
       return <SMCTCalinan data={data} />;
     case "MEDE" === user?.branchCode:
       return <DSMMedellin data={data} />;
-    // case "ALAH" === user?.branchCode:
-    //   return <HDAlano data={data} />;
-    // case "BAYB" === user?.branchCode:
-    //   return <Baybay data={data} />;
-    // case "TORI" === user?.branchCode:
-    //   return <DSMToril data={data} />;
     case "MOLD2" === user?.branchCode:
       return <DAPMolave2 data={data} />;
     case "CARMO" === user?.branchCode:
       return <SMCTCarmona data={data} />;
     case "DSMBN" === user?.branchCode:
       return <Balamban data={data} />;
-    // case "MATI" === user?.branchCode:
-    //   return <DSMMatina data={data} />;
     case "ILOI" === user?.branchCode:
       return <Iloilo data={data} />;
     case "DSMDN" === user?.branchCode:
@@ -631,8 +567,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Kabac data={data} />;
     case "QUEZ" === user?.branchCode:
       return <DSMQuezon data={data} />;
-    // case "ISU" === user?.branchCode:
-    //   return <DSMIsulan data={data} />;
     case "SARG" === user?.branchCode:
       return <DSMArgao data={data} />;
     case "SPVC" === user?.branchCode:
@@ -641,12 +575,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <Tacloban data={data} />;
     case "CALD" === user?.branchCode:
       return <DAPCalamba data={data} />;
-    // case "TALI" === user?.branchCode:
-    //   return <SMCTTalibon data={data} />;
     case "IPID" === user?.branchCode:
       return <DAPIpil data={data} />;
-    // case "ABUY" === user?.branchCode:
-    //   return <Abuyog data={data} />;
     case "GENMAX" === user?.branchCode:
       return <DSMGenMax data={data} />;
     case "CALAPM" === user?.branchCode:
