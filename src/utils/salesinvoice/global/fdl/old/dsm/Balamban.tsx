@@ -170,10 +170,10 @@ const Balamban = ({ data }: any) => {
                 >
                   {row[articles]}
                 </td>
-                <td className="w-[79.748031496px] h-[18.897637795px]">
+                <td className="w-[79.748031496px] h-[18.897637795px] text-start">
                   {FormattedNumber(row[rateInclusiveVat]) || "0.00"}
                 </td>
-                <td className="w-[102.38740157px] h-[18.897637795px]">
+                <td className="w-[102.38740157px] h-[18.897637795px] text-start">
                   {FormattedNumber(row[quantity] * row[rateInclusiveVat]) ||
                     "0.00"}
                 </td>
@@ -252,77 +252,77 @@ const Balamban = ({ data }: any) => {
           </tbody>
         </table>
       </div>
-      <div className="mx-[27.212598425px] h-[130.01574803px]">
+      <div className="mx-[27.212598425px] h-[120.01574803px]">
         <table className="border-collapse w-full">
           <tbody>
             <tr className="text-xs">
               <td className="h-[19.653543307px] w-[131.90551181px]"></td>
-              <td className="h-[19.653543307px] w-[185.57480315px] pl-[11.338582677px]">
+              <td className="h-[19.653543307px] w-[185.57480315px]">
                 {/* Vatable Sales */}
                 {vatableSalesFn}
               </td>
               <td className="h-[19.653543307px] w-[132.66141732px]"></td>
-              <td className="h-[19.653543307px] w-[102.04724409px] text-center">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-start">
                 {/* Total Sales (VAT Inclusive) */}
                 {totalSalesVatInclusiveFn}
               </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[19.653543307px] w-[131.90551181px]"></td>
-              <td className="h-[19.653543307px] w-[185.57480315px] pl-[11.338582677px]">
+              <td className="h-[19.653543307px] w-[185.57480315px]">
                 {/* VAT-Exempt Sales */}
                 0.00
               </td>
               <td className="h-[19.653543307px] w-[132.66141732px]"></td>
-              <td className="h-[19.653543307px] w-[102.04724409px] text-center">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-start">
                 {/* Less: VAT */}
                 {lessVatFn}
               </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[19.653543307px] w-[131.90551181px]"></td>
-              <td className="h-[19.653543307px] w-[185.57480315px] pl-[11.338582677px]">
+              <td className="h-[19.653543307px] w-[185.57480315px]">
                 {/* Zero Rated Sales */}
                 0.00
               </td>
               <td className="h-[19.653543307px] w-[132.66141732px]"></td>
-              <td className="h-[19.653543307px] w-[102.04724409px] text-center">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-start">
                 {/* Amount: Net Of Vat */}
                 {amountNetOfVatFn}
               </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[19.653543307px] w-[131.90551181px]"></td>
-              <td className="h-[19.653543307px] w-[185.57480315px] pl-[11.338582677px]">
+              <td className="h-[19.653543307px] w-[185.57480315px]">
                 {/* VAT Amount */}
                 {vatAmountFn}
               </td>
               <td className="h-[19.653543307px] w-[132.66141732px]"></td>
-              <td className="h-[19.653543307px] w-[102.04724409px] text-center"></td>
+              <td className="h-[19.653543307px] w-[102.04724409px] text-start"></td>
             </tr>
             <tr className="text-xs">
               <td className="h-[19.653543307px] w-[131.90551181px]"></td>
-              <td className="h-[19.653543307px] w-[185.57480315px] pl-[11.338582677px]"></td>
+              <td className="h-[19.653543307px] w-[185.57480315px]"></td>
               <td className="h-[19.653543307px] w-[132.66141732px]"></td>
-              <td className="h-[19.653543307px] w-[102.04724409px] text-center">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-start">
                 {/* Amount Due */}
                 {amountDueFn}
               </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[19.653543307px] w-[131.90551181px]"></td>
-              <td className="h-[19.653543307px] w-[185.57480315px] pl-[11.338582677px]"></td>
+              <td className="h-[19.653543307px] w-[185.57480315px]"></td>
               <td className="h-[19.653543307px] w-[132.66141732px]"></td>
-              <td className="h-[19.653543307px] w-[102.04724409px] text-center">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-start">
                 {/* Add: VAT */}
                 {addVatFn}
               </td>
             </tr>
             <tr className="text-xs">
               <td className="h-[19.653543307px] w-[131.90551181px]"></td>
-              <td className="h-[19.653543307px] w-[185.57480315px] pl-[11.338582677px]"></td>
+              <td className="h-[19.653543307px] w-[185.57480315px]"></td>
               <td className="h-[19.653543307px] w-[132.66141732px]"></td>
-              <td className="h-[19.653543307px] w-[102.04724409px] text-center">
+              <td className="h-[19.653543307px] w-[102.04724409px] text-start">
                 {/* TOTAL AMOUNT DUE */}
                 {totalAmountDueFn}
               </td>
