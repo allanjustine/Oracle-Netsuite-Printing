@@ -347,6 +347,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "MING",
     "TORI",
     "MATI",
+    "DSMPO",
   ];
 
   const obbusSiOldSizeData = ["TACU", "DIGOS"];
@@ -525,8 +526,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <DSMPardo data={data} />;
     case "TUBI" === user?.branchCode:
       return <SMCTTubigon data={data} />;
-    case "DSMPO" === user?.branchCode:
-      return <Panabo data={data} />;
     case "IMED" === user?.branchCode:
       return <DAPImelda data={data} />;
     case "ILIG" === user?.branchCode:
