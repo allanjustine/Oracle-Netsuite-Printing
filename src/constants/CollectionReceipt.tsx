@@ -262,6 +262,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "ELSA",
     "DSMBN",
     "LILD",
+    "GUIN",
   ];
 
   const fdlOrOldSizeData = [
@@ -369,7 +370,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   // BJV
   const bjvCrNewSizeData = [];
 
-  const bjvCrOldSizeData = ["GUIN", "JAGN"];
+  const bjvCrOldSizeData = ["JAGN"];
 
   // CELROSE
   const celroseOrNewSizeData = [];
