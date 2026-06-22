@@ -354,7 +354,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   //FELY
   const felyCrNewSizeData = [];
 
-  const felyCrOldSizeData = ["NAIC", "SILA"];
+  const felyCrOldSizeData = ["NAIC", "SILA","PAGS"];
 
   const felyOrNewSizeData = [];
 
@@ -580,8 +580,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     //   return <HDTrinidad data={data} />;
     // case "ALAH" === user?.branchCode:
     //   return <HDAlano data={data} />;
-    case "PAGS" === user?.branchCode:
-      return <Pagsanjan data={data} />;
+    // case "PAGS" === user?.branchCode:
+    //   return <Pagsanjan data={data} />;
     // case "MOLD2" === user?.branchCode:
     //   return <DAPMolave2 data={data} />;
     case "ANTIP" === user?.branchCode:
