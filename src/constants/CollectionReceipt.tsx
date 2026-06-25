@@ -265,7 +265,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "GUIN",
     "BUUH",
     "SANFER",
-    "DAAN"
   ];
 
   const fdlOrOldSizeData = [
@@ -495,8 +494,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     //   return <HDDatoc data={data} />; //OR
     case "DSMCA" === user?.branchCode:
       return <Calamba data={data} />;
-    // case "DAAN" === user?.branchCode:
-    //   return <DaanBantayan2 data={data} />;
+    case "DAAN" === user?.branchCode:
+      return <DaanBantayan2 data={data} />;
     case "PARD3" === user?.branchCode:
       return <HDPardo data={data} />;
     case "MARH" === user?.branchCode:
