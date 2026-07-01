@@ -162,6 +162,7 @@ import DAPOroquieta from "@/utils/salesinvoice/global/fdl/old/dap/DAPOroquieta";
 import DSMHilongos from "@/utils/salesinvoice/global/fdl/new/dsm/DSMHilongos";
 import DSMDinagat from "@/utils/salesinvoice/global/fdl/new/dsm/DSMDinagat";
 import DSMMahayag from "@/utils/salesinvoice/global/fdl/new/dsm/DSMMahayag";
+import DAPSucabon from "@/utils/salesinvoice/global/fdl/new/dap/DAPSucabon";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -329,7 +330,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "LAPU",
     "DSMD",
     "DSMTA",
-    "SUCD",
   ];
 
   const fdlSiOldSizeData = ["DAPI", "TANZ", "BONI", "VITA", "BAYB"];
@@ -611,6 +611,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <DSMDinagat data={data} />;
     case "MAHA" === user?.branchCode:
       return <DSMMahayag data={data} />;
+    case "SUCD" === user?.branchCode:
+      return <DAPSucabon data={data} />;
 
     default:
       return (
