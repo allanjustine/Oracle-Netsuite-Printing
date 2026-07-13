@@ -592,7 +592,11 @@ export default function Page() {
         }),
       );
 
-      setExcelData(stringData);
+      const itemToStore = stringData.filter(
+        (item) => !item.includes("Delivery/Towing Income (Add Back)"),
+      );
+
+      setExcelData(itemToStore);
 
       if (stringData[0]?.length <= 11) {
         setIsPrintCr(true);
