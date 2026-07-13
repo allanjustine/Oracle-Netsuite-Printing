@@ -56,10 +56,14 @@ export default function DragAndDropComponent({
       const stringData = jsonData.map((row) =>
         row.map((cell: any) => {
           return String(cell);
-        })
+        }),
       );
 
-      setExcelData(stringData);
+      const itemToStore = stringData.filter(
+        (item) => !item.includes("Delivery/Towing Income (Add Back)"),
+      );
+
+      setExcelData(itemToStore);
 
       if (stringData[0]?.length <= 11) {
         setIsPrintCr(true);
