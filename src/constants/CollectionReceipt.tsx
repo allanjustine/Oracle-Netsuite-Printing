@@ -140,6 +140,7 @@ import SMCTTubigon from "@/utils/collectionreceipt/global/fdl/old/smct/SMCTTubig
 import DSMLahug from "@/utils/official-receipt/global/fdl/old/dsm/DSMLahug";
 import DsmMedellin from "@/utils/collectionreceipt/global/fdl/new/dsm/dsm-medellin";
 import DSMBalas from "@/utils/collectionreceipt/global/fdl/new/dsm/DSMBalas";
+import DSMElsa from "@/utils/collectionreceipt/global/fdl/new/dsm/DSMElsa";
 
 //import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
@@ -259,7 +260,6 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
     "TALI",
     "DATH",
     "TUBU",
-    "ELSA",
     "DSMBN",
     "LILD",
     "GUIN",
@@ -667,6 +667,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <DsmMedellin data={data} />;
     case "BALAS" === user?.branchCode:
       return <DSMBalas data={data} />;
+    case "ELSA" === user?.branchCode:
+      return <DSMElsa data={data} />;
 
     default:
       return (
