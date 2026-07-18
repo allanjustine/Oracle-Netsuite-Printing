@@ -141,6 +141,7 @@ import DSMLahug from "@/utils/official-receipt/global/fdl/old/dsm/DSMLahug";
 import DsmMedellin from "@/utils/collectionreceipt/global/fdl/new/dsm/dsm-medellin";
 import DSMBalas from "@/utils/collectionreceipt/global/fdl/new/dsm/DSMBalas";
 import DSMElsa from "@/utils/collectionreceipt/global/fdl/new/dsm/DSMElsa";
+import IloIlo from "@/utils/collectionreceipt/global/celrose/old/dsm/ilo-ilo";
 
 //import Argao from "@/utils/collectionreceipt/global/fdl/old/dsm/Argao";
 
@@ -380,7 +381,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   // CELROSE
   const celroseOrNewSizeData = [];
 
-  const celroseOrOldSizeData = ["ILOI"];
+  const celroseOrOldSizeData = [""];
 
   const bjvOrNewSizeData = [];
 
@@ -671,6 +672,8 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
       return <DSMBalas data={data} />;
     case "ELSA" === user?.branchCode:
       return <DSMElsa data={data} />;
+    case "ILOI" === user?.branchCode:
+      return <IloIlo data={data} />;
 
     default:
       return (
