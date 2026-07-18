@@ -350,7 +350,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   const obbusOrOldSizeData = [
     // "DSMK",
     "DSMT2",
-    "ILOI",
+    // "ILOI",
     // "UBAY",
   ];
 
@@ -380,7 +380,7 @@ const CollectionReceipt: React.FC<PrintPageProps> = ({ data }) => {
   // CELROSE
   const celroseOrNewSizeData = [];
 
-  const celroseOrOldSizeData = [""];
+  const celroseOrOldSizeData = ["ILOI"];
 
   const bjvOrNewSizeData = [];
 
