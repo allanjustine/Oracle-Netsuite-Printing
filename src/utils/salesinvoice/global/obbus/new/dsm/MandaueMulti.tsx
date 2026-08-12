@@ -285,7 +285,7 @@ const MandaueMulti = ({ data }: any) => {
               <td className="h-[18.141732283px] w-[98.267716535px] pl-[11.338582677px]"></td>
               <td className="h-[18.141732283px] w-[147.4015748px]"></td>
               <td className="h-[18.141732283px] w-[96.377952756px] text-center">
-                {addVatFn}
+                {lessWithHoldingTaxFn}
               </td>
             </tr>
             <tr className="text-xs">
@@ -293,7 +293,7 @@ const MandaueMulti = ({ data }: any) => {
               <td className="h-[18.141732283px] w-[98.267716535px] pl-[11.338582677px]"></td>
               <td className="h-[18.141732283px] w-[147.4015748px]"></td>
               <td className="h-[18.141732283px] w-[96.377952756px] text-center">
-                {totalSalesVatInclusiveFn}
+                {totalAmountDueFn}
               </td>
             </tr>
           </tbody>
