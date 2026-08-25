@@ -163,6 +163,7 @@ import DSMHilongos from "@/utils/salesinvoice/global/fdl/new/dsm/DSMHilongos";
 import DSMDinagat from "@/utils/salesinvoice/global/fdl/new/dsm/DSMDinagat";
 import DSMMahayag from "@/utils/salesinvoice/global/fdl/new/dsm/DSMMahayag";
 import DAPSucabon from "@/utils/salesinvoice/global/fdl/new/dap/DAPSucabon";
+import Hyundai from "@/utils/salesinvoice/global/fdl/new/smct/Hyundai";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -302,7 +303,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "REMI2",
     // "MANG",
     "BUTU",
-    "SMAC",
+    // "SMAC",
     "SILA",
     "TANH",
     "OROH2",
@@ -617,6 +618,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <DSMMahayag data={data} />;
     case "SUCD" === user?.branchCode:
       return <DAPSucabon data={data} />;
+    case "SMAC" === user?.branchCode:
+    return <Hyundai data={data} />;
 
     default:
       return (
