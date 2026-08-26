@@ -234,6 +234,48 @@ const Hyundai = ({ data }: any) => {
                 <td className="w-[105.4488189px] h-[18.897637795px]"></td>
               </tr>
             )}
+            {data[1]?.[bankMortgagee] && (
+              <tr className="text-xs text-center">
+                <td
+                  className={`w-[268.72440945px] h-[18.897637795px] text-start ${
+                    data[1]?.[bankMortgagee]?.length > 41 ? "text-[10px]" : ""
+                  }`}
+                >
+                  {data[1]?.[bankMortgagee].toUpperCase() && <>Bank/Mortgagee: {data[1]?.[bankMortgagee].toUpperCase()}</>}
+                </td>
+                <td className="w-[75.968503937px]"></td>
+                <td className="w-[83.48976378px] h-[18.897637795px]"></td>
+                <td className="w-[105.4488189px] h-[18.897637795px]"></td>
+              </tr>
+            )}
+            {data[1]?.[branchManager] && (
+              <tr className="text-xs text-center">
+                <td
+                  className={`w-[268.72440945px] h-[18.897637795px] text-start ${
+                    data[1]?.[branchManager]?.length > 41 ? "text-[10px]" : ""
+                  }`}
+                >
+                  {data[1]?.[branchManager].toUpperCase() && <>Branch Manager: {data[1]?.[branchManager].toUpperCase()}</>}
+                </td>
+                <td className="w-[75.968503937px]"></td>
+                <td className="w-[83.48976378px] h-[18.897637795px]"></td>
+                <td className="w-[105.4488189px] h-[18.897637795px]"></td>
+              </tr>
+            )}
+            {data[1]?.[salesRep] && (
+              <tr className="text-xs text-center">
+                <td
+                  className={`w-[268.72440945px] h-[18.897637795px] text-start ${
+                    data[1]?.[salesRep]?.length > 41 ? "text-[10px]" : ""
+                  }`}
+                >
+                  {data[1]?.[salesRep].toUpperCase() && <>Sales Representative: {data[1]?.[salesRep].toUpperCase()}</>}
+                </td>
+                <td className="w-[75.968503937px]"></td>
+                <td className="w-[83.48976378px] h-[18.897637795px]"></td>
+                <td className="w-[105.4488189px] h-[18.897637795px]"></td>
+              </tr>
+            )}           
             {data[1]?.[bodyType] && (
               <tr className="text-xs text-center">
                 <td
@@ -276,6 +318,7 @@ const Hyundai = ({ data }: any) => {
                 <td className="w-[105.4488189px] h-[18.897637795px]"></td>
               </tr>
             )}
+            
           </tbody>
         </table>
       </div>
