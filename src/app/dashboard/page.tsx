@@ -588,7 +588,7 @@ export default function Page() {
 
       const stringData = jsonData.map((row) =>
         row.map((cell: any) => {
-          return String(cell).toUpperCase();
+          return String(cell);
         }),
       );
 
