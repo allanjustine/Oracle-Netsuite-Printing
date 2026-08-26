@@ -227,7 +227,7 @@ const Hyundai = ({ data }: any) => {
                     data[1]?.[color]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >
-                  {data[1]?.[color] && <>Color: {data[1]?.[color]}</>}
+                  {data[1]?.[color].toUpperCase() && <>Color: {data[1]?.[color].toUpperCase()}</>}
                 </td>
                 <td className="w-[75.968503937px]"></td>
                 <td className="w-[83.48976378px] h-[18.897637795px]"></td>
@@ -241,7 +241,7 @@ const Hyundai = ({ data }: any) => {
                     data[1]?.[bodyType]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >
-                  {data[1]?.[bodyType] && <>Body Type: {data[1]?.[bodyType]}</>}
+                  {data[1]?.[bodyType].toUpperCase() && <>Body Type: {data[1]?.[bodyType].toUpperCase()}</>}
                 </td>
                 <td className="w-[75.968503937px]"></td>
                 <td className="w-[83.48976378px] h-[18.897637795px]"></td>
@@ -255,7 +255,7 @@ const Hyundai = ({ data }: any) => {
                     data[1]?.[brands]?.length > 41 ? "text-[10px]" : ""
                   }`}
                 >
-                  {data[1]?.[brands] && <>Brands: {data[1]?.[brands]}</>}
+                  {data[1]?.[brands].toUpperCase() && <>Brands: {data[1]?.[brands].toUpperCase()}</>}
                 </td>
                 <td className="w-[75.968503937px]"></td>
                 <td className="w-[83.48976378px] h-[18.897637795px]"></td>
