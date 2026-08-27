@@ -320,7 +320,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "CABA",
     "CATMO",
     "CALA",
-    "DSMSI",
+    // "DSMSI",
     // "LAHUG",
     "DSMTG",
     "BUUD",
@@ -619,6 +619,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     case "SUCD" === user?.branchCode:
       return <DAPSucabon data={data} />;
     case "SMAC" === user?.branchCode:
+    return <Hyundai data={data} />;
+    case "DSMSI" === user?.branchCode:
     return <Hyundai data={data} />;
 
     default:
