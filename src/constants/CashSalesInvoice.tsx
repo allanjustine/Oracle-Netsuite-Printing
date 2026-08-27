@@ -164,6 +164,7 @@ import DSMDinagat from "@/utils/salesinvoice/global/fdl/new/dsm/DSMDinagat";
 import DSMMahayag from "@/utils/salesinvoice/global/fdl/new/dsm/DSMMahayag";
 import DAPSucabon from "@/utils/salesinvoice/global/fdl/new/dap/DAPSucabon";
 import Hyundai from "@/utils/salesinvoice/global/fdl/new/smct/Hyundai";
+import Ubay from "@/utils/salesinvoice/global/obbus/old/dsm/Ubay";
 
 const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const { user } = useAuth();
@@ -343,7 +344,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   const obbusCsiNewSizeData = [];
 
   const obbusCsiOldSizeData = [
-    "UBAY",
     "CALIN",
     "COMPO",
     "JIMEDSM",
@@ -391,7 +391,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
 
   const bjvSiOldSizeData = [];
 
-  const carsSIfldNewSizeData = ["SMAC", "DSMSI","DSMSB"];
+  const carsSIfldNewSizeData = ["SMAC", "DSMSI","DSMSB","DSMSO"];
 
   switch (true) {
     // FDL CASES
@@ -510,8 +510,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     //   return <HDCalinog data={data} />;
     case "SLAP" === user?.branchCode:
       return <LapuLapu data={data} />;
-    case "DSMSO" === user?.branchCode:
-      return <SuzukiOsamiz data={data} />;
+    // case "DSMSO" === user?.branchCode:
+    //   return <SuzukiOsamiz data={data} />;
     case "BULU" === user?.branchCode:
       return <Bulua2 data={data} />;
     case "AURO" === user?.branchCode:
@@ -622,6 +622,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <DSMMahayag data={data} />;
     case "SUCD" === user?.branchCode:
       return <DAPSucabon data={data} />;
+    case "UBAY" === user?.branchCode:
+      return <Ubay data={data} />;
 
     default:
       return (
