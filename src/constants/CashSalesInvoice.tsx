@@ -292,7 +292,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "DAAN",
     "PARD3",
     "ALAD",
-    "DSMSB",
+    // "DSMSB",
     "CAMH",
     "DIPD2",
     "ALEN",
@@ -320,7 +320,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "CABA",
     "CATMO",
     "CALA",
-    "DSMSI",
+    // "DSMSI",
     // "LAHUG",
     "DSMTG",
     "BUUD",
@@ -391,6 +391,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
 
   const bjvSiOldSizeData = [];
 
+  const carsSIfldNewSizeData = ["SMAC", "DSMSI","DSMSB"];
+
   switch (true) {
     // FDL CASES
     case fdlSiNewSizeData.some((branch) => branch === user?.branchCode):
@@ -399,6 +401,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <FdlOldCsiSize data={data} />;
     case fdlSiOldSizeData.some((branch) => branch === user?.branchCode):
       return <FdlOldSiSize data={data} />;
+    case carsSIfldNewSizeData.some((branch) => branch === user?.branchCode):
+      return <Hyundai data={data} />;
 
     // OBBUS CASES
     case obbusSiNewSizeData.some((branch) => branch === user?.branchCode):
@@ -618,8 +622,6 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <DSMMahayag data={data} />;
     case "SUCD" === user?.branchCode:
       return <DAPSucabon data={data} />;
-    case "SMAC" === user?.branchCode:
-    return <Hyundai data={data} />;
 
     default:
       return (
