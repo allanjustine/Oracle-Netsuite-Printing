@@ -336,6 +336,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "JIME",
     "CERI",
     "IMED2",
+    "LIPA",
   ];
 
   const fdlSiOldSizeData = ["DAPI", "TANZ", "BONI", "VITA", "BAYB"];
@@ -502,8 +503,8 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
       return <HDMaranding data={data} />; //CSI
     // case "LAPU" === user?.branchCode:
     //   return <LapuLapu2 data={data} />;
-    case "LIPA" === user?.branchCode:
-      return <SMCTLipa data={data} />; // TEMP NO TAG-IYA
+    // case "LIPA" === user?.branchCode:
+    //   return <SMCTLipa data={data} />; // TEMP NO TAG-IYA
     case "FAMY" === user?.branchCode:
       return <LapuLapu2 data={data} />; // TEMP NO TAG-IYA
     // case "CALIN2" === user?.branchCode:
