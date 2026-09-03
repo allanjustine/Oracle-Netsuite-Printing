@@ -137,7 +137,7 @@ const DSMPasi = ({ data }: any) => {
           )}
         </p>
       </div>
-      <div className="mx-[37.795275591px] w-[533.29133858px] mt-[29.858267717px] h-[226.77165354px]">
+      <div className="mx-[37.795275591px] w-[533.29133858px] mt-[40.858267717px] h-[226.77165354px]">
         <table className="border-collapse">
           <tbody>
             {data.slice(1, 13).map((row: any, index: number) => (
