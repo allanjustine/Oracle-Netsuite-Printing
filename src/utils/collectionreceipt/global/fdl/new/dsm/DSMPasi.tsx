@@ -40,7 +40,7 @@ const DSMPasi = ({ data }: any) => {
           {data[1]?.[CR_Address] || <span className="opacity-0">No data</span>}
         </p>
       </div>
-      <div className="flex w-[680.31496063px] mx-[37.795275591px] mt-[34.37007874px]">
+      <div className="flex w-[680.31496063px] mx-[37.795275591px] mt-[44.37007874px]">
         <div className="flex flex-col w-[568.81889764px]">
           <p className="h-[23.433070866px] pl-[83.149606299px]">
             {data[1]?.[CR_Memo]?.substring(0, 92) || (
