@@ -37,6 +37,12 @@ const SMCTLoay = ({ data }: any) => {
   const cashier = 26;
   const refNumber = 27;
   const lessWithHoldingTax = 28;
+  const bankMortgagee = 29;
+  const branchManager = 30;
+  const salesRep = 31;
+  const bodyType = 32;
+  const brands = 33;
+  const yearModel = 34;
 
   // Vatable Sales
   const vatableSalesFn = FormattedSumTotalMinusLessVat(
@@ -227,6 +233,21 @@ const SMCTLoay = ({ data }: any) => {
                 <td className="w-[105.4488189px] h-[18.897637795px]"></td>
               </tr>
             )}
+            {data[1]?.[brands] && (
+              <tr className="text-xs text-center">
+                <td
+                  className={`w-[268.72440945px] h-[18.897637795px] text-start ${
+                    data[1]?.[brands]?.length > 41 ? "text-[10px]" : ""
+                  }`}
+                >
+                  {data[1]?.[brands] && <> Brands: {data[1]?.[brands]}</>}
+                </td>
+                <td className="w-[75.968503937px]"></td>
+                <td className="w-[83.48976378px] h-[18.897637795px]"></td>
+                <td className="w-[105.4488189px] h-[18.897637795px]"></td>
+              </tr>
+            )}
+            
           </tbody>
         </table>
       </div>
