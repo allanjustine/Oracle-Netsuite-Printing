@@ -337,6 +337,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
     "CERI",
     "IMED2",
     "LIPA",
+    "ALCOY",
   ];
 
   const fdlSiOldSizeData = ["DAPI", "TANZ", "BONI", "VITA", "BAYB"];
@@ -344,13 +345,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
   // OBBUS
   const obbusCsiNewSizeData = [];
 
-  const obbusCsiOldSizeData = [
-    "CALIN",
-    "COMPO",
-    "JIMEDSM",
-    "DSMM",
-    "DSMDM",
-  ];
+  const obbusCsiOldSizeData = ["CALIN", "COMPO", "JIMEDSM", "DSMM", "DSMDM"];
 
   const obbusSiNewSizeData = [
     // "DSMD",
@@ -392,7 +387,7 @@ const CashSalesInvoice: React.FC<PrintPageProps> = ({ data }) => {
 
   const bjvSiOldSizeData = [];
 
-  const carsSIfldNewSizeData = ["SMAC", "DSMSI","DSMSB","DSMSO"];
+  const carsSIfldNewSizeData = ["SMAC", "DSMSI", "DSMSB", "DSMSO"];
 
   switch (true) {
     // FDL CASES
